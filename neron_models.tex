@@ -1,0 +1,244 @@
+\documentclass[english, german, parskip=half]{scrreprt}
+% \usepackage{mathpazo}
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+\usepackage[shorthands=off]{babel}
+\usepackage[autostyle=try]{csquotes}
+
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\bibliography{neron_models.bib}
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{dsfont}
+\usepackage{tikz-cd}
+\usetikzlibrary{babel}
+\hyphenation{wo-raus}
+
+\usepackage{enumitem}
+
+\usepackage[colorlinks=true, linkcolor=blue]{hyperref}
+\hypersetup{
+  pdfauthor={Gesina Schwalbe},
+  pdftitle={Néron Modelle}
+}
+
+% DEFINITIONS
+\newtheorem{Satz}{Satz}[chapter]
+\newtheorem{Theorem}[Satz]{Theorem}
+\newtheorem{Proposition}[Satz]{Proposition}
+\newtheorem{Lemma}[Satz]{Lemma}
+\newtheorem{Korollar}[Satz]{Korollar}
+\theoremstyle{definition}
+\newtheorem{Definition}[Satz]{Definition}
+\newtheorem{LemmaDefinition}[Satz]{Lemma/Definition}
+\newtheorem{Beispiel}[Satz]{Beispiel}
+\theoremstyle{remark}
+\newtheorem{Bemerkung}[Satz]{Bemerkung}
+
+\newcommand*{\N}{\mathds{N}}
+\newcommand*{\Z}{\mathds{Z}}
+\newcommand*{\K}{\ensuremath{K}} % Körper
+\newcommand*{\algK}{\ensuremath{\overline K}} % algebraischer Abschluss
+\DeclareMathOperator{\Quot}{Quot} % Quotientenkörperoperator
+\DeclareMathOperator{\Spec}{Spec} % Spektrum
+\newcommand*{\A}{\ensuremath{\mathds{A}}} % affiner Raum
+\renewcommand*{\P}{\ensuremath{\mathds{P}}} % projektiver Raum
+\renewcommand*{\m}{\mathfrak{m}} % Maximalideal
+\renewcommand*{\k}{\kappa} % Restklassenkörperoperator
+\newcommand*{\n}{\eta} % generischer Punkt
+\renewcommand*{\O}{\mathcal{O}} % Garbe
+\newcommand*{\I}{\mathcal{I}} % Idealgarbe
+\newcommand*{\Om}[1]{\ensuremath{\Omega_{#1}^1}} % relative 1-Formen
+\renewcommand*{\d}{\ensuremath{\operatorname{d}}} % (universelles) Differential
+\DeclareMathOperator{\rk}{rk} % Rang (einer Matrix)
+\newcommand*{\longto}{\longrightarrow}
+\newcommand*{\longfrom}{\longleftarrow}
+%\newcommand*{\Xn}{\underline{X}} % Variablenmenge
+\newcommand*{\degs}{\operatorname{\deg}_s} % Separabilitätsgrad
+\newcommand*{\degi}{\operatorname{\deg}_i} % Inseparabilitätsgrad
+\DeclareMathOperator{\ord}{ord} % diskrete Bewertung
+\DeclareMathOperator{\Div}{Div} % Divisorengruppe
+\DeclareMathOperator{\Pic}{Pic} % Picard Gruppe
+\renewcommand{\div}{\operatorname{div}}
+\DeclareMathOperator{\Char}{char} % Charakteristik
+\DeclareMathOperator{\Hom}{Hom} % Homomorphismenmenge
+\DeclareMathOperator{\End}{End} % Endomorphismenmenge
+\DeclareMathOperator{\Aut}{Aut} % Automorphismenmenge
+\newcommand{\Id}{\mathrm{id}} % Identitätsabbildung
+\DeclareMathOperator{\im}{im} % image
+%\newcommand{\tlambda}{\tilde\lambda} % alternative Abbildung \lambda
+%\newcommand{\F}{F} % endliche Untergruppe
+\DeclareMathOperator{\genus}{genus} % Kurvengeschlecht
+
+% TITEL
+\titlehead{Seminar Elliptische Kurven \\
+  von Prof. Kerz,
+  SS2016, Universität Regensburg}
+\subject{Bachelorarbeit}
+\title{Néron-Modelle Elliptischer Kurven 
+  und Entwicklung solcher aus dem Weierstrass-Modell}
+\author{Gesina Schwalbe}
+
+\begin{document}
+$\m$\\
+$\k$
+\maketitle
+\tableofcontents
+
+\chapter{Motivation}
+
+\chapter{Gruppenschemata}
+% Abelsche Varietät X/K: eigentliches, glattes, irreduzibles K-Gruppenschema
+\begin{Definition}[Gruppenschema]
+\end{Definition}
+
+\appendix
+\chapter{Definitionen}
+\begin{Definition}[flacher Morphismus]
+Ein Morphismus $f\colon X\to Y$ von Schemata ist flach, wenn alle
+induzierten Ringhomomorphismen $f_x^\#\colon \O_{S,f(x)}\to\O_{X,x}$  auf
+den Halmen flach sind.
+\cite[siehe][]{bosch, goodreduction}
+\end{Definition}
+
+\begin{Definition}[unverzweigter Morphismus]
+  Ein Morphismus $f\colon X\to S$ von Schemata heißt unverzweigt im
+  Punkt $x\in X$, falls es eine offene Umgebung
+  $U\subset X$ von $x$ gibt und eine geschlossene $S$-Immersion
+  $j\colon U\cong\O_W/\I\to W\subset\A_S^n$ in ein offenes Unterschema
+  des affinen $n$-Raums mit zugehöriger Idealgarbe $\I\subset\O_W$,
+  für die gilt
+  \begin{enumerate}[label=(\alph*)]
+  \item $\I$ ist in einer Umgebung von $z\coloneqq j(x)$ endlich erzeugt.
+  \item $\Om{\A_S^n/S}$ ist erzeugt von den $\d g\in\Om{\A_S^n/S}$
+    mit $g\in\I$.
+  \end{enumerate}
+  $f$ heißt unverzweigt, falls es in jedem Punkt $x\in X$
+  unverzweigt ist.
+\end{Definition}
+\begin{Bemerkung}
+  Ist $X$ lokal endlich repräsentiert, sind äquivalent
+  \begin{enumerate}[label=(\roman*)]
+  \item $X$ unverzweigt in $x$,
+  \item $\Om{X/S,x}=0$,
+  \item $X_{f(x)}\to \Spec(\k(f(x)))$ unverzweigt.
+  \end{enumerate}
+  \cite[siehe][8.4, Theorem 3]{bosch}
+\end{Bemerkung}
+
+\begin{Definition}[glatter Morphismus]
+  Ein Morphismus $f\colon X\to S$ von Schemata heißt glatt im Punkt
+  $x\in X$ von relativer Dimension $r$, wenn es eine offene Umgebung
+  $U\subset X$ von $x$ gibt und eine geschlossene Immersion $j\colon
+  U\cong\O_W/\I\to W\subset\A_S^n$ in ein offenes Unterschema des affinen
+  $n$-Raums mit zugehöriger Idealgarbe $\I\subset\O_W$, für die
+  gilt
+  \begin{enumerate}[label=(\alph*)]
+  \item $\I$ wird in einer Umgebung von $z\coloneqq j(x)$ von $n-r$ Schnitten
+    $g_{r+1},\dotsc,g_{n}$ erzeugt.
+  \item Die $\d g_{r+1}(z),\dotsc,\d g_{n}(z)\in 
+    \Om{\A_S^n/S,z} \otimes_{\O_{\A_S^n,z}} \k(z)
+    \cong \Om{\A_S^n/S,z}/\m_z\Om{\A_S^n/S,z}$ 
+    sind linear unabhängig über $\k(z)$.
+    Dies ist äquivalent zu
+    \begin{gather*}\tag{Jacobi Bedingung}
+      \rk\left(
+        \frac{\partial g_j}{\partial t_i}\d t_i 
+      \right)_{\substack{j=r+1,\dotsc,n\\i=1,\dotsc,n\phantom{+1}}}
+      = n-r
+    \end{gather*}
+  \end{enumerate}
+  Ist $f$ glatt in jedem Punkt heißt $f$ glatt bzw. $X$ ist glattes
+  $S$-Schema.  
+  \cite[siehe][8.5, Definition 1]{bosch}
+
+  $f$ glatt in $x$ ist äquivalent zu $f$ flach in $x$ und $X_{f(x)}$
+  glatt über $\k(f(x))$.
+  \cite[siehe][8.5, Proposition 17]{bosch}
+\end{Definition}
+
+\begin{Definition}[eigentlicher Morphismus]
+% Verallgemeinerung von projektiv; Äquivalent zu kompakt
+  Ein Morphismus $f\colon X\to Y$ heißt eigentlich, wenn er eine der
+  folgenden äquivalenten Bedingungen erfüllt
+  \begin{enumerate}[label=(\roman*)]
+  \item $f$ ist separiert, von endlichem Typ und universell
+    geschlossen (d.\,h. jeder Basiswechsel ist geschlossen)
+  \item $f$ quasi-separiert, von endlichem Typ und für jeden
+    Bewertungsring $R$ gilt
+    \begin{gather*}
+      (\bullet)\circ\Spec(\operatorname{incl})\colon
+      \Hom_Y\left(\Spec(R), X\right) \overset{\sim}{\longto} 
+      \Hom_Y\left(\Spec\left(\Quot(R)\right), X\right)
+    \end{gather*}
+    In anderen Worten, es findet sich für jedes kommutative Diagramm
+    wie folgt ein entsprechender, eindeutiger Lift
+    \begin{center}
+      \begin{tikzcd}
+        \Spec(\Quot(R)) \arrow[r]\arrow[d]
+        & X \arrow[d, "f"] \\
+        \Spec(R) \arrow[r]\arrow[to=ur, dashed, "\exists!"]
+        & Y
+      \end{tikzcd}
+    \end{center}
+    
+  \end{enumerate}
+  Endliche und projektive Morphismen sind eigentlich.
+  \cite[siehe][9.5, Remark 5 und Theorem 9]{bosch}
+
+  \begin{Bemerkung}[Stein Faktorisierung]
+    Jeder eigentliche Morphismus $f\colon X\to Y$ faktorisiert über
+    einen eigentlichen, surjektiven Morphismus $g\colon X\to
+    \Spec(f_*\O_X)$ mit zusammenhängenden Fasern und einen endlichen
+    Morphismus $h\colon \Spec(f_*\O_X)\to Y$.
+    \cite[siehe][9.5, Theorem 12]{bosch}
+  \end{Bemerkung}
+\end{Definition}
+
+\begin{Definition}[étaler Morphismus]% Äquivalent zu lokal umkehrbar
+  Ein Morphismus $f\colon X\to Y$ von $S$-Schemata heißt étale in
+  einem Punkt $x\in X$, falls er eine der äquivalenten Bedingungen
+  erfüllt 
+  \begin{enumerate}[label=(\roman*)]
+  \item $f$ glatt von relativer Dimension 0 in $x$
+  \item $X$ glatt in $x$, $Y$ glatt in $f(x)$ und 
+    $(f^*\Om{Y/S})_x \overset{\sim}{\longto} \Om{X/S,x}$
+  \end{enumerate}
+  Er heißt étale, falls er étale in jedem Punkt von $X$ ist.
+  \cite[siehe][8.5, Definition 1 und Corollary 12]{bosch}  
+
+  $f$ ist genau dann étale, wenn $f$ glatt und unverzweigt ist.
+  \cite[siehe][8.5, Proposition 6]{bosch}
+
+  Offene Immersionen sind genau die étalen Immersionen.
+  \cite[siehe][8.5, Lemma 7]{bosch}
+\end{Definition}
+
+\begin{Definition}[Gute Reduktion]
+%$X/S$ hat Gute Reduktion nach dem Primideal $P\in S$ heißt, dass die
+%Faser $X_P$ Glattheit erhält.
+Sei $(A,\m)$ ein diskreter Bewertungsring, $\K=\Quot(A)$ und $X/\K$
+ein eigentliches glattes $\K$-Schema.
+Wir sagen $X$ hat \emph{gute Reduktion}, falls es ein eigentliches
+glattes $A$-schema $Y$ gibt, so dass $X\cong Y_{\K}$ ($Y_{\K}$
+generische Faser), d.\,h. das folgende Diagramm ist kartesisch
+\begin{center}
+\begin{tikzcd}
+  X \arrow[r]\arrow[d]
+  \arrow[dr, phantom, "\ulcorner", very near start]
+  & Y \arrow[d] \\
+  \k(\n) \arrow[r]
+  & \Spec(A)
+\end{tikzcd}
+\end{center}
+\cite[siehe][Definition 3.1]{goodreduction}
+\end{Definition}
+
+
+
+\nocite{*}
+\printbibliography
+\end{document}
