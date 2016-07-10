@@ -43,6 +43,7 @@
 \newcommand*{\K}{\ensuremath{K}} % Körper
 \newcommand*{\algK}{\ensuremath{\overline K}} % algebraischer Abschluss
 \DeclareMathOperator{\Quot}{Quot} % Quotientenkörperoperator
+\DeclareMathOperator{\Nil}{Nil} % Nilradikal
 \DeclareMathOperator{\Spec}{Spec} % Spektrum
 \newcommand*{\A}{\ensuremath{\mathds{A}}} % affiner Raum
 \renewcommand*{\P}{\ensuremath{\mathds{P}}} % projektiver Raum
@@ -83,15 +84,12 @@
 \author{Gesina Schwalbe}
 
 \begin{document}
-$\m$\\
-$\k$
 \maketitle
 \tableofcontents
 
 \chapter{Motivation}
 
 \chapter{Gruppenschemata}
-% Abelsche Varietät X/K: eigentliches, glattes, irreduzibles K-Gruppenschema
 \begin{Definition}[$S$-Gruppenschema]
   Sei $S$ ein Schema. Ein \emph{Gruppenschema über $S$} ist ein
   $S$-Schema $\pi\colon G\to S$ zusammen mit $S$-Morphismen
@@ -161,7 +159,7 @@ $\k$
     \end{tikzcd}
     % \end{center}
 \end{description}
-\end{Definition}
+
 \begin{Bemerkung}
   Ein Gruppenschema $X$ ist keine Gruppe auf seinen Punkten, da das
   Faserprodukt topologisch nicht mit dem Produkt der zugrundeliegenden
@@ -170,9 +168,119 @@ $\k$
   verknüpfen, sofern sie auf derselben Faser liegen.
 \end{Bemerkung}
 
+\begin{Bemerkung}\label{gruppenschemaaequivalenzen}
+  Für ein $\K$-Gruppenschema endlichen Typs über einem Körper $\K$
+  sind glatt und geometrisch reduziert äquivalent.
+  \cite[siehe][8.5, Excercise 11]{bosch}
+  
+  In diesem Fall sind auch (geometrisch) irreduzibel und (geometrisch)
+  zusammenhängend äquivalent, da aufgrund der Glattheit alle Halme
+  lokal und regulär, also insb. integer, sind und $G$ lokal noethersch
+  ist.
+  \cite[s.][Exercise 3.16]{wedhorn} und \cite[siehe][Corollary 16.51]{wedhorn}
+\end{Bemerkung}
+\end{Definition}
+
+
+\begin{Definition}[Abelsche Varietät]\label{abelschevarietaet}
+Eine abelsche Varietät $X/\K$ ist ein eigentliches, glattes,
+irreduzibles $\K$-Gruppenschema.
+\cite[siehe][9.6, Definition 1]{bosch} oder \cite[Definition 16.52]{wedhorn}
+
+(Hier ist glatt äquivalent zu geometrisch reduziert und irreduzibel
+äquivalent zu zusammenhängend, 
+siehe \ref{gruppenschemaaequivalenzen}.)
+
+\begin{Bemerkung}
+Abelsche Varietäten sind projektiv.
+\cite[siehe][9.6, Proposition 4]{bosch}
+\end{Bemerkung}
+\end{Definition}
+
+\begin{Definition}[abelsches Schema]
+Ein abelsches $S$-Schema ist ein eigentliches, glattes $S$-Gruppenschema,
+dessen Fasern abelsche Varietäten sind 
+(also zusätzlich irreduzibel bzw. zusammenhängend,
+s. \ref{abelschevarietaet} und \ref{gruppenschemaaequivalenzen},
+nachdem eigentlich und glatt stabil unter Basiswechsel sind).
+\end{Definition}
+
 
 \appendix
 \chapter{Definitionen}
+\begin{Definition}[reduziert, geometrisch reduziert]
+  Ein Schema heißt reduziert, falls alle Halme reduzierte Ringe sind
+  (d.\,h. $\Nil(0)=(0)$).
+
+  Ein $\K$-Schema heißt geometrisch reduziert, wenn für jeden
+  Basiswechsel zu einer Körpererweiterung von $\K$ die generische
+  Faser reduziert ist. 
+\end{Definition}
+
+\begin{Definition}[lokal von endlichem Typ]
+Ein Morphismus $f\colon X\to Y$ von Schemata heißt lokal von endlichem
+Typ, wenn lokal auf affinen offenen Teilmengen $V\subset Y$ die
+induzierte Abbildung $f_U^\#: f_\ast\O_X(V)\to \O_Y(V)$
+(wobei $U=f^{-1}(V)$) $f_\ast\O_X(V)=\O_X(U)$ zu einer \emph{endlich erzeugten}
+$\O_Y(V)$-Algebra macht.
+
+Er heißt von endlichem Typ, wenn er lokal von endlichem Typ und
+quasikompakt (Urbilder quasikompakter Mengen sind quasikompakt) ist.
+\end{Definition}
+
+\begin{Definition}[Varietät]
+Eine affine Varietät über einem Körper $\K$ ist eine Unterprägarbe der Prägarbe 
+$U\mapsto \Hom(U,\K)$ über den geschlossenen Punkten eines
+geschlossenen, irreduziblen Unterschemas des $\A_\K^n$.
+Eine affine Prävarietät ist eine quasikompakte, zusammenhängende
+Prägarbe, die lokal affine Varietät ist.
+
+Für integrale $\K$-Schemata endlichen Typs sind die geschlossenen
+Punkte isomorph zu den $\K$-Schnitten 
+$\Hom_{\Spec(\K)}(\Spec(\K),X)$.
+Dadurch gibt es eine Kategorienäquivalenz
+\begin{align*}
+  \left\{\text{Integrale $\K$-Schemata endlichen Typs}\right\}
+  &\longto
+  \left\{\text{Prävarietäten über $\K$}\right\}\\
+  (X,\O_X) 
+  &\longmapsto
+    \left( X(\K), \O_{X(\K)}\subset \Hom(\bullet, \K) \right)
+\end{align*}
+wobei $f\in\O_{X(\K)}(U)$ der Abbildung 
+\begin{align*}
+  U\cap X(\K) &\longto \K\\
+  x  &\longmapsto f(x)
+  \coloneqq \bar{f_x}\in\O_{X,x}/\m_x\cong \K
+\end{align*}
+entspricht (Analogon zum Einsetzhomomorphismus für Polynomringe).
+Der inverse Funktor ist gegeben durch
+\begin{align*}
+  (P,\O_P) \longmapsto (t(P), t_\ast\O_P) 
+\end{align*}
+wobei $t\colon P\to t(P)$, $x\mapsto \{x\}$. Auf affinen Varietäten
+$V$ wird dies zu
+\begin{gather*}
+  (V, \O_V) \mapsto (\Spec(\O_V(V)), \O_{\Spec(\O_V(V))})
+\end{gather*}
+\cite[siehe][Theorem 3.37]{wedhorn}
+
+Daher werden wir im folgenden mit Prävarietät ein integrales
+$\K$-Schema endlichen Typs meinen und mit affiner Varietät ein affines,
+integrales $\K$-Schema endlichen Typs.
+
+Eine algebraische Varietät sei im folgenden ein separiertes, integrales
+Schema über einem algebraisch abgeschlossen Körper $\K$
+(alternativ: über einem Körper $\K$, wobei die Basiserweiterung auf
+den algebraischen Abschluss weiterhin integral ist).
+\end{Definition}
+
+\begin{Definition}[Regulär]
+Ein Schema $X$ heißt regulär im Punk $x\in X$, wenn sein Halm
+$\O_{X,x}$ ein regulärer (lokaler) Ring ist
+(d.\,h. $\dim_{\O_{X,x}/\m_x}(\m_x/\m_x^2)=\dim(\O_{X,x})$).
+\end{Definition}
+
 \begin{Definition}[flacher Morphismus]
 Ein Morphismus $f\colon X\to Y$ von Schemata ist flach, wenn alle
 induzierten Ringhomomorphismen $f_x^\#\colon \O_{S,f(x)}\to\O_{X,x}$  auf
@@ -298,8 +406,9 @@ den Halmen flach sind.
 Sei $(A,\m)$ ein diskreter Bewertungsring, $\K=\Quot(A)$ und $X/\K$
 ein eigentliches glattes $\K$-Schema.
 Wir sagen $X$ hat \emph{gute Reduktion}, falls es ein eigentliches
-glattes $A$-schema $Y$ gibt, so dass $X\cong Y_{\K}$ ($Y_{\K}$
-generische Faser), d.\,h. das folgende Diagramm ist kartesisch
+glattes $A$-schema $Y$ gibt, so dass $X$ isomorph zur generischen
+Faser $Y_{\K}$ von $Y$ ist. D.\,h. das folgende Diagramm ist
+kartesisch
 \begin{center}
 \begin{tikzcd}
   X \arrow[r]\arrow[d]
