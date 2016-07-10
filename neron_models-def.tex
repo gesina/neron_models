@@ -1,0 +1,77 @@
+\KOMAoptions{parskip=half}
+
+% PACKAGES
+% \usepackage{mathpazo}
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+\usepackage[shorthands=off]{babel}
+\usepackage[autostyle=try]{csquotes}
+
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\bibliography{neron_models.bib}
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{dsfont}
+\usepackage{tikz-cd}
+\usetikzlibrary{babel}
+\hyphenation{wo-raus}
+
+\usepackage{enumitem}
+
+\usepackage[colorlinks=true, linkcolor=blue]{hyperref}
+
+
+
+% DEFINITIONS
+\newtheorem{Satz}{Satz}[chapter]
+\newtheorem{Theorem}[Satz]{Theorem}
+\newtheorem{Proposition}[Satz]{Proposition}
+\newtheorem{Lemma}[Satz]{Lemma}
+\newtheorem{Korollar}[Satz]{Korollar}
+\theoremstyle{definition}
+\newtheorem{Definition}[Satz]{Definition}
+\newtheorem{LemmaDefinition}[Satz]{Lemma/Definition}
+\newtheorem{Beispiel}[Satz]{Beispiel}
+\theoremstyle{remark}
+\newtheorem{Bemerkung}[Satz]{Bemerkung}
+
+\newcommand*{\N}{\mathds{N}}
+\newcommand*{\Z}{\mathds{Z}}
+\newcommand*{\K}{\ensuremath{K}} % Körper
+\newcommand*{\algK}{\ensuremath{\overline K}} % algebraischer Abschluss
+\DeclareMathOperator{\Quot}{Quot} % Quotientenkörperoperator
+\DeclareMathOperator{\Nil}{Nil} % Nilradikal
+\DeclareMathOperator{\Spec}{Spec} % Spektrum
+\newcommand*{\A}{\ensuremath{\mathds{A}}} % affiner Raum
+\renewcommand*{\P}{\ensuremath{\mathds{P}}} % projektiver Raum
+\renewcommand*{\m}{\mathfrak{m}} % Maximalideal
+\renewcommand*{\k}{\kappa} % Restklassenkörperoperator
+\newcommand*{\n}{\eta} % generischer Punkt
+\renewcommand*{\O}{\mathcal{O}} % Garbe
+\newcommand*{\I}{\mathcal{I}} % Idealgarbe
+\newcommand*{\Om}[1]{\ensuremath{\Omega_{#1}^1}} % relative 1-Formen
+\renewcommand*{\d}{\ensuremath{\operatorname{d}}} % (universelles) Differential
+\DeclareMathOperator{\rk}{rk} % Rang (einer Matrix)
+\newcommand*{\longto}{\longrightarrow}
+\newcommand*{\longfrom}{\longleftarrow}
+%\newcommand*{\Xn}{\underline{X}} % Variablenmenge
+\newcommand*{\degs}{\operatorname{\deg}_s} % Separabilitätsgrad
+\newcommand*{\degi}{\operatorname{\deg}_i} % Inseparabilitätsgrad
+\DeclareMathOperator{\ord}{ord} % diskrete Bewertung
+\DeclareMathOperator{\Div}{Div} % Divisorengruppe
+\DeclareMathOperator{\Pic}{Pic} % Picard Gruppe
+\renewcommand{\div}{\operatorname{div}}
+\DeclareMathOperator{\Char}{char} % Charakteristik
+\DeclareMathOperator{\Hom}{Hom} % Homomorphismenmenge
+\DeclareMathOperator{\End}{End} % Endomorphismenmenge
+\DeclareMathOperator{\Aut}{Aut} % Automorphismenmenge
+\newcommand{\Id}{\mathrm{id}} % Identitätsabbildung
+\DeclareMathOperator{\im}{im} % image
+%\newcommand{\tlambda}{\tilde\lambda} % alternative Abbildung \lambda
+%\newcommand{\F}{F} % endliche Untergruppe
+\DeclareMathOperator{\genus}{genus} % Kurvengeschlecht
+\newcommand*{\Groups}{\text{(Groups)}} % Kategorie der Gruppen
+\newcommand*{\Sch}[1][S]{\text{(Sch/#1)}} % Kategorie der #1-Schemata
