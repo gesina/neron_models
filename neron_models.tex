@@ -73,6 +73,9 @@
 %\newcommand{\tlambda}{\tilde\lambda} % alternative Abbildung \lambda
 %\newcommand{\F}{F} % endliche Untergruppe
 \DeclareMathOperator{\genus}{genus} % Kurvengeschlecht
+\newcommand*{\Groups}{\text{(Groups)}} % Kategorie der Gruppen
+\newcommand*{\Sch}[1][S]{\text{(Sch/#1)}} % Kategorie der #1-Schemata
+
 
 % TITEL
 \titlehead{Seminar Elliptische Kurven \\
@@ -159,6 +162,29 @@
     \end{tikzcd}
     % \end{center}
 \end{description}
+\begin{Bemerkung}[Gruppe der $T$-wertigen Punkte]
+  Diese Definition ist äquivalent dazu, dass die $T$-wertigen Punkte
+  $G(T)=\Hom_S(T,G)$ eine Gruppenstruktur tragen, die funktoriell in
+  $T$ ist für $S$-Schemata $T$ \cite[siehe][(4.15)]{wedhorn}. 
+  In anderen Worten wir erhalten den Funktor 
+  \begin{align*}
+    \Sch &\longto \Groups\\
+    T &\longmapsto G(T)
+  \end{align*}
+  Man erhält die Gruppenstruktur aus den oben angegebenen Morphismen
+  durch
+  \begin{align*}
+    G(T)\times G(T) &\longto G(T)\\
+    (\phi, \psi) &\longmapsto 
+                   \left(
+                   T\overset{(\phi,\psi)}\longto G\times_S G
+                   \overset\mu\longto G
+                   \right)
+  \end{align*}
+  wobei die Identität $T\longto S\overset{\sigma_0}\longto G$ ist und
+  man Inverse durch Verknüpfung mit $i$ erhält.
+  \cite[siehe][Proposition IV.3.2]{silverman2}
+\end{Bemerkung}
 
 \begin{Bemerkung}
   Ein Gruppenschema $X$ ist keine Gruppe auf seinen Punkten, da das
@@ -204,6 +230,7 @@ dessen Fasern abelsche Varietäten sind
 s. \ref{abelschevarietaet} und \ref{gruppenschemaaequivalenzen},
 nachdem eigentlich und glatt stabil unter Basiswechsel sind).
 \end{Definition}
+
 
 
 \appendix
@@ -342,6 +369,10 @@ den Halmen flach sind.
   $f$ glatt in $x$ ist äquivalent zu $f$ flach in $x$ und $X_{f(x)}$
   glatt über $\k(f(x))$.
   \cite[siehe][8.5, Proposition 17]{bosch}
+
+  \begin{Bemerkung}
+    Glatt impliziert reduziert und lokal von endlichem Typ.
+  \end{Bemerkung}
 \end{Definition}
 
 \begin{Definition}[eigentlicher Morphismus]
