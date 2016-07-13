@@ -13,6 +13,7 @@
 \author{Gesina Schwalbe}
 
 \begin{document}
+
 \maketitle
 \tableofcontents
 
@@ -91,7 +92,7 @@
 \begin{Bemerkung}[Gruppe der $T$-wertigen Punkte]
   Diese Definition ist äquivalent dazu, dass die $T$-wertigen Punkte
   $G(T)=\Hom_S(T,G)$ eine Gruppenstruktur tragen, die funktoriell in
-  $T$ ist für $S$-Schemata $T$ \cite[siehe][(4.15)]{wedhorn}. 
+  $T$ ist für $S$-Schemata $T$ \cite[Chapter (4.15)]{wedhorn}. 
   In anderen Worten wir erhalten den Funktor 
   \begin{align*}
     \Sch &\longto \Groups\\
@@ -109,7 +110,7 @@
   \end{align*}
   wobei die Identität $T\longto S\overset{\sigma_0}\longto G$ ist und
   man Inverse durch Verknüpfung mit $i$ erhält.
-  \cite[siehe][Proposition IV.3.2]{silverman2}
+  \cite[Proposition IV.3.2]{silverman2}
 \end{Bemerkung}
 
 \begin{Bemerkung}
@@ -123,13 +124,13 @@
 \begin{Bemerkung}\label{gruppenschemaaequivalenzen}
   Für ein $\K$-Gruppenschema endlichen Typs über einem Körper $\K$
   sind glatt und geometrisch reduziert äquivalent.
-  \cite[siehe][8.5, Excercise 11]{bosch}
+  \cite[8.5, Excercise 11]{bosch}
   
   In diesem Fall sind auch (geometrisch) irreduzibel und (geometrisch)
   zusammenhängend äquivalent, da aufgrund der Glattheit alle Halme
   lokal und regulär, also insb. integer, sind und $G$ lokal noethersch
   ist.
-  \cite[s.][Exercise 3.16]{wedhorn} und \cite[siehe][Corollary 16.51]{wedhorn}
+  \cite[s.][Exercise 3.16]{wedhorn} und \cite[Corollary 16.51]{wedhorn}
 \end{Bemerkung}
 \end{Definition}
 
@@ -137,7 +138,7 @@
 \begin{Definition}[Abelsche Varietät]\label{abelschevarietaet}
 Eine abelsche Varietät $X/\K$ ist ein eigentliches, glattes,
 irreduzibles $\K$-Gruppenschema.
-\cite[siehe][9.6, Definition 1]{bosch} oder \cite[Definition 16.52]{wedhorn}
+\cite[9.6, Definition 1]{bosch} oder \cite[Definition 16.52]{wedhorn}
 
 (Hier ist glatt äquivalent zu geometrisch reduziert und irreduzibel
 äquivalent zu zusammenhängend, 
@@ -145,7 +146,7 @@ siehe \ref{gruppenschemaaequivalenzen}.)
 
 \begin{Bemerkung}
 Abelsche Varietäten sind projektiv.
-\cite[siehe][9.6, Proposition 4]{bosch}
+\cite[9.6, Proposition 4]{bosch}
 \end{Bemerkung}
 \end{Definition}
 
@@ -164,9 +165,99 @@ generischen Punkt $s$ und Funktionenkörper $\K=\k(s)$.
 Sei $X$ ein $\K$-Schema.
 Ein $S$-Schema $Y$ heißt $S$-Modell von $X$, falls
 $Y\times_S\Spec(\K)=Y_K\cong X$ für die generische Faser gilt.
+\end{Definition}
+
+\begin{Definition}[arithmetische Fläche]
+  Sei $R$ Dedekindring mit Quotientenkörper $\K$.
+  Eine arithmetische Fläche $X$ über $R$ ist ein
+  integrales, normales, exzellentes Schema, flach und von endlichem
+  Typ über $R$,
+  dessen generische Faser eine reguläre, zusammenhängende,
+  projektive Kurve $X_\K/\K$ ist
+  und dessen spezielle Fasern Vereinigungen von Kurven über den
+  entsprechenden Restklassenkörpern sind.
+  \cite[IV.4]{silverman2}
+  
+  $X$ ist also ein $X_\K$-Modell.
+\end{Definition}
+
+\begin{Satz}
+  Sei $R$ Dedekindring mit Quotientenkörper $\K$,
+  $X/R$ arithmetische Fläche, $X_\K/\K$ generische Faser.
+  Dann gilt
+  \begin{enumerate}[label=(\roman*)]
+  \item Ist $X/R$ eigentlich, so gilt $X(R)=X_\K(\K)$.
+  \item Ist $X/R$ regulär, so gilt $X(R)=X^0(R)$ für $X^0/R$ größtes
+    glattes $R$-Unterschema von $X$.
+  \end{enumerate}
+  \cite[Corollary IV.4.4]{silverman2}
+
+  Für ein reguläres, eigentliches $R$-Modell von $X_K$, das eine
+  arithmetische Oberfläche ist (integral, normal, exzellent, flach,
+  von endlichem Typ), gilt also
+  \begin{gather*}
+    X_\K(\K)=X^0(R)=X(R)
+  \end{gather*}
+\end{Satz}
+
+
 
 \appendix
 \chapter{Definitionen}
+\begin{Definition}[Dedekindring]
+Ein Integritätsring $R$ heißt Dedekindring, wenn er eine der
+äquivalenten Bedingungen erfüllt
+\begin{enumerate}[label=(\roman*)]
+\item regulär und $\dim(A)\leq 1$
+\item noethersch, normal und $\dim(A)\leq 1$
+\item $A$ Körper oder
+  jede Lokalisierung nach einem Maximalideal ist ein diskreter
+  Bewertungsring
+  (d.\,h. lokal, noethersch, normal von Dimension 1)
+\item jedes echte Ideal ist endliches Produkt von Primidealen
+  (diese ist dann eindeutig bis auf Reihenfolge) 
+\end{enumerate}
+\cite[S.\,40]{hartshorne} und \cite[Definition B.84]{wedhorn}
+
+Faktorielle Dedekindringe sind genau die Hauptidealringe.
+\cite[Proposition B.85]{wedhorn}
+\end{Definition}
+
+\begin{Definition}[Dedekindschema]
+Ein Dedekindschema ist ein noethersches, integrales Schema $X$, das
+eine der äquivalenten Eigenschaften erfüllt
+\begin{enumerate}[label=(\roman*)]
+\item die offenen affinen Unterschemata sind Spektren von Dedekindringen
+\item $\dim(X)\leq 1$ und $X$ regulär
+  (in Dimension 1 äquivalent zu normal
+  \cite[Corollary 6.39, Proposition 6.40]{wedhorn})
+\end{enumerate}
+Ein integrales Schema mit endlicher Überdeckung durch Dedekindschemata
+ist selbst Dedekindschema.
+\cite[Chapter (7.13)]{wedhorn}
+
+\begin{Bemerkung}
+Die Bedingung, dass $S$ integral sein muss, liefert einen eindeutigen
+generischen Punkt $\eta$ und einen Funktionenkörper
+$\K=\k(\eta)=\O_{S,\eta}$, so dass jeder Schnitt und jeder Halm ein
+Unterring von $\K$ ist, d.\,h. es gibt für jeden Punkt $x\in X$ einen
+Morphismus $\Spec(\K)\to\Spec(\k(x))$ und für jede offene Teilmenge
+$U\subset X$ einen Morphismus $\Spec(\K)\to\Spec(\Gamma(U,\O_X))$.
+
+Verzichtet man auf diese Bedingung, erhält man eine Familie
+generischer Punkte $\eta_i$ der endlich vielen irreduziblen
+Komponenten (beachte: $S$ noethersch). Dieser Fall kann analog
+behandelt werden, indem man $\K=\bigoplus_i \k(\eta_i)$ setzt.
+\end{Bemerkung}
+
+\begin{Bemerkung}[generische und spezielle Fasern]
+  Ist $S=\Spec(R)$ mit $R$ Dedekindring, so hat ein $S$-Schema die
+  \emph{generische Faser} über dem generische Punkt $\eta=(0)$ und die
+  \emph{speziellen Fasern} über den verbleibenden Maximalidealen
+  (geschlossenen Punkten).
+\end{Bemerkung}
+\end{Definition}
+
 \begin{Definition}[reduziert, geometrisch reduziert]
   Ein Schema heißt reduziert, falls alle Halme reduzierte Ringe sind
   (d.\,h. $\Nil(0)=(0)$).
@@ -222,7 +313,7 @@ $V$ wird dies zu
 \begin{gather*}
   (V, \O_V) \mapsto (\Spec(\O_V(V)), \O_{\Spec(\O_V(V))})
 \end{gather*}
-\cite[siehe][Theorem 3.37]{wedhorn}
+\cite[Theorem 3.37]{wedhorn}
 
 Daher werden wir im folgenden mit Prävarietät ein integrales
 $\K$-Schema endlichen Typs meinen und mit affiner Varietät ein affines,
@@ -232,6 +323,14 @@ Eine algebraische Varietät sei im folgenden ein separiertes, integrales
 Schema über einem algebraisch abgeschlossen Körper $\K$
 (alternativ: über einem Körper $\K$, wobei die Basiserweiterung auf
 den algebraischen Abschluss weiterhin integral ist).
+\end{Definition}
+
+\begin{Definition}[Kurve, elliptische Kurve]
+  Eine Kurve über einem Körper $\K$ ist eine projektive Varietät der
+  Dimension 1,
+  also ein projektives, integrales $\K$-Schema endlichen Typs.
+
+  Eine elliptische Kurve über $\K$ ist eine reguläre Kurve vom Genus 1.
 \end{Definition}
 
 \begin{Definition}[Regulär]
@@ -244,7 +343,7 @@ $\O_{X,x}$ ein regulärer (lokaler) Ring ist
 Ein Morphismus $f\colon X\to Y$ von Schemata ist flach, wenn alle
 induzierten Ringhomomorphismen $f_x^\#\colon \O_{S,f(x)}\to\O_{X,x}$  auf
 den Halmen flach sind.
-\cite[siehe][]{bosch, goodreduction}
+\cite[]{bosch, goodreduction}
 \end{Definition}
 
 \begin{Definition}[unverzweigter Morphismus]
@@ -268,7 +367,7 @@ den Halmen flach sind.
     \item $\Om{X/S,x}=0$,
     \item $X_{f(x)}\to \Spec(\k(f(x)))$ unverzweigt.
     \end{enumerate}
-    \cite[siehe][8.4, Theorem 3]{bosch}
+    \cite[8.4, Theorem 3]{bosch}
   \end{Bemerkung}
 \end{Definition}
 
@@ -296,11 +395,11 @@ den Halmen flach sind.
   \end{enumerate}
   Ist $f$ glatt in jedem Punkt heißt $f$ glatt bzw. $X$ ist glattes
   $S$-Schema.  
-  \cite[siehe][8.5, Definition 1]{bosch}
+  \cite[8.5, Definition 1]{bosch}
 
   $f$ glatt in $x$ ist äquivalent zu $f$ flach in $x$ und $X_{f(x)}$
   glatt über $\k(f(x))$.
-  \cite[siehe][8.5, Proposition 17]{bosch}
+  \cite[8.5, Proposition 17]{bosch}
 
   \begin{Bemerkung}
     Glatt impliziert reduziert und lokal von endlichem Typ.
@@ -317,9 +416,9 @@ den Halmen flach sind.
   \item $f$ ist quasi-separiert, von endlichem Typ und für jeden
     Bewertungsring $R$ gilt
     \begin{gather*}
-      (\bullet)\circ\Spec(\operatorname{incl})\colon
-      \Hom_Y\left(\Spec(R), X\right) \overset{\sim}{\longto} 
-      \Hom_Y\left(\Spec\left(\Quot(R)\right), X\right)\;.
+      X(R)=\Hom_Y\left(\Spec(R), X\right) 
+      \overset{\sim}{\underset{\circ\Spec(\operatorname{incl})}{\longto}}
+      \Hom_Y\left(\Spec\left(\Quot(R)\right), X\right)=X(\Quot(R))\;.
     \end{gather*}
     In anderen Worten, es findet sich für jedes kommutative Diagramm
     wie folgt ein entsprechender, eindeutiger Lift
@@ -333,14 +432,14 @@ den Halmen flach sind.
     \end{center}
   \end{enumerate}
   Endliche sowie projektive Morphismen sind eigentlich.
-  \cite[siehe][9.5, Remark 5 und Theorem 9]{bosch}
+  \cite[9.5, Remark 5 und Theorem 9]{bosch}
 
   \begin{Bemerkung}[Stein Faktorisierung]
     Jeder eigentliche Morphismus $f\colon X\to Y$ faktorisiert über
     einen eigentlichen, surjektiven Morphismus $g\colon X\to
     \Spec(f_*\O_X)$ mit zusammenhängenden Fasern und einen endlichen
     Morphismus $h\colon \Spec(f_*\O_X)\to Y$.
-    \cite[siehe][9.5, Theorem 12]{bosch}
+    \cite[9.5, Theorem 12]{bosch}
   \end{Bemerkung}
 \end{Definition}
 
@@ -354,13 +453,13 @@ den Halmen flach sind.
     $(f^*\Om{Y/S})_x \overset{\sim}{\longto} \Om{X/S,x}$
   \end{enumerate}
   Er heißt étale, falls er étale in jedem Punkt von $X$ ist.
-  \cite[siehe][8.5, Definition 1 und Corollary 12]{bosch}  
+  \cite[8.5, Definition 1 und Corollary 12]{bosch}  
 
   $f$ ist genau dann étale, wenn $f$ glatt und unverzweigt ist.
-  \cite[siehe][8.5, Proposition 6]{bosch}
+  \cite[8.5, Proposition 6]{bosch}
 
   Offene Immersionen sind genau die étalen Immersionen.
-  \cite[siehe][8.5, Lemma 7]{bosch}
+  \cite[8.5, Lemma 7]{bosch}
 \end{Definition}
 
 \begin{Definition}[Gute Reduktion]
@@ -381,7 +480,7 @@ kartesisch
   & \Spec(A)
 \end{tikzcd}
 \end{center}
-\cite[siehe][Definition 3.1]{goodreduction}
+\cite[Definition 3.1]{goodreduction}
 \end{Definition}
 
 
