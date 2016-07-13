@@ -221,7 +221,38 @@ $Y\times_S\Spec(\K)=Y_K\cong X$ für die generische Faser gilt.
   \end{enumerate}
 \end{Satz}
 
+\chapter{Néron Modelle}
+Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
 
+\begin{Definition}[Néron Modell]
+  Sei $X_\K$ ein glattes, separiertes $\K$-Schema endlichen Typs.
+
+  Ein \emph{Néron Modell} von $X_\K$ ist ein glattes, separiertes
+  $R$-Modell $X/R$ endlichen Typs mit der
+  sog. Néron-Abbildungseigenschaft:
+  \begin{quote}
+    Für jedes weitere glatte $R$-Schema $Y$ wird jeder
+    $\K$-Morphismus $Y_\K\to X_\K$ auf den generischen Fasern durch
+    einen eindeutigen $R$-Morphismus $Y\to X$ erweitert.
+  \end{quote}
+  \cite[1.2, Definition 1]{neron}
+
+  Spezialfall:
+  Sei $X_\K$ eine elliptische Kurve, d.\,h. ein
+  glattes, projektives (also separiertes), integrales, reguläres
+  $\K$-Schema endlichen Typs vom Genus 1.
+  
+  Dann ist ein \emph{Néron Modell} von $X_\K$ ist ein glattes
+  $R$-Modell und Gruppenschema $X/R$ mit der
+  Néron-Abbildungseigenschaft:
+  \begin{quote}
+    Für jedes weitere glatte $R$-Modell und Gruppenschema $Y$ wird jeder
+    $\K$-Morphismus $Y_\K\to X_\K$ auf den generischen Fasern durch
+    einen eindeutigen $R$-Morphismus $Y\to X$ erweitert.
+  \end{quote}
+  \cite[Chapter IV.5]{silverman2}
+
+\end{Definition}
 
 \appendix
 \chapter{Definitionen}
@@ -352,6 +383,7 @@ den algebraischen Abschluss weiterhin integral ist).
   also ein projektives, integrales $\K$-Schema endlichen Typs.
 
   Eine elliptische Kurve über $\K$ ist eine reguläre Kurve vom Genus 1.
+  Elliptische Kurven sind glatt \cite[Proposition III.3.1]{silverman}.
 \end{Definition}
 
 \begin{Definition}[Regulär]
