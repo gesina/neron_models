@@ -98,8 +98,8 @@
     \Sch &\longto \Groups\\
     T &\longmapsto G(T)
   \end{align*}
-  Man erhält die Gruppenstruktur aus den oben angegebenen Morphismen
-  durch
+  Man erhält eine solche Gruppenstruktur aus den oben angegebenen
+  Morphismen durch
   \begin{align*}
     G(T)\times G(T) &\longto G(T)\\
     (\phi, \psi) &\longmapsto 
@@ -236,14 +236,62 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
     einen eindeutigen $R$-Morphismus $Y\to X$ erweitert.
   \end{quote}
   \cite[1.2, Definition 1]{neron}
+\end{Definition}
 
-  Spezialfall:
+\section{Eigenschaften}
+\begin{Satz}
+  Sei $X/R$ ein Néron-Modell von $X_\K/\K$. Dann gilt
+  \begin{enumerate}[label=(\roman*)]
+  \item $X$ ist eindeutig bis auf kanonische Isomorphie.
+  \item Für einen étalen Basiswechsel $\Spec(R')\to\Spec(R)$ mit $K'$
+    Funktionenkörper von $R'$ ist $X\times_R R'$ Néron-Modell
+    seiner generischen Faser $X_{\K'}=X_\K\times_{\K}\K'$,
+    d.\,h. étaler Basiswechsel kommutiert mit der Bildung von
+    Néron-Modellen.
+  \end{enumerate}
+  \cite[1.2, Proposition 2]{neron},
+  \cite[vgl.][Proposition IV.5.2]{silverman2}
+  \begin{proof}
+  \end{proof}
+\end{Satz}
+
+
+\begin{Bemerkung}\label{gruppenschemaerweiterung}
+  Sei $X$ Néron-Modell über $\Spec(R)$ seiner generischen Faser
+  $X_\K$. Ist $X_\K$ ein $\K$-Gruppenschema, so wird diese durch die
+  Néron-Abbildungseigenschaft eindeutig auf eine
+  $S$-Gruppenschemastruktur auf $X$ erweitert.
+  \cite[1.2, Proposition 6]{neron}
+\end{Bemerkung}
+
+\begin{Bemerkung}\label{nerongruppenschemaglatt}
+  Ist $X_\K$ ein $\K$-Gruppenschema (also separiert) und $X$ ein
+  glattes $R$-Modell und Gruppenschema von $X_\K$, das die
+  Néron-Abbildungseigenschaft erfüllt, so ist $X$ bereits separiert,
+  also ein Néron-Modell.
+  \cite[1.2, Remark 7]{neron} 
+  \begin{proof}[Beweisskizze]
+    Ein Gruppenschema $X$ ist genau dann separiert, wenn der
+    Einheitsschnitt $\sigma_0\colon\Spec(R)\to X$ eine geschlossene
+    Immersion ist
+    \cite[Lemma 38.6.1]{stacksproject} oder \cite[7.1, Lemma 2]{neron}.
+    Dieser erweitert wegen der Néron-Abbildungseigenschaft eindeutig
+    den Einheitsschnitt $\sigma_{0,\K}\colon\Spec(\K)\to X_\K$ von
+    $X_\K$, welcher bereits geschlossene Immersion ist.
+    Dies zeigt, dass $\sigma_0$ bereits geschlossene Immersion ist
+    (man kann zeigen, dass $\Im(\sigma_{0,\K})=\Im(\sigma_0)$) und
+    somit $X$ separiert. 
+  \end{proof}
+\end{Bemerkung}
+
+\begin{Bemerkung}[Spezialfall elliptische Kurven]
   Sei $X_\K$ eine elliptische Kurve, d.\,h. ein
   glattes, projektives (also separiertes), integrales, reguläres
   $\K$-Schema endlichen Typs vom Genus 1.
   
-  Dann ist ein \emph{Néron Modell} von $X_\K$ ist ein glattes
-  $R$-Modell und Gruppenschema $X/R$ mit der
+  Dann ist ein Néron-Modell von $X_\K$ nach
+  \ref{gruppenschemaerweiterung} und \ref{nerongruppenschemaglatt} ein
+  glattes $R$-Modell und Gruppenschema $X/R$ mit der
   Néron-Abbildungseigenschaft:
   \begin{quote}
     Für jedes weitere glatte $R$-Modell und Gruppenschema $Y$ wird jeder
@@ -251,8 +299,26 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
     einen eindeutigen $R$-Morphismus $Y\to X$ erweitert.
   \end{quote}
   \cite[Chapter IV.5]{silverman2}
+\end{Bemerkung}
 
-\end{Definition}
+
+
+\section{Beispiele}
+
+\begin{Satz}
+  Ein abelsches Schema über $\Spec(R)$ ist Néron-Modell seiner
+  generischen Faser.
+  \cite[1.2, Proposition 8]{neron}
+\end{Satz}
+
+\begin{Satz}
+  Ein glattes, separiertes $\Spec(R)$-Schema endlichen Typs ist genau
+  dann ein Néron-Modell seiner generischen Faser, wenn es die
+  Erweiterungseigenschaft für étale Punkte erfüllt.
+  \cite[1.2, Criterion 9]{neron}
+\end{Satz}
+
+
 
 \appendix
 \chapter{Definitionen}
