@@ -1,5 +1,6 @@
 \documentclass[german]{scrreprt}
 \input{neron_models-def.tex}
+\hyphenation{Né-ron=Ab-bil-dungs-ei-gen-schaft}
 
 % TITEL
 \hypersetup{
@@ -252,6 +253,91 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
   \cite[1.2, Proposition 2]{neron},
   \cite[vgl.][Proposition IV.5.2]{silverman2}
   \begin{proof}
+    \begin{enumerate}[label=(\roman*)]
+    \item Sei $X'$ ein weiteres Néron-Modell von $X_\K$.
+      Dann liefert die Néron-Abbildungseigenschaft zur Identität
+      $\Id_{X_\K}\colon X_\K\to X_\K$ eindeutige Morphismen
+      $\phi\colon X'\to X$ und $\psi\colon X\to X'$.
+      Die Verknüpfungen $\phi\circ\psi\colon X\to X$ und
+      $\psi\circ\phi\colon X'\to X'$ sind jeweils die Identität auf
+      der generischen Faser $X_\K$, welche nach der Eindeutigkeit in der
+      Néron-Abbildungseigenschaft eindeutig durch die Identitäten auf
+      $X$ bzw. $X'$ erweitert wird. Also sind $\phi,\psi$ inverse
+      Isomorphismen.
+    \item Sei $X_{R'}\coloneqq X\times_R \Spec(R')$ der Basiswechsel
+      mit generischer Faser $X_{\K'}=X_\K\times_R\Spec(\K')$. $X_{R'}$
+      ist glatt, separiert und von endlichem Typ 
+      (d.\,h. lokal von endlichem Typ und quasikompakt), da alles
+      stabil unter Basiswechsel ist. Es ist somit nur die
+      Néron-Abbildungseigenschaft zu prüfen.
+      Sei also $Y'$ glattes $R'$-Schema mit generischer Faser
+      $Y_{\K'}'$ und $\phi_{\K'}'\colon Y_{\K'}'\to X_{\K'}$ ein
+      $\K'$-Morphismus. 
+      \begin{description}
+      \item[Eindeutigkeit] Da $\phi_{\K'}'$ ein $\K'$-Morphismus ist,
+        gilt $\text{proj}_{\K'}\circ\phi_{\K'}'=\text{proj}_{\K'}$.
+        Damit ist $\phi_{\K'}'$ bereits eindeutig bestimmt durch
+        \begin{gather*}
+          \phi_{\K'}' =
+          (\text{proj}_{X_{\K}}\circ\phi_{\K'}') \times \text{proj}_{\K'}
+          \colon
+          Y_{\K'}'\longto
+          X_{\K'}=X_{\K}\times_{R}\Spec(\K')
+        \end{gather*}
+        Genauso jeder Lift
+        \begin{gather*}
+          \phi' =
+          (\text{proj}_{X}\circ\phi') \times \text{proj}_{R'}
+          \colon
+          Y'\longto
+          X_{R'}=X\times_{R}\Spec(R')
+        \end{gather*}
+        Für den $\K$-Morphismus $(\text{proj}_{X_{\K}}\circ\phi_{\K'}')\colon
+        Y_{\K'}'\to X_{\K}$ gilt die Eindeutigkeit der
+        Néron-Abbildungseigenschaft, weshalb
+        $(\text{proj}_{X}\circ\phi')$ und damit $\phi'$ eindeutig
+        bestimmt ist.
+      \item[Existenz] 
+        $Y'$ ist glattes $R$-Schema durch die Komposition
+        \begin{gather*}
+          Y'\overset{\text{glatt}}\longto\Spec(R')
+          \overset{\text{étale}}\longto\Spec(R)
+        \end{gather*}
+        glatter Abbildungen.
+        Außerdem lässt sich der $\K$-Morphismus
+        $ \phi_{\K}\colon Y_{\K'}'\overset{\phi_{\K'}'}\longto X_{\K'}
+        \overset{\text{proj}}\longto X_{\K}$
+        mit der Néron-Abbildungseigenschaft zu einem eindeutigen
+        $R$-Morphismus
+        \begin{gather*}
+          \phi\colon Y'\longto X
+        \end{gather*}
+        erweitern.
+        So erhalten wir kanonisch einen $R'$-Morphismus $\phi'$
+        \begin{center}
+          \begin{tikzcd}
+            Y'
+            \arrow[drr, bend left, "\pi_{Y'}"]
+            \arrow[ddr, bend right, "{\phi}"]
+            \arrow[dr, dashed, "{\exists!\phi'}"]\\
+            & X\times_{R} R'
+            \arrow[dr, phantom, "\ulcorner", very near start]
+            \arrow[r, "\text{proj}"]\arrow[d, "\text{proj}"]
+            & \Spec(R')\arrow[d]\\
+            & X \arrow[r]
+            & \Spec(R)
+          \end{tikzcd}
+        \end{center}
+        der $\phi_{\K'}'$ erweitert, denn
+        \begin{align*}
+          \phi'|_{Y_{\K'}'}
+          &= \phi|_{Y_{\K'}'}\times\pi|_{Y_{\K'}'}\\
+          &= \phi_{\K}\times \pi_{\Spec(\K')}\\
+          &= (\text{proj}_X\circ\phi_{\K'}') \times (\text{proj}_{\Spec(\K')}\circ\phi_{\K'}')
+          = \phi_{\K'}'
+        \end{align*}
+      \end{description}
+    \end{enumerate}
   \end{proof}
 \end{Satz}
 
