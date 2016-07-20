@@ -136,7 +136,7 @@
 \end{Definition}
 
 
-\begin{Definition}[Abelsche Varietät]\label{abelschevarietaet}
+\begin{Definition}[Abelsche Varietät]\label{def:abelschevarietaet}
 Eine abelsche Varietät $X/\K$ ist ein eigentliches, glattes,
 irreduzibles $\K$-Gruppenschema.
 \cite[9.6, Definition 1]{bosch} oder \cite[Definition 16.52]{wedhorn}
@@ -155,17 +155,17 @@ Abelsche Varietäten sind projektiv.
 Ein abelsches $S$-Schema ist ein eigentliches, glattes $S$-Gruppenschema,
 dessen Fasern abelsche Varietäten sind 
 (also zusätzlich irreduzibel bzw. zusammenhängend,
-s. \ref{abelschevarietaet} und \ref{gruppenschemaaequivalenzen},
+s. \ref{def:abelschevarietaet} und \ref{gruppenschemaaequivalenzen},
 nachdem eigentlich und glatt stabil unter Basiswechsel sind).
 \end{Definition}
 
 \chapter{$S$-Modelle}
 \begin{Definition}[$S$-Modell]
-Sei $S$ ein zusammenhängendes Dedekindschema mit (eindeutigem)
-generischen Punkt $s$ und Funktionenkörper $\K=\k(s)$.
-Sei $X$ ein $\K$-Schema.
-Ein $S$-Schema $Y$ heißt $S$-Modell von $X$, falls
-$Y\times_S\Spec(\K)=Y_K\cong X$ für die generische Faser gilt.
+  Sei $S$ ein zusammenhängendes Dedekindschema mit (eindeutigem)
+  generischen Punkt $s$ und Funktionenkörper $\K=\k(s)$.
+  Sei $X$ ein $\K$-Schema.
+  Ein $S$-Schema $Y$ heißt $S$-Modell von $X$, falls
+  $Y\times_S\Spec(\K)=Y_K\cong X$ für die generische Faser gilt.
 \end{Definition}
 
 \begin{Definition}[arithmetische Fläche]
@@ -264,39 +264,60 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
       Néron-Abbildungseigenschaft eindeutig durch die Identitäten auf
       $X$ bzw. $X'$ erweitert wird. Also sind $\phi,\psi$ inverse
       Isomorphismen.
-    \item Sei $X_{R'}\coloneqq X\times_R \Spec(R')$ der Basiswechsel
+    \item
+      % WARUM ÉTALE UND NICHT NUR GLATT???!!
+      Sei $X_{R'}\coloneqq X\times_R \Spec(R')$ der Basiswechsel
       mit generischer Faser $X_{\K'}=X_\K\times_R\Spec(\K')$. $X_{R'}$
       ist glatt, separiert und von endlichem Typ 
       (d.\,h. lokal von endlichem Typ und quasikompakt), da alles
       stabil unter Basiswechsel ist. Es ist somit nur die
       Néron-Abbildungseigenschaft zu prüfen.
       Sei also $Y'$ glattes $R'$-Schema mit generischer Faser
-      $Y_{\K'}'$ und $\phi_{\K'}'\colon Y_{\K'}'\to X_{\K'}$ ein
+      $Y_{\K'}'$ und $\phi_{\K'}\colon Y_{\K'}'\to X_{\K'}$ ein
       $\K'$-Morphismus. 
       \begin{description}
-      \item[Eindeutigkeit] Da $\phi_{\K'}'$ ein $\K'$-Morphismus ist,
-        gilt $\text{proj}_{\K'}\circ\phi_{\K'}'=\text{proj}_{\K'}$.
-        Damit ist $\phi_{\K'}'$ bereits eindeutig bestimmt durch
-        \begin{gather*}
-          \phi_{\K'}' =
-          (\text{proj}_{X_{\K}}\circ\phi_{\K'}') \times \text{proj}_{\K'}
-          \colon
-          Y_{\K'}'\longto
-          X_{\K'}=X_{\K}\times_{R}\Spec(\K')
-        \end{gather*}
-        Genauso jeder Lift
-        \begin{gather*}
-          \phi' =
-          (\text{proj}_{X}\circ\phi') \times \text{proj}_{R'}
-          \colon
-          Y'\longto
-          X_{R'}=X\times_{R}\Spec(R')
-        \end{gather*}
-        Für den $\K$-Morphismus $(\text{proj}_{X_{\K}}\circ\phi_{\K'}')\colon
-        Y_{\K'}'\to X_{\K}$ gilt die Eindeutigkeit der
-        Néron-Abbildungseigenschaft, weshalb
-        $(\text{proj}_{X}\circ\phi')$ und damit $\phi'$ eindeutig
-        bestimmt ist.
+        % Da $\phi_{\K'}$ ein $\K'$-Morphismus ist,
+        % kommutiert das folgende Diagramm
+        % \begin{center}
+        %   \begin{tikzcd}
+        %     Y_{\K'}'\arrow[r, equal]
+        %     & Y'\times_{R'}\K'
+        %     \arrow[r,"{\phi_{\K'}}"]\arrow[dr, "{\proj_{\K'}}"{below}]
+        %     & X_{R'}\times_{R'}\K'\arrow[r,equal]\arrow[d,"{\proj_{\K'}}"]
+        %     &X_{\K'}\\
+        %     &&\Spec(\K')
+        %   \end{tikzcd}
+        % \end{center}
+        % Damit ist
+        % $\phi_{\K'}=\left(
+        %   \proj_{X_{R'}}\circ\phi_{\K'} \;,\; \proj_{\K'}\circ\phi_{\K'}
+        % \right)
+        % =\left(
+        %   \proj_{X_{R'}}\circ\phi_{\K'} \;,\; \proj_{\K'}
+        % \right)$
+        % und bereits eindeutig bestimmt durch
+        % \begin{gather*}
+        %   \phi_{\K'} =
+        %   \left(
+        %     \proj_{X_{\K}}\circ\phi_{\K'} \;,\; \proj_{\K'}
+        %     \right)
+        %   \colon
+        %   Y_{\K'}'\longto
+        %   X_{\K'}=X_{\K}\times_{R}\Spec(\K')
+        % \end{gather*}
+        % Genauso jeder Lift
+        % \begin{gather*}
+        %   \phi_{R'} =
+        %   (\proj_{X}\circ\phi_{R'}) \times \proj_{R'}
+        %   \colon
+        %   Y'\longto
+        %   X_{R'}=X\times_{R}\Spec(R')
+        % \end{gather*}
+        % Für den $\K$-Morphismus $(\proj_{X_{\K}}\circ\phi_{\K'}')\colon
+        % Y_{\K'}'\to X_{\K}$ gilt die Eindeutigkeit der
+        % Néron-Abbildungseigenschaft, weshalb
+        % $(\proj_{X}\circ\phi_{R'})$ und damit $\phi_{R'}$ eindeutig
+        % bestimmt ist.
       \item[Existenz] 
         $Y'$ ist glattes $R$-Schema durch die Komposition
         \begin{gather*}
@@ -305,44 +326,90 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
         \end{gather*}
         glatter Abbildungen.
         Außerdem lässt sich der $\K$-Morphismus
-        $ \phi_{\K}\colon Y_{\K'}'\overset{\phi_{\K'}'}\longto X_{\K'}
-        \overset{\text{proj}}\longto X_{\K}$
+        \begin{gather*}
+          \phi_{\K} \coloneqq \proj_{X_\K}\circ\phi_{\K'}
+          \colon
+          Y_{\K'}' \overset{\phi_{\K'}}\longto X_{\K'}
+          \overset{\proj_{X_\K}}\longto X_{\K}
+        \end{gather*}
         mit der Néron-Abbildungseigenschaft zu einem eindeutigen
         $R$-Morphismus
         \begin{gather*}
-          \phi\colon Y'\longto X
+          \phi_R\colon Y'\longto X
         \end{gather*}
         erweitern.
-        So erhalten wir kanonisch einen $R'$-Morphismus $\phi'$
+        So erhalten wir kanonisch einen $R$-Morphismus
+        $\phi_{R'} = (\phi_R\;,\;\pi_{R'})$ auf dem
+        Faserprodukt (und somit einen $R'$-Morphismus)
         \begin{center}
           \begin{tikzcd}
             Y'
-            \arrow[drr, bend left, "\pi_{Y'}"]
-            \arrow[ddr, bend right, "{\phi}"]
-            \arrow[dr, dashed, "{\exists!\phi'}"]\\
+            \arrow[drr, bend left, "\pi_{R'}"]
+            \arrow[ddr, bend right, "{\phi_R}"]
+            \arrow[dr, dashed, "{\exists!\phi_{R'}}"]\\
             & X\times_{R} R'
             \arrow[dr, phantom, "\ulcorner", very near start]
-            \arrow[r, "\text{proj}"]\arrow[d, "\text{proj}"]
+            \arrow[r, "\proj_{R'}"]\arrow[d, "\proj_X"]
             & \Spec(R')\arrow[d]\\
             & X \arrow[r]
             & \Spec(R)
           \end{tikzcd}
         \end{center}
-        der $\phi_{\K'}'$ erweitert, denn
+        der $\phi_{\K'}$ erweitert, denn
         \begin{align*}
-          \phi'|_{Y_{\K'}'}
-          &= \phi|_{Y_{\K'}'}\times\pi|_{Y_{\K'}'}\\
-          &= \phi_{\K}\times \pi_{\Spec(\K')}\\
-          &= (\text{proj}_X\circ\phi_{\K'}') \times (\text{proj}_{\Spec(\K')}\circ\phi_{\K'}')
-          = \phi_{\K'}'
+          \phi_{R'}|_{Y_{\K'}'}
+          &= \left(
+            \phi_R|_{Y_{\K'}'}\;,\;
+            \pi_{R'}|_{Y_{\K'}'}\colon
+            Y_{\K'}'\hookrightarrow Y'\to\Spec(R')
+            \right)\\
+          % \pi|_{Y_{\K'}'})\colon Y'\times_{R'}\K'\to Y'\to\Spec(R')
+          % \overset{\text{Faserprod.}}{=}
+          % \pi_{\K'}\colon Y'\times_{R'}\K'\to \Spec(K')\to\Spec(R')
+          &= \left(
+            \phi_R|_{Y_{\K'}'}\;,\;
+            \pi_{\K'}\colon
+            Y_{\K'}'\to \Spec(K')\hookrightarrow\Spec(R')
+            \right)\\
+          &= \left(
+            \phi_{\K}\;,\; \pi_{\K'}
+            \right)\\
+          &= \left(
+            \proj_X\circ\phi_{\K'}\;,\;
+            \proj_{\K'}\circ\phi_{\K'}
+            \right)\\
+          &= \phi_{\K'}
         \end{align*}
+      \item[Eindeutigkeit]
+        Für jeden weiteren Lift $\psi_{R'}$ von $\phi_{\K'}$ ist
+        $\proj_{X}\circ\psi_{R'}$ ein Lift von $\phi_{K}$ und es gilt
+        aufgrund der Eindeutigkeit in der Néron-Abbildungseigenschaft
+        $\proj_{X}\circ\psi_{R'}=\phi_{R}$.
+        Damit lässt $\psi$ ebenfalls das obige Diagramm kommutieren
+        und ist nach der universellen Eigenschaft des Faserprodukts
+        bereits gleich $\phi_{R'}$.
       \end{description}
     \end{enumerate}
   \end{proof}
 \end{Satz}
 
+Die Existenz von Néron-Modellen können auch lokal geprüft werden im
+folgenden Sinne:
+\begin{Satz}\label{thm:neronmodelllokal}
+  Für ein $R$-Schema $X$ endlichen Typs ist äquivalent
+  \begin{enumerate}[label=(\roman*)]
+  \item $X$ ist Néron-Modell seiner generischen Faser
+  \item $X\times_R\Spec(\O{S,s})$ ist Néron-Modell seiner generischen
+    Faser für alle geschlossenen Punkte $s\in\Spec(R)$.
+  \end{enumerate}
+  D.\,h. man kann \OE{} davon ausgehen, dass $R$ lokal (also diskreter
+  Bewertungsring) ist.
+  \cite[1.2, Proposition 3]{neron}
+  \begin{proof}
+  \end{proof}
+\end{Satz}
 
-\begin{Bemerkung}\label{gruppenschemaerweiterung}
+\begin{Bemerkung}\label{thm:gruppenschemaerweiterung}
   Sei $X$ Néron-Modell über $\Spec(R)$ seiner generischen Faser
   $X_\K$. Ist $X_\K$ ein $\K$-Gruppenschema, so wird diese durch die
   Néron-Abbildungseigenschaft eindeutig auf eine
@@ -364,7 +431,7 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
     Dieser erweitert wegen der Néron-Abbildungseigenschaft eindeutig
     den Einheitsschnitt $\sigma_{0,\K}\colon\Spec(\K)\to X_\K$ von
     $X_\K$, welcher bereits geschlossene Immersion ist.
-    Dies zeigt, dass $\sigma_0$ bereits geschlossene Immersion ist
+    Dies zeigt, dass $\sigma_0$ geschlossene Immersion ist
     (man kann zeigen, dass $\Im(\sigma_{0,\K})=\Im(\sigma_0)$) und
     somit $X$ separiert. 
   \end{proof}
@@ -376,7 +443,7 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
   $\K$-Schema endlichen Typs vom Genus 1.
   
   Dann ist ein Néron-Modell von $X_\K$ nach
-  \ref{gruppenschemaerweiterung} und \ref{nerongruppenschemaglatt} ein
+  \ref{thm:gruppenschemaerweiterung} und \ref{nerongruppenschemaglatt} ein
   glattes $R$-Modell und Gruppenschema $X/R$ mit der
   Néron-Abbildungseigenschaft:
   \begin{quote}
@@ -386,7 +453,6 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
   \end{quote}
   \cite[Chapter IV.5]{silverman2}
 \end{Bemerkung}
-
 
 
 \section{Beispiele}
@@ -402,6 +468,67 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
   dann ein Néron-Modell seiner generischen Faser, wenn es die
   Erweiterungseigenschaft für étale Punkte erfüllt.
   \cite[1.2, Criterion 9]{neron}
+\end{Satz}
+
+\section{Existenz von Néron-Modellen}
+
+\begin{Satz}[Existenz von Néron-Modellen]\label{thm:existenz}
+  Sei $\Rsh$ die strikte Henselisierung von $R$ und $\Ksh$ der
+  Quotientenkörper. Ein glattes $\K$-Gruppenschema $X_\K$ endlichen
+  Typs hat genau dann ein Néron-Modell über $R$, wenn $X_\K(\Ksh)$
+  beschränkt in $X_\K$ ist.
+  % eigentlich => beschränkt
+  \cite[1.3, Theorem 1]{neron}
+\end{Satz}
+\begin{Korollar}\label{thm:exneronmodellabvarietaet}
+  Abelsche Varietäten über $\K$ haben ein Néron-Modell über $R$.
+  \begin{proof}
+    Abelsche Varietäten über $\K$ sind insbesondere glatte und
+    eigentliche $\K$-Gruppenschemata, siehe
+    \autoref{def:abelschevarietaet}.
+    Nachdem eigentlich beschränkt impliziert, ist die Bedingung aus
+    \autoref{thm:existenz} erfüllt.
+  \end{proof}
+\end{Korollar}
+
+Abelsche Varietäten stellen einen Spezialfall dar. Hier ist bei guter
+Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
+\begin{Satz}
+  Sei $\Spec(R)$ zusammenhängend und $A_\K$ abelsche Varietät über
+  $\K$ mit guter Reduktion (d.\,h. es gibt ein glattes, eigentliches
+  $R$-Modell $A$ von $A_\K$).
+  Dann ist $A$ Néron-Modell von $A_\K$ und die induzierte
+  Gruppenschemastruktur macht $A$ zu einem abelschen Schema.
+  \cite[1.4, Proposition 2]{neron}
+  \begin{proof}[Beweisskizze]
+    Nach \autoref{thm:exneronmodellabvarietaet} existiert ein
+    Néron-Modell $X$ von $A_\K$, das nach
+    \autoref{thm:gruppenschemaerweiterung} eine Gruppenschemastruktur
+    trägt.
+    Es bleibt zu zeigen, dass $A\cong X$ (d.\,h. $A$ Néron-Modell von
+    $A_\K$) mit zusammenhängenden Fasern (d.\,h. $A$ abelsches Schema,
+    da $A$ nach Voraussetzung bereits glatt und eigentlich) ist.
+    \begin{description}
+    \item[$A\cong X$] $X$ ist als flaches $R$-Schema mit
+      zusammenhängender generischer Faser $A_\K$ zusammenhängend.
+      % ???
+      Die Néron-Abbildungseigenschaft von $X$ liefert
+      zur Identität $\Id_{A_\K}$ einen $R$-Morphismus $A\to X$, der
+      bereits offene Immersion ist \cite[4.3/1 (ii) oder
+      4.4/1]{neron}.
+      % ???
+      Nachdem $A$ eigentlich ist, ist das Bild dieses Morphismus
+      geschlossen in $X$ und mit $X$ zusammenhängend ist er ein
+      Isomorphismus.
+    \item[$A$ hat zusammenhängende Fasern]
+      \OE{} sei $R$ diskreter Bewertungsring nach
+      \autoref{thm:neronmodelllokal}.
+      Dann ist nur noch die spezielle Faser über dem geschlossenen
+      Punkt zu überprüfen, die nach \cite[5.5.1]{EGA3} zusammenhängend
+      ist.
+      % ??? z.z.: A irreduzibel
+    \end{description}
+  \end{proof}
 \end{Satz}
 
 
@@ -670,10 +797,10 @@ den Halmen flach sind.
 \begin{Definition}[Gute Reduktion]
 %$X/S$ hat Gute Reduktion nach dem Primideal $P\in S$ heißt, dass die
 %Faser $X_P$ Glattheit erhält.
-Sei $(A,\m)$ ein diskreter Bewertungsring, $\K=\Quot(A)$ und $X/\K$
+Sei $R$ ein Dedekindring, $\K=\Quot(R)$ und $X/\K$
 ein eigentliches glattes $\K$-Schema.
 Wir sagen $X$ hat \emph{gute Reduktion}, falls es ein eigentliches
-glattes $A$-schema $Y$ gibt, so dass $X$ isomorph zur generischen
+glattes $R$-schema $Y$ gibt, so dass $X$ isomorph zur generischen
 Faser $Y_{\K}$ von $Y$ ist. D.\,h. das folgende Diagramm ist
 kartesisch
 \begin{center}
@@ -681,11 +808,11 @@ kartesisch
   X \arrow[r]\arrow[d]
   \arrow[dr, phantom, "\ulcorner", very near start]
   & Y \arrow[d] \\
-  \k(\n) \arrow[r]
-  & \Spec(A)
+  \Spec(\K) \arrow[r]
+  & \Spec(R)
 \end{tikzcd}
 \end{center}
-\cite[Definition 3.1]{goodreduction}
+\cite[Definition 3.1]{goodreduction}, \cite[vgl.][Chapter 1.4]{neron}
 \end{Definition}
 
 
