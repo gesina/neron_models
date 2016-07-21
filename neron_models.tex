@@ -1,6 +1,6 @@
 \documentclass[german]{scrreprt}
 \input{neron_models-def.tex}
-\hyphenation{Né-ron=Ab-bil-dungs-ei-gen-schaft}
+\hyphenation{Né-ron=Ab-bil-dungs-ei-gen-schaft Grup-pen-sche-ma-ta}
 
 % TITEL
 \hypersetup{
@@ -18,13 +18,16 @@
 \maketitle
 \tableofcontents
 
-%\chapter{Motivation}
+\chapter{Motivation}
+Wir werden nur elliptische Kurven über Körpern der Charakteristik
+ungleich 2, 3 betrachten.
 
 %----------
 
 \chapter{Gruppenschemata}
+Im Folgenden sei $S$ ein Schema.
 \begin{Definition}[$S$-Gruppenschema]
-  Sei $S$ ein Schema. Ein \emph{Gruppenschema über $S$} ist ein
+  Ein \emph{Gruppenschema über $S$} ist ein
   $S$-Schema $\pi\colon G\to S$ zusammen mit $S$-Morphismen
   \begin{align*}
     \mu\colon G\times_S G &\longto G
@@ -116,6 +119,21 @@
   \cite[Proposition IV.3.2]{silverman2}
 \end{Bemerkung}
 
+\begin{Definition}[Morphismen von Gruppenschemata]
+  Seien $G$ und $H$ $S$-Gruppenschemata.
+  Ein Morphismus $f\colon G\to H$ von $S$-Schemata ist ein Morphismus
+  von $S$-Gruppenschemata, falls die induzierten Abbildungen
+  \begin{gather*}
+  (\bullet\circ f)\colon G(T)\to H(T)
+  \end{gather*}auf den $T$-wertigen Punkten
+  Gruppenhomomorphismen sind für alle $S$-Schemata $T$.
+  In anderen Worten
+  \begin{gather*}
+    f\circ\mu_G = \mu_H\circ(f\times f)
+  \end{gather*}
+  \cite[Definition 4.42]{wedhorn}
+\end{Definition}
+
 \begin{Bemerkung}
   Ein Gruppenschema $X$ ist keine Gruppe auf seinen Punkten, da das
   Faserprodukt topologisch nicht mit dem Produkt der zugrundeliegenden
@@ -135,6 +153,32 @@
   ist.
   \cite[s.][Exercise 3.16]{wedhorn} und \cite[Corollary 16.51]{wedhorn}
 \end{Bemerkung}
+\end{Definition}
+
+\begin{Definition}[Untergruppenschema]
+  Sei $G$ ein $S$-Gruppenschema.
+  Ein $S$-Untergruppenschema von $G$ ist ein geschlossenes
+  $S$-Unterschema von $G$, dessen geschlossene Immersion ein
+  Homomorphismus von Gruppenschemata ist.
+  \cite[vgl.][Definition 4.45]{wedhorn}
+\end{Definition}
+
+\begin{Definition}[Identitätskomponente]
+  Sei $G$ ein $S$-Gruppenschema.
+  % Ist $S=\Spec(\K)$ für einen Körper $\K$ und $G$ von endlichem Typ
+  % über $\K$, ist die Identitätskomponente von $G$ das größte
+  % zusammenhängende $S$-Untergruppenschema von $G$.
+  % % ??? Wikipedia
+  % Im allgemeinen Fall ist die Identitätskomponente die Vereinigungen
+  % der Identitätskomponenten der Fasern.
+  % % ??? Weitere Voraussetzungen?
+  % \cite[S.\,154]{neron}
+  Die Identitätskomponente einer Faser $G_s$ ($s\in S$) von $G$ ist
+  die Zusammenhangskomponente von $G_s$, die $\sigma_0(s)$ enthält.
+  Die Identitäts-~oder Zusammenhangskomponente von $G$ ist
+  die Vereinigung aller Identitätskomponenten der Fasern von $G$
+  \cite[Remark IV.6.1.2]{silverman2}.
+  Die Zusammenhangskomponente ist ein Untergruppenschema.
 \end{Definition}
 
 
@@ -373,6 +417,10 @@ folgenden Sinne:
   \end{proof}
 \end{Satz}
 
+
+Néron-Modelle sind besonders interessant für Gruppenschemata, da sich
+die Gruppenstruktur auf das Néron-Modell erweitert.
+
 \begin{Bemerkung}\label{thm:gruppenschemaerweiterung}
   Sei $X$ Néron-Modell über $\Spec(R)$ seiner generischen Faser
   $X_\K$. Ist $X_\K$ ein $\K$-Gruppenschema, so wird diese durch die
@@ -401,22 +449,6 @@ folgenden Sinne:
   \end{proof}
 \end{Bemerkung}
 
-\begin{Bemerkung}[Spezialfall elliptische Kurven]
-  Sei $X_\K$ eine elliptische Kurve, d.\,h. ein
-  glattes, projektives (also separiertes), integrales, reguläres
-  $\K$-Schema endlichen Typs vom Genus 1.
-  
-  Dann ist ein Néron-Modell von $X_\K$ nach
-  \ref{thm:gruppenschemaerweiterung} und \ref{nerongruppenschemaglatt} ein
-  glattes $R$-Modell und Gruppenschema $X/R$ mit der
-  Néron-Abbildungseigenschaft:
-  \begin{quote}
-    Für jedes weitere glatte $R$-Modell und Gruppenschema $Y$ wird jeder
-    $\K$-Morphismus $Y_\K\to X_\K$ auf den generischen Fasern durch
-    einen eindeutigen $R$-Morphismus $Y\to X$ erweitert.
-  \end{quote}
-  \cite[Chapter IV.5]{silverman2}
-\end{Bemerkung}
 
 %------
 
@@ -543,6 +575,72 @@ Gruppenschemastruktur abelsch ist:
 \end{Satz}
 
 %----------
+
+\section{Néron-Modelle elliptischer Kurven}
+Elliptische Kurven sind abelsche Varietäten und nach
+\autoref{thm:exneronmodellabvarietaet} hat somit jede elliptische
+Kurve ein Néron-Modell. Wir werden uns damit befassen, wie sich diese
+Modelle konkret angeben lassen mithilfe der Weierstraßgleichung der
+Kurve.
+
+\begin{Bemerkung}[Spezialfall elliptische Kurven]
+  Sei $E_\K$ eine elliptische Kurve, d.\,h. ein
+  glattes, projektives (also separiertes), integrales, reguläres
+  $\K$-Schema endlichen Typs vom Genus 1.
+  
+  Dann ist ein Néron-Modell von $E_\K$ nach
+  \ref{thm:gruppenschemaerweiterung} und \ref{nerongruppenschemaglatt} ein
+  glattes $R$-Modell und Gruppenschema $E/R$ mit der
+  Néron-Abbildungseigenschaft:
+  \begin{quote}
+    Für jedes weitere glatte $R$-Schema $Y$ wird jeder
+    $\K$-Morphismus $Y_\K\to E_\K$ auf den generischen Fasern durch
+    einen eindeutigen $R$-Morphismus $Y\to E$ erweitert.
+  \end{quote}
+  \cite[Chapter IV.5]{silverman2}
+\end{Bemerkung}
+
+Im Folgenden sei $E_\K$ immer eine elliptische Kurve über dem
+Bewertungskörper $\K$ mit Bewertungsring $R$.
+
+Einige Aussagen vorweg:
+\begin{Satz}
+  Sei $W^0$ der glatte Teil des projektiven $R$-Unterschemas
+  $W\subset\P_R^n$, das durch eine bzgl. $R$ minimale
+  Weierstraßgleichung von $E$ erzeugt wird.
+  Das offene $R$-Unterschema $W^0$ der glatten Punkte von $W$ ist ein
+  glattes $R$-Gruppenschema, das $E$ erweitert, und die
+  Identitätskomponente des Néron-Modells von $E$ über $R$.
+  \cite[Corollary IV.9.1]{silverman2} oder
+  \cite[Chapter 1.5, S.\,23]{neron}
+\end{Satz}
+
+\begin{Satz}
+  Der diskrete Bewertungsring $R$ sei strikt henselsch mit algebraisch
+  abgeschlossenem Quotientenkörper $\K$ und
+  $W$ ein minimales reguläres, eigentliches, flaches $R$-Modell der
+  elliptischen Kurve $E_\K$.
+  Dann ist das $R$-Unterschema der glatten Punkte von $W$ ein
+  Néron-Modell von $E_\K$.
+  \cite[1.5, Proposition 1, S.\,21]{neron}
+  \begin{proof}
+    …
+  \end{proof}
+
+  Fehlt: \cite[Theorem IV.6.1]{silverman2}
+  (ähnlich, ohne Bed. an den Ring, dafür mehr an das Modell)
+\end{Satz}
+
+
+% --------
+
+\chapter{Ausblick}
+Tate's Algorithmus zur Berechnung der speziellen Faser bzw. des
+Néron-Modells und des minimalen eigentlichen, regulären Modells einer
+elliptischen Kurve
+\cite[IV.9]{silverman2}
+
+% --------
 
 \appendix
 \chapter{Definitionen}
@@ -672,8 +770,23 @@ den algebraischen Abschluss weiterhin integral ist).
   Dimension 1,
   also ein projektives, integrales $\K$-Schema endlichen Typs.
 
-  Eine elliptische Kurve über $\K$ ist eine reguläre Kurve vom Genus 1.
-  Elliptische Kurven sind glatt \cite[Proposition III.3.1]{silverman}.
+  Eine elliptische Kurve über $\K$ ist eine reguläre Kurve $E$ vom
+  Genus 1 zusammen mit einem $\K$-Schnitt $O\in E(\K)$.
+  Elliptische Kurven sind glatte \cite[Proposition III.3.1]{silverman}
+  $\K$-Gruppenschemata mit Nullelement $O$
+  \cite{silverman}.
+\end{Definition}
+
+\begin{Definition}[minimale Weierstraßgleichung]
+  Eine Weierstraßgleichung ($\Char(\K)\neq2,3$) einer elliptischen
+  Kurve über dem Bewertungskörper $\K$ mit diskretem Bewertungsring $R$
+  \begin{gather*}
+    Y^2Z = X^3 + \beta XZ^2 + \gamma Z^3
+  \end{gather*}
+  heißt minimal, wenn für die Koeffizienten $\beta, \gamma\in R$ gilt
+  und die Ordnung der Diskriminante $\ord_\K(\Delta)$ minimal
+  bzgl. homogenem Koordinatenwechsel ist.
+  \cite[Chapter 1.5, S.\,22]{neron}
 \end{Definition}
 
 \begin{Definition}[Regulär]
