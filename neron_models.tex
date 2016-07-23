@@ -26,7 +26,7 @@ ungleich 2, 3 betrachten.
 
 \chapter{Gruppenschemata}
 Im Folgenden sei $S$ ein Schema.
-\begin{Definition}[$S$-Gruppenschema]
+\begin{Definition}[$S$"=Gruppenschema]
   Ein \emph{Gruppenschema über $S$} ist ein
   $S$-Schema $\pi\colon G\to S$ zusammen mit $S$-Morphismen
   \begin{align*}
@@ -120,9 +120,9 @@ Im Folgenden sei $S$ ein Schema.
 \end{Bemerkung}
 
 \begin{Definition}[Morphismen von Gruppenschemata]
-  Seien $G$ und $H$ $S$-Gruppenschemata.
+  Seien $G$ und $H$ $S$"=Gruppenschemata.
   Ein Morphismus $f\colon G\to H$ von $S$-Schemata ist ein Morphismus
-  von $S$-Gruppenschemata, falls die induzierten Abbildungen
+  von $S$"=Gruppenschemata, falls die induzierten Abbildungen
   \begin{gather*}
   (\bullet\circ f)\colon G(T)\to H(T)
   \end{gather*}auf den $T$-wertigen Punkten
@@ -143,7 +143,7 @@ Im Folgenden sei $S$ ein Schema.
 \end{Bemerkung}
 
 \begin{Bemerkung}\label{gruppenschemaaequivalenzen}
-  Für ein $\K$-Gruppenschema endlichen Typs über einem Körper $\K$
+  Für ein $\K$"=Gruppenschema endlichen Typs über einem Körper $\K$
   sind glatt und geometrisch reduziert äquivalent.
   \cite[8.5, Excercise 11]{bosch}
   
@@ -156,15 +156,15 @@ Im Folgenden sei $S$ ein Schema.
 \end{Definition}
 
 \begin{Definition}[Untergruppenschema]
-  Sei $G$ ein $S$-Gruppenschema.
-  Ein $S$-Untergruppenschema von $G$ ist ein geschlossenes
+  Sei $G$ ein $S$"=Gruppenschema.
+  Ein $S$"=Untergruppenschema von $G$ ist ein geschlossenes
   $S$-Unterschema von $G$, dessen geschlossene Immersion ein
   Homomorphismus von Gruppenschemata ist.
   \cite[vgl.][Definition 4.45]{wedhorn}
 \end{Definition}
 
 \begin{Definition}[Identitätskomponente]
-  Sei $G$ ein $S$-Gruppenschema.
+  Sei $G$ ein $S$"=Gruppenschema.
   % Ist $S=\Spec(\K)$ für einen Körper $\K$ und $G$ von endlichem Typ
   % über $\K$, ist die Identitätskomponente von $G$ das größte
   % zusammenhängende $S$-Untergruppenschema von $G$.
@@ -184,7 +184,7 @@ Im Folgenden sei $S$ ein Schema.
 
 \begin{Definition}[Abelsche Varietät]\label{def:abelschevarietaet}
 Eine abelsche Varietät $X/\K$ ist ein eigentliches, glattes,
-irreduzibles $\K$-Gruppenschema.
+irreduzibles $\K$"=Gruppenschema.
 \cite[9.6, Definition 1]{bosch} oder \cite[Definition 16.52]{wedhorn}
 
 (Hier ist glatt äquivalent zu geometrisch reduziert und irreduzibel
@@ -198,7 +198,7 @@ Abelsche Varietäten sind projektiv.
 \end{Definition}
 
 \begin{Definition}[abelsches Schema]
-Ein abelsches $S$-Schema ist ein eigentliches, glattes $S$-Gruppenschema,
+Ein abelsches $S$-Schema ist ein eigentliches, glattes $S$"=Gruppenschema,
 dessen Fasern abelsche Varietäten sind 
 (also zusätzlich irreduzibel bzw. zusammenhängend,
 s. \ref{def:abelschevarietaet} und \ref{gruppenschemaaequivalenzen},
@@ -231,7 +231,7 @@ nachdem eigentlich und glatt stabil unter Basiswechsel sind).
 \end{Definition}
 
 \begin{Satz}
-  Sei $R$ Dedekindring mit Quotientenkörper $\K$,
+  Sei $R$ Dedekindring mit (perfektem) Quotientenkörper $\K$,
   $X/R$ arithmetische Fläche, $X_\K/\K$ generische Faser.
   Dann gilt
   \begin{enumerate}[label=(\roman*)]
@@ -250,7 +250,7 @@ nachdem eigentlich und glatt stabil unter Basiswechsel sind).
 \end{Satz}
 
 \begin{Satz}
-  Sei $R$ Dedekindring mit Quotientenkörper $\K$,
+  Sei $R$ Dedekindring mit (perfektem) Quotientenkörper $\K$,
   $C/\K$ reguläre, projektive Kurve vom Geschlecht $g$.
   \begin{enumerate}[label=(\roman*)]
   \item Dann existiert ein eigentliches, reguläres $R$-Modell $X$ von $C$,
@@ -270,15 +270,15 @@ nachdem eigentlich und glatt stabil unter Basiswechsel sind).
   \end{enumerate}
 \end{Satz}
 
-\chapter{Néron Modelle}
+\chapter{Néron-Modelle}
 Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
 
-\begin{Definition}[Néron Modell]
+\begin{Definition}[Néron-Modell]
   Sei $X_\K$ ein glattes, separiertes $\K$-Schema endlichen Typs.
 
-  Ein \emph{Néron Modell} von $X_\K$ ist ein glattes, separiertes
+  Ein \emph{Néron-Modell} von $X_\K$ ist ein glattes, separiertes
   $R$-Modell $X/R$ endlichen Typs mit der
-  sog. Néron-Abbildungseigenschaft:
+  sog. \NAbbEig:
   \begin{quote}
     Für jedes weitere glatte $R$-Schema $Y$ wird jeder
     $\K$-Morphismus $Y_\K\to X_\K$ auf den generischen Fasern durch
@@ -305,13 +305,13 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
   \begin{proof}
     \begin{enumerate}[label=(\roman*)]
     \item Sei $X'$ ein weiteres Néron-Modell von $X_\K$.
-      Dann liefert die Néron-Abbildungseigenschaft zur Identität
+      Dann liefert die \NAbbEig zur Identität
       $\Id_{X_\K}\colon X_\K\to X_\K$ eindeutige Morphismen
       $\phi\colon X'\to X$ und $\psi\colon X\to X'$.
       Die Verknüpfungen $\phi\circ\psi\colon X\to X$ und
       $\psi\circ\phi\colon X'\to X'$ sind jeweils die Identität auf
       der generischen Faser $X_\K$, welche nach der Eindeutigkeit in der
-      Néron-Abbildungseigenschaft eindeutig durch die Identitäten auf
+      \NAbbEig eindeutig durch die Identitäten auf
       $X$ bzw. $X'$ erweitert wird. Also sind $\phi,\psi$ inverse
       Isomorphismen.
     \item
@@ -321,7 +321,7 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
       ist glatt, separiert und von endlichem Typ 
       (d.\,h. lokal von endlichem Typ und quasikompakt), da alles
       stabil unter Basiswechsel ist. Es ist somit nur die
-      Néron-Abbildungseigenschaft zu prüfen.
+      \NAbbEig zu prüfen.
       Sei also $Y'$ glattes $R'$-Schema mit generischer Faser
       $Y_{\K'}'$ und $\phi_{\K'}\colon Y_{\K'}'\to X_{\K'}$ ein
       $\K'$-Morphismus. 
@@ -340,7 +340,7 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
           Y_{\K'}' \overset{\phi_{\K'}}\longto X_{\K'}
           \overset{\proj_{X_\K}}\longto X_{\K}
         \end{gather*}
-        mit der Néron-Abbildungseigenschaft zu einem eindeutigen
+        mit der \NAbbEig zu einem eindeutigen
         $R$-Morphismus
         \begin{gather*}
           \phi_R\colon Y'\longto X
@@ -391,7 +391,7 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
       \item[Eindeutigkeit]
         Für jeden weiteren Lift $\psi_{R'}$ von $\phi_{\K'}$ ist
         $\proj_{X}\circ\psi_{R'}$ ein Lift von $\phi_{K}$ und es gilt
-        aufgrund der Eindeutigkeit in der Néron-Abbildungseigenschaft
+        aufgrund der Eindeutigkeit in der \NAbbEig
         $\proj_{X}\circ\psi_{R'}=\phi_{R}$.
         Damit lässt $\psi$ ebenfalls das obige Diagramm kommutieren
         und ist nach der universellen Eigenschaft des Faserprodukts
@@ -407,7 +407,7 @@ folgenden Sinne:
   Für ein $R$-Schema $X$ endlichen Typs ist äquivalent
   \begin{enumerate}[label=(\roman*)]
   \item $X$ ist Néron-Modell seiner generischen Faser
-  \item $X\times_R\Spec(\O{S,s})$ ist Néron-Modell seiner generischen
+  \item $X\times_R\Spec(\O_{\Spec(R),s})$ ist Néron-Modell seiner generischen
     Faser für alle geschlossenen Punkte $s\in\Spec(R)$.
   \end{enumerate}
   D.\,h. man kann \OE{} davon ausgehen, dass $R$ lokal (also diskreter
@@ -423,16 +423,16 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
 
 \begin{Bemerkung}\label{thm:gruppenschemaerweiterung}
   Sei $X$ Néron-Modell über $\Spec(R)$ seiner generischen Faser
-  $X_\K$. Ist $X_\K$ ein $\K$-Gruppenschema, so wird diese durch die
-  Néron-Abbildungseigenschaft eindeutig auf eine
-  $S$-Gruppenschemastruktur auf $X$ erweitert.
+  $X_\K$. Ist $X_\K$ ein $\K$"=Gruppenschema, so wird diese durch die
+  \NAbbEig eindeutig auf eine
+  $S$"=Gruppenschemastruktur auf $X$ erweitert.
   \cite[1.2, Proposition 6]{neron}
 \end{Bemerkung}
 
 \begin{Bemerkung}\label{nerongruppenschemaglatt}
-  Ist $X_\K$ ein $\K$-Gruppenschema (also separiert) und $X$ ein
+  Ist $X_\K$ ein $\K$"=Gruppenschema (also separiert) und $X$ ein
   glattes $R$-Modell und Gruppenschema von $X_\K$, das die
-  Néron-Abbildungseigenschaft erfüllt, so ist $X$ bereits separiert,
+  \NAbbEig erfüllt, so ist $X$ bereits separiert,
   also ein Néron-Modell.
   \cite[1.2, Remark 7]{neron} 
   \begin{proof}[Beweisskizze]
@@ -440,12 +440,12 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
     Einheitsschnitt $\sigma_0\colon\Spec(R)\to X$ eine geschlossene
     Immersion ist
     \cite[Lemma 38.6.1]{stacksproject} oder \cite[7.1, Lemma 2]{neron}.
-    Dieser erweitert wegen der Néron-Abbildungseigenschaft eindeutig
+    Dieser erweitert wegen der \NAbbEig eindeutig
     den Einheitsschnitt $\sigma_{0,\K}\colon\Spec(\K)\to X_\K$ von
     $X_\K$, welcher bereits geschlossene Immersion ist.
     Dies zeigt, dass $\sigma_0$ geschlossene Immersion ist
     (man kann zeigen, dass $\Im(\sigma_{0,\K})=\Im(\sigma_0)$) und
-    somit $X$ separiert. 
+    somit ist $X$ separiert. 
   \end{proof}
 \end{Bemerkung}
 
@@ -473,7 +473,7 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
 
 \begin{Satz}[Existenz von Néron-Modellen]\label{thm:existenz}
   Sei $\Rsh$ die strikte Henselisierung von $R$ und $\Ksh$ der
-  Quotientenkörper. Ein glattes $\K$-Gruppenschema $X_\K$ endlichen
+  Quotientenkörper. Ein glattes $\K$"=Gruppenschema $X_\K$ endlichen
   Typs hat genau dann ein Néron-Modell über $R$, wenn $X_\K(\Ksh)$
   beschränkt in $X_\K$ ist.
   % eigentlich => beschränkt
@@ -483,7 +483,7 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
   Abelsche Varietäten über $\K$ haben ein Néron-Modell über $R$.
   \begin{proof}
     Abelsche Varietäten über $\K$ sind insbesondere glatte und
-    eigentliche $\K$-Gruppenschemata, siehe
+    eigentliche $\K$"=Gruppenschemata, siehe
     \autoref{def:abelschevarietaet}.
     Nachdem eigentlich beschränkt impliziert, ist die Bedingung aus
     \autoref{thm:existenz} erfüllt.
@@ -511,11 +511,15 @@ Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
     $A_\K$) mit zusammenhängenden Fasern (d.\,h. $A$ abelsches Schema,
     da $A$ nach Voraussetzung bereits glatt und eigentlich) ist.
     \begin{description}
-    \item[$A\cong X$] $X$ ist als flaches $R$-Schema
+    \item[$A\cong X$] $X$ ist als flaches,
       % ???
-      mit zusammenhängender generischer Faser $A_\K$ zusammenhängend.
-      % ???
-      Die Néron-Abbildungseigenschaft von $X$ liefert
+      endlich präsentiertes (da glattes) $R$-Schema
+      ein universell offenes $R$-Schema \cite[Theorem 14.33]{wedhorn}
+      und somit zusammenhängend nach
+      \cite[Proposition 3.24]{wedhorn}, da die generische Faser $A_\K$
+      zusammenhängend und $\Spec(R)$ ein integrales,
+      insb. irreduzibles, Schema ist.
+      Die \NAbbEig von $X$ liefert
       zur Identität $\Id_{A_\K}$ einen $R$-Morphismus $A\to X$, der
       bereits offene Immersion ist \cite[4.3/1 (ii) oder
       4.4/1]{neron}.
@@ -552,7 +556,7 @@ Gruppenschemastruktur abelsch ist:
     eigentlichen, glatten Schemas über dieser Umgebung ist.
     Diese Schemata sind dann nach \autoref{thm:abelscheneronmodelle}
     bereits die lokalen Néron-Modelle und abelsch.
-    Wegen der Néron-Abbildungseigenschaft ist die Kozykelbedingung
+    Wegen der \NAbbEig ist die Kozykelbedingung
     erfüllt und sie lassen sich zu einem abelschen $S$-Schema
     verkleben.
 
@@ -591,7 +595,7 @@ Kurve.
   Dann ist ein Néron-Modell von $E_\K$ nach
   \ref{thm:gruppenschemaerweiterung} und \ref{nerongruppenschemaglatt} ein
   glattes $R$-Modell und Gruppenschema $E/R$ mit der
-  Néron-Abbildungseigenschaft:
+  \NAbbEig:
   \begin{quote}
     Für jedes weitere glatte $R$-Schema $Y$ wird jeder
     $\K$-Morphismus $Y_\K\to E_\K$ auf den generischen Fasern durch
@@ -601,19 +605,86 @@ Kurve.
 \end{Bemerkung}
 
 Im Folgenden sei $E_\K$ immer eine elliptische Kurve über dem
-Bewertungskörper $\K$ mit Bewertungsring $R$.
+Quotientenkörper $\K$ des Dedekindringes $R$.
 
 Einige Aussagen vorweg:
 \begin{Satz}
+  Sei $R$ hier diskreter Bewertungsring mit (perfektem) Quotientenkörper
+  $\K$.
+  Betrachte eine Weierstraßgleichung, die $E_\K$ erzeugt, mit
+  Koeffizienten in $R$.
   Sei $W^0$ der glatte Teil des projektiven $R$-Unterschemas
-  $W\subset\P_R^n$, das durch eine bzgl. $R$ minimale
-  Weierstraßgleichung von $E$ erzeugt wird.
+  $W\subset\P_R^n$, das durch diese Gleichung erzeugt wird.
   Das offene $R$-Unterschema $W^0$ der glatten Punkte von $W$ ist ein
-  glattes $R$-Gruppenschema, das $E$ erweitert, und die
-  Identitätskomponente des Néron-Modells von $E$ über $R$.
+  glattes $R$"=Gruppenschema, das $E$ erweitert.
+  \cite[Theorem IV.5.3 (c)]{silverman2}
+
+  Ist die Weierstraßgleichung minimal gewählt,
+  so ist $W^0$ die Identitätskomponente des Néron-Modells von
+  $E$ über $R$.
   \cite[Corollary IV.9.1]{silverman2} oder
   \cite[Chapter 1.5, S.\,23]{neron}
 \end{Satz}
+
+In bestimmten Fällen erhält man das Néron-Modell bereits durch die
+oben beschriebene Konstruktion:
+\begin{Korollar}
+  Betrachte wieder eine Weierstraßgleichung zu $E_\K$ mit
+  Koeffizienten im Dedekindring $R$ ($\K$ perfekt) und das durch diese
+  Gleichung erzeugte projektive $R$-Schema $W$.
+  Ist $W$ glatt, so ist $W$ bereits das Néron-Modell von $E_\K$ über
+  $R$.
+  \cite[Corollary IV.6.3]{silverman2}
+\end{Korollar}
+\begin{Bemerkung}
+  Ist $R$ diskreter Bewertungsring, die Weierstraßgleichung
+  bzgl. der Bewertung auf $R$ minimal gewählt und die spezielle Faser
+  von $W$ glatt, so ist $W$ bereits glatt, also Néron-Modell von
+  $E_\K$.
+  \cite[Remark IV.5.4.1]{silverman2} und \cite[für die Definition von
+  guter Reduktion][Chapter VII.5]{silverman}
+  \begin{proof}
+    % Gute Reduktion auf elliptischen Kurven heißt, dass die spezielle
+    % Faser von $W$ regulär (also glatt also ebenfalls elliptische
+    % Kurve) ist
+    % \cite[Chapter VII.5]{silverman}.
+    Wir zeigen, dass $W$ integral und endlich präsentiert ist.
+    % Dann ist $W$ nach \cite[Proposition IV.2.9]{silverman2} glatt.
+    Dann wird der eindeutige generische Punkt von $W$ auf den
+    generischen Punkt von $R$ geschickt, was zeigt, dass $W$ flach ist
+    \cite[Proposition III.9.7]{hartshorne}.
+    $W$ ist demnach als flaches, lokal endlich präsentiertes Schema mit
+    glatten Fasern glatt \cite[8.5, Proposition 17]{bosch}.
+    
+    \begin{description}
+    \item[integral]
+      Die zwei Fasern von $W$ sind nach Voraussetzung reduziert, also
+      ist $W$ reduziert.
+      
+      Dass $W$ irreduzibel ist, kann auf der affinen, offenen
+      Standardüberdeckung des $\P_R^2$ durch drei Kopien des $\A_R^2$
+      überprüft werden, da diese nicht-leeren Schnitt haben. Hier
+      erhalten wir die Kurven im $\A_R^2$, die durch die
+      dehomogenisierten Formen der Weierstraßgleichung erzeugt
+      werden. D.\,h. zum Erzeuger $f(X,Y,Z)\in R[X,Y,Z]$ von $W$ durch 
+      die Weierstraßgleichung $f(X,Y,Z)=0$  erhalten wir Erzeuger
+      $f_Z\in R[\frac{X}{Z},\frac{Y}{Z}]=R[x,y]$, $f_Y\in R[x,z]$,
+      $f_X\in R[y,z]$ der affinen Kurven.
+      Diese stimmen nach Konstruktion mit den Erzeugern für die affinen
+      Kurven zu $E_\K$ überein und sind daher irreduzibel über $\K$,
+      also auch irreduzibel über $R$.
+      Entsprechend ist die gewählte affine, offene Überdeckung von $W$
+      irreduzibel und somit $W$ irreduzibel.
+      % ??? Stimmt Irreduzibilität so?
+    \item[endlich präsentiert]
+      Die zuvor beschriebene Überdeckung ist eine Überdeckung mit
+      Spektren von endlich präsentierten $R$-Algebren,
+      also ist $W$ lokal endlich präsentiert.
+      % ??? Stimmt das?
+    \end{description}
+  \end{proof}
+\end{Bemerkung}
+
 
 \begin{Satz}
   Der diskrete Bewertungsring $R$ sei strikt henselsch mit algebraisch
@@ -773,7 +844,7 @@ den algebraischen Abschluss weiterhin integral ist).
   Eine elliptische Kurve über $\K$ ist eine reguläre Kurve $E$ vom
   Genus 1 zusammen mit einem $\K$-Schnitt $O\in E(\K)$.
   Elliptische Kurven sind glatte \cite[Proposition III.3.1]{silverman}
-  $\K$-Gruppenschemata mit Nullelement $O$
+  $\K$"=Gruppenschemata mit Nullelement $O$
   \cite{silverman}.
 \end{Definition}
 
@@ -797,7 +868,7 @@ $\O_{X,x}$ ein regulärer (lokaler) Ring ist
 
 \begin{Definition}[flacher Morphismus]
 Ein Morphismus $f\colon X\to Y$ von Schemata ist flach, wenn alle
-induzierten Ringhomomorphismen $f_x^\#\colon \O_{S,f(x)}\to\O_{X,x}$  auf
+induzierten Ringhomomorphismen $f_x^\#\colon \O_{Y,f(x)}\to\O_{X,x}$  auf
 den Halmen flach sind.
 \cite[]{bosch, goodreduction}
 \end{Definition}
@@ -853,12 +924,20 @@ den Halmen flach sind.
   $S$-Schema.  
   \cite[8.5, Definition 1]{bosch}
 
-  $f$ glatt in $x$ ist äquivalent zu $f$ flach in $x$ und $X_{f(x)}$
-  glatt über $\k(f(x))$.
+  Für $X$ lokal endlich präsentiert ist $f$ glatt in $x$ äquivalent zu
+  $f$ flach in $x$ und $X_{f(x)}$ glatt über $\k(f(x))$.
   \cite[8.5, Proposition 17]{bosch}
 
+  Ist $X$ ein $\K$-Schema lokal endlichen Typs sind glatt und
+  geometrisch regulär äquivalent
+  \cite[Corollary 6.32]{wedhorn}.
+  Ist $\K$ perfekter Körper (z.\,B. $\Char(\K)=0$), so ist dies sogar
+  äquivalent zu regulär
+  \cite[Remark 6.33]{wedhorn}.
+
   \begin{Bemerkung}
-    Glatt impliziert reduziert und lokal von endlichem Typ.
+    Glatt impliziert reduziert, lokal von endlichem Typ und flach
+    \cite[für flach s.][Theorem 14.22]{wedhorn}.
   \end{Bemerkung}
 \end{Definition}
 
@@ -952,6 +1031,8 @@ kartesisch
 \end{tikzcd}
 \end{center}
 \cite[Definition 3.1]{goodreduction}, \cite[vgl.][Chapter 1.4]{neron}
+
+Alternative Definition für elliptische Kurven: \cite[Chapter VII.5]{silverman}
 \end{Definition}
 
 
