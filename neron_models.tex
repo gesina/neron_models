@@ -511,22 +511,21 @@ Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
     $A_\K$) mit zusammenhängenden Fasern (d.\,h. $A$ abelsches Schema,
     da $A$ nach Voraussetzung bereits glatt und eigentlich) ist.
     \begin{description}
-    \item[$A\cong X$] $X$ ist als flaches,
-      % ???
-      endlich präsentiertes (da glattes) $R$-Schema
-      ein universell offenes $R$-Schema \cite[Theorem 14.33]{wedhorn}
-      und somit zusammenhängend nach
-      \cite[Proposition 3.24]{wedhorn}, da die generische Faser $A_\K$
-      zusammenhängend und $\Spec(R)$ ein integrales,
-      insb. irreduzibles, Schema ist.
-      Die \NAbbEig von $X$ liefert
-      zur Identität $\Id_{A_\K}$ einen $R$-Morphismus $A\to X$, der
-      bereits offene Immersion ist \cite[4.3/1 (ii) oder
-      4.4/1]{neron}.
+    \item[$A\cong X$] $X$ ist glatt, also nach
+      \autoref{thm:implikationenglatt} flaches und endlich
+      präsentiertes, $R$-Schema.
+      Als solches ist es (universell) offen \cite[Theorem 14.33]{wedhorn}
+      und somit zusammenhängend nach \cite[Proposition 3.24]{wedhorn},
+      da die generische Faser $A_\K$ zusammenhängend und $\Spec(R)$
+      ein integrales, insb. irreduzibles, Schema ist.
+      Die \NAbbEig von $X$ liefert zur Identität $\Id_{A_\K}$ einen
+      $R$-Morphismus $A\to X$, der bereits offene Immersion ist
+      \cite[4.3/1 (ii) oder 4.4/1]{neron}.
       % ???
       Nachdem $A$ eigentlich ist, ist das Bild dieses Morphismus
-      geschlossen in $X$ und mit $X$ zusammenhängend ist er ein
-      Isomorphismus.
+      geschlossen in $X$ und, da $X$ zusammenhängend ist, ist er ein
+      Isomorphismus (injektiv als offene Immersion und surjektiv, da
+      er surjektiv auf der einzigen Zusammenhangskomponente ist).
     \item[$A$ hat zusammenhängende Fasern]
       \OE{} sei $R$ diskreter Bewertungsring nach
       \autoref{thm:neronmodelllokal}.
@@ -547,7 +546,6 @@ Gruppenschemastruktur abelsch ist:
   $S\subset\Spec(R)$ die Menge der geschlossenen Punkte, über denen
   $A_\K$ gute Reduktion hat zusammen mit dem generischen Punkt
   ($S$ ist entsprechend offen und dicht in $\Spec(R)$).
-  % ???
   Dann ist $X\times_R S$ abelsches Schema über $S$.
   \cite[1.4, Theorem 3]{neron}
   \begin{proof}[Beweisskizze]
@@ -608,39 +606,120 @@ Im Folgenden sei $E_\K$ immer eine elliptische Kurve über dem
 Quotientenkörper $\K$ des Dedekindringes $R$.
 
 Einige Aussagen vorweg:
-\begin{Satz}
+\begin{Lemma}\label{thm:erweiterunggruppenstruktur}
   Sei $R$ hier diskreter Bewertungsring mit (perfektem) Quotientenkörper
   $\K$.
   Betrachte eine Weierstraßgleichung, die $E_\K$ erzeugt, mit
   Koeffizienten in $R$.
   Sei $W^0$ der glatte Teil des projektiven $R$-Unterschemas
   $W\subset\P_R^n$, das durch diese Gleichung erzeugt wird.
+  ($W$ ist der schematische Abschluss von $E_\K$ im $\P_R^2$.)
+  % ???
   Das offene $R$-Unterschema $W^0$ der glatten Punkte von $W$ ist ein
-  glattes $R$"=Gruppenschema, das $E$ erweitert.
+  glattes $R$"=Gruppenschema und $R$-Modell von $E_\K$, das die
+  Gruppenstruktur von $E_\K$ erweitert in dem
+  Sinne, dass $W^0(R)=E_\K(\K)$ als Gruppen.
   \cite[Theorem IV.5.3 (c)]{silverman2}
-
-  Ist die Weierstraßgleichung minimal gewählt,
+  \begin{proof} Für $\Char(\K)\neq 2,3$:
+    \begin{enumerate}
+    \item $W^0=W\setminus\{\gamma\}$:
+      \cite[Remark IV.5.4.2]{silverman2}
+      Die nicht-glatten Punkte von $W$ sind die singulären Punkte
+      der Fasern.
+      % ???
+      Die generische Faser ist regulär (ell. Kurve), die spezielle
+      Faser ist durch eine Weierstraßgleichung über $\k(\m)$
+      definiert. Sie hat also maximal einen singulären Punkt $\gamma$.
+      \cite[Proposition III.1.4 (a)]{silverman}
+    \item $W^0$ ist $R$-Modell von $E_\K$:
+      $W$ ist $R$-Modell von $E_\K$ per Definition,
+      $W^0=W\setminus\{\gamma\}$ hat dieselbe generische Faser
+    \item \cite[Corollary IV.4.4]{silverman2}
+      $E_\K(\K)=W(R)=W^0(R)$:
+      \begin{enumerate}
+      \item $E_\K(\K)=W(R)$: $W$ eigentlich
+      \item $W(R)\subset W^0(R)$:
+        nach \cite[Proposition IV.4.3 (b)]{silverman2}
+      \item $W(R)=W^0(R)$: Alle Bilder von Schnitten $W(R)$ sind
+        glatt
+      \end{enumerate}
+    \item rationale Abbildungen
+      $\mu\colon W\times_R W\dashrightarrow W$,
+      $i\colon W\dashrightarrow W$:
+      von generischer Faser $E_\K$ induziert, erfüllen Gruppenaxiome
+      auf (größter, offener) Definitionsmenge (wo es Morphismus ist)
+    \item $\mu$ definiert auf $W^0$:
+      \begin{enumerate}
+      \item Aufteilen in affine Überdeckung
+        ($W_Z=W\cap U_Z=\{[x,y,z]\in W| z\neq0\}$,
+        $W_Y=W\cap U_Y=\{[x,y,z]\in W| y\neq0\}$)
+        $W_Z\times W_Z$, $W_Z\times W_Y$, $W_Y\times W_Z$,
+        $W_Y\times W_Y$
+      \item $\mu$ auf $W_Z\times W_Z\setminus(\gamma,\gamma)$
+        definiert:
+        Schreibe rationale Abbildung von $\mu$ auf und finde
+        Gleichungen für Unterschema, an denen der Nullpunkt getroffen
+        würde
+      \end{enumerate}
+    \item $i$ definiert auf $W^0$:
+      $i\colon [X,Y,Z]\mapsto [X,-Y,Z]$ ist Morphismus in $\P_R^2$,
+      also definiert auf ganz $W$
+    \end{enumerate}
+  \end{proof}
+\end{Lemma}
+\begin{Bemerkung}
+    Ist die Weierstraßgleichung minimal gewählt,
   so ist $W^0$ die Identitätskomponente des Néron-Modells von
   $E$ über $R$.
   \cite[Corollary IV.9.1]{silverman2} oder
   \cite[Chapter 1.5, S.\,23]{neron}
-\end{Satz}
+\end{Bemerkung}
 
 In bestimmten Fällen erhält man das Néron-Modell bereits durch die
 oben beschriebene Konstruktion:
-\begin{Korollar}
+\begin{Lemma}\label{thm:rationalzumorphismus}
+  Sei $G$ ein $R$"=Gruppenschema, $X$ ein glattes $R$-Schema und
+  $\phi\colon X\dashrightarrow G$ eine $R$-rationale Abbildung, deren
+  Definitionsbereich dicht in jeder Faser von $X$ liegt.
+  Ist $G$ eigentlich, ist $\phi$ Morphismus.
+  \cite[Proposition IV.6.2]{silverman2}
+\end{Lemma}
+\begin{Korollar}\label{thm:neronmausweierstrassgl}
   Betrachte wieder eine Weierstraßgleichung zu $E_\K$ mit
   Koeffizienten im Dedekindring $R$ ($\K$ perfekt) und das durch diese
   Gleichung erzeugte projektive $R$-Schema $W$.
   Ist $W$ glatt, so ist $W$ bereits das Néron-Modell von $E_\K$ über
   $R$.
   \cite[Corollary IV.6.3]{silverman2}
+  \begin{proof}
+    Für die Gruppenstruktur betrachte vorerst die Unterschemata
+    $W\times_R R_s$ von $W$ über den Lokalisierungen
+    $R_s$ ($s\in\Spec(R)$, $\Spec(R_s)\hookrightarrow\Spec(R)$) von $R$.
+    Diese tragen nach \autoref{thm:erweiterunggruppenstruktur} eine
+    Gruppenschemastruktur, die $E_\K$ erweitert.
+    Diese Strukturen verkleben nach Definition zu einer
+    Gruppenschemastruktur auf ganz $W$.
+    % ???
+
+    Für die \NAbbEig sei $X$ ein weiteres glattes $R$-Schema mit
+    generischer Faser $X_\K$ und $\phi_\K\colon X_\K\to E_\K$ ein
+    Morphismus.
+    Die Konstruktion von $W$ liefert uns eine rationale Abbildung
+    $\phi\colon X\dashrightarrow W$, die $\phi_\K$ erweitert.
+    % ???
+    Nachdem $W$ glattes, d.\,h. insb. eigentliches, $R$-Gruppenschema
+    ist, ist $\phi$ ein Morphismus, der $\phi_\K$ erweitert, und die
+    \NAbbEig ist erfüllt.
+  \end{proof}
 \end{Korollar}
-\begin{Bemerkung}
-  Ist $R$ diskreter Bewertungsring, die Weierstraßgleichung
+Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
+überprüft werden:
+\begin{Korollar}
+  Sei $R$ diskreter Bewertungsring, die Weierstraßgleichung
   bzgl. der Bewertung auf $R$ minimal gewählt und die spezielle Faser
-  von $W$ glatt, so ist $W$ bereits glatt, also Néron-Modell von
-  $E_\K$.
+  von $W$ glatt.
+  Dann ist $W$ bereits glatt, also Néron-Modell von $E_\K$ nach
+  \autoref{thm:neronmausweierstrassgl}.
   \cite[Remark IV.5.4.1]{silverman2} und \cite[für die Definition von
   guter Reduktion][Chapter VII.5]{silverman}
   \begin{proof}
@@ -648,14 +727,14 @@ oben beschriebene Konstruktion:
     % Faser von $W$ regulär (also glatt also ebenfalls elliptische
     % Kurve) ist
     % \cite[Chapter VII.5]{silverman}.
-    Wir zeigen, dass $W$ integral und endlich präsentiert ist.
+    Für die Glattheit von $W$ reicht es zu zeigen, dass $W$ integral
+    und lokal endlich präsentiert ist.
     % Dann ist $W$ nach \cite[Proposition IV.2.9]{silverman2} glatt.
-    Dann wird der eindeutige generische Punkt von $W$ auf den
-    generischen Punkt von $R$ geschickt, was zeigt, dass $W$ flach ist
-    \cite[Proposition III.9.7]{hartshorne}.
+    Integral bedeutet, dass der eindeutige generische Punkt von $W$
+    auf den generischen Punkt von $R$ geschickt, was zeigt, dass $W$
+    flach ist \cite[Proposition III.9.7]{hartshorne}.
     $W$ ist demnach als flaches, lokal endlich präsentiertes Schema mit
     glatten Fasern glatt \cite[8.5, Proposition 17]{bosch}.
-    
     \begin{description}
     \item[integral]
       Die zwei Fasern von $W$ sind nach Voraussetzung reduziert, also
@@ -683,7 +762,7 @@ oben beschriebene Konstruktion:
       % ??? Stimmt das?
     \end{description}
   \end{proof}
-\end{Bemerkung}
+\end{Korollar}
 
 
 \begin{Satz}
@@ -935,7 +1014,7 @@ den Halmen flach sind.
   äquivalent zu regulär
   \cite[Remark 6.33]{wedhorn}.
 
-  \begin{Bemerkung}
+  \begin{Bemerkung}\label{thm:implikationenglatt}
     Glatt impliziert reduziert, lokal von endlichem Typ und flach
     \cite[für flach s.][Theorem 14.22]{wedhorn}.
   \end{Bemerkung}
