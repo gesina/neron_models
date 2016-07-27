@@ -230,7 +230,7 @@ nachdem eigentlich und glatt stabil unter Basiswechsel sind).
   $X$ ist also ein $X_\K$-Modell.
 \end{Definition}
 
-\begin{Satz}
+\begin{Satz}\label{thm:ratpkteregulaeremodelle}
   Sei $R$ Dedekindring mit (perfektem) Quotientenkörper $\K$,
   $X/R$ arithmetische Fläche, $X_\K/\K$ generische Faser.
   Dann gilt
@@ -260,10 +260,12 @@ nachdem eigentlich und glatt stabil unter Basiswechsel sind).
   \item Ist $g\geq1$ kann dieses minimal gewählt werden, d.\,h.
     für jedes andere eigentliche, reguläre Modell für $C/\K$ und jeden
     Isomorphismus der generischen Fasern ist die induzierte birationale
-    Abbildung ein $R$-Isomorphismus.
+    Abbildung
+    % ??? Welche induzierte rat. Abbildung?
+    ein $R$-Isomorphismus.
     \cite[Proposition IV.4.5(b)]{silverman2}
   \item Für ein minimales, eigentliches, reguläres Modell $X$ für $C/\K$
-    gilt, dass jeder $\K$-Automorphismus von $C$ sich zu einem
+    gilt, dass jeder $\K$"=Automorphismus von $C$ sich zu einem
     $R$-Morphismus von $X$ erweitert, der glatte Punkte auf glatte
     Punkte abbildet.
     \cite[Proposition IV.4.6]{silverman2}
@@ -635,7 +637,8 @@ Einige Aussagen vorweg:
       $W$ ist $R$-Modell von $E_\K$ per Definition,
       $W^0=W\setminus\{\gamma\}$ hat dieselbe generische Faser
     \item \cite[Corollary IV.4.4]{silverman2}
-      $E_\K(\K)=W(R)=W^0(R)$:
+      $E_\K(\K)=W(R)=W^0(R)$
+      (s. \autoref{thm:ratpkteregulaeremodelle}):
       \begin{enumerate}
       \item $E_\K(\K)=W(R)$: $W$ eigentlich
       \item $W(R)\subset W^0(R)$:
@@ -644,8 +647,8 @@ Einige Aussagen vorweg:
         glatt
       \end{enumerate}
     \item rationale Abbildungen
-      $\mu\colon W\times_R W\dashrightarrow W$,
-      $i\colon W\dashrightarrow W$:
+      $\mu\colon W\times_R W\dra W$,
+      $i\colon W\dra W$:
       von generischer Faser $E_\K$ induziert, erfüllen Gruppenaxiome
       auf (größter, offener) Definitionsmenge (wo es Morphismus ist)
     \item $\mu$ definiert auf $W^0$:
@@ -679,7 +682,7 @@ In bestimmten Fällen erhält man das Néron-Modell bereits durch die
 oben beschriebene Konstruktion:
 \begin{Lemma}\label{thm:rationalzumorphismus}
   Sei $G$ ein $R$"=Gruppenschema, $X$ ein glattes $R$-Schema und
-  $\phi\colon X\dashrightarrow G$ eine $R$-rationale Abbildung, deren
+  $\phi\colon X\dra G$ eine $R$-rationale Abbildung, deren
   Definitionsbereich dicht in jeder Faser von $X$ liegt.
   Ist $G$ eigentlich, ist $\phi$ Morphismus.
   \cite[Proposition IV.6.2]{silverman2}
@@ -705,8 +708,8 @@ oben beschriebene Konstruktion:
     generischer Faser $X_\K$ und $\phi_\K\colon X_\K\to E_\K$ ein
     Morphismus.
     Die Konstruktion von $W$ liefert uns eine rationale Abbildung
-    $\phi\colon X\dashrightarrow W$, die $\phi_\K$ erweitert.
-    % ???
+    $\phi\colon X\dra W$, die $\phi_\K$ erweitert.
+    % ??? Welche rationale Abbildung?
     Nachdem $W$ glattes, d.\,h. insb. eigentliches, $R$-Gruppenschema
     ist, ist $\phi$ ein Morphismus, der $\phi_\K$ erweitert, und die
     \NAbbEig ist erfüllt.
@@ -1114,6 +1117,39 @@ kartesisch
 Alternative Definition für elliptische Kurven: \cite[Chapter VII.5]{silverman}
 \end{Definition}
 
+\begin{Definition}[rationale Abbildung]\label{def:ratabb}
+  Sei $S$ Schema, und seien $X$ und $Y$ glatte $S$-Schemata.
+
+  Ein offenes Unterschema $U\subset X$ heißt $S$-dicht in $X$, falls
+  für alle $s\in S$ die Faser $U_s=U\times_S\k(s)$ topologisch dicht
+  in der Faser $X_s=X\times_S\k(s)$ liegt.
+
+  Eine $S$-rationale Abbildung $\phi\colon X\dra Y$ ist eine
+  Äquivalenzklasse der Menge
+  \begin{gather*}
+    \left\{
+      \psi\colon U\to Y \text{ $S$-Morphismus}
+      \;\middle|\;
+      U\subset X \text{ $S$-dicht, offen in $X$}
+    \right\}
+  \end{gather*}
+  wobei $\psi\colon U\to Y$ äquivalent zu $\psi'\colon U'\to Y$ ist,
+  falls sie auf einer $S$-dichten, offenen Teilmenge von $U\cap U'$
+  übereinstimmen.
+
+  $\phi\colon X\dra Y$ heißt definiert in $x\in X$, falls $\phi$ von
+  einem Morphismus $\psi\colon U\to Y$ repräsentiert werden kann mit
+  $x\in U$.
+  Der \emph{Definitionsbereich $\Dom(\phi)$ von $\phi$} sind die
+  Punkte, in denen $\phi$ definiert ist. Er ist offene, $S$-dichte
+  Teilmenge von $X$. I.\,A. gibt es keinen Morphismus $\Dom(\phi)\to
+  Y$, der $\phi$ repräsentiert.
+
+  $\phi\colon X\dra Y$ heißt $S$-birational, falls es von einem
+  $S$-Morphismus $\psi\colon U\to Y$ repräsentiert werden kann, der
+  die offene Immersion einer $S$-dichten, offenen Teilmenge von $Y$
+  ist.
+\end{Definition}
 
 
 \nocite{*}
