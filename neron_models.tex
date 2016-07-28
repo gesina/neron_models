@@ -216,6 +216,9 @@ nachdem eigentlich und glatt stabil unter Basiswechsel sind).
   $Y\times_S\Spec(\K)=Y_K\cong X$ für die generische Faser gilt.
 \end{Definition}
 
+% -----
+
+\section{Arithmetische Flächen und minimale, reguläre, eigentliche Modelle}
 \begin{Definition}[arithmetische Fläche]
   Sei $R$ Dedekindring mit Quotientenkörper $\K$.
   Eine arithmetische Fläche $X$ über $R$ ist ein
@@ -271,6 +274,101 @@ nachdem eigentlich und glatt stabil unter Basiswechsel sind).
     \cite[Proposition IV.4.6]{silverman2}
   \end{enumerate}
 \end{Satz}
+
+% ------
+
+\section{Weierstraßmodelle elliptischer Kurven}
+
+\subsection{Weierstraßgleichungen}
+Jede elliptische Kurve $E_\K$ über einem beliebigen Körper $\K$ kann
+durch eine homogene Gleichung der Form
+\begin{gather*}
+  0 = Y^2 Z + \c_1 XYZ + \c_3 YZ^2 - X^3 - \c_2X^2 Z - \c_4 XZ^2 - \c_6 Z^3
+  \eqqcolon F\in\K[X,Y,Z]
+\end{gather*}
+mit Koeffizienten $\c_1,\dotsc,\c_6\in\K$ und Nullpunkt $O=[0,1,0]$
+dargestellt werden. Umgekehrt ist jede reguläre Kurve, die durch eine
+solche Gleichung definiert wird, eine elliptische Kurve mit genanntem
+Nullpunkt \cite[Proposition III.3.1]{silverman}.
+Gleichungen dieser Form werden \emph{Weierstraßgleichungen} genannt.
+
+Für $\Char(\K)\neq 2,3$ lässt sich eine Weierstraßgleichung durch
+homogene Koordinatentransformation vereinfachen zur Form
+\begin{gather*}
+  Y^2 Z = X^3 + \beta XZ^2 + \gamma Z^3
+\end{gather*}
+bzw. dehomogenisiert
+\begin{gather*}
+  y^2 = x^3 + \beta x + \gamma
+\end{gather*}
+wobei $\beta,\gamma\in\K$.
+Für Berechnungen wird im Folgenden von dieser vereinfachten Form
+ausgegangen. Für $\Char(\K)=2,3$ sei verwiesen auf
+\cite[Appendix: Elliptic Curves in Characteristics 2 and 3]{silverman}.
+
+
+% DISKRIMINANTE
+Zu einer Weierstraßgleichung ist die sog. \emph{Diskriminante}
+assoziiert, welche für eine Gleichung in obiger Form definiert ist als
+\begin{gather*}
+  \Delta = -16\left(4\beta^3 + 27\gamma^2\right)
+\end{gather*}
+Eine Weierstraßgleichung ist genau dann regulär (definiert also eine
+elliptische Kurve), wenn $\Delta\neq 0$ gilt,
+und im singulären Fall gibt es genau einen singulären Punkt
+\cite[Proposition III.1.4]{silverman}.
+
+
+\subsection{Minimale Weierstraßgleichung}
+% (MINIMALE) WEIERSTRASSGLEICHUNG ÜBER $R$
+Sei $R$ ein kommutativer Ring mit Einheit und $\K=\Quot(R)$.
+Uns interessiert nun, ob sich ein $R$-Schema finden lässt, dass die
+Struktur der elliptischen Kurve, in erster Betrachtung die
+Weierstraßgleichung, erhält.
+
+Beschränken wir unsere Betrachtung auf elliptische Kurven über
+Bewertungskörpern $\K$ mit diskretem Bewertungsring $R$, können wir
+die Weierstraßgleichung durch homogenen Koordinatenwechsel bezüglich
+der Ringstruktur formulieren:
+Sei $\pi$ ein Uniformierer.
+Die Koeffizienten haben die Form $\beta=u_\beta\pi^n_\beta$, $\gamma=u_\gamma\pi^n_\gamma$ und
+entsprechend liegen beide nach Multiplikation mit $\phi^n$ in $R$ für
+genügend großes $n$. Zudem kommt der homogene Koordinatenwechsel
+\begin{gather*}
+  [x,y,z] \longmapsto [\pi^{-2n}x, \pi^{-3n}y, z]
+\end{gather*}
+dem Koeffizientenwechsel
+\begin{align*}
+  \beta&\mapsto \pi^{4n}\beta
+  &\gamma&\mapsto \pi^{6n}\gamma
+  &\Delta&\mapsto \pi^{12n}\Delta
+\end{align*}
+also der Multiplikation der Koeffizienten mit positiven Potenzen von
+$\pi$ gleich \cite[1.5, Lemma 2]{neron}.
+Ein Anwenden dieses Koordinatenwechsels mit genügend hohem $n$ ergibt
+entsprechend eine Gleichung mit Koeffizienten in $R$.
+
+Nachdem mit diesem Koordinatenwechsel auch die Diskriminante
+manipuliert werden kann, macht es Sinn, eine minimale Form der
+Weierstraßgleichung in $R$ zu definieren:
+\begin{Definition}[minimale Weierstraßgleichung]
+  Eine Weierstraßgleichung ($\Char(\K)\neq2,3$) einer elliptischen
+  Kurve über dem Bewertungskörper $\K$ mit diskretem Bewertungsring $R$
+  \begin{gather*}
+    Y^2Z = X^3 + \beta XZ^2 + \gamma Z^3
+  \end{gather*}
+  heißt minimal, wenn für die Koeffizienten $\beta, \gamma\in R$ gilt
+  und die Bewertung der Diskriminante $\ord_\K(\Delta)$ minimal
+  bzgl. homogenem Koordinatenwechsel ist.
+  \cite[Chapter 1.5, S.\,22]{neron}
+\end{Definition}
+
+Ein projektives $R$-Schema, das durch eine solche minimale
+Weierstraßgleichung hervorgeht, wird im folgenden
+\emph{Weierstraßmodell} genannt.
+
+
+%----------
 
 \chapter{Néron-Modelle}
 Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
@@ -532,7 +630,7 @@ Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
       \OE{} sei $R$ diskreter Bewertungsring nach
       \autoref{thm:neronmodelllokal}.
       Dann ist nur noch die spezielle Faser über dem geschlossenen
-      Punkt zu überprüfen, die nach \cite[5.5.1]{EGA3} zusammenhängend
+      Punkt zu überprüfen, die nach \cite[5.5.1]{EGAIII-1} zusammenhängend
       ist.
       % ???
     \end{description}
@@ -620,7 +718,7 @@ Einige Aussagen vorweg:
   Das offene $R$-Unterschema $W^0$ der glatten Punkte von $W$ ist ein
   glattes $R$"=Gruppenschema und $R$-Modell von $E_\K$, das die
   Gruppenstruktur von $E_\K$ erweitert in dem
-  Sinne, dass $W^0(R)=E_\K(\K)$ als Gruppen.
+  Sinne, dass $W^0(R)\cong E_\K(\K)$ ein Gruppenisomorphismus ist.
   \cite[Theorem IV.5.3 (c)]{silverman2}
   \begin{proof} Für $\Char(\K)\neq 2,3$:
     \begin{enumerate}
@@ -930,17 +1028,6 @@ den algebraischen Abschluss weiterhin integral ist).
   \cite{silverman}.
 \end{Definition}
 
-\begin{Definition}[minimale Weierstraßgleichung]
-  Eine Weierstraßgleichung ($\Char(\K)\neq2,3$) einer elliptischen
-  Kurve über dem Bewertungskörper $\K$ mit diskretem Bewertungsring $R$
-  \begin{gather*}
-    Y^2Z = X^3 + \beta XZ^2 + \gamma Z^3
-  \end{gather*}
-  heißt minimal, wenn für die Koeffizienten $\beta, \gamma\in R$ gilt
-  und die Ordnung der Diskriminante $\ord_\K(\Delta)$ minimal
-  bzgl. homogenem Koordinatenwechsel ist.
-  \cite[Chapter 1.5, S.\,22]{neron}
-\end{Definition}
 
 \begin{Definition}[Regulär]
 Ein Schema $X$ heißt regulär im Punk $x\in X$, wenn sein Halm
@@ -1118,6 +1205,7 @@ Alternative Definition für elliptische Kurven: \cite[Chapter VII.5]{silverman}
 \end{Definition}
 
 \begin{Definition}[rationale Abbildung]\label{def:ratabb}
+  \cite[Chapter 2.5]{neron}
   Sei $S$ Schema, und seien $X$ und $Y$ glatte $S$-Schemata.
 
   Ein offenes Unterschema $U\subset X$ heißt $S$-dicht in $X$, falls
