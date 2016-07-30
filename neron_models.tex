@@ -415,11 +415,69 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 
 % Für Regularität siehe \cite[Lemma IV.9.5]{silverman2}
 
+\begin{Lemma}\label{thm:glattüberdvr}
+  Sei $(R,\m)$ diskreter Bewertungsring, $\K=\Quot(R)$, $X$
+  irreduzibles
+  % ??? irreduzibel oder integral? (s. Hartshorne, III.9.7)
+  $R$-Schema lokal endlichen Typs (äquivalent: lokal endlich
+  repräsentiert \cite[Remark 10.36]{wedhorn}) mit nichtleerer,
+  generischer Faser $X_\K$.
+  Dann ist $X$ genau dann glattes $R$-Schema, wenn die Fasern glatt
+  sind.
+  % ??? lokal oder nicht lokal?
+  \begin{proof}
+    % siehe auch \cite[Proposition IV.2.9]{silverman2}
+    Ist $X$ glatt, so auch jede Faser, da Glattheit stabil unter
+    Basiswechsel ist.
+
+    Seien also die Fasern von $X$ glatt und insb. reduziert.
+    Dann ist $X$ ebenfalls reduziert, da Reduziertheit auf den Halmen
+    geprüft werden kann.
+    Außerdem ist $X$ nach Voraussetzung irreduzibel, daher integral,
+    und lokal endlich präsentiert.
+    Wir wissen, dass $X$ glatt ist, wenn es lokal endlich präsentiert
+    und flach über $R$ ist und seine zwei Fasern glatt sind
+    \cite[8.5, Proposition 17]{bosch}.
+    Es gilt also, Flachheit zu zeigen.
+    
+    Wir werden zeigen, dass aus integral und nichtleerer generischer
+    Faser $X_\K$ folgt, dass der eindeutige generische Punkt $\eta$
+    von $X$ auf den generischen Punkt von $R$ geschickt wird.
+    Das zeigt, dass $X$ flach ist \cite[Proposition III.9.7]{hartshorne}.
+
+    Nachdem $X$ integral ist, hat es einen eindeutigen generischen
+    Punkt $\eta$.
+    Angenommen, dieser wird durch die Abbildung, die $X$ zum
+    $R$-Schema macht, auf den geschlossenen Punkt $\m$ von $\Spec(R)$
+    geschickt.
+    Dann liegt $\eta$ im geschlossenen Urbild von $\m$ –
+    aber der Abschluss $\overline{\{\eta\}}=X$ von $\eta$ ist darin
+    enthalten. Entsprechend wäre die generische Faser $X_\K$
+    leer, was ein Widerspruch ist.
+    Also muss der generische Punkt auf den generischen Punkt geschickt
+    werden.
+  \end{proof}
+\end{Lemma}
+
 \begin{Lemma}\label{thm:weierstrassglatt}
-  Sei $R$ diskreter Bewertungsring, $\K=\Quot(R)$, $E_\K$ elliptische
-  Kurve über $\K$, $W$ ein Weierstraßmodell von $E_\K$ über $R$.
-  $W$ ist genau dann glatt, wenn die spezielle Faser von $W$ glatt
-  ist.
+  Sei $(R,\m)$ diskreter Bewertungsring,
+  $\K=\Quot(R)$,
+  der Restklassenkörper $\k(\m)=R/\m$ perfekt,
+  $E_\K$ elliptische Kurve über $\K$,
+  $W$ ein Weierstraßmodell von $E_\K$ über $R$
+  mit spezieller Faser $W_\m$ über $\k(\m)$.
+  Dann gilt
+  \begin{enumerate}[label=(\alph*)]
+  \item $W$ ist genau dann glatt, wenn die spezielle Faser von $W$ glatt
+    ist.
+  \item Ist $W$ nicht glatt, so ist der eindeutige singuläre Punkt
+    $\gamma$ der speziellen Faser der eindeutige Punkt, in dem $W$
+    nicht glatt ist, d.\,h.
+    \begin{gather*}
+      W^0\coloneqq W\setminus \{\gamma\}
+    \end{gather*}
+    ist das offene Unterschema der glatten Punkte von $W$.
+  \end{enumerate}
   % ??? Braucht man Minimalität?
   
   \cite[Remark IV.5.4.1]{silverman2} und \cite[für die Definition von
@@ -428,39 +486,55 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
   % Faser von $W$ regulär (also glatt also ebenfalls elliptische
   % Kurve) ist
   % \cite[Chapter VII.5]{silverman}.
+
   \begin{proof}
-    % siehe auch \cite[Proposition IV.2.9]{silverman2}
-    Ist $W$ glatt, so auch jede Faser, da Glattheit stabil unter
-    Basiswechsel ist.
+    \begin{enumerate}[label=(\alph*)]
+    \item $W$ ist irreduzibles, lokal endlich repräsentiertes
+      $R$-Schema (s. \autoref{thm:eigweierstrassmodelle}).
+      Daher ist es nach \autoref{thm:glattüberdvr} genau dann glatt,
+      wenn beide Fasern glatt sind. Nachdem $W_\K=E_\K$ nach
+      Voraussetzung glatt ist, ist $W$ genau dann glatt, wenn $W_\m$
+      glatt ist.
+    \item Für $\K$-Schemata lokal endlichen Typs sind glatt und
+      geometrisch regulär äquivalent \cite[Corollary 6.32]{wedhorn},
+      da $\K$ perfekt ist, ist dies sogar äquivalent zu regulär
+      \cite[Remark 6.33]{wedhorn}.
+      Schemata lokal endlichen Typs sind genau dann regulär, wenn sie
+      in allen geschlossenen Punkten regulär sind
+      \cite[Remark 6.25 (3)]{wedhorn}. Insbesondere sind alle
+      singulären Punkte geschlossen.
 
-    Sei also die spezielle Faser von $W$ glatt und insb. reduziert.
-    Dann ist $W$ reduziert, da die zwei Fasern von $W$ nach
-    Voraussetzung reduziert sind.
-    Außerdem ist $W$ nach \autoref{thm:eigweierstrassmodelle} 
-    irreduzibel, daher integral, und lokal endlich präsentiert.
-    Wir wissen, dass $W$ glatt ist, wenn es lokal endlich präsentiert
-    und flach über $R$ ist und seine zwei Fasern glatt sind
-    \cite[8.5, Proposition 17]{bosch}.
-    Es gilt also, Flachheit zu zeigen.
-    
-    Wir werden zeigen, dass aus integral und nichtleerer generischer
-    Faser $E_\K$ folgt, dass der eindeutige generische Punkt $\eta$
-    von $W$ auf den generischen Punkt von $R$ geschickt wird.
-    Das zeigt, dass $W$ flach ist \cite[Proposition III.9.7]{hartshorne}.
+      $W_\m$ ist als Weierstraßkurve über $\k(\m)$ ein $\k(\m)$-Schema
+      lokal endlichen Typs, also treffen obige Aussagen zu.
+      Nach \cite[Proposition III.1.4]{silverman} ist unter den
+      geschlossenen Punkten $W_\m(\k(\m))$ von $W_\m$ maximal ein
+      singulärer Punkt $\gamma$. Demnach kann $W_\m$ maximal in einem
+      geschlossenen Punkt $\gamma\in W_\m$ singulär (bzw. nicht
+      glatt) sein.
 
-    Nachdem $W$ integral ist, hat es einen eindeutigen generischen
-    Punkt $\eta$.
-    Angenommen, dieser wird durch die Abbildung, die $W$ zum
-    $R$-Schema macht, auf den geschlossenen Punkt $\m$ von $\Spec(R)$
-    geschickt.
-    Dann liegt $\eta$ im geschlossenen Urbild von $\m$ –
-    aber der Abschluss $\overline{\{\eta\}}=W$ von $\eta$ ist darin
-    enthalten. Entsprechend wäre die generische Faser $E_\K$
-    leer, was ein Widerspruch ist.
-    Also muss der generische Punkt auf den generischen Punkt geschickt
-    werden.
+      Angenommen, $W_\m$ habe den singulären Punkt
+      $\gamma$.
+      $W_\m=W\setminus E_\K$ ist als Urbild des geschlossenen Punktes
+      $\m$ von $\Spec(R)$ geschlossenes Unterschema von $W$.
+      Also ist der Punkt $\gamma$, der geschlossen in $W_\m$ ist, auch
+      geschlossener Punkt von $W$.
+      
+      Das Unterschema $W^0=W\setminus\gamma$ ist dementsprechend offen.
+      $W^0$ ist irreduzibel, da der Abschluss $\overline{W^0}=W$ in
+      $W$ irreduzibel ist nach \autoref{thm:eigweierstrassmodelle}.
+      Es ist als Unterschema von $W$ ebenfalls lokal endlich
+      repräsentiert (s. \autoref{thm:eigweierstrassmodelle}).
+      Es hat wie $W$ die (nichtleere) glatte, generische Faser $E_\K$ und
+      per Konstruktion die spezielle Faser $W_{\m}\setminus\{\gamma\}$,
+      welche nach Voraussetzung beide regulär (also glatt und reduzibel)
+      sind.
+      Damit ist es nach \autoref{thm:glattüberdvr} glatt über $R$
+      bzw. glattes $R$-Modell von $E_\K$ und das offene Unterschema
+      der glatten Punkte von $W$.
+    \end{enumerate}
   \end{proof}
 \end{Lemma}
+
 
 \begin{Bemerkung}\label{thm:weierstraßmodellglatt}
   Für den Fall eines diskreten Bewertungsringes $R$ liefert
@@ -493,31 +567,41 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 \begin{Lemma}\label{thm:erweiterunggruppenstruktur}
   Sei $R$ hier diskreter Bewertungsring mit (perfektem) Quotientenkörper
   $\K$.
-  Betrachte eine Weierstraßgleichung, die $E_\K$ erzeugt, mit
-  Koeffizienten in $R$.
-  Sei $W^0$ der glatte Teil des projektiven $R$-Unterschemas
-  $W\subset\P_R^n$, das durch diese Gleichung erzeugt wird.
-  ($W$ ist der schematische Abschluss von $E_\K$ im $\P_R^2$.)
+  % Betrachte eine Weierstraßgleichung, die $E_\K$ erzeugt, mit
+  % Koeffizienten in $R$.
+  % Sei $W^0$ der glatte Teil des projektiven $R$-Unterschemas
+  % $W\subset\P_R^n$, das durch diese Gleichung erzeugt wird.
+  % ($W$ ist der schematische Abschluss von $E_\K$ im $\P_R^2$.)
   % ???
-  Das offene $R$-Unterschema $W^0$ der glatten Punkte von $W$ ist ein
-  glattes $R$"=Gruppenschema und $R$-Modell von $E_\K$, das die
-  Gruppenstruktur von $E_\K$ erweitert in dem
-  Sinne, dass $W^0(R)\cong E_\K(\K)$ ein Gruppenisomorphismus ist.
-  \cite[Theorem IV.5.3 (c)]{silverman2}
+  Sei $W$ ein Weierstraßmodell von $E_\K$ über $R$.
+  Das offene $R$-Unterschema $W^0$ der glatten Punkte von $W$ ist
+  ebenfalls $R$-Modell von $E_\K$
+  und ein glattes $R$"=Gruppenschema mit Addition bzw. Inversenbildung
+  \begin{gather*}
+    \mu_0\colon W^0\times_R W^0 \longto W^0
+    \qquad \text{bzw.}\qquad
+    i_0\colon W^0\longto W^0
+  \end{gather*}
+  welche die Gruppenstruktur (Addition $\mu$ und Inversenbildung $i$)
+  von $E_\K$ als abelsche Varietät erweitern
+  \cite[Theorem IV.5.3 (c)]{silverman2}.
+  $W^0(R)\to W(R) \cong E_\K(\K)$ ist ein Gruppenisomorphismus,
+  falls $W$ regulär ist.
+  \cite[Theorem IV.5.3 (b)]{silverman2}.
   \begin{proof} Für $\Char(\K)\neq 2,3$:
     \begin{enumerate}
-    \item $W^0=W\setminus\{\gamma\}$:
-      \cite[Remark IV.5.4.2]{silverman2}
-      Die nicht-glatten Punkte von $W$ sind die singulären Punkte
-      der Fasern.
-      % ???
-      Die generische Faser ist regulär (ell. Kurve), die spezielle
-      Faser ist durch eine Weierstraßgleichung über $\k(\m)$
-      definiert. Sie hat also maximal einen singulären Punkt $\gamma$.
-      \cite[Proposition III.1.4 (a)]{silverman}
-    \item $W^0$ ist $R$-Modell von $E_\K$:
-      $W$ ist $R$-Modell von $E_\K$ per Definition,
-      $W^0=W\setminus\{\gamma\}$ hat dieselbe generische Faser
+    \item $W^0=W\setminus\{\gamma\}$: \autoref{thm:weierstrassglatt}
+      % \cite[Remark IV.5.4.2]{silverman2}
+      % Die nicht-glatten Punkte von $W$ sind die singulären Punkte
+      % der Fasern.
+      % % ???
+      % Die generische Faser ist regulär (ell. Kurve), die spezielle
+      % Faser ist durch eine Weierstraßgleichung über $\k(\m)$
+      % definiert. Sie hat also maximal einen singulären Punkt $\gamma$.
+      % \cite[Proposition III.1.4 (a)]{silverman}
+    \item $W^0$ ist $R$-Modell von $E_\K$: \autoref{thm:weierstrassglatt}
+      % $W$ ist $R$-Modell von $E_\K$ per Definition,
+      % $W^0=W\setminus\{\gamma\}$ hat dieselbe generische Faser
     \item \cite[Corollary IV.4.4]{silverman2}
       $E_\K(\K)=W(R)=W^0(R)$
       (s. \autoref{thm:ratpkteregulaeremodelle}):
