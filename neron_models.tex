@@ -22,6 +22,11 @@
 Wir werden nur elliptische Kurven über Körpern der Charakteristik
 ungleich 2, 3 betrachten.
 
+Für Ringe $R$ wird $R$ stellenweise als Kürzel für das zugehörige
+affine Schema $\Spec(R)$ verwendet. Die Bedeutung ist aus dem Kontext
+zu erschließen (z.\,B. ist mit $X\times_R \K$ das Faserprodukt
+$X\times_{\Spec(R)}\Spec(\K)$ gemeint).
+
 %----------
 
 \chapter{Gruppenschemata}
@@ -792,9 +797,10 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
       Isomorphismen.
     \item
       % WARUM ÉTALE UND NICHT NUR GLATT???!!
-      Sei $X_{R'}\coloneqq X\times_R \Spec(R')$ der Basiswechsel
-      mit generischer Faser $X_{\K'}=X_\K\times_R\Spec(\K')$. $X_{R'}$
-      ist glatt, separiert und von endlichem Typ 
+      Sei $X_{R'}\coloneqq X\times_R R'$ der Basiswechsel
+      mit generischer Faser
+      $X_{\K'}=X_{R'}\times_{R'}\K'=X_\K\times_\K\K'$.
+      $X_{R'}$ ist glatt, separiert und von endlichem Typ 
       (d.\,h. lokal von endlichem Typ und quasikompakt), da alles
       stabil unter Basiswechsel ist. Es ist somit nur die
       \NAbbEig zu prüfen.
@@ -816,13 +822,13 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
           Y_{\K'}' \overset{\phi_{\K'}}\longto X_{\K'}
           \overset{\proj_{X_\K}}\longto X_{\K}
         \end{gather*}
-        mit der \NAbbEig zu einem eindeutigen
+        mit der \NAbbEig von $X$ zu einem eindeutigen
         $R$-Morphismus
         \begin{gather*}
           \phi_R\colon Y'\longto X
         \end{gather*}
         erweitern.
-        So erhalten wir kanonisch einen $R$-Morphismus
+        So erhalten wir kanonisch einen eindeutigen $R$-Morphismus
         $\phi_{R'} = (\phi_R\;,\;\pi_{R'})$ auf dem
         Faserprodukt (und somit einen $R'$-Morphismus)
         \begin{center}
@@ -839,7 +845,7 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
             & \Spec(R)
           \end{tikzcd}
         \end{center}
-        der $\phi_{\K'}$ erweitert, denn
+        $\phi_{R'}$ erweitert $\phi_{\K'}$, denn
         \begin{align*}
           \phi_{R'}|_{Y_{\K'}'}
           &= \left(
@@ -850,16 +856,16 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
           % \pi|_{Y_{\K'}'})\colon Y'\times_{R'}\K'\to Y'\to\Spec(R')
           % \overset{\text{Faserprod.}}{=}
           % \pi_{\K'}\colon Y'\times_{R'}\K'\to \Spec(K')\to\Spec(R')
-          &= \left(
+          &\overset{\mathllap{\text{Faserprod.}}}{=} \left(
             \phi_R|_{Y_{\K'}'}\;,\;
             \pi_{\K'}\colon
             Y_{\K'}'\to \Spec(K')\hookrightarrow\Spec(R')
             \right)\\
-          &= \left(
+          &\overset{\mathllap{\text{Def. }\phi_R}}{=} \left(
             \phi_{\K}\;,\; \pi_{\K'}
             \right)\\
-          &= \left(
-            \proj_X\circ\phi_{\K'}\;,\;
+          &\overset{\mathllap{\text{Def. }\phi_\K}}{=} \left(
+            \proj_{X_\K}\circ\phi_{\K'}\;,\;
             \proj_{\K'}\circ\phi_{\K'}
             \right)\\
           &= \phi_{\K'}
