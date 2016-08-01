@@ -299,27 +299,27 @@ nachdem eigentlich und glatt stabil unter Basiswechsel sind).
       Schnitts $\phi\in X(R)$ in $X^0$ liegt (also nur glatte Punkte
       enthält). Dann ist die Inklusion ein Isomorphismus.
 
-      $X$ ist nach Voraussetzung flach über $R$, also ist glatt in
-      einem Punkt $x\in X$ äquivalent dazu, dass die Faser von $X$, in
-      der $x$ liegt, glatt in $x$ ist
-      \cite[8.5, Proposition 17]{bosch}.
-      Die Fasern von $X$ sind nach Voraussetzung Vereinigungen
-      projektiver Kurven, also Schemata lokal endlichen Typs über
-      einem der perfekten Restklassenkörper von $R$.
-      Nach \cite[Corollary 6.32]{wedhorn} und
-      \cite[Remark 6.33]{wedhorn} sind also glatt und regulär auf den
-      Fasern äquivalent.
+      % $X$ ist nach Voraussetzung flach über $R$, also ist glatt in
+      % einem Punkt $x\in X$ äquivalent dazu, dass die Faser von $X$, in
+      % der $x$ liegt, glatt in $x$ ist
+      % \cite[8.5, Proposition 17]{bosch}.
+      % Die Fasern von $X$ sind nach Voraussetzung Vereinigungen
+      % projektiver Kurven, also Schemata lokal endlichen Typs über
+      % einem der perfekten Restklassenkörper von $R$.
+      % Nach \cite[Corollary 6.32]{wedhorn} und
+      % \cite[Remark 6.33]{wedhorn} sind also glatt und regulär auf den
+      % Fasern äquivalent.
       
       Nach \autoref{thm:arithflschnittbilderglatt} enthält das Bild
       $\phi(\Spec(R))$ eines Schnitts $\phi\in X(R)$ nur reguläre
-      Punkte der Fasern, also glatte Punkte von $X$.
+      Punkte der Fasern, also nach Voraussetzung glatte Punkte von $X$.
       Damit ist die Behauptung gezeigt.
     \end{enumerate}
   \end{proof}
 \end{Satz}
 
 \begin{Bemerkung}
-  Die obigen Bedinungen treffen z.\,B. auf ein eigentliches,
+  Die obigen Bedingungen treffen z.\,B. auf ein eigentliches,
   reguläres, flaches $R$-Schema zu, also insbesondere arithmetische
   Flächen (diese sind integral, normal, exzellent, flach, von
   endlichem Typ).
@@ -518,7 +518,6 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
   $R$-Schema mit nichtleerer, generischer Faser $X_\K$.
   Dann ist $X$ genau dann glattes $R$-Schema, wenn die Fasern glatt
   sind.
-  % ??? lokal oder nicht lokal?
   \begin{proof}
     % siehe auch \cite[Proposition IV.2.9]{silverman2}
     Ist $X$ glatt, so auch jede Faser, da Glattheit stabil unter
@@ -576,7 +575,6 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
     ist das offene Unterschema der glatten Punkte von $W$.
     $W^0$ ist glattes $R$-Modell von $E_\K$.
   \end{enumerate}
-  % ??? Braucht man Minimalität?
   
   \cite[Remark IV.5.4.1]{silverman2} und \cite[für die Definition von
   guter Reduktion][Chapter VII.5]{silverman}
@@ -670,7 +668,7 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
   % Sei $W^0$ der glatte Teil des projektiven $R$-Unterschemas
   % $W\subset\P_R^n$, das durch diese Gleichung erzeugt wird.
   % ($W$ ist der schematische Abschluss von $E_\K$ im $\P_R^2$.)
-  % ???
+  % ??? Ist W der schematische Abschluss von E_K?
   Sei $W$ ein Weierstraßmodell von $E_\K$ über $R$ und
   $W^0$ das offene $R$-Unterschema der glatten Punkte von $W$ 
   (ebenfalls $R$-Modell von $E_\K$ nach \autoref{thm:weierstrassglatt}).
@@ -696,7 +694,6 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
       % \cite[Remark IV.5.4.2]{silverman2}
       % Die nicht-glatten Punkte von $W$ sind die singulären Punkte
       % der Fasern.
-      % % ???
       % Die generische Faser ist regulär (ell. Kurve), die spezielle
       % Faser ist durch eine Weierstraßgleichung über $\k(\m)$
       % definiert. Sie hat also maximal einen singulären Punkt $\gamma$.
@@ -977,7 +974,7 @@ Abelsche Varietäten stellen einen Spezialfall dar. Hier ist bei guter
 Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
 \begin{Satz}\label{thm:abelscheneronmodelle}
   Sei $A_\K$ abelsche Varietät über $\K$ mit guter Reduktion
-  (d.\,h. es gibt ein glattes, eigentliches $R$-Modell $A$ von $A_\K$).
+  d.\,h. es gibt ein glattes, eigentliches $R$-Modell $A$ von $A_\K$.
   Dann ist $A$ Néron-Modell von $A_\K$ und die induzierte
   Gruppenschemastruktur macht $A$ zu einem abelschen Schema.
   \cite[1.4, Proposition 2]{neron}
@@ -991,7 +988,7 @@ Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
     da $A$ nach Voraussetzung bereits glatt und eigentlich) ist.
     \begin{description}
     \item[$A\cong X$] $X$ ist glatt, also nach
-      \autoref{thm:implikationenglatt} flaches und endlich
+      \autoref{thm:implikationenglatt} flaches und lokal endlich
       präsentiertes, $R$-Schema.
       Als solches ist es (universell) offen \cite[Theorem 14.33]{wedhorn}
       und somit zusammenhängend nach \cite[Proposition 3.24]{wedhorn},
@@ -1000,7 +997,7 @@ Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
       Die \NAbbEig von $X$ liefert zur Identität $\Id_{A_\K}$ einen
       $R$-Morphismus $A\to X$, der bereits offene Immersion ist
       \cite[4.3/1 (ii) oder 4.4/1]{neron}.
-      % ???
+      % ??? Wieso ist die Erweiterung von id hier offene Immersion?
       Nachdem $A$ eigentlich ist, ist das Bild dieses Morphismus
       geschlossen in $X$ und, da $X$ zusammenhängend ist, ist er ein
       Isomorphismus (injektiv als offene Immersion und surjektiv, da
@@ -1011,7 +1008,7 @@ Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
       Dann ist nur noch die spezielle Faser über dem geschlossenen
       Punkt zu überprüfen, die nach \cite[5.5.1]{EGAIII-1} zusammenhängend
       ist.
-      % ???
+      % ??? –> Zariski's Connectedness Thm?
     \end{description}
   \end{proof}
 \end{Satz}
@@ -1037,10 +1034,10 @@ Gruppenschemastruktur abelsch ist:
     erfüllt und sie lassen sich zu einem abelschen $S$-Schema
     verkleben.
 
-    In den geschlossenen Punkte von $S$ hat $A_\K$ nach Definition
+    In den geschlossenen Punkten von $S$ hat $A_\K$ nach Definition
     gute Reduktion, welche sich jeweils auf eine Umgebung erweitern
     lässt.
-    % ???
+    % ??? Wieso lässt sich gute Reduktion auf Umgebung erweitern?
     Da $A_\K$ als abelsche Varietät projektiv ist
     (\autoref{thm:abvarietaetprojektiv}), können wir den schematischen
     Abschluss $A$ von $A_\K\to\P_\K^n\to\P_R^n$ in $\P_R^n$ wählen
@@ -1048,7 +1045,7 @@ Gruppenschemastruktur abelsch ist:
     Unterschemastruktur, da $A_\K$ reduziert ist
     \cite[Remark 10.32]{wedhorn}).
     Dieser ist glatt über dem generischen Punkt von $\Spec(R)$
-    % ???
+    % ??? Warum ist schematischer Abschl. glatt über generischem Pkt?
     und somit auch über einer offenen Umgebung $S'$ dessen.
     Wir erhalten ein glattes, projektives (also eigentliches)
     $S'$-Modell von $A_\K$ um den generischen Punkt, was gesucht war.
@@ -1118,7 +1115,7 @@ Weierstraßmodell von $E_\K$ über $R$. Hierfür eine kurze Vorarbeit.
     Bewertungsringe sind.
     Diese Strukturen verkleben nach Definition zu einer
     Gruppenschemastruktur auf ganz $W$.
-    % ???
+    % ??? Wie verkleben?
 
     Für die \NAbbEig sei $X$ ein weiteres glattes $R$-Schema mit
     generischer Faser $X_\K$ und $\phi_\K\colon X_\K\to E_\K$ ein
