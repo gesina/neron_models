@@ -234,25 +234,109 @@ nachdem eigentlich und glatt stabil unter Basiswechsel sind).
 \end{Definition}
 
 \begin{Satz}\label{thm:ratpkteregulaeremodelle}
-  Sei $R$ Dedekindring (mit perfekten Restklassenkörpern),
+  Sei $R$ Dedekindring
+  mit perfekten Restklassenkörpern,
   $\K=\Quot(R)$,
-  $X/R$ arithmetische Fläche,
+  $X$ ein $R$-Schema,
   $X^0$ offenes Unterschema der glatten Punkte,
   $X_\K/\K$ generische Faser.
   Dann gilt
   \begin{enumerate}[label=(\roman*)]
-  \item Ist $X/R$ eigentlich, so gilt $X(R)=X_\K(\K)$.
-  \item Ist $X/R$ regulär, so gilt $X(R)=X^0(R)$.
+  \item Ist $X$ eigentlich über $R$, so gilt $X(R)=X_\K(\K)$.
+  \item Ist $X$ regulär über $R$ mit Dimension 2 und mit
+    Fasern der Dimension 1, und ist $X$ genau dann glatt in einem
+    Punkt $x\in X$, wenn die ihn enthaltene Faser regulär in $x$ ist,
+    so gilt $X(R)=X^0(R)$.
   \end{enumerate}
   \cite[Corollary IV.4.4]{silverman2}
 
-  Für ein reguläres, eigentliches $R$-Modell von $X_K$, das eine
-  arithmetische Oberfläche ist (integral, normal, exzellent, flach,
-  von endlichem Typ), gilt also
+  Es gilt also für ein reguläres, eigentliches $R$-Modell von $X_K$,
+  das genau dann glatt in $x\in X$ ist, wenn die ihn enthaltene
+  Faser in $x$ regulär ist,
   \begin{gather*}
     X_\K(\K)=X^0(R)=X(R)
   \end{gather*}
+  \begin{proof}
+    % ??? benötigte Eigenschaften von X: eigentlich, regulär, flach
+    \begin{enumerate}[label=(\roman*)]
+    \item
+      Die Einschränkung von $\Hom_R(\Spec(R),X)=X(R)$ auf 
+      $\Spec(\K)\subset\Spec(R)$ liefert eine kanonische Abbildung
+      \begin{center}
+        \begin{tikzcd}
+        \Hom_R(\Spec(R),X) \arrow[d, equal]
+        \arrow[r, "{\text{Res.}}"]
+        &\Hom_R(\Spec(K),X)
+        \arrow[r, equal, "{\text{$R$-lin.}}"]
+        &\Hom_\K(\Spec(\K),X_\K) \arrow[d, equal]\\
+        X(R)&& X_\K(\K)
+        \end{tikzcd}
+      \end{center}
+      Nach Voraussetzung ist $X$ eigentlich über $R$, d.\,h. nach
+      dem Bewertungskriterium für $X$ gibt es für ein $\phi_\K\in
+      X_\K(\K)$ genau einen Lift in $\Hom_R(R,X)$,
+      bzw. ein $\phi\colon\Spec(R)\to X$, so dass das folgende
+      Diagramm kommutiert
+      \cite[Theorem II.4.7]{hartshorne}:
+      \begin{center}
+        \begin{tikzcd}
+          \Spec(\K)\arrow[d, hook, "{\text{incl}}"]
+          \arrow[r,"\phi_\K"]
+          &X_\K\arrow[r, hook, "{\text{incl}}"]
+          &X\arrow[d,"{\text{eig.}}"]
+          \\
+          \Spec(R)\arrow[rr,"{\Id}"]
+          \arrow[to=urr, dashed, "{\exists!\phi}"{near start}]
+          &&\Spec(R)
+        \end{tikzcd}
+      \end{center}
+      Dadurch sind Injektivität und Surjektivität der
+      Einschränkungsabbildung gegeben und es gilt
+      $X(R)=\Hom_R(R,X)\cong\Hom_\K(\K,X_\K)=X_\K(\K)$.
+    \item Da $X^0\subset X$, gibt es eine natürliche Inklusion
+      $X^0(R)\overset{\circ \text{incl}}{\hookrightarrow} X(R)$.
+      Jetzt gilt es zu zeigen, dass im regulären Fall das Bild jedes
+      Schnitts $\phi\in X(R)$ in $X^0$ liegt (also nur glatte Punkte
+      enthält). Dann ist die Inklusion ein Isomorphismus.
+
+      $X$ ist nach Voraussetzung flach über $R$, also ist glatt in
+      einem Punkt $x\in X$ äquivalent dazu, dass die Faser von $X$, in
+      der $x$ liegt, glatt in $x$ ist
+      \cite[8.5, Proposition 17]{bosch}.
+      Die Fasern von $X$ sind nach Voraussetzung Vereinigungen
+      projektiver Kurven, also Schemata lokal endlichen Typs über
+      einem der perfekten Restklassenkörper von $R$.
+      Nach \cite[Corollary 6.32]{wedhorn} und
+      \cite[Remark 6.33]{wedhorn} sind also glatt und regulär auf den
+      Fasern äquivalent.
+      
+      Nach \autoref{thm:arithflschnittbilderglatt} enthält das Bild
+      $\phi(\Spec(R))$ eines Schnitts $\phi\in X(R)$ nur reguläre
+      Punkte der Fasern, also glatte Punkte von $X$.
+      Damit ist die Behauptung gezeigt.
+    \end{enumerate}
+  \end{proof}
 \end{Satz}
+
+\begin{Bemerkung}
+  Die obigen Bedinungen treffen z.\,B. auf ein eigentliches,
+  reguläres, flaches $R$-Schema zu, also insbesondere arithmetische
+  Flächen (diese sind integral, normal, exzellent, flach, von
+  endlichem Typ).
+\end{Bemerkung}
+
+\begin{Lemma}\label{thm:arithflschnittbilderglatt}
+  Sei $R$ Dedekindring (mit perfekten Restklassenkörpern),
+  $\p\in\Spec(R)$,
+  $\pi\colon X\to\Spec(R)$ ein reguläres $R$-Schema der Dimension 2
+  mit Fasern der Dimension 1,
+  $\phi\in X(R)$.
+  Dann ist $X_\p$ regulär in $\phi(\p)$.
+  \cite[Proposition IV.4.3]{silverman2}
+  \begin{proof}
+  …  
+  \end{proof}
+\end{Lemma}
 
 \begin{Satz}
   Sei $R$ Dedekindring (mit perfekten Restklassenkörpern),
@@ -425,8 +509,9 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 % Für Regularität siehe \cite[Lemma IV.9.5]{silverman2}
 
 \begin{Lemma}\label{thm:glattüberdvr}
-  Sei $(R,\m)$ diskreter Bewertungsring, $\K=\Quot(R)$, $X$
-  irreduzibles
+  Sei $R$ diskreter Bewertungsring,
+  $\K=\Quot(R)$,
+  $X$ irreduzibles
   lokal endlich repräsentiertes
   (für lokal noethersch äquivalent:
   lokal endlichen Typs \cite[Remark 10.36]{wedhorn})
@@ -445,19 +530,22 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
     Außerdem ist $X$ nach Voraussetzung irreduzibel, daher integral,
     und (lokal) endlich repräsentiert.
     Wir wissen, dass $X$ glatt ist, wenn es lokal endlich repräsentiert
-    und flach über $R$ ist und seine zwei Fasern glatt sind
+    und flach über $R$ ist und seine Fasern glatt sind
     \cite[8.5, Proposition 17]{bosch}.
     Es ist also Flachheit zu zeigen.
     
     Wir werden zeigen, dass aus integral und nichtleerer generischer
     Faser $X_\K$ folgt, dass der eindeutige generische Punkt $\eta$
     von $X$ auf den generischen Punkt von $R$ geschickt wird.
-    Das zeigt, dass $X$ flach ist \cite[Proposition III.9.7]{hartshorne}.
+    Das zeigt, dass $X$ flach ist
+    \cite[Proposition III.9.7]{hartshorne}
+    (hierbei wird zusätzlich benutzt, dass $\Spec(R)$ integral,
+    regulär und von Dimension 1 ist).
 
     Nachdem $X$ integral ist, hat es einen eindeutigen generischen
     Punkt $\eta$.
     Angenommen, dieser wird durch die Abbildung, die $X$ zum
-    $R$-Schema macht, auf den geschlossenen Punkt $\m$ von $\Spec(R)$
+    $R$-Schema macht, auf einen geschlossenen Punkt $\m$ von $\Spec(R)$
     geschickt.
     Dann liegt $\eta$ im geschlossenen Urbild von $\m$ –
     aber der Abschluss $\overline{\{\eta\}}=X$ von $\eta$ ist darin
@@ -522,8 +610,7 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
       geschlossenen Punkt $\gamma\in W_\m$ singulär (bzw. nicht
       glatt) sein.
 
-      Angenommen, $W_\m$ habe den singulären Punkt
-      $\gamma$.
+      Angenommen, $W_\m$ habe den singulären Punkt $\gamma$.
       $W_\m=W\setminus E_\K$ ist als Urbild des geschlossenen Punktes
       $\m$ von $\Spec(R)$ geschlossenes Unterschema von $W$.
       Also ist der Punkt $\gamma$, der geschlossen in $W_\m$ ist, auch
@@ -617,16 +704,23 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
     \item $W^0$ ist $R$-Modell von $E_\K$: \autoref{thm:weierstrassglatt}
       % $W$ ist $R$-Modell von $E_\K$ per Definition,
       % $W^0=W\setminus\{\gamma\}$ hat dieselbe generische Faser
-    \item \cite[Corollary IV.4.4]{silverman2}
-      $E_\K(\K)=W(R)=W^0(R)$
-      (s. \autoref{thm:ratpkteregulaeremodelle}):
-      \begin{enumerate}
-      \item $E_\K(\K)=W(R)$: $W$ eigentlich
-      \item $W(R)\subset W^0(R)$:
-        nach \cite[Proposition IV.4.3 (b)]{silverman2}
-      \item $W(R)=W^0(R)$: Alle Bilder von Schnitten $W(R)$ sind
-        glatt
-      \end{enumerate}
+    \item Es treffen alle Voraussetzungen für
+      \autoref{thm:ratpkteregulaeremodelle} auf $W$ zu
+      ($W$ ist projektiv, also eigentlich, von Dimension 2 mit
+      projektiven Kurven als Fasern, und nach
+      \autoref{thm:weierstrassglatt} genau dann glatt in einem Punkt,
+      wenn die Fasern dort regulär sind).
+      Also gilt $E_\K(\K)=W(R)=W^0(R)$.
+      % \cite[Corollary IV.4.4]{silverman2}
+      % $E_\K(\K)=W(R)=W^0(R)$
+      % (s. \autoref{thm:ratpkteregulaeremodelle}):
+      % \begin{enumerate}
+      % \item $E_\K(\K)=W(R)$: $W$ eigentlich
+      % \item $W(R)\subset W^0(R)$:
+      %   nach \cite[Proposition IV.4.3 (b)]{silverman2}
+      % \item $W(R)=W^0(R)$: Alle Bilder von Schnitten $W(R)$ sind
+      %   glatt
+      % \end{enumerate}
     \item rationale Abbildungen
       $\mu\colon W\times_R W\dra W$,
       $i\colon W\dra W$:
