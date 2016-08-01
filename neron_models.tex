@@ -32,7 +32,7 @@ Im Folgenden sei $S$ ein Schema.
   \begin{align*}
     \mu\colon G\times_S G &\longto G
     &&\text{(Gruppenverknüpfung)}\\
-    \sigma_0\colon S&\longto G 
+    \epsilon\colon S&\longto G 
     &&\text{(Neutrales Element (Schnitt von $p$))}\\
     i\colon G &\longto G    
     &&\text{(Inverses)}
@@ -41,42 +41,42 @@ Im Folgenden sei $S$ ein Schema.
   \begin{description}[labelwidth=4cm]
   \item[Neutrales Element]
     % \begin{gather*}
-    %   \Id = \mu\circ((\sigma_0\circ\pi)\times\Id) =
-    %   \mu\circ(\Id\times(\sigma_0\circ\pi))
+    %   \Id = \mu\circ((\epsilon\circ\pi)\times\Id) =
+    %   \mu\circ(\Id\times(\epsilon\circ\pi))
     % \end{gather*}
     % d.\,h. es kommutieren
     % \begin{center}
     \begin{tikzcd}
      G \arrow[r, "{(\pi,\Id)}"] \arrow[d, "{\Id}"]
-     & S\times_S G \arrow[d, "{\sigma_0\times\Id}"] \\
+     & S\times_S G \arrow[d, "{\epsilon\times\Id}"] \\
      G \arrow[from=r, "\mu"]
      & G\times_S G
     \end{tikzcd}
     und
     \begin{tikzcd}
       G \arrow[r, "{(\Id,\pi)}"] \arrow[d, "\Id"]
-      & G\times_S S \arrow[d, "{\sigma_0\times\Id}"] \\
+      & G\times_S S \arrow[d, "{\epsilon\times\Id}"] \\
       G \arrow[from=r, "\mu"]
       & G\times_S G
     \end{tikzcd}
     % \end{center}
   \item[Inverses]
     % \begin{gather*}
-    %   \sigma_0\circ\pi = \mu\circ(i,\Id)=\mu\circ(\Id,i)
+    %   \epsilon\circ\pi = \mu\circ(i,\Id)=\mu\circ(\Id,i)
     % \end{gather*}
     % d.\,h. es kommutieren
     % \begin{center}
     \begin{tikzcd}
      G \arrow[r, "{(i,\Id)}"] \arrow[d, "{\pi}"]
      & G\times_S G \arrow[d, "{\mu}"] \\
-     S \arrow[r, "\sigma_0"]
+     S \arrow[r, "\epsilon"]
      & G
     \end{tikzcd}
     und
     \begin{tikzcd}
      G \arrow[r, "{(\Id,i)}"] \arrow[d, "{\pi}"]
      & G\times_S G \arrow[d, "{\mu}"] \\
-     S \arrow[r, "\sigma_0"]
+     S \arrow[r, "\epsilon"]
      & G
     \end{tikzcd}
     % \end{center}
@@ -114,7 +114,7 @@ Im Folgenden sei $S$ ein Schema.
                    \overset\mu\longto G
                    \right)
   \end{align*}
-  wobei die Identität $T\longto S\overset{\sigma_0}\longto G$ ist und
+  wobei die Identität $T\longto S\overset{\epsilon}\longto G$ ist und
   man Inverse durch Verknüpfung mit $i$ erhält.
   \cite[Proposition IV.3.2]{silverman2}
 \end{Bemerkung}
@@ -174,7 +174,7 @@ Im Folgenden sei $S$ ein Schema.
   % % ??? Weitere Voraussetzungen?
   % \cite[S.\,154]{neron}
   Die Identitätskomponente einer Faser $G_s$ ($s\in S$) von $G$ ist
-  die Zusammenhangskomponente von $G_s$, die $\sigma_0(s)$ enthält.
+  die Zusammenhangskomponente von $G_s$, die $\epsilon(s)$ enthält.
   Die Identitäts-~oder Zusammenhangskomponente von $G$ ist
   die Vereinigung aller Identitätskomponenten der Fasern von $G$
   \cite[Remark IV.6.1.2]{silverman2}.
@@ -234,13 +234,15 @@ nachdem eigentlich und glatt stabil unter Basiswechsel sind).
 \end{Definition}
 
 \begin{Satz}\label{thm:ratpkteregulaeremodelle}
-  Sei $R$ Dedekindring mit (perfektem) Quotientenkörper $\K$,
-  $X/R$ arithmetische Fläche, $X_\K/\K$ generische Faser.
+  Sei $R$ Dedekindring (mit perfekten Restklassenkörpern),
+  $\K=\Quot(R)$,
+  $X/R$ arithmetische Fläche,
+  $X^0$ offenes Unterschema der glatten Punkte,
+  $X_\K/\K$ generische Faser.
   Dann gilt
   \begin{enumerate}[label=(\roman*)]
   \item Ist $X/R$ eigentlich, so gilt $X(R)=X_\K(\K)$.
-  \item Ist $X/R$ regulär, so gilt $X(R)=X^0(R)$ für $X^0/R$ größtes
-    glattes $R$-Unterschema von $X$.
+  \item Ist $X/R$ regulär, so gilt $X(R)=X^0(R)$.
   \end{enumerate}
   \cite[Corollary IV.4.4]{silverman2}
 
@@ -253,7 +255,8 @@ nachdem eigentlich und glatt stabil unter Basiswechsel sind).
 \end{Satz}
 
 \begin{Satz}
-  Sei $R$ Dedekindring mit (perfektem) Quotientenkörper $\K$,
+  Sei $R$ Dedekindring (mit perfekten Restklassenkörpern),
+  $\K=\Quot(R)$,
   $C/\K$ reguläre, projektive Kurve vom Geschlecht $g$.
   \begin{enumerate}[label=(\roman*)]
   \item Dann existiert ein eigentliches, reguläres $R$-Modell $X$ von $C$,
@@ -384,8 +387,10 @@ betrachten:
 Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 
 \begin{Lemma}\label{thm:eigweierstrassmodelle}
-  Ein Weierstraßmodell von $E_\K$ über $R$ ist irreduzibel und lokal
-  endlich repräsentiert.
+  Ein Weierstraßmodell von $E_\K$ über $R$ ist
+  irreduzibel,
+  projektiv (insb. quasikompakt, noethersch),
+  endlich repräsentiert (insb. von endlichem Typ).
   \begin{proof}
     \begin{description}
     \item[irreduzibel]
@@ -404,11 +409,15 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
       % ??? sicher?
       Entsprechend ist die gewählte affine, offene Überdeckung von $W$
       irreduzibel und somit $W$ irreduzibel.
-    \item[endlich präsentiert]
-      Die zuvor beschriebene Überdeckung ist eine Überdeckung mit
-      Spektren von endlich präsentierten $R$-Algebren,
-      also ist $W$ lokal endlich präsentiert.
+    \item[projektiv] $W$ ist per Konstruktion projektiv. Als
+      geschlossenes Unterschema des quasikompakten, noetherschen Raums
+      $\P_R^n$ ist es quasikompakt und noethersch.
+    \item[endlich repräsentiert]
+      Die zuvor beschriebene Überdeckung ist eine (endliche)
+      Überdeckung mit Spektren von endlich repräsentierten $R$-Algebren,
+      also ist $W$ endlich repräsentiert.
       % ??? Stimmt das?
+      Entsprechend folgt, dass $W$ von endlichem Typ ist.
     \end{description}
   \end{proof}
 \end{Lemma}
@@ -418,10 +427,10 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 \begin{Lemma}\label{thm:glattüberdvr}
   Sei $(R,\m)$ diskreter Bewertungsring, $\K=\Quot(R)$, $X$
   irreduzibles
-  % ??? irreduzibel oder integral? (s. Hartshorne, III.9.7)
-  $R$-Schema lokal endlichen Typs (äquivalent: lokal endlich
-  repräsentiert \cite[Remark 10.36]{wedhorn}) mit nichtleerer,
-  generischer Faser $X_\K$.
+  lokal endlich repräsentiertes
+  (für lokal noethersch äquivalent:
+  lokal endlichen Typs \cite[Remark 10.36]{wedhorn})
+  $R$-Schema mit nichtleerer, generischer Faser $X_\K$.
   Dann ist $X$ genau dann glattes $R$-Schema, wenn die Fasern glatt
   sind.
   % ??? lokal oder nicht lokal?
@@ -430,15 +439,15 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
     Ist $X$ glatt, so auch jede Faser, da Glattheit stabil unter
     Basiswechsel ist.
 
-    Seien also die Fasern von $X$ glatt und insb. reduziert.
+    Seien also die Fasern von $X$ glatt, insb. reduziert.
     Dann ist $X$ ebenfalls reduziert, da Reduziertheit auf den Halmen
     geprüft werden kann.
     Außerdem ist $X$ nach Voraussetzung irreduzibel, daher integral,
-    und lokal endlich präsentiert.
-    Wir wissen, dass $X$ glatt ist, wenn es lokal endlich präsentiert
+    und (lokal) endlich repräsentiert.
+    Wir wissen, dass $X$ glatt ist, wenn es lokal endlich repräsentiert
     und flach über $R$ ist und seine zwei Fasern glatt sind
     \cite[8.5, Proposition 17]{bosch}.
-    Es gilt also, Flachheit zu zeigen.
+    Es ist also Flachheit zu zeigen.
     
     Wir werden zeigen, dass aus integral und nichtleerer generischer
     Faser $X_\K$ folgt, dass der eindeutige generische Punkt $\eta$
@@ -477,6 +486,7 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
       W^0\coloneqq W\setminus \{\gamma\}
     \end{gather*}
     ist das offene Unterschema der glatten Punkte von $W$.
+    $W^0$ ist glattes $R$-Modell von $E_\K$.
   \end{enumerate}
   % ??? Braucht man Minimalität?
   
@@ -495,12 +505,12 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
       wenn beide Fasern glatt sind. Nachdem $W_\K=E_\K$ nach
       Voraussetzung glatt ist, ist $W$ genau dann glatt, wenn $W_\m$
       glatt ist.
-    \item Für $\K$-Schemata lokal endlichen Typs sind glatt und
-      geometrisch regulär äquivalent \cite[Corollary 6.32]{wedhorn},
-      da $\K$ perfekt ist, ist dies sogar äquivalent zu regulär
+    \item Für $\k(\m)$-Schemata lokal endlichen Typs sind glatt und
+      geometrisch regulär äquivalent \cite[Corollary 6.32]{wedhorn}.
+      Da $\k(\m)$ perfekt ist, ist dies sogar äquivalent zu regulär
       \cite[Remark 6.33]{wedhorn}.
-      Schemata lokal endlichen Typs sind genau dann regulär, wenn sie
-      in allen geschlossenen Punkten regulär sind
+      Schemata lokal endlichen Typs über einem Körper sind genau dann
+      regulär, wenn sie in allen geschlossenen Punkten regulär sind
       \cite[Remark 6.25 (3)]{wedhorn}. Insbesondere sind alle
       singulären Punkte geschlossen.
 
@@ -528,7 +538,7 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
       per Konstruktion die spezielle Faser $W_{\m}\setminus\{\gamma\}$,
       welche nach Voraussetzung beide regulär (also glatt und reduzibel)
       sind.
-      Damit ist es nach \autoref{thm:glattüberdvr} glatt über $R$
+      Damit ist $W^0$ nach \autoref{thm:glattüberdvr} glatt über $R$
       bzw. glattes $R$-Modell von $E_\K$ und das offene Unterschema
       der glatten Punkte von $W$.
     \end{enumerate}
@@ -537,7 +547,7 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 
 
 \begin{Bemerkung}\label{thm:weierstraßmodellglatt}
-  Für den Fall eines diskreten Bewertungsringes $R$ liefert
+  Für den Fall eines diskreten Bewertungsringes $(R,(\pi))$ liefert
   \autoref{thm:weierstrassglatt} ein sehr einfaches Kriterium für die
   Glattheit eines Weierstraßmodell $W$ von $E_\K$.
   $W$ ist genau dann glatt, wenn seine spezielle Faser glatt
@@ -554,36 +564,41 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
   $\Delta$ Diskriminante von $W$)
   \cite[Proposition VII.5.1 (a)]{silverman}:
   \begin{enumerate}[label=(\roman*)]
-  \item $0\neq\Delta_{(\pi)}=\bar\Delta\in R$.
+  \item $0\neq\Delta_{(\pi)}=\bar\Delta\in R/(\pi)$.
   \item $\Delta\not\in(\pi)$ bzw. $\pi\nmid\Delta$.
   \item $\ord_R(\Delta)=0$ bzw. $\Delta\in R^\times$
   \end{enumerate}
-  Letztere ist einfach nachzuprüfen.
+  Letzteres ist einfach nachzuprüfen.
 \end{Bemerkung}
 
 
 \subsection{Gruppenstruktur auf Weierstraßmodellen}
 
 \begin{Lemma}\label{thm:erweiterunggruppenstruktur}
-  Sei $R$ hier diskreter Bewertungsring mit (perfektem) Quotientenkörper
-  $\K$.
+  Sei $(R,\m)$ hier diskreter Bewertungsring,
+  $\k(\m)=R/\m$ perfekt,
+  $\K=\Quot(R)$.
   % Betrachte eine Weierstraßgleichung, die $E_\K$ erzeugt, mit
   % Koeffizienten in $R$.
   % Sei $W^0$ der glatte Teil des projektiven $R$-Unterschemas
   % $W\subset\P_R^n$, das durch diese Gleichung erzeugt wird.
   % ($W$ ist der schematische Abschluss von $E_\K$ im $\P_R^2$.)
   % ???
-  Sei $W$ ein Weierstraßmodell von $E_\K$ über $R$.
-  Das offene $R$-Unterschema $W^0$ der glatten Punkte von $W$ ist
-  ebenfalls $R$-Modell von $E_\K$
-  und ein glattes $R$"=Gruppenschema mit Addition bzw. Inversenbildung
+  Sei $W$ ein Weierstraßmodell von $E_\K$ über $R$ und
+  $W^0$ das offene $R$-Unterschema der glatten Punkte von $W$ 
+  (ebenfalls $R$-Modell von $E_\K$ nach \autoref{thm:weierstrassglatt}).
+  $W^0$ ist ein glattes $R$"=Gruppenschema
+  mit Addition, Inversenbildung und neutralem Schnitt
   \begin{gather*}
     \mu_0\colon W^0\times_R W^0 \longto W^0
-    \qquad \text{bzw.}\qquad
+    \qquad
     i_0\colon W^0\longto W^0
+    \qquad
+    \epsilon_0\colon R\longto W^0
   \end{gather*}
-  welche die Gruppenstruktur (Addition $\mu$ und Inversenbildung $i$)
-  von $E_\K$ als abelsche Varietät erweitern
+  welche die Gruppenstruktur (Addition $\mu$, Inversenbildung $i$ und
+  neutraler Schnitt $\epsilon$)
+  der abelschen Varietät $E_\K$ erweitern
   \cite[Theorem IV.5.3 (c)]{silverman2}.
   $W^0(R)\to W(R) \cong E_\K(\K)$ ist ein Gruppenisomorphismus,
   falls $W$ regulär ist.
@@ -807,14 +822,14 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
   \cite[1.2, Remark 7]{neron} 
   \begin{proof}[Beweisskizze]
     Ein Gruppenschema $X$ ist genau dann separiert, wenn der
-    Einheitsschnitt $\sigma_0\colon\Spec(R)\to X$ eine geschlossene
+    Einheitsschnitt $\epsilon\colon\Spec(R)\to X$ eine geschlossene
     Immersion ist
     \cite[Lemma 38.6.1]{stacksproject} oder \cite[7.1, Lemma 2]{neron}.
     Dieser erweitert wegen der \NAbbEig eindeutig
     den Einheitsschnitt $\sigma_{0,\K}\colon\Spec(\K)\to X_\K$ von
     $X_\K$, welcher bereits geschlossene Immersion ist.
-    Dies zeigt, dass $\sigma_0$ geschlossene Immersion ist
-    (man kann zeigen, dass $\Im(\sigma_{0,\K})=\Im(\sigma_0)$) und
+    Dies zeigt, dass $\epsilon$ geschlossene Immersion ist
+    (man kann zeigen, dass $\Im(\sigma_{0,\K})=\Im(\epsilon)$) und
     somit ist $X$ separiert. 
   \end{proof}
 \end{Bemerkung}
@@ -994,8 +1009,8 @@ Weierstraßmodell von $E_\K$ über $R$. Hierfür eine kurze Vorarbeit.
 \end{Lemma}
 \begin{Korollar}\label{thm:neronmausweierstrassgl}
   $E_\K$ sei gegeben durch eine Weierstraßgleichung mit
-  Koeffizienten im Dedekindring $R$ ($\K$ perfekt) und
-  $W\subset\P_R^2$ sei das durch diese Gleichung erzeugte projektive
+  Koeffizienten im Dedekindring $R$ (mit perfekten Restklassenkörpern)
+  und $W\subset\P_R^2$ sei das durch diese Gleichung erzeugte projektive
   $R$-Schema.
   Ist $W$ glatt, so ist $W$ bereits das Néron-Modell von $E_\K$ über
   $R$.
