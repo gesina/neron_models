@@ -931,7 +931,6 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
   \end{proof}
 \end{Bemerkung}
 
-
 %------
 
 \section{Beispiele}
@@ -1126,9 +1125,35 @@ Weierstraßmodell von $E_\K$ über $R$. Hierfür eine kurze Vorarbeit.
     Für die \NAbbEig sei $X$ ein weiteres glattes $R$-Schema mit
     generischer Faser $X_\K$ und $\phi_\K\colon X_\K\to E_\K$ ein
     Morphismus.
-    Die Konstruktion von $W$ liefert uns eine rationale Abbildung
-    $\phi\colon X\dra W$, die $\phi_\K$ erweitert.
-    % ??? Welche rationale Abbildung?
+    $\phi_\K$ liefert eine rationale Abbildung $\phi\colon X\dra W$.
+    Denn $\phi_\K$ lässt sich eindeutig auf eine offene, $R$-dichte
+    Umgebung $U$ von $X_\K$ erweitern, wie sich lokal zeigen lässt.
+    \begin{description}
+    \item[Erweiterung auf $U$]
+      % ??? Wie erweitert sich die rationale Abbildung?
+      % Sowohl $X$ als auch $W$ sind glatt, also endlich
+      % repräsentiert.
+
+      % Da $R$ Dedekindring ist, lässt faktorisiert jedes Element in ein
+      % endliches Produkt aus Primzahlen (s. \autoref{def:dedekindring}). 
+      
+      % Sei $x\in X_\K$ und $x\in\Spec(B)\subset X$ genügend kleine,
+      % offene, affine Umgebung von $x$, dass das Bild $\im(\Spec(B))$ in
+      % einer affinen Teilmenge $\Spec(A)\subset W$ liegt und $A$, $B$
+      % endlich repräsentierte $R$-Algebren sind.
+      % Es gilt $A\subset A_{\phi_\K(x)}=\O_{W,\phi_\K(x)}$,
+      % $B\subset B_x=\O_{X,x}$.
+    \item[$U$ $R$-dicht]
+      $X\to R$ schickt als glattes, d.\,h. reduziertes und flaches
+      $R$-Schema, alle generischen Punkte seiner irreduziblen
+      Komponenten auf den generischen Punkt von
+      $\Spec(R)$
+      \cite[Proposition III.9.7]{hartshorne}.
+      Entsprechend liegen alle generischen Punkte in der
+      generischen Faser und sie ist dicht in $X$.
+      Daher auch $U$, da es über $X_\K$ liegt.  
+    \end{description}
+  
     Nachdem $W$ glattes, d.\,h. insb. eigentliches, $R$-Gruppenschema
     ist, ist $\phi$ ein Morphismus, der $\phi_\K$ erweitert, und die
     \NAbbEig ist erfüllt.
@@ -1172,7 +1197,7 @@ elliptischen Kurve
 
 \appendix
 \chapter{Definitionen}
-\begin{Definition}[Dedekindring]
+\begin{Definition}[Dedekindring]\label{def:dedekindring}
 Ein Integritätsring $R$ heißt Dedekindring, wenn er eine der
 äquivalenten Bedingungen erfüllt
 \begin{enumerate}[label=(\roman*)]
@@ -1403,9 +1428,10 @@ den Halmen flach sind.
   \item $f$ ist quasi-separiert, von endlichem Typ und für jeden
     Bewertungsring $R$ gilt
     \begin{gather*}
-      X(R)=\Hom_Y\left(\Spec(R), X\right) 
-      \overset{\sim}{\underset{\circ\Spec(\operatorname{incl})}{\longto}}
-      \Hom_Y\left(\Spec\left(\Quot(R)\right), X\right)=X(\Quot(R))\;.
+      X(R)=\Hom_Y(R, X) 
+      \overset{\sim}{\underset{\circ\Spec(\operatorname{incl})}
+        {\longrightarrow}}
+      \Hom_Y(\Quot(R), X)=X(\Quot(R))\;.
     \end{gather*}
     In anderen Worten, es findet sich für jedes kommutative Diagramm
     wie folgt ein entsprechender, eindeutiger Lift
