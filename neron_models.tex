@@ -1169,19 +1169,55 @@ Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
 \end{Bemerkung}
 
 \begin{Satz}
-  Der diskrete Bewertungsring $R$ sei strikt henselsch mit algebraisch
-  abgeschlossenem Quotientenkörper $\K$ und
-  $W$ ein minimales reguläres, eigentliches, flaches $R$-Modell der
-  elliptischen Kurve $E_\K$.
-  Dann ist das $R$-Unterschema der glatten Punkte von $W$ ein
-  Néron-Modell von $E_\K$.
-  \cite[1.5, Proposition 1, S.\,21]{neron}
-  \begin{proof}
-    …
-  \end{proof}
+  % Der diskrete Bewertungsring $R$ sei strikt henselsch mit algebraisch
+  % abgeschlossenem Quotientenkörper $\K$ und
+  % $W$ ein minimales reguläres, eigentliches, flaches $R$-Modell der
+  % elliptischen Kurve $E_\K$.
+  % Dann ist das $R$-Unterschema der glatten Punkte von $W$ ein
+  % Néron-Modell von $E_\K$.
+  % \cite[1.5, Proposition 1, S.\,21]{neron}
+  % \begin{proof}
+  %   …
+  % \end{proof}
 
-  Fehlt: \cite[Theorem IV.6.1]{silverman2}
-  (ähnlich, ohne Bed. an den Ring, dafür mehr an das Modell)
+  % Fehlt: \cite[Theorem IV.6.1]{silverman2}
+  % (ähnlich, ohne Bed. an den Ring, dafür mehr an das Modell)
+  Sei $R$ Dedekindring mit perfekten Quotientenkörpern,
+  $\K=\Quot(R)$, $E_\K$ elliptische Kurve über $\K$ und $C$ minimales
+  eigentliches, reguläres $R$-Modell von $E_\K$
+  (d.\,h. integrales, normales, exzellentes, flaches $R$-Schema von
+  endlichem Typ mit Vereinigungen projektiver Kurven als Fasern und
+  Minimalitätseigenschaft).
+  Sei $E$ das größte glatte $R$-Unterschema von $C$.
+  Dann ist $E$ Néron-Modell von $E_\K$.
+
+  Beachte, dass minimale eigentliche, reguläre Modelle elliptischer
+  Kurven existieren nach \autoref{thm:exneronmodellabvarietaet}.
+  \begin{proof}
+    \begin{enumerate}
+    \item \autoref{thm:rationalzumorphismus}:
+      Eine rationale Abbildung $X\dra G$ von einem glatten
+      $R$-Schema in ein eigentliches $R$-Gruppenschema ist Morphismus.
+    \item \autoref{def:henselscheringe}: (strikt) Henselsche Ringe
+    \item Eigenschaften henselscher Ringe auf Schnitteinschränkung:
+      $(R,\m)$ diskreter Bewertungsring mit Restklassenkörper $k$, $X$
+      glattes $R$-Schema, $X_k$ spezielle Faser.
+      Dann
+      \begin{enumerate}[label=(\roman*)]
+      \item Falls $R$ henselsch, ist $X(R)\to X_k(k)$ surjektiv.
+      \item Falls $R$ strikt henselsch, ist $X(R)\to X_k(k)$ surjektiv
+        und hat dichtes Bild in $X_k$.
+        (Beachte, dass $X_k$ glatt, also von endlichem Typ ist und $k$
+        nach Voraussetzung algebraisch abgeschlossen ist. Daher
+        gilt $X_k(k)\cong\{x\in X_k\text{ geschl.}\}\subset X_k$
+        \cite[Example 4.1]{wedhorn}.)
+        % ??? Wie kann X_k(k) dicht in X_k sein?
+      \end{enumerate}
+      \cite[Proposition IV.6.4]{silverman2},
+      \cite[2.3, Proposition 5]{neron}
+    \item Henselisierung: \autoref{thm:exhenselisierung}
+    \end{enumerate}
+  \end{proof}
 \end{Satz}
 
 
@@ -1215,6 +1251,54 @@ Ein Integritätsring $R$ heißt Dedekindring, wenn er eine der
 Faktorielle Dedekindringe sind genau die Hauptidealringe.
 \cite[Proposition B.85]{wedhorn}
 \end{Definition}
+
+\begin{Definition}[henselsche Ringe]\label{def:henselscheringe}
+  Ein lokaler Ring $(R,\m)$ heißt \emph{henselsch}, wenn
+  er eine der folgenden Bedingungen erfüllt
+  \begin{enumerate}[label=(\roman*)]
+  \item henselsches Lemma:
+    Für jedes normierte Polynom $f\in R[X]$ und jede einfache Nullstelle
+    $\bar a\in R/\m$ seiner Restklasse $\bar f\in (R/\m)[X]$
+    gibt es eine eindeutige Nullstelle $a\in R$ von $f$, die ein Lift
+    von $\bar a$ ist.
+  \item Jede endliche $R$-Algebra ist ein Produkt lokaler Ringe.
+  \end{enumerate}
+  \cite[2.3, Proposition 4]{neron}
+  oder \cite[vgl.][Chapter IV.6]{silverman2}
+  
+  Ein henselscher Ring heißt \emph{strikt henselsch}, falls sein
+  Restklassenkörper $R/\m$ separabel abgeschlossen ist
+  (im Fall eines perfekten Restklassenkörpers ist dies äquivalent zu
+  algebraisch abgeschlossen).
+\end{Definition}
+\begin{Definition}[Henselisierung]\label{def:henselisierung}
+  Die Henselisierung eines lokalen Rings $R$ ist ein henselscher
+  lokaler Ring $\Rh$ mit einem lokalen Homomorphismus $i\colon
+  R\to\Rh$, s.\,d. folgende universelle Eigenschaft erfüllt ist:
+  Für jeden weiteren lokalen Homomorphismus $u\colon R\to A$ in einen
+  henselschen lokalen Ring $A$ gibt es einen eindeutigen lokalen
+  Homomorphismus $u^\text{h}\colon R^h\to A$, so dass das folgende Diagramm
+  kommutiert
+  \begin{center}
+    \begin{tikzcd}
+      R \arrow[r, "{u}"]\arrow[d, "{i}"]
+      & A \\
+      \Rh\arrow[ur, "{u^\text{h}}"]
+    \end{tikzcd}
+  \end{center}
+
+  Die Henselisierung ist nach Definition eindeutig bis auf
+  Isomorphismus und hat denselben Restklassenkörper wie $R$.
+\end{Definition}
+\begin{Definition}[strikte Henselisierung]\label{def:striktehenselisierung}
+  Die strikte Henselisierung eines lokalen Rings $R$ ist …
+\end{Definition}
+\begin{Satz}
+  Jeder diskrete Bewertungsring $(R,\m)$ hat eine Henselisierung $\Rh$
+  und eine strikte Henselisierung $\Rsh$.
+  \cite[Proposition IV.6.5]{silverman2}
+\end{Satz}
+
 
 \begin{Definition}[Dedekindschema]
 Ein Dedekindschema ist ein noethersches, integrales Schema $X$, das
@@ -1539,9 +1623,10 @@ Alternative Definition für elliptische Kurven: \cite[Chapter VII.5]{silverman}
   $x\in U$.
   Der \emph{Definitionsbereich $\Dom(\phi)$ von $\phi$} sind die
   Punkte, in denen $\phi$ definiert ist. Er ist offene, $S$-dichte
-  Teilmenge von $X$. I.\,A. gibt es keinen Morphismus $\Dom(\phi)\to
-  Y$, der $\phi$ repräsentiert.
-
+  Teilmenge von $X$. Ist $X/R$ separiert gibt es einen Morphismus
+  $\Dom(\phi)\to Y$, der $\phi$ repräsentiert.
+  
+  
   $\phi\colon X\dra Y$ heißt $S$-birational, falls es von einem
   $S$-Morphismus $\psi\colon U\to Y$ repräsentiert werden kann, der
   die offene Immersion einer $S$-dichten, offenen Teilmenge von $Y$
