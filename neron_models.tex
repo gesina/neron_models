@@ -904,13 +904,69 @@ folgenden Sinne:
   Für ein $R$-Schema $X$ endlichen Typs ist äquivalent
   \begin{enumerate}[label=(\roman*)]
   \item $X$ ist Néron-Modell seiner generischen Faser
-  \item $X\times_R\Spec(\O_{\Spec(R),s})$ ist Néron-Modell seiner generischen
-    Faser für alle geschlossenen Punkte $s\in\Spec(R)$.
+  \item $X\times_R\Spec(\O_{\Spec(R),s})$ ist Néron-Modell
+    seiner generischen Faser über $\O_{\Spec(R),s}$ für alle
+    geschlossenen Punkte $s\in\Spec(R)$.
   \end{enumerate}
   D.\,h. man kann \OE{} davon ausgehen, dass $R$ lokal (also diskreter
   Bewertungsring) ist.
-  \cite[1.2, Proposition 3]{neron}
+  \cite[1.2, Proposition 4]{neron}
   \begin{proof}
+    Wir werden im Folgenden nur die Implikation $(ii)\Rightarrow(i)$
+    brauchen, daher sei für die andere Richtung auf
+    \cite[1.2, Proposition 4]{neron} verwiesen.
+    
+    Für den Beweis werden wir weiterhin die Kurzformen
+    $\Spec(\O_{\Spec(R),s})=\O_{R,s}$ verwenden.
+    Wir benötigen folgendes Lemma
+    \begin{Lemma}\label{thm:limesoffenemengen}
+      \cite[1.2, Lemma 5]{neron}
+      Für ein Basisschema $S$, einen Punkt $s\in S$ und endlich
+      repräsentierte $S$-Schemata $X$, $Y$ ist die kanonische
+      Abbildung
+      \begin{gather*}
+        \varinjlim \Hom_{S'}(X\times_S S', Y\times_S S')
+        \longto
+        \Hom_{\O_{R,s}}(X\times_S \O_{R,s}, Y\times_S \O_{R,s})
+      \end{gather*}
+      bijektiv, wobei der direkte Limes über die offenen Umgebungen
+      $S'\subset S$ von $s$ läuft.
+    \end{Lemma}
+    
+    Sei $\K=\Quot(R)$ und betrachte ein glattes $R$-Schema $Y$ sowie
+    einen $\K$-Morphismus $\phi_\K\colon Y_\K\to X_\K$ der
+    generischen Fasern.
+    Sei $s\in\Spec(R)$ ein geschlossener Punkt.
+    Nach Voraussetzung erweitert sich
+    \begin{gather*}
+      u_\K\colon
+      Y\times_R\O_{R,s}\times_{\O_{R,s}}\K = Y_\K
+      \longto
+      X_\K = X\times_R\O_{R,s}\times_{\O_{R,s}}\K
+    \end{gather*}
+    zu einem Morphismus
+    \begin{gather*}
+      u(s)\colon Y\times_R\O_{R,s}\to X\times_R\O_{R,s}\;,
+    \end{gather*}
+    da $X\times_R\O_{R,s}$ Néron-Modell seiner generischen Faser ist.
+
+    Nach \autoref{thm:limesoffenemengen} ist $u(s)$ die Einschränkung
+    einer eindeutigen Äquivalenzklasse im direkten Limes
+    $\varinjlim \Hom_{S'}(X\times_S S', Y\times_S S')$ über die
+    offenen Umgebungen $S'\subset S$ von $s$.
+    Daher gibt es eine offene Umgebung $S'(s)$ von $s$, über der $u(s)$
+    eindeutig erweitert wird.
+    % ??? Warum kann ich eine offene Menge wählen?
+    
+    Die $u(s)$ stimmen per Konstruktion auf dem Schnitt ihrer
+    Definitionsbereiche überein,
+    % ??? Warum können die u(s) verklebt werden?
+    die ganz $Y$ überdecken ($\Spec(R)$ besteht genau aus seinen
+    geschlossen Punkten und dem generischen Punkt, und letzterer ist
+    in jeder offenen Teilmenge enthalten).
+    Daher liefert Verkleben einen eindeutigen Morphismus
+    $u\colon Y\to X$, der $u_\K$ erweitert.
+    D.\,h. die \NAbbEig ist erfüllt.
   \end{proof}
 \end{Satz}
 
