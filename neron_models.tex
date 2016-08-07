@@ -1183,8 +1183,9 @@ Quotientenkörper $\K$ des Dedekindringes $R$.
   Für ein minimales Weierstraßmodell $W$ von $E_\K$ über $R$
   ist $W^0$ isomorph zur Identitätskomponente des Néron-Modells von
   $E_\K$ über $R$.
-  \cite[Corollary IV.9.1]{silverman2} oder
-  \cite[Chapter 1.5, S.\,23]{neron}
+  \cite[Corollary IV.9.1]{silverman2},
+  \cite[Chapter 1.5, S.\,23]{neron} oder
+  \cite[S. 46]{tate}
 \end{Bemerkung}
 
 In bestimmten Fällen erhält man das Néron-Modell bereits aus einem
@@ -1330,10 +1331,94 @@ Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
   \end{proof}
 \end{Satz}
 
+\begin{Lemma}\label{thm:morphismuserweiterung}
+  % http://math.stackexchange.com/questions/1259876/extending-a-morphism-of-schemes
+  \cite[Exercise 3.2.4]{liu}
+  Sei $S$ lokal noethersches Schema, $X$, $Y$ $S$-Schemata, $Y$
+  endlichen Typs, $x\in X$, $f_x\colon \Spec\O_{X,x}\to Y$
+  $S$-Morphismus.
+  Dann gibt es eine offene Umgebung $U\subset X$ von $x$, auf der
+  $f_x$ von einem Morphismus $f\colon U\to Y$ erweitert wird.
+  \begin{proof}
+    Wir können uns auf den affinen Fall $Y=\Spec(B)$ beschränken.
+    Denn $\O_{X,x}$ ist lokal, also ist $x=\m_x\in\Spec\O_{X,x}$ in jeder
+    Zariski-geschlossenen, nichtleeren Menge von $\Spec\O_{X,x}$
+    enthalten bzw. die einzige offene Umgebung von $x$ in
+    $\Spec\O_{X,x}$ ist $\Spec\O_{X,x}$ selbst.
+    Somit ist das offene Urbild jeder offenen, affinen Umgebung
+    $\Spec(B)\subset Y$ von $f_x(x)$ ganz $\Spec\O_{X,x}$.
+
+    $Y$ ist nach Voraussetzung von endlichem Typ.
+    Wir können also eine genügend kleine, offene, affine Umgebung
+    $U=\Spec(B)\subset Y$ von $f_x(x)$ und $V=\Spec(R)\subset S$ auswählen,
+    dass $R$ noethersch und $B$ eine $R$-Algebra endlichen Typs (wegen
+    noethersch auch endlich repräsentiert) ist. D.\,h.
+    \begin{gather*}
+      B=R[X_0,\dotsc, X_n]/(g_0,\dotsc, g_r)\qquad n,r\in\N
+    \end{gather*}
+    Wähle weiterhin eine genügend kleine, offene, affine Umgebung
+    $\Spec(A)\subset X$ von $x$ aus, dass $A$ ebenfalls $R$-Algebra ist.
+    Es gilt $x=\m_x\in\Spec\O_{X,x}=\Spec(A_x)\subset\Spec(A)$.
+    
+    $f_x\colon\Spec(O_{X,x})=\Spec(A_x)\to\Spec(B)\subset Y$
+    korrespondiert also zu einem Ringhomomorphismus $f_x^\#\colon B\to
+    A_x$.
+    Insgesamt erhalten wir
+    \begin{align*}
+        \phi\colon
+        R\left[X_0,\dotsc, X_n\right]
+        &\twoheadrightarrow
+        \dfrac{R\left[X_0,\dotsc, X_n\right]}{\left(g_0,\dotsc, g_r\right)}
+        \overset{f_x^\#}{\longto}
+        A_x\\
+        X_i &\longmapsto \frac{a_i}{f_i}
+        \qquad i=0,\dotsc, n\\
+        g_j &\longmapsto \frac{a_j'}{h_j}
+        \qquad j=0,\dotsc, r
+    \end{align*}
+    Dass $\frac{a_j'}{h_j}=f_x^\#(g_j)=0\in A_x$ gilt, ist äquivalent
+    dazu, dass es $f_j'$ gibt, so dass $a_j' f_j'=0\in A$.
+    Definiere $f\coloneqq \prod_{i=0}^n f_i \prod_{j=0}^r f_j'$.
+    Dann gilt für den Morphismus
+    \begin{align*}
+      \phi_f\colon
+      R\left[X_0,\dotsc, X_n\right]
+      &\longto
+        A_f\\
+      X_i
+      &\longmapsto
+        \dfrac{a_i\cdot \prod_{k\neq i}^n f_k \prod_{j=0}^r f_j'}{f}
+        \qquad i=0,\dotsc,n
+    \end{align*}
+    dass $(g_0, \dotsc, g_r)\subset\ker(\phi')$ und das folgende
+    Diagramm kommutiert
+    \begin{center}
+      \begin{tikzcd}
+        R\left[X_0,\dotsc, X_n\right] \arrow[r,"\phi_f"]
+        \arrow[d, two heads]
+        & A_f\arrow[d]\\
+        B \arrow[r, "f_x^\#"{swap}]\arrow[ur,"\bar\phi_f"{near start}]
+        & A_x
+      \end{tikzcd}
+    \end{center}
+    Insbesondere faktorisiert $f_x^\#\colon B\to A_f\to A_x$ über
+    $A_f$, was heißt, dass $f_x$ über einen Morphismus $f\colon
+    D(f)\to\Spec(B)$ faktorisiert:
+    \begin{gather*}
+      f_x\colon
+      \Spec\O_{X,x}=\Spec(A_x)
+      \hookrightarrow \Spec(A_f)=D(f)
+      \overset{f}\longto \Spec(B)
+    \end{gather*}
+    $D(f)$ ist eine offene Umgebung von $x$, womit die Behauptung
+    gezeigt ist.
+  \end{proof}
+\end{Lemma}
+
 \begin{Lemma}\label{thm:fallstriktehenselisierung}
   Sei $R$ hier strikt henselscher, diskreter Bewertungsring mit
-  perfektem Restklassenkörper $k$, $\K$, $E_\K$, $C$, $E$ wie in
-  \autoref{thm:exneronmodelle}.
+  perfektem Restklassenkörper $k$
+  und $\K$, $E_\K$, $C$, $E$ wie in \autoref{thm:exneronmodelle}.
   Erweitert sich die $\K$-Gruppenschemastruktur von $E_\K$ auf
   $E=C^0$, dann ist $E$ Néron-Modell von $E_\K$.
   \begin{proof}
@@ -1380,13 +1465,17 @@ Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
       $\phi_\K|_{\eta}$ nach dem Bewertungskriterium für
       Eigentlichkeit auf einen Morphismus
       $\Spec(\O_{Y,\eta_Z})\to C$.
-    \item[?] $\phi\colon Y\dra E\hookrightarrow C$ ist also definiert in
-      $\eta_Z$.
-      % ??? Wieso ist \phi dann rational in eta_Z?
-    \item[?] Also muss $\phi(\eta_Z)\not\in E$ gelten nach Annahme.
-    \item[?] Dies ist äquivalent dazu, dass für jeden geschlossenen
-      Punkt $x\in Z\setminus X_\K$, also jeden $k$-wertigen Punkt
-      $x\in Z(k)$, in dem $\phi$ definiert ist, $\phi(x)\not\in E$.
+    \item \autoref{thm:morphismuserweiterung} besagt, dass sich
+      dieser auf eine Umgebung von $\eta_Z$ erweitert, was bedeutet,
+      dass $\phi\colon Y\dra E\hookrightarrow C$ in $\eta_Z$ definiert
+      ist.
+    \item Also kann $\phi(\eta_Z)$ nicht in $E$ liegen. Ansonsten
+      wäre $\phi\colon Y\dra E$ auf dem Urbild einer genügend kleinen
+      Umgebung von $\eta_Z$ in $E$ Morphismus und entgegen der Annahme in
+      $\eta_Z$ definiert.
+    \item[?] $\phi(\eta_Z)\not\in E$ ist äquivalent dazu, dass für
+      jeden geschlossenen (also $k$-wertigen) Punkt $x\in Z\setminus
+      X_\K$, in dem $\phi$ definiert ist, $\phi(x)\not\in E$ gilt.
     \item Da $R$ strikt henselsch ist, hat die Einschränkung $Y(R)\to
       Y_k(k)$ der $R$-wertigen Punkte auf die spezielle Faser ein
       dichtes Bild in $Y_k$ nach \autoref{thm:eigstrikthenselsch}.
@@ -1410,9 +1499,12 @@ Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
       $\Spec(R)\to C$, d.\,h.
       \begin{gather*}
         C(R)\ni\phi\circ x\colon
-        \Spec(R) \longto \left\{ x(\Spec(\K)), x_0 \right\}
-        \longto C
+        \Spec(R)
+        \overset{x}{\longto}
+        \left\{ x|_{\Spec(\K)}, x_0 \right\}
+        \overset{\phi}{\longto} C
       \end{gather*}
+      % ??? Stimmt die Gleichheit so?
       ist Morphismus.
     \item Es muss aber gelten, dass $\phi\circ x\not\in E(R)$, da
       ansonsten entgegen unserer Annahme $\phi$ in $x_0$ definiert
