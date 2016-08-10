@@ -46,6 +46,15 @@ Im Folgenden sei $S$ ein Schema.
   \begin{enumerate}[label=(\alph*)]
   \item
     \begin{tikzcd}
+      G\times_S G\times_S G 
+      \arrow[r, "{(\mu,\Id)}"] \arrow[d, "{(\Id,\mu)}"]
+      & G\times_S G \arrow[d, "{\mu}"] \\
+      G\times_S G \arrow[r, "\mu"]
+      & G
+    \end{tikzcd}
+    \hfill(Assoziativität)
+  \item
+    \begin{tikzcd}
       G \arrow[r, "{(\pi,\Id)}"] \arrow[d, "{\Id}"]
       & S\times_S G \arrow[d, "{\epsilon\times\Id}"] \\
       G \arrow[from=r, "\mu"]
@@ -74,15 +83,6 @@ Im Folgenden sei $S$ ein Schema.
       & G
     \end{tikzcd}
     \hfill(Inverses)
-  \item
-    \begin{tikzcd}
-      G\times_S G\times_S G 
-      \arrow[r, "{(\mu,\Id)}"] \arrow[d, "{(\Id,\mu)}"]
-      & G\times_S G \arrow[d, "{\mu}"] \\
-      G\times_S G \arrow[r, "\mu"]
-      & G
-    \end{tikzcd}
-    \hfill(Assoziativität)
   \end{enumerate}
   \begin{Bemerkung}[Gruppe der $T$-wertigen Punkte]
     Diese Definition ist äquivalent dazu, dass die $T$-wertigen Punkte
@@ -663,9 +663,9 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
   \begin{enumerate}[label=(\alph*)]
   \item $W$ ist genau dann glatt, wenn die spezielle Faser von $W$ glatt
     ist.
-  \item Ist $W$ nicht glatt, so ist der eindeutige singuläre Punkt
-    $\gamma$ der speziellen Faser der eindeutige Punkt, in dem $W$
-    nicht glatt ist, d.\,h.
+  \item Ist $W$ nicht glatt, so ist der eindeutige, geschlossene,
+    singuläre Punkt $\gamma$ der speziellen Faser der eindeutige
+    Punkt, in dem $W$ nicht glatt ist, d.\,h.
     \begin{gather*}
       W^0\coloneqq W\setminus \{\gamma\}
     \end{gather*}
@@ -887,7 +887,6 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
       $X$ bzw. $X'$ erweitert wird. Also sind $\phi,\psi$ inverse
       Isomorphismen.
     \item
-      % WARUM ÉTALE UND NICHT NUR GLATT???!!
       Sei $X_{R'}\coloneqq X\times_R R'$ der Basiswechsel
       mit generischer Faser
       $X_{\K'}=X_{R'}\times_{R'}\K'=X_\K\times_\K\K'$.
@@ -1051,30 +1050,68 @@ Néron-Modelle sind besonders interessant für Gruppenschemata, da sich
 die Gruppenstruktur auf das Néron-Modell erweitert.
 
 \begin{Bemerkung}\label{thm:gruppenschemaerweiterung}
+  \cite[1.2, Proposition 6]{neron}
   Sei $X$ Néron-Modell über $\Spec(R)$ seiner generischen Faser
   $X_\K$. Ist $X_\K$ ein $\K$"=Gruppenschema, so wird diese durch die
   \NAbbEig eindeutig auf eine
   $S$"=Gruppenschemastruktur auf $X$ erweitert.
-  \cite[1.2, Proposition 6]{neron}
+  \begin{proof}[Beweisskizze]
+    Translationen, das Inverse und der Einheitsschnitt liften wegen
+    der \NAbbEig eindeutig und erfüllen die gewünschten Eigenschaften.
+  \end{proof}
 \end{Bemerkung}
 
 \begin{Bemerkung}\label{nerongruppenschemaglatt}
-  Ist $X_\K$ ein $\K$"=Gruppenschema (also separiert) und $X$ ein
+  Ist $X_\K$ ein $\K$"=Gruppenschema und $X$ ein
   glattes $R$-Modell und Gruppenschema von $X_\K$, das die
-  \NAbbEig erfüllt, so ist $X$ bereits separiert,
-  also ein Néron-Modell.
+  \NAbbEig erfüllt, so sind $X_\K$ und $X$ bereits separiert,
+  also $X$ ist ein Néron-Modell von $X_\K$.
   \cite[1.2, Remark 7]{neron} 
   \begin{proof}[Beweisskizze]
     Ein Gruppenschema $X$ ist genau dann separiert, wenn der
     Einheitsschnitt $\epsilon\colon\Spec(R)\to X$ eine geschlossene
     Immersion ist
     \cite[Lemma 38.6.1]{stacksproject} oder \cite[7.1, Lemma 2]{neron}.
-    Dieser erweitert wegen der \NAbbEig eindeutig
-    den Einheitsschnitt $\sigma_{0,\K}\colon\Spec(\K)\to X_\K$ von
-    $X_\K$, welcher bereits geschlossene Immersion ist.
-    Dies zeigt, dass $\epsilon$ geschlossene Immersion ist
-    (man kann zeigen, dass $\Im(\sigma_{0,\K})=\Im(\epsilon)$) und
-    somit ist $X$ separiert. 
+    $\K$-Gruppenschemata sind entsprechend immer separiert
+    \cite[Lemma 38.7.3]{stacksproject}. 
+
+    Sei wegen \autoref{thm:neronmodelllokal} \OE{} $R$ diskreter
+    Bewertungsring mit Restklassenkörper $k$.
+      
+    Wir werden zeigen, dass
+    $\im(\epsilon)=\overline{\im(\epsilon_\K)}$,
+    also dass $\overline{\im(\epsilon_\K)}$ aus genau dem Punkt
+    $\epsilon(\Spec\K)$ in der generischen Faser und dem Punkt
+    $\epsilon(\Spec k)$ in der speziellen Faser besteht.
+    Dann ist $\im(\epsilon)$ geschlossen in $X$ und der Schnitt
+    $\epsilon$ demnach geschlossene Immersion.
+    
+    Auf der generischen Faser gilt
+    $\overline{\im(\epsilon_\K)}\cap X_\K=\im(\epsilon_\K)$,
+    da $\epsilon_\K$ geschlossene Immersion ist.
+    Außerdem stimmen hier $\im(\epsilon)=\{\epsilon_\K(\Spec\K)\}$ und
+    $\overline{\im(\epsilon)}\cap X_\K$ wegen der \NAbbEig punktweise
+    überein.
+
+    Auf der speziellen Faser $X_k$ betrachte einen Punkt
+    $x\in\overline{\im(\epsilon_\K)}\cap X_k$. Sei $U=\Spec(A)$ eine
+    offene, affine Umgebung von $x$ in $X$.
+    Dann gilt $R\subset A\subset\K$
+    % ??? \Spec(\K)\overset{\epsilon_\K}\to \Spec(A) \overset{\pi}\to \Spec(R)
+    und, nachdem $R$ als diskreter Bewertungsring der größte Unterring
+    von $\K$ ist, folglich $R=A$.
+    Wir erhalten einen Schnitt
+    $X(R)\ni e\colon\Spec(R)\to\Spec(A)\hookrightarrow X$,
+    der $\epsilon_\K\colon\Spec(\K)\to X_\K$ erweitert.
+    Dieser muss allerdings wegen der Eindeutigkeit aus der \NAbbEig
+    gleich $\epsilon\in X(R)$ sein, also liegt $x$ in $\im(\epsilon)$.
+    Nachdem $x\in \overline{\im(\epsilon_\K)}\cap X_k$ beliegig
+    gewählt war, kann $\overline{\im(\epsilon_\K)}\cap X_k$ nur den
+    Punkt $\epsilon(\Spec k)$ enthalten.
+
+    Die Mengen $\overline{\im(\epsilon_\K)}=\im(\epsilon_\K)$ stimmen
+    also überein, insbesondere ist $\im(\epsilon_\K)$ geschlossene
+    Immersion.
   \end{proof}
 \end{Bemerkung}
 
