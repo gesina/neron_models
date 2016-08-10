@@ -43,14 +43,8 @@ Im Folgenden sei $S$ ein Schema.
     &&\text{(Inverses)}
   \end{align*}
   für die folgende Diagramme kommutieren
-  \begin{description}[labelwidth=4cm]
-  \item[Neutrales Element]
-    % \begin{gather*}
-    %   \Id = \mu\circ((\epsilon\circ\pi)\times\Id) =
-    %   \mu\circ(\Id\times(\epsilon\circ\pi))
-    % \end{gather*}
-    % d.\,h. es kommutieren
-    % \begin{center}
+  \begin{enumerate}[label=(\alph*)]
+  \item
     \begin{tikzcd}
       G \arrow[r, "{(\pi,\Id)}"] \arrow[d, "{\Id}"]
       & S\times_S G \arrow[d, "{\epsilon\times\Id}"] \\
@@ -64,13 +58,8 @@ Im Folgenden sei $S$ ein Schema.
       G \arrow[from=r, "\mu"]
       & G\times_S G
     \end{tikzcd}
-    % \end{center}
-  \item[Inverses]
-    % \begin{gather*}
-    %   \epsilon\circ\pi = \mu\circ(i,\Id)=\mu\circ(\Id,i)
-    % \end{gather*}
-    % d.\,h. es kommutieren
-    % \begin{center}
+    \hfill(Neutrales Element)
+  \item
     \begin{tikzcd}
       G \arrow[r, "{(i,\Id)}"] \arrow[d, "{\pi}"]
       & G\times_S G \arrow[d, "{\mu}"] \\
@@ -84,13 +73,8 @@ Im Folgenden sei $S$ ein Schema.
       S \arrow[r, "\epsilon"]
       & G
     \end{tikzcd}
-    % \end{center}
-  \item[Assoziativität]
-    % \begin{gather*}
-    %   \mu\circ(\Id\circ\mu)=\mu\circ(\mu\circ\Id)
-    % \end{gather*}
-    % d.\,h. es kommutieren
-    % \begin{center}
+    \hfill(Inverses)
+  \item
     \begin{tikzcd}
       G\times_S G\times_S G 
       \arrow[r, "{(\mu,\Id)}"] \arrow[d, "{(\Id,\mu)}"]
@@ -98,8 +82,8 @@ Im Folgenden sei $S$ ein Schema.
       G\times_S G \arrow[r, "\mu"]
       & G
     \end{tikzcd}
-    % \end{center}
-  \end{description}
+    \hfill(Assoziativität)
+  \end{enumerate}
   \begin{Bemerkung}[Gruppe der $T$-wertigen Punkte]
     Diese Definition ist äquivalent dazu, dass die $T$-wertigen Punkte
     $G(T)=\Hom_S(T,G)$ eine Gruppenstruktur tragen, die funktoriell in
@@ -170,14 +154,6 @@ Im Folgenden sei $S$ ein Schema.
 
 \begin{Definition}[Identitätskomponente]
   Sei $G$ ein $S$"=Gruppenschema.
-  % Ist $S=\Spec(\K)$ für einen Körper $\K$ und $G$ von endlichem Typ
-  % über $\K$, ist die Identitätskomponente von $G$ das größte
-  % zusammenhängende $S$-Untergruppenschema von $G$.
-  % % ??? Wikipedia
-  % Im allgemeinen Fall ist die Identitätskomponente die Vereinigungen
-  % der Identitätskomponenten der Fasern.
-  % % ??? Weitere Voraussetzungen?
-  % \cite[S.\,154]{neron}
   Die Identitätskomponente einer Faser $G_s$ ($s\in S$) von $G$ ist
   die Zusammenhangskomponente von $G_s$, die $\epsilon(s)$ enthält.
   Die Identitäts-~oder Zusammenhangskomponente von $G$ ist
@@ -224,6 +200,89 @@ Abbildungen:
   \cite[Proposition IV.6.2]{silverman2}
 \end{Lemma}
 
+
+Eine schwächere bzw. rationale Form einer Gruppenschemastruktur:
+\begin{Definition}[normale Komposition]\label{def:normalekomposition}
+  Sei $R$ Dedekindring, $V$ glattes $R$-Schema mit nichtleeren Fasern.
+  Eine \emph{normale Komposition auf $V$} ist eine $R$-rationale
+  Abbildung
+  \begin{gather*}
+    \mu\colon V\times_R V\dra V
+  \end{gather*}
+  die folgende Bedingungen erfüllt
+  \begin{enumerate}[label=(\alph*)]
+  \item (Assoziativität) Es gilt
+    \begin{gather*}
+      \mu(\mu(x,y),z)=\mu(x,\mu(y,z))
+    \end{gather*}
+    für alle $x,y,z$, so dass der Ausdruck beidseitig definiert ist.
+  \item (Inverses)
+    Die rationalen Abbildungen
+    \begin{align*}
+      \phi\colon V\times_R V
+      &\dra V\times_R V
+      &\psi\colon V\times_R V
+      & V\times_R V\\
+      (x,y)
+      &\longmapsto (x,\mu(x,y))
+      &(x,y)
+      &\longmapsto (y,\mu(x,y))       
+    \end{align*}
+    haben dichtes Bild in jeder Faser und die Einschränkung auf jede
+    Faser ist birationaler Isomorphismus.
+  \end{enumerate}
+\end{Definition}
+
+\begin{Satz}\label{thm:weil}
+  \cite[Theorem VIII.1.12]{artin},
+  \cite[Theorem IV.6.9]{silverman2}
+  Sei $R$ Dedekindring, $V$ glattes $R$-Schema mit nichtleeren Fasern
+  und normaler Komposition $\mu\colon V\times_R V\dra V\times_R$.
+  $V$ sei endlichen Typs und $V(R)$ sei dicht in jeder Faser.
+  Dann gibt es ein $R$-Gruppenschema $(G,\mu_G)$ endlichen Typs und
+  gemeinsames, offenes, $R$-dichtes Unterschemata $V\hookleftarrow
+  U\hookrightarrow G$ von $V$ und $G$, so dass $\mu|_U=\mu_G|_U$.
+  \begin{proof}
+    \begin{enumerate}
+    \item Fall zusammenhängende Fasern:
+      \begin{enumerate}
+      \item $X=X_\phi\cap X_\psi\cap Y_\phi\cap Y_\psi$:
+        $V$ hat normale Komposition $\mu$ mit zugehörigen rationalen
+        Abbildungen $\phi$ und $\psi$.
+        Wähle $R$-dichte, offene Teilmengen
+        $X_\phi,X_\psi,Y_\phi,Y_\psi\subset V\times_R V$,
+        so dass $\phi\colon X_\phi\overset\sim\to Y_\phi$,
+        $\psi\colon X_\psi\overset\sim\to Y_\psi$ Isomorphismen sind.
+        Definiere $X=X_\phi\cap X_\psi\cap Y_\phi\cap Y_\psi\subset
+        V^2$.
+        $X$ ist wieder $R$-dicht und $\phi|_X,\psi|_X\colon X\cong X$
+        sind per Definition Isomorphismen auf $X$.
+      \item Es gibt eine offene, $R$-dichte Teilmenge $U\subset V$, so
+        dass die Einschränkung der Projektionen
+        $\proj_i\colon V\times_R V\to V$ auf $X$ surjektiv sind.
+      \item Für $V=U$ gilt:
+        Sei $a\in V$, $x\in V$ in dichter, offener Teilmenge der
+        Faser, die $a$ enthält.
+        Dann sind $\phi^{\pm1}, \psi^{\pm1}$ in $(x,a)\in V\times_R V$
+        definiert.
+      \item Sei $\Gamma_\mu\subset V^3$ der Graf von $\mu$
+        ($R$-Schema), $\Gamma\coloneqq \overline{\Gamma_\mu}\subset
+        V^3$.
+        Dann sind die Einschränkungen der Projektionen
+        $\proj_{1,2},\proj_{2,3},\proj_{1,3}\colon \Gamma\to V^2$
+        offene Immersionen und dicht in jeder Faser von $V^2$.
+        % ??? Wie kann ein Morphismus dicht in einer Faser sein?
+      \item Verkleben entlang von $W_s=V\times_R s\times_R V$ für
+        $s\in V$:
+        …
+      \item …
+      \end{enumerate}
+    \item Stein-Faktorisierung + „dense set of local sections“?:
+      % ??? Was ist ein „dense set of local sections“?
+      Erhalte offenes Unterschema 
+    \end{enumerate}
+  \end{proof}
+\end{Satz}
 
 % ----------
 
@@ -491,89 +550,107 @@ betrachten:
 Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 
 \begin{Lemma}\label{thm:eigweierstrassmodelle}
-  Ein Weierstraßmodell von $E_\K$ über $R$ ist
-  irreduzibel,
+  Ein Weierstraßmodell von $E_\K$ über einem Dedekindring $R$ ist
+  integral,
   projektiv (insb. quasikompakt, noethersch),
-  endlich repräsentiert (insb. von endlichem Typ).
+  endlich repräsentiert (insb. von endlichem Typ),
+  flach.
   \begin{proof}
     \begin{description}
-    \item[irreduzibel]
+    \item[projektiv] $W$ ist per Konstruktion projektiv. Als
+      geschlossenes Unterschema des quasikompakten, noetherschen Raums
+      $\P_R^n$ ist es quasikompakt und noethersch.
+    \item[integral]
       Dass $W$ irreduzibel ist, kann auf der affinen, offenen
       Standardüberdeckung des $\P_R^2$ durch drei Kopien des $\A_R^2$
       überprüft werden, da diese nicht-leeren Schnitt haben. Hier
       erhalten wir die Kurven im $\A_R^2$, die durch die
-      dehomogenisierten Formen der Weierstraßgleichung erzeugt
-      werden. D.\,h. zum Erzeuger $f(X,Y,Z)\in R[X,Y,Z]$ von $W$ durch 
-      die Weierstraßgleichung $f(X,Y,Z)=0$  erhalten wir Erzeuger
-      $f_Z\in R[\frac{X}{Z},\frac{Y}{Z}]=R[x,y]$, $f_Y\in R[x,z]$,
-      $f_X\in R[y,z]$ der affinen Kurven.
+      dehomogenisierten Formen der Weierstraßgleichung $f(X,Y,Z)=0\in
+      R[X,Y,Z]$, d.\,h. $f_Z\in R[\frac{X}{Z},\frac{Y}{Z}]=R[x,y]$,
+      $f_Y\in R[x,z]$, $f_X\in R[y,z]$, erzeugt werden.
       Diese stimmen nach Konstruktion mit den Erzeugern für die affinen
       Kurven zu $E_\K$ überein und sind daher irreduzibel über $\K$,
       also auch irreduzibel über $R$.
-      % ??? sicher?
       Entsprechend ist die gewählte affine, offene Überdeckung von $W$
-      irreduzibel und somit $W$ irreduzibel.
-    \item[projektiv] $W$ ist per Konstruktion projektiv. Als
-      geschlossenes Unterschema des quasikompakten, noetherschen Raums
-      $\P_R^n$ ist es quasikompakt und noethersch.
+      irreduzibel und reduziert und somit $W$ integral.
     \item[endlich repräsentiert]
       Die zuvor beschriebene Überdeckung ist eine (endliche)
       Überdeckung mit Spektren von endlich repräsentierten $R$-Algebren,
       also ist $W$ endlich repräsentiert.
       % ??? Stimmt das?
       Entsprechend folgt, dass $W$ von endlichem Typ ist.
+    \item[flach]
+      Wir werden zeigen, dass aus integral und nichtleerer generischer
+      Faser $E_\K$ folgt, dass der eindeutige generische Punkt $\eta$
+      von $W$ auf den generischen Punkt von $R$ geschickt wird.
+      Das zeigt, dass $W$ flach ist
+      nach \cite[Proposition III.9.7]{hartshorne}
+      (hierbei wird zusätzlich benutzt, dass $\Spec(R)$ integral,
+      regulär und von Dimension 1 ist).
+      
+      Nachdem $W$ integral ist, hat es einen eindeutigen generischen
+      Punkt $\eta$.
+      Angenommen, dieser wird durch die Abbildung, die $W$ zum
+      $R$-Schema macht, auf einen geschlossenen Punkt $\m$ von $\Spec(R)$
+      geschickt.
+      Dann liegt $\eta$ im geschlossenen Urbild von $\m$ –
+      aber der Abschluss $\overline{\{\eta\}}=X$ von $\eta$ ist darin
+      enthalten. Entsprechend wäre die generische Faser $E_\K$
+      leer, was ein Widerspruch ist.
+      Also muss der generische Punkt auf den generischen Punkt geschickt
+      werden.
     \end{description}
   \end{proof}
 \end{Lemma}
 
 % Für Regularität siehe \cite[Lemma IV.9.5]{silverman2}
 
-\begin{Lemma}\label{thm:glattüberdvr}
-  Sei $R$ diskreter Bewertungsring,
-  $\K=\Quot(R)$,
-  $X$ irreduzibles
-  lokal endlich repräsentiertes
-  (für lokal noethersch äquivalent:
-  lokal endlichen Typs \cite[Remark 10.36]{wedhorn})
-  $R$-Schema mit nichtleerer, generischer Faser $X_\K$.
-  Dann ist $X$ genau dann glattes $R$-Schema, wenn die Fasern glatt
-  sind.
-  \begin{proof}
-    % siehe auch \cite[Proposition IV.2.9]{silverman2}
-    Ist $X$ glatt, so auch jede Faser, da Glattheit stabil unter
-    Basiswechsel ist.
+% \begin{Lemma}\label{thm:glattüberdvr}
+%   Sei $R$ diskreter Bewertungsring,
+%   $\K=\Quot(R)$,
+%   $X$ irreduzibles,
+%   lokal endlich repräsentiertes
+%   (für lokal noethersch äquivalent:
+%   lokal endlichen Typs \cite[Remark 10.36]{wedhorn})
+%   $R$-Schema mit nichtleerer, generischer Faser $X_\K$.
+%   Dann ist $X$ genau dann glattes $R$-Schema, wenn die Fasern glatt
+%   sind.
+%   \begin{proof}
+%     % siehe auch \cite[Proposition IV.2.9]{silverman2}
+%     Ist $X$ glatt, so auch jede Faser, da Glattheit stabil unter
+%     Basiswechsel ist.
 
-    Seien also die Fasern von $X$ glatt, insb. reduziert.
-    Dann ist $X$ ebenfalls reduziert, da Reduziertheit auf den Halmen
-    geprüft werden kann.
-    Außerdem ist $X$ nach Voraussetzung irreduzibel, daher integral,
-    und (lokal) endlich repräsentiert.
-    Wir wissen, dass $X$ glatt ist, wenn es lokal endlich repräsentiert
-    und flach über $R$ ist und seine Fasern glatt sind
-    \cite[8.5, Proposition 17]{bosch}.
-    Es ist also Flachheit zu zeigen.
+%     Seien also die Fasern von $X$ glatt, insb. reduziert.
+%     Dann ist $X$ ebenfalls reduziert, da Reduziertheit auf den Halmen
+%     geprüft werden kann.
+%     Außerdem ist $X$ nach Voraussetzung irreduzibel, daher integral,
+%     und (lokal) endlich repräsentiert.
+%     Wir wissen, dass $X$ glatt ist, wenn es lokal endlich repräsentiert
+%     und flach über $R$ ist und seine Fasern glatt sind
+%     \cite[8.5, Proposition 17]{bosch}.
+%     Es ist also Flachheit zu zeigen.
     
-    Wir werden zeigen, dass aus integral und nichtleerer generischer
-    Faser $X_\K$ folgt, dass der eindeutige generische Punkt $\eta$
-    von $X$ auf den generischen Punkt von $R$ geschickt wird.
-    Das zeigt, dass $X$ flach ist
-    \cite[Proposition III.9.7]{hartshorne}
-    (hierbei wird zusätzlich benutzt, dass $\Spec(R)$ integral,
-    regulär und von Dimension 1 ist).
+%     Wir werden zeigen, dass aus integral und nichtleerer generischer
+%     Faser $X_\K$ folgt, dass der eindeutige generische Punkt $\eta$
+%     von $X$ auf den generischen Punkt von $R$ geschickt wird.
+%     Das zeigt, dass $X$ flach ist
+%     \cite[Proposition III.9.7]{hartshorne}
+%     (hierbei wird zusätzlich benutzt, dass $\Spec(R)$ integral,
+%     regulär und von Dimension 1 ist).
 
-    Nachdem $X$ integral ist, hat es einen eindeutigen generischen
-    Punkt $\eta$.
-    Angenommen, dieser wird durch die Abbildung, die $X$ zum
-    $R$-Schema macht, auf einen geschlossenen Punkt $\m$ von $\Spec(R)$
-    geschickt.
-    Dann liegt $\eta$ im geschlossenen Urbild von $\m$ –
-    aber der Abschluss $\overline{\{\eta\}}=X$ von $\eta$ ist darin
-    enthalten. Entsprechend wäre die generische Faser $X_\K$
-    leer, was ein Widerspruch ist.
-    Also muss der generische Punkt auf den generischen Punkt geschickt
-    werden.
-  \end{proof}
-\end{Lemma}
+%     Nachdem $X$ integral ist, hat es einen eindeutigen generischen
+%     Punkt $\eta$.
+%     Angenommen, dieser wird durch die Abbildung, die $X$ zum
+%     $R$-Schema macht, auf einen geschlossenen Punkt $\m$ von $\Spec(R)$
+%     geschickt.
+%     Dann liegt $\eta$ im geschlossenen Urbild von $\m$ –
+%     aber der Abschluss $\overline{\{\eta\}}=X$ von $\eta$ ist darin
+%     enthalten. Entsprechend wäre die generische Faser $X_\K$
+%     leer, was ein Widerspruch ist.
+%     Also muss der generische Punkt auf den generischen Punkt geschickt
+%     werden.
+%   \end{proof}
+% \end{Lemma}
 
 \begin{Lemma}\label{thm:weierstrassglatt}
   Sei $(R,\m)$ diskreter Bewertungsring,
@@ -605,12 +682,12 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 
   \begin{proof}
     \begin{enumerate}[label=(\alph*)]
-    \item $W$ ist irreduzibles, lokal endlich repräsentiertes
+    \item $W$ ist flaches, lokal endlich repräsentiertes
       $R$-Schema (s. \autoref{thm:eigweierstrassmodelle}).
-      Daher ist es nach \autoref{thm:glattüberdvr} genau dann glatt,
-      wenn beide Fasern glatt sind. Nachdem $W_\K=E_\K$ nach
-      Voraussetzung glatt ist, ist $W$ genau dann glatt, wenn $W_\m$
-      glatt ist.
+      Nach \cite[8.5, Proposition 17]{bosch} ist es also genau dann
+      glatt, wenn seine Fasern glatt sind.
+      Nachdem $W_\K=E_\K$ nach Voraussetzung glatt ist, ist $W$ genau
+      dann glatt, wenn $W_\m$ glatt ist.
     \item Für $\k(\m)$-Schemata lokal endlichen Typs sind glatt und
       geometrisch regulär äquivalent \cite[Corollary 6.32]{wedhorn}.
       Da $\k(\m)$ perfekt ist, ist dies sogar äquivalent zu regulär
@@ -638,14 +715,13 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
       $W^0$ ist irreduzibel, da der Abschluss $\overline{W^0}=W$ in
       $W$ irreduzibel ist nach \autoref{thm:eigweierstrassmodelle}.
       Es ist als Unterschema von $W$ ebenfalls lokal endlich
-      repräsentiert (s. \autoref{thm:eigweierstrassmodelle}).
+      repräsentiert und flach (s. \autoref{thm:eigweierstrassmodelle}).
       Es hat wie $W$ die (nichtleere) glatte, generische Faser $E_\K$ und
       per Konstruktion die spezielle Faser $W_{\m}\setminus\{\gamma\}$,
-      welche nach Voraussetzung beide regulär (also glatt und reduzibel)
-      sind.
-      Damit ist $W^0$ nach \autoref{thm:glattüberdvr} glatt über $R$
-      bzw. glattes $R$-Modell von $E_\K$ und das offene Unterschema
-      der glatten Punkte von $W$.
+      welche nach Voraussetzung beide regulär (also glatt) sind.
+      Damit ist $W^0$ wieder nach \cite[8.5, Proposition 17]{bosch}
+      glatt über $R$ bzw. glattes $R$-Modell von $E_\K$ und das offene
+      Unterschema der glatten Punkte von $W$.
     \end{enumerate}
   \end{proof}
 \end{Lemma}
@@ -1004,20 +1080,20 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
 
 % ------
 
-\section{Beispiele}
+% \section{Beispiele}
 
-\begin{Satz}
-  Ein abelsches Schema über $\Spec(R)$ ist Néron-Modell seiner
-  generischen Faser.
-  \cite[1.2, Proposition 8]{neron}
-\end{Satz}
+% \begin{Satz}
+%   Ein abelsches Schema über $\Spec(R)$ ist Néron-Modell seiner
+%   generischen Faser.
+%   \cite[1.2, Proposition 8]{neron}
+% \end{Satz}
 
-\begin{Satz}
-  Ein glattes, separiertes $\Spec(R)$-Schema endlichen Typs ist genau
-  dann ein Néron-Modell seiner generischen Faser, wenn es die
-  Erweiterungseigenschaft für étale Punkte erfüllt.
-  \cite[1.2, Criterion 9]{neron}
-\end{Satz}
+% \begin{Satz}
+%   Ein glattes, separiertes $\Spec(R)$-Schema endlichen Typs ist genau
+%   dann ein Néron-Modell seiner generischen Faser, wenn es die
+%   Erweiterungseigenschaft für étale Punkte erfüllt.
+%   \cite[1.2, Criterion 9]{neron}
+% \end{Satz}
 
 % ------
 
@@ -1274,9 +1350,9 @@ Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
   Sei $R$ Dedekindring mit perfekten Quotientenkörpern,
   $\K=\Quot(R)$, $E_\K$ elliptische Kurve über $\K$ und $C$ minimales
   eigentliches, reguläres $R$-Modell von $E_\K$
-  (d.\,h. integrales, normales, exzellentes, flaches $R$-Schema von
-  endlichem Typ mit Vereinigungen projektiver Kurven als Fasern und
-  Minimalitätseigenschaft).
+  (d.\,h. eigentliches, reguläres, integrales, normales, exzellentes,
+  flaches $R$-Schema von endlichem Typ mit Vereinigungen projektiver
+  Kurven als Fasern und Minimalitätseigenschaft).
   Sei $E$ das größte glatte $R$-Unterschema von $C$.
   Dann ist $E$ Néron-Modell von $E_\K$.
 
@@ -1473,6 +1549,7 @@ Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
       wäre $\phi\colon Y\dra E$ auf dem Urbild einer genügend kleinen
       Umgebung von $\eta_Z$ in $E$ Morphismus und entgegen der Annahme in
       $\eta_Z$ definiert.
+      % C integral, urbilder dichter Mengen dicht
     \item[?] $\phi(\eta_Z)\not\in E$ ist äquivalent dazu, dass für
       jeden geschlossenen (also $k$-wertigen) Punkt $x\in Z\setminus
       X_\K$, in dem $\phi$ definiert ist, $\phi(x)\not\in E$ gilt.
@@ -1515,74 +1592,6 @@ Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
     \end{enumerate}
   \end{proof}
 \end{Lemma}
-
-% --------
-
-\chapter{Ausblick}
-Tate's Algorithmus zur Berechnung der speziellen Faser bzw. des
-Néron-Modells und des minimalen eigentlichen, regulären Modells einer
-elliptischen Kurve
-\cite[IV.9]{silverman2}
-
-% --------
-
-\appendix
-\chapter{Definitionen}
-
-% DEDEKINDRINGE
-\begin{Definition}[Dedekindring]\label{def:dedekindring}
-  Ein Integritätsring $R$ heißt Dedekindring, wenn er eine der
-  äquivalenten Bedingungen erfüllt
-  \begin{enumerate}[label=(\roman*)]
-  \item regulär und $\dim(A)\leq 1$
-  \item noethersch, normal und $\dim(A)\leq 1$
-  \item $A$ Körper oder
-    jede Lokalisierung nach einem Maximalideal ist ein diskreter
-    Bewertungsring
-    (d.\,h. lokal, noethersch, normal von Dimension 1)
-  \item jedes echte Ideal ist endliches Produkt von Primidealen
-    (diese ist dann eindeutig bis auf Reihenfolge) 
-  \end{enumerate}
-  \cite[S.\,40]{hartshorne} und \cite[Definition B.84]{wedhorn}
-
-  Faktorielle Dedekindringe sind genau die Hauptidealringe.
-  \cite[Proposition B.85]{wedhorn}
-
-  \begin{Definition}[Dedekindschema]
-    Ein Dedekindschema ist ein noethersches, integrales Schema $X$, das
-    eine der äquivalenten Eigenschaften erfüllt
-    \begin{enumerate}[label=(\roman*)]
-    \item die offenen affinen Unterschemata sind Spektren von Dedekindringen
-    \item $\dim(X)\leq 1$ und $X$ regulär
-      (in Dimension 1 äquivalent zu normal
-      \cite[Corollary 6.39, Proposition 6.40]{wedhorn})
-    \end{enumerate}
-    Ein integrales Schema mit endlicher Überdeckung durch Dedekindschemata
-    ist selbst Dedekindschema.
-    \cite[Chapter (7.13)]{wedhorn}
-  \end{Definition}
-
-  \begin{Bemerkung}
-    Die Bedingung, dass $S$ integral sein muss, liefert einen eindeutigen
-    generischen Punkt $\eta$ und einen Funktionenkörper
-    $\K=\k(\eta)=\O_{S,\eta}$, so dass jeder Schnitt und jeder Halm ein
-    Unterring von $\K$ ist, d.\,h. es gibt für jeden Punkt $x\in X$ einen
-    Morphismus $\Spec(\K)\to\Spec(\k(x))$ und für jede offene Teilmenge
-    $U\subset X$ einen Morphismus $\Spec(\K)\to\Spec(\Gamma(U,\O_X))$.
-
-    Verzichtet man auf diese Bedingung, erhält man eine Familie
-    generischer Punkte $\eta_i$ der endlich vielen irreduziblen
-    Komponenten (beachte: $S$ noethersch). Dieser Fall kann analog
-    behandelt werden, indem man $\K=\bigoplus_i \k(\eta_i)$ setzt.
-  \end{Bemerkung}
-
-  \begin{Bemerkung}[generische und spezielle Fasern]
-    Ist $S=\Spec(R)$ mit $R$ Dedekindring, so hat ein $S$-Schema die
-    \emph{generische Faser} über dem generische Punkt $\eta=(0)$ und die
-    \emph{speziellen Fasern} über den verbleibenden Maximalidealen
-    (geschlossenen Punkten).
-  \end{Bemerkung}
-\end{Definition}
 
 
 % HENSELSCHE RINGE
@@ -1682,6 +1691,75 @@ elliptischen Kurve
   \end{enumerate}
   \cite[Proposition IV.6.4]{silverman2}
 \end{Satz}
+
+
+% --------
+
+\chapter{Ausblick}
+Tate's Algorithmus zur Berechnung der speziellen Faser bzw. des
+Néron-Modells und des minimalen eigentlichen, regulären Modells einer
+elliptischen Kurve
+\cite[IV.9]{silverman2}
+
+% --------
+
+\appendix
+\chapter{Definitionen}
+
+% DEDEKINDRINGE
+\begin{Definition}[Dedekindring]\label{def:dedekindring}
+  Ein Integritätsring $R$ heißt Dedekindring, wenn er eine der
+  äquivalenten Bedingungen erfüllt
+  \begin{enumerate}[label=(\roman*)]
+  \item regulär und $\dim(A)\leq 1$
+  \item noethersch, normal und $\dim(A)\leq 1$
+  \item $A$ Körper oder
+    jede Lokalisierung nach einem Maximalideal ist ein diskreter
+    Bewertungsring
+    (d.\,h. lokal, noethersch, normal von Dimension 1)
+  \item jedes echte Ideal ist endliches Produkt von Primidealen
+    (diese ist dann eindeutig bis auf Reihenfolge) 
+  \end{enumerate}
+  \cite[S.\,40]{hartshorne} und \cite[Definition B.84]{wedhorn}
+
+  Faktorielle Dedekindringe sind genau die Hauptidealringe.
+  \cite[Proposition B.85]{wedhorn}
+
+  \begin{Definition}[Dedekindschema]
+    Ein Dedekindschema ist ein noethersches, integrales Schema $X$, das
+    eine der äquivalenten Eigenschaften erfüllt
+    \begin{enumerate}[label=(\roman*)]
+    \item die offenen affinen Unterschemata sind Spektren von Dedekindringen
+    \item $\dim(X)\leq 1$ und $X$ regulär
+      (in Dimension 1 äquivalent zu normal
+      \cite[Corollary 6.39, Proposition 6.40]{wedhorn})
+    \end{enumerate}
+    Ein integrales Schema mit endlicher Überdeckung durch Dedekindschemata
+    ist selbst Dedekindschema.
+    \cite[Chapter (7.13)]{wedhorn}
+  \end{Definition}
+
+  \begin{Bemerkung}
+    Die Bedingung, dass $S$ integral sein muss, liefert einen eindeutigen
+    generischen Punkt $\eta$ und einen Funktionenkörper
+    $\K=\k(\eta)=\O_{S,\eta}$, so dass jeder Schnitt und jeder Halm ein
+    Unterring von $\K$ ist, d.\,h. es gibt für jeden Punkt $x\in X$ einen
+    Morphismus $\Spec(\K)\to\Spec(\k(x))$ und für jede offene Teilmenge
+    $U\subset X$ einen Morphismus $\Spec(\K)\to\Spec(\Gamma(U,\O_X))$.
+
+    Verzichtet man auf diese Bedingung, erhält man eine Familie
+    generischer Punkte $\eta_i$ der endlich vielen irreduziblen
+    Komponenten (beachte: $S$ noethersch). Dieser Fall kann analog
+    behandelt werden, indem man $\K=\bigoplus_i \k(\eta_i)$ setzt.
+  \end{Bemerkung}
+
+  \begin{Bemerkung}[generische und spezielle Fasern]
+    Ist $S=\Spec(R)$ mit $R$ Dedekindring, so hat ein $S$-Schema die
+    \emph{generische Faser} über dem generische Punkt $\eta=(0)$ und die
+    \emph{speziellen Fasern} über den verbleibenden Maximalidealen
+    (geschlossenen Punkten).
+  \end{Bemerkung}
+\end{Definition}
 
 
 % REDUZIERT
