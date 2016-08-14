@@ -222,7 +222,7 @@ Eine schwächere bzw. rationale Form einer Gruppenschemastruktur:
       \phi\colon V\times_R V
       &\dra V\times_R V
       &\psi\colon V\times_R V
-      & V\times_R V\\
+      & \dra V\times_R V\\
       (x,y)
       &\longmapsto (x,\mu(x,y))
       &(x,y)
@@ -237,7 +237,7 @@ Eine schwächere bzw. rationale Form einer Gruppenschemastruktur:
   \cite[Theorem VIII.1.12]{artin},
   \cite[Theorem IV.6.9]{silverman2}
   Sei $R$ Dedekindring, $V$ glattes $R$-Schema mit nichtleeren Fasern
-  und normaler Komposition $\mu\colon V\times_R V\dra V\times_R$.
+  und normaler Komposition $\mu\colon V\times_R V\dra V$.
   $V$ sei endlichen Typs und $V(R)$ sei dicht in jeder Faser.
   Dann gibt es ein $R$-Gruppenschema $(G,\mu_G)$ endlichen Typs und
   gemeinsames, offenes, $R$-dichtes Unterschemata $V\hookleftarrow
@@ -300,14 +300,26 @@ Eine schwächere bzw. rationale Form einer Gruppenschemastruktur:
 \section{Arithmetische Flächen und minimale, reguläre, eigentliche Modelle}
 \begin{Definition}[arithmetische Fläche]
   Sei $R$ Dedekindring mit Quotientenkörper $\K$.
-  Eine arithmetische Fläche $X$ über $R$ ist ein
-  integrales, normales, exzellentes Schema, flach und von endlichem
-  Typ über $R$,
-  dessen generische Faser eine reguläre, zusammenhängende,
-  projektive Kurve $X_\K/\K$ ist
-  und dessen spezielle Fasern Vereinigungen von Kurven über den
-  entsprechenden Restklassenkörpern sind.
-  \cite[IV.4]{silverman2}
+  % \optcite[IV.4]{silverman2}
+  % Eine arithmetische Fläche $X$ über $R$ ist ein
+  % integrales, normales, exzellentes Schema, flach und von endlichem
+  % Typ über $R$,
+  % dessen generische Faser eine reguläre, zusammenhängende,
+  % projektive Kurve $X_\K/\K$ ist
+  % und dessen spezielle Fasern Vereinigungen von Kurven über den
+  % entsprechenden Restklassenkörpern sind.
+
+  % % exzellent-Bediungung:
+  % Hat $R$ Quotientenkörper der Charakteristik Null, so ist jedes
+  % $R$-Schema lokal endlichen Typs bereits excellent.
+  % \optcite[Theorem 12.51]{wedhorn}
+  
+  \optcite[Definition 8.3.1, 8.3.14]{liu}
+  Eine arithmetische Fläche ist ein projektives, integrales, flaches,
+  reguläres $R$-Schema von Dimension 2 (also Dimension 1 über $R$).
+  Die generische Faser $X_\K$ ist integrale Kurve über $\K$ und jede
+  spezielle Faser $X_s$ ($s\in\Spec(R)$) ist projektive Kurven über
+  $\k(s)$.\optcite[Lemma 8.3.3]{liu}
   
   $X$ ist also ein $X_\K$-Modell.
 \end{Definition}
@@ -400,8 +412,7 @@ Eine schwächere bzw. rationale Form einer Gruppenschemastruktur:
 \begin{Bemerkung}
   Die obigen Bedingungen treffen z.\,B. auf ein eigentliches,
   reguläres, flaches $R$-Schema zu, also insbesondere arithmetische
-  Flächen (diese sind integral, normal, exzellent, flach, von
-  endlichem Typ).
+  Flächen (diese sind integral, regulär, flach, projektiv).
 \end{Bemerkung}
 
 \begin{Lemma}\label{thm:arithflschnittbilderglatt}
@@ -714,7 +725,7 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
       Das Unterschema $W^0=W\setminus\gamma$ ist dementsprechend offen.
       $W^0$ ist irreduzibel, da der Abschluss $\overline{W^0}=W$ in
       $W$ irreduzibel ist nach \autoref{thm:eigweierstrassmodelle}.
-      Es ist als Unterschema von $W$ ebenfalls lokal endlich
+      Es ist als Unterschema von $W$ ebenfalls reduziert, endlich
       repräsentiert und flach (s. \autoref{thm:eigweierstrassmodelle}).
       Es hat wie $W$ die (nichtleere) glatte, generische Faser $E_\K$ und
       per Konstruktion die spezielle Faser $W_{\m}\setminus\{\gamma\}$,
@@ -1539,7 +1550,7 @@ Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
     ist noch die \NAbbEig zu prüfen.
     Sei also $Y$ ein glattes $R$-Schema mit einem Morphismus
     $\phi_\K\colon Y_\K\to E_\K$, bzw. nach \autoref{thm:dichtefaser}
-    einer rationalen Abbildung $\phi\colon Y\to E$, die von $\phi_\K$
+    einer rationalen Abbildung $\phi\colon Y\dra E$, die von $\phi_\K$
     repräsentiert wird.
 
     Wir werden den Beweis durch Widerspruch führen.
