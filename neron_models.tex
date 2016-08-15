@@ -230,14 +230,14 @@ Im Folgenden sei $S$ ein Schema.
 
   Eine ($S$-)rationale Abbildung $\phi\colon X\dra Y$ heißt definiert
   in $x\in X$, falls $\phi$ von einem Morphismus $\psi\colon U\to Y$
-  repräsentiert werden kann mit $x\in U$.
+  präsentiert werden kann mit $x\in U$.
   Der \emph{Definitionsbereich $\Dom(\phi)$ von $\phi$} sind die
   Punkte, in denen $\phi$ definiert ist. Er ist offene, ($S$-)dichte
   Teilmenge von $X$. Ist $X/R$ separiert gibt es einen Morphismus
-  $\Dom(\phi)\to Y$, der $\phi$ repräsentiert.
+  $\Dom(\phi)\to Y$, der $\phi$ präsentiert.
   
   $\phi\colon X\dra Y$ heißt ($S$-)birational, falls es von einem
-  $S$-Morphismus $\psi\colon U\to Y$ repräsentiert werden kann, der
+  $S$-Morphismus $\psi\colon U\to Y$ präsentiert werden kann, der
   die offene Immersion einer ($S$-)dichten, offenen Teilmenge von $Y$
   ist.
 \end{Definition}
@@ -448,7 +448,7 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
   \label{def:neronmodellellkurve}
   Sei $R$ ein Dedekindring (mit perfektem Restklassenkörper),
   $\K=\Quot(R)$, $E_\K$ eine elliptische Kurve, d.\,h. ein
-  glattes, projektives (also separiertes), integrales, reguläres
+  glattes, projektives (also separiertes), integeres, reguläres
   $\K$-Schema endlichen Typs vom Geschlecht~1.
   
   Dann ist ein Néron-Modell von $E_\K$ nach
@@ -475,7 +475,7 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
   $R$-Schemas $Y$ offen.
   Ist $Y$ glatt (also insb. flach und reduziert) über $R$, ist $Y_\K$
   dicht in $Y$ nach \autoref{thm:flachgenerischefaser}.
-  Also repräsentiert der Morphismus $\phi_\K\colon X_\K\to E_\K$ eine
+  Also präsentiert der Morphismus $\phi_\K\colon X_\K\to E_\K$ eine
   rationale Abbildung (vgl. \label{def:ratabb})
   \begin{gather*}
     \phi\colon X\dra E
@@ -642,7 +642,7 @@ Wir benötigen dazu folgendes Lemma und Korollar
     Wir können also eine genügend kleine, offene, affine Umgebung
     $U=\Spec(B)\subset X$ von $f_y(y)$ und $V=\Spec(R)\subset S$ auswählen,
     dass $R$ noethersch und $B$ eine $R$-Algebra endlichen Typs (wegen
-    noethersch auch endlich repräsentiert) ist. D.\,h.
+    noethersch auch endlich präsentiert) ist. D.\,h.
     \begin{gather*}
       B=R[X_0,\dotsc, X_n]/(g_0,\dotsc, g_r)\qquad n,r\in\N
     \end{gather*}
@@ -738,7 +738,7 @@ Wir benötigen dazu folgendes Lemma und Korollar
     % \begin{Lemma}\label{thm:limesoffenemengen}
     %   \cite[1.2, Lemma 5]{neron}
     %   Für ein Basisschema $S$, einen Punkt $s\in S$ und endlich
-    %   repräsentierte $S$-Schemata $X$, $Y$ ist die kanonische
+    %   präsentierte $S$-Schemata $X$, $Y$ ist die kanonische
     %   Abbildung
     %   \begin{gather*}
     %     \varinjlim \Hom_{S'}(X\times_S S', Y\times_S S')
@@ -840,7 +840,7 @@ Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
       Als solches ist es (universell) offen \cite[Theorem 14.33]{wedhorn}
       und somit zusammenhängend nach \cite[Proposition 3.24]{wedhorn},
       da die generische Faser $A_\K$ zusammenhängend und $\Spec(R)$
-      ein integrales, insb. irreduzibles, Schema ist.
+      ein integeres, insb. irreduzibles, Schema ist.
       Die \NAbbEig von $X$ liefert zur Identität $\Id_{A_\K}$ einen
       $R$-Morphismus $A\to X$, der bereits offene Immersion ist
       \cite[4.3/1 (ii) oder 4.4/1]{neron}.
@@ -1026,19 +1026,19 @@ betrachten:
 \subsection{Allg. Eigenschaften}
 Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 
-% INTEGRAL, PROJEKTIV, FLACH
+% INTEGER, PROJEKTIV, FLACH
 \begin{Lemma}\label{thm:eigweierstrassmodelle}
   Ein Weierstraßmodell von $E_\K$ über einem Dedekindring $R$ ist
-  integral,
+  integer,
   projektiv (insb. quasikompakt, noethersch),
-  endlich repräsentiert (insb. von endlichem Typ),
+  endlich präsentiert (insb. von endlichem Typ),
   flach.
   \begin{proof}
     \begin{description}
     \item[projektiv] $W$ ist per Konstruktion projektiv. Als
       geschlossenes Unterschema des quasikompakten, noetherschen Raums
       $\P_R^n$ ist es quasikompakt und noethersch.
-    \item[integral]
+    \item[integer]
       Dass $W$ irreduzibel ist, kann auf der affinen, offenen
       Standardüberdeckung des $\P_R^2$ durch drei Kopien des $\A_R^2$
       überprüft werden, da diese nicht-leeren Schnitt haben. Hier
@@ -1050,23 +1050,23 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
       Kurven zu $E_\K$ überein und sind daher irreduzibel über $\K$,
       also auch irreduzibel über $R$.
       Entsprechend ist die gewählte affine, offene Überdeckung von $W$
-      irreduzibel und reduziert und somit $W$ integral.
-    \item[endlich repräsentiert]
+      irreduzibel und reduziert und somit $W$ integer.
+    \item[endlich präsentiert]
       Die zuvor beschriebene Überdeckung ist eine (endliche)
-      Überdeckung mit Spektren von endlich repräsentierten $R$-Algebren,
-      also ist $W$ endlich repräsentiert.
+      Überdeckung mit Spektren von endlich präsentierten $R$-Algebren,
+      also ist $W$ endlich präsentiert.
       % ??? Stimmt das?
       Entsprechend folgt, dass $W$ von endlichem Typ ist.
     \item[flach]
-      Wir werden zeigen, dass aus integral und nichtleerer generischer
+      Wir werden zeigen, dass aus integer und nichtleerer generischer
       Faser $E_\K$ folgt, dass der eindeutige generische Punkt $\eta$
       von $W$ auf den generischen Punkt von $R$ geschickt wird.
       Das zeigt, dass $W$ flach ist
       nach \cite[Proposition III.9.7]{hartshorne}
-      (hierbei wird zusätzlich benutzt, dass $\Spec(R)$ integral,
+      (hierbei wird zusätzlich benutzt, dass $\Spec(R)$ integer,
       regulär und von Dimension 1 ist).
       
-      Nachdem $W$ integral ist, hat es einen eindeutigen generischen
+      Nachdem $W$ integer ist, hat es einen eindeutigen generischen
       Punkt $\eta$.
       Angenommen, dieser wird durch die Abbildung, die $W$ zum
       $R$-Schema macht, auf einen geschlossenen Punkt $\m$ von $\Spec(R)$
@@ -1087,7 +1087,7 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 %   Sei $R$ diskreter Bewertungsring,
 %   $\K=\Quot(R)$,
 %   $X$ irreduzibles,
-%   lokal endlich repräsentiertes
+%   lokal endlich präsentiertes
 %   (für lokal noethersch äquivalent:
 %   lokal endlichen Typs \cite[Remark 10.36]{wedhorn})
 %   $R$-Schema mit nichtleerer, generischer Faser $X_\K$.
@@ -1101,22 +1101,22 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 %     Seien also die Fasern von $X$ glatt, insb. reduziert.
 %     Dann ist $X$ ebenfalls reduziert, da Reduziertheit auf den Halmen
 %     geprüft werden kann.
-%     Außerdem ist $X$ nach Voraussetzung irreduzibel, daher integral,
-%     und (lokal) endlich repräsentiert.
-%     Wir wissen, dass $X$ glatt ist, wenn es lokal endlich repräsentiert
+%     Außerdem ist $X$ nach Voraussetzung irreduzibel, daher integer,
+%     und (lokal) endlich präsentiert.
+%     Wir wissen, dass $X$ glatt ist, wenn es lokal endlich präsentiert
 %     und flach über $R$ ist und seine Fasern glatt sind
 %     \cite[8.5, Proposition 17]{bosch}.
 %     Es ist also Flachheit zu zeigen.
     
-%     Wir werden zeigen, dass aus integral und nichtleerer generischer
+%     Wir werden zeigen, dass aus integer und nichtleerer generischer
 %     Faser $X_\K$ folgt, dass der eindeutige generische Punkt $\eta$
 %     von $X$ auf den generischen Punkt von $R$ geschickt wird.
 %     Das zeigt, dass $X$ flach ist
 %     \cite[Proposition III.9.7]{hartshorne}
-%     (hierbei wird zusätzlich benutzt, dass $\Spec(R)$ integral,
+%     (hierbei wird zusätzlich benutzt, dass $\Spec(R)$ integer,
 %     regulär und von Dimension 1 ist).
 
-%     Nachdem $X$ integral ist, hat es einen eindeutigen generischen
+%     Nachdem $X$ integer ist, hat es einen eindeutigen generischen
 %     Punkt $\eta$.
 %     Angenommen, dieser wird durch die Abbildung, die $X$ zum
 %     $R$-Schema macht, auf einen geschlossenen Punkt $\m$ von $\Spec(R)$
@@ -1158,7 +1158,7 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
   \end{enumerate}
   \begin{proof}
     \begin{enumerate}[label=(\alph*)]
-    \item $W$ ist flaches, lokal endlich repräsentiertes
+    \item $W$ ist flaches, lokal endlich präsentiertes
       $R$-Schema (s. \autoref{thm:eigweierstrassmodelle}).
       Nach \cite[8.5, Proposition 17]{bosch} ist es also genau dann
       glatt, wenn seine Fasern glatt sind.
@@ -1191,7 +1191,7 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
       $W^0$ ist irreduzibel, da der Abschluss $\overline{W^0}=W$ in
       $W$ irreduzibel ist nach \autoref{thm:eigweierstrassmodelle}.
       Es ist als Unterschema von $W$ ebenfalls reduziert, endlich
-      repräsentiert und flach (s. \autoref{thm:eigweierstrassmodelle}).
+      präsentiert und flach (s. \autoref{thm:eigweierstrassmodelle}).
       Es hat wie $W$ die (nichtleere) glatte, generische Faser $E_\K$ und
       per Konstruktion die spezielle Faser $W_{\m}\setminus\{\gamma\}$,
       welche nach Voraussetzung beide regulär (also glatt) sind.
@@ -1355,7 +1355,7 @@ Weierstraßmodell von $E_\K$ über $R$.
     \item[Erweiterung auf $U$]
       % ??? Wie erweitert sich die rationale Abbildung?
       % Sowohl $X$ als auch $W$ sind glatt, also endlich
-      % repräsentiert.
+      % präsentiert.
 
       % Da $R$ Dedekindring ist, lässt faktorisiert jedes Element in ein
       % endliches Produkt aus Primzahlen (s. \autoref{def:dedekindring}). 
@@ -1363,7 +1363,7 @@ Weierstraßmodell von $E_\K$ über $R$.
       % Sei $x\in X_\K$ und $x\in\Spec(B)\subset X$ genügend kleine,
       % offene, affine Umgebung von $x$, dass das Bild $\im(\Spec(B))$ in
       % einer affinen Teilmenge $\Spec(A)\subset W$ liegt und $A$, $B$
-      % endlich repräsentierte $R$-Algebren sind.
+      % endlich präsentierte $R$-Algebren sind.
       % Es gilt $A\subset A_{\phi_\K(x)}=\O_{W,\phi_\K(x)}$,
       % $B\subset B_x=\O_{X,x}$.
     \item[$U$ $R$-dicht]
@@ -1401,7 +1401,7 @@ Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
   Sei $R$ Dedekindring mit Quotientenkörper $\K$.
   % \optcite[IV.4]{silverman2}
   % Eine arithmetische Fläche $X$ über $R$ ist ein
-  % integrales, normales, exzellentes Schema, flach und von endlichem
+  % integeres, normales, exzellentes Schema, flach und von endlichem
   % Typ über $R$,
   % dessen generische Faser eine reguläre, zusammenhängende,
   % projektive Kurve $X_\K/\K$ ist
@@ -1414,9 +1414,9 @@ Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
   % \optcite[Theorem 12.51]{wedhorn}
   
   \optcite[Definition 8.3.1, 8.3.14]{liu}
-  Eine arithmetische Fläche ist ein projektives, integrales, flaches,
+  Eine arithmetische Fläche ist ein projektives, integeres, flaches,
   reguläres $R$-Schema von Dimension 2 (also Dimension 1 über $R$).
-  Die generische Faser $X_\K$ ist integrale Kurve über $\K$ und jede
+  Die generische Faser $X_\K$ ist integere Kurve über $\K$ und jede
   spezielle Faser $X_s$ ($s\in\Spec(R)$) ist projektive Kurven über
   $\k(s)$.\optcite[Lemma 8.3.3]{liu}
   
@@ -1512,7 +1512,7 @@ Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
 \begin{Bemerkung}
   Die obigen Bedingungen treffen z.\,B. auf ein eigentliches,
   reguläres, flaches $R$-Schema zu, also insbesondere arithmetische
-  Flächen (diese sind integral, regulär, flach, projektiv).
+  Flächen (diese sind integer, regulär, flach, projektiv).
 \end{Bemerkung}
 
 \begin{Lemma}\label{thm:arithflschnittbilderglatt}
@@ -1578,7 +1578,7 @@ Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
   Sei $R$ Dedekindring mit perfekten Quotientenkörpern,
   $\K=\Quot(R)$, $E_\K$ elliptische Kurve über $\K$ und $C$ minimales
   eigentliches, reguläres $R$-Modell von $E_\K$
-  (d.\,h. eigentliches, reguläres, integrales, projektives,
+  (d.\,h. eigentliches, reguläres, integeres, projektives,
   flaches $R$-Schema mit Minimalitätseigenschaft).
   Sei $E$ das größte glatte $R$-Unterschema von $C$.
   Dann ist $E$ Néron-Modell von $E_\K$.
@@ -1653,7 +1653,7 @@ diskrete Bewertungsringe $R$ beschränken.
     Sei also $Y$ ein glattes $R$-Schema mit einem Morphismus
     $\phi_\K\colon Y_\K\to E_\K$, bzw. nach \autoref{thm:dichtefaser}
     einer rationalen Abbildung $\phi\colon Y\dra E$, die von $\phi_\K$
-    repräsentiert wird.
+    präsentiert wird.
 
     Wir werden den Beweis durch Widerspruch führen.
     Angenommen, $\phi$ sei kein Morphismus.
@@ -1699,7 +1699,7 @@ diskrete Bewertungsringe $R$ beschränken.
       wäre $\phi\colon Y\dra E$ auf dem Urbild einer genügend kleinen
       Umgebung von $\eta_Z$ in $E$ Morphismus und entgegen der Annahme in
       $\eta_Z$ definiert.
-      % C integral, urbilder dichter Mengen dicht
+      % C integer, urbilder dichter Mengen dicht
     \item[?] $\phi(\eta_Z)\not\in E$ ist äquivalent dazu, dass für
       jeden geschlossenen (also $k$-wertigen) Punkt $x\in Z\setminus
       X_\K$, in dem $\phi$ definiert ist, $\phi(x)\not\in E$ gilt.
@@ -1889,7 +1889,7 @@ elliptischen Kurve
   \optcite[Proposition B.85]{wedhorn}
 
   \begin{Definition}[Dedekindschema]
-    Ein Dedekindschema ist ein noethersches, integrales Schema $X$, das
+    Ein Dedekindschema ist ein noethersches, integeres Schema $X$, das
     eine der äquivalenten Eigenschaften erfüllt
     \begin{enumerate}[label=(\roman*)]
     \item die offenen affinen Unterschemata sind Spektren von Dedekindringen
@@ -1897,13 +1897,13 @@ elliptischen Kurve
       (in Dimension 1 äquivalent zu normal nach
       \cite[Corollary 6.39, Proposition 6.40]{wedhorn})
     \end{enumerate}
-    Ein integrales Schema mit endlicher Überdeckung durch Dedekindschemata
+    Ein integeres Schema mit endlicher Überdeckung durch Dedekindschemata
     ist selbst Dedekindschema.
     \optcite[Chapter (7.13)]{wedhorn}
   \end{Definition}
 
   \begin{Bemerkung}
-    Die Bedingung, dass $S$ integral sein muss, liefert einen eindeutigen
+    Die Bedingung, dass $S$ integer sein muss, liefert einen eindeutigen
     generischen Punkt $\eta$ und einen Funktionenkörper
     $\K=\k(\eta)=\O_{S,\eta}$, so dass jeder Schnitt und jeder Halm ein
     Unterring von $\K$ ist, d.\,h. es gibt für jeden Punkt $x\in X$ einen
@@ -1993,7 +1993,7 @@ elliptischen Kurve
   unverzweigt ist.
   \begin{Bemerkung}
     \optcite[8.4, Theorem 3]{bosch}
-    Ist $X$ lokal endlich repräsentiert, sind äquivalent
+    Ist $X$ lokal endlich präsentiert, sind äquivalent
     \begin{enumerate}[label=(\roman*)]
     \item $X$ unverzweigt in $x$,
     \item $\Om{X/S,x}=0$,
@@ -2153,12 +2153,12 @@ elliptischen Kurve
   Eine affine Prävarietät ist eine quasikompakte, zusammenhängende
   Prägarbe, die lokal affine Varietät ist.
 
-  Für integrale $\K$-Schemata endlichen Typs sind die geschlossenen
+  Für integere $\K$-Schemata endlichen Typs sind die geschlossenen
   Punkte isomorph zu den $\K$-Schnitten 
   $\Hom_{\Spec(\K)}(\Spec(\K),X)$.
   Dadurch gibt es eine Kategorienäquivalenz
   \begin{align*}
-    \left\{\text{Integrale $\K$-Schemata endlichen Typs}\right\}
+    \left\{\text{Integere $\K$-Schemata endlichen Typs}\right\}
     &\longto
       \left\{\text{Prävarietäten über $\K$}\right\}\\
     (X,\O_X) 
@@ -2182,19 +2182,19 @@ elliptischen Kurve
     (V, \O_V) \mapsto (\Spec(\O_V(V)), \O_{\Spec(\O_V(V))})
   \end{gather*}
 
-  Daher werden wir im folgenden mit Prävarietät ein integrales
+  Daher werden wir im folgenden mit Prävarietät ein integeres
   $\K$-Schema endlichen Typs meinen und mit affiner Varietät ein affines,
-  integrales $\K$-Schema endlichen Typs.
+  integeres $\K$-Schema endlichen Typs.
 
-  Eine algebraische Varietät sei im folgenden ein separiertes, integrales
+  Eine algebraische Varietät sei im folgenden ein separiertes, integeres
   Schema über einem algebraisch abgeschlossen Körper $\K$
   (alternativ: über einem Körper $\K$, wobei die Basiserweiterung auf
-  den algebraischen Abschluss weiterhin integral ist).
+  den algebraischen Abschluss weiterhin integer ist).
 \end{Definition}
 \begin{Definition}[Kurve, elliptische Kurve]
   Eine Kurve über einem Körper $\K$ ist eine projektive Varietät der
   Dimension 1,
-  also ein projektives, integrales $\K$-Schema endlichen Typs.
+  also ein projektives, integeres $\K$-Schema endlichen Typs.
 
   Eine elliptische Kurve über $\K$ ist eine reguläre Kurve $E$ vom
   Genus 1 zusammen mit einem $\K$-Schnitt $O\in E(\K)$.
