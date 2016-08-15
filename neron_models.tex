@@ -449,7 +449,7 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
   Sei $R$ ein Dedekindring (mit perfektem Restklassenkörper),
   $\K=\Quot(R)$, $E_\K$ eine elliptische Kurve, d.\,h. ein
   glattes, projektives (also separiertes), integrales, reguläres
-  $\K$-Schema endlichen Typs vom Genus 1.
+  $\K$-Schema endlichen Typs vom Geschlecht~1.
   
   Dann ist ein Néron-Modell von $E_\K$ nach
   \ref{thm:gruppenschemaerweiterung} und \ref{nerongruppenschemaglatt}
@@ -545,8 +545,8 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
         \end{gather*}
         erweitern.
         So erhalten wir kanonisch einen eindeutigen $R$-Morphismus
-        $\phi_{R'} = (\phi_R\;,\;\pi_{R'})$ auf dem
-        Faserprodukt (und somit einen $R'$-Morphismus)
+        (bzw. einen $R'$-Morphismus)
+        $\phi_{R'} = (\phi_R\;,\;\pi_{R'})$ auf dem Faserprodukt 
         \begin{center}
           \begin{tikzcd}
             Y'
@@ -613,27 +613,145 @@ folgenden Sinne:
   \end{enumerate}
   D.\,h. man kann \OE{} davon ausgehen, dass $R$ lokal (also diskreter
   Bewertungsring) ist.
+\end{Satz}
+
+Wir werden im Folgenden nur die Implikation
+\emph{(ii)}$\Rightarrow$\emph{(i)} benötigen, daher sei für die
+andere Richtung auf \cite[1.2, Proposition 4]{neron} verwiesen.
+Wir benötigen dazu folgendes Lemma und Korollar
+
+% ERWEITERUNG V. MORPHISMEN AUF OFFENE TEILMENGEN
+\begin{Lemma}\label{thm:morphismuserweiterung}
+  % http://math.stackexchange.com/questions/1259876/extending-a-morphism-of-schemes
+  \optcite[Exercise 3.2.4]{liu}
+  Sei $S$ lokal noethersches Schema, $Y$, $X$ $S$-Schemata, $X$
+  endlichen Typs, $y\in Y$, $f_y\colon \Spec\O_{Y,y}\to X$
+  $S$-Morphismus.
+  Dann gibt es eine offene Umgebung $U\subset Y$ von $y$, auf der
+  $f_y$ von einem Morphismus $f\colon U\to X$ erweitert wird.
   \begin{proof}
-    Wir werden im Folgenden nur die Implikation $(ii)\Rightarrow(i)$
-    brauchen, daher sei für die andere Richtung auf
-    \cite[1.2, Proposition 4]{neron} verwiesen.
+    Wir können uns auf den affinen Fall $X=\Spec(B)$ beschränken.
+    Denn $\O_{Y,y}$ ist lokal, also ist $y=\m_y\in\Spec\O_{Y,y}$ in jeder
+    Zariski-geschlossenen, nichtleeren Menge von $\Spec\O_{Y,y}$
+    enthalten bzw. die einzige offene Umgebung von $y$ in
+    $\Spec\O_{Y,y}$ ist $\Spec\O_{Y,y}$ selbst.
+    Somit ist das offene Urbild jeder offenen, affinen Umgebung
+    $\Spec(B)\subset X$ von $f_y(y)$ ganz $\Spec\O_{Y,y}$.
+
+    $X$ ist nach Voraussetzung von endlichem Typ.
+    Wir können also eine genügend kleine, offene, affine Umgebung
+    $U=\Spec(B)\subset X$ von $f_y(y)$ und $V=\Spec(R)\subset S$ auswählen,
+    dass $R$ noethersch und $B$ eine $R$-Algebra endlichen Typs (wegen
+    noethersch auch endlich repräsentiert) ist. D.\,h.
+    \begin{gather*}
+      B=R[X_0,\dotsc, X_n]/(g_0,\dotsc, g_r)\qquad n,r\in\N
+    \end{gather*}
+    Wähle weiterhin eine genügend kleine, offene, affine Umgebung
+    $\Spec(A)\subset Y$ von $y$ aus, dass $A$ ebenfalls $R$-Algebra ist.
+    Es gilt $y=\m_y\in\Spec\O_{Y,y}=\Spec(A_y)\subset\Spec(A)$.
     
-    Für den Beweis werden wir weiterhin die Kurzformen
-    $\Spec(\O_{\Spec(R),s})=\O_{R,s}$ verwenden.
-    Wir benötigen folgendes Lemma
-    \begin{Lemma}\label{thm:limesoffenemengen}
-      \cite[1.2, Lemma 5]{neron}
-      Für ein Basisschema $S$, einen Punkt $s\in S$ und endlich
-      repräsentierte $S$-Schemata $X$, $Y$ ist die kanonische
-      Abbildung
-      \begin{gather*}
-        \varinjlim \Hom_{S'}(X\times_S S', Y\times_S S')
-        \longto
-        \Hom_{\O_{R,s}}(X\times_S \O_{R,s}, Y\times_S \O_{R,s})
-      \end{gather*}
-      bijektiv, wobei der direkte Limes über die offenen Umgebungen
-      $S'\subset S$ von $s$ läuft.
-    \end{Lemma}
+    $f_y\colon\Spec(O_{Y,y})=\Spec(A_y)\to\Spec(B)\subset X$
+    korrespondiert also zu einem Ringhomomorphismus $f_y^\#\colon B\to
+    A_y$.
+    Insgesamt erhalten wir
+    \begin{align*}
+      \phi\colon
+      R\left[X_0,\dotsc, X_n\right]
+      &\twoheadrightarrow
+        \dfrac{R\left[X_0,\dotsc, X_n\right]}{\left(g_0,\dotsc, g_r\right)}
+        \overset{f_y^\#}{\longto}
+        A_y\\
+      X_i &\longmapsto \frac{a_i}{f_i}
+            \qquad i=0,\dotsc, n\\
+      g_j &\longmapsto \frac{a_j'}{h_j}
+            \qquad j=0,\dotsc, r
+    \end{align*}
+    Dass $\frac{a_j'}{h_j}=f_y^\#(g_j)=0\in A_y$ gilt, ist äquivalent
+    dazu, dass es $f_j'$ gibt, so dass $a_j' f_j'=0\in A$.
+    Definiere $f\coloneqq \prod_{i=0}^n f_i \prod_{j=0}^r f_j'$.
+    Dann gilt für den Morphismus
+    \begin{align*}
+      \phi_f\colon
+      R\left[X_0,\dotsc, X_n\right]
+      &\longto
+        A_f\\
+      X_i
+      &\longmapsto
+        \dfrac{a_i\cdot \prod_{k\neq i}^n f_k \prod_{j=0}^r f_j'}{f}
+        \qquad i=0,\dotsc,n
+    \end{align*}
+    dass $(g_0, \dotsc, g_r)\subset\ker(\phi')$ und das folgende
+    Diagramm kommutiert
+    \begin{center}
+      \begin{tikzcd}
+        R\left[X_0,\dotsc, X_n\right] \arrow[r,"\phi_f"]
+        \arrow[d, two heads]
+        & A_f\arrow[d]\\
+        B \arrow[r, "f_y^\#"{swap}]\arrow[ur,"\bar\phi_f"{near start}]
+        & A_y
+      \end{tikzcd}
+    \end{center}
+    Insbesondere faktorisiert $f_y^\#\colon B\to A_f\to A_y$ über
+    $A_f$, was heißt, dass $f_y$ über einen Morphismus $f\colon
+    D(f)\to\Spec(B)$ faktorisiert:
+    \begin{gather*}
+      f_y\colon
+      \Spec\O_{Y,y}=\Spec(A_y)
+      \hookrightarrow \Spec(A_f)=D(f)
+      \overset{f}\longto \Spec(B)
+    \end{gather*}
+    $D(f)$ ist eine offene Umgebung von $y$, womit die Behauptung
+    gezeigt ist.
+  \end{proof}
+\end{Lemma}
+
+\begin{Korollar}\label{thm:allgmorphismuserweiterung}
+  Sei $S$ lokal noethersches Schema, $Y$, $X$ $S$-Schemata, $X$
+  endlichen Typs, $s\in S$,
+  $f_s\colon Y\times_S\O_{S,s}\to X\times_S\O_{S,s}$ $S$-Morphismus.
+  Dann gibt es eine offene Umgebung $U\subset Y$ von
+  $Y\times_S\O_{S,s}$, auf der $f_s$ von einem Morphismus $f\colon
+  U\to X$ erweitert wird.
+  \begin{proof}
+    Sei $y\in Y\times_S\O_{S,s'}\subset Y\times_S\O_{S,s}\subset Y$
+    für ein $s'\in\Spec\O_{S,s}$. Der Morphismus $\pi\colon
+    Y\to S$, der $Y$ zum $S$-Schema macht, induziert einen
+    Ringhomomorphismus $\O_{S,s'}\to\O_{Y,y}$. Der zugehörige
+    Morphismus von $R$-Schemata
+    $\Spec\O_{Y,y}\to\Spec\O_{S,s'}\subset\Spec\O_{S,s}$ ist die
+    Einschränkung von $\pi$ auf $\Spec\O_{Y,y}\subset Y$, insbesondere
+    liegt $\Spec\O_{Y,y}$ im Urbild von $\Spec\O_{S,s}$.
+    Das zeigt, dass $\Spec\O_{Y,y}\subset Y\times_S\O_{S,s}$ für jedes
+    $y\in Y\times_S\O_{S,s}$, und man erhält $R$-Morphismen
+    \begin{gather*}
+      f_s(y)\colon \Spec\O_{Y,y}\to X\times_S\O_{S,s}\subset X
+      \qquad \forall y \in Y\times_S\O_{S,s}
+    \end{gather*}
+    Diese erweitern sich jeweils nach
+    \autoref{thm:morphismuserweiterung} zu Morphismen auf Umgebungen
+    $U(y)\subset Y$ von $y$, welche nach Konstruktion auf den
+    Überschneidungen übereinstimmen und sich einem Morphismus
+    $f\colon U=\bigcup_{y\in Y\times_S\O_{S,s}} U(y)\to X$ verkleben
+    lassen.
+  \end{proof}
+\end{Korollar}
+    % \begin{Lemma}\label{thm:limesoffenemengen}
+    %   \cite[1.2, Lemma 5]{neron}
+    %   Für ein Basisschema $S$, einen Punkt $s\in S$ und endlich
+    %   repräsentierte $S$-Schemata $X$, $Y$ ist die kanonische
+    %   Abbildung
+    %   \begin{gather*}
+    %     \varinjlim \Hom_{S'}(X\times_S S', Y\times_S S')
+    %     \longto
+    %     \Hom_{\O_{R,s}}(X\times_S \O_{R,s}, Y\times_S \O_{R,s})
+    %   \end{gather*}
+    %   bijektiv, wobei der direkte Limes über die offenen Umgebungen
+    %   $S'\subset S$ von $s$ läuft.
+    % \end{Lemma}
+
+\begin{proof}[Beweis von \autoref{thm:neronmodelllokal}]
+  Für den Beweis werden wir weiterhin die Kurzformen
+  $\Spec(\O_{\Spec(R),s})=\O_{R,s}$ verwenden.
     
     Sei $\K=\Quot(R)$ und betrachte ein glattes $R$-Schema $Y$ sowie
     einen $\K$-Morphismus $\phi_\K\colon Y_\K\to X_\K$ der
@@ -646,31 +764,33 @@ folgenden Sinne:
       \longto
       X_\K = X\times_R\O_{R,s}\times_{\O_{R,s}}\K
     \end{gather*}
-    zu einem Morphismus
+    eindeutig zu einem Morphismus
     \begin{gather*}
       u(s)\colon Y\times_R\O_{R,s}\to X\times_R\O_{R,s}\;,
     \end{gather*}
     da $X\times_R\O_{R,s}$ Néron-Modell seiner generischen Faser ist.
-
-    Nach \autoref{thm:limesoffenemengen} ist $u(s)$ die Einschränkung
-    einer eindeutigen Äquivalenzklasse im direkten Limes
-    $\varinjlim \Hom_{S'}(X\times_S S', Y\times_S S')$ über die
-    offenen Umgebungen $S'\subset S$ von $s$.
-    Daher gibt es eine offene Umgebung $S'(s)$ von $s$, über der $u(s)$
-    eindeutig erweitert wird.
-    % ??? Warum kann ich eine offene Menge wählen?
+    % Nach \autoref{thm:limesoffenemengen} ist $u_s$ die Einschränkung
+    % einer eindeutigen Äquivalenzklasse im direkten Limes
+    % $\varinjlim \Hom_{S'}(X\times_S S', Y\times_S S')$ über die
+    % offenen Umgebungen $S'\subset S$ von $s$.
+    % Daher gibt es eine offene Umgebung $S'(s)$ von $s$, über der $u_s$
+    % eindeutig auf einen $R$-Morphismus $u(s)\colon S'(s)\to X$
+    % erweitert wird.
+    % % ??? Warum kann ich eine offene Menge wählen?
+    Nach \autoref{thm:allgmorphismuserweiterung} gibt es eine offene
+    Umgebung $U(s)$ von $Y\times_R\O_{R,s}$, auf der $u_s$ wiederum
+    auf einen Morphismus $u(s)\colon U(s)\to X$ erweitert wird.
     
     Die $u(s)$ stimmen per Konstruktion auf dem Schnitt ihrer
-    Definitionsbereiche überein,
-    % ??? Warum können die u(s) verklebt werden?
+    affinen Definitionsbereiche überein,
     die ganz $Y$ überdecken ($\Spec(R)$ besteht genau aus seinen
     geschlossen Punkten und dem generischen Punkt, und letzterer ist
     in jeder offenen Teilmenge enthalten).
-    Daher liefert Verkleben einen eindeutigen Morphismus
-    $u\colon Y\to X$, der $u_\K$ erweitert.
+    Daher liefert Verkleben einen von den (eindeutigen) $u_s$ eindeutig
+    bestimmten Morphismus $u\colon Y\to X$, der $u_\K$ erweitert.
     D.\,h. die \NAbbEig ist erfüllt.
   \end{proof}
-\end{Satz}
+
 
 \subsection{Néron-Modelle abelscher Varietäten}
 % ALLG. EXISTENZ
@@ -1518,90 +1638,6 @@ diskrete Bewertungsringe $R$ beschränken.
 …
 
 \section{Äquivalenz zur Gruppenstruktur}
-% ERWEITERUNG V. MORPHISMEN AUF OFFENE TEILMENGEN
-\begin{Lemma}\label{thm:morphismuserweiterung}
-  % http://math.stackexchange.com/questions/1259876/extending-a-morphism-of-schemes
-  \optcite[Exercise 3.2.4]{liu}
-  Sei $S$ lokal noethersches Schema, $X$, $Y$ $S$-Schemata, $Y$
-  endlichen Typs, $x\in X$, $f_x\colon \Spec\O_{X,x}\to Y$
-  $S$-Morphismus.
-  Dann gibt es eine offene Umgebung $U\subset X$ von $x$, auf der
-  $f_x$ von einem Morphismus $f\colon U\to Y$ erweitert wird.
-  \begin{proof}
-    Wir können uns auf den affinen Fall $Y=\Spec(B)$ beschränken.
-    Denn $\O_{X,x}$ ist lokal, also ist $x=\m_x\in\Spec\O_{X,x}$ in jeder
-    Zariski-geschlossenen, nichtleeren Menge von $\Spec\O_{X,x}$
-    enthalten bzw. die einzige offene Umgebung von $x$ in
-    $\Spec\O_{X,x}$ ist $\Spec\O_{X,x}$ selbst.
-    Somit ist das offene Urbild jeder offenen, affinen Umgebung
-    $\Spec(B)\subset Y$ von $f_x(x)$ ganz $\Spec\O_{X,x}$.
-
-    $Y$ ist nach Voraussetzung von endlichem Typ.
-    Wir können also eine genügend kleine, offene, affine Umgebung
-    $U=\Spec(B)\subset Y$ von $f_x(x)$ und $V=\Spec(R)\subset S$ auswählen,
-    dass $R$ noethersch und $B$ eine $R$-Algebra endlichen Typs (wegen
-    noethersch auch endlich repräsentiert) ist. D.\,h.
-    \begin{gather*}
-      B=R[X_0,\dotsc, X_n]/(g_0,\dotsc, g_r)\qquad n,r\in\N
-    \end{gather*}
-    Wähle weiterhin eine genügend kleine, offene, affine Umgebung
-    $\Spec(A)\subset X$ von $x$ aus, dass $A$ ebenfalls $R$-Algebra ist.
-    Es gilt $x=\m_x\in\Spec\O_{X,x}=\Spec(A_x)\subset\Spec(A)$.
-    
-    $f_x\colon\Spec(O_{X,x})=\Spec(A_x)\to\Spec(B)\subset Y$
-    korrespondiert also zu einem Ringhomomorphismus $f_x^\#\colon B\to
-    A_x$.
-    Insgesamt erhalten wir
-    \begin{align*}
-        \phi\colon
-        R\left[X_0,\dotsc, X_n\right]
-        &\twoheadrightarrow
-        \dfrac{R\left[X_0,\dotsc, X_n\right]}{\left(g_0,\dotsc, g_r\right)}
-        \overset{f_x^\#}{\longto}
-        A_x\\
-        X_i &\longmapsto \frac{a_i}{f_i}
-        \qquad i=0,\dotsc, n\\
-        g_j &\longmapsto \frac{a_j'}{h_j}
-        \qquad j=0,\dotsc, r
-    \end{align*}
-    Dass $\frac{a_j'}{h_j}=f_x^\#(g_j)=0\in A_x$ gilt, ist äquivalent
-    dazu, dass es $f_j'$ gibt, so dass $a_j' f_j'=0\in A$.
-    Definiere $f\coloneqq \prod_{i=0}^n f_i \prod_{j=0}^r f_j'$.
-    Dann gilt für den Morphismus
-    \begin{align*}
-      \phi_f\colon
-      R\left[X_0,\dotsc, X_n\right]
-      &\longto
-        A_f\\
-      X_i
-      &\longmapsto
-        \dfrac{a_i\cdot \prod_{k\neq i}^n f_k \prod_{j=0}^r f_j'}{f}
-        \qquad i=0,\dotsc,n
-    \end{align*}
-    dass $(g_0, \dotsc, g_r)\subset\ker(\phi')$ und das folgende
-    Diagramm kommutiert
-    \begin{center}
-      \begin{tikzcd}
-        R\left[X_0,\dotsc, X_n\right] \arrow[r,"\phi_f"]
-        \arrow[d, two heads]
-        & A_f\arrow[d]\\
-        B \arrow[r, "f_x^\#"{swap}]\arrow[ur,"\bar\phi_f"{near start}]
-        & A_x
-      \end{tikzcd}
-    \end{center}
-    Insbesondere faktorisiert $f_x^\#\colon B\to A_f\to A_x$ über
-    $A_f$, was heißt, dass $f_x$ über einen Morphismus $f\colon
-    D(f)\to\Spec(B)$ faktorisiert:
-    \begin{gather*}
-      f_x\colon
-      \Spec\O_{X,x}=\Spec(A_x)
-      \hookrightarrow \Spec(A_f)=D(f)
-      \overset{f}\longto \Spec(B)
-    \end{gather*}
-    $D(f)$ ist eine offene Umgebung von $x$, womit die Behauptung
-    gezeigt ist.
-  \end{proof}
-\end{Lemma}
 
 % ÄQ GRUPPENSTRUKTURERW.
 % strikt henselsch nicht nötig!!
