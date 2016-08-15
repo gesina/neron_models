@@ -794,28 +794,28 @@ Wir benötigen dazu folgendes Lemma und Korollar
 
 \subsection{Néron-Modelle abelscher Varietäten}
 % ALLG. EXISTENZ
-\begin{Satz}[Existenz von Néron-Modellen]\label{thm:existenz}
-  \cite[1.3, Theorem 1]{neron}
-  Sei $\Rsh$ die strikte Henselisierung von $R$ und $\Ksh$ der
-  Quotientenkörper. Ein glattes $\K$"=Gruppenschema $X_\K$ endlichen
-  Typs hat genau dann ein Néron-Modell über $R$, wenn $X_\K(\Ksh)$
-  beschränkt in $X_\K$ ist.
-  % eigentlich => beschränkt
-\end{Satz}
+% \begin{Satz}[Existenz von Néron-Modellen]\label{thm:existenz}
+%   \cite[1.3, Theorem 1]{neron}
+%   Sei $\Rsh$ die strikte Henselisierung von $R$ und $\Ksh$ der
+%   Quotientenkörper. Ein glattes $\K$"=Gruppenschema $X_\K$ endlichen
+%   Typs hat genau dann ein Néron-Modell über $R$, wenn $X_\K(\Ksh)$
+%   beschränkt in $X_\K$ ist.
+%   % eigentlich => beschränkt
+% \end{Satz}
 \begin{Korollar}\label{thm:exneronmodellabvarietaet}
   Abelsche Varietäten über $\K$ haben ein Néron-Modell über $R$.
-  \begin{proof}
-    Abelsche Varietäten über $\K$ sind insbesondere glatte und
-    eigentliche $\K$"=Gruppenschemata, siehe
-    \autoref{def:abelschevarietaet}.
-    Nachdem eigentlich beschränkt impliziert, ist die Bedingung aus
-    \autoref{thm:existenz} erfüllt.
-  \end{proof}
+  % \begin{proof}
+  %   Abelsche Varietäten über $\K$ sind insbesondere glatte und
+  %   eigentliche $\K$"=Gruppenschemata, siehe
+  %   \autoref{def:abelschevarietaet}.
+  %   Nachdem eigentlich beschränkt impliziert, ist die Bedingung aus
+  %   \autoref{thm:existenz} erfüllt.
+  % \end{proof}
 \end{Korollar}
 
-Für die folgenden Aussagen ist beim Übergang zum allgemeinen Fall
-eines allgemeinen Dedekindschemas die Eigenschaft zusammenhängend
-nötig.
+% Für die folgenden Aussagen ist beim Übergang zum allgemeinen Fall
+% eines allgemeinen Dedekindschemas die Eigenschaft zusammenhängend
+% nötig.
 
 Abelsche Varietäten stellen einen Spezialfall dar. Hier ist bei guter
 Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
@@ -830,9 +830,10 @@ Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
     Néron-Modell $X$ von $A_\K$, das nach
     \autoref{thm:gruppenschemaerweiterung} eine Gruppenschemastruktur
     trägt.
-    Es bleibt zu zeigen, dass $A\cong X$ (d.\,h. $A$ Néron-Modell von
-    $A_\K$) mit zusammenhängenden Fasern (d.\,h. $A$ abelsches Schema,
-    da $A$ nach Voraussetzung bereits glatt und eigentlich) ist.
+    Es bleibt zu zeigen, dass $A\cong X$ ist
+    % (d.\,h. $A$ Néron-Modell von $A_\K$)
+    mit zusammenhängenden Fasern (dann ist $A$ ist abelsches Schema,
+    da $A$ nach Voraussetzung bereits glatt und eigentlich ist).
     \begin{description}
     \item[$A\cong X$] $X$ ist glatt, also nach
       \autoref{thm:implikationenglatt} flaches und lokal endlich
@@ -855,7 +856,8 @@ Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
       Dann ist nur noch die spezielle Faser über dem geschlossenen
       Punkt zu überprüfen, die nach \cite[5.5.1]{EGAIII-1} zusammenhängend
       ist.
-      % ??? –> Zariski's Connectedness Thm?
+      % ??? –> Zariski's Connectedness Thm/Stein-Faktoriesierung?
+      % \cite[Exercise 12.29]{wedhorn}
     \end{description}
   \end{proof}
 \end{Satz}
@@ -867,9 +869,11 @@ Gruppenschemastruktur abelsch ist:
   \cite[1.4, Theorem 3]{neron}
   Sei $A_\K$ abelsche Varietät über $\K$,
   $X$ ihr Néron-Modell über $R$ und
-  $S\subset\Spec(R)$ die Menge der geschlossenen Punkte, über denen
-  $A_\K$ gute Reduktion hat zusammen mit dem generischen Punkt
-  ($S$ ist entsprechend offen und dicht in $\Spec(R)$).
+  $S\subset\Spec(R)$ die Menge der geschlossenen Punkte
+  $s\in\Spec(R)$, über denen $A_\K$ gute Reduktion hat (d.\,h. $A_\K$
+  hat glattes eigentliches $R_s$-Modell), zusammen mit dem generischen
+  Punkt.
+  $S$ ist entsprechend offen und dicht in $\Spec(R)$.
   Dann ist $X\times_R S$ abelsches Schema über $S$.
   \begin{proof}[Beweisskizze]
     Es gilt zu zeigen, dass $A_\K$ in der Umgebung jedes Punktes in
@@ -882,15 +886,23 @@ Gruppenschemastruktur abelsch ist:
     verkleben.
 
     In den geschlossenen Punkten von $S$ hat $A_\K$ nach Definition
-    gute Reduktion, welche sich jeweils auf eine Umgebung erweitern
+    gute Reduktion, welche sich auf eine Umgebung erweitern
     lässt.
+    % Gute Reduktion in s\in S <=> X\times_S\O_{S,s} eigentlich
+    % (\autoref{thm:neronmodell}, \autoref{thm:abelscheneronmodelle}
+    % Erweiterung von Morphismen auf Umgebung:
+    % \autoref{thm:allgmorphismuserweiterung}
+    % ??? TODO: Wieso erhält Morphismuserweiterung Eigentlichkeit?
     % ??? Wieso lässt sich gute Reduktion auf Umgebung erweitern?
-    Da $A_\K$ als abelsche Varietät projektiv ist
-    (\autoref{thm:abvarietaetprojektiv}), können wir den schematischen
-    Abschluss $A$ von $A_\K\to\P_\K^n\to\P_R^n$ in $\P_R^n$ wählen
+    
+    Für den generischen Punkt können wir den schematischen
+    Abschluss $A$ von $A_\K\to\P_\K^n\to\P_R^n$ in $\P_R^n$
+    betrachten
     (hier: der Abschluss des Bildes mit reduzierter
-    Unterschemastruktur, da $A_\K$ reduziert ist nach
-    \cite[Remark 10.32]{wedhorn}).
+    Unterschemastruktur nach \cite[Remark 10.32]{wedhorn}, da $A_\K$
+    reduziert ist),
+    denn $A_\K$ ist als abelsche Varietät projektiv,
+    vgl. \autoref{thm:abvarietaetprojektiv}.
     Dieser ist glatt über dem generischen Punkt von $\Spec(R)$
     % ??? Warum ist schematischer Abschl. glatt über generischem Pkt?
     und somit auch über einer offenen Umgebung $S'$ dessen.
