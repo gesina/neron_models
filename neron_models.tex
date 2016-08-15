@@ -189,14 +189,65 @@ Im Folgenden sei $S$ ein Schema.
   nachdem eigentlich und glatt stabil unter Basiswechsel sind).
 \end{Definition}
 
-% RATIONALE ABBILDUNGEN
+% S-RATIONALE ABBILDUNG
+% ??? Was von rationaler Abbildung wird benötigt?
+\begin{Definition}[rationale Abbildung]\label{def:ratabb}
+  \optcite[Chapter 2.5]{neron}
+  Sei $S$ Schema, und seien $X$ und $Y$ glatte $S$-Schemata.
+
+  Eine \emph{rationale Abbildung} $\phi\colon X\dra Y$ von
+  $S$-Schemata ist eine Äquivalenzklasse der Menge
+  \begin{gather*}
+    \left\{
+      \psi\colon U\to Y \text{$S$-Morphismus}
+      \;\middle|\;
+      U\subset X \text{dicht, offen in $X$}
+    \right\}
+  \end{gather*}
+  wobei $\psi\colon U\to Y$ äquivalent zu $\psi'\colon U'\to Y$ ist,
+  falls sie auf einer dichten, offenen Teilmenge von $U\cap U'$
+  übereinstimmen.
+  
+  Ein offenes Unterschema $U\subset X$ heißt \emph{$S$-dicht} in $X$,
+  falls für alle $s\in S$ die Faser $U_s$%=U\times_S\k(s)$
+  topologisch dicht in der Faser $X_s$%=X\times_S\k(s)$
+  liegt.
+  Eine \emph{$S$-rationale Abbildung} $\phi\colon X\dra Y$ ist eine
+  rationale Abbildung, wobei alle dichten offenen Mengen aus obiger
+  Definition $S$-dicht sind.
+  % Eine \emph{$S$-rationale Abbildung} $\phi\colon X\dra Y$ ist eine
+  % Äquivalenzklasse der Menge
+  % \begin{gather*}
+  %   \left\{
+  %     \psi\colon U\to Y \text{ $S$-Morphismus}
+  %     \;\middle|\;
+  %     U\subset X \text{ $S$-dicht, offen in $X$}
+  %   \right\}
+  % \end{gather*}
+  % wobei $\psi\colon U\to Y$ äquivalent zu $\psi'\colon U'\to Y$ ist,
+  % falls sie auf einer $S$-dichten, offenen Teilmenge von $U\cap U'$
+  % übereinstimmen.
+
+  Eine ($S$-)rationale Abbildung $\phi\colon X\dra Y$ heißt definiert
+  in $x\in X$, falls $\phi$ von einem Morphismus $\psi\colon U\to Y$
+  repräsentiert werden kann mit $x\in U$.
+  Der \emph{Definitionsbereich $\Dom(\phi)$ von $\phi$} sind die
+  Punkte, in denen $\phi$ definiert ist. Er ist offene, ($S$-)dichte
+  Teilmenge von $X$. Ist $X/R$ separiert gibt es einen Morphismus
+  $\Dom(\phi)\to Y$, der $\phi$ repräsentiert.
+  
+  $\phi\colon X\dra Y$ heißt ($S$-)birational, falls es von einem
+  $S$-Morphismus $\psi\colon U\to Y$ repräsentiert werden kann, der
+  die offene Immersion einer ($S$-)dichten, offenen Teilmenge von $Y$
+  ist.
+\end{Definition}
+
 Eigentliche Gruppenschemata verhalten sich gutartig bzgl. rationalen
 Abbildungen: 
 \begin{Lemma}\label{thm:rationalzumorphismus}
   \cite[Proposition IV.6.2]{silverman2}
   Sei $G$ ein $R$"=Gruppenschema, $Y$ ein glattes $R$-Schema und
-  $\phi\colon Y\dra G$ eine $R$-rationale Abbildung, deren
-  Definitionsbereich dicht in jeder Faser von $Y$ liegt.
+  $\phi\colon Y\dra G$ eine $R$-rationale Abbildung.
   Dann gilt:
   \begin{enumerate}[label=(\roman*)]
   \item $Y\setminus \Dom(\phi)$ hat (reine) Kodimension 1.
@@ -207,44 +258,6 @@ Abbildungen:
 % -----
 
 \section{Normale Komposition auf Schemata}
-% $S$-RATIONALE ABBILDUNG
-% ??? Was von rationaler Abbildung wird benötigt?
-\begin{Definition}[rationale Abbildung]\label{def:ratabb}
-  \optcite[Chapter 2.5]{neron}
-  Sei $S$ Schema, und seien $X$ und $Y$ glatte $S$-Schemata.
-
-  Ein offenes Unterschema $U\subset X$ heißt \emph{$S$-dicht} in $X$,
-  falls für alle $s\in S$ die Faser $U_s$%=U\times_S\k(s)$
-  topologisch dicht in der Faser $X_s$%=X\times_S\k(s)$
-  liegt.
-
-  Eine \emph{$S$-rationale Abbildung} $\phi\colon X\dra Y$ ist eine
-  Äquivalenzklasse der Menge
-  \begin{gather*}
-    \left\{
-      \psi\colon U\to Y \text{ $S$-Morphismus}
-      \;\middle|\;
-      U\subset X \text{ $S$-dicht, offen in $X$}
-    \right\}
-  \end{gather*}
-  wobei $\psi\colon U\to Y$ äquivalent zu $\psi'\colon U'\to Y$ ist,
-  falls sie auf einer $S$-dichten, offenen Teilmenge von $U\cap U'$
-  übereinstimmen.
-
-  $\phi\colon X\dra Y$ heißt definiert in $x\in X$, falls $\phi$ von
-  einem Morphismus $\psi\colon U\to Y$ repräsentiert werden kann mit
-  $x\in U$.
-  Der \emph{Definitionsbereich $\Dom(\phi)$ von $\phi$} sind die
-  Punkte, in denen $\phi$ definiert ist. Er ist offene, $S$-dichte
-  Teilmenge von $X$. Ist $X/R$ separiert gibt es einen Morphismus
-  $\Dom(\phi)\to Y$, der $\phi$ repräsentiert.
-  
-  $\phi\colon X\dra Y$ heißt $S$-birational, falls es von einem
-  $S$-Morphismus $\psi\colon U\to Y$ repräsentiert werden kann, der
-  die offene Immersion einer $S$-dichten, offenen Teilmenge von $Y$
-  ist.
-\end{Definition}
-
 Eine schwächere bzw. rationale Form einer Gruppenschemastruktur:
 \begin{Definition}[normale Komposition]\label{def:normalekomposition}
   Sei $R$ Dedekindring, $V$ glattes $R$-Schema mit nichtleeren Fasern.
@@ -341,8 +354,8 @@ Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
   Sei $X_\K$ ein glattes, separiertes $\K$-Schema endlichen Typs.
 
   Ein \emph{Néron-Modell} von $X_\K$ ist ein glattes, separiertes
-  $R$-Modell $X/R$ endlichen Typs mit der
-  sog. \NAbbEig:
+  $R$-Modell $X/R$ %endlichen Typs
+  mit der sog. \emph{\NAbbEig}:
   \begin{quote}
     Für jedes weitere glatte $R$-Schema $Y$ wird jeder
     $\K$-Morphismus $Y_\K\to X_\K$ auf den generischen Fasern durch
@@ -370,9 +383,11 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
   \optcite[1.2, Remark 7]{neron} 
   Ist $X_\K$ ein $\K$"=Gruppenschema und $X$ ein
   glattes $R$-Modell und Gruppenschema von $X_\K$, das die
-  \NAbbEig erfüllt, so sind $X_\K$ und $X$ bereits separiert,
-  also $X$ ist ein Néron-Modell von $X_\K$.
-  \begin{proof}[Beweisskizze]
+  \NAbbEig erfüllt, so ist $X$ ein Néron-Modell von $X_\K$.
+  \begin{proof}
+    $X_\K$ ist als Faser eines glatten Schemas glatt. Bleibt zu
+    zeigen, dass $X_\K$ und $X$ separiert sind.
+    
     Ein Gruppenschema $X$ ist genau dann separiert, wenn der
     Einheitsschnitt $\epsilon\colon\Spec(R)\to X$ eine geschlossene
     Immersion ist
@@ -395,15 +410,18 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
     $\overline{\im(\epsilon_\K)}\cap X_\K=\im(\epsilon_\K)$,
     da $\epsilon_\K$ geschlossene Immersion ist.
     Außerdem stimmen hier $\im(\epsilon)=\{\epsilon_\K(\Spec\K)\}$ und
-    $\overline{\im(\epsilon)}\cap X_\K$ wegen der \NAbbEig punktweise
+    $\im(\epsilon)\cap X_\K$ wegen der \NAbbEig punktweise
     überein.
 
     Auf der speziellen Faser $X_k$ betrachte einen Punkt
-    $x\in\overline{\im(\epsilon_\K)}\cap X_k$. Sei $U=\Spec(A)$ eine
-    offene, affine Umgebung von $x$ in $X$.
-    Dann gilt $R\subset A\subset\K$
-    % ??? \Spec(\K)\overset{\epsilon_\K}\to \Spec(A) \overset{\pi}\to \Spec(R)
-    und, nachdem $R$ als diskreter Bewertungsring der größte Unterring
+    $x\in\overline{\im(\epsilon_\K)}\cap X_k$. Sei $U$ eine
+    offene, affine Umgebung von $x$ in $X$ und
+    $\Spec(A)=U\cap\overline{\im(\epsilon_\K)}$.
+    Dann induziert  ?
+    % ??? $\Spec(\K)\overset{\epsilon_\K}\to \Spec(A) \overset{\pi}\to \Spec(R)$
+    % TODO!!!
+    die Inklusionen $R\subset A\subset\K$.
+    Nachdem $R$ als diskreter Bewertungsring der größte Unterring
     von $\K$ ist, folglich $R=A$.
     Wir erhalten einen Schnitt
     $X(R)\ni e\colon\Spec(R)\to\Spec(A)\hookrightarrow X$,
@@ -446,7 +464,7 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
 \end{Bemerkung}
 \begin{Bemerkung}\label{thm:dichtefaser}
   Wir können $\phi_\K$ aus \autoref{def:neronmodellellkurve} auch als
-  rationale Abbildung wählen. Da $E_\K$ projektiv, also eigentlich,
+  $\K$-rationale Abbildung wählen. Da $E_\K$ projektiv, also eigentlich,
   ist, erweitert sich $\phi_\K$ nach
   \autoref{thm:rationalzumorphismus} zu einem Morphismus.
 
@@ -458,11 +476,12 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
   Ist $Y$ glatt (also insb. flach und reduziert) über $R$, ist $Y_\K$
   dicht in $Y$ nach \autoref{thm:flachgenerischefaser}.
   Also repräsentiert der Morphismus $\phi_\K\colon X_\K\to E_\K$ eine
-  rationale Abbildung
+  rationale Abbildung (vgl. \label{def:ratabb})
   \begin{gather*}
     \phi\colon X\dra E
   \end{gather*}
-  Die \NAbbEig bedeutet, dass diese sich zu einem Morphismus erweitert.
+  Die \NAbbEig bedeutet, dass diese sich zu einem Morphismus $X\to E$
+  erweitert.
 \end{Bemerkung}
 
 
