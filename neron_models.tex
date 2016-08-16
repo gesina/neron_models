@@ -1418,7 +1418,8 @@ Weierstraßmodell von $E_\K$ über $R$.
     
     $\Spec(R)$ und folglich $X$ als glattes $R$-Schema sind lokal
     noethersch, außerdem ist $\pi\colon X\to R$ flach über $R$. Daher
-    gilt für ein $x\in X$ \optcite{?}
+    gilt für ein $x\in X$ nach \cite{?}
+    % ??? Referenz/Beweis Dimensionsabschätzung von Fasern?
     \begin{gather*}
       \dim\O_{X,x} = \dim R_{\pi(x)} + \dim\O_{X_{\phi(x)}, x}
     \end{gather*}
@@ -1529,6 +1530,13 @@ Weierstraßmodell von $E_\K$ über $R$.
   
   $X$ ist also ein $X_\K$-Modell.
 \end{Definition}
+
+\begin{Beispiel}
+  Ein reguläres Weierstraßmodell einer elliptischen Kurve ist
+  arithmetische Fläche.
+  Beachte, dass $W$ regulär, aber nicht glatt, also singulär in einer
+  Faser, sein kann.
+\end{Beispiel}
 % -----
 \section{Eigenschaften}
 \begin{Satz}\label{thm:ratpkteregulaeremodelle}
@@ -1536,66 +1544,77 @@ Weierstraßmodell von $E_\K$ über $R$.
   Sei $R$ Dedekindring
   mit perfekten Restklassenkörpern,
   $\K=\Quot(R)$,
-  $X$ ein $R$-Schema,
+  $X$ eine arithmetische Fläche,
   $X^0$ offenes Unterschema der glatten Punkte,
   $X_\K/\K$ generische Faser.
   Dann gilt
-  \begin{enumerate}[label=(\roman*)]
-  \item Ist $X$ eigentlich über $R$, so gilt $X(R)=X_\K(\K)$.
-  \item Ist $X$ regulär über $R$ mit Dimension 2 und mit
-    Fasern der Dimension 1, und ist $X$ genau dann glatt in einem
-    Punkt $x\in X$, wenn die ihn enthaltene Faser regulär in $x$ ist,
-    so gilt $X(R)=X^0(R)$.
-  \end{enumerate}
-
-  Es gilt also für ein reguläres, eigentliches $R$-Modell von $X_K$,
-  das genau dann glatt in $x\in X$ ist, wenn die ihn enthaltene
-  Faser in $x$ regulär ist,
   \begin{gather*}
-    X_\K(\K)=X^0(R)=X(R)
+    X_\K(\K)=X(R)=X^0(R)
   \end{gather*}
+  % $X$ ein $R$-Schema,
+  % $X^0$ offenes Unterschema der glatten Punkte,
+  % $X_\K/\K$ generische Faser.
+  % Dann gilt
+  % \begin{enumerate}[label=(\roman*)]
+  % \item Ist $X$ eigentlich über $R$, so gilt $X(R)=X_\K(\K)$.
+  % \item Ist $X$ regulär über $R$ mit Dimension 2 und mit
+  %   Fasern der Dimension 1, und ist $X$ genau dann glatt in einem
+  %   Punkt $x\in X$, wenn die ihn enthaltene Faser regulär in $x$ ist,
+  %   so gilt $X(R)=X^0(R)$.
+  % \end{enumerate}
+
+  % Es gilt also für ein reguläres, eigentliches $R$-Modell von $X_K$,
+  % das genau dann glatt in $x\in X$ ist, wenn die ihn enthaltene
+  % Faser in $x$ regulär ist,
+  % \begin{gather*}
+  %   X_\K(\K)=X^0(R)=X(R)
+  % \end{gather*}
   \begin{proof}
+  Die erste Gleichheit ist allein eine Anwendung des
+  Bewertungskriteriums für Eigentlichkeit auf das projektive (also
+  eigentliche) Schema $X$.
     % ??? benötigte Eigenschaften von X: eigentlich, regulär, flach
-    \begin{enumerate}[label=(\roman*)]
-    \item
-      Die Einschränkung von $\Hom_R(\Spec(R),X)=X(R)$ auf 
-      $\Spec(\K)\subset\Spec(R)$ liefert eine kanonische Abbildung
-      \begin{center}
-        \begin{tikzcd}
-          \Hom_R(\Spec(R),X) \arrow[d, equal]
-          \arrow[r, "{\text{Res.}}"]
-          &\Hom_R(\Spec(K),X)
-          \arrow[r, equal, "{\text{$R$-lin.}}"]
-          &\Hom_\K(\Spec(\K),X_\K) \arrow[d, equal]\\
-          X(R)&& X_\K(\K)
-        \end{tikzcd}
-      \end{center}
-      Nach Voraussetzung ist $X$ eigentlich über $R$, d.\,h. nach
-      dem Bewertungskriterium für $X$ gibt es für ein $\phi_\K\in
-      X_\K(\K)$ genau einen Lift in $\Hom_R(R,X)$,
-      bzw. ein $\phi\colon\Spec(R)\to X$, so dass das folgende
-      Diagramm kommutiert
-      \cite[Theorem II.4.7]{hartshorne}:
-      \begin{center}
-        \begin{tikzcd}
-          \Spec(\K)\arrow[d, hook, "{\text{incl}}"]
-          \arrow[r,"\phi_\K"]
-          &X_\K\arrow[r, hook, "{\text{incl}}"]
-          &X\arrow[d,"{\text{eig.}}"]
-          \\
-          \Spec(R)\arrow[rr,"{\Id}"]
-          \arrow[to=urr, dashed, "{\exists!\phi}"{near start}]
-          &&\Spec(R)
-        \end{tikzcd}
-      \end{center}
-      Dadurch sind Injektivität und Surjektivität der
-      Einschränkungsabbildung gegeben und es gilt
-      $X(R)=\Hom_R(R,X)\cong\Hom_\K(\K,X_\K)=X_\K(\K)$.
-    \item Da $X^0\subset X$, gibt es eine natürliche Inklusion
-      $X^0(R)\overset{\circ \text{incl}}{\hookrightarrow} X(R)$.
-      Jetzt gilt es zu zeigen, dass im regulären Fall das Bild jedes
-      Schnitts $\phi\in X(R)$ in $X^0$ liegt (also nur glatte Punkte
-      enthält). Dann ist die Inklusion ein Isomorphismus.
+    % \begin{enumerate}[label=(\roman*)]
+    % \item
+      % Die Einschränkung von $\Hom_R(\Spec(R),X)=X(R)$ auf 
+      % $\Spec(\K)\subset\Spec(R)$ liefert eine kanonische Abbildung
+      % \begin{center}
+      %   \begin{tikzcd}
+      %     \Hom_R(\Spec(R),X) \arrow[d, equal]
+      %     \arrow[r, "{\text{Res.}}"]
+      %     &\Hom_R(\Spec(K),X)
+      %     \arrow[r, equal, "{\text{$R$-lin.}}"]
+      %     &\Hom_\K(\Spec(\K),X_\K) \arrow[d, equal]\\
+      %     X(R)&& X_\K(\K)
+      %   \end{tikzcd}
+      % \end{center}
+      % Nach Voraussetzung ist $X$ eigentlich über $R$, d.\,h. nach
+      % dem Bewertungskriterium für $X$ gibt es für ein $\phi_\K\in
+      % X_\K(\K)$ genau einen Lift in $\Hom_R(R,X)$,
+      % bzw. ein $\phi\colon\Spec(R)\to X$, so dass das folgende
+      % Diagramm kommutiert
+      % \cite[Theorem II.4.7]{hartshorne}:
+      % \begin{center}
+      %   \begin{tikzcd}
+      %     \Spec(\K)\arrow[d, hook, "{\text{incl}}"]
+      %     \arrow[r,"\phi_\K"]
+      %     &X_\K\arrow[r, hook, "{\text{incl}}"]
+      %     &X\arrow[d,"{\text{eig.}}"]
+      %     \\
+      %     \Spec(R)\arrow[rr,"{\Id}"]
+      %     \arrow[to=urr, dashed, "{\exists!\phi}"{near start}]
+      %     &&\Spec(R)
+      %   \end{tikzcd}
+      % \end{center}
+      % Dadurch sind Injektivität und Surjektivität der
+      % Einschränkungsabbildung gegeben und es gilt
+      % $X(R)=\Hom_R(R,X)\cong\Hom_\K(\K,X_\K)=X_\K(\K)$.
+      % \item
+    Da $X^0\subset X$, gibt es eine natürliche Inklusion
+    $X^0(R)\overset{\circ \text{incl}}{\hookrightarrow} X(R)$.
+    Jetzt gilt es zu zeigen, dass im regulären Fall das Bild jedes
+    Schnitts $\phi\in X(R)$ in $X^0$ liegt (also nur glatte Punkte
+    enthält). Dann ist die Inklusion ein Isomorphismus.
 
       % $X$ ist nach Voraussetzung flach über $R$, also ist glatt in
       % einem Punkt $x\in X$ äquivalent dazu, dass die Faser von $X$, in
@@ -1610,28 +1629,31 @@ Weierstraßmodell von $E_\K$ über $R$.
       
       Nach \autoref{thm:arithflschnittbilderglatt} enthält das Bild
       $\phi(\Spec(R))$ eines Schnitts $\phi\in X(R)$ nur reguläre
-      Punkte der Fasern, also nach Voraussetzung glatte Punkte von $X$.
+      Punkte der Fasern, also glatte Punkte von $X$
+      ($X$ ist flach und lokal endlich repräsentiert, da
+      projektiv, daher genau dann glatt, wenn die Fasern glatt sind.
+      Die generische Faser ist bereits glatt und die speziellen Fasern
+      sind als Schemata endlichen Typs über einem perfektem Körper
+      genau dann glatt, wenn sie regulär sind.)
       Damit ist die Behauptung gezeigt.
-    \end{enumerate}
+      % \end{enumerate}
   \end{proof}
 \end{Satz}
 
-\begin{Bemerkung}
-  Die obigen Bedingungen treffen z.\,B. auf ein eigentliches,
-  reguläres, flaches $R$-Schema zu, also insbesondere arithmetische
-  Flächen (diese sind integer, regulär, flach, projektiv).
-\end{Bemerkung}
+% \begin{Bemerkung}
+%   Die obigen Bedingungen treffen z.\,B. auf ein eigentliches,
+%   reguläres, flaches $R$-Schema zu, also insbesondere arithmetische
+%   Flächen (diese sind integer, regulär, flach, projektiv).
+% \end{Bemerkung}
 
 \begin{Lemma}\label{thm:arithflschnittbilderglatt}
   \cite[Proposition IV.4.3]{silverman2}
   Sei $R$ Dedekindring (mit perfekten Restklassenkörpern),
-  $\p\in\Spec(R)$,
-  $\pi\colon X\to\Spec(R)$ ein reguläres $R$-Schema der Dimension 2
-  mit Fasern der Dimension 1,
-  $\phi\in X(R)$.
+  $\pi\colon X\to\Spec(R)$ eine arithmetische Fläche über $R$,
+  $\p\in\Spec(R)$ und $\phi\in X(R)$.
   Dann ist $X_\p$ regulär in $\phi(\p)$.
   \begin{proof}
-    …  
+    …
   \end{proof}
 \end{Lemma}
 
