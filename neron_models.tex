@@ -1418,11 +1418,11 @@ Weierstraßmodell von $E_\K$ über $R$.
     
     $\Spec(R)$ und folglich $X$ als glattes $R$-Schema sind lokal
     noethersch, außerdem ist $\pi\colon X\to R$ flach über $R$. Daher
-    gilt für ein $x\in X$ nach \cite{?}
+    gilt für ein $x\in X$ nach \cite[Theorem 4.3.12]{liu}
     % ??? Referenz/Beweis Dimensionsabschätzung von Fasern?
-    \begin{gather*}
+    \begin{gather}\label{eq:stalkdimension}
       \dim\O_{X,x} = \dim R_{\pi(x)} + \dim\O_{X_{\phi(x)}, x}
-    \end{gather*}
+    \end{gather}
     Für einen generischen Punkt $\eta_{s}$ einer irreduziblen
     Komponente $Y_{s}$ der Faser $X_s$, $s\in\Spec(R)$,
     von $X\to R$ gilt $\dim\O_{X_s, \eta_{s}}=0$, also
@@ -1611,7 +1611,7 @@ Weierstraßmodell von $E_\K$ über $R$.
       % $X(R)=\Hom_R(R,X)\cong\Hom_\K(\K,X_\K)=X_\K(\K)$.
       % \item
     Da $X^0\subset X$, gibt es eine natürliche Inklusion
-    $X^0(R)\overset{\circ \text{incl}}{\hookrightarrow} X(R)$.
+    $\circ \text{incl}\colon X^0(R)\hookrightarrow X(R)$.
     Jetzt gilt es zu zeigen, dass im regulären Fall das Bild jedes
     Schnitts $\phi\in X(R)$ in $X^0$ liegt (also nur glatte Punkte
     enthält). Dann ist die Inklusion ein Isomorphismus.
@@ -1653,7 +1653,82 @@ Weierstraßmodell von $E_\K$ über $R$.
   $\p\in\Spec(R)$ und $\phi\in X(R)$.
   Dann ist $X_\p$ regulär in $\phi(\p)$.
   \begin{proof}
-    …
+    Nachdem die generische Faser einer arithmetischen Fläche bereits
+    glatt, also regulär ist, sei $\p\subset\Spec(R)$ ein geschlossener
+    Punkt.
+    
+    Sei $x=\phi(\p)\in X_\p\subset X$ und $\m_{X_\p,x}\subset\O_{X_\p,x}$
+    das Maximalideal des Halmes von $x$ in $X_\p$,
+    analog $\m_{X,x}\subset\O_{X,x}$.
+    Der Punkt $x\in X_\p(\k(\p))\subset X_\p$ ist geschlossen in $X_\p$,
+    daher gilt nach \cite[Corollary 2.5.24]{liu}
+    $\dim\O_{X_\p,x}=\dim X_\p=1$ ($X_p$ ist equidimensional nach
+    \cite[Proposition 4.4.16]{liu} und projektive Kurve).
+    Wir müssen für die Regularität von $X_\p$ in $x$ also zeigen, dass
+    $\m_{X_\p,x}/\m_{X_\p,x}^2$ als $(\O_{X_p,x}/\m_{X_p,x})$-Vektorraum
+    von einem Element $f_1$ erzeugt wird.
+    
+    $\O_{X,x}$ ist $R$-Algebra über den induzierten lokalen
+    Ringhomomorphism $\pi^\#\colon R_\p\to\O_{X,x}$.
+    Sei $\phi^\#\colon\O_{X,x}\to R_\p$ der induzierte lokale
+    Ringhomomorphismus zu $\phi$ auf den Halmen, wobei
+    $\phi^\#(\m_{X,x})=\p$ gelten muss, da $\pi^\#\circ\phi^\#(\p)=\p$.
+    
+    Wir werden zeigen, dass es ein Element
+    $t\in\pi^\#(\p)\setminus\m_{X,x}^2$ gibt und
+    daraus die gewünschte Dimension von $\m_{X_\p,x}/\m_{X_\p,x}^2$
+    bzw. die Regularität von $X_\p$ in $x$ folgern.
+
+    Angenommen, es gelte $\pi^\#(\p)\subset\m_{X,x}^2$.
+    Mit $\pi\circ\phi=\Id_{\Spec(R)}$ erhalten wir die Abschätzung
+    \begin{gather*}
+      \p = (\pi\circ\phi)^\#(\p)
+      = \phi^\#\circ\pi^\#(\p)
+      \overset{\text{Ann.}}{\subset} \phi^\#(\m_{X,x}^2)
+      = \phi^\#(\m_{X,x})^2
+      = \p^2
+    \end{gather*}
+    Dies ist ein Widerspruch, da $\p\subset R$ Maximalideal ist. Also
+    gilt $\pi^\#(\p)\not\subset\m_{X,x}^2$.
+
+    Nach \autoref{eq:stalkdimension} gilt
+    $\dim\O_{X,x}=\dim R_\p+\dim\O_{X_\p,x}=2$ und $X$ ist nach
+    Voraussetzung regulär, weshalb $\O_{X,x}$ regulär von Dimension~2
+    ist. Das bedeutet, dass es zwei Elemente $f_1, f_2\in\m_{X,x}$
+    gibt, so dass
+    \begin{gather}\label{eq:maximalideal}
+      \m_{X,x} = f_1\O_{X,x} + f_2\O_{X,x} + \m_{X,x}^2
+    \end{gather}
+    Wegen $\pi^\#(\p)\not\subset\m_{X,x}^2$ gibt es ein
+    $t\in\pi^\#(\p)\setminus\m_{X,x}^2\subset\m_{X,x}$.
+    \autoref{eq:maximalideal} bedeutet für $t$, dass es $\alpha_1,
+    \alpha_2\in\O_{X,x}$ gibt, so dass
+    \begin{gather*}
+      t = \alpha_1 f_1 + \alpha_2 f_2 (\mod \m_{X,x}^2)
+    \end{gather*}
+    Da $t\not\in\m_{X,x}^2$, muss mindestens einer der Koeffizienten
+    in $\O_{X,x}\setminus\m_{X,x}=\O_{X,x}^\times$ liegen, also einen
+    Einheit sein. \OE{} $\alpha_2\in\O_{X,x}^\times$, dann können wir
+    umschreiben
+    \begin{gather*}
+      f_2 = \frac{1}{\alpha_2}t + \frac{\alpha_1}{\alpha_2}f_1 
+    \end{gather*}
+    und aus \eqref{eq:maximalideal} wird
+    \begin{gather}\label{eq:maximalidealneu}
+      \m_{X,x} = t\O_{X,x} + f_1\O_{X,x} + \m_{X,x}^2
+    \end{gather}
+
+    Für den lokalen Ring $\O_{X_\p,x}$ von $x$ in der generischen
+    Faser $X_\p = X\times_R R/\p$ gilt
+    \begin{align*}
+      \O_{X_\p,x} &= \O_{X,x}/\pi^\#(\p)\\
+      \m_{X_\p,x} &= \m_{X,x}/\pi^\#(\p)
+                    \overset{\eqref{eq:maximalidealneu}}{=}
+                    \bar f_1\O_{X_\p,x} + \m_{X_\p,x}^2
+    \end{align*}
+    Wir sehen, $\m_{X_\p,x}$ ist von $\m_{X_\p,x}^2$ und einem Element
+    erzeugt, was $\O_{X_\p,x}$ zu einem regulären Ring der Dimension~1
+    macht.
   \end{proof}
 \end{Lemma}
 
