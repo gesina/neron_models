@@ -190,6 +190,7 @@ Im Folgenden sei $S$ ein Schema.
 
 % S-RATIONALE ABBILDUNG
 % ??? Was von rationaler Abbildung wird benötigt?
+% TODO!!
 \begin{Definition}[rationale Abbildung]\label{def:ratabb}
   \optcite[Chapter 2.5]{neron}
   Sei $S$ Schema, und seien $X$ und $Y$ glatte $S$-Schemata.
@@ -297,6 +298,7 @@ Eine schwächere bzw. rationale Form einer Gruppenschemastruktur:
   $V$ sei zusätzlich endlichen Typs und $V(R)$ sei dicht in jeder
   Faser.
   % ??? V(R) dicht in jeder Faser?
+  % TODO!!
   Dann gibt es ein $R$-Gruppenschema $(G,\mu_G)$ endlichen Typs und
   ein gemeinsames, offenes, $R$-dichtes Unterschemata $V\hookleftarrow
   U\hookrightarrow G$ von $V$ und $G$, so dass $\mu|_U=\mu_G|_U$.
@@ -329,14 +331,12 @@ Eine schwächere bzw. rationale Form einer Gruppenschemastruktur:
   %       Dann sind die Einschränkungen der Projektionen
   %       $\proj_{1,2},\proj_{2,3},\proj_{1,3}\colon \Gamma\to V^2$
   %       offene Immersionen und dicht in jeder Faser von $V^2$.
-  %       % ??? Wie kann ein Morphismus dicht in einer Faser sein?
   %     \item Verkleben entlang von $W_s=V\times_R s\times_R V$ für
   %       $s\in V$:
   %       …
   %     \item …
   %     \end{enumerate}
   %   \item Stein-Faktorisierung + „dense set of local sections“?:
-  %     % ??? Was ist ein „dense set of local sections“?
   %     Erhalte offenes Unterschema 
   %   \end{enumerate}
   % \end{proof}
@@ -367,9 +367,9 @@ Néron-Modelle sind besonders interessant für Gruppenschemata, da sich
 die Gruppenstruktur auf das Néron-Modell erweitert.
 \begin{Bemerkung}\label{thm:gruppenschemaerweiterung}
   \optcite[1.2, Proposition 6]{neron}
-  Sei $X$ Néron-Modell über $\Spec(R)$ seiner generischen Faser
-  $X_\K$. Ist $X_\K$ ein $\K$"=Gruppenschema, so wird diese durch die
-  \NAbbEig eindeutig auf eine
+  Sei $\pi\colon X\to R$ Néron-Modell über $\Spec(R)$ seiner
+  generischen Faser $X_\K$. Ist $X_\K$ ein $\K$"=Gruppenschema, so
+  wird diese durch die \NAbbEig eindeutig auf eine
   $S$"=Gruppenschemastruktur auf $X$ erweitert.
   \begin{proof}[Beweisskizze]
     Translationen, das Inverse und der Einheitsschnitt liften wegen
@@ -397,13 +397,13 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
     Sei wegen \autoref{thm:neronmodelllokal} \OE{} $R$ diskreter
     Bewertungsring mit Restklassenkörper $k$.
       
-    Wir werden zeigen, dass
+    Wir werden zeigen, dass (topologisch)
     $\im(\epsilon)=\overline{\im(\epsilon_\K)}$,
     also dass $\overline{\im(\epsilon_\K)}$ aus genau dem Punkt
     $\epsilon(\Spec\K)$ in der generischen Faser und dem Punkt
     $\epsilon(\Spec k)$ in der speziellen Faser besteht.
-    Dann ist $\im(\epsilon)$ geschlossen in $X$ und der Schnitt
-    $\epsilon$ demnach geschlossene Immersion.
+    Dann ist $\im(\epsilon)$ (topologisch) geschlossen in $X$ und der
+    Schnitt $\epsilon$ demnach geschlossene Immersion.
     
     Auf der generischen Faser gilt
     $\overline{\im(\epsilon_\K)}\cap X_\K=\im(\epsilon_\K)$,
@@ -416,12 +416,37 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
     $x\in\overline{\im(\epsilon_\K)}\cap X_k$. Sei $U$ eine
     offene, affine Umgebung von $x$ in $X$ und
     $\Spec(A)=U\cap\overline{\im(\epsilon_\K)}$.
-    Dann induziert  ?
-    % ??? $\Spec(\K)\overset{\epsilon_\K}\to \Spec(A) \overset{\pi}\to \Spec(R)$
-    % TODO!!!
-    die Inklusionen $R\subset A\subset\K$.
+    Wir werden die Inklusionen $R\subset A\subset\K$ zeigen.
     Nachdem $R$ als diskreter Bewertungsring der größte Unterring
-    von $\K$ ist, folglich $R=A$.
+    von $\K$ ist, folgt daraus dann $R=A$.
+    Das schematische Bild $\Im(\epsilon_\K)$ von $\epsilon_\K$ ist
+    hier nach \cite[Remark 10.32]{wedhorn} genau
+    $\overline{\im(\epsilon_\K)}=\overline{\{\epsilon_\K(\Spec(\K))\}}$
+    mit reduzierter Unterschemastruktur. Daher ist es integral mit
+    generischem Punkt $e_\K\coloneqq\epsilon_\K(\Spec(\K))$,
+    $\Spec(A)$ als offenes Unterschema ebenfalls und
+    $\O_{\Im(\epsilon_\K), e_\K}=\O_{A,e_\K}$ ist Körper.
+    Wir erhalten eine Sequenz von Körperhomomorphismen auf den Halmen
+    \begin{gather*}
+      \Id_\K\colon
+      \K \overset{\pi_\K^\#}{\longto}
+      \O_{\Im(\epsilon_\K), e_\K} = \O_{A,e_\K} = \Quot(A)
+      \overset{\epsilon_\K^\#}{\longto} \K
+    \end{gather*}
+    weshalb $\Quot(A)\cong\K$ bzw. $A\hookrightarrow\K$.
+    Für den zu $\pi|_{\Spec(A)}\colon\Spec(A)\to\Spec(R)$ assoziierten
+    Ringhomomorphismus $\pi^\#=\pi_\K^\#|_R$ kommutiert außerdem wegen
+    $\pi\circ\epsilon_\K=\Id_{\Spec(\K)}$ das folgende Diagramm
+    \begin{center}
+      \begin{tikzcd}
+        A\arrow[r, hook]\arrow[from=d, "{\pi^\#}"]
+        & \Quot(A)\arrow[d, "{\wr}"{swap}, "{\epsilon_\K^\#}"]\\
+        R\arrow[r, hook]
+        & \K
+      \end{tikzcd}
+    \end{center}
+    weshalb $\pi^\#\colon R\hookrightarrow A$ gelten muss.
+    
     Wir erhalten einen Schnitt
     $X(R)\ni e\colon\Spec(R)\to\Spec(A)\hookrightarrow X$,
     der $\epsilon_\K\colon\Spec(\K)\to X_\K$ erweitert.
@@ -845,6 +870,7 @@ Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
       $R$-Morphismus $A\to X$, der bereits offene Immersion ist
       \cite[4.3/1 (ii) oder 4.4/1]{neron}.
       % ??? Wieso ist die Erweiterung von id hier offene Immersion?
+      % TODO!!
       Nachdem $A$ eigentlich ist, ist das Bild dieses Morphismus
       geschlossen in $X$ und, da $X$ zusammenhängend ist, ist er ein
       Isomorphismus (injektiv als offene Immersion und surjektiv, da
@@ -857,6 +883,7 @@ Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
       ist.
       % ??? –> Zariski's Connectedness Thm/Stein-Faktoriesierung?
       % \cite[Exercise 12.29]{wedhorn}
+      % TODO!!
     \end{description}
   \end{proof}
 \end{Satz}
@@ -891,8 +918,8 @@ Gruppenschemastruktur abelsch ist:
     % (\autoref{thm:neronmodell}, \autoref{thm:abelscheneronmodelle}
     % Erweiterung von Morphismen auf Umgebung:
     % \autoref{thm:allgmorphismuserweiterung}
-    % ??? TODO: Wieso erhält Morphismuserweiterung Eigentlichkeit?
-    % ??? Wieso lässt sich gute Reduktion auf Umgebung erweitern?
+    % ??? Wieso erhält Morphismuserweiterung Eigentlichkeit?
+    % TODO!!
     
     Für den generischen Punkt können wir den schematischen
     Abschluss $A$ von $A_\K\to\P_\K^n\to\P_R^n$ in $\P_R^n$
@@ -903,7 +930,6 @@ Gruppenschemastruktur abelsch ist:
     denn $A_\K$ ist als abelsche Varietät projektiv,
     vgl. \autoref{thm:abvarietaetprojektiv}.
     Dieser ist glatt über dem generischen Punkt von $\Spec(R)$
-    % ??? Warum ist schematischer Abschl. glatt über generischem Pkt?
     und somit auch über einer offenen Umgebung $S'$ dessen.
     Wir erhalten ein glattes, projektives (also eigentliches)
     $S'$-Modell von $A_\K$ um den generischen Punkt, was gesucht war.
@@ -1091,10 +1117,6 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
       affinen Teilmengen $V(F_i)=\Spec(R[x,y]/(F_i))$ ($F_X,F_Y,F_Z$
       Dehomogenisierungen von $F$ nach $X,Y,Z$). Diese sind jeweils
       endlich präsentiert, also ist $W$ endlich präsentiert.
-      % Die zuvor beschriebene Überdeckung ist eine (endliche)
-      % Überdeckung mit Spektren von endlich präsentierten $R$-Algebren,
-      % also ist $W$ endlich präsentiert.
-      % % ??? Stimmt das?
       Entsprechend folgt, dass $W$ von endlichem Typ ist.
     \item[flach]
       Wir werden zeigen, dass aus integer und nichtleerer generischer
@@ -1253,7 +1275,6 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
   Die spezielle Faser $W_{\m}=W\times_R R/\m$ ist definiert
   durch die Reduktion der Weierstraßgleichung von $W$ modulo dem
   Maximalideal $\m$ von $R$, also ebenfalls eine Weierstraßkurve.
-  % ??? Ungenau/unschön formuliert
   Entsprechend ist $W_{\m}$ (und damit $W$) genau dann glatt, wenn
   eine der äquivalenten Bedingungen erfüllt ist
   ($\Delta_{\m}$ Diskriminante von $W_{\m}$,
@@ -1267,7 +1288,7 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
   Letzteres ist einfach nachzuprüfen.
 \end{Bemerkung}
 
-\subsection{Gruppenstruktur}
+\subsection{Gruppenstruktur auf Weierstraßmodellen}
 \begin{Lemma}\label{thm:erweiterunggruppenstruktur}
   Sei $(R,\m)$ hier diskreter Bewertungsring,
   $\k(\m)=R/\m$ perfekt,
@@ -1289,10 +1310,10 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
   der abelschen Varietät $E_\K$ erweitern.
   \optcite[Theorem IV.5.3 (c)]{silverman2}
 
-  % TODO: ??? Referenzen
-  $W^0(R)\to W(R) \cong E_\K(\K)$ ist ein Gruppenisomorphismus,
-  falls $W$ regulär ist.
-  \optcite[Theorem IV.5.3 (b)]{silverman2}
+  % % ??? Referenzen
+  % $W^0(R)\to W(R) \cong E_\K(\K)$ ist ein Gruppenisomorphismus,
+  % falls $W$ regulär ist.
+  % \optcite[Theorem IV.5.3 (b)]{silverman2}
   
   \begin{proof}[Beweisskizze] Sei wieder $\Char(\K)\neq 2,3$.
     \autoref{thm:erweiterunggruppenstruktur} folgt als Spezialfall von
@@ -1406,32 +1427,42 @@ Weierstraßmodell von $E_\K$ über $R$.
     Gruppenschemastruktur auf ganz $W$, da sie durch die gleiche
     Abbildung zwischen graduierten Ringen definiert werden.
 
-    Für die \NAbbEig sei $X$ ein weiteres glattes $R$-Schema mit
-    generischer Faser $X_\K$ und $\phi_\K\colon X_\K\to E_\K$ ein
+    Für die \NAbbEig sei $Y$ ein weiteres glattes $R$-Schema mit
+    generischer Faser $Y_\K$ und $\phi_\K\colon Y_\K\to E_\K$ ein
     Morphismus.
-    Wir werden zeigen, dass $\phi_\K$ eine $R$-rationale Abbildung
-    $\phi\colon X\dra W$ liefert.
+    In \autoref{thm:erwrrational} zeigen wir, dass $\phi_\K$ eine
+    $R$-rationale Abbildung $\phi\colon Y\dra W$ liefert.
     Nachdem $W$ glattes, d.\,h. insb. eigentliches, $R$-Gruppenschema
     ist, ist $\phi$ nach \autoref{thm:rationalzumorphismus} ein
     Morphismus, der $\phi_\K$ erweitert, und die \NAbbEig ist erfüllt.
-    
-    $\Spec(R)$ und folglich $X$ als glattes $R$-Schema sind lokal
-    noethersch, außerdem ist $\pi\colon X\to R$ flach über $R$. Daher
-    gilt für ein $x\in X$ nach \cite[Theorem 4.3.12]{liu}
-    % ??? Referenz/Beweis Dimensionsabschätzung von Fasern?
+  \end{proof}
+\end{Korollar}
+
+\begin{Lemma}\label{thm:erwrrational}
+  Sei $R$ ein Dedekindring, $\K=\Quot(R)$, $W$ allgemein ein
+  eigentliches $R$-Schema, $Y$ lokal noethersches, flaches, reguläres
+  $R$-Schema und $\phi_\K\colon Y_\K\to W_\K$ ein Morphismus auf den
+  generischen Fasern.
+  Dann erweitert sich $\phi_\K$ zu einer $R$-rationalen Abbildung
+  $\phi\colon Y\to W$.
+  \begin{proof}
+    $\Spec(R)$ und $Y$ sind nach Voraussetzung lokal noethersch,
+    außerdem ist $\pi\colon Y\to R$ flach über $R$. Daher 
+    gilt für ein $x\in Y$ nach \cite[Theorem 4.3.12]{liu}
     \begin{gather}\label{eq:stalkdimension}
-      \dim\O_{X,x} = \dim R_{\pi(x)} + \dim\O_{X_{\phi(x)}, x}
+      \dim\O_{Y,x} = \dim R_{\pi(x)} + \dim\O_{Y_{\phi(x)}, x}
     \end{gather}
-    Für einen generischen Punkt $\eta_{s}$ einer irreduziblen
-    Komponente $Y_{s}$ der Faser $X_s$, $s\in\Spec(R)$,
-    von $X\to R$ gilt $\dim\O_{X_s, \eta_{s}}=0$, also
-    $\dim\O_{X,\eta_{s}}=\dim R_s=1$.
-    Da $X$ als glattes $R$-Schema auch regulär über $R$ ist, ist
-    $\O_{X,\eta_{s}}$ diskreter Bewertungsring.
-    Der Quotientenkörper von $\O_{X,\eta_{s}}$ ist der lokale Ring
-    eines generischen Punkts $\eta$ von $X$. Da $X$ flach und
-    reduziert ist, liegt dieser nach
-    \cite[Proposition III.9.7]{hartshorne} in der generischen Faser.
+    Für $s\in\Spec(R)$ und den generischen Punkt $\eta_{s}$ einer
+    irreduziblen Komponente der Faser $Y_s$ von $Y\to R$ gilt
+    $\dim\O_{Y_s, \eta_{s}}=0$, also $\dim\O_{Y,\eta_{s}}=\dim R_s=1$.
+    Da $Y$ regulär über $R$ ist, ist $\O_{Y,\eta_{s}}$ diskreter
+    Bewertungsring.
+    Der Quotientenkörper von $\O_{Y,\eta_{s}}$ ist der lokale Ring
+    eines generischen Punkts $\eta$ von $Y$. Da $Y$ flach
+    % und reduziert
+    % ??? Braucht man hier reduziert?
+    ist, liegt $\eta$ nach \cite[Proposition III.9.7]{hartshorne} in
+    der generischen Faser.
     Wir können also das Bewertungskriterium für Eigentlichkeit für $W$
     anwenden:
       \begin{center}
@@ -1442,55 +1473,25 @@ Weierstraßmodell von $E_\K$ über $R$.
           & E_\K \arrow[r, hook]
           & W\arrow[d]\\
           \eta\cup\eta_{s}\arrow[r, equal]
-          &\Spec(\O_{X,\eta_{s}}) \arrow[rr]
+          &\Spec(\O_{Y,\eta_{s}}) \arrow[rr]
           \arrow[urr, dashed, "{\exists!}", out=20, in=215]
           && \Spec(R)
         \end{tikzcd}
       \end{center}
     Damit erweitert sich $\phi_\K$ zu einem Morphismus
-    $\Spec(\O_{X,\eta_{s}})\to W$, der sich nach
+    $\Spec(\O_{Y,\eta_{s}})\to W$, der sich nach
     \autoref{thm:morphismuserweiterung} auf einen Morphismus in einer
     Umgebung von $\eta_{s}$ erweitert.
     
     Die so gewonnenen Morphismen in Umgebungen der generischen Punkte
     der Fasern können wiederum verklebt werden und
     wir erhalten eine rationale Abbildung $\phi\colon U\to W$ auf
-    einem offenen Unterschema $U\subset X$.
-    $U$ enthält alle generischen Punkte der Fasern von $X\to R$ und
+    einem offenen Unterschema $U\subset Y$.
+    $U$ enthält alle generischen Punkte der Fasern von $Y\to R$ und
     ist somit $R$-dicht.
-    $\phi$ ist demnach $R$-rationale Erweiterung von $\phi_\K$.
-    
-    % Denn $\phi_\K$ lässt sich eindeutig auf eine offene, $R$-dichte
-    % Umgebung $U$ von $X_\K$ erweitern, wie sich lokal zeigen lässt.
-    % \begin{description}
-    % \item[Erweiterung auf $U$]
-    %   % ??? Wie erweitert sich die rationale Abbildung?
-    %   % Sowohl $X$ als auch $W$ sind glatt, also endlich
-    %   % präsentiert.
-
-    %   % Da $R$ Dedekindring ist, lässt faktorisiert jedes Element in ein
-    %   % endliches Produkt aus Primzahlen (s. \autoref{def:dedekindring}). 
-      
-    %   % Sei $x\in X_\K$ und $x\in\Spec(B)\subset X$ genügend kleine,
-    %   % offene, affine Umgebung von $x$, dass das Bild $\im(\Spec(B))$ in
-    %   % einer affinen Teilmenge $\Spec(A)\subset W$ liegt und $A$, $B$
-    %   % endlich präsentierte $R$-Algebren sind.
-    %   % Es gilt $A\subset A_{\phi_\K(x)}=\O_{W,\phi_\K(x)}$,
-    %   % $B\subset B_x=\O_{X,x}$.
-    % \item[$U$ $R$-dicht]
-    %   % $X\to R$ schickt als glattes, d.\,h. reduziertes und flaches
-    %   % $R$-Schema, alle generischen Punkte seiner irreduziblen
-    %   % Komponenten auf den generischen Punkt von
-    %   % $\Spec(R)$
-    %   % \cite[Proposition III.9.7]{hartshorne}.
-    %   % Entsprechend liegen alle generischen Punkte in der
-    %   % generischen Faser und sie ist dicht in $X$.
-    %   $X_\K$ ist dicht in $X$ nach \autoref{thm:dichtefaser}, da $X$
-    %   glatt ist.
-    %   Daher auch $U$, da es über $X_\K$ liegt.  
-    % \end{description}
+    $\phi$ ist demnach $R$-rationale Erweiterung von $\phi_\K$.    
   \end{proof}
-\end{Korollar}
+\end{Lemma}
 \begin{Bemerkung}
   Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
   überprüft werden:
@@ -1572,7 +1573,6 @@ Weierstraßmodell von $E_\K$ über $R$.
   Die erste Gleichheit ist allein eine Anwendung des
   Bewertungskriteriums für Eigentlichkeit auf das projektive (also
   eigentliche) Schema $X$.
-    % ??? benötigte Eigenschaften von X: eigentlich, regulär, flach
     % \begin{enumerate}[label=(\roman*)]
     % \item
       % Die Einschränkung von $\Hom_R(\Spec(R),X)=X(R)$ auf 
@@ -1743,19 +1743,19 @@ Weierstraßmodell von $E_\K$ über $R$.
   \item\cite[Proposition IV.4.5(a)]{silverman2}
     Dann existiert ein eigentliches, reguläres $R$-Modell $X$ von $C$,
     das eine arithmetische Fläche darstellt
-    (kurz: eigentliches, reguläres Modell für $C/\K$).
+    (kurz: eigentliches reguläres Modell für $C/\K$).
   \item\cite[Proposition IV.4.5(b)]{silverman2} Ist $g\geq1$ kann
-    dieses minimal gewählt werden, d.\,h.
-    für jedes andere eigentliche, reguläre Modell für $C/\K$ und jeden
-    Isomorphismus der generischen Fasern ist die induzierte birationale
-    Abbildung
-    % ??? Welche induzierte rat. Abbildung?
-    ein $R$-Isomorphismus.
+    ein minimales eigentliches reguläres Modell $X_{\text{min}}$ für $C$
+    gewählt werden.
+    D.\,h. für jedes andere eigentliche reguläres Modell $X$ für
+    $C/\K$ und jeden Isomorphismus $\phi_\K$ der generischen Fasern
+    ist die nach \autoref{thm:erwrrational} induzierte birationale
+    Abbildung $\phi\colon X\dra X_{\text{min}}$ ein $R$-Morphismus.
   \item\cite[Proposition IV.4.6]{silverman2}
-    Für ein minimales, eigentliches, reguläres Modell $X$ für $C/\K$
-    gilt, dass jeder $\K$"=Automorphismus von $C$ sich zu einem
-    $R$-Morphismus von $X$ erweitert, der glatte Punkte auf glatte
-    Punkte abbildet.
+    Für ein minimales, eigentliches, reguläres Modell $X_{\text{min}}$
+    für $C/\K$ gilt, dass jeder $\K$"=Automorphismus von $C$ sich zu
+    einem $R$-Morphismus von $X_{\text{min}}$ erweitert, der glatte
+    Punkte auf glatte Punkte abbildet.
   \end{enumerate}
 \end{Satz}
 
@@ -1844,6 +1844,28 @@ diskrete Bewertungsringe $R$ beschränken.
 
 % ÄQ GRUPPENSTRUKTURERW.
 % strikt henselsch nicht nötig!!
+\begin{Lemma}
+  Sei $R$ diskreter Bewertungsring (mit perfektem Restklassenkörper
+  $k$), $\K$, $E_\K$, $C$, $E$ wie in \autoref{thm:exneronmodelle}.
+  Sei $R'$ diskreter Bewertungsring und flache $R$-Algebra
+  % ??? Welche Eig. benötigt?
+  % TODO!!
+  und $\phi\colon \Spec(R')\to C$ ein $R$-Morphismus.
+  Ist $\phi((0))\in E$, gilt $\im(\phi)\subset E$.
+  \begin{proof}
+    Wir zeigen erst, dass $C\times_R R'$ eine arithmetische Fläche
+    über $R'$ ist.
+    Projektiv, flach und integral sind stabil unter Basiswechsel.
+    % ??? Regularität?
+    % TODO!!
+    % Regularität bleibt unter dem Faserprodukt mit einem regulären
+    % Schema erhalten: Wähle für einen Punkt $x$ im Faserprodukt eine
+    % affine, offene Umgebung $\Spec(A)\times_R\Spec(B)=\Spec(A\otimes
+    % B)$, dann hat der Halm $\O_{A\otimes B, x}=(A\otimes
+    % B)_x=(A_x\otimes B_x)$ in $x$
+  \end{proof}
+\end{Lemma}  
+
 \begin{Lemma}\label{thm:fallstriktehenselisierung}
   Sei $R$ hier strikt henselscher, diskreter Bewertungsring mit
   perfektem Restklassenkörper $k$
@@ -1889,7 +1911,6 @@ diskrete Bewertungsringe $R$ beschränken.
           && \Spec(R)
         \end{tikzcd}
       \end{center}
-      % ??? stimmen die Gleichheiten?
       $C$ ist nach Voraussetzung eigentlich, daher erweitert sich
       $\phi_\K|_{\eta}$ nach dem Bewertungskriterium für
       Eigentlichkeit auf einen Morphismus
@@ -1934,7 +1955,6 @@ diskrete Bewertungsringe $R$ beschränken.
         \left\{ x|_{\Spec(\K)}, x_0 \right\}
         \overset{\phi}{\longto} C
       \end{gather*}
-      % ??? Stimmt die Gleichheit so?
       ist Morphismus.
     \item Es muss aber gelten, dass $\phi\circ x\not\in E(R)$, da
       ansonsten entgegen unserer Annahme $\phi$ in $x_0$ definiert
