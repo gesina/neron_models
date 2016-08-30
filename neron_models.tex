@@ -1036,15 +1036,15 @@ Weierstraßgleichung mit Koeffizienten in $R$.
 % \end{gather*}
 % dem Koeffizientenwechsel
 % \begin{align*}
-    %     \beta&\mapsto \pi^{4n}\beta
-                 %     &\gamma&\mapsto \pi^{6n}\gamma
-                                %     &\Delta&\mapsto \pi^{12n}\Delta
-                                               %   \end{align*}
-                                               %                                                also der Multiplikation der Koeffizienten mit positiven Potenzen von
-                                               %                                                $\pi$ gleich
-                                               %                                                (\cite[1.5, Lemma 2]{neron} oder \cite[Chapter VII.1]{silverman}).
-                                               %                                                Ein Anwenden dieses Koordinatenwechsels mit genügend hohem $n$ ergibt
-                                               %                                                also eine Gleichung mit Koeffizienten in $R$.
+%   \beta&\mapsto \pi^{4n}\beta
+%   &\gamma&\mapsto \pi^{6n}\gamma
+%   &\Delta&\mapsto \pi^{12n}\Delta
+% \end{align*}
+% also der Multiplikation der Koeffizienten mit positiven Potenzen von
+% $\pi$ gleich
+% (\cite[1.5, Lemma 2]{neron} oder \cite[Chapter VII.1]{silverman}).
+% Ein Anwenden dieses Koordinatenwechsels mit genügend hohem $n$ ergibt
+% also eine Gleichung mit Koeffizienten in $R$.
 
 \begin{Definition}[Weierstraßmodell]
   Wir nennen ein projektives $R$-Schema $W=V_+(F)\subset\P_R^2$, das
@@ -1074,13 +1074,13 @@ Form der Weierstraßgleichung in $R$ zu betrachten:
   ist.
 \end{Definition}
 
-                                               %                                                -----
+% -----
 
 \section{Gruppenschemastruktur}
 \subsection{Allg. Eigenschaften}
 Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 
-                                               %                                                INTEGER, PROJEKTIV, FLACH
+% INTEGER, PROJEKTIV, FLACH
 \begin{Lemma}\label{thm:eigweierstrassmodelle}
   Ein Weierstraßmodell $W=V_+(F)$ zu einer Weierstraßgleichung $0=F$
   von $E_\K$ über einem Dedekindring $R$ ist
@@ -1141,55 +1141,55 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
     \end{description}
   \end{proof}
 \end{Lemma}
-                                               %                                                Für Regularität siehe auch \cite[Lemma IV.9.5]{silverman2}
+% Für Regularität siehe auch \cite[Lemma IV.9.5]{silverman2}
 
-                                               %                                                ÄQ GLATTHEIT
-                                               %                                                \begin{Lemma}\label{thm:glattüberdvr}
-                                               %                                                Sei $R$ diskreter Bewertungsring,
-                                               %                                                $\K=\Quot(R)$,
-                                               %                                                $X$ irreduzibles,
-                                               %                                                lokal endlich präsentiertes
-                                               %                                                (für lokal noethersch äquivalent:
-                                               %                                                lokal endlichen Typs \cite[Remark 10.36]{wedhorn})
-                                               %                                                $R$-Schema mit nichtleerer, generischer Faser $X_\K$.
-                                               %                                                Dann ist $X$ genau dann glattes $R$-Schema, wenn die Fasern glatt
-                                               %                                                sind.
-                                               %                                                \begin{proof}
-                                               %     %                                                  siehe auch \cite[Proposition IV.2.9]{silverman2}
-                                               %                                                Ist $X$ glatt, so auch jede Faser, da Glattheit stabil unter
-                                               %                                                Basiswechsel ist.
+% ÄQ GLATTHEIT
+% \begin{Lemma}\label{thm:glattüberdvr}
+%   Sei $R$ diskreter Bewertungsring,
+%   $\K=\Quot(R)$,
+%   $X$ irreduzibles,
+%   lokal endlich präsentiertes
+%   (für lokal noethersch äquivalent:
+%   lokal endlichen Typs \cite[Remark 10.36]{wedhorn})
+%   $R$-Schema mit nichtleerer, generischer Faser $X_\K$.
+%   Dann ist $X$ genau dann glattes $R$-Schema, wenn die Fasern glatt
+%   sind.
+%   \begin{proof}
+%     %     siehe auch \cite[Proposition IV.2.9]{silverman2}
+%     Ist $X$ glatt, so auch jede Faser, da Glattheit stabil unter
+%     Basiswechsel ist.
 
-                                               %                                                Seien also die Fasern von $X$ glatt, insb. reduziert.
-                                               %                                                Dann ist $X$ ebenfalls reduziert, da Reduziertheit auf den Halmen
-                                               %                                                geprüft werden kann.
-                                               %                                                Außerdem ist $X$ nach Voraussetzung irreduzibel, daher integer,
-                                               %                                                und (lokal) endlich präsentiert.
-                                               %                                                Wir wissen, dass $X$ glatt ist, wenn es lokal endlich präsentiert
-                                               %                                                und flach über $R$ ist und seine Fasern glatt sind
-                                               %                                                \cite[8.5, Proposition 17]{bosch}.
-                                               %                                                Es ist also Flachheit zu zeigen.
+%     Seien also die Fasern von $X$ glatt, insb. reduziert.
+%     Dann ist $X$ ebenfalls reduziert, da Reduziertheit auf den Halmen
+%     geprüft werden kann.
+%     Außerdem ist $X$ nach Voraussetzung irreduzibel, daher integer,
+%     und (lokal) endlich präsentiert.
+%     Wir wissen, dass $X$ glatt ist, wenn es lokal endlich präsentiert
+%     und flach über $R$ ist und seine Fasern glatt sind
+%     \cite[8.5, Proposition 17]{bosch}.
+%     Es ist also Flachheit zu zeigen.
 
-                                               %                                                Wir werden zeigen, dass aus integer und nichtleerer generischer
-                                               %                                                Faser $X_\K$ folgt, dass der eindeutige generische Punkt $\eta$
-                                               %                                                von $X$ auf den generischen Punkt von $R$ geschickt wird.
-                                               %                                                Das zeigt, dass $X$ flach ist
-                                               %                                                \cite[Proposition III.9.7]{hartshorne}
-                                               %                                                (hierbei wird zusätzlich benutzt, dass $\Spec(R)$ integer,
-                                               %                                                regulär und von Dimension 1 ist).
+%     Wir werden zeigen, dass aus integer und nichtleerer generischer
+%     Faser $X_\K$ folgt, dass der eindeutige generische Punkt $\eta$
+%     von $X$ auf den generischen Punkt von $R$ geschickt wird.
+%     Das zeigt, dass $X$ flach ist
+%     \cite[Proposition III.9.7]{hartshorne}
+%     (hierbei wird zusätzlich benutzt, dass $\Spec(R)$ integer,
+%     regulär und von Dimension 1 ist).
 
-                                               %                                                Nachdem $X$ integer ist, hat es einen eindeutigen generischen
-                                               %                                                Punkt $\eta$.
-                                               %                                                Angenommen, dieser wird durch die Abbildung, die $X$ zum
-                                               %                                                $R$-Schema macht, auf einen geschlossenen Punkt $\m$ von $\Spec(R)$
-                                               %                                                geschickt.
-                                               %                                                Dann liegt $\eta$ im geschlossenen Urbild von $\m$ –
-                                               %                                                aber der Abschluss $\overline{\{\eta\}}=X$ von $\eta$ ist darin
-                                               %                                                enthalten. Entsprechend wäre die generische Faser $X_\K$
-                                               %                                                leer, was ein Widerspruch ist.
-                                               %                                                Also muss der generische Punkt auf den generischen Punkt geschickt
-                                               %                                                werden.
-                                               %                                                \end{proof}
-                                               %                                                \end{Lemma}
+%     Nachdem $X$ integer ist, hat es einen eindeutigen generischen
+%     Punkt $\eta$.
+%     Angenommen, dieser wird durch die Abbildung, die $X$ zum
+%     $R$-Schema macht, auf einen geschlossenen Punkt $\m$ von $\Spec(R)$
+%     geschickt.
+%     Dann liegt $\eta$ im geschlossenen Urbild von $\m$ –
+%     aber der Abschluss $\overline{\{\eta\}}=X$ von $\eta$ ist darin
+%     enthalten. Entsprechend wäre die generische Faser $X_\K$
+%     leer, was ein Widerspruch ist.
+%     Also muss der generische Punkt auf den generischen Punkt geschickt
+%     werden.
+%   \end{proof}
+% \end{Lemma}
 
 \begin{Lemma}\label{thm:weierstrassglatt}
   \optcite[Remark IV.5.4.1]{silverman2}
@@ -1394,7 +1394,7 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
   \end{proof}
 \end{Lemma}
 
-                                               %                                                IDENTITÄTSKOMPONENTE
+% IDENTITÄTSKOMPONENTE
 \begin{Bemerkung}
   \cite[Chapter 1.5, S.\,23]{neron},
   \cite[Corollary IV.9.1]{silverman2},
@@ -1404,8 +1404,8 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
   $E_\K$ über $R$.
 \end{Bemerkung}
 
-                                               %                                                Im Folgenden sei $E_\K$ immer eine elliptische Kurve über dem
-                                               %                                                Quotientenkörper $\K$ des Dedekindringes $R$.
+% Im Folgenden sei $E_\K$ immer eine elliptische Kurve über dem
+% Quotientenkörper $\K$ des Dedekindringes $R$.
 
 In bestimmten Fällen erhält man das Néron-Modell bereits aus einem
 Weierstraßmodell von $E_\K$ über $R$.
@@ -1537,7 +1537,7 @@ Weierstraßmodell von $E_\K$ über $R$.
   Beachte, dass $W$ regulär, aber nicht glatt, also singulär in einer
   Faser, sein kann.
 \end{Beispiel}
-           %            -----
+% -----
 \section{Eigenschaften}
 \begin{Satz}\label{thm:ratpkteregulaeremodelle}
   \optcite[Corollary IV.4.4]{silverman2}
@@ -1639,11 +1639,11 @@ Weierstraßmodell von $E_\K$ über $R$.
   \end{proof}
 \end{Satz}
 
-               %                \begin{Bemerkung}
-               %                Die obigen Bedingungen treffen z.\,B. auf ein eigentliches,
-               %                reguläres, flaches $R$-Schema zu, also insbesondere arithmetische
-               %                Flächen (diese sind integer, regulär, flach, projektiv).
-               %                \end{Bemerkung}
+% \begin{Bemerkung}
+%   Die obigen Bedingungen treffen z.\,B. auf ein eigentliches,
+%   reguläres, flaches $R$-Schema zu, also insbesondere arithmetische
+%   Flächen (diese sind integer, regulär, flach, projektiv).
+% \end{Bemerkung}
 
 \begin{Lemma}\label{thm:arithflschnittbilderglatt}
   \cite[Proposition IV.4.3]{silverman2}
@@ -1731,10 +1731,10 @@ Weierstraßmodell von $E_\K$ über $R$.
   \end{proof}
 \end{Lemma}
 
-                    %                     -----
+% -----
 
 \section{Minimale reguläre Modelle}
-                    %                     exzellent nötig!!! evtl. nur Konstruktion?
+% exzellent nötig!!! evtl. nur Konstruktion?
 \begin{Definition}
   Sei $R$ Dedekindring (mit perfekten Restklassenkörpern),
   $\K=\Quot(R)$,
@@ -1792,11 +1792,11 @@ Weierstraßmodell von $E_\K$ über $R$.
 \end{Satz}
 
 
-                    %                     ----------
+% ----------
 
 
 \chapter{Existenz von Néron-Modellen auf elliptischen Kurven}
-                    %                     EXISTENZSATZ ELL. KURVEN
+% EXISTENZSATZ ELL. KURVEN
 \begin{Satz}\label{thm:exneronmodelle}
   % Der diskrete Bewertungsring $R$ sei strikt henselsch mit algebraisch
   % abgeschlossenem Quotientenkörper $\K$ und
@@ -1875,49 +1875,71 @@ diskrete Bewertungsringe $R$ beschränken.
 
 \section{Äquivalenz zur Gruppenstruktur}
 
-                    %                     ÄQ GRUPPENSTRUKTURERW.
-                    %                     strikt henselsch nicht nötig!!
-\begin{Lemma}
-  Sei $R$ diskreter Bewertungsring (mit perfektem Restklassenkörper
-  $k$), $\K$, $E_\K$, $C$, $E$ wie in \autoref{thm:exneronmodelle}.
-  Sei $R'$ diskreter Bewertungsring und flache $R$-Algebra
-  % ??? Welche Eig. benötigt?
-  % TODO!!
-  und $\phi\colon \Spec(R')\to C$ ein $R$-Morphismus.
-  Ist $\phi((0))\in E$, gilt $\im(\phi)\subset E$.
+% ÄQ GRUPPENSTRUKTURERW.
+% strikt henselsch nicht nötig!!
+\begin{Lemma}\label{thm:schnittearithmflglatt}
+  Sei $R$ diskreter Bewertungsring mit perfektem Restklassenkörper
+  $k$, $\K$, $E_\K$, $C$, $E$ wie in \autoref{thm:exneronmodelle},
+  sei $(R',\m')$ Halm eines glatten $R$-Schemas und diskreter
+  Bewertungsring,
+  und sei $\phi\colon \Spec(R')\to C$ ein $R$-Morphismus.
+  Ist $\phi(\Spec(\K))\in E$, gilt $\im(\phi)\subset E$.
   \begin{proof}
-    $C\times_R R'$ ist wie in \autoref{thm:eigminmodell} wieder eine
-    arithmetische Fläche über $R'$.
-    …
+    Für den generischen Punkt $\phi((0))$ ist dies klar, da die
+    generische Faser von $C$ glatt ist, und nach
+    \cite[8.5, Proposition 17]{bosch} wegen $C$ flach in $E$ liegt.
+    Betrachte also $\phi(\m')$.
+    $C_{R'}\coloneqq C\times_R R'$ ist  nach
+    \autoref{thm:eigminmodell} wieder eine arithmetische Fläche über
+    $R'$ mit Unterschema der glatten Punkte
+    $E_{R'}\coloneqq E\times_R R'$.
+    Nun ist $(\phi\times\Id)\colon\Spec(R')\to C_{R'}$ ein
+    $R'$-Schnitt, weshalb $(C_{R'})_{\m'}$ regulär in
+    $(\phi\times\Id)(\m')$ ist nach
+    \autoref{thm:arithflschnittbilderglatt}.
+    $(C_{R'})_\p$ ist als Schema endlichen Typs über einem
+    perfekten Körper glatt in jedem regulären Punkt.
+    Nun ist $C_{R'}$ als ein flaches Schema genau dann glatt in
+    einem Punkt, wenn es die zugehörige Faser ist, wieder nach
+    \cite[8.5, Proposition 17]{bosch}.
+    Somit ist $C_{R'}$ glatt in $(\phi\times\Id)(\m')$ bzw.
+    $(\phi\times\Id)(\m')\in E\times_R R'$. Folglich muss bereits
+    $\phi(\m')$ in $E$ liegen und $\phi$ ist $R$-Morphismus
+    $\Spec(R')\to E\subset C$.
   \end{proof}
 \end{Lemma}  
 
-\begin{Lemma}\label{thm:fallstriktehenselisierung}
+\begin{Satz}\label{thm:fallstriktehenselisierung}
   Sei $R$ hier strikt henselscher, diskreter Bewertungsring mit
   perfektem Restklassenkörper $k$
   und $\K$, $E_\K$, $C$, $E$ wie in \autoref{thm:exneronmodelle}.
   Erweitert sich die $\K$-Gruppenschemastruktur von $E_\K$ auf
   $E=C^0$, dann ist $E$ Néron-Modell von $E_\K$.
   \begin{proof}
-    Da $E$ bereits glattes $R$-Gruppenschema ist nach Voraussetzung,
+    Da $E$ bereits nach Voraussetzung glattes $R$-Gruppenschema ist,
     ist noch die \NAbbEig zu prüfen.
-    Sei also $Y$ ein glattes $R$-Schema mit einem Morphismus
-    $\phi_\K\colon Y_\K\to E_\K$, bzw. nach \autoref{thm:dichtefaser}
-    einer rationalen Abbildung $\phi\colon Y\dra E$, die von $\phi_\K$
-    präsentiert wird.
-
+    Sei also $Y$ ein glattes $R$-Schema mit einem $\K$-Morphismus
+    $\phi_\K\colon Y_\K\to E_\K$ der generischen Fasern.
+    % , bzw. nach \autoref{thm:dichtefaser}
+    % einer rationalen Abbildung $\phi\colon Y\dra E$, die von $\phi_\K$
+    % präsentiert wird.
+    Nach \autoref{thm:erwrrational} erweitert sich $\phi_\K$ auf eine
+    $R$-rationale Abbildung $\phi\colon Y\dra C$, deren Bild nach dem
+    vorhergehenden Lemma~\autoref{thm:schnittearithmflglatt} in $E$
+    liegt.
+    
     Wir werden den Beweis durch Widerspruch führen.
-    Angenommen, $\phi$ sei kein Morphismus.
-    \begin{enumerate}
-    \item Da $E$ $R$-Gruppenschema ist und $\phi$ auf der dichten
-      generischen Faser definiert ist, hat $Y\setminus\Dom(\phi)$
-      Kodimension 1 (s. \autoref{thm:rationalzumorphismus})
-      Daher gibt es ein irreduzibles, geschlossenes Unterschema
-      $Z\subset Y$, auf dem $\phi$ nicht definiert ist.
-      Dies ist äquivalent dazu, dass $\phi$ nicht im generischen Punkt
-      $\eta_Z$ von $Z$ definiert ist, da jede offene Teilmenge $U$ von
-      $Z$ Umgebung von $\eta_Z$ ist.
-    \item $\O_{Y,\eta_Z}$ ist diskreter Bewertungsring, da er von
+    Angenommen, $\phi\colon Y\dra E$ sei kein Morphismus.
+    Da $E$ $R$-Gruppenschema, $Y$ glatt und $\phi$ eine
+      $R$-rationale Abbildung ist, hat $Y\setminus\Dom(\phi)$
+      Kodimension 1 nach \autoref{thm:rationalzumorphismus}.
+      D.\,h. es gibt ein irreduzibles, geschlossenes Unterschema
+      $Z\subset Y$ der Kodimension 1, auf dessen generischem Punkt
+      $\eta_Z$ die $R$-rationale Abbildung $\phi$ nicht definiert ist.
+      % Dies ist äquivalent dazu, dass $\phi$ nicht im generischen Punkt
+      % $\eta_Z$ von $Z$ definiert ist, da jede offene Teilmenge $U$ von
+      % $Z$ Umgebung von $\eta_Z$ ist.
+    $\O_{Y,\eta_Z}$ ist diskreter Bewertungsring, da er von
       Dimension 1 ist ($Z$ hat Dimension 1), regulär ($Y$ glatt, also
       regulär) und lokal ist.
       Sein Quotientenkörper ist der Quotienten-~bzw. Restklassenkörper
@@ -1940,62 +1962,75 @@ diskrete Bewertungsringe $R$ beschränken.
       $C$ ist nach Voraussetzung eigentlich, daher erweitert sich
       $\phi_\K|_{\eta}$ nach dem Bewertungskriterium für
       Eigentlichkeit auf einen Morphismus
-      $\Spec(\O_{Y,\eta_Z})\to C$.
-    \item \autoref{thm:morphismuserweiterung} besagt, dass sich
-      dieser auf eine Umgebung von $\eta_Z$ erweitert, was bedeutet,
-      dass $\phi\colon Y\dra E\hookrightarrow C$ in $\eta_Z$ definiert
+      $\phi|_{\O_{Y,\eta_Z}}\colon\Spec(\O_{Y,\eta_Z})\to C$.
+    \autoref{thm:morphismuserweiterung} besagt, dass sich
+      dieser auf eine offene Umgebung $U_Z$ von $\eta_Z$ erweitert,
+      was bedeutet, dass $\phi|_{U_Z}\colon U_Z\dra E\hookrightarrow C$
+      Morphismus ist.
+    Nun ist aber $\eta\in E_\K$, also
+      $\phi|_{\O_{Y,\eta_Z}}(\eta)\in E$, weshalb nach
+      \autoref{thm:schnittearithmflglatt}
+      $\im(\phi|_{\O_{Y,\eta_Z}})\subset E$.
+      Wir können demnach eine glatte, offene Umgebung von
+      $\im(\phi|_{\O_{Y,\eta_Z}})$ wählen, deren Urbild $U$ unter
+      $\phi|_{U_Z}$ entsprechend wieder offen in $U_Z$, also $Y$, ist.
+      Insgesamt ist $\phi|_U\colon U\to E$ ein Morphismus, was
+      bedeutet, dass $\phi$ entgegen der Annahme in $\eta_Z$ definiert
       ist.
-    \item Also kann $\phi(\eta_Z)$ nicht in $E$ liegen. Ansonsten
-      wäre $\phi\colon Y\dra E$ auf dem Urbild einer genügend kleinen
-      Umgebung von $\eta_Z$ in $E$ Morphismus und entgegen der Annahme in
-      $\eta_Z$ definiert.
-      % C integer, urbilder dichter Mengen dicht
-    \item[?] $\phi(\eta_Z)\not\in E$ ist äquivalent dazu, dass für
-      jeden geschlossenen (also $k$-wertigen) Punkt $x\in Z\setminus
-      X_\K$, in dem $\phi$ definiert ist, $\phi(x)\not\in E$ gilt.
-    \item Da $R$ strikt henselsch ist, hat die Einschränkung $Y(R)\to
-      Y_k(k)$ der $R$-wertigen Punkte auf die spezielle Faser ein
-      dichtes Bild in $Y_k$ nach \autoref{thm:eigstrikthenselsch}.
-    \item[?] Es gibt daher einen $R$-wertigen Punkt $x\in Y(R)$,
-      dessen Einschränkung $x_0\in Y_k(k)$ einem geschlossen Punkt in
-      $Z$ entspricht und in dem $\phi\colon Y\to C$ definiert ist.
-    \item Wir erhalten das kommutative Diagramm
-      \begin{center}
-        \begin{tikzcd}
-          \Spec(\K) \arrow[r, "{x|_{\Spec(\K)}}"] \arrow[d]
-          & Y_\K \arrow[r, "{\phi_\K}"]
-          & E_\K \arrow[r, hook]
-          & C \arrow[d]\\
-          \Spec(R) \arrow[rrr, "\Id"{swap}]
-          \arrow[urrr, dashed, "{\exists!}", in=210, out=15]
-          &&&\Spec(R)
-        \end{tikzcd}
-      \end{center}
-      und nach dem Bewertungskriterium für die Eigentlichkeit von $C$
-      erweitert sich $\phi\circ x|_{\Spec(\K)}$ zu einem Morphismus
-      $\Spec(R)\to C$, d.\,h.
-      \begin{gather*}
-        C(R)\ni\phi\circ x\colon
-        \Spec(R)
-        \overset{x}{\longto}
-        \left\{ x|_{\Spec(\K)}, x_0 \right\}
-        \overset{\phi}{\longto} C
-      \end{gather*}
-      ist Morphismus.
-    \item Es muss aber gelten, dass $\phi\circ x\not\in E(R)$, da
-      ansonsten entgegen unserer Annahme $\phi$ in $x_0$ definiert
-      wäre.
-    \item Dies ist ein Widerspruch, da nach
-      \autoref{thm:ratpkteregulaeremodelle} die Gleichheit
-      $x\not\in E(R)=C(R)\ni x$ gilt.
-    \end{enumerate}
+      Damit muss $\phi\colon Y\to E$ Morphismus sein, sprich die
+      \NAbbEig für $E$ ist erfüllt.
+      
+    % \item Also kann $\phi(\eta_Z)$ nicht in $E$ liegen. Ansonsten
+    %   wäre $\phi\colon Y\dra E$ auf dem Urbild einer genügend kleinen
+    %   Umgebung von $\eta_Z$ in $E$ Morphismus und entgegen der Annahme in
+    %   $\eta_Z$ definiert.
+    %   % C integer, urbilder dichter Mengen dicht
+    % \item[?] $\phi(\eta_Z)\not\in E$ ist äquivalent dazu, dass für
+    %   jeden geschlossenen (also $k$-wertigen) Punkt $x\in Z\setminus
+    %   X_\K$, in dem $\phi$ definiert ist, $\phi(x)\not\in E$ gilt.
+    % \item Da $R$ strikt henselsch ist, hat die Einschränkung $Y(R)\to
+    %   Y_k(k)$ der $R$-wertigen Punkte auf die spezielle Faser ein
+    %   dichtes Bild in $Y_k$ nach \autoref{thm:eigstrikthenselsch}.
+    % \item[?] Es gibt daher einen $R$-wertigen Punkt $x\in Y(R)$,
+    %   dessen Einschränkung $x_0\in Y_k(k)$ einem geschlossen Punkt in
+    %   $Z$ entspricht und in dem $\phi\colon Y\to C$ definiert ist.
+    % \item Wir erhalten das kommutative Diagramm
+    %   \begin{center}
+    %     \begin{tikzcd}
+    %       \Spec(\K) \arrow[r, "{x|_{\Spec(\K)}}"] \arrow[d]
+    %       & Y_\K \arrow[r, "{\phi_\K}"]
+    %       & E_\K \arrow[r, hook]
+    %       & C \arrow[d]\\
+    %       \Spec(R) \arrow[rrr, "\Id"{swap}]
+    %       \arrow[urrr, dashed, "{\exists!}", in=210, out=15]
+    %       &&&\Spec(R)
+    %     \end{tikzcd}
+    %   \end{center}
+    %   und nach dem Bewertungskriterium für die Eigentlichkeit von $C$
+    %   erweitert sich $\phi\circ x|_{\Spec(\K)}$ zu einem Morphismus
+    %   $\Spec(R)\to C$, d.\,h.
+    %   \begin{gather*}
+    %     C(R)\ni\phi\circ x\colon
+    %     \Spec(R)
+    %     \overset{x}{\longto}
+    %     \left\{ x|_{\Spec(\K)}, x_0 \right\}
+    %     \overset{\phi}{\longto} C
+    %   \end{gather*}
+    %   ist Morphismus.
+    % \item Es muss aber gelten, dass $\phi\circ x\not\in E(R)$, da
+    %   ansonsten entgegen unserer Annahme $\phi$ in $x_0$ definiert
+    %   wäre.
+    % \item Dies ist ein Widerspruch, da nach
+    %   \autoref{thm:ratpkteregulaeremodelle} die Gleichheit
+    %   $x\not\in E(R)=C(R)\ni x$ gilt.
+    % \end{enumerate}
   \end{proof}
-\end{Lemma}
+\end{Satz}
 
 \section{Fall strikt henselscher Ringe}
-              %               Nur Erweiterung der Gruppenstruktur!
+% Nur Erweiterung der Gruppenstruktur!
 \subsection{Strikt henselsche Ringe}
-              %               HENSELSCHE RINGE
+% HENSELSCHE RINGE
 \begin{Definition}[henselsche Ringe]\label{def:henselscheringe}
   \optcite[2.3, Proposition 4]{neron}
   \optcite[Chapter IV.6]{silverman2}
@@ -2094,7 +2129,7 @@ diskrete Bewertungsringe $R$ beschränken.
 \end{Satz}
 
 \subsection{Nachweis der Gruppenstruktur für strikt henselsche Ringe}
-    %     ERWEITERUNG DER GRUPPENSTRUKTUR
+% ERWEITERUNG DER GRUPPENSTRUKTUR
 \begin{Satz}\label{thm:egruppenschema}
   Sei $R$ strikt henselscher diskreter Bewertungsring (mit perfektem)
   Restklassenkörper $k$ und $\K$, $E_\K$, $C$, $E$ wieder wie in
@@ -2231,7 +2266,7 @@ elliptischen Kurve
 \appendix
 \chapter{Verwendete Definitionen}
 \section{Dedekindringe}
-              %               DEDEKINDRINGE
+% DEDEKINDRINGE
 \begin{Definition}[Dedekindring]\label{def:dedekindring}
   \optcite[S.\,40]{hartshorne}\optcite[Definition B.84]{wedhorn}
   Ein Integritätsring $R$ heißt Dedekindring, wenn er eine der
@@ -2287,7 +2322,7 @@ elliptischen Kurve
 \end{Definition}
 
 \section{Eigenschaften von Schemata}
-              %               REDUZIERT
+% REDUZIERT
 \begin{Definition}[reduziert, geometrisch reduziert]
   Ein Schema heißt reduziert, falls alle Halme reduzierte Ringe sind
   (d.\,h. $\Nil(0)=(0)$).
@@ -2297,7 +2332,7 @@ elliptischen Kurve
   Faser reduziert ist. 
 \end{Definition}
 
-              %               LOKAL VON ENDLICHEM TYP
+% LOKAL VON ENDLICHEM TYP
 \begin{Definition}[lokal von endlichem Typ]
   Ein Morphismus $f\colon X\to Y$ von Schemata heißt lokal von endlichem
   Typ, wenn lokal auf affinen offenen Teilmengen $V\subset Y$ die
@@ -2309,7 +2344,7 @@ elliptischen Kurve
   quasikompakt (Urbilder quasikompakter Mengen sind quasikompakt) ist.
 \end{Definition}
 
-              %               REGULÄR
+% REGULÄR
 \begin{Definition}[Regulär]
   Ein Schema $X$ heißt regulär im Punk $x\in X$, wenn sein Halm
   $\O_{X,x}$ ein regulärer (lokaler) Ring ist
@@ -2322,7 +2357,7 @@ elliptischen Kurve
 \end{Definition}
 
 \section{Eigenschaften von Morphismen von Schemata}
-              %               FLACH
+% FLACH
 \begin{Definition}[flacher Morphismus]
   \optcite{bosch, goodreduction}
   Ein Morphismus $f\colon X\to Y$ von Schemata ist flach, wenn alle
@@ -2337,8 +2372,8 @@ elliptischen Kurve
   Insbesondere ist dann die generische Faser nichtleer und dicht in $X$.
 \end{Bemerkung}
 
-              %               UNVERZWEIGT
-              %               ??? Unverzweigt <=> Glatt für diskr. BWR?
+% UNVERZWEIGT
+% ??? Unverzweigt <=> Glatt für diskr. BWR?
 \begin{Definition}[unverzweigter Morphismus]
   Ein Morphismus $f\colon X\to S$ von Schemata heißt unverzweigt im
   Punkt $x\in X$, falls es eine offene Umgebung
@@ -2364,7 +2399,7 @@ elliptischen Kurve
   \end{Bemerkung}
 \end{Definition}
 
-              %               GLATT
+% GLATT
 \begin{Definition}[glatter Morphismus]
   \optcite[8.5, Definition 1]{bosch}
   Ein Morphismus $f\colon X\to S$ von Schemata heißt glatt im Punkt
@@ -2406,7 +2441,7 @@ elliptischen Kurve
   \end{Bemerkung}
 \end{Definition}
 
-    %     ÉTALE
+% ÉTALE
 \begin{Definition}[étaler Morphismus]% Äquivalent zu lokal umkehrbar
   \optcite[8.5, Definition 1 und Corollary 12]{bosch}  
   Ein Morphismus $f\colon X\to Y$ von $S$-Schemata heißt étale in
@@ -2426,7 +2461,7 @@ elliptischen Kurve
   \cite[8.5, Lemma 7]{bosch}.
 \end{Definition}
 
-    %     EIGENTLICH
+% EIGENTLICH
 \begin{Definition}[eigentlicher Morphismus]
   % Verallgemeinerung von projektiv; Äquivalent zu kompakt
   Ein Morphismus $f\colon X\to Y$ heißt eigentlich, wenn er eine der
@@ -2467,7 +2502,7 @@ elliptischen Kurve
 
 
 \section{$\K$-Gruppenschemata}
-          %           GUTE REDUKTION
+% GUTE REDUKTION
 \begin{Definition}[Gute Reduktion]\label{def:gutereduktion}
   % $X/S$ hat Gute Reduktion nach dem Primideal $P\in S$ heißt, dass die
   % Faser $X_P$ Glattheit erhält.
@@ -2506,7 +2541,7 @@ elliptischen Kurve
   Alternative Definition für elliptische Kurven: \cite[Chapter VII.5]{silverman}
 \end{Definition}
 
-        %         VARIETÄT, ELLIPTISCHE KURVE
+% VARIETÄT, ELLIPTISCHE KURVE
 \begin{Definition}[Varietät]
   \cite[Theorem 3.37]{wedhorn}
   Eine affine Varietät über einem Körper $\K$ ist eine Unterprägarbe der
