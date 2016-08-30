@@ -134,26 +134,26 @@ Im Folgenden sei $S$ ein Schema.
     \end{gather*}
   \end{Definition}
 
-% IDENTITÄTSKOMPONENTE
-\begin{Definition}[Untergruppenschema]
-  \optcite[Definition 4.45]{wedhorn}
-  Sei $G$ ein $S$"=Gruppenschema.
-  Ein $S$"=Untergruppenschema von $G$ ist ein geschlossenes
-  $S$-Unterschema von $G$, dessen geschlossene Immersion ein
-  Homomorphismus von Gruppenschemata ist.
-\end{Definition}
-\begin{Definition}[Identitätskomponente]
-  \optcite[Remark IV.6.1.2]{silverman2}
-  Sei $G$ ein $S$"=Gruppenschema.
-  Die Identitätskomponente einer Faser $G_s$ ($s\in S$) von $G$ ist
-  die Zusammenhangskomponente von $G_s$, die $\epsilon(s)$ enthält.
-  Die Identitäts-~oder Zusammenhangskomponente von $G$ ist
-  die Vereinigung aller Identitätskomponenten der Fasern von $G$.
-  Die Identitätskomponente ist ein Untergruppenschema.
-\end{Definition}
+  % IDENTITÄTSKOMPONENTE
+  \begin{Definition}[Untergruppenschema]
+    \optcite[Definition 4.45]{wedhorn}
+    Sei $G$ ein $S$"=Gruppenschema.
+    Ein $S$"=Untergruppenschema von $G$ ist ein geschlossenes
+    $S$-Unterschema von $G$, dessen geschlossene Immersion ein
+    Homomorphismus von Gruppenschemata ist.
+  \end{Definition}
+  \begin{Definition}[Identitätskomponente]
+    \optcite[Remark IV.6.1.2]{silverman2}
+    Sei $G$ ein $S$"=Gruppenschema.
+    Die Identitätskomponente einer Faser $G_s$ ($s\in S$) von $G$ ist
+    die Zusammenhangskomponente von $G_s$, die $\epsilon(s)$ enthält.
+    Die Identitäts-~oder Zusammenhangskomponente von $G$ ist
+    die Vereinigung aller Identitätskomponenten der Fasern von $G$.
+    Die Identitätskomponente ist ein Untergruppenschema.
+  \end{Definition}
 
-% ABELSCHE SCHEMATA
-\begin{Bemerkung}\label{gruppenschemaaequivalenzen}
+  % ABELSCHE SCHEMATA
+  \begin{Bemerkung}\label{gruppenschemaaequivalenzen}
     Für ein $\K$"=Gruppenschema endlichen Typs über einem Körper $\K$
     sind glatt und geometrisch reduziert äquivalent.
     \optcite[8.5, Excercise 11]{bosch}
@@ -396,7 +396,7 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
 
     Sei wegen \autoref{thm:neronmodelllokal} \OE{} $R$ diskreter
     Bewertungsring mit Restklassenkörper $k$.
-      
+    
     Wir werden zeigen, dass (topologisch)
     $\im(\epsilon)=\overline{\im(\epsilon_\K)}$,
     also dass $\overline{\im(\epsilon_\K)}$ aus genau dem Punkt
@@ -759,61 +759,61 @@ Wir benötigen dazu folgendes Lemma und Korollar
     lassen.
   \end{proof}
 \end{Korollar}
-    % \begin{Lemma}\label{thm:limesoffenemengen}
-    %   \cite[1.2, Lemma 5]{neron}
-    %   Für ein Basisschema $S$, einen Punkt $s\in S$ und endlich
-    %   präsentierte $S$-Schemata $X$, $Y$ ist die kanonische
-    %   Abbildung
-    %   \begin{gather*}
-    %     \varinjlim \Hom_{S'}(X\times_S S', Y\times_S S')
-    %     \longto
-    %     \Hom_{\O_{R,s}}(X\times_S \O_{R,s}, Y\times_S \O_{R,s})
-    %   \end{gather*}
-    %   bijektiv, wobei der direkte Limes über die offenen Umgebungen
-    %   $S'\subset S$ von $s$ läuft.
-    % \end{Lemma}
+% \begin{Lemma}\label{thm:limesoffenemengen}
+%   \cite[1.2, Lemma 5]{neron}
+%   Für ein Basisschema $S$, einen Punkt $s\in S$ und endlich
+%   präsentierte $S$-Schemata $X$, $Y$ ist die kanonische
+%   Abbildung
+%   \begin{gather*}
+%     \varinjlim \Hom_{S'}(X\times_S S', Y\times_S S')
+%     \longto
+%     \Hom_{\O_{R,s}}(X\times_S \O_{R,s}, Y\times_S \O_{R,s})
+%   \end{gather*}
+%   bijektiv, wobei der direkte Limes über die offenen Umgebungen
+%   $S'\subset S$ von $s$ läuft.
+% \end{Lemma}
 
 \begin{proof}[Beweis von \autoref{thm:neronmodelllokal}]
   Für den Beweis werden wir weiterhin die Kurzformen
   $\Spec(\O_{\Spec(R),s})=\O_{R,s}$ verwenden.
-    
-    Sei $\K=\Quot(R)$ und betrachte ein glattes $R$-Schema $Y$ sowie
-    einen $\K$-Morphismus $\phi_\K\colon Y_\K\to X_\K$ der
-    generischen Fasern.
-    Sei $s\in\Spec(R)$ ein geschlossener Punkt.
-    Nach Voraussetzung erweitert sich
-    \begin{gather*}
-      u_\K\colon
-      Y\times_R\O_{R,s}\times_{\O_{R,s}}\K = Y_\K
-      \longto
-      X_\K = X\times_R\O_{R,s}\times_{\O_{R,s}}\K
-    \end{gather*}
-    eindeutig zu einem Morphismus
-    \begin{gather*}
-      u(s)\colon Y\times_R\O_{R,s}\to X\times_R\O_{R,s}\;,
-    \end{gather*}
-    da $X\times_R\O_{R,s}$ Néron-Modell seiner generischen Faser ist.
-    % Nach \autoref{thm:limesoffenemengen} ist $u_s$ die Einschränkung
-    % einer eindeutigen Äquivalenzklasse im direkten Limes
-    % $\varinjlim \Hom_{S'}(X\times_S S', Y\times_S S')$ über die
-    % offenen Umgebungen $S'\subset S$ von $s$.
-    % Daher gibt es eine offene Umgebung $S'(s)$ von $s$, über der $u_s$
-    % eindeutig auf einen $R$-Morphismus $u(s)\colon S'(s)\to X$
-    % erweitert wird.
-    % % ??? Warum kann ich eine offene Menge wählen?
-    Nach \autoref{thm:allgmorphismuserweiterung} gibt es eine offene
-    Umgebung $U(s)$ von $Y\times_R\O_{R,s}$, auf der $u_s$ wiederum
-    auf einen Morphismus $u(s)\colon U(s)\to X$ erweitert wird.
-    
-    Die $u(s)$ stimmen per Konstruktion auf dem Schnitt ihrer
-    affinen Definitionsbereiche überein,
-    die ganz $Y$ überdecken ($\Spec(R)$ besteht genau aus seinen
-    geschlossen Punkten und dem generischen Punkt, und letzterer ist
-    in jeder offenen Teilmenge enthalten).
-    Daher liefert Verkleben einen von den (eindeutigen) $u_s$ eindeutig
-    bestimmten Morphismus $u\colon Y\to X$, der $u_\K$ erweitert.
-    D.\,h. die \NAbbEig ist erfüllt.
-  \end{proof}
+  
+  Sei $\K=\Quot(R)$ und betrachte ein glattes $R$-Schema $Y$ sowie
+  einen $\K$-Morphismus $\phi_\K\colon Y_\K\to X_\K$ der
+  generischen Fasern.
+  Sei $s\in\Spec(R)$ ein geschlossener Punkt.
+  Nach Voraussetzung erweitert sich
+  \begin{gather*}
+    u_\K\colon
+    Y\times_R\O_{R,s}\times_{\O_{R,s}}\K = Y_\K
+    \longto
+    X_\K = X\times_R\O_{R,s}\times_{\O_{R,s}}\K
+  \end{gather*}
+  eindeutig zu einem Morphismus
+  \begin{gather*}
+    u(s)\colon Y\times_R\O_{R,s}\to X\times_R\O_{R,s}\;,
+  \end{gather*}
+  da $X\times_R\O_{R,s}$ Néron-Modell seiner generischen Faser ist.
+  % Nach \autoref{thm:limesoffenemengen} ist $u_s$ die Einschränkung
+  % einer eindeutigen Äquivalenzklasse im direkten Limes
+  % $\varinjlim \Hom_{S'}(X\times_S S', Y\times_S S')$ über die
+  % offenen Umgebungen $S'\subset S$ von $s$.
+  % Daher gibt es eine offene Umgebung $S'(s)$ von $s$, über der $u_s$
+  % eindeutig auf einen $R$-Morphismus $u(s)\colon S'(s)\to X$
+  % erweitert wird.
+  % % ??? Warum kann ich eine offene Menge wählen?
+  Nach \autoref{thm:allgmorphismuserweiterung} gibt es eine offene
+  Umgebung $U(s)$ von $Y\times_R\O_{R,s}$, auf der $u_s$ wiederum
+  auf einen Morphismus $u(s)\colon U(s)\to X$ erweitert wird.
+  
+  Die $u(s)$ stimmen per Konstruktion auf dem Schnitt ihrer
+  affinen Definitionsbereiche überein,
+  die ganz $Y$ überdecken ($\Spec(R)$ besteht genau aus seinen
+  geschlossen Punkten und dem generischen Punkt, und letzterer ist
+  in jeder offenen Teilmenge enthalten).
+  Daher liefert Verkleben einen von den (eindeutigen) $u_s$ eindeutig
+  bestimmten Morphismus $u\colon Y\to X$, der $u_\K$ erweitert.
+  D.\,h. die \NAbbEig ist erfüllt.
+\end{proof}
 
 
 \subsection{Néron-Modelle abelscher Varietäten}
@@ -824,7 +824,7 @@ Wir benötigen dazu folgendes Lemma und Korollar
 %   Quotientenkörper. Ein glattes $\K$"=Gruppenschema $X_\K$ endlichen
 %   Typs hat genau dann ein Néron-Modell über $R$, wenn $X_\K(\Ksh)$
 %   beschränkt in $X_\K$ ist.
-%   % eigentlich => beschränkt
+%   %   eigentlich => beschränkt
 % \end{Satz}
 \begin{Korollar}\label{thm:exneronmodellabvarietaet}
   Abelsche Varietäten über $\K$ haben ein Néron-Modell über $R$.
@@ -936,7 +936,7 @@ Gruppenschemastruktur abelsch ist:
   \end{proof}
 \end{Satz}
 
-%\section{Beispiele}
+% \section{Beispiele}
 
 % \begin{Satz}
 %   \cite[1.2, Proposition 8]{neron}
@@ -975,7 +975,7 @@ Für $\Char(\K)\neq 2,3$ lässt sich eine Weierstraßgleichung durch
 homogene Koordinatentransformation vereinfachen zur Form
 \begin{gather*}
   Y^2 Z = X^3 + \beta XZ^2 + \gamma Z^3
-\quad\text{bzw. dehomogenisiert}\quad
+  \quad\text{bzw. dehomogenisiert}\quad
   y^2 = x^3 + \beta x + \gamma
 \end{gather*}
 wobei $\beta,\gamma\in\K$.
@@ -1036,15 +1036,15 @@ Weierstraßgleichung mit Koeffizienten in $R$.
 % \end{gather*}
 % dem Koeffizientenwechsel
 % \begin{align*}
-%   \beta&\mapsto \pi^{4n}\beta
-%   &\gamma&\mapsto \pi^{6n}\gamma
-%   &\Delta&\mapsto \pi^{12n}\Delta
-% \end{align*}
-% also der Multiplikation der Koeffizienten mit positiven Potenzen von
-% $\pi$ gleich
-% (\cite[1.5, Lemma 2]{neron} oder \cite[Chapter VII.1]{silverman}).
-% Ein Anwenden dieses Koordinatenwechsels mit genügend hohem $n$ ergibt
-% also eine Gleichung mit Koeffizienten in $R$.
+    %     \beta&\mapsto \pi^{4n}\beta
+                 %     &\gamma&\mapsto \pi^{6n}\gamma
+                                %     &\Delta&\mapsto \pi^{12n}\Delta
+                                               %   \end{align*}
+                                               %                                                also der Multiplikation der Koeffizienten mit positiven Potenzen von
+                                               %                                                $\pi$ gleich
+                                               %                                                (\cite[1.5, Lemma 2]{neron} oder \cite[Chapter VII.1]{silverman}).
+                                               %                                                Ein Anwenden dieses Koordinatenwechsels mit genügend hohem $n$ ergibt
+                                               %                                                also eine Gleichung mit Koeffizienten in $R$.
 
 \begin{Definition}[Weierstraßmodell]
   Wir nennen ein projektives $R$-Schema $W=V_+(F)\subset\P_R^2$, das
@@ -1074,13 +1074,13 @@ Form der Weierstraßgleichung in $R$ zu betrachten:
   ist.
 \end{Definition}
 
-% -----
+                                               %                                                -----
 
 \section{Gruppenschemastruktur}
 \subsection{Allg. Eigenschaften}
 Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 
-% INTEGER, PROJEKTIV, FLACH
+                                               %                                                INTEGER, PROJEKTIV, FLACH
 \begin{Lemma}\label{thm:eigweierstrassmodelle}
   Ein Weierstraßmodell $W=V_+(F)$ zu einer Weierstraßgleichung $0=F$
   von $E_\K$ über einem Dedekindring $R$ ist
@@ -1141,55 +1141,55 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
     \end{description}
   \end{proof}
 \end{Lemma}
-% Für Regularität siehe auch \cite[Lemma IV.9.5]{silverman2}
+                                               %                                                Für Regularität siehe auch \cite[Lemma IV.9.5]{silverman2}
 
-% ÄQ GLATTHEIT
-% \begin{Lemma}\label{thm:glattüberdvr}
-%   Sei $R$ diskreter Bewertungsring,
-%   $\K=\Quot(R)$,
-%   $X$ irreduzibles,
-%   lokal endlich präsentiertes
-%   (für lokal noethersch äquivalent:
-%   lokal endlichen Typs \cite[Remark 10.36]{wedhorn})
-%   $R$-Schema mit nichtleerer, generischer Faser $X_\K$.
-%   Dann ist $X$ genau dann glattes $R$-Schema, wenn die Fasern glatt
-%   sind.
-%   \begin{proof}
-%     % siehe auch \cite[Proposition IV.2.9]{silverman2}
-%     Ist $X$ glatt, so auch jede Faser, da Glattheit stabil unter
-%     Basiswechsel ist.
+                                               %                                                ÄQ GLATTHEIT
+                                               %                                                \begin{Lemma}\label{thm:glattüberdvr}
+                                               %                                                Sei $R$ diskreter Bewertungsring,
+                                               %                                                $\K=\Quot(R)$,
+                                               %                                                $X$ irreduzibles,
+                                               %                                                lokal endlich präsentiertes
+                                               %                                                (für lokal noethersch äquivalent:
+                                               %                                                lokal endlichen Typs \cite[Remark 10.36]{wedhorn})
+                                               %                                                $R$-Schema mit nichtleerer, generischer Faser $X_\K$.
+                                               %                                                Dann ist $X$ genau dann glattes $R$-Schema, wenn die Fasern glatt
+                                               %                                                sind.
+                                               %                                                \begin{proof}
+                                               %     %                                                  siehe auch \cite[Proposition IV.2.9]{silverman2}
+                                               %                                                Ist $X$ glatt, so auch jede Faser, da Glattheit stabil unter
+                                               %                                                Basiswechsel ist.
 
-%     Seien also die Fasern von $X$ glatt, insb. reduziert.
-%     Dann ist $X$ ebenfalls reduziert, da Reduziertheit auf den Halmen
-%     geprüft werden kann.
-%     Außerdem ist $X$ nach Voraussetzung irreduzibel, daher integer,
-%     und (lokal) endlich präsentiert.
-%     Wir wissen, dass $X$ glatt ist, wenn es lokal endlich präsentiert
-%     und flach über $R$ ist und seine Fasern glatt sind
-%     \cite[8.5, Proposition 17]{bosch}.
-%     Es ist also Flachheit zu zeigen.
-    
-%     Wir werden zeigen, dass aus integer und nichtleerer generischer
-%     Faser $X_\K$ folgt, dass der eindeutige generische Punkt $\eta$
-%     von $X$ auf den generischen Punkt von $R$ geschickt wird.
-%     Das zeigt, dass $X$ flach ist
-%     \cite[Proposition III.9.7]{hartshorne}
-%     (hierbei wird zusätzlich benutzt, dass $\Spec(R)$ integer,
-%     regulär und von Dimension 1 ist).
+                                               %                                                Seien also die Fasern von $X$ glatt, insb. reduziert.
+                                               %                                                Dann ist $X$ ebenfalls reduziert, da Reduziertheit auf den Halmen
+                                               %                                                geprüft werden kann.
+                                               %                                                Außerdem ist $X$ nach Voraussetzung irreduzibel, daher integer,
+                                               %                                                und (lokal) endlich präsentiert.
+                                               %                                                Wir wissen, dass $X$ glatt ist, wenn es lokal endlich präsentiert
+                                               %                                                und flach über $R$ ist und seine Fasern glatt sind
+                                               %                                                \cite[8.5, Proposition 17]{bosch}.
+                                               %                                                Es ist also Flachheit zu zeigen.
 
-%     Nachdem $X$ integer ist, hat es einen eindeutigen generischen
-%     Punkt $\eta$.
-%     Angenommen, dieser wird durch die Abbildung, die $X$ zum
-%     $R$-Schema macht, auf einen geschlossenen Punkt $\m$ von $\Spec(R)$
-%     geschickt.
-%     Dann liegt $\eta$ im geschlossenen Urbild von $\m$ –
-%     aber der Abschluss $\overline{\{\eta\}}=X$ von $\eta$ ist darin
-%     enthalten. Entsprechend wäre die generische Faser $X_\K$
-%     leer, was ein Widerspruch ist.
-%     Also muss der generische Punkt auf den generischen Punkt geschickt
-%     werden.
-%   \end{proof}
-% \end{Lemma}
+                                               %                                                Wir werden zeigen, dass aus integer und nichtleerer generischer
+                                               %                                                Faser $X_\K$ folgt, dass der eindeutige generische Punkt $\eta$
+                                               %                                                von $X$ auf den generischen Punkt von $R$ geschickt wird.
+                                               %                                                Das zeigt, dass $X$ flach ist
+                                               %                                                \cite[Proposition III.9.7]{hartshorne}
+                                               %                                                (hierbei wird zusätzlich benutzt, dass $\Spec(R)$ integer,
+                                               %                                                regulär und von Dimension 1 ist).
+
+                                               %                                                Nachdem $X$ integer ist, hat es einen eindeutigen generischen
+                                               %                                                Punkt $\eta$.
+                                               %                                                Angenommen, dieser wird durch die Abbildung, die $X$ zum
+                                               %                                                $R$-Schema macht, auf einen geschlossenen Punkt $\m$ von $\Spec(R)$
+                                               %                                                geschickt.
+                                               %                                                Dann liegt $\eta$ im geschlossenen Urbild von $\m$ –
+                                               %                                                aber der Abschluss $\overline{\{\eta\}}=X$ von $\eta$ ist darin
+                                               %                                                enthalten. Entsprechend wäre die generische Faser $X_\K$
+                                               %                                                leer, was ein Widerspruch ist.
+                                               %                                                Also muss der generische Punkt auf den generischen Punkt geschickt
+                                               %                                                werden.
+                                               %                                                \end{proof}
+                                               %                                                \end{Lemma}
 
 \begin{Lemma}\label{thm:weierstrassglatt}
   \optcite[Remark IV.5.4.1]{silverman2}
@@ -1340,61 +1340,61 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
     definiert ist, falls dieser existiert.
     Dies kann auf der affinen Überdeckung von $W$ nachgerechnet werden.
     
-  %   \begin{enumerate}
-  %   \item $W^0=W\setminus\{\gamma\}$: \autoref{thm:weierstrassglatt}
-  %     % \cite[Remark IV.5.4.2]{silverman2}
-  %     % Die nicht-glatten Punkte von $W$ sind die singulären Punkte
-  %     % der Fasern.
-  %     % Die generische Faser ist regulär (ell. Kurve), die spezielle
-  %     % Faser ist durch eine Weierstraßgleichung über $\k(\m)$
-  %     % definiert. Sie hat also maximal einen singulären Punkt $\gamma$.
-  %     % \cite[Proposition III.1.4 (a)]{silverman}
-  %   \item $W^0$ ist $R$-Modell von $E_\K$: \autoref{thm:weierstrassglatt}
-  %     % $W$ ist $R$-Modell von $E_\K$ per Definition,
-  %     % $W^0=W\setminus\{\gamma\}$ hat dieselbe generische Faser
-  %   \item Es treffen alle Voraussetzungen für
-  %     \autoref{thm:ratpkteregulaeremodelle} auf $W$ zu
-  %     ($W$ ist projektiv, also eigentlich, von Dimension 2 mit
-  %     projektiven Kurven als Fasern, und nach
-  %     \autoref{thm:weierstrassglatt} genau dann glatt in einem Punkt,
-  %     wenn die Fasern dort regulär sind).
-  %     Also gilt $E_\K(\K)=W(R)=W^0(R)$.
-  %     % \cite[Corollary IV.4.4]{silverman2}
-  %     % $E_\K(\K)=W(R)=W^0(R)$
-  %     % (s. \autoref{thm:ratpkteregulaeremodelle}):
-  %     % \begin{enumerate}
-  %     % \item $E_\K(\K)=W(R)$: $W$ eigentlich
-  %     % \item $W(R)\subset W^0(R)$:
-  %     %   nach \cite[Proposition IV.4.3 (b)]{silverman2}
-  %     % \item $W(R)=W^0(R)$: Alle Bilder von Schnitten $W(R)$ sind
-  %     %   glatt
-  %     % \end{enumerate}
-  %   \item rationale Abbildungen
-  %     $\mu\colon W\times_R W\dra W$,
-  %     $i\colon W\dra W$:
-  %     von generischer Faser $E_\K$ induziert, erfüllen Gruppenaxiome
-  %     auf (größter, offener) Definitionsmenge (wo es Morphismus ist)
-  %   \item $\mu$ definiert auf $W^0$:
-  %     \begin{enumerate}
-  %     \item Aufteilen in affine Überdeckung
-  %       ($W_Z=W\cap U_Z=\{[x,y,z]\in W| z\neq0\}$,
-  %       $W_Y=W\cap U_Y=\{[x,y,z]\in W| y\neq0\}$)
-  %       $W_Z\times W_Z$, $W_Z\times W_Y$, $W_Y\times W_Z$,
-  %       $W_Y\times W_Y$
-  %     \item $\mu$ auf $W_Z\times W_Z\setminus(\gamma,\gamma)$
-  %       definiert:
-  %       Schreibe rationale Abbildung von $\mu$ auf und finde
-  %       Gleichungen für Unterschema, an denen der Nullpunkt getroffen
-  %       würde
-  %     \end{enumerate}
-  %   \item $i$ definiert auf $W^0$:
-  %     $i\colon [X,Y,Z]\mapsto [X,-Y,Z]$ ist Morphismus in $\P_R^2$,
-  %     also definiert auf ganz $W$
-  %   \end{enumerate}
+    % \begin{enumerate}
+    % \item $W^0=W\setminus\{\gamma\}$: \autoref{thm:weierstrassglatt}
+    %     %   \cite[Remark IV.5.4.2]{silverman2}
+    %     %   Die nicht-glatten Punkte von $W$ sind die singulären Punkte
+    %     %   der Fasern.
+    %     %   Die generische Faser ist regulär (ell. Kurve), die spezielle
+    %     %   Faser ist durch eine Weierstraßgleichung über $\k(\m)$
+    %     %   definiert. Sie hat also maximal einen singulären Punkt $\gamma$.
+    %     %   \cite[Proposition III.1.4 (a)]{silverman}
+    % \item $W^0$ ist $R$-Modell von $E_\K$: \autoref{thm:weierstrassglatt}
+    %     %   $W$ ist $R$-Modell von $E_\K$ per Definition,
+    %     %   $W^0=W\setminus\{\gamma\}$ hat dieselbe generische Faser
+    % \item Es treffen alle Voraussetzungen für
+    %   \autoref{thm:ratpkteregulaeremodelle} auf $W$ zu
+    %   ($W$ ist projektiv, also eigentlich, von Dimension 2 mit
+    %   projektiven Kurven als Fasern, und nach
+    %   \autoref{thm:weierstrassglatt} genau dann glatt in einem Punkt,
+    %   wenn die Fasern dort regulär sind).
+    %   Also gilt $E_\K(\K)=W(R)=W^0(R)$.
+    %     %   \cite[Corollary IV.4.4]{silverman2}
+    %     %   $E_\K(\K)=W(R)=W^0(R)$
+    %     %   (s. \autoref{thm:ratpkteregulaeremodelle}):
+    %     %   \begin{enumerate}
+    %     %   \item $E_\K(\K)=W(R)$: $W$ eigentlich
+    %     %   \item $W(R)\subset W^0(R)$:
+    %     %     nach \cite[Proposition IV.4.3 (b)]{silverman2}
+    %     %   \item $W(R)=W^0(R)$: Alle Bilder von Schnitten $W(R)$ sind
+    %     %     glatt
+    %     %   \end{enumerate}
+    % \item rationale Abbildungen
+    %   $\mu\colon W\times_R W\dra W$,
+    %   $i\colon W\dra W$:
+    %   von generischer Faser $E_\K$ induziert, erfüllen Gruppenaxiome
+    %   auf (größter, offener) Definitionsmenge (wo es Morphismus ist)
+    % \item $\mu$ definiert auf $W^0$:
+    %   \begin{enumerate}
+    %   \item Aufteilen in affine Überdeckung
+    %     ($W_Z=W\cap U_Z=\{[x,y,z]\in W| z\neq0\}$,
+    %     $W_Y=W\cap U_Y=\{[x,y,z]\in W| y\neq0\}$)
+    %     $W_Z\times W_Z$, $W_Z\times W_Y$, $W_Y\times W_Z$,
+    %     $W_Y\times W_Y$
+    %   \item $\mu$ auf $W_Z\times W_Z\setminus(\gamma,\gamma)$
+    %     definiert:
+    %     Schreibe rationale Abbildung von $\mu$ auf und finde
+    %     Gleichungen für Unterschema, an denen der Nullpunkt getroffen
+    %     würde
+    %   \end{enumerate}
+    % \item $i$ definiert auf $W^0$:
+    %   $i\colon [X,Y,Z]\mapsto [X,-Y,Z]$ ist Morphismus in $\P_R^2$,
+    %   also definiert auf ganz $W$
+    % \end{enumerate}
   \end{proof}
 \end{Lemma}
 
-% IDENTITÄTSKOMPONENTE
+                                               %                                                IDENTITÄTSKOMPONENTE
 \begin{Bemerkung}
   \cite[Chapter 1.5, S.\,23]{neron},
   \cite[Corollary IV.9.1]{silverman2},
@@ -1404,8 +1404,8 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
   $E_\K$ über $R$.
 \end{Bemerkung}
 
-% Im Folgenden sei $E_\K$ immer eine elliptische Kurve über dem
-% Quotientenkörper $\K$ des Dedekindringes $R$.
+                                               %                                                Im Folgenden sei $E_\K$ immer eine elliptische Kurve über dem
+                                               %                                                Quotientenkörper $\K$ des Dedekindringes $R$.
 
 In bestimmten Fällen erhält man das Néron-Modell bereits aus einem
 Weierstraßmodell von $E_\K$ über $R$.
@@ -1465,19 +1465,19 @@ Weierstraßmodell von $E_\K$ über $R$.
     der generischen Faser.
     Wir können also das Bewertungskriterium für Eigentlichkeit für $W$
     anwenden:
-      \begin{center}
-        \begin{tikzcd}
-          \eta\arrow[r, equal]
-          &\Spec(\k(\eta_j))
-          \arrow[r, "{\phi_\K|_{\eta}}"] \arrow[d]
-          & E_\K \arrow[r, hook]
-          & W\arrow[d]\\
-          \eta\cup\eta_{s}\arrow[r, equal]
-          &\Spec(\O_{Y,\eta_{s}}) \arrow[rr]
-          \arrow[urr, dashed, "{\exists!}", out=20, in=215]
-          && \Spec(R)
-        \end{tikzcd}
-      \end{center}
+    \begin{center}
+      \begin{tikzcd}
+        \eta\arrow[r, equal]
+        &\Spec(\k(\eta_j))
+        \arrow[r, "{\phi_\K|_{\eta}}"] \arrow[d]
+        & E_\K \arrow[r, hook]
+        & W\arrow[d]\\
+        \eta\cup\eta_{s}\arrow[r, equal]
+        &\Spec(\O_{Y,\eta_{s}}) \arrow[rr]
+        \arrow[urr, dashed, "{\exists!}", out=20, in=215]
+        && \Spec(R)
+      \end{tikzcd}
+    \end{center}
     Damit erweitert sich $\phi_\K$ zu einem Morphismus
     $\Spec(\O_{Y,\eta_{s}})\to W$, der sich nach
     \autoref{thm:morphismuserweiterung} auf einen Morphismus in einer
@@ -1537,7 +1537,7 @@ Weierstraßmodell von $E_\K$ über $R$.
   Beachte, dass $W$ regulär, aber nicht glatt, also singulär in einer
   Faser, sein kann.
 \end{Beispiel}
-% -----
+           %            -----
 \section{Eigenschaften}
 \begin{Satz}\label{thm:ratpkteregulaeremodelle}
   \optcite[Corollary IV.4.4]{silverman2}
@@ -1570,80 +1570,80 @@ Weierstraßmodell von $E_\K$ über $R$.
   %   X_\K(\K)=X^0(R)=X(R)
   % \end{gather*}
   \begin{proof}
-  Die erste Gleichheit ist allein eine Anwendung des
-  Bewertungskriteriums für Eigentlichkeit auf das projektive (also
-  eigentliche) Schema $X$.
+    Die erste Gleichheit ist allein eine Anwendung des
+    Bewertungskriteriums für Eigentlichkeit auf das projektive (also
+    eigentliche) Schema $X$.
     % \begin{enumerate}[label=(\roman*)]
     % \item
-      % Die Einschränkung von $\Hom_R(\Spec(R),X)=X(R)$ auf 
-      % $\Spec(\K)\subset\Spec(R)$ liefert eine kanonische Abbildung
-      % \begin{center}
-      %   \begin{tikzcd}
-      %     \Hom_R(\Spec(R),X) \arrow[d, equal]
-      %     \arrow[r, "{\text{Res.}}"]
-      %     &\Hom_R(\Spec(K),X)
-      %     \arrow[r, equal, "{\text{$R$-lin.}}"]
-      %     &\Hom_\K(\Spec(\K),X_\K) \arrow[d, equal]\\
-      %     X(R)&& X_\K(\K)
-      %   \end{tikzcd}
-      % \end{center}
-      % Nach Voraussetzung ist $X$ eigentlich über $R$, d.\,h. nach
-      % dem Bewertungskriterium für $X$ gibt es für ein $\phi_\K\in
-      % X_\K(\K)$ genau einen Lift in $\Hom_R(R,X)$,
-      % bzw. ein $\phi\colon\Spec(R)\to X$, so dass das folgende
-      % Diagramm kommutiert
-      % \cite[Theorem II.4.7]{hartshorne}:
-      % \begin{center}
-      %   \begin{tikzcd}
-      %     \Spec(\K)\arrow[d, hook, "{\text{incl}}"]
-      %     \arrow[r,"\phi_\K"]
-      %     &X_\K\arrow[r, hook, "{\text{incl}}"]
-      %     &X\arrow[d,"{\text{eig.}}"]
-      %     \\
-      %     \Spec(R)\arrow[rr,"{\Id}"]
-      %     \arrow[to=urr, dashed, "{\exists!\phi}"{near start}]
-      %     &&\Spec(R)
-      %   \end{tikzcd}
-      % \end{center}
-      % Dadurch sind Injektivität und Surjektivität der
-      % Einschränkungsabbildung gegeben und es gilt
-      % $X(R)=\Hom_R(R,X)\cong\Hom_\K(\K,X_\K)=X_\K(\K)$.
-      % \item
+    %   Die Einschränkung von $\Hom_R(\Spec(R),X)=X(R)$ auf 
+    %   $\Spec(\K)\subset\Spec(R)$ liefert eine kanonische Abbildung
+    %   \begin{center}
+    %     \begin{tikzcd}
+    %       \Hom_R(\Spec(R),X) \arrow[d, equal]
+    %       \arrow[r, "{\text{Res.}}"]
+    %       &\Hom_R(\Spec(K),X)
+    %       \arrow[r, equal, "{\text{$R$-lin.}}"]
+    %       &\Hom_\K(\Spec(\K),X_\K) \arrow[d, equal]\\
+    %       X(R)&& X_\K(\K)
+    %     \end{tikzcd}
+    %   \end{center}
+    %   Nach Voraussetzung ist $X$ eigentlich über $R$, d.\,h. nach
+    %   dem Bewertungskriterium für $X$ gibt es für ein $\phi_\K\in
+    %   X_\K(\K)$ genau einen Lift in $\Hom_R(R,X)$,
+    %   bzw. ein $\phi\colon\Spec(R)\to X$, so dass das folgende
+    %   Diagramm kommutiert
+    %   \cite[Theorem II.4.7]{hartshorne}:
+    %   \begin{center}
+    %     \begin{tikzcd}
+    %       \Spec(\K)\arrow[d, hook, "{\text{incl}}"]
+    %       \arrow[r,"\phi_\K"]
+    %       &X_\K\arrow[r, hook, "{\text{incl}}"]
+    %       &X\arrow[d,"{\text{eig.}}"]
+    %       \\
+    %       \Spec(R)\arrow[rr,"{\Id}"]
+    %       \arrow[to=urr, dashed, "{\exists!\phi}"{near start}]
+    %       &&\Spec(R)
+    %     \end{tikzcd}
+    %   \end{center}
+    %   Dadurch sind Injektivität und Surjektivität der
+    %   Einschränkungsabbildung gegeben und es gilt
+    %   $X(R)=\Hom_R(R,X)\cong\Hom_\K(\K,X_\K)=X_\K(\K)$.
+    % \item
     Da $X^0\subset X$, gibt es eine natürliche Inklusion
     $\circ \text{incl}\colon X^0(R)\hookrightarrow X(R)$.
     Jetzt gilt es zu zeigen, dass im regulären Fall das Bild jedes
     Schnitts $\phi\in X(R)$ in $X^0$ liegt (also nur glatte Punkte
     enthält). Dann ist die Inklusion ein Isomorphismus.
 
-      % $X$ ist nach Voraussetzung flach über $R$, also ist glatt in
-      % einem Punkt $x\in X$ äquivalent dazu, dass die Faser von $X$, in
-      % der $x$ liegt, glatt in $x$ ist
-      % \cite[8.5, Proposition 17]{bosch}.
-      % Die Fasern von $X$ sind nach Voraussetzung Vereinigungen
-      % projektiver Kurven, also Schemata lokal endlichen Typs über
-      % einem der perfekten Restklassenkörper von $R$.
-      % Nach \cite[Corollary 6.32]{wedhorn} und
-      % \cite[Remark 6.33]{wedhorn} sind also glatt und regulär auf den
-      % Fasern äquivalent.
-      
-      Nach \autoref{thm:arithflschnittbilderglatt} enthält das Bild
-      $\phi(\Spec(R))$ eines Schnitts $\phi\in X(R)$ nur reguläre
-      Punkte der Fasern, also glatte Punkte von $X$
-      ($X$ ist flach und lokal endlich repräsentiert, da
-      projektiv, daher genau dann glatt, wenn die Fasern glatt sind.
-      Die generische Faser ist bereits glatt und die speziellen Fasern
-      sind als Schemata endlichen Typs über einem perfektem Körper
-      genau dann glatt, wenn sie regulär sind.)
-      Damit ist die Behauptung gezeigt.
-      % \end{enumerate}
+    % $X$ ist nach Voraussetzung flach über $R$, also ist glatt in
+    % einem Punkt $x\in X$ äquivalent dazu, dass die Faser von $X$, in
+    % der $x$ liegt, glatt in $x$ ist
+    % \cite[8.5, Proposition 17]{bosch}.
+    % Die Fasern von $X$ sind nach Voraussetzung Vereinigungen
+    % projektiver Kurven, also Schemata lokal endlichen Typs über
+    % einem der perfekten Restklassenkörper von $R$.
+    % Nach \cite[Corollary 6.32]{wedhorn} und
+    % \cite[Remark 6.33]{wedhorn} sind also glatt und regulär auf den
+    % Fasern äquivalent.
+    
+    Nach \autoref{thm:arithflschnittbilderglatt} enthält das Bild
+    $\phi(\Spec(R))$ eines Schnitts $\phi\in X(R)$ nur reguläre
+    Punkte der Fasern, also glatte Punkte von $X$
+    ($X$ ist flach und lokal endlich repräsentiert, da
+    projektiv, daher genau dann glatt, wenn die Fasern glatt sind.
+    Die generische Faser ist bereits glatt und die speziellen Fasern
+    sind als Schemata endlichen Typs über einem perfektem Körper
+    genau dann glatt, wenn sie regulär sind.)
+    Damit ist die Behauptung gezeigt.
+    % \end{enumerate}
   \end{proof}
 \end{Satz}
 
-% \begin{Bemerkung}
-%   Die obigen Bedingungen treffen z.\,B. auf ein eigentliches,
-%   reguläres, flaches $R$-Schema zu, also insbesondere arithmetische
-%   Flächen (diese sind integer, regulär, flach, projektiv).
-% \end{Bemerkung}
+               %                \begin{Bemerkung}
+               %                Die obigen Bedingungen treffen z.\,B. auf ein eigentliches,
+               %                reguläres, flaches $R$-Schema zu, also insbesondere arithmetische
+               %                Flächen (diese sind integer, regulär, flach, projektiv).
+               %                \end{Bemerkung}
 
 \begin{Lemma}\label{thm:arithflschnittbilderglatt}
   \cite[Proposition IV.4.3]{silverman2}
@@ -1731,10 +1731,10 @@ Weierstraßmodell von $E_\K$ über $R$.
   \end{proof}
 \end{Lemma}
 
-% -----
+                    %                     -----
 
 \section{Minimale reguläre Modelle}
-% exzellent nötig!!! evtl. nur Konstruktion?
+                    %                     exzellent nötig!!! evtl. nur Konstruktion?
 \begin{Definition}
   Sei $R$ Dedekindring (mit perfekten Restklassenkörpern),
   $\K=\Quot(R)$,
@@ -1756,11 +1756,11 @@ Weierstraßmodell von $E_\K$ über $R$.
 
 \begin{Satz}\label{thm:eigminmodell}
   \begin{enumerate}[label=(\roman*)]
-  \item\cite[Proposition IV.4.6]{silverman2}
+  \item\optcite[Proposition IV.4.6]{silverman2}
     Für ein minimales Modell $X_{\text{min}}$
     für $C/\K$ gilt, dass jeder $\K$"=Automorphismus von $C$ sich zu
-    einem $R$-Automorphismus von $X_{\text{min}}$ erweitert, der glatte
-    Punkte auf glatte Punkte abbildet.
+    einem eindeutigen $R$-Automorphismus von $X_{\text{min}}$
+    erweitert, der glatte Punkte auf glatte Punkte abbildet.
   \item\cite[vgl.][Beweis von Proposition IV.6.10]{silverman2}
     Minimale reguläre Modelle sind wie folgt stabil unter Basiswechsel:
     Sei $Y$ glattes $R$-Schema, $x\in Y$ und der Halm $R'=\O_{Y,x}$ in
@@ -1773,7 +1773,8 @@ Weierstraßmodell von $E_\K$ über $R$.
     \item Die Minimalitätseigenschaft liefert zu einem
       $\K$-Automorphismus $\tau\colon C\to C$ die Erweiterung auf
       einen $R$-Automorphismus
-      $\tau\colon X_{\text{min}}\to X_{\text{min}}$.
+      $\tau\colon X_{\text{min}}\to X_{\text{min}}$, der wegen
+      Eigentlichkeit eindeutig ist.
       Als bijektive, also offene Abbildungen, schicken $\tau$ und
       sein Inverses offene glatte Umgebungen auf offene glatte
       Umgebungen, und somit glatte Punkte auf glatte Punkte. Wir
@@ -1791,11 +1792,11 @@ Weierstraßmodell von $E_\K$ über $R$.
 \end{Satz}
 
 
-% ----------
+                    %                     ----------
 
 
 \chapter{Existenz von Néron-Modellen auf elliptischen Kurven}
-% EXISTENZSATZ ELL. KURVEN
+                    %                     EXISTENZSATZ ELL. KURVEN
 \begin{Satz}\label{thm:exneronmodelle}
   % Der diskrete Bewertungsring $R$ sei strikt henselsch mit algebraisch
   % abgeschlossenem Quotientenkörper $\K$ und
@@ -1874,8 +1875,8 @@ diskrete Bewertungsringe $R$ beschränken.
 
 \section{Äquivalenz zur Gruppenstruktur}
 
-% ÄQ GRUPPENSTRUKTURERW.
-% strikt henselsch nicht nötig!!
+                    %                     ÄQ GRUPPENSTRUKTURERW.
+                    %                     strikt henselsch nicht nötig!!
 \begin{Lemma}
   Sei $R$ diskreter Bewertungsring (mit perfektem Restklassenkörper
   $k$), $\K$, $E_\K$, $C$, $E$ wie in \autoref{thm:exneronmodelle}.
@@ -1992,9 +1993,9 @@ diskrete Bewertungsringe $R$ beschränken.
 \end{Lemma}
 
 \section{Fall strikt henselscher Ringe}
-% Nur Erweiterung der Gruppenstruktur!
+              %               Nur Erweiterung der Gruppenstruktur!
 \subsection{Strikt henselsche Ringe}
-% HENSELSCHE RINGE
+              %               HENSELSCHE RINGE
 \begin{Definition}[henselsche Ringe]\label{def:henselscheringe}
   \optcite[2.3, Proposition 4]{neron}
   \optcite[Chapter IV.6]{silverman2}
@@ -2093,59 +2094,121 @@ diskrete Bewertungsringe $R$ beschränken.
 \end{Satz}
 
 \subsection{Nachweis der Gruppenstruktur für strikt henselsche Ringe}
-% ERWEITERUNG DER GRUPPENSTRUKTUR
+    %     ERWEITERUNG DER GRUPPENSTRUKTUR
 \begin{Satz}\label{thm:egruppenschema}
-  Sei $R$ strikt henselscher diskreter Bewertungsring (mit perfekten
-  Quotientenkörpern) und $\K$, $E_\K$, $C$, $E$ wieder wie in
+  Sei $R$ strikt henselscher diskreter Bewertungsring (mit perfektem)
+  Restklassenkörper $k$ und $\K$, $E_\K$, $C$, $E$ wieder wie in
   \autoref{thm:exneronmodelle}.
   Dann erweitert sich die Gruppenstruktur von $E_\K$ auf $E$ und macht
   $E$ zum Gruppenschema.
-\begin{proof}
-\begin{Lemma}
-  Die Gruppenstruktur $\mu_\K$ auf $E_\K$ erweitert sich zu einer
-  normalen Komposition $\mu$ auf $E$.
-  (Hier muss $R$ nicht notwendigerweise strikt henselsch sein.)
   \begin{proof}
-    Wie in \autoref{thm:fallstriktehenselisierung}
-    % TODO!! ausformulieren
-    erweitert sich $\mu_\K\colon E_\K\times_\K E_\K\to E_\K$
-    auf eine $R$-rationale Abbildung $\mu\colon E\dra E$.
-    Für eine normale Komposition bleiben Assoziativität und Inverse zu
-    zeigen.
-    \begin{description}
-    \item[Assoziativität] Für Assoziativität müssen für alle $x, z\in
-      E$, so dass es wohldefiniert ist, die folgenden $R$-rationalen
-      Abbildungen gleich sein (also gleich auf der gemeinsamen
-      Definitionsmenge)
-      \begin{gather*}
-        \mu(\mu(x,\bullet),z), \mu(x,\mu(\bullet,z))
-        \colon E \dra E
-      \end{gather*}
-      Nun sind aber beide die eindeutige Erweiterung von
-      \begin{gather*}
-        \mu_\K(\mu_\K(x,\bullet),z)=\mu_\K(x,\mu_\K(\bullet,z))
-        \colon E_\K \dra E_\K
-      \end{gather*}
-      Somit sind sie gleich als $R$-rationale Abbildungen.
-    \item[Inverses $R$-rational]
-      Für $R$-Rationalität von $\phi\colon (x,y)\mapsto (x,\mu(x,y))$
-      (bzw. $\psi$) muss noch gezeigt werden, dass $\Dom(\phi)$
-      (bzw. $\Dom(\psi)$) dicht in der speziellen Faser von $E$ ist.
-      Wir werden den Fall für $\phi$ behandeln, $\psi$ folgt analog.
-      …
-      % \autoref{thm:eigminmodell}: stabil unter Basiswechsel
-      
-    \item[Inverses $R$-birational]
-    \end{description}
-  \end{proof}
-\end{Lemma}
+    \begin{Lemma}
+      Die Gruppenstruktur $\mu_\K$ auf $E_\K$ erweitert sich zu einer
+      normalen Komposition $\mu$ auf $E$.
+      (Hier muss $R$ nicht notwendigerweise strikt henselsch sein.)
+      \begin{proof}
+        Wie in \autoref{thm:fallstriktehenselisierung}
+        % TODO!! ausformulieren
+        erweitert sich $\mu_\K\colon E_\K\times_\K E_\K\to E_\K$
+        auf eine $R$-rationale Abbildung $\mu\colon E\dra E$.
+        Für eine normale Komposition bleiben Assoziativität und Inverse zu
+        zeigen.
+        \paragraph{Assoziativität} Für Assoziativität müssen für alle $x, z\in
+        E$, so dass es wohldefiniert ist, die folgenden $R$-rationalen
+        Abbildungen gleich sein (also gleich auf der gemeinsamen
+        Definitionsmenge)
+        \begin{gather*}
+          \mu(\mu(x,\bullet),z), \mu(x,\mu(\bullet,z))
+          \colon E \dra E
+        \end{gather*}
+        Nun sind aber beide die eindeutige Erweiterung von
+        \begin{gather*}
+          \mu_\K(\mu_\K(x,\bullet),z)=\mu_\K(x,\mu_\K(\bullet,z))
+          \colon E_\K \dra E_\K
+        \end{gather*}
+        Somit sind sie gleich als $R$-rationale Abbildungen.
+        \paragraph{Inverses $R$-rational}
+        Für $R$-Rationalität von $\phi\colon (x,y)\mapsto (x,\mu(x,y))$
+        (bzw. $\psi$) muss noch gezeigt werden, dass $\Dom(\phi)$
+        (bzw. $\Dom(\psi)$) dicht in der speziellen Faser von $E$ ist,
+        also in jedem generischen Punkt der speziellen Faser definiert
+        ist.
+        Wir werden den Fall für $\phi$ behandeln, $\psi$ folgt analog.
+        
+        Sei also $\eta\in E\times_R R/\p=E_k$ ein generischer Punkt der
+        speziellen Faser von $E$ und $R'=\O_{E,\eta}$ der Halm in
+        $\eta$ mit $\K'\coloneqq\Quot(R)$ und $k'$
+        Restklassenkörper. Wegen \autoref{eq:stalkdimension} hat $R'$
+        Dimension 1, ist demnach ein diskreter Bewertungsring und
+        $C_{R'}\coloneqq C\times_R R'$ nach \autoref{thm:eigminmodell}
+        minimales $R'$-Modell von $E_\K\times_{\K'}\K'\eqqcolon E_{\K'}$
+        mit offenem Unterschema $E_{R'}=E\times_R R'$ der glatten Punkte.
+        Wir wissen, dass $\Spec(R')\subset E$, also dass es
+        einen $R'$-wertigen Punkt $s\colon\Spec(R')\to E_{R'}$ gibt.
+        Wir erhalten einen zugehörigen Translationsautomorphismus auf der
+        generischen Faser:
+        \begin{gather*}
+          \tau_{\K'}\colon
+          E_{\K'}\cong E_{\K'}\times_{\K'}\K'
+          \xrightarrow{\Id\times s}
+          E_{\K'}\times_{\K'}E_{\K'}
+          \overset{\mu}{\longto}
+          E_{\K'}
+        \end{gather*}
+        Nach \autoref{thm:eigminmodell} erweitert sich $\tau_{\K'}$ zu
+        einem $R'$-Automorphismus $\tau_{R'}$ auf dem minimalen Modell
+        $C_{R'}$ und auf dem glatten Unterschema $E_{R'}$.
+        Für $e\in\Spec(R')$, $x=s(e)$ und $y\in(E_{R'})_e$ sieht $\tau_{R'}$
+        wie folgt aus:
+        \begin{center}
+          \begin{tikzcd}[row sep=0pt]
+            R'\times_R E \arrow[r, equal]
+            & R'\times_{R'}(R'\times_R E) \arrow[r, "{s\times\Id}"]
+            & (R'\times_R E)\times_{R'}(R'\times_R E)
+            \arrow[r, "{\mu_{R'}}"]
+            & R'\times_R E \\
+            (e,y)\arrow[r, mapsto]
+            & (e,(e,y))\arrow[r, mapsto]
+            & ((e,x),(e,y))\arrow[r, mapsto]
+            & (e,\mu(x,y))
+          \end{tikzcd}
+        \end{center}
+        bzw. $\tilde\tau_{R'}\colon(e,y)\mapsto(e,\mu(y,x)$, wenn man
+        $R'\times_{R'}(R'\times_R E)$ durch das isomorphe $(R'\times_R
+        E)\times_{R'}R'$ ersetzt.
+        Wir erhalten das kommutative Diagramm
+        \begin{center}
+          \begin{tikzcd}
+            (e,y) \arrow[d, mapsto]\arrow[rrr, bend left=20, mapsto]
+            & R'\times_R E \arrow[r, "\tau_{R'}", "\sim"{swap}]
+            \arrow[d, "s\times\Id", hook]
+            & R'\times_R E\arrow[d, "s\times\Id", hook]
+            & (e,\mu(x,y))\arrow[d, mapsto]\\
+            (x,y)\arrow[rrr, bend right=20, mapsto]
+            & E\times_R E\arrow[r, "\phi", dashed]
+            & E\times_R E
+            & (x,\mu(x,y))
+          \end{tikzcd}
+        \end{center}
+        und sehen, dass $\phi$ auf dem generischen Punkt
+        $(\eta,\eta)\in\Spec(R')\times_R\Spec(R')\subset E\times_R E$
+        von $(E\times_R E)_k=E_k\times_k E_k$ definiert ist.
+        Mit $\tilde\tau$ statt $\tau$ erhält man dasselbe für $\psi$.
+        \paragraph{Inverses $R$-birational}
+        …
+        % TODO!! Warum birational?
+      \end{proof}
+    \end{Lemma}
 
-\begin{Lemma}
-  Sei nach \autoref{thm:weil} $G$ das zu $E$ $R$-birationale
-  Gruppenschema. Dann ist $G$ isomorph zu $E$.
-\end{Lemma}
-Dies beendet den Beweis zu \autoref{thm:egruppenschema}.
-\end{proof}
+    \begin{Lemma}
+      Sei nach \autoref{thm:weil} $G$ das zu $E$ $R$-birationale
+      Gruppenschema. Dann ist $G$ isomorph zu $E$.
+      \begin{proof}
+        …
+      \end{proof}
+    \end{Lemma}
+    Dies beendet den Beweis zu \autoref{thm:egruppenschema}.
+  \end{proof}
 \end{Satz}
 
 
@@ -2168,7 +2231,7 @@ elliptischen Kurve
 \appendix
 \chapter{Verwendete Definitionen}
 \section{Dedekindringe}
-% DEDEKINDRINGE
+              %               DEDEKINDRINGE
 \begin{Definition}[Dedekindring]\label{def:dedekindring}
   \optcite[S.\,40]{hartshorne}\optcite[Definition B.84]{wedhorn}
   Ein Integritätsring $R$ heißt Dedekindring, wenn er eine der
@@ -2224,7 +2287,7 @@ elliptischen Kurve
 \end{Definition}
 
 \section{Eigenschaften von Schemata}
-% REDUZIERT
+              %               REDUZIERT
 \begin{Definition}[reduziert, geometrisch reduziert]
   Ein Schema heißt reduziert, falls alle Halme reduzierte Ringe sind
   (d.\,h. $\Nil(0)=(0)$).
@@ -2234,7 +2297,7 @@ elliptischen Kurve
   Faser reduziert ist. 
 \end{Definition}
 
-% LOKAL VON ENDLICHEM TYP
+              %               LOKAL VON ENDLICHEM TYP
 \begin{Definition}[lokal von endlichem Typ]
   Ein Morphismus $f\colon X\to Y$ von Schemata heißt lokal von endlichem
   Typ, wenn lokal auf affinen offenen Teilmengen $V\subset Y$ die
@@ -2246,7 +2309,7 @@ elliptischen Kurve
   quasikompakt (Urbilder quasikompakter Mengen sind quasikompakt) ist.
 \end{Definition}
 
-% REGULÄR
+              %               REGULÄR
 \begin{Definition}[Regulär]
   Ein Schema $X$ heißt regulär im Punk $x\in X$, wenn sein Halm
   $\O_{X,x}$ ein regulärer (lokaler) Ring ist
@@ -2259,7 +2322,7 @@ elliptischen Kurve
 \end{Definition}
 
 \section{Eigenschaften von Morphismen von Schemata}
-% FLACH
+              %               FLACH
 \begin{Definition}[flacher Morphismus]
   \optcite{bosch, goodreduction}
   Ein Morphismus $f\colon X\to Y$ von Schemata ist flach, wenn alle
@@ -2274,8 +2337,8 @@ elliptischen Kurve
   Insbesondere ist dann die generische Faser nichtleer und dicht in $X$.
 \end{Bemerkung}
 
-% UNVERZWEIGT
-% ??? Unverzweigt <=> Glatt für diskr. BWR?
+              %               UNVERZWEIGT
+              %               ??? Unverzweigt <=> Glatt für diskr. BWR?
 \begin{Definition}[unverzweigter Morphismus]
   Ein Morphismus $f\colon X\to S$ von Schemata heißt unverzweigt im
   Punkt $x\in X$, falls es eine offene Umgebung
@@ -2301,7 +2364,7 @@ elliptischen Kurve
   \end{Bemerkung}
 \end{Definition}
 
-% GLATT
+              %               GLATT
 \begin{Definition}[glatter Morphismus]
   \optcite[8.5, Definition 1]{bosch}
   Ein Morphismus $f\colon X\to S$ von Schemata heißt glatt im Punkt
@@ -2343,7 +2406,7 @@ elliptischen Kurve
   \end{Bemerkung}
 \end{Definition}
 
-% ÉTALE
+    %     ÉTALE
 \begin{Definition}[étaler Morphismus]% Äquivalent zu lokal umkehrbar
   \optcite[8.5, Definition 1 und Corollary 12]{bosch}  
   Ein Morphismus $f\colon X\to Y$ von $S$-Schemata heißt étale in
@@ -2363,7 +2426,7 @@ elliptischen Kurve
   \cite[8.5, Lemma 7]{bosch}.
 \end{Definition}
 
-% EIGENTLICH
+    %     EIGENTLICH
 \begin{Definition}[eigentlicher Morphismus]
   % Verallgemeinerung von projektiv; Äquivalent zu kompakt
   Ein Morphismus $f\colon X\to Y$ heißt eigentlich, wenn er eine der
@@ -2404,7 +2467,7 @@ elliptischen Kurve
 
 
 \section{$\K$-Gruppenschemata}
-% GUTE REDUKTION
+          %           GUTE REDUKTION
 \begin{Definition}[Gute Reduktion]\label{def:gutereduktion}
   % $X/S$ hat Gute Reduktion nach dem Primideal $P\in S$ heißt, dass die
   % Faser $X_P$ Glattheit erhält.
@@ -2443,7 +2506,7 @@ elliptischen Kurve
   Alternative Definition für elliptische Kurven: \cite[Chapter VII.5]{silverman}
 \end{Definition}
 
-% VARIETÄT, ELLIPTISCHE KURVE
+        %         VARIETÄT, ELLIPTISCHE KURVE
 \begin{Definition}[Varietät]
   \cite[Theorem 3.37]{wedhorn}
   Eine affine Varietät über einem Körper $\K$ ist eine Unterprägarbe der
