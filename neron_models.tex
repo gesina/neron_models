@@ -1735,29 +1735,61 @@ Weierstraßmodell von $E_\K$ über $R$.
 
 \section{Minimale reguläre Modelle}
 % exzellent nötig!!! evtl. nur Konstruktion?
-\begin{Satz}
+\begin{Definition}
   Sei $R$ Dedekindring (mit perfekten Restklassenkörpern),
   $\K=\Quot(R)$,
   $C/\K$ reguläre, projektive Kurve vom Geschlecht $g$.
   \begin{enumerate}[label=(\roman*)]
   \item\cite[Proposition IV.4.5(a)]{silverman2}
-    Dann existiert ein eigentliches, reguläres $R$-Modell $X$ von $C$,
+    Dann existiert ein eigentliches $R$-Modell $X$ von $C$,
     das eine arithmetische Fläche darstellt
-    (kurz: eigentliches reguläres Modell für $C/\K$).
+    (kurz: eigentliches Modell für $C/\K$).
   \item\cite[Proposition IV.4.5(b)]{silverman2} Ist $g\geq1$ kann
-    ein minimales eigentliches reguläres Modell $X_{\text{min}}$ für $C$
+    ein minimales eigentliches Modell $X_{\text{min}}$ für $C$
     gewählt werden.
-    D.\,h. für jedes andere eigentliche reguläres Modell $X$ für
+    D.\,h. für jedes andere eigentliche Modell $X$ für
     $C/\K$ und jeden Isomorphismus $\phi_\K$ der generischen Fasern
     ist die nach \autoref{thm:erwrrational} induzierte birationale
     Abbildung $\phi\colon X\dra X_{\text{min}}$ ein $R$-Morphismus.
-  \item\cite[Proposition IV.4.6]{silverman2}
-    Für ein minimales, eigentliches, reguläres Modell $X_{\text{min}}$
-    für $C/\K$ gilt, dass jeder $\K$"=Automorphismus von $C$ sich zu
-    einem $R$-Morphismus von $X_{\text{min}}$ erweitert, der glatte
-    Punkte auf glatte Punkte abbildet.
   \end{enumerate}
+\end{Definition}
+
+\begin{Satz}\label{thm:eigminmodell}
+  \begin{enumerate}[label=(\roman*)]
+  \item\cite[Proposition IV.4.6]{silverman2}
+    Für ein minimales Modell $X_{\text{min}}$
+    für $C/\K$ gilt, dass jeder $\K$"=Automorphismus von $C$ sich zu
+    einem $R$-Automorphismus von $X_{\text{min}}$ erweitert, der glatte
+    Punkte auf glatte Punkte abbildet.
+  \item\cite[vgl.][Beweis von Proposition IV.6.10]{silverman2}
+    Minimale reguläre Modelle sind wie folgt stabil unter Basiswechsel:
+    Sei $Y$ glattes $R$-Schema, $x\in Y$ und der Halm $R'=\O_{Y,x}$ in
+    $x$  ein diskreter Bewertungsring mit $\K'\coloneqq\Quot(R')$.
+    Dann ist das minimale reguläre Modell von $C\times_\K\K'$ genau
+    $X_{\text{min}}\times_R R'$.
+  \end{enumerate}
+  \begin{proof}
+    \begin{enumerate}[label=(\roman*)]
+    \item Die Minimalitätseigenschaft liefert zu einem
+      $\K$-Automorphismus $\tau\colon C\to C$ die Erweiterung auf
+      einen $R$-Automorphismus
+      $\tau\colon X_{\text{min}}\to X_{\text{min}}$.
+      Als bijektive, also offene Abbildungen, schicken $\tau$ und
+      sein Inverses offene glatte Umgebungen auf offene glatte
+      Umgebungen, und somit glatte Punkte auf glatte Punkte. Wir
+      erhalten also einen $R$-Automorphismus auf dem Unterschema der
+      glatten Punkte.
+    \item Die Eigenschaften flach, projektiv und integer sind stabil
+      unter Basiswechsel, regulär ist stabil unter glattem
+      Basiswechsel
+      % TODO!!! Warum ist regulär stabil unter glattem Basiswechsel?
+      und die Minimalitätseigenschaft von $X_{\text{min}}\times_R R'$
+      folgt aus der von $X_{\text{min}}$ und der universellen
+      Eigenschaft des Faserprodukts.
+    \end{enumerate}
+  \end{proof}
 \end{Satz}
+
 
 % ----------
 
@@ -1853,16 +1885,9 @@ diskrete Bewertungsringe $R$ beschränken.
   und $\phi\colon \Spec(R')\to C$ ein $R$-Morphismus.
   Ist $\phi((0))\in E$, gilt $\im(\phi)\subset E$.
   \begin{proof}
-    Wir zeigen erst, dass $C\times_R R'$ eine arithmetische Fläche
-    über $R'$ ist.
-    Projektiv, flach und integral sind stabil unter Basiswechsel.
-    % ??? Regularität?
-    % TODO!!
-    % Regularität bleibt unter dem Faserprodukt mit einem regulären
-    % Schema erhalten: Wähle für einen Punkt $x$ im Faserprodukt eine
-    % affine, offene Umgebung $\Spec(A)\times_R\Spec(B)=\Spec(A\otimes
-    % B)$, dann hat der Halm $\O_{A\otimes B, x}=(A\otimes
-    % B)_x=(A_x\otimes B_x)$ in $x$
+    $C\times_R R'$ ist wie in \autoref{thm:eigminmodell} wieder eine
+    arithmetische Fläche über $R'$.
+    …
   \end{proof}
 \end{Lemma}  
 
@@ -2070,8 +2095,59 @@ diskrete Bewertungsringe $R$ beschränken.
 \subsection{Nachweis der Gruppenstruktur für strikt henselsche Ringe}
 % ERWEITERUNG DER GRUPPENSTRUKTUR
 \begin{Satz}\label{thm:egruppenschema}
-  $E$ ist Gruppenschema für $R$ strikt henselsch.
+  Sei $R$ strikt henselscher diskreter Bewertungsring (mit perfekten
+  Quotientenkörpern) und $\K$, $E_\K$, $C$, $E$ wieder wie in
+  \autoref{thm:exneronmodelle}.
+  Dann erweitert sich die Gruppenstruktur von $E_\K$ auf $E$ und macht
+  $E$ zum Gruppenschema.
+\begin{proof}
+\begin{Lemma}
+  Die Gruppenstruktur $\mu_\K$ auf $E_\K$ erweitert sich zu einer
+  normalen Komposition $\mu$ auf $E$.
+  (Hier muss $R$ nicht notwendigerweise strikt henselsch sein.)
+  \begin{proof}
+    Wie in \autoref{thm:fallstriktehenselisierung}
+    % TODO!! ausformulieren
+    erweitert sich $\mu_\K\colon E_\K\times_\K E_\K\to E_\K$
+    auf eine $R$-rationale Abbildung $\mu\colon E\dra E$.
+    Für eine normale Komposition bleiben Assoziativität und Inverse zu
+    zeigen.
+    \begin{description}
+    \item[Assoziativität] Für Assoziativität müssen für alle $x, z\in
+      E$, so dass es wohldefiniert ist, die folgenden $R$-rationalen
+      Abbildungen gleich sein (also gleich auf der gemeinsamen
+      Definitionsmenge)
+      \begin{gather*}
+        \mu(\mu(x,\bullet),z), \mu(x,\mu(\bullet,z))
+        \colon E \dra E
+      \end{gather*}
+      Nun sind aber beide die eindeutige Erweiterung von
+      \begin{gather*}
+        \mu_\K(\mu_\K(x,\bullet),z)=\mu_\K(x,\mu_\K(\bullet,z))
+        \colon E_\K \dra E_\K
+      \end{gather*}
+      Somit sind sie gleich als $R$-rationale Abbildungen.
+    \item[Inverses $R$-rational]
+      Für $R$-Rationalität von $\phi\colon (x,y)\mapsto (x,\mu(x,y))$
+      (bzw. $\psi$) muss noch gezeigt werden, dass $\Dom(\phi)$
+      (bzw. $\Dom(\psi)$) dicht in der speziellen Faser von $E$ ist.
+      Wir werden den Fall für $\phi$ behandeln, $\psi$ folgt analog.
+      …
+      % \autoref{thm:eigminmodell}: stabil unter Basiswechsel
+      
+    \item[Inverses $R$-birational]
+    \end{description}
+  \end{proof}
+\end{Lemma}
+
+\begin{Lemma}
+  Sei nach \autoref{thm:weil} $G$ das zu $E$ $R$-birationale
+  Gruppenschema. Dann ist $G$ isomorph zu $E$.
+\end{Lemma}
+Dies beendet den Beweis zu \autoref{thm:egruppenschema}.
+\end{proof}
 \end{Satz}
+
 
 \section{Allgemeine Existenz}
 \begin{proof}[Beweis von \autoref{thm:exneronmodelle}]
