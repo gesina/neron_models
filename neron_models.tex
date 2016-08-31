@@ -189,8 +189,7 @@ Im Folgenden sei $S$ ein Schema.
 \end{Definition}
 
 % S-RATIONALE ABBILDUNG
-% ??? Was von rationaler Abbildung wird benötigt?
-% TODO!!
+% TODO!! Was von rationaler Abbildung wird benötigt?
 \begin{Definition}[rationale Abbildung]\label{def:ratabb}
   \optcite[Chapter 2.5]{neron}
   Sei $S$ Schema, und seien $X$ und $Y$ glatte $S$-Schemata.
@@ -296,9 +295,8 @@ Eine schwächere bzw. rationale Form einer Gruppenschemastruktur:
   Sei $R$ Dedekindring, $V$ glattes $R$-Schema mit nichtleeren Fasern
   und normaler Komposition $\mu\colon V\times_R V\dra V$.
   $V$ sei zusätzlich endlichen Typs und $V(R)$ sei dicht in jeder
-  Faser.
-  % ??? V(R) dicht in jeder Faser?
-  % TODO!!
+  Faser. 
+  % TODO!! Was heißt V(R) dicht in jeder Faser?
   Dann gibt es ein $R$-Gruppenschema $(G,\mu_G)$ endlichen Typs und
   ein gemeinsames, offenes, $R$-dichtes Unterschemata $V\hookleftarrow
   U\hookrightarrow G$ von $V$ und $G$, so dass $\mu|_U=\mu_G|_U$.
@@ -652,7 +650,9 @@ Wir benötigen dazu folgendes Lemma und Korollar
   endlichen Typs, $y\in Y$, $f_y\colon \Spec\O_{Y,y}\to X$
   $S$-Morphismus.
   Dann gibt es eine offene Umgebung $U\subset Y$ von $y$, auf der
-  $f_y$ von einem Morphismus $f\colon U\to X$ erweitert wird.
+  $f_y$
+  % TODO!! eindeutig???
+  von einem Morphismus $f\colon U\to X$ erweitert wird.
   \begin{proof}
     Wir können uns auf den affinen Fall $X=\Spec(B)$ beschränken.
     Denn $\O_{Y,y}$ ist lokal, also ist $y=\m_y\in\Spec\O_{Y,y}$ in jeder
@@ -704,7 +704,7 @@ Wir benötigen dazu folgendes Lemma und Korollar
         \dfrac{a_i\cdot \prod_{k\neq i}^n f_k \prod_{j=0}^r f_j'}{f}
         \qquad i=0,\dotsc,n
     \end{align*}
-    dass $(g_0, \dotsc, g_r)\subset\ker(\phi')$ und das folgende
+    dass $(g_0, \dotsc, g_r)\subset\ker(\phi_f)$ und das folgende
     Diagramm kommutiert
     \begin{center}
       \begin{tikzcd}
@@ -724,7 +724,7 @@ Wir benötigen dazu folgendes Lemma und Korollar
       \hookrightarrow \Spec(A_f)=D(f)
       \overset{f}\longto \Spec(B)
     \end{gather*}
-    $D(f)$ ist eine offene Umgebung von $y$, womit die Behauptung
+    $D(f)$ ist eine offene Umgebung von $y$, womit die Existenz
     gezeigt ist.
   \end{proof}
 \end{Lemma}
@@ -811,6 +811,7 @@ Wir benötigen dazu folgendes Lemma und Korollar
   geschlossen Punkten und dem generischen Punkt, und letzterer ist
   in jeder offenen Teilmenge enthalten).
   Daher liefert Verkleben einen von den (eindeutigen) $u_s$ eindeutig
+  % TODO!! Eindeutigkeit???!
   bestimmten Morphismus $u\colon Y\to X$, der $u_\K$ erweitert.
   D.\,h. die \NAbbEig ist erfüllt.
 \end{proof}
@@ -869,8 +870,7 @@ Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
       Die \NAbbEig von $X$ liefert zur Identität $\Id_{A_\K}$ einen
       $R$-Morphismus $A\to X$, der bereits offene Immersion ist
       \cite[4.3/1 (ii) oder 4.4/1]{neron}.
-      % ??? Wieso ist die Erweiterung von id hier offene Immersion?
-      % TODO!!
+      % TODO!! Wieso ist die Erweiterung von id hier offene Immersion?
       Nachdem $A$ eigentlich ist, ist das Bild dieses Morphismus
       geschlossen in $X$ und, da $X$ zusammenhängend ist, ist er ein
       Isomorphismus (injektiv als offene Immersion und surjektiv, da
@@ -883,7 +883,7 @@ Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
       ist.
       % ??? –> Zariski's Connectedness Thm/Stein-Faktoriesierung?
       % \cite[Exercise 12.29]{wedhorn}
-      % TODO!!
+      % TODO!! Spezielle Faser zusammenhängend?
     \end{description}
   \end{proof}
 \end{Satz}
@@ -918,8 +918,7 @@ Gruppenschemastruktur abelsch ist:
     % (\autoref{thm:neronmodell}, \autoref{thm:abelscheneronmodelle}
     % Erweiterung von Morphismen auf Umgebung:
     % \autoref{thm:allgmorphismuserweiterung}
-    % ??? Wieso erhält Morphismuserweiterung Eigentlichkeit?
-    % TODO!!
+    % TODO!! Wieso erhält Morphismuserweiterung Eigentlichkeit?
     
     Für den generischen Punkt können wir den schematischen
     Abschluss $A$ von $A_\K\to\P_\K^n\to\P_R^n$ in $\P_R^n$
@@ -1443,8 +1442,9 @@ Weierstraßmodell von $E_\K$ über $R$.
   eigentliches $R$-Schema, $Y$ lokal noethersches, flaches, reguläres
   $R$-Schema und $\phi_\K\colon Y_\K\to W_\K$ ein Morphismus auf den
   generischen Fasern.
-  Dann erweitert sich $\phi_\K$ zu einer $R$-rationalen Abbildung
-  $\phi\colon Y\to W$.
+  Dann erweitert sich $\phi_\K$ zu einer
+  $R$-rationalen Abbildung $\phi\colon Y\dra W$.
+  Ist $Y$ reduziert, ist $\phi$ eindeutig.
   \begin{proof}
     $\Spec(R)$ und $Y$ sind nach Voraussetzung lokal noethersch,
     außerdem ist $\pi\colon Y\to R$ flach über $R$. Daher 
@@ -1459,8 +1459,6 @@ Weierstraßmodell von $E_\K$ über $R$.
     Bewertungsring.
     Der Quotientenkörper von $\O_{Y,\eta_{s}}$ ist der lokale Ring
     eines generischen Punkts $\eta$ von $Y$. Da $Y$ flach
-    % und reduziert
-    % ??? Braucht man hier reduziert?
     ist, liegt $\eta$ nach \cite[Proposition III.9.7]{hartshorne} in
     der generischen Faser.
     Wir können also das Bewertungskriterium für Eigentlichkeit für $W$
@@ -1478,10 +1476,10 @@ Weierstraßmodell von $E_\K$ über $R$.
         && \Spec(R)
       \end{tikzcd}
     \end{center}
-    Damit erweitert sich $\phi_\K$ zu einem Morphismus
+    Damit erweitert sich $\phi_\K$ zu einem eindeutigen Morphismus
     $\Spec(\O_{Y,\eta_{s}})\to W$, der sich nach
-    \autoref{thm:morphismuserweiterung} auf einen Morphismus in einer
-    Umgebung von $\eta_{s}$ erweitert.
+    \autoref{thm:morphismuserweiterung}
+    auf einen Morphismus in einer Umgebung von $\eta_{s}$ erweitert.
     
     Die so gewonnenen Morphismen in Umgebungen der generischen Punkte
     der Fasern können wiederum verklebt werden und
@@ -1489,9 +1487,26 @@ Weierstraßmodell von $E_\K$ über $R$.
     einem offenen Unterschema $U\subset Y$.
     $U$ enthält alle generischen Punkte der Fasern von $Y\to R$ und
     ist somit $R$-dicht.
-    $\phi$ ist demnach $R$-rationale Erweiterung von $\phi_\K$.    
+    $\phi$ ist demnach $R$-rationale Erweiterung von $\phi_\K$.
+
+    Für die Eindeutigkeit sei $Y$ reduziert, $\phi$ gegeben und
+    $x\in\Dom(\phi)$.
+    Wir werden induktiv nach der Dimension von $x$ vorgehen. Für
+    $\dim_Y(x)=0$ liegt $x$, da $Y$ flach ist, in der generischen
+    Faser und $\phi$ ist hier nach Voraussetzung eindeutig.
+    Sei $\phi$ eindeutig definiert in $y\in\Dom(\phi)$ für
+    $\dim_Y(y)=(n-1)$ und sei $\dim_Y(x)=n$.
+    In einem entsprechenden irreduziblen geschlossenen Unterschema
+    $V_x$ von $Y$ ist $\dim_{V_x}(x)=1$. Nachdem $Y$ reduziert ist,
+    ist $V_x$ integral und $\Spec(\O_{V_x,x})=\{x,y\}$ ist
+    Bewertungsring, wobei $y\coloneqq (0)\in\Spec(\O_{V_x,x})$ ein Punkt der
+    Dimension $(n-1)$ in $Y$ ist und $\Quot(O_{V_x,x})=\k(y)$.
+    Nach dem Bewertungskriterium für Eigentlichkeit von $W$ ist
+    $\phi|_{\Spec(\O_{V_x,x})}$ die eindeutige Erweiterung von
+    $\phi|_{\Spec(\k(y))}$. Da $\phi$ auf $y$ bereits eindeutig war,
+    ist es auch eindeutig auf $x$.
   \end{proof}
-\end{Lemma}
+ \end{Lemma}
 \begin{Bemerkung}
   Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
   überprüft werden:
@@ -2131,7 +2146,7 @@ diskrete Bewertungsringe $R$ beschränken.
 \subsection{Nachweis der Gruppenstruktur für strikt henselsche Ringe}
 % ERWEITERUNG DER GRUPPENSTRUKTUR
 \begin{Satz}\label{thm:egruppenschema}
-  Sei $R$ strikt henselscher diskreter Bewertungsring (mit perfektem)
+  Sei $R$ strikt henselscher diskreter Bewertungsring mit perfektem
   Restklassenkörper $k$ und $\K$, $E_\K$, $C$, $E$ wieder wie in
   \autoref{thm:exneronmodelle}.
   Dann erweitert sich die Gruppenstruktur von $E_\K$ auf $E$ und macht
@@ -2142,32 +2157,44 @@ diskrete Bewertungsringe $R$ beschränken.
       normalen Komposition $\mu$ auf $E$.
       (Hier muss $R$ nicht notwendigerweise strikt henselsch sein.)
       \begin{proof}
-        Wie in \autoref{thm:fallstriktehenselisierung}
-        % TODO!! ausformulieren
-        erweitert sich $\mu_\K\colon E_\K\times_\K E_\K\to E_\K$
-        auf eine $R$-rationale Abbildung $\mu\colon E\dra E$.
+        $E\times_R E$ ist glattes $R$-Schema und $C$ eigentlich,
+        weshalb sich $\mu_\K\colon E_\K\times_\K E_\K\to E_\K$ nach
+        \autoref{thm:erwrrational} eindeutig zu einer $R$-rationalen
+        Abbildung $\tilde\mu\colon E\times_R E\dra C$ erweitert.
+        Die generischen Punkte $\eta_k$ der speziellen Fasern von
+        $E\times_R E$ haben wegen \autoref{eq:stalkdimension}
+        Dimension 1, sind also diskrete Bewertungsringe, da $E\times_R
+        E$ glatt und somit regulär ist. Nach
+        \autoref{thm:schnittearithmflglatt} liegt dann
+        $\tilde\mu(\eta_k)$ und entsprechend das Bild einer offenen
+        Umgebung von $\eta_k$ unter $\tilde\mu$ in $E$. Daher erhalten
+        wir (u.\,U. durch Einschränkung von $\Dom(\tilde\mu)$) eine
+        $R$-rationale Abbildung $\mu\colon E\times_R E\dra E$.
+
         Für eine normale Komposition bleiben Assoziativität und Inverse zu
         zeigen.
-        \paragraph{Assoziativität} Für Assoziativität müssen für alle $x, z\in
-        E$, so dass es wohldefiniert ist, die folgenden $R$-rationalen
-        Abbildungen gleich sein (also gleich auf der gemeinsamen
-        Definitionsmenge)
+
+        \paragraph{Assoziativität}
+        Für Assoziativität müssen für alle $x, z\in E$, für die es
+        wohldefiniert ist, die folgenden $R$-rationalen 
+        Abbildungen gleich sein
         \begin{gather*}
           \mu(\mu(x,\bullet),z), \mu(x,\mu(\bullet,z))
           \colon E \dra E
         \end{gather*}
-        Nun sind aber beide die eindeutige Erweiterung von
+        Da $E\times_R E$ reduziert ist, sind aber beide die nach
+        \autoref{thm:erwrrational} eindeutige Erweiterung von
         \begin{gather*}
           \mu_\K(\mu_\K(x,\bullet),z)=\mu_\K(x,\mu_\K(\bullet,z))
           \colon E_\K \dra E_\K
         \end{gather*}
         Somit sind sie gleich als $R$-rationale Abbildungen.
+        
         \paragraph{Inverses $R$-rational}
-        Für $R$-Rationalität von $\phi\colon (x,y)\mapsto (x,\mu(x,y))$
-        (bzw. $\psi$) muss noch gezeigt werden, dass $\Dom(\phi)$
-        (bzw. $\Dom(\psi)$) dicht in der speziellen Faser von $E$ ist,
-        also in jedem generischen Punkt der speziellen Faser definiert
-        ist.
+        Für $R$-Rationalität von $\phi$ und $\psi$ muss noch gezeigt
+        werden, dass $\Dom(\phi)$ bzw. $\Dom(\psi)$ dicht in der
+        speziellen Faser von $E$ ist, also in jedem generischen Punkt
+        der speziellen Faser definiert ist.
         Wir werden den Fall für $\phi$ behandeln, $\psi$ folgt analog.
         
         Sei also $\eta\in E\times_R R/\p=E_k$ ein generischer Punkt der
