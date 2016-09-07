@@ -498,7 +498,7 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
   Ist $Y$ glatt (also insb. flach und reduziert) über $R$, ist $Y_\K$
   dicht in $Y$ nach \autoref{thm:flachgenerischefaser}.
   Also präsentiert der Morphismus $\phi_\K\colon X_\K\to E_\K$ eine
-  rationale Abbildung (vgl. \label{def:ratabb})
+  rationale Abbildung (vgl. \autoref{def:ratabb})
   \begin{gather*}
     \phi\colon X\dra E
   \end{gather*}
@@ -509,6 +509,38 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
 
 \section{Eigenschaften}
 \subsection{Allgemeine Eigenschaften}
+% WARUM SEPARIERTHEIT
+Ein Grund, weshalb für ein Néron-Modell Separiertheit gefordert wird,
+ist die Eindeutigkeit von Morphismen in separierte Schemata im
+folgenden Sinne:
+\begin{Satz}\label{thm:erweindeutig}
+  Sei $R$ Dedekindring, $Y$ und $X$ $R$-Schemata, $X$ separiert.
+  Dann ist ein Morphismus $\phi\colon Y\to X$ eindeutig durch seine
+  Einschränkung auf die generischen Punkte von $Y$ bestimmt.
+  Insbesondere sind, falls $Y$ flach über $X$ ist, Erweiterungen von
+  Morphismen der generischen Fasern eindeutig, falls sie existieren.
+  \begin{proof}
+    Sei $x\in\Dom(\phi)$.
+    Wir werden induktiv nach der Dimension von $x$ vorgehen. Für
+    $\dim_Y(x)=0$ ist $x$ generischer Punkt und $\phi$ ist hier nach
+    Voraussetzung festgelegt.
+    Sei $\phi$ eindeutig definiert in $y\in\Dom(\phi)$ für
+    $\dim_Y(y)=(n-1)$ und sei $\dim_Y(x)=n$.
+    Wir können nun eine Generalisierung $y\in\Spec(\O_{Y,x})\subset Y$
+    von $x$ mit $\dim_Y(y)=(n-1)$ betrachten.
+    Im geschlossenen, irreduziblen, reduzierten Unterschema $V_y$ mit
+    topologischem Raum $\overline{\{y\}}\subset Y$ ist
+    $\dim_{V_y}(x)=1$.
+    $V_y$ ist integral, $\Spec(\O_{V_y,x})=\{x,y\}$ und daher 
+    $\O_{V_y,x}$ ein Bewertungsring mit
+    $y=(0)\in\Spec(\O_{V_y,x})$ und $\Quot(\O_{V_y,x})=\k(y)$.
+    Nach dem Bewertungskriterium für Separiertheit von $W$ ist
+    $\phi|_{\Spec(\O_{V_y,x})}$ die eindeutige Erweiterung von
+    $\phi|_{\Spec(\k(y))}$. Da $\phi$ auf $y$ bereits eindeutig war,
+    ist es auch eindeutig auf $x$.
+  \end{proof}
+\end{Satz}
+
 % EINDEUTIGKEIT, BASISWECHSEL
 \begin{Satz}
   \optcite[1.2, Proposition 2]{neron}
@@ -653,8 +685,8 @@ Wir benötigen dazu folgendes Lemma und Korollar
   $f_y$
   % TODO!! eindeutig???
   von einem Morphismus $f\colon U\to X$ erweitert wird.
-  Ist $Y$ integral, kann $U$ so gewählt werden, dass $f$ auf $U$
-  eindeutig ist.
+  % Ist $Y$ integral, kann $U$ so gewählt werden, dass $f$ auf $U$
+  % eindeutig ist.
   \begin{proof}
     Wir können uns auf den affinen Fall $X=\Spec(B)$ beschränken.
     Denn $\O_{Y,y}$ ist lokal, also ist $y=\m_y\in\Spec\O_{Y,y}$ in jeder
@@ -729,43 +761,53 @@ Wir benötigen dazu folgendes Lemma und Korollar
     $D(f)$ ist eine offene Umgebung von $y$, womit die Existenz
     gezeigt ist.
 
-    Für die Eindeutigkeit beachte, dass $f$ eindeutig auf $D(f)$ ist,
-    falls die Lokalisierung $A_f\to A_y$ injektiv ist. Dies gilt für
-    $Y$ integral.
+    % Für die Eindeutigkeit beachte, dass $f$ genau dann eindeutig auf
+    % $D(f)$ ist, wenn die Lokalisierung $A_f\to A_y$ injektiv
+    % ist. Dies gilt für $Y$ integral.
   \end{proof}
 \end{Lemma}
 
 \begin{Korollar}\label{thm:allgmorphismuserweiterung}
-  Sei $S$ lokal noethersches Schema, $\pi\colon Y\to S$ und $X$
-  $S$-Schemata, $X$ endlichen Typs, $Y$ integral, $s\in S$,
+  Sei $S$ lokal noethersches Schema, $\pi\colon Y\to S$ integeres und
+  flaches $S$-Schema,
+  $X$ separiertes $S$-Schemata endlichen Typs,
+  $s\in S$,
   $f_s\colon Y\times_S\O_{S,s}\to X\times_S\O_{S,s}$ ein
   $S$-Morphismus.
   Dann gibt es eine offene Umgebung $U\subset Y$ von
-  $Y\times_S\O_{S,s}$, auf der $f_s$ von einem Morphismus $f\colon
-  U\to X$ erweitert wird.
+  $Y\times_S\O_{S,s}$, auf der $f_s$ eindeutig von einem Morphismus
+  $f\colon U\to X$ erweitert wird.
   \begin{proof}
-    Sei $y\in Y\times_S\O_{S,s'}\subset Y\times_S\O_{S,s}\subset Y$
-    für ein $s'\in\Spec\O_{S,s}$. $\pi$ induziert einen
-    Ringhomomorphismus $\O_{S,s'}\to\O_{Y,y}$. Der zugehörige
-    Morphismus von $R$-Schemata
+    Sei $y\in Y\times_S\O_{S,s}\subset Y$ und
+    $s'\coloneqq\pi(y)\in\Spec\O_{S,s}$. Dann ist $y\in
+    Y\times_S\O_{S,s'}$ und $\pi$ induziert einen
+    Ringhomomorphismus $\O_{S,s'}\to\O_{Y,y}$ auf den Halmen. Der
+    zugehörige Morphismus von affinen $R$-Schemata
     $\Spec\O_{Y,y}\to\Spec\O_{S,s'}\subset\Spec\O_{S,s}$ ist die
     Einschränkung von $\pi$ auf $\Spec\O_{Y,y}\subset Y$, insbesondere
-    liegt $\Spec\O_{Y,y}$ im Urbild von $\Spec\O_{S,s}$.
+    liegt ganz $\Spec\O_{Y,y}$ im Urbild von $\Spec\O_{S,s}$.
     Das zeigt, dass $\Spec\O_{Y,y}\subset Y\times_S\O_{S,s}$ für jedes
     $y\in Y\times_S\O_{S,s}$, und man erhält $R$-Morphismen
     \begin{gather*}
-      f_s(y)\colon \Spec\O_{Y,y}\to X\times_S\O_{S,s}\subset X
+      f_s(y)\colon \Spec\O_{Y,y}\longto X\times_S\O_{S,s}\subset X
       \qquad \forall y \in Y\times_S\O_{S,s}
     \end{gather*}
     Diese erweitern sich jeweils nach
-    \autoref{thm:morphismuserweiterung} auf genügend kleinen
-    Umgebungen $U(y)\subset Y$ von $y$ eindeutig zu Morphismen. Wegen
-    der Eindeutigkeit stimmen diese auf den Überschneidungen
-    überein und lassen sich zu einem eindeutigen Morphismus
+    \autoref{thm:morphismuserweiterung} auf offenen
+    Umgebungen $U(y)\subset Y$ von $y$ zu Morphismen.
+    Diese sind eindeutig wegen Separiertheit.
+    Die Definitionsmengen $U(y)$ sowie ihre Schnitte $U(y)\cap
+    U(y')\subset Y$, $y,y'\in Y$, sind offene, irreduzible
+    Unterschemata mit demselben generischen Punkt $\eta$ wie $Y$.
+    Da $\eta\in Y\times_S\O_{S,s}$, sind nach
+    \autoref{thm:erweindeutig} wegen Separiertheit von $X$ alle
+    Erweiterungen von $f_s$ auf $U(y)$ und $U(y)\cap U(y')$ eindeutig.
+    Insbesondere sind die $f_s(y)$ eindeutig und stimmen auf den
+    Schnitten ihrer Definitionsmengen überein.
+    Daher verkleben sie zu einem eindeutigen Morphismus
     \begin{gather*}
-      f\colon U=\bigcup_{y\in Y\times_S\O_{S,s}} U(y)\to X
+      f\colon U=\bigcup_{\mathclap{y\in Y\times_S\O_{S,s}}} U(y)\longto X
     \end{gather*}
-    verkleben.
   \end{proof}
 \end{Korollar}
 % \begin{Lemma}\label{thm:limesoffenemengen}
@@ -786,6 +828,9 @@ Wir benötigen dazu folgendes Lemma und Korollar
   Sei $\K=\Quot(R)$ und betrachte ein glattes $R$-Schema $Y$ sowie
   einen $\K$-Morphismus $\phi_\K\colon Y_\K\to X_\K$ der
   generischen Fasern.
+  Als glattes $R$-Schema ist $Y$ reduziert und insbesondere regulär,
+  weshalb die irreduziblen Komponenten alle offen und disjunkt
+  sind. Wir können also \OE{} annehmen, dass $Y$ integer ist.
   Sei $s\in\Spec(R)$ ein geschlossener Punkt.
   Nach Voraussetzung erweitert sich
   \begin{gather*}
@@ -807,27 +852,22 @@ Wir benötigen dazu folgendes Lemma und Korollar
   % eindeutig auf einen $R$-Morphismus $u(s)\colon S'(s)\to X$
   % erweitert wird.
   % % ??? Warum kann ich eine offene Menge wählen?
-  Betrachte nun die irreduziblen Komponenten $Y_i$ von $Y$, welche
-  integral sind, nachdem $Y$ glatt also reduziert ist.
   Nach \autoref{thm:allgmorphismuserweiterung} gibt es eine offene
-  Umgebung $U_i(s)$ von $Y_i\times_R\O_{R,s}$, auf der
-  $u_s|_{Y_i\times_R\O_{R,s}}$ wiederum
-  eindeutig auf einen Morphismus $u_i(s)\colon U(s)\to X$ erweitert
+  Umgebung $U(s)$ von $Y\times_R\O_{R,s}$, auf der
+  $u_s|_{Y\times_R\O_{R,s}}$ wiederum
+  eindeutig auf einen Morphismus $u(s)\colon U(s)\to X$ erweitert
   wird.
-  Die $u_i(s)$ stimmen per Konstruktion auf dem Schnitt ihrer
-  Definitionsbereiche überein, die ganz $Y_i$ überdecken
+  Die $u(s)$ stimmen wieder wegen Separiertheit von $X$
+  % TODO: Warum ist X hier separiert?
+  nach
+  \autoref{thm:erweindeutig} auf dem Schnitt ihrer
+  Definitionsbereiche überein, die zudem ganz $Y$ überdecken
   ($\Spec(R)$ besteht genau aus seinen
   geschlossen Punkten und dem generischen Punkt, und letzterer ist
   in jeder offenen Teilmenge enthalten).
-  Daher liefert Verkleben einen der eindeutigen $u_i(s)$ jeweils einen
-  eindeutig bestimmten Morphismus $u_i\colon Y_i\to X$, der
-  $u_\K|_{Y_i\cap Y_\K}$ erweitert.
-  
-  Die $u_i$ wiederum stimmen wegen der Eindeutigkeit
-  % TODO!! Eindeutigkeit???!
-  auf dem Schnitt
-  ihrer Definitionsbereiche überein und verkleben eindeutig zu einem
-  $u\colon Y\to X$.
+  Daher liefert Verkleben einen der eindeutigen $u(s)$ einen
+  eindeutig bestimmten Morphismus $u\colon Y\to X$, der
+  $u_\K|_{Y\cap Y_\K}$ erweitert.
   D.\,h. die \NAbbEig ist erfüllt.
 \end{proof}
 
@@ -1455,11 +1495,13 @@ Weierstraßmodell von $E_\K$ über $R$.
 \begin{Lemma}\label{thm:erwrrational}
   Sei $R$ ein Dedekindring, $\K=\Quot(R)$, $W$ allgemein ein
   eigentliches $R$-Schema, $Y$ lokal noethersches, flaches, reguläres
+  % TODO: integrales
   $R$-Schema und $\phi_\K\colon Y_\K\to W_\K$ ein Morphismus auf den
   generischen Fasern.
   Dann erweitert sich $\phi_\K$ zu einer
   $R$-rationalen Abbildung $\phi\colon Y\dra W$.
   Ist $Y$ reduziert, ist $\phi$ eindeutig.
+  % TODO: QUATSCH! Reduziert hier nicht notwendig?
   \begin{proof}
     $\Spec(R)$ und $Y$ sind nach Voraussetzung lokal noethersch,
     außerdem ist $\pi\colon Y\to R$ flach über $R$. Daher 
@@ -1481,7 +1523,7 @@ Weierstraßmodell von $E_\K$ über $R$.
     \begin{center}
       \begin{tikzcd}
         \eta\arrow[r, equal]
-        &\Spec(\k(\eta_j))
+        &\Spec(\k(\eta))
         \arrow[r, "{\phi_\K|_{\eta}}"] \arrow[d]
         & E_\K \arrow[r, hook]
         & W\arrow[d]\\
@@ -1498,28 +1540,35 @@ Weierstraßmodell von $E_\K$ über $R$.
     
     Die so gewonnenen Morphismen in Umgebungen der generischen Punkte
     der Fasern können wiederum verklebt werden und
+    % TODO: Warum können die verklebt werden?
     wir erhalten eine rationale Abbildung $\phi\colon U\to W$ auf
     einem offenen Unterschema $U\subset Y$.
     $U$ enthält alle generischen Punkte der Fasern von $Y\to R$ und
     ist somit $R$-dicht.
     $\phi$ ist demnach $R$-rationale Erweiterung von $\phi_\K$.
 
-    Für die Eindeutigkeit sei $Y$ reduziert, $\phi$ gegeben und
-    $x\in\Dom(\phi)$.
-    Wir werden induktiv nach der Dimension von $x$ vorgehen. Für
-    $\dim_Y(x)=0$ liegt $x$, da $Y$ flach ist, in der generischen
-    Faser und $\phi$ ist hier nach Voraussetzung eindeutig.
-    Sei $\phi$ eindeutig definiert in $y\in\Dom(\phi)$ für
-    $\dim_Y(y)=(n-1)$ und sei $\dim_Y(x)=n$.
-    In einem entsprechenden irreduziblen geschlossenen Unterschema
-    $V_x$ von $Y$ ist $\dim_{V_x}(x)=1$. Nachdem $Y$ reduziert ist,
-    ist $V_x$ integral und $\Spec(\O_{V_x,x})=\{x,y\}$ ist
-    Bewertungsring, wobei $y\coloneqq (0)\in\Spec(\O_{V_x,x})$ ein Punkt der
-    Dimension $(n-1)$ in $Y$ ist und $\Quot(O_{V_x,x})=\k(y)$.
-    Nach dem Bewertungskriterium für Eigentlichkeit von $W$ ist
-    $\phi|_{\Spec(\O_{V_x,x})}$ die eindeutige Erweiterung von
-    $\phi|_{\Spec(\k(y))}$. Da $\phi$ auf $y$ bereits eindeutig war,
-    ist es auch eindeutig auf $x$.
+    % Für die Eindeutigkeit sei
+    % % $Y$ reduziert,
+    % % TODO: BLÖDSINN
+    % $\phi$ gegeben und $x\in\Dom(\phi)$.
+    % Wir werden induktiv nach der Dimension von $x$ vorgehen. Für
+    % $\dim_Y(x)=0$ liegt $x$, da $Y$ flach ist, in der generischen
+    % Faser und $\phi$ ist hier nach Voraussetzung eindeutig.
+    % Sei $\phi$ eindeutig definiert in $y\in\Dom(\phi)$ für
+    % $\dim_Y(y)=(n-1)$ und sei $\dim_Y(x)=n$.
+    % In einem entsprechenden irreduziblen geschlossenen, reduzierten
+    % Unterschema $V_x$ von $Y$ ist $\dim_{V_x}(x)=1$.
+    % % Nachdem $Y$ reduziert ist, ist
+    % % TODO: BLÖDSINN!!
+    % $V_x$ ist integral und
+    % $\Spec(\O_{V_x,x})=\{x,y\}\subset\Spec(\O_{Y,x})$ ist
+    % Bewertungsring, wobei $y\coloneqq (0)\in\Spec(\O_{V_x,x})$ ein Punkt der
+    % Dimension $(n-1)$ in $Y$ ist mit $y\in\Dom(\phi)$ und
+    % $\Quot(\O_{V_x,x})=\k(y)$.
+    % Nach dem Bewertungskriterium für Separiertheit von $W$ ist
+    % $\phi|_{\Spec(\O_{V_x,x})}$ die eindeutige Erweiterung von
+    % $\phi|_{\Spec(\k(y))}$. Da $\phi$ auf $y$ bereits eindeutig war,
+    % ist es auch eindeutig auf $x$.
   \end{proof}
  \end{Lemma}
 \begin{Bemerkung}
@@ -1779,7 +1828,9 @@ Weierstraßmodell von $E_\K$ über $R$.
     gewählt werden.
     D.\,h. für jedes andere eigentliche Modell $X$ für
     $C/\K$ und jeden Isomorphismus $\phi_\K$ der generischen Fasern
-    ist die nach \autoref{thm:erwrrational} induzierte birationale
+    ist die nach \autoref{thm:erwrrational}
+    % TODO: integer fehlt als Voraussetzung
+    induzierte birationale
     Abbildung $\phi\colon X\dra X_{\text{min}}$ ein $R$-Morphismus.
   \end{enumerate}
 \end{Definition}
@@ -1914,6 +1965,7 @@ diskrete Bewertungsringe $R$ beschränken.
   Bewertungsring,
   und sei $\phi\colon \Spec(R')\to C$ ein $R$-Morphismus.
   Ist $\phi(\Spec(\K))\in E$, gilt $\im(\phi)\subset E$.
+  % TODO: Voraussetzungen anpassen; regulär stabil unter glattem Basiswechsel?
   \begin{proof}
     Für den generischen Punkt $\phi((0))$ ist dies klar, da die
     generische Faser von $C$ glatt ist, und nach
@@ -1953,7 +2005,9 @@ diskrete Bewertungsringe $R$ beschränken.
     % , bzw. nach \autoref{thm:dichtefaser}
     % einer rationalen Abbildung $\phi\colon Y\dra E$, die von $\phi_\K$
     % präsentiert wird.
-    Nach \autoref{thm:erwrrational} erweitert sich $\phi_\K$ auf eine
+    Nach \autoref{thm:erwrrational}
+    % TODO: Y integer fehlt
+    erweitert sich $\phi_\K$ auf eine
     $R$-rationale Abbildung $\phi\colon Y\dra C$, deren Bild nach dem
     vorhergehenden Lemma~\autoref{thm:schnittearithmflglatt} in $E$
     liegt.
@@ -2198,6 +2252,7 @@ diskrete Bewertungsringe $R$ beschränken.
           \colon E \dra E
         \end{gather*}
         Da $E\times_R E$ reduziert ist, sind aber beide die nach
+        % TODO: integer statt reduziert
         \autoref{thm:erwrrational} eindeutige Erweiterung von
         \begin{gather*}
           \mu_\K(\mu_\K(x,\bullet),z)=\mu_\K(x,\mu_\K(\bullet,z))
