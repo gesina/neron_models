@@ -514,12 +514,15 @@ Ein Grund, weshalb für ein Néron-Modell Separiertheit gefordert wird,
 ist die Eindeutigkeit von Morphismen in separierte Schemata im
 folgenden Sinne:
 \begin{Satz}\label{thm:erweindeutig}
-  Sei $R$ Dedekindring, $Y$ und $X$ $R$-Schemata, $X$ separiert.
-  Dann ist ein Morphismus $\phi\colon Y\to X$ eindeutig durch seine
-  Einschränkung auf die generischen Punkte von $Y$ bestimmt.
+  \cite[Corollary 9.9]{wedhorn}
+  Sei $R$ Dedekindring, $Y$ und $X$ $R$-Schemata, $X$ separiert, $Y$
+  reduziert.
+  Dann ist ein Morphismus $\phi\colon Y\to X$ durch jede
+  Einschränkung auf eine dichte Teilmenge von $Y$ eindeutig bestimmt.
   Insbesondere sind, falls $Y$ flach über $X$ ist, Erweiterungen von
-  Morphismen der generischen Fasern eindeutig, falls sie existieren.
+  Morphismen der generischen Fasern eindeutig.
   \begin{proof}
+    % TODO: Beweis zu Eindeutigkeit von Morphismen stehen lassen?
     Sei $x\in\Dom(\phi)$.
     Wir werden induktiv nach der Dimension von $x$ vorgehen. Für
     $\dim_Y(x)=0$ ist $x$ generischer Punkt und $\phi$ ist hier nach
@@ -536,8 +539,11 @@ folgenden Sinne:
     $y=(0)\in\Spec(\O_{V_y,x})$ und $\Quot(\O_{V_y,x})=\k(y)$.
     Nach dem Bewertungskriterium für Separiertheit von $W$ ist
     $\phi|_{\Spec(\O_{V_y,x})}$ die eindeutige Erweiterung von
-    $\phi|_{\Spec(\k(y))}$. Da $\phi$ auf $y$ bereits eindeutig war,
-    ist es auch eindeutig auf $x$.
+    $\phi|_{\Spec(\k(y))}$. Da $\phi$ auf $y$ bereits eindeutig war
+    und $Y$ reduziert ist, ist $\phi$ auch eindeutig auf $x$.
+
+    Ist $Y$ flach, so liegen alle generischen Punkte von $Y$ in der
+    generischen Faser nach \cite[Proposition III.9.7]{hartshorne}.
   \end{proof}
 \end{Satz}
 
@@ -672,7 +678,7 @@ folgenden Sinne:
 Wir werden im Folgenden nur die Implikation
 \emph{(ii)}$\Rightarrow$\emph{(i)} benötigen, daher sei für die
 andere Richtung auf \cite[1.2, Proposition 4]{neron} verwiesen.
-Wir benötigen dazu folgendes Lemma und Korollar
+Wir benötigen dazu folgendes Lemma und Korollar:
 
 % ERWEITERUNG V. MORPHISMEN AUF OFFENE TEILMENGEN
 \begin{Lemma}\label{thm:morphismuserweiterung}
@@ -768,11 +774,11 @@ Wir benötigen dazu folgendes Lemma und Korollar
 \end{Lemma}
 
 \begin{Korollar}\label{thm:allgmorphismuserweiterung}
-  Sei $S$ lokal noethersches Schema, $\pi\colon Y\to S$ integeres und
-  flaches $S$-Schema,
-  $X$ separiertes $S$-Schemata endlichen Typs,
-  $s\in S$,
-  $f_s\colon Y\times_S\O_{S,s}\to X\times_S\O_{S,s}$ ein
+  Sei $S$ lokal noethersches Schema,
+  $\pi\colon Y\to S$ integeres, flaches $S$-Schema,
+  $X$ separiertes $S$-Schema endlichen Typs,
+  $s\in S$.
+  Sei $f_s\colon Y\times_S\O_{S,s}\to X\times_S\O_{S,s}$ ein
   $S$-Morphismus.
   Dann gibt es eine offene Umgebung $U\subset Y$ von
   $Y\times_S\O_{S,s}$, auf der $f_s$ eindeutig von einem Morphismus
@@ -789,7 +795,7 @@ Wir benötigen dazu folgendes Lemma und Korollar
     Das zeigt, dass $\Spec\O_{Y,y}\subset Y\times_S\O_{S,s}$ für jedes
     $y\in Y\times_S\O_{S,s}$, und man erhält $R$-Morphismen
     \begin{gather*}
-      f_s(y)\colon \Spec\O_{Y,y}\longto X\times_S\O_{S,s}\subset X
+      f_{s,y}\colon \Spec\O_{Y,y}\longto X\times_S\O_{S,s}\subset X
       \qquad \forall y \in Y\times_S\O_{S,s}
     \end{gather*}
     Diese erweitern sich jeweils nach
@@ -797,12 +803,13 @@ Wir benötigen dazu folgendes Lemma und Korollar
     Umgebungen $U(y)\subset Y$ von $y$ zu Morphismen.
     Diese sind eindeutig wegen Separiertheit.
     Die Definitionsmengen $U(y)$ sowie ihre Schnitte $U(y)\cap
-    U(y')\subset Y$, $y,y'\in Y$, sind offene, irreduzible
+    U(y')\subset Y$, $y,y'\in Y$, sind offene, integere
     Unterschemata mit demselben generischen Punkt $\eta$ wie $Y$.
-    Da $\eta\in Y\times_S\O_{S,s}$, sind nach
-    \autoref{thm:erweindeutig} wegen Separiertheit von $X$ alle
-    Erweiterungen von $f_s$ auf $U(y)$ und $U(y)\cap U(y')$ eindeutig.
-    Insbesondere sind die $f_s(y)$ eindeutig und stimmen auf den
+    Da $\eta\in Y\times_S\O_{S,s}$, sind wegen Separiertheit von $X$
+    nach \autoref{thm:erweindeutig} alle Erweiterungen von 
+    $f_s|_{U(y)}$ auf $U(y)$ bzw. von $f_s|_{U(y)\cap U(y')}$ auf
+    $U(y)\cap U(y')$ eindeutig.
+    Insbesondere sind die $f_{s,y}$ eindeutig und stimmen auf den
     Schnitten ihrer Definitionsmengen überein.
     Daher verkleben sie zu einem eindeutigen Morphismus
     \begin{gather*}
@@ -825,25 +832,40 @@ Wir benötigen dazu folgendes Lemma und Korollar
 % \end{Lemma}
 
 \begin{proof}[Beweis von \autoref{thm:neronmodelllokal}]
+  Vorerst ist zu zeigen, dass $X$ glatt und separiert ist.
+
+  Letzteres gilt, da das Bewertungskriterium für Separiertheit
+  erfüllt ist: Sei $(A,\m)$ Bewertungsring und über
+  $\pi\colon\Spec(A)\to\Spec(R)$ eine $R$-Algebra mit
+  $\pi(\m)=s$. Dann faktorisiert $\pi$ über
+  $\Spec(A)\to\Spec(R_s)\to\Spec(R)$ und für jeden Morphismus
+  $\Spec(\Quot(A))\to X$ faktorisiert eine Erweiterung
+  $\Spec(A)\to X$ über $\Spec(A)\to X\times_R\Spec(\O_{R,s})$, wo sie
+  eindeutig ist wegen Separiertheit von $X\times_R\Spec(\O_{R,s})$
+  nach Voraussetzung.
+
+  Für Glattheit auf $X$ benötigen wir nur noch, dass $X$ flaches
+  $R$-Schema ist, da $R$ noethersch und $X$ nach Voraussetzung von
+  endlichem Typ ist, also endlich repräsentiert.
+  Sei $x\in X_s\subset X$, $s\in\Spec(R)$. Dann ist der Halm
+  $\O_{X,x}=\O_{X\times_R\O_{R,s},x}$, welcher wegen Glattheit von
+  $X\times_R\O_{R,s}$ flach über $R_s$ ist.
+
+  Es bleibt die \NAbbEig zu zeigen.
   Sei $\K=\Quot(R)$ und betrachte ein glattes $R$-Schema $Y$ sowie
   einen $\K$-Morphismus $\phi_\K\colon Y_\K\to X_\K$ der
   generischen Fasern.
-  Als glattes $R$-Schema ist $Y$ reduziert und insbesondere regulär,
-  weshalb die irreduziblen Komponenten alle offen und disjunkt
-  sind. Wir können also \OE{} annehmen, dass $Y$ integer ist.
-  Sei $s\in\Spec(R)$ ein geschlossener Punkt.
-  Nach Voraussetzung erweitert sich
+  Als glattes $R$-Schema ist $Y$ flach, reduziert und insbesondere
+  regulär, weshalb die irreduziblen Komponenten alle offen und
+  disjunkt sind. Wir können also \OE{} annehmen, dass $Y$ integer ist.
+  Sei $f_\K\colon Y_\K\to X_\K$ ein Morphismus der generischen Fasern.
+  Nach Voraussetzung erweitert sich $f_\K$ für einen geschlossenen
+  Punkt $s\in\Spec(R)$ eindeutig zu einem Morphismus
   \begin{gather*}
-    u_\K\colon
-    Y\times_R\O_{R,s}\times_{\O_{R,s}}\K = Y_\K
-    \longto
-    X_\K = X\times_R\O_{R,s}\times_{\O_{R,s}}\K
+    f_s\colon Y\times_R\O_{R,s}\to X\times_R\O_{R,s}\;,
   \end{gather*}
-  eindeutig zu einem Morphismus
-  \begin{gather*}
-    u(s)\colon Y\times_R\O_{R,s}\to X\times_R\O_{R,s}\;,
-  \end{gather*}
-  da $X\times_R\O_{R,s}$ Néron-Modell seiner generischen Faser ist.
+  da $X\times_R\O_{R,s}$ Néron-Modell seiner generischen Faser $X_\K$
+  ist.
   % Nach \autoref{thm:limesoffenemengen} ist $u_s$ die Einschränkung
   % einer eindeutigen Äquivalenzklasse im direkten Limes
   % $\varinjlim \Hom_{S'}(X\times_S S', Y\times_S S')$ über die
@@ -854,20 +876,19 @@ Wir benötigen dazu folgendes Lemma und Korollar
   % % ??? Warum kann ich eine offene Menge wählen?
   Nach \autoref{thm:allgmorphismuserweiterung} gibt es eine offene
   Umgebung $U(s)$ von $Y\times_R\O_{R,s}$, auf der
-  $u_s|_{Y\times_R\O_{R,s}}$ wiederum
-  eindeutig auf einen Morphismus $u(s)\colon U(s)\to X$ erweitert
+  $f_s|_{Y\times_R\O_{R,s}}$ wiederum
+  eindeutig auf einen Morphismus $u_s\colon U(s)\to X$ erweitert
   wird.
-  Die $u(s)$ stimmen wieder wegen Separiertheit von $X$
+  Die $u_s$ stimmen wieder wegen Separiertheit von $X$
   % TODO: Warum ist X hier separiert?
-  nach
-  \autoref{thm:erweindeutig} auf dem Schnitt ihrer
+  nach \autoref{thm:erweindeutig} auf dem Schnitt ihrer
   Definitionsbereiche überein, die zudem ganz $Y$ überdecken
   ($\Spec(R)$ besteht genau aus seinen
   geschlossen Punkten und dem generischen Punkt, und letzterer ist
   in jeder offenen Teilmenge enthalten).
-  Daher liefert Verkleben einen der eindeutigen $u(s)$ einen
-  eindeutig bestimmten Morphismus $u\colon Y\to X$, der
-  $u_\K|_{Y\cap Y_\K}$ erweitert.
+  Daher liefert Verkleben einen der eindeutigen $u_s$ einen
+  eindeutig bestimmten Morphismus $f\colon Y\to X$, der
+  $f_\K|_{Y\cap Y_\K}$ erweitert.
   D.\,h. die \NAbbEig ist erfüllt.
 \end{proof}
 
@@ -2558,6 +2579,36 @@ elliptischen Kurve
   \cite[8.5, Lemma 7]{bosch}.
 \end{Definition}
 
+% SEPARIERT
+\begin{Definition}[separierter Morphismus]
+  \cite[Theorem 15.8]{wedhorn}
+  
+  Unterschemata separierter Schemata sind wieder separiert:
+  % Sei $S$ Schema, $X$ separiertes $S$-Schema,
+  % $W\overset{\iota}\hookrightarrow X$ Unterschema.
+  % Dann ist
+  % \begin{center}
+  %   \begin{tikzcd}
+  %     W\arrow[r, hook]\arrow[d, "{\Delta}"]
+  %     & X\arrow[d, "{\Delta}"]\\
+  %     W\times_R W \arrow[r, hook] X\times_R X
+  %   \end{tikzcd}
+  % \end{center}
+  % kartesisch, denn es kommutiert und für jedes weitere $V$, so dass
+  % \begin{center}
+  %   \begin{tikzcd}
+  %     V\arrow[r, "\phi"]\arrow[d, "{(\phi_1,\phi_2)}"]
+  %     & X\arrow[d, "{\Delta}"]\\
+  %     W\times_R W \arrow[r, hook] X\times_R X
+  %   \end{tikzcd}
+  % \end{center}
+  % ebenfalls kommutiert bzw. $\iota\circ\phi_1=\phi=\iota\circ\phi_2$,
+  % muss wegen der Injektivität von $\iota$ gelten $\phi_1=\phi_2$ und
+  % $\phi_1$ lässt 
+  
+  % http://math.stackexchange.com/questions/1088879/closed-immersion-of-separated-scheme-is-separated
+\end{Definition}
+
 % EIGENTLICH
 \begin{Definition}[eigentlicher Morphismus]
   % Verallgemeinerung von projektiv; Äquivalent zu kompakt
@@ -2596,6 +2647,11 @@ elliptischen Kurve
     Morphismus $h\colon \Spec(f_*\O_X)\to Y$.
   \end{Bemerkung}
 \end{Definition}
+
+% BEWERTUNGSKRITERIEN
+\begin{Satz}[Bewertungskriterium für Separiertheit/Eigentlichkeit]
+
+\end{Satz}
 
 
 \section{$\K$-Gruppenschemata}
