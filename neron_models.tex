@@ -885,7 +885,6 @@ Wir benötigen dazu folgendes Lemma und Korollar:
   eindeutig auf einen Morphismus $u_s\colon U(s)\to X$ erweitert
   wird.
   Die $u_s$ stimmen wieder wegen Separiertheit von $X$
-  % TODO: Warum ist X hier separiert?
   nach \ref{thm:erweindeutig} auf dem Schnitt ihrer
   Definitionsbereiche überein, die zudem ganz $Y$ überdecken
   ($\Spec(R)$ besteht genau aus seinen
@@ -1118,15 +1117,15 @@ Weierstraßgleichung mit Koeffizienten in $R$.
 % \end{gather*}
 % dem Koeffizientenwechsel
 % \begin{align*}
-%   \beta&\mapsto \pi^{4n}\beta
-%   &\gamma&\mapsto \pi^{6n}\gamma
-%   &\Delta&\mapsto \pi^{12n}\Delta
-% \end{align*}
-% also der Multiplikation der Koeffizienten mit positiven Potenzen von
-% $\pi$ gleich
-% (\cite[1.5, Lemma 2]{neron} oder \cite[Chapter VII.1]{silverman}).
-% Ein Anwenden dieses Koordinatenwechsels mit genügend hohem $n$ ergibt
-% also eine Gleichung mit Koeffizienten in $R$.
+    %     \beta&\mapsto \pi^{4n}\beta
+                 %     &\gamma&\mapsto \pi^{6n}\gamma
+                                %     &\Delta&\mapsto \pi^{12n}\Delta
+                                               %   \end{align*}
+                                               %                                                also der Multiplikation der Koeffizienten mit positiven Potenzen von
+                                               %                                                $\pi$ gleich
+                                               %                                                (\cite[1.5, Lemma 2]{neron} oder \cite[Chapter VII.1]{silverman}).
+                                               %                                                Ein Anwenden dieses Koordinatenwechsels mit genügend hohem $n$ ergibt
+                                               %                                                also eine Gleichung mit Koeffizienten in $R$.
 
 \begin{Definition}[Weierstraßmodell]
   Wir nennen ein projektives $R$-Schema $W=V_+(F)\subset\P_R^2$, das
@@ -1156,13 +1155,13 @@ Form der Weierstraßgleichung in $R$ zu betrachten:
   ist.
 \end{Definition}
 
-% -----
+                                               %                                                -----
 
 \section{Gruppenschemastruktur}
 \subsection{Allg. Eigenschaften}
 Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 
-% INTEGER, PROJEKTIV, FLACH
+                                               %                                                INTEGER, PROJEKTIV, FLACH
 \begin{Lemma}\label{thm:eigweierstrassmodelle}
   Ein Weierstraßmodell $W=V_+(F)$ zu einer Weierstraßgleichung $0=F$
   von $E_\K$ über einem Dedekindring $R$ ist
@@ -1524,11 +1523,13 @@ Weierstraßmodell von $E_\K$ über $R$.
 \begin{Lemma}\label{thm:erwrrational}
   Sei $R$ ein Dedekindring, $\K=\Quot(R)$, $W$ allgemein ein
   eigentliches $R$-Schema, $Y$ lokal noethersches, flaches, reguläres,
-  reduziertes 
+  integeres
   $R$-Schema und $\phi_\K\colon Y_\K\to W_\K$ ein Morphismus auf den
   generischen Fasern.
   Dann erweitert sich $\phi_\K$ eindeutig zu einer
   $R$-rationalen Abbildung $\phi\colon Y\dra W$.
+  Dasselbe gilt für $Y$ glatt, da es dann als reguläres Schema die
+  disjunkte Vereinigung seiner irreduziblen Komponenten ist.
   \begin{proof}
     $\Spec(R)$ und $Y$ sind nach Voraussetzung lokal noethersch,
     außerdem ist $\pi\colon Y\to R$ flach über $R$. Daher 
@@ -1576,7 +1577,7 @@ Weierstraßmodell von $E_\K$ über $R$.
     $\phi$ ist demnach eindeutige $R$-rationale Erweiterung von
     $\phi_\K$.
   \end{proof}
- \end{Lemma}
+\end{Lemma}
 \begin{Bemerkung}
   Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
   überprüft werden:
@@ -1800,10 +1801,10 @@ Weierstraßmodell von $E_\K$ über $R$.
   \end{proof}
 \end{Lemma}
 
-% -----
+                    %                     -----
 
 \section{Minimale reguläre Modelle}
-% exzellent nötig!!! evtl. nur Konstruktion?
+                    %                     exzellent nötig!!! evtl. nur Konstruktion?
 \begin{Definition}
   Sei $R$ Dedekindring (mit perfekten Restklassenkörpern),
   $\K=\Quot(R)$,
@@ -1839,6 +1840,10 @@ Weierstraßmodell von $E_\K$ über $R$.
     $x$  ein diskreter Bewertungsring mit $\K'\coloneqq\Quot(R')$.
     Dann ist das minimale reguläre Modell von $C\times_\K\K'$ genau
     $X_{\text{min}}\times_R R'$.
+    Ist $E\subset X_{\text{min}}$ das Unterschema der glatten Punkte
+    von $X_{\text{min}}$, ist
+    $E\times_R R'\subset X_{\text{min}}\times_R R'$ das Unterschema
+    der glatten Punkte von $X_{\text{min}}\times_R R'$.
   \end{enumerate}
   \begin{proof}
     \begin{enumerate}[label=(\roman*)]
@@ -1868,6 +1873,16 @@ Weierstraßmodell von $E_\K$ über $R$.
       Die Minimalitätseigenschaft von $X_{\text{min}}\times_R R'$
       folgt aus der von $X_{\text{min}}$ und der universellen
       Eigenschaft des Faserprodukts.
+      
+      $E\times_R R'$ ist glattes Unterschema von
+      $X_{\text{min}}\times_R R'$, da glatt stabil unter Basiswechsel
+      ist. Nachdem $Y$ glatt ist, ist ein Punkt in
+      $X_{\text{min}}\times_R Y$ und insbesondere in
+      $X_{\text{min}}\times_R R'\subset
+      X_{\text{min}}\times_R Y$ genau dann glatt, wenn seine
+      Projektion auf $X_{\text{min}}$ glatt ist, also wenn sie in $E$
+      liegt. Damit ist $E\times_R R'$ das Unterschema aller glatten
+      Punkte in $X_{\text{min}}\times_R R'$.
     \end{enumerate}
   \end{proof}
 \end{Satz}
@@ -1950,12 +1965,8 @@ Weierstraßmodell von $E_\K$ über $R$.
   %   \end{enumerate}
   % \end{proof}
 \end{Satz}
-Beweisidee: Wegen \ref{thm:neronmodelllokal} können wir uns auf
-diskrete Bewertungsringe $R$ beschränken.
-…
 
 \section{Äquivalenz zur Gruppenstruktur}
-
 % ÄQ GRUPPENSTRUKTURERW.
 % strikt henselsch nicht nötig!!
 \begin{Lemma}\label{thm:schnittearithmflglatt}
@@ -1965,7 +1976,6 @@ diskrete Bewertungsringe $R$ beschränken.
   Bewertungsring,
   und sei $\phi\colon \Spec(R')\to C$ ein $R$-Morphismus.
   Ist $\phi(\Spec(\K))\in E$, gilt $\im(\phi)\subset E$.
-  % TODO: Voraussetzungen anpassen; regulär stabil unter glattem Basiswechsel?
   \begin{proof}
     Für den generischen Punkt $\phi((0))$ ist dies klar, da die
     generische Faser von $C$ glatt ist, und nach
@@ -2005,9 +2015,7 @@ diskrete Bewertungsringe $R$ beschränken.
     % , bzw. nach \ref{thm:dichtefaser}
     % einer rationalen Abbildung $\phi\colon Y\dra E$, die von $\phi_\K$
     % präsentiert wird.
-    Nach \ref{thm:erwrrational}
-    % TODO: Y integer fehlt
-    erweitert sich $\phi_\K$ auf eine
+    Nach \ref{thm:erwrrational} erweitert sich $\phi_\K$ auf eine
     $R$-rationale Abbildung $\phi\colon Y\dra C$, deren Bild nach dem
     vorhergehenden Lemma~\ref{thm:schnittearithmflglatt} in $E$
     liegt.
@@ -2015,60 +2023,60 @@ diskrete Bewertungsringe $R$ beschränken.
     Wir werden den Beweis durch Widerspruch führen.
     Angenommen, $\phi\colon Y\dra E$ sei kein Morphismus.
     Da $E$ $R$-Gruppenschema, $Y$ glatt und $\phi$ eine
-      $R$-rationale Abbildung ist, hat $Y\setminus\Dom(\phi)$
-      Kodimension 1 nach \ref{thm:rationalzumorphismus}.
-      D.\,h. es gibt ein irreduzibles, geschlossenes Unterschema
-      $Z\subset Y$ der Kodimension 1, auf dessen generischem Punkt
-      $\eta_Z$ die $R$-rationale Abbildung $\phi$ nicht definiert ist.
-      % Dies ist äquivalent dazu, dass $\phi$ nicht im generischen Punkt
-      % $\eta_Z$ von $Z$ definiert ist, da jede offene Teilmenge $U$ von
-      % $Z$ Umgebung von $\eta_Z$ ist.
-      $\O_{Y,\eta_Z}$ ist diskreter Bewertungsring, da er von
-      Dimension~1 ist, regulär ($Y$ glatt, also
-      regulär) und lokal ist.
-      Sein Quotientenkörper ist der Quotienten-~bzw. Restklassenkörper
-      eines generischen Punkts $\eta$ der irreduziblen Komponente von
-      $X$, in der $\eta_Z$ liegt. Wir erhalten somit ein kommutatives
-      Diagramm
-      \begin{center}
-        \begin{tikzcd}
-          \eta\arrow[r, equal]
-          &\Spec(\k(\eta))
-          \arrow[r, "{\phi_\K|_{\eta}}"] \arrow[d]
-          & E_\K \arrow[r, hook]
-          & C\arrow[d]\\
-          \eta\cup\eta_Z\arrow[r, equal]
-          &\Spec(\O_{Y,\eta_Z}) \arrow[rr]
-          \arrow[urr, dashed, "{\exists!}", out=20, in=215]
-          && \Spec(R)
-        \end{tikzcd}
-      \end{center}
-      $C$ ist nach Voraussetzung eigentlich, daher erweitert sich
-      $\phi_\K|_{\eta}$ nach dem Bewertungskriterium für
-      Eigentlichkeit auf einen Morphismus
-      $\phi|_{\O_{Y,\eta_Z}}\colon\Spec(\O_{Y,\eta_Z})\to C$.
+    $R$-rationale Abbildung ist, hat $Y\setminus\Dom(\phi)$
+    Kodimension 1 nach \ref{thm:rationalzumorphismus}.
+    D.\,h. es gibt ein irreduzibles, geschlossenes Unterschema
+    $Z\subset Y$ der Kodimension 1, auf dessen generischem Punkt
+    $\eta_Z$ die $R$-rationale Abbildung $\phi$ nicht definiert ist.
+    % Dies ist äquivalent dazu, dass $\phi$ nicht im generischen Punkt
+    % $\eta_Z$ von $Z$ definiert ist, da jede offene Teilmenge $U$ von
+    % $Z$ Umgebung von $\eta_Z$ ist.
+    $\O_{Y,\eta_Z}$ ist diskreter Bewertungsring, da er von
+    Dimension~1 ist, regulär ($Y$ glatt, also
+    regulär) und lokal ist.
+    Sein Quotientenkörper ist der Quotienten-~bzw. Restklassenkörper
+    eines generischen Punkts $\eta$ der irreduziblen Komponente von
+    $X$, in der $\eta_Z$ liegt. Wir erhalten somit ein kommutatives
+    Diagramm
+    \begin{center}
+      \begin{tikzcd}
+        \eta\arrow[r, equal]
+        &\Spec(\k(\eta))
+        \arrow[r, "{\phi_\K|_{\eta}}"] \arrow[d]
+        & E_\K \arrow[r, hook]
+        & C\arrow[d]\\
+        \eta\cup\eta_Z\arrow[r, equal]
+        &\Spec(\O_{Y,\eta_Z}) \arrow[rr]
+        \arrow[urr, dashed, "{\exists!}", out=20, in=215]
+        && \Spec(R)
+      \end{tikzcd}
+    \end{center}
+    $C$ ist nach Voraussetzung eigentlich, daher erweitert sich
+    $\phi_\K|_{\eta}$ nach dem Bewertungskriterium für
+    Eigentlichkeit auf einen Morphismus
+    $\phi|_{\O_{Y,\eta_Z}}\colon\Spec(\O_{Y,\eta_Z})\to C$.
     \ref{thm:morphismuserweiterung} besagt, dass sich
-      dieser auf eine offene Umgebung $U_Z$ von $\eta_Z$ erweitert,
-      was bedeutet, dass $\phi|_{U_Z}\colon U_Z\dra E\hookrightarrow C$
-      Morphismus ist.
+    dieser auf eine offene Umgebung $U_Z$ von $\eta_Z$ erweitert,
+    was bedeutet, dass $\phi|_{U_Z}\colon U_Z\dra E\hookrightarrow C$
+    Morphismus ist.
     Nun ist aber $\eta\in E_\K$, also
-      $\phi|_{\O_{Y,\eta_Z}}(\eta)\in E$, weshalb nach
-      \ref{thm:schnittearithmflglatt}
-      $\im(\phi|_{\O_{Y,\eta_Z}})\subset E$.
-      Wir können demnach eine glatte, offene Umgebung von
-      $\im(\phi|_{\O_{Y,\eta_Z}})$ wählen, deren Urbild $U$ unter
-      $\phi|_{U_Z}$ entsprechend wieder offen in $U_Z$, also $Y$, ist.
-      Insgesamt ist $\phi|_U\colon U\to E$ ein Morphismus, was
-      bedeutet, dass $\phi$ entgegen der Annahme in $\eta_Z$ definiert
-      ist.
-      Damit muss $\phi\colon Y\to E$ Morphismus sein, sprich die
-      \NAbbEig für $E$ ist erfüllt.
-      
+    $\phi|_{\O_{Y,\eta_Z}}(\eta)\in E$, weshalb nach
+    \ref{thm:schnittearithmflglatt}
+    $\im(\phi|_{\O_{Y,\eta_Z}})\subset E$.
+    Wir können demnach eine glatte, offene Umgebung von
+    $\im(\phi|_{\O_{Y,\eta_Z}})$ wählen, deren Urbild $U$ unter
+    $\phi|_{U_Z}$ entsprechend wieder offen in $U_Z$, also $Y$, ist.
+    Insgesamt ist $\phi|_U\colon U\to E$ ein Morphismus, was
+    bedeutet, dass $\phi$ entgegen der Annahme in $\eta_Z$ definiert
+    ist.
+    Damit muss $\phi\colon Y\to E$ Morphismus sein, sprich die
+    \NAbbEig für $E$ ist erfüllt.
+    
     % \item Also kann $\phi(\eta_Z)$ nicht in $E$ liegen. Ansonsten
     %   wäre $\phi\colon Y\dra E$ auf dem Urbild einer genügend kleinen
     %   Umgebung von $\eta_Z$ in $E$ Morphismus und entgegen der Annahme in
     %   $\eta_Z$ definiert.
-    %   % C integer, urbilder dichter Mengen dicht
+    %   %   C integer, urbilder dichter Mengen dicht
     % \item[?] $\phi(\eta_Z)\not\in E$ ist äquivalent dazu, dass für
     %   jeden geschlossenen (also $k$-wertigen) Punkt $x\in Z\setminus
     %   X_\K$, in dem $\phi$ definiert ist, $\phi(x)\not\in E$ gilt.
@@ -2112,9 +2120,9 @@ diskrete Bewertungsringe $R$ beschränken.
 \end{Satz}
 
 \section{Fall strikt henselscher Ringe}
-% Nur Erweiterung der Gruppenstruktur!
+                %                 Nur Erweiterung der Gruppenstruktur!
 \subsection{Strikt henselsche Ringe}
-% HENSELSCHE RINGE
+                %                 HENSELSCHE RINGE
 \begin{Definition}[henselsche Ringe]\label{def:henselscheringe}
   \optcite[2.3, Proposition 4]{neron}
   \optcite[Chapter IV.6]{silverman2}
@@ -2203,17 +2211,18 @@ diskrete Bewertungsringe $R$ beschränken.
   Faser $X_k$.
   Die Einschränkung
   \begin{gather*}
-    X(R)\longto X_k(k)
+    X(R)\longto X_k(k)\hookrightarrow X_k
   \end{gather*}
   ist
   \begin{enumerate}[label=(\roman*)]
   \item surjektiv, falls $R$ henselsch ist.
-  \item surjektiv mit dichtem Bild, falls $R$ strikt henselsch ist.
+  \item surjektiv mit dichtem Bild in der speziellen Faser $X_k$,
+    falls $R$ strikt henselsch ist.
   \end{enumerate}
 \end{Satz}
 
 \subsection{Nachweis der Gruppenstruktur für strikt henselsche Ringe}
-% ERWEITERUNG DER GRUPPENSTRUKTUR
+    %     ERWEITERUNG DER GRUPPENSTRUKTUR
 \begin{Satz}\label{thm:egruppenschema}
   Sei $R$ strikt henselscher diskreter Bewertungsring mit perfektem
   Restklassenkörper $k$ und $\K$, $E_\K$, $C$, $E$ wieder wie in
@@ -2348,23 +2357,43 @@ diskrete Bewertungsringe $R$ beschränken.
           definiert ist, muss $g$ auch auf $\eta_Z$ definiert sein,
           was ein Widerspruch ist.
         \item[$f$ Morphismus] Eine Translation $\tau_P^G\colon G\to G$
-          auf $G$ um einen Schnitt $P$ liefert eine Translation, also
-          einen $\K$-Automorphismus auf $E_\K$. Dieser erweitert sich
-          nach \ref{thm:eigminmodell} auf einen $R$-Automorphismus
-          $\tau_P^E\colon E\to E$ auf $E$, so dass überall, wo es
-          definiert ist, gilt
+          auf $G$ um einen Schnitt $P$ liefert eine Translation
+          $\tau_P\coloneqq\tau_P^G|_{E_\K}$, also einen
+          $\K$-Automorphismus auf $E_\K$ mit Inversem
+          $\tau_{(-P)}=\tau_{(-P)}^G$. Diese 
+          erweitern sich nach \ref{thm:eigminmodell} zu zueinander
+          inversen $R$-Automorphismen
+          $\tau_P^E,\tau_{(-P)}^E\colon E\to E$ auf $E$.
+          Überall, wo es definiert ist, gilt
           \begin{gather*}
-            f = \tau_P^E\circ f\circ \tau_P^G
+            f = \tau_{(-P)}^E\circ f\circ \tau_P^G
           \end{gather*}
-          % TODO: Warum?
-          Für jedes $g\in G$, so dass es einen Schnitt $P$ gibt mit
-          $\tau_P^G(g)\in\Dom(f)$, kann $f$ also auf eine Umgebung von
-          $g$ ausgeweitet werden.
-          % TODO: Wie?
-          Da aber $R$ nach Voraussetzung strikt henselsch ist, …
+          da beides die eindeutigen Erweiterungen von $f|_{E_\K}$
+          sind, wo $\tau_P=\tau_P^E|_{E_\K}=\tau_P^G|_{E_\K}$
+          Automorphismus ist.
+          
+          Für jedes $\beta\in G$, so dass es einen Schnitt $P$ gibt mit
+          $\tau_P^G(\beta)\in\Dom(f)$, ist $\tau_{(-P)}^E\circ f\circ
+          \tau_P^G$ also eine eindeutige Erweiterung von $f|_{E_\K}$
+          bzw. $f$ auf $\beta$.
+          Wir können also durch Translation den Definitionsbereich von
+          $f$ für passende $\beta$ erweitern.
+
+          Jetzt können wir nutzen, dass $R$ nach Voraussetzung strikt
+          henselsch ist. Das bedeutet nach
+          \ref{thm:eigstrikthenselsch}, dass die Menge der Bildpunkte
+          aller Schnitte $P\colon\Spec(R)\to G$ dicht in der
+          speziellen Faser liegt.
+          Insbesondere findet man in jeder offenen Umgebung eines
+          Punkts $\beta\in G$ einen Punkt, um den man mithilfe einer
+          Translation den Defintionsbereich von $f$ ausweiten kann, wie
+          oben beschrieben.
+          Damit ist $g$ in allen Punkten von $G$ definiert und somit
+          Morphismus.
         \end{description}
       \end{proof}
     \end{Lemma}
+
     Dies beendet den Beweis zu \ref{thm:egruppenschema}.
   \end{proof}
 \end{Satz}
@@ -2372,6 +2401,14 @@ diskrete Bewertungsringe $R$ beschränken.
 
 \section{Allgemeine Existenz}
 \begin{proof}[Beweis von \ref{thm:exneronmodelle}]
+  Wegen \ref{thm:neronmodelllokal} können wir uns auf
+  diskrete Bewertungsringe $R$ beschränken.
+  Betrachte also einen diskreten Bewertungsring $R$ mit perfektem
+  Restklassenkörper, eine elliptische Kurve $E_\K$ über $\K=\Quot(R)$,
+  ein minimales Modell $X$ von $E_\K$ über $R$ und dessen Unterschema
+  der glatten Punkte $E$.
+  Sei $\Rsh$ die strikte Henselisierung von $R$.
+  
   treuflacher Abstieg
 \end{proof}
 
@@ -2389,7 +2426,7 @@ elliptischen Kurve
 \appendix
 \chapter{Verwendete Definitionen}
 \section{Dedekindringe}
-% DEDEKINDRINGE
+              %               DEDEKINDRINGE
 \begin{Definition}[Dedekindring]\label{def:dedekindring}
   \optcite[S.\,40]{hartshorne}\optcite[Definition B.84]{wedhorn}
   Ein Integritätsring $R$ heißt Dedekindring, wenn er eine der
@@ -2445,7 +2482,7 @@ elliptischen Kurve
 \end{Definition}
 
 \section{Eigenschaften von Schemata}
-% REDUZIERT
+              %               REDUZIERT
 \begin{Definition}[reduziert, geometrisch reduziert]
   Ein Schema heißt reduziert, falls alle Halme reduzierte Ringe sind
   (d.\,h. $\Nil(0)=(0)$).
@@ -2455,7 +2492,7 @@ elliptischen Kurve
   Faser reduziert ist. 
 \end{Definition}
 
-% LOKAL VON ENDLICHEM TYP
+              %               LOKAL VON ENDLICHEM TYP
 \begin{Definition}[lokal von endlichem Typ]
   Ein Morphismus $f\colon X\to Y$ von Schemata heißt lokal von endlichem
   Typ, wenn lokal auf affinen offenen Teilmengen $V\subset Y$ die
@@ -2467,7 +2504,7 @@ elliptischen Kurve
   quasikompakt (Urbilder quasikompakter Mengen sind quasikompakt) ist.
 \end{Definition}
 
-% REGULÄR
+              %               REGULÄR
 \begin{Definition}[Regulär]
   Ein Schema $X$ heißt regulär im Punk $x\in X$, wenn sein Halm
   $\O_{X,x}$ ein regulärer (lokaler) Ring ist
@@ -2480,7 +2517,7 @@ elliptischen Kurve
 \end{Definition}
 
 \section{Eigenschaften von Morphismen von Schemata}
-% FLACH
+              %               FLACH
 \begin{Definition}[flacher Morphismus]
   \optcite{bosch, goodreduction}
   Ein Morphismus $f\colon X\to Y$ von Schemata ist flach, wenn alle
@@ -2495,8 +2532,8 @@ elliptischen Kurve
   Insbesondere ist dann die generische Faser nichtleer und dicht in $X$.
 \end{Bemerkung}
 
-% UNVERZWEIGT
-% ??? Unverzweigt <=> Glatt für diskr. BWR?
+              %               UNVERZWEIGT
+              %               ??? Unverzweigt <=> Glatt für diskr. BWR?
 \begin{Definition}[unverzweigter Morphismus]
   Ein Morphismus $f\colon X\to S$ von Schemata heißt unverzweigt im
   Punkt $x\in X$, falls es eine offene Umgebung
@@ -2522,7 +2559,7 @@ elliptischen Kurve
   \end{Bemerkung}
 \end{Definition}
 
-% GLATT
+              %               GLATT
 \begin{Definition}[glatter Morphismus]
   \optcite[8.5, Definition 1]{bosch}
   Ein Morphismus $f\colon X\to S$ von Schemata heißt glatt im Punkt
@@ -2564,7 +2601,7 @@ elliptischen Kurve
   \end{Bemerkung}
 \end{Definition}
 
-% ÉTALE
+    %     ÉTALE
 \begin{Definition}[étaler Morphismus]% Äquivalent zu lokal umkehrbar
   \optcite[8.5, Definition 1 und Corollary 12]{bosch}  
   Ein Morphismus $f\colon X\to Y$ von $S$-Schemata heißt étale in
@@ -2584,7 +2621,7 @@ elliptischen Kurve
   \cite[8.5, Lemma 7]{bosch}.
 \end{Definition}
 
-% SEPARIERT
+    %     SEPARIERT
 \begin{Definition}[separierter Morphismus]
   \cite[Theorem 15.8]{wedhorn}
   
@@ -2614,7 +2651,7 @@ elliptischen Kurve
   % http://math.stackexchange.com/questions/1088879/closed-immersion-of-separated-scheme-is-separated
 \end{Definition}
 
-% EIGENTLICH
+    %     EIGENTLICH
 \begin{Definition}[eigentlicher Morphismus]
   % Verallgemeinerung von projektiv; Äquivalent zu kompakt
   Ein Morphismus $f\colon X\to Y$ heißt eigentlich, wenn er eine der
@@ -2653,14 +2690,14 @@ elliptischen Kurve
   \end{Bemerkung}
 \end{Definition}
 
-% BEWERTUNGSKRITERIEN
+          %           BEWERTUNGSKRITERIEN
 \begin{Satz}[Bewertungskriterium für Separiertheit/Eigentlichkeit]
 
 \end{Satz}
 
 
 \section{$\K$-Gruppenschemata}
-% GUTE REDUKTION
+          %           GUTE REDUKTION
 \begin{Definition}[Gute Reduktion]\label{def:gutereduktion}
   % $X/S$ hat Gute Reduktion nach dem Primideal $P\in S$ heißt, dass die
   % Faser $X_P$ Glattheit erhält.
@@ -2699,7 +2736,7 @@ elliptischen Kurve
   Alternative Definition für elliptische Kurven: \cite[Chapter VII.5]{silverman}
 \end{Definition}
 
-% VARIETÄT, ELLIPTISCHE KURVE
+        %         VARIETÄT, ELLIPTISCHE KURVE
 \begin{Definition}[Varietät]
   \cite[Theorem 3.37]{wedhorn}
   Eine affine Varietät über einem Körper $\K$ ist eine Unterprägarbe der
