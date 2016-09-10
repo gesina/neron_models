@@ -10,7 +10,7 @@
 \titlehead{Betreuer: Prof.\,Dr.\,Kerz\\ Universität Regensburg}
 \subject{Bachelorarbeit}
 \title{
-  Néron-Modelle Elliptischer Kurven
+  Néron-Modelle elliptischer Kurven
 }
 \author{Gesina Schwalbe}
 
@@ -21,7 +21,7 @@
 
 \chapter{Motivation}
 Wir werden nur elliptische Kurven über Körpern der Charakteristik
-ungleich 2, 3 betrachten und die Restklassenkörper der Dedekindringe
+ungleich~2, 3 betrachten und die Restklassenkörper der Dedekindringe
 seien perfekt.
 
 Für Ringe $R$ wird $R$ stellenweise als Kürzel für das zugehörige
@@ -1757,8 +1757,10 @@ Weierstraßmodell von $E_\K$ über $R$.
       = \phi^\#(\m_{X,x})^2
       = \p^2
     \end{gather*}
-    Dies ist ein Widerspruch, da $\p\subset R$ Maximalideal ist. Also
-    gilt $\pi^\#(\p)\not\subset\m_{X,x}^2$.
+    Dies ist ein Widerspruch, da $\p\subset R_\p$ Maximalideal eines
+    diskreten Bewertungsringes ist und deshalb wegen Regularität von
+    $R_\p$ gelten muss $\p/\p^2\neq 0$.
+    Also gilt $\pi^\#(\p)\not\subset\m_{X,x}^2$.
 
     Nach \ref{eq:stalkdimension} gilt
     $\dim\O_{X,x}=\dim R_\p+\dim\O_{X_\p,x}=2$ und $X$ ist nach
@@ -1770,7 +1772,7 @@ Weierstraßmodell von $E_\K$ über $R$.
     \end{gather}
     Wegen $\pi^\#(\p)\not\subset\m_{X,x}^2$ gibt es ein
     $t\in\pi^\#(\p)\setminus\m_{X,x}^2\subset\m_{X,x}$.
-    \ref{eq:maximalideal} bedeutet für $t$, dass es $\alpha_1,
+    \eqref{eq:maximalideal} bedeutet für $t$, dass es $\alpha_1,
     \alpha_2\in\O_{X,x}$ gibt, so dass
     \begin{gather*}
       t = \alpha_1 f_1 + \alpha_2 f_2 \mod \m_{X,x}^2
@@ -1788,7 +1790,7 @@ Weierstraßmodell von $E_\K$ über $R$.
     \end{gather}
 
     Für den lokalen Ring $\O_{X_\p,x}$ von $x$ in der generischen
-    Faser $X_\p = X\times_R R/\p$ gilt
+    Faser $X_\p = X\times_R (R/\p)$ gilt
     \begin{align*}
       \O_{X_\p,x} &= \O_{X,x}/\pi^\#(\p)\\
       \m_{X_\p,x} &= \m_{X,x}/\pi^\#(\p)
@@ -1828,7 +1830,7 @@ Weierstraßmodell von $E_\K$ über $R$.
 \begin{Satz}\label{thm:eigminmodell}
   Minimale Modelle haben folgende Eigenschaften
   \begin{enumerate}[label=(\roman*)]
-  \item Minimale Modelle sind eindeutig, wenn sie existieren.
+  \item Minimale Modelle sind eindeutig.
   \item\optcite[Proposition IV.4.6]{silverman2}
     Für ein minimales Modell $X_{\text{min}}$ für $C/\K$ über $R$
     gilt, dass jeder $\K$"=Automorphismus von $C$ sich zu
@@ -1866,8 +1868,8 @@ Weierstraßmodell von $E_\K$ über $R$.
       glatten Punkte.
     \item Die Eigenschaften flach, projektiv und integer sind stabil
       unter Basiswechsel. Regulär ist stabil unter glattem
-      Basiswechsel, weshalb $C\times_R Y$ regulär ist.
-      % TODO!!! Warum ist regulär stabil unter glattem Basiswechsel?
+      Basiswechsel \cite[Chapter 2.3, Page 49]{neron}, weshalb
+      $C\times_R Y$ regulär ist.
       Nachdem $C\times_R R'$ dieselben Halme hat, ist es ebenfalls
       regulär.
       Die Minimalitätseigenschaft von $X_{\text{min}}\times_R R'$
@@ -2340,7 +2342,7 @@ Weierstraßmodell von $E_\K$ über $R$.
       \end{proof}
     \end{Lemma}
 
-    \begin{Lemma}
+    \begin{Lemma}\label{thm:äqgruppenschema}
       Sei nach \ref{thm:weil} $G$ das zu $E$ $R$-birationale
       Gruppenschema. Dann ist $G$ isomorph zu $E$.
       \begin{proof}
@@ -2408,8 +2410,29 @@ Weierstraßmodell von $E_\K$ über $R$.
   ein minimales Modell $X$ von $E_\K$ über $R$ und dessen Unterschema
   der glatten Punkte $E$.
   Sei $\Rsh$ die strikte Henselisierung von $R$.
-  
-  treuflacher Abstieg
+
+  Nach \cite[Chapter 2.4, Corollary 9]{neron} ist $\Rsh$ treuflach
+  über $R$ und unverzweigt per Konstruktion,
+  \cite[vgl.][Chapter 2.3, Proposition 11]{neron}.
+  Daher ist $\Rsh$ insbesondere étale über $R$ und nach
+  \ref{thm:eigminmodell} ist $C\times_R\Rsh$ ein minimales Modell von
+  $E_\Ksh=E_\K\times_\K\Ksh$ über $\Rsh$ mit Unterschema
+  $E\times_R\Rsh$ der glatten Punkte.
+  Wir wissen also aus \ref{thm:egruppenschema}, dass $E\times_R\Rsh$
+  das Néron-Modell von $E_\Ksh$ über $\Rsh$ ist.
+
+  Für die \NAbbEig von $E$ sei $Y$ glattes $R$-Schema und
+  $\phi_\K\colon Y_\K\to E_\K$ Morphismus auf den generischen Fasern.
+  $Y\times_R\Rsh$ ist glattes $\Rsh$-Schema, da Glattheit stabil unter
+  Basiswechsel ist. Daher erweitert sich der Basiswechsel
+  $\phi_\Ksh\colon Y_\Ksh\to E_\Ksh$ von $\phi_\K$ wegen der \NAbbEig
+  von $E\times_R\Rsh$ auf einen Morphismus $\phi_\Rsh\colon
+  Y\times_R\Rsh\to E\times_R\Rsh$.
+  Wegen treuflachem Abstieg wissen wir, dass $\phi_\K$ sich ebenfalls
+  zu einem Morphismus $\phi\colon Y\to E$ erweitert,
+  \cite[siehe][Chapter 6]{neron}.
+
+  Somit ist $E$ Néron-Modell von $E_\K$.
 \end{proof}
 
 
@@ -2601,7 +2624,7 @@ elliptischen Kurve
   \end{Bemerkung}
 \end{Definition}
 
-    %     ÉTALE
+% ÉTALE
 \begin{Definition}[étaler Morphismus]% Äquivalent zu lokal umkehrbar
   \optcite[8.5, Definition 1 und Corollary 12]{bosch}  
   Ein Morphismus $f\colon X\to Y$ von $S$-Schemata heißt étale in
@@ -2621,7 +2644,7 @@ elliptischen Kurve
   \cite[8.5, Lemma 7]{bosch}.
 \end{Definition}
 
-    %     SEPARIERT
+% SEPARIERT
 \begin{Definition}[separierter Morphismus]
   \cite[Theorem 15.8]{wedhorn}
   
@@ -2651,7 +2674,7 @@ elliptischen Kurve
   % http://math.stackexchange.com/questions/1088879/closed-immersion-of-separated-scheme-is-separated
 \end{Definition}
 
-    %     EIGENTLICH
+% EIGENTLICH
 \begin{Definition}[eigentlicher Morphismus]
   % Verallgemeinerung von projektiv; Äquivalent zu kompakt
   Ein Morphismus $f\colon X\to Y$ heißt eigentlich, wenn er eine der
@@ -2690,14 +2713,14 @@ elliptischen Kurve
   \end{Bemerkung}
 \end{Definition}
 
-          %           BEWERTUNGSKRITERIEN
+% BEWERTUNGSKRITERIEN
 \begin{Satz}[Bewertungskriterium für Separiertheit/Eigentlichkeit]
 
 \end{Satz}
 
 
 \section{$\K$-Gruppenschemata}
-          %           GUTE REDUKTION
+% GUTE REDUKTION
 \begin{Definition}[Gute Reduktion]\label{def:gutereduktion}
   % $X/S$ hat Gute Reduktion nach dem Primideal $P\in S$ heißt, dass die
   % Faser $X_P$ Glattheit erhält.
