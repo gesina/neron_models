@@ -2337,7 +2337,8 @@ Weierstraßmodell von $E_\K$ über $R$.
         von $(E\times_R E)_k=E_k\times_k E_k$ definiert ist.
         Mit $\tilde\tau$ statt $\tau$ erhält man dasselbe für $\psi$.
         \paragraph{Inverses $R$-birational}
-        …
+        Für die Birationalität von $\phi$ bzw. $\psi$ siehe
+        \cite[Propsition IV.6.10]{silverman2}.
         % TODO!! Warum birational?
       \end{proof}
     \end{Lemma}
@@ -2428,9 +2429,11 @@ Weierstraßmodell von $E_\K$ über $R$.
   $\phi_\Ksh\colon Y_\Ksh\to E_\Ksh$ von $\phi_\K$ wegen der \NAbbEig
   von $E\times_R\Rsh$ auf einen Morphismus $\phi_\Rsh\colon
   Y\times_R\Rsh\to E\times_R\Rsh$.
-  Wegen treuflachem Abstieg wissen wir, dass $\phi_\K$ sich ebenfalls
-  zu einem Morphismus $\phi\colon Y\to E$ erweitert,
-  \cite[siehe][Chapter 6]{neron}.
+  Nach \cite[Chapter 6.1, Theorem 6]{neron} ist wegen Treuflachheit
+  von $\pi\colon\Spec(\Rsh)\to\Spec(R)$ der Basiswechselfunktor
+  $X\mapsto \pi^*X=X\times_R\Rsh$ volltreu. Deshalb erhalten wir einen
+  treuflachen Abstieg $\phi\colon Y\to E$ von $\phi_\Rsh$, der
+  $\phi_\K$ erweitert.
 
   Somit ist $E$ Néron-Modell von $E_\K$.
 \end{proof}
