@@ -41,6 +41,7 @@ $X\times_{\Spec(R)}\Spec(\K)$ gemeint).
 \begin{Satz}[Bewertungskriterium für Separiertheit/Eigentlichkeit]
 \end{Satz}
 
+
 % TODO: Einleitung
 Idee Néron-Modell:
 \begin{itemize}
@@ -57,6 +58,13 @@ Inhalt:
   abelsch?
 \item Spezialfall elliptische Kurven: Vom Weierstraßmodell zum
   Néron-Modell (insb. Existenz)
+\end{itemize}
+
+Benötigte Begriffe:
+\begin{itemize}
+\item Grundbegriffe Schemata
+\item eigentlich, separiert, Bewertungskriterium
+\item Dedekindring, diskreter Bewertungsring
 \end{itemize}
 
 % ----------
@@ -442,7 +450,7 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
     Das schematische Bild $\Im(\epsilon_\K)$ von $\epsilon_\K$ ist
     hier nach \cite[Remark 10.32]{wedhorn} genau
     $\overline{\im(\epsilon_\K)}=\overline{\{\epsilon_\K(\Spec(\K))\}}$
-    mit reduzierter Unterschemastruktur. Daher ist es integral mit
+    mit reduzierter Unterschemastruktur. Daher ist es integer mit
     generischem Punkt $e_\K\coloneqq\epsilon_\K(\Spec(\K))$,
     $\Spec(A)$ als offenes Unterschema ebenfalls und
     $\O_{\Im(\epsilon_\K), e_\K}=\O_{A,e_\K}$ ist Körper.
@@ -556,7 +564,7 @@ folgenden Sinne:
     Im geschlossenen, irreduziblen, reduzierten Unterschema $V_y$ mit
     topologischem Raum $\overline{\{y\}}\subset Y$ ist
     $\dim_{V_y}(x)=1$.
-    $V_y$ ist integral, $\Spec(\O_{V_y,x})=\{x,y\}$ und daher 
+    $V_y$ ist integer, $\Spec(\O_{V_y,x})=\{x,y\}$ und daher 
     $\O_{V_y,x}$ ein Bewertungsring mit
     $y=(0)\in\Spec(\O_{V_y,x})$ und $\Quot(\O_{V_y,x})=\k(y)$.
     Nach dem Bewertungskriterium für Separiertheit von $W$ ist
@@ -962,7 +970,7 @@ Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
     da $A$ nach Voraussetzung bereits glatt und eigentlich ist).
     \begin{description}
     \item[$A$ isomorph zu $X$] $X$ ist glatt, also nach
-      \ref{thm:implikationenglatt} flaches und lokal endlich
+      \ref{thm:eigglatt} flaches und lokal endlich
       präsentiertes, $R$-Schema.
       Als solches ist es (universell) offen \cite[Theorem 14.33]{wedhorn}
       und somit zusammenhängend nach \cite[Proposition 3.24]{wedhorn},
@@ -1057,7 +1065,7 @@ Gruppenschemastruktur abelsch ist:
 % ----------
 
 
-\chapter{Weierstraßmodelle}
+\chapter{Weierstraßmodelle}\label{chap:weierstraßmodell}
 \section{Konstruktion}
 \subsection{Weierstraßgleichungen}
 Jede elliptische Kurve $E_\K$ über einem beliebigen Körper $\K$ kann
@@ -1609,7 +1617,7 @@ Weierstraßmodell von $E_\K$ über $R$.
   Weierstraßgleichung gilt.
 \end{Bemerkung}
 
-
+% ------
 
 \chapter{Arithmetische Flächen}
 \section{Definition}
@@ -1642,9 +1650,65 @@ Weierstraßmodell von $E_\K$ über $R$.
 \begin{Beispiel}
   Ein reguläres Weierstraßmodell einer elliptischen Kurve ist
   arithmetische Fläche.
-  Beachte, dass $W$ regulär, aber nicht glatt, also singulär in einer
-  Faser, sein kann.
+  Beachte, dass $W$ regulär sein kann, aber dennoch nicht glatt, also
+  singulär in einer Faser.
 \end{Beispiel}
+
+\begin{Satz}\label{thm:exarithfl}
+  Für eine elliptische Kurve $E_\K$ über $\K$ existiert eine
+  arithmetische Fläche über $R$, deren generische Faser $E_\K$ ist.
+  \begin{proof}
+    Aus \autoref{chap:weierstraßmodell} wissen wir, dass wir zu $E_\K$
+    ein Weierstraßmodell $W$ über $R$ finden, d.\,h. ein projektives,
+    integeres, flaches $R$-Schema, dessen generische Faser genau
+    $E_\K$ ist. Zur arithmetischen Fläche fehlt $W$ also nur
+    noch die Regularität.
+    \cite[Corollary 8.3.51]{liu} besagt nun, dass $W$ eine starke,
+    projektive Desingularisierung besitzt. D.\,h. es gibt ein
+    projektives, reguläres $W$-Schema $\pi\colon Z\to W$, das
+    birational und ein Isomorphismus auf den regulären Punkten von $W$
+    ist.
+    Birationale Abbildungen erhalten per Definition
+    Irreduzibilitätskomponenten, Reduziertheit und Dimension.
+    Daher ist $Z$ insbesondere wie $W$ integer
+    und von Dimension~2.
+
+    Weiterhin schicken birationale Morphismen generische Punkte auf
+    generische Punkte, weshalb das reduzierte Schema $Z$ flach über
+    $R$ ist nach \cite[Proposition III.9.7]{hartshorne}, weil
+    $W$ flach über $R$ ist.
+
+    Außerdem hat $Z$ dieselbe generische Faser $E_\K$, da
+    $W$ in $E_\K$ glatt, insbesondere regulär ist.
+    Insgesamt ist $Z$ arithmetischen Fläche über $R$ mit
+    generischer Faser $E_\K$.
+  \end{proof}
+\end{Satz}
+
+\begin{Bemerkung}
+  Die Desingularisierung von $W$ kann man induktiv durch eine
+  Abfolge von abwechselnden Normalisierungen und Blow-Ups konstruieren:
+  \begin{gather*}
+    Z=Z_{n}\to Z_{n-1}'\to Z_{n-1}\to\dotsb
+    \to Z_{2}\to Z_{1}'\to Z_{1}\to Z_{0}'=W
+  \end{gather*}
+  Die $Z_i\to Z_{i-1}'$ sind die Normalisierung der $Z_{i-1}'$,
+  d.\,h. birationale, integere Morphismen mit normalen $Z_{i}$ (welche
+  wegen Birationalität auch wieder integer sind). Sie existieren nach
+  \cite[Proposition 4.1.22]{liu}.
+  
+  Die $Z_{i}'\to Z_{i}$ sind Blow-ups entlang des singulären Teils von
+  $Z_{i}$, der in unserem Fall jeweils geschlossen ist.
+  Zu Blow-Ups siehe auch
+  \cite[Chapter 8.1]{liu} oder \cite[Chapter 13.19]{wedhorn}.
+  Wichtig hier ist, dass Blow-Ups außerhalb des aufgeblähten Bereichs
+  Isomorphismen sind, also insbesondere unsere generische Faser und
+  die Eigenschaft integral erhalten.
+
+  \cite[Corollary 8.3.51]{liu} besagt, dass diese Folge in endlich
+  vielen Schritten ein reguläres $Z_{n}$ liefert.
+\end{Bemerkung}
+
 % -----
 \section{Eigenschaften}
 \begin{Satz}\label{thm:ratpkteregulaeremodelle}
@@ -1825,10 +1889,10 @@ Weierstraßmodell von $E_\K$ über $R$.
   \end{proof}
 \end{Lemma}
 
-                    %                     -----
+% -----
 
 \section{Minimale reguläre Modelle}
-                    %                     exzellent nötig!!! evtl. nur Konstruktion?
+% exzellent nötig!!! evtl. nur Konstruktion?
 \begin{Definition}
   Sei $R$ Dedekindring (mit perfekten Restklassenkörpern),
   $\K=\Quot(R)$,
@@ -1911,6 +1975,54 @@ Weierstraßmodell von $E_\K$ über $R$.
   \end{proof}
 \end{Satz}
 
+\begin{Satz}\cite[Theorem 9.3.21]{liu}\label{thm:exminmodell}
+  Minimale $R$-Modelle elliptischer Kurven existieren und sind nach
+  \ref{thm:eigminmodell} eindeutig bis auf eindeutige Isomorphie.
+  \begin{proof}[Beweisskizze]
+    Aus \ref{thm:exarithfl} wissen wir, dass wir zu einer elliptischen
+    Kurve $E_\K$ über $\K$ zumindest eine arithmetische Fläche finden.
+    \cite[Theorem 9.3.21]{liu} besagt, dass allgemein für
+    arithmetische Flächen mit generischer Faser vom Genus größer~0 ein
+    minimales Modell existiert.
+    Genutzt wird hierbei, dass die Existenz eines minimalen Modells
+    äquivalent dazu ist, dass folgende Bedingungen erfüllt sind:
+    \begin{enumerate}[label=(\alph*)]
+    \item Es existiert ein \emph{relativ minimales Modell}, d.\,h. ein
+      $R$-Modell mit der abgeschwächten Minimalitätseigenschaft:
+      Jeder birationale Morphismus in ein anderes $R$-Modell ist
+      Isomorphismus.
+    \item Alle relativ minimalen Modelle sind isomorph, es gibt also
+      ein eindeutiges relativ minimales Modell.
+    \end{enumerate}
+    Relative Minimalität ist nach \cite[Theorem 9.2.2]{liu} äquivalent
+    dazu, dass das Modell keine außerordentlichen Divisoren besitzt,
+    also keine integralen, zusammenziehbaren Kurven als Teilmengen
+    hat.
+    Außerordentliche Divisoren kann man u.\,a. mit Castelnuovos
+    Kriterium \cite[Theorem 9.3.8]{liu} identifizieren und es gibt nur
+    eine endliche Anzahl an Fasern, die welche enthalten nach
+    \cite[Lemma 9.3.17]{liu}.
+
+    Nach \cite[Proposition 9.3.19]{liu} ist es nun möglich, die
+    zusammenziehbaren Divisoren in endlich vielen Schritten
+    nacheinander zusammenzuziehen zu einem dann relativ minimalen
+    Modell.
+
+    Die zweite Bedingung kann wie in \cite[Theorem 9.3.21]{liu}
+    beschrieben durch Widerspruchsbeweis mithilfe der Annahme zum
+    Genus der generischen Faser gezeigt werden.
+    Wir haben also durch das Zusammenziehen bereits ein minimales
+    Modell konstruiert.
+  \end{proof}
+\end{Satz}
+
+\begin{Bemerkung}
+  Wählt man in \ref{thm:exarithfl} das $n$ minimal, erhält man bereits
+  ein relativ minimales, also minimales, Modell. Denn
+  bei jedem Zusammenziehen eines Divisors würde per Konstruktion die
+  Regularität des Modells verloren gehen.
+\end{Bemerkung}
+
 
 % ----------
 
@@ -1934,13 +2046,15 @@ Weierstraßmodell von $E_\K$ über $R$.
   Sei $R$ Dedekindring mit perfekten Quotientenkörpern,
   $\K=\Quot(R)$, $E_\K$ elliptische Kurve über $\K$ und $C$ minimales
   eigentliches, reguläres $R$-Modell von $E_\K$
-  (d.\,h. eigentliches, reguläres, integeres, projektives,
+  (d.\,h. reguläres, integeres, projektives,
   flaches $R$-Schema mit Minimalitätseigenschaft).
   Sei $E$ das größte glatte $R$-Unterschema von $C$.
   Dann ist $E$ Néron-Modell von $E_\K$.
 
-  Beachte, dass minimale eigentliche reguläre Modelle elliptischer
-  Kurven existieren nach \ref{thm:exneronmodellabvarietaet}.
+  Nachdem minimale eigentliche reguläre Modelle elliptischer
+  Kurven nach \ref{thm:exminmodell} immer existieren, hat jede
+  elliptische Kurve über einem Dedekindring (mit perfekten
+  Restklassenkörpern) ein Néron-Modell.
   % \begin{proof}
   %   \begin{enumerate}
   %   \item \ref{thm:rationalzumorphismus}:
@@ -1990,7 +2104,7 @@ Weierstraßmodell von $E_\K$ über $R$.
   % \end{proof}
 \end{Satz}
 
-\section{Äquivalenz zur Gruppenstruktur}
+\section{Gruppenstruktur hinreichend}
 % ÄQ GRUPPENSTRUKTURERW.
 % strikt henselsch nicht nötig!!
 \begin{Lemma}\label{thm:schnittearithmflglatt}
@@ -2026,7 +2140,8 @@ Weierstraßmodell von $E_\K$ über $R$.
 \end{Lemma}  
 
 \begin{Satz}\label{thm:fallstriktehenselisierung}
-  Sei $R$ hier strikt henselscher, diskreter Bewertungsring mit
+  Sei $R$ hier %strikt henselscher,
+  diskreter Bewertungsring mit
   perfektem Restklassenkörper $k$
   und $\K$, $E_\K$, $C$, $E$ wie in \ref{thm:exneronmodelle}.
   Erweitert sich die $\K$-Gruppenschemastruktur von $E_\K$ auf
@@ -2143,10 +2258,11 @@ Weierstraßmodell von $E_\K$ über $R$.
   \end{proof}
 \end{Satz}
 
-\section{Fall strikt henselscher Ringe}
-                %                 Nur Erweiterung der Gruppenstruktur!
+\section[Gruppenstruktur für strikt henselsche Ringe]%
+{Nachweis der Gruppenstruktur für strikt henselsche Bewertungsringe}
+% Nur Erweiterung der Gruppenstruktur!
 \subsection{Strikt henselsche Ringe}
-                %                 HENSELSCHE RINGE
+% HENSELSCHE RINGE
 \begin{Definition}[henselsche Ringe]\label{def:henselscheringe}
   \optcite[2.3, Proposition 4]{neron}
   \optcite[Chapter IV.6]{silverman2}
@@ -2246,7 +2362,7 @@ Weierstraßmodell von $E_\K$ über $R$.
 \end{Satz}
 
 \subsection{Nachweis der Gruppenstruktur für strikt henselsche Ringe}
-    %     ERWEITERUNG DER GRUPPENSTRUKTUR
+% ERWEITERUNG DER GRUPPENSTRUKTUR
 \begin{Satz}\label{thm:egruppenschema}
   Sei $R$ strikt henselscher diskreter Bewertungsring mit perfektem
   Restklassenkörper $k$ und $\K$, $E_\K$, $C$, $E$ wieder wie in
@@ -2460,10 +2576,7 @@ Weierstraßmodell von $E_\K$ über $R$.
   Somit ist $E$ Néron-Modell von $E_\K$.
 \end{proof}
 
-
-
-\chapter{Existenz minimaler eigentlicher regulärer Modelle für
-  elliptische Kurven}
+% -------
 
 \chapter{Ausblick}
 Tate's Algorithmus zur Berechnung der speziellen Faser bzw. des
@@ -2474,7 +2587,7 @@ elliptischen Kurve
 \appendix
 \chapter{Verwendete Definitionen}
 \section{Dedekindringe}
-              %               DEDEKINDRINGE
+% DEDEKINDRINGE
 \begin{Definition}[Dedekindring]\label{def:dedekindring}
   \optcite[S.\,40]{hartshorne}\optcite[Definition B.84]{wedhorn}
   Ein Integritätsring $R$ heißt Dedekindring, wenn er eine der
@@ -2492,7 +2605,7 @@ elliptischen Kurve
 
   Faktorielle Dedekindringe sind genau die Hauptidealringe.
   \optcite[Proposition B.85]{wedhorn}
-
+  
   \begin{Definition}[Dedekindschema]
     Ein Dedekindschema ist ein noethersches, integeres Schema $X$, das
     eine der äquivalenten Eigenschaften erfüllt
@@ -2530,29 +2643,29 @@ elliptischen Kurve
 \end{Definition}
 
 \section{Eigenschaften von Schemata}
-              %               REDUZIERT
-\begin{Definition}[reduziert, geometrisch reduziert]
-  Ein Schema heißt reduziert, falls alle Halme reduzierte Ringe sind
-  (d.\,h. $\Nil(0)=(0)$).
+% % REDUZIERT
+% \begin{Definition}[reduziert, geometrisch reduziert]
+%   Ein Schema heißt reduziert, falls alle Halme reduzierte Ringe sind
+%   (d.\,h. $\Nil(0)=(0)$).
 
-  Ein $\K$-Schema heißt geometrisch reduziert, wenn für jeden
-  Basiswechsel zu einer Körpererweiterung von $\K$ die generische
-  Faser reduziert ist. 
-\end{Definition}
+%   Ein $\K$-Schema heißt geometrisch reduziert, wenn für jeden
+%   Basiswechsel zu einer Körpererweiterung von $\K$ die generische
+%   Faser reduziert ist. 
+% \end{Definition}
 
-              %               LOKAL VON ENDLICHEM TYP
-\begin{Definition}[lokal von endlichem Typ]
-  Ein Morphismus $f\colon X\to Y$ von Schemata heißt lokal von endlichem
-  Typ, wenn lokal auf affinen offenen Teilmengen $V\subset Y$ die
-  induzierte Abbildung $f_U^\#: f_\ast\O_X(V)\to \O_Y(V)$
-  (wobei $U=f^{-1}(V)$) $f_\ast\O_X(V)=\O_X(U)$ zu einer \emph{endlich erzeugten}
-  $\O_Y(V)$-Algebra macht.
+% % LOKAL VON ENDLICHEM TYP
+% \begin{Definition}[lokal von endlichem Typ]
+%   Ein Morphismus $f\colon X\to Y$ von Schemata heißt lokal von endlichem
+%   Typ, wenn lokal auf affinen offenen Teilmengen $V\subset Y$ die
+%   induzierte Abbildung $f_U^\#: f_\ast\O_X(V)\to \O_Y(V)$
+%   (wobei $U=f^{-1}(V)$) $f_\ast\O_X(V)=\O_X(U)$ zu einer
+%   \emph{endlich erzeugten} $\O_Y(V)$-Algebra macht.
 
-  Er heißt von endlichem Typ, wenn er lokal von endlichem Typ und
-  quasikompakt (Urbilder quasikompakter Mengen sind quasikompakt) ist.
-\end{Definition}
+%   Er heißt von endlichem Typ, wenn er lokal von endlichem Typ und
+%   quasikompakt (Urbilder quasikompakter Mengen sind quasikompakt) ist.
+% \end{Definition}
 
-              %               REGULÄR
+% REGULÄR
 \begin{Definition}[Regulär]
   Ein Schema $X$ heißt regulär im Punk $x\in X$, wenn sein Halm
   $\O_{X,x}$ ein regulärer (lokaler) Ring ist
@@ -2565,109 +2678,109 @@ elliptischen Kurve
 \end{Definition}
 
 \section{Eigenschaften von Morphismen von Schemata}
-              %               FLACH
-\begin{Definition}[flacher Morphismus]
-  \optcite{bosch, goodreduction}
-  Ein Morphismus $f\colon X\to Y$ von Schemata ist flach, wenn alle
-  induzierten Ringhomomorphismen $f_x^\#\colon \O_{Y,f(x)}\to\O_{X,x}$  auf
-  den Halmen flach sind.
-\end{Definition}
-\begin{Bemerkung}\label{thm:flachgenerischefaser}
-  Für einen Dedekindring $R$ und ein reduziertes $R$-Schema $f\colon
-  X\to R$ ist flach äquivalent dazu, dass alle generischen Punkte von 
-  $X$ auf den generischen Punkt von $R$ geschickt werden
-  nach \cite[Proposition III.9.7]{hartshorne}.
-  Insbesondere ist dann die generische Faser nichtleer und dicht in $X$.
-\end{Bemerkung}
+% % FLACH
+% \begin{Definition}[flacher Morphismus]
+%   \optcite{bosch, goodreduction}
+%   Ein Morphismus $f\colon X\to Y$ von Schemata ist flach, wenn alle
+%   induzierten Ringhomomorphismen $f_x^\#\colon \O_{Y,f(x)}\to\O_{X,x}$  auf
+%   den Halmen flach sind.
+% \end{Definition}
+% \begin{Bemerkung}\label{thm:flachgenerischefaser}
+%   Für einen Dedekindring $R$ und ein reduziertes $R$-Schema $f\colon
+%   X\to R$ ist flach äquivalent dazu, dass alle generischen Punkte von 
+%   $X$ auf den generischen Punkt von $R$ geschickt werden
+%   nach \cite[Proposition III.9.7]{hartshorne}.
+%   Insbesondere ist dann die generische Faser nichtleer und dicht in $X$.
+% \end{Bemerkung}
 
-              %               UNVERZWEIGT
-              %               ??? Unverzweigt <=> Glatt für diskr. BWR?
-\begin{Definition}[unverzweigter Morphismus]
-  Ein Morphismus $f\colon X\to S$ von Schemata heißt unverzweigt im
-  Punkt $x\in X$, falls es eine offene Umgebung
-  $U\subset X$ von $x$ gibt und eine geschlossene $S$-Immersion
-  $j\colon U\cong\O_W/\I\to W\subset\A_S^n$ in ein offenes Unterschema
-  des affinen $n$-Raums mit zugehöriger Idealgarbe $\I\subset\O_W$,
-  für die gilt
-  \begin{enumerate}[label=(\alph*)]
-  \item $\I$ ist in einer Umgebung von $z\coloneqq j(x)$ endlich erzeugt.
-  \item $\Om{\A_S^n/S}$ ist erzeugt von den $\d g\in\Om{\A_S^n/S}$
-    mit $g\in\I$.
-  \end{enumerate}
-  $f$ heißt unverzweigt, falls es in jedem Punkt $x\in X$
-  unverzweigt ist.
-  \begin{Bemerkung}
-    \optcite[8.4, Theorem 3]{bosch}
-    Ist $X$ lokal endlich präsentiert, sind äquivalent
-    \begin{enumerate}[label=(\roman*)]
-    \item $X$ unverzweigt in $x$,
-    \item $\Om{X/S,x}=0$,
-    \item $X_{f(x)}\to \Spec(\k(f(x)))$ unverzweigt.
-    \end{enumerate}
-  \end{Bemerkung}
-\end{Definition}
+% % UNVERZWEIGT
+% % ??? Unverzweigt <=> Glatt für diskr. BWR?
+% \begin{Definition}[unverzweigter Morphismus]
+%   Ein Morphismus $f\colon X\to S$ von Schemata heißt unverzweigt im
+%   Punkt $x\in X$, falls es eine offene Umgebung
+%   $U\subset X$ von $x$ gibt und eine geschlossene $S$-Immersion
+%   $j\colon U\cong\O_W/\I\to W\subset\A_S^n$ in ein offenes Unterschema
+%   des affinen $n$-Raums mit zugehöriger Idealgarbe $\I\subset\O_W$,
+%   für die gilt
+%   \begin{enumerate}[label=(\alph*)]
+%   \item $\I$ ist in einer Umgebung von $z\coloneqq j(x)$ endlich erzeugt.
+%   \item $\Om{\A_S^n/S}$ ist erzeugt von den $\d g\in\Om{\A_S^n/S}$
+%     mit $g\in\I$.
+%   \end{enumerate}
+%   $f$ heißt unverzweigt, falls es in jedem Punkt $x\in X$
+%   unverzweigt ist.
+%   \begin{Bemerkung}
+%     \optcite[8.4, Theorem 3]{bosch}
+%     Ist $X$ lokal endlich präsentiert, sind äquivalent
+%     \begin{enumerate}[label=(\roman*)]
+%     \item $X$ unverzweigt in $x$,
+%     \item $\Om{X/S,x}=0$,
+%     \item $X_{f(x)}\to \Spec(\k(f(x)))$ unverzweigt.
+%     \end{enumerate}
+%   \end{Bemerkung}
+% \end{Definition}
 
-              %               GLATT
-\begin{Definition}[glatter Morphismus]
-  \optcite[8.5, Definition 1]{bosch}
-  Ein Morphismus $f\colon X\to S$ von Schemata heißt glatt im Punkt
-  $x\in X$ von relativer Dimension $r$, wenn es eine offene Umgebung
-  $U\subset X$ von $x$ gibt und eine geschlossene Immersion $j\colon
-  U\cong\O_W/\I\to W\subset\A_S^n$ in ein offenes Unterschema des affinen
-  $n$-Raums mit zugehöriger Idealgarbe $\I\subset\O_W$, für die
-  gilt
-  \begin{enumerate}[label=(\alph*)]
-  \item $\I$ wird in einer Umgebung von $z\coloneqq j(x)$ von $n-r$ Schnitten
-    $g_{r+1},\dotsc,g_{n}$ erzeugt.
-  \item Die $\d g_{r+1}(z),\dotsc,\d g_{n}(z)\in 
-    \Om{\A_S^n/S,z} \otimes_{\O_{\A_S^n,z}} \k(z)
-    \cong \Om{\A_S^n/S,z}/\m_z\Om{\A_S^n/S,z}$ 
-    sind linear unabhängig über $\k(z)$.
-    Dies ist äquivalent zu
-    \begin{gather*}\tag{Jacobi Bedingung}
-      \rk\left(
-        \frac{\partial g_j}{\partial t_i}\d t_i 
-      \right)_{\substack{j=r+1,\dotsc,n\\i=1,\dotsc,n\phantom{+1}}}
-      = n-r
-    \end{gather*}
-  \end{enumerate}
-  Ist $f$ glatt in jedem Punkt heißt $f$ glatt bzw. $X$ ist glattes
-  $S$-Schema.  
-
+% % GLATT
+% \begin{Definition}[glatter Morphismus]
+%   \optcite[8.5, Definition 1]{bosch}
+%   Ein Morphismus $f\colon X\to S$ von Schemata heißt glatt im Punkt
+%   $x\in X$ von relativer Dimension $r$, wenn es eine offene Umgebung
+%   $U\subset X$ von $x$ gibt und eine geschlossene Immersion $j\colon
+%   U\cong\O_W/\I\to W\subset\A_S^n$ in ein offenes Unterschema des affinen
+%   $n$-Raums mit zugehöriger Idealgarbe $\I\subset\O_W$, für die
+%   gilt
+%   \begin{enumerate}[label=(\alph*)]
+%   \item $\I$ wird in einer Umgebung von $z\coloneqq j(x)$ von $n-r$ Schnitten
+%     $g_{r+1},\dotsc,g_{n}$ erzeugt.
+%   \item Die $\d g_{r+1}(z),\dotsc,\d g_{n}(z)\in 
+%     \Om{\A_S^n/S,z} \otimes_{\O_{\A_S^n,z}} \k(z)
+%     \cong \Om{\A_S^n/S,z}/\m_z\Om{\A_S^n/S,z}$ 
+%     sind linear unabhängig über $\k(z)$.
+%     Dies ist äquivalent zu
+%     \begin{gather*}\tag{Jacobi Bedingung}
+%       \rk\left(
+%         \frac{\partial g_j}{\partial t_i}\d t_i 
+%       \right)_{\substack{j=r+1,\dotsc,n\\i=1,\dotsc,n\phantom{+1}}}
+%       = n-r
+%     \end{gather*}
+%   \end{enumerate}
+%   Ist $f$ glatt in jedem Punkt heißt $f$ glatt bzw. $X$ ist glattes
+%   $S$-Schema.  
+% \end{Definition}
+\begin{Bemerkung}\label{thm:eigglatt}
   Für $X$ lokal endlich präsentiert ist $f$ glatt in $x$ äquivalent zu
   $f$ flach in $x$ und $X_{f(x)}$ glatt über $\k(f(x))$ nach
   \cite[8.5, Proposition 17]{bosch}.
-
+  
   Ist $X$ ein $\K$-Schema lokal endlichen Typs sind glatt und
   geometrisch regulär äquivalent nach \cite[Corollary 6.32]{wedhorn}.
   Ist $\K$ perfekter Körper (z.\,B. $\Char(\K)=0$), so ist dies sogar
   äquivalent zu regulär nach \cite[Remark 6.33]{wedhorn}.
+    
+  Glatt impliziert reduziert, lokal von endlichem Typ und flach
+  \cite[für flach s.][Theorem 14.22]{wedhorn}.
+\end{Bemerkung}
 
-  \begin{Bemerkung}\label{thm:implikationenglatt}
-    Glatt impliziert reduziert, lokal von endlichem Typ und flach
-    \cite[für flach s.][Theorem 14.22]{wedhorn}.
-  \end{Bemerkung}
-\end{Definition}
 
-% ÉTALE
-\begin{Definition}[étaler Morphismus]% Äquivalent zu lokal umkehrbar
-  \optcite[8.5, Definition 1 und Corollary 12]{bosch}  
-  Ein Morphismus $f\colon X\to Y$ von $S$-Schemata heißt étale in
-  einem Punkt $x\in X$, falls er eine der äquivalenten Bedingungen
-  erfüllt 
-  \begin{enumerate}[label=(\roman*)]
-  \item $f$ glatt von relativer Dimension 0 in $x$
-  \item $X$ glatt in $x$, $Y$ glatt in $f(x)$ und 
-    $(f^*\Om{Y/S})_x \overset{\sim}{\longto} \Om{X/S,x}$
-  \end{enumerate}
-  Er heißt étale, falls er étale in jedem Punkt von $X$ ist.
+% % ÉTALE
+% \begin{Definition}[étaler Morphismus]% Äquivalent zu lokal umkehrbar
+%   \optcite[8.5, Definition 1 und Corollary 12]{bosch}  
+%   Ein Morphismus $f\colon X\to Y$ von $S$-Schemata heißt étale in
+%   einem Punkt $x\in X$, falls er eine der äquivalenten Bedingungen
+%   erfüllt 
+%   \begin{enumerate}[label=(\roman*)]
+%   \item $f$ glatt von relativer Dimension 0 in $x$
+%   \item $X$ glatt in $x$, $Y$ glatt in $f(x)$ und 
+%     $(f^*\Om{Y/S})_x \overset{\sim}{\longto} \Om{X/S,x}$
+%   \end{enumerate}
+%   Er heißt étale, falls er étale in jedem Punkt von $X$ ist.
   
-  $f$ ist genau dann étale, wenn $f$ glatt und unverzweigt ist.
-  \optcite[8.5, Proposition 6]{bosch}
+%   $f$ ist genau dann étale, wenn $f$ glatt und unverzweigt ist.
+%   \optcite[8.5, Proposition 6]{bosch}
 
-  Offene Immersionen sind genau die étalen Immersionen nach
-  \cite[8.5, Lemma 7]{bosch}.
-\end{Definition}
+%   Offene Immersionen sind genau die étalen Immersionen nach
+%   \cite[8.5, Lemma 7]{bosch}.
+% \end{Definition}
 
 % SEPARIERT
 \begin{Definition}[separierter Morphismus]
@@ -2726,100 +2839,101 @@ elliptischen Kurve
       \end{tikzcd}
     \end{center}
   \end{enumerate}
+\end{Definition}
+\begin{Bemerkung}
   Endliche sowie projektive Morphismen sind eigentlich
   \cite[9.5, Remark 5 und Theorem 9]{bosch}.
-
-  \begin{Bemerkung}[Stein Faktorisierung]
-    \cite[9.5, Theorem 12]{bosch}
-    Jeder eigentliche Morphismus $f\colon X\to Y$ faktorisiert über
-    einen eigentlichen, surjektiven Morphismus $g\colon X\to
-    \Spec(f_*\O_X)$ mit zusammenhängenden Fasern und einen endlichen
-    Morphismus $h\colon \Spec(f_*\O_X)\to Y$.
-  \end{Bemerkung}
-\end{Definition}
+\end{Bemerkung}
+% \begin{Bemerkung}[Stein Faktorisierung]
+%   \cite[9.5, Theorem 12]{bosch}
+%   Jeder eigentliche Morphismus $f\colon X\to Y$ faktorisiert über
+%   einen eigentlichen, surjektiven Morphismus $g\colon X\to
+%   \Spec(f_*\O_X)$ mit zusammenhängenden Fasern und einen endlichen
+%   Morphismus $h\colon \Spec(f_*\O_X)\to Y$.
+% \end{Bemerkung}
 
 
 \section{$\K$-Gruppenschemata}
-% GUTE REDUKTION
-\begin{Definition}[Gute Reduktion]\label{def:gutereduktion}
-  % $X/S$ hat Gute Reduktion nach dem Primideal $P\in S$ heißt, dass die
-  % Faser $X_P$ Glattheit erhält.
-  Sei $S$ ein Dedekindring, $\K=\Quot(R)$ und $X/\K$
-  ein eigentliches glattes $\K$-Schema.
-  $X$ hat \emph{gute Reduktion im geschlossenen Punkt $s\in\Spec(R)$},
-  falls es ein eigentliches glattes $R_s$-Schema $Y_s$ gibt, so dass
-  $X=Y_s\times_{R_s}\Spec(\K)$ ist. D.\,h. folgendes Diagramm ist
-  kartesisch
-  \begin{center}
-    \begin{tikzcd}
-      X \arrow[r]\arrow[d]
-      \arrow[dr, phantom, "\ulcorner", very near start]
-      & Y_s \arrow[d] \\
-      \Spec(\K) \arrow[r]
-      & \Spec(R_s)
-    \end{tikzcd}
-  \end{center}
-  \cite[vgl.][Chapter 1.4]{neron}
+% % GUTE REDUKTION
+% \begin{Definition}[Gute Reduktion]\label{def:gutereduktion}
+%   % $X/S$ hat Gute Reduktion nach dem Primideal $P\in S$ heißt, dass die
+%   % Faser $X_P$ Glattheit erhält.
+%   Sei $S$ ein Dedekindring, $\K=\Quot(R)$ und $X/\K$
+%   ein eigentliches glattes $\K$-Schema.
+%   $X$ hat \emph{gute Reduktion im geschlossenen Punkt $s\in\Spec(R)$},
+%   falls es ein eigentliches glattes $R_s$-Schema $Y_s$ gibt, so dass
+%   $X=Y_s\times_{R_s}\Spec(\K)$ ist. D.\,h. folgendes Diagramm ist
+%   kartesisch
+%   \begin{center}
+%     \begin{tikzcd}
+%       X \arrow[r]\arrow[d]
+%       \arrow[dr, phantom, "\ulcorner", very near start]
+%       & Y_s \arrow[d] \\
+%       \Spec(\K) \arrow[r]
+%       & \Spec(R_s)
+%     \end{tikzcd}
+%   \end{center}
+%   \cite[vgl.][Chapter 1.4]{neron}
 
-  Wir sagen $X$ hat \emph{gute Reduktion}, falls es ein eigentliches
-  glattes $R$-schema $Y$ gibt, so dass $X$ isomorph zur generischen
-  Faser $Y_{\K}$ von $Y$ ist. D.\,h. das folgende Diagramm ist
-  kartesisch
-  \begin{center}
-    \begin{tikzcd}
-      X \arrow[r]\arrow[d]
-      \arrow[dr, phantom, "\ulcorner", very near start]
-      & Y \arrow[d] \\
-      \Spec(\K) \arrow[r]
-      & \Spec(R)
-    \end{tikzcd}
-  \end{center}
-  \cite[Definition 3.1]{goodreduction}, \cite[vgl.][Chapter 1.4]{neron}
+%   Wir sagen $X$ hat \emph{gute Reduktion}, falls es ein eigentliches
+%   glattes $R$-schema $Y$ gibt, so dass $X$ isomorph zur generischen
+%   Faser $Y_{\K}$ von $Y$ ist. D.\,h. das folgende Diagramm ist
+%   kartesisch
+%   \begin{center}
+%     \begin{tikzcd}
+%       X \arrow[r]\arrow[d]
+%       \arrow[dr, phantom, "\ulcorner", very near start]
+%       & Y \arrow[d] \\
+%       \Spec(\K) \arrow[r]
+%       & \Spec(R)
+%     \end{tikzcd}
+%   \end{center}
+%   \cite[Definition 3.1]{goodreduction}, \cite[vgl.][Chapter 1.4]{neron}
 
-  Alternative Definition für elliptische Kurven: \cite[Chapter VII.5]{silverman}
-\end{Definition}
+%   Alternative Definition für elliptische Kurven: \cite[Chapter VII.5]{silverman}
+% \end{Definition}
 
-        %         VARIETÄT, ELLIPTISCHE KURVE
+% VARIETÄT, ELLIPTISCHE KURVE
 \begin{Definition}[Varietät]
   \cite[Theorem 3.37]{wedhorn}
-  Eine affine Varietät über einem Körper $\K$ ist eine Unterprägarbe der
-  Prägarbe $U\mapsto \Hom(U,\K)$ über den geschlossenen Punkten eines
-  geschlossenen, irreduziblen Unterschemas des $\A_\K^n$.
-  Eine affine Prävarietät ist eine quasikompakte, zusammenhängende
-  Prägarbe, die lokal affine Varietät ist.
+  % Eine affine Varietät über einem Körper $\K$ ist eine Unterprägarbe der
+  % Prägarbe $U\mapsto \Hom(U,\K)$ über den geschlossenen Punkten eines
+  % geschlossenen, irreduziblen Unterschemas des $\A_\K^n$.
+  % Eine affine Prävarietät ist eine quasikompakte, zusammenhängende
+  % Prägarbe, die lokal affine Varietät ist.
 
-  Für integere $\K$-Schemata endlichen Typs sind die geschlossenen
-  Punkte isomorph zu den $\K$-Schnitten 
-  $\Hom_{\Spec(\K)}(\Spec(\K),X)$.
-  Dadurch gibt es eine Kategorienäquivalenz
-  \begin{align*}
-    \left\{\text{Integere $\K$-Schemata endlichen Typs}\right\}
-    &\longto
-      \left\{\text{Prävarietäten über $\K$}\right\}\\
-    (X,\O_X) 
-    &\longmapsto
-      \left( X(\K), \O_{X(\K)}\subset \Hom(\bullet, \K) \right)
-  \end{align*}
-  wobei $f\in\O_{X(\K)}(U)$ der Abbildung 
-  \begin{align*}
-    U\cap X(\K) &\longto \K\\
-    x  &\longmapsto f(x)
-         \coloneqq \bar{f_x}\in\O_{X,x}/\m_x\cong \K
-  \end{align*}
-  entspricht (Analogon zum Einsetzhomomorphismus für Polynomringe).
-  Der inverse Funktor ist gegeben durch
-  \begin{align*}
-    (P,\O_P) \longmapsto (t(P), t_\ast\O_P) 
-  \end{align*}
-  wobei $t\colon P\to t(P)$, $x\mapsto \{x\}$. Auf affinen Varietäten
-  $V$ wird dies zu
-  \begin{gather*}
-    (V, \O_V) \mapsto (\Spec(\O_V(V)), \O_{\Spec(\O_V(V))})
-  \end{gather*}
+  % Für integere $\K$-Schemata endlichen Typs sind die geschlossenen
+  % Punkte isomorph zu den $\K$-Schnitten 
+  % $\Hom_{\Spec(\K)}(\Spec(\K),X)$.
+  % Dadurch gibt es eine Kategorienäquivalenz
+  % \begin{align*}
+  %   \left\{\text{Integere $\K$-Schemata endlichen Typs}\right\}
+  %   &\longto
+  %     \left\{\text{Prävarietäten über $\K$}\right\}\\
+  %   (X,\O_X) 
+  %   &\longmapsto
+  %     \left( X(\K), \O_{X(\K)}\subset \Hom(\bullet, \K) \right)
+  % \end{align*}
+  % wobei $f\in\O_{X(\K)}(U)$ der Abbildung 
+  % \begin{align*}
+  %   U\cap X(\K) &\longto \K\\
+  %   x  &\longmapsto f(x)
+  %        \coloneqq \bar{f_x}\in\O_{X,x}/\m_x\cong \K
+  % \end{align*}
+  % entspricht (Analogon zum Einsetzhomomorphismus für Polynomringe).
+  % Der inverse Funktor ist gegeben durch
+  % \begin{align*}
+  %   (P,\O_P) \longmapsto (t(P), t_\ast\O_P) 
+  % \end{align*}
+  % wobei $t\colon P\to t(P)$, $x\mapsto \{x\}$. Auf affinen Varietäten
+  % $V$ wird dies zu
+  % \begin{gather*}
+  %   (V, \O_V) \mapsto (\Spec(\O_V(V)), \O_{\Spec(\O_V(V))})
+  % \end{gather*}
 
-  Daher werden wir im folgenden mit Prävarietät ein integeres
-  $\K$-Schema endlichen Typs meinen und mit affiner Varietät ein affines,
-  integeres $\K$-Schema endlichen Typs.
+  Wir werden im folgenden mit Prävarietät ein integeres
+  $\K$-Schema endlichen Typs meinen und mit affiner Varietät ein
+  affines, integeres $\K$-Schema endlichen Typs.
 
   Eine algebraische Varietät sei im folgenden ein separiertes, integeres
   Schema über einem algebraisch abgeschlossen Körper $\K$
