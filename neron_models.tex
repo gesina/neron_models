@@ -20,82 +20,195 @@
 \tableofcontents
 
 \chapter{Motivation}
-Wir werden nur elliptische Kurven über Körpern der Charakteristik
+
+Sei $(R,\m)$ diskreter Bewertungsring, $\K=\Quot(R)$ und $E_\K$
+elliptische Kurve über $\K$. Eine Weierstraßgleichung zu $E_\K$
+\begin{gather*}
+  0 = Y^2 Z + \c_1 XYZ + \c_3 YZ^2 - X^3 - \c_2X^2 Z - \c_4 XZ^2 - \c_6 Z^3
+  \eqqcolon F\in\K[X,Y,Z]  
+\end{gather*}
+mit Koeffizienten in $R$ definiert ein projektives $R$-Schema
+$W=V_+(F)\subset\P_R^n$ der Dimension~2. Dessen generische Faser
+ist wieder $E_\K$ und die spezielle Faser ist die Kurve, die durch die
+Reduktion von $(F\mod\m)$ über $\k(\m)$ erzeugt wird.
+$W$ enthält also Informationen zur Reduktion unserer elliptischen
+Kurve.
+
+Da elliptische Kurven besonders durch ihre Gruppenstruktur
+interessant sind, stellt sich die Frage, ob sich die
+Gruppenstruktur $E_\K\times_\K E_\K\to E_\K$ auf ein hinreichend
+gutartiges (hier: glattes, separiertes) $R$-Schema wie $W$ erweitern
+lässt.
+
+Eine Forderung an ein solches $R$-Schema ist:
+\begin{quote}
+  Die Gruppenverknüpfung auf der generischen Faser erweitert sich zu
+  einer Gruppenverknüpfung $E\times_R E\to E$ auf ganz $E$.
+\end{quote}
+Insbesondere sind dann alle Schnitte $E(Y)$ von
+$R$-Schemata $Y$ Gruppen, für die wir ebenfalls eine entsprechende
+Erweiterungseigenschaft fordern:
+% Um von einer Erweiterung der Gruppenstruktur sprechen zu können,
+% sollte man auch fordern, dass $E(Y)$ eine Erweiterung von $E_\K(Y_\K)$
+% ist ($Y_\K$ generische Faser von $Y$), in anderen Worten:
+% Interessant wird das Verhältnis der Gruppen $E_\K(Y_\K)$ zu $E(Y)$
+% Da auch auf diesen Gruppen von einer schönen Erweiterung ausgehen zu
+% können, braucht es weiterhin die Forderung:
+% Nachdem ein wichtiger Bestandteil der Gruppenstruktur von $E_\K$ ist,
+% dass die Menge der Schnitte $E_\K(Y_\K)$ eines $\K$-Schemas $Y_\K$
+% eine Gruppe ist, ergibt sich eine weitere Forderung an $E$:
+\begin{quote}
+  Für alle \enquote{gutartigen} (hier: glatten) $R$-Schemata $Y$ mit
+  generischer Faser $Y_\K$, soll $E_\K(Y_\K)\hookrightarrow E(Y)$
+  Untergruppe sein.
+\end{quote}
+% Als Diagramm für einen Schnitt in $E_\K(\K)$:
+% \begin{center}
+%   \begin{tikzcd}
+%     Y_\K\arrow[r]\arrow[d, hook]&E_\K\arrow[d, hook]\\
+%     Y\arrow[r, dashed, "\exists!"]&E
+%   \end{tikzcd}
+% \end{center}
+Dies motiviert die Definition des Néron-Modells, welches
+ein $R$-Modell von $E_\K$ ist, das ebendiese Erweiterungseigenschaften
+erfüllt.
+
+Das Hauptziel dieser Arbeit wird sein, die Existenz von Néron-Modellen
+für elliptische Kurven zu zeigen und die Konstruktion zu skizzieren.
+
+In \autoref{chap:gruppenstrukturenaufschemata} werden die nötigen
+Grundlagen zu Gruppenschemata eingeführt, wonach dann in
+\autoref{chap:neronmodelle} Néron-Modelle allgemein definiert und
+einige ihrer Eigenschaften behandelt werden.
+Hier wird auch ein Blick darauf geworfen, wann bzw. welcher Teil eines
+Néron-Modells einer abelschen Gruppenstruktur wieder abelsch ist.
+
+In \autoref{chap:weierstraßmodelle} wird die Konstruktion von $W$ von
+oben genauer erläutert und die Eigenschaften einer solchen Kurve über
+$R$ untersucht. Insbesondere werden wir feststellen, dass der glatte
+Teil von $W$ tatsächlich die Gruppenverknüpfung erweitert und im
+regulären Fall sogar das Néron-Modell von $E_\K$ ist.
+
+Ist $W$ nicht regulär, müssen erst weitere Modifikationen an $W$
+vorgenommen werden, um eine hinreichend gutartige, insb. reguläre,
+Kurve über $R$ zu erhalten. Solche \enquote{gutartigen} Kurven über
+einem Dedekindring werden arithmetische Fläche genannt und in
+\autoref{chap:arithmetischeflächen} näher auf ihre Eigenschaften und
+die Konstruktion für elliptische Kurven untersucht.
+
+Zuletzt wird sich in \autoref{chap:exneronmodelle} zeigen, dass der
+glatte Teil einer minimal gewählten arithmetischen Fläche zu $E_\K$
+bereits das Néron-Modell von $E_\K$ ist, womit die Konstruktion und
+insbesondere der Existenzbeweis abgeschlossen ist.
+
+\section{Notation}
+Es werden Kenntnisse zur Garben-~und Schematheorie benötigt,
+insbesondere zu den Begriffen glatt, flach, eigentlich, separiert.
+Die Notation richtet sich nach \cite{wedhorn}.
+
+Im Folgenden noch einige weitere verwendete Begriffe:
+% % S-MODELL
+% \begin{Definition}[$S$-Modell]
+%   Sei $S$ ein zusammenhängendes Dedekindschema mit (eindeutigem)
+%   generischen Punkt $s$ und Funktionenkörper $\K=\k(s)$.
+%   Sei $X$ ein $\K$-Schema.
+%   Ein $S$-Schema $Y$ heißt $S$-Modell von $X$, falls
+%   $Y\times_S\Spec(\K)=Y_K\cong X$ für die generische Faser gilt.
+% \end{Definition}
+
+% DEDEKINDRINGE
+\begin{Definition}[Dedekindring]\label{def:dedekindring}
+  \optcite[S.\,40]{hartshorne}\optcite[Definition B.84]{wedhorn}
+  Ein Integritätsring $R$ heißt Dedekindring, wenn er eine der
+  äquivalenten Bedingungen erfüllt
+  \begin{enumerate}[label=(\roman*)]
+  \item regulär und $\dim(A)\leq 1$
+  \item noethersch, normal und $\dim(A)\leq 1$    
+  \item $A$ Körper oder
+    jede Lokalisierung nach einem Maximalideal ist ein diskreter
+    Bewertungsring
+    (d.\,h. lokal, noethersch, normal von Dimension 1)
+  \end{enumerate}
+\end{Definition}
+Für Schemata über Dedekindringen werden die Fasern über dem
+generischen Punkt als generische Fasern, die über den geschlossenen
+Punkten als spezielle Fasern bezeichnet.
+\begin{Definition}[Dedekindschema]
+  Ein Dedekindschema ist ein noethersches, integeres Schema $X$, das
+  eine der äquivalenten Eigenschaften erfüllt
+  \begin{enumerate}[label=(\roman*)]
+  \item die offenen affinen Unterschemata sind Spektren von Dedekindringen
+  \item $\dim(X)\leq 1$ und $X$ regulär
+    (in Dimension 1 äquivalent zu normal nach
+    \cite[Corollary 6.39, Proposition 6.40]{wedhorn})
+  \end{enumerate}
+\end{Definition}
+Sei $S$ allgemein irreduzibles Schema. Ein $S$-Schema wird auch als
+$S$-Modell seiner generischen Faser bezeichnet.
+
+Folgende Aussagen zu Glattheit werden häufig verwendet:
+\begin{Bemerkung}\label{thm:eigglatt}
+  Sei $f\colon X\to Y$ Morphismus von Schemata.
+  Für $f$ endlich präsentiert ist $f\colon X\to Y $ glatt in $x$
+  äquivalent zu $f$ flach in $x$ und $X_{f(x)}$ glatt über $\k(f(x))$ nach
+  \cite[8.5, Proposition 17]{bosch}.
+  
+  Ist $X$ ein $\K$-Schema lokal endlichen Typs sind glatt und
+  geometrisch regulär äquivalent nach \cite[Corollary 6.32]{wedhorn}.
+  Ist $\K$ perfekter Körper (z.\,B. $\Char(\K)=0$), so ist dies sogar
+  äquivalent zu regulär nach \cite[Remark 6.33]{wedhorn}.
+    
+  Glatt impliziert reduziert, lokal von endlichem Typ und flach
+  \cite[für flach s.][Theorem 14.22]{wedhorn}.
+\end{Bemerkung}
+
+Wir werden im Folgenden mit affiner Varietät ein
+affines, integeres $\K$-Schema endlichen Typs meinen.
+Eine Kurve über einem Körper $\K$ sei immer eine projektive Varietät
+der Dimension~1,
+und eine elliptische Kurve über $\K$ ist eine reguläre Kurve $E_\K$
+vom Genus~1 zusammen mit einem $\K$-Schnitt $O\in E_\K(\K)$.
+Elliptische Kurven sind glatte \cite[Proposition III.3.1]{silverman}
+$\K$"=Gruppenschemata mit Nullelement $O$ \cite{silverman}.
+
+Es werden nur elliptische Kurven über Körpern der Charakteristik
 ungleich~2, 3 betrachten und die Restklassenkörper der Dedekindringe
 seien perfekt.
-
-Für Ringe $R$ wird $R$ stellenweise als Kürzel für das zugehörige
-affine Schema $\Spec(R)$ verwendet. Die Bedeutung ist aus dem Kontext
-zu erschließen (z.\,B. ist mit $X\times_R \K$ das Faserprodukt
-$X\times_{\Spec(R)}\Spec(\K)$ gemeint).
-
-\begin{Definition}[$S$-Modell]
-  Sei $S$ ein zusammenhängendes Dedekindschema mit (eindeutigem)
-  generischen Punkt $s$ und Funktionenkörper $\K=\k(s)$.
-  Sei $X$ ein $\K$-Schema.
-  Ein $S$-Schema $Y$ heißt $S$-Modell von $X$, falls
-  $Y\times_S\Spec(\K)=Y_K\cong X$ für die generische Faser gilt.
-\end{Definition}
-
-% BEWERTUNGSKRITERIEN
-\begin{Satz}[Bewertungskriterium für Separiertheit/Eigentlichkeit]
-\end{Satz}
-
-
-% TODO: Einleitung
-Idee Néron-Modell:
-\begin{itemize}
-\item Schema über Ring statt Körper
-\item Gruppenstruktur soll erweitert werden
-\item Schnitte sollen erweitert werden
-\end{itemize}
-
-Inhalt:
-\begin{itemize}
-\item Nötiges zu Gruppenschemata
-\item Def. + grundlegende Eigenschaften Néron-Modell
-\item Abelsche Varietäten: Welcher Teil des Gruppenschemas ist
-  abelsch?
-\item Spezialfall elliptische Kurven: Vom Weierstraßmodell zum
-  Néron-Modell (insb. Existenz)
-\end{itemize}
-
-Benötigte Begriffe:
-\begin{itemize}
-\item Grundbegriffe Schemata
-\item eigentlich, separiert, Bewertungskriterium
-\item Dedekindring, diskreter Bewertungsring
-\end{itemize}
 
 % ----------
 
 \chapter{Gruppenstrukturen auf Schemata}
+\label{chap:gruppenstrukturenaufschemata}
 \section{Gruppenschemata}
 Im Folgenden sei $S$ ein Schema.
 \begin{Definition}[$S$"=Gruppenschema]
   Ein \emph{Gruppenschema über $S$} ist ein
-  $S$-Schema $\pi\colon G\to S$ zusammen mit $S$-Morphismen
+  $S$-Schema
+  \begin{gather*}
+    \pi\colon G\longto S
+  \end{gather*}
+  zusammen mit $S$-Morphismen
   \begin{align*}
     \mu\colon G\times_S G &\longto G
     &&\text{(Gruppenverknüpfung)}\\
     \epsilon\colon S&\longto G 
-    &&\text{(Neutrales Element (Schnitt von $p$))}\\
+    &&\text{(Neutrales Element; Schnitt von $\pi$)}\\
     i\colon G &\longto G    
     &&\text{(Inverses)}
   \end{align*}
   für die folgende Diagramme kommutieren
-  \begin{enumerate}[label=(\alph*)]
-  \item
-    \begin{tikzcd}
+
+  \begin{tabular}{ll}
+    Assoziativität
+    &\begin{tikzcd}
       G\times_S G\times_S G 
       \arrow[r, "{(\mu,\Id)}"] \arrow[d, "{(\Id,\mu)}"]
       & G\times_S G \arrow[d, "{\mu}"] \\
       G\times_S G \arrow[r, "\mu"]
       & G
-    \end{tikzcd}
-    \hfill(Assoziativität)
-  \item
-    \begin{tikzcd}
+    \end{tikzcd}\\
+    Neutrales Element
+    &\begin{tikzcd}
       G \arrow[r, "{(\pi,\Id)}"] \arrow[d, "{\Id}"]
       & S\times_S G \arrow[d, "{\epsilon\times\Id}"] \\
       G \arrow[from=r, "\mu"]
@@ -107,10 +220,9 @@ Im Folgenden sei $S$ ein Schema.
       & G\times_S S \arrow[d, "{\epsilon\times\Id}"] \\
       G \arrow[from=r, "\mu"]
       & G\times_S G
-    \end{tikzcd}
-    \hfill(Neutrales Element)
-  \item
-    \begin{tikzcd}
+    \end{tikzcd}\\
+    Inverses
+    &\begin{tikzcd}
       G \arrow[r, "{(i,\Id)}"] \arrow[d, "{\pi}"]
       & G\times_S G \arrow[d, "{\mu}"] \\
       S \arrow[r, "\epsilon"]
@@ -123,8 +235,8 @@ Im Folgenden sei $S$ ein Schema.
       S \arrow[r, "\epsilon"]
       & G
     \end{tikzcd}
-    \hfill(Inverses)
-  \end{enumerate}
+  \end{tabular}
+
   \begin{Bemerkung}[Gruppe der $T$-wertigen Punkte]
     Diese Definition ist äquivalent dazu, dass die $T$-wertigen Punkte
     $G(T)=\Hom_S(T,G)$ eine Gruppenstruktur tragen, die funktoriell in
@@ -373,7 +485,7 @@ Eine schwächere bzw. rationale Form einer Gruppenschemastruktur:
 % ----------
 
 
-\chapter{Néron-Modelle}
+\chapter{Néron-Modelle}\label{chap:neronmodelle}
 Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
 \section{Definition}
 \begin{Definition}[Néron-Modell]
@@ -1065,7 +1177,7 @@ Gruppenschemastruktur abelsch ist:
 % ----------
 
 
-\chapter{Weierstraßmodelle}\label{chap:weierstraßmodell}
+\chapter{Weierstraßmodelle}\label{chap:weierstraßmodelle}
 \section{Konstruktion}
 \subsection{Weierstraßgleichungen}
 Jede elliptische Kurve $E_\K$ über einem beliebigen Körper $\K$ kann
@@ -1639,7 +1751,7 @@ Weierstraßmodell von $E_\K$ über $R$.
 
 % ------
 
-\chapter{Arithmetische Flächen}
+\chapter{Arithmetische Flächen}\label{chap:arithmetischeflächen}
 \section{Definition}
 \begin{Definition}[arithmetische Fläche]
   Sei $R$ Dedekindring mit Quotientenkörper $\K$.
@@ -1678,7 +1790,7 @@ Weierstraßmodell von $E_\K$ über $R$.
   Für eine elliptische Kurve $E_\K$ über $\K$ existiert eine
   arithmetische Fläche über $R$, deren generische Faser $E_\K$ ist.
   \begin{proof}
-    Aus \autoref{chap:weierstraßmodell} wissen wir, dass wir zu $E_\K$
+    Aus \autoref{chap:weierstraßmodelle} wissen wir, dass wir zu $E_\K$
     ein Weierstraßmodell $W$ über $R$ finden, d.\,h. ein projektives,
     integeres, flaches $R$-Schema, dessen generische Faser genau
     $E_\K$ ist. Zur arithmetischen Fläche fehlt $W$ also nur
@@ -2048,6 +2160,7 @@ Weierstraßmodell von $E_\K$ über $R$.
 
 
 \chapter{Existenz von Néron-Modellen auf elliptischen Kurven}
+\label{chap:exneronmodelle}
 % EXISTENZSATZ ELL. KURVEN
 \begin{Satz}\label{thm:exneronmodelle}
   % Der diskrete Bewertungsring $R$ sei strikt henselsch mit algebraisch
@@ -2752,61 +2865,61 @@ Für generaueres zu Tates Algorithmus siehe
 
 \appendix
 \chapter{Verwendete Definitionen}
-\section{Dedekindringe}
-% DEDEKINDRINGE
-\begin{Definition}[Dedekindring]\label{def:dedekindring}
-  \optcite[S.\,40]{hartshorne}\optcite[Definition B.84]{wedhorn}
-  Ein Integritätsring $R$ heißt Dedekindring, wenn er eine der
-  äquivalenten Bedingungen erfüllt
-  \begin{enumerate}[label=(\roman*)]
-  \item regulär und $\dim(A)\leq 1$
-  \item noethersch, normal und $\dim(A)\leq 1$
-  \item $A$ Körper oder
-    jede Lokalisierung nach einem Maximalideal ist ein diskreter
-    Bewertungsring
-    (d.\,h. lokal, noethersch, normal von Dimension 1)
-  \item jedes echte Ideal ist endliches Produkt von Primidealen
-    (diese ist dann eindeutig bis auf Reihenfolge) 
-  \end{enumerate}
-
-  Faktorielle Dedekindringe sind genau die Hauptidealringe.
-  \optcite[Proposition B.85]{wedhorn}
+%\section{Dedekindringe}
+% % DEDEKINDRINGE
+% \begin{Definition}[Dedekindring]\label{def:dedekindring}
+%   \optcite[S.\,40]{hartshorne}\optcite[Definition B.84]{wedhorn}
+%   Ein Integritätsring $R$ heißt Dedekindring, wenn er eine der
+%   äquivalenten Bedingungen erfüllt
+%   \begin{enumerate}[label=(\roman*)]
+%   \item regulär und $\dim(A)\leq 1$
+%   \item noethersch, normal und $\dim(A)\leq 1$
+%   \item $A$ Körper oder
+%     jede Lokalisierung nach einem Maximalideal ist ein diskreter
+%     Bewertungsring
+%     (d.\,h. lokal, noethersch, normal von Dimension 1)
+%   \item jedes echte Ideal ist endliches Produkt von Primidealen
+%     (diese ist dann eindeutig bis auf Reihenfolge) 
+%   \end{enumerate}
+% \end{Definition}
+% Dedekindringe sind genau die Hauptidealringe.
+%   \optcite[Proposition B.85]{wedhorn}
   
-  \begin{Definition}[Dedekindschema]
-    Ein Dedekindschema ist ein noethersches, integeres Schema $X$, das
-    eine der äquivalenten Eigenschaften erfüllt
-    \begin{enumerate}[label=(\roman*)]
-    \item die offenen affinen Unterschemata sind Spektren von Dedekindringen
-    \item $\dim(X)\leq 1$ und $X$ regulär
-      (in Dimension 1 äquivalent zu normal nach
-      \cite[Corollary 6.39, Proposition 6.40]{wedhorn})
-    \end{enumerate}
-    Ein integeres Schema mit endlicher Überdeckung durch Dedekindschemata
-    ist selbst Dedekindschema.
-    \optcite[Chapter (7.13)]{wedhorn}
-  \end{Definition}
+%   \begin{Definition}[Dedekindschema]
+%     Ein Dedekindschema ist ein noethersches, integeres Schema $X$, das
+%     eine der äquivalenten Eigenschaften erfüllt
+%     \begin{enumerate}[label=(\roman*)]
+%     \item die offenen affinen Unterschemata sind Spektren von Dedekindringen
+%     \item $\dim(X)\leq 1$ und $X$ regulär
+%       (in Dimension 1 äquivalent zu normal nach
+%       \cite[Corollary 6.39, Proposition 6.40]{wedhorn})
+%     \end{enumerate}
+%     Ein integeres Schema mit endlicher Überdeckung durch Dedekindschemata
+%     ist selbst Dedekindschema.
+%     \optcite[Chapter (7.13)]{wedhorn}
+%   \end{Definition}
 
-  \begin{Bemerkung}
-    Die Bedingung, dass $S$ integer sein muss, liefert einen eindeutigen
-    generischen Punkt $\eta$ und einen Funktionenkörper
-    $\K=\k(\eta)=\O_{S,\eta}$, so dass jeder Schnitt und jeder Halm ein
-    Unterring von $\K$ ist, d.\,h. es gibt für jeden Punkt $x\in X$ einen
-    Morphismus $\Spec(\K)\to\Spec(\k(x))$ und für jede offene Teilmenge
-    $U\subset X$ einen Morphismus $\Spec(\K)\to\Spec(\Gamma(U,\O_X))$.
+% \begin{Bemerkung}
+%   Die Bedingung, dass $S$ integer sein muss, liefert einen eindeutigen
+%   generischen Punkt $\eta$ und einen Funktionenkörper
+%   $\K=\k(\eta)=\O_{S,\eta}$, so dass jeder Schnitt und jeder Halm ein
+%   Unterring von $\K$ ist, d.\,h. es gibt für jeden Punkt $x\in X$ einen
+%   Morphismus $\Spec(\K)\to\Spec(\k(x))$ und für jede offene Teilmenge
+%   $U\subset X$ einen Morphismus $\Spec(\K)\to\Spec(\Gamma(U,\O_X))$.
+  
+%   Verzichtet man auf diese Bedingung, erhält man eine Familie
+%   generischer Punkte $\eta_i$ der endlich vielen irreduziblen
+%   Komponenten (beachte: $S$ noethersch). Dieser Fall kann analog
+%   behandelt werden, indem man $\K=\bigoplus_i \k(\eta_i)$ setzt.
+% \end{Bemerkung}
 
-    Verzichtet man auf diese Bedingung, erhält man eine Familie
-    generischer Punkte $\eta_i$ der endlich vielen irreduziblen
-    Komponenten (beachte: $S$ noethersch). Dieser Fall kann analog
-    behandelt werden, indem man $\K=\bigoplus_i \k(\eta_i)$ setzt.
-  \end{Bemerkung}
+% \begin{Bemerkung}[generische und spezielle Fasern]
+%   Ist $S=\Spec(R)$ mit $R$ Dedekindring, so hat ein $S$-Schema die
+%   \emph{generische Faser} über dem generische Punkt $\eta=(0)$ und die
+%   \emph{speziellen Fasern} über den verbleibenden Maximalidealen
+%   (geschlossenen Punkten).
+% \end{Bemerkung}
 
-  \begin{Bemerkung}[generische und spezielle Fasern]
-    Ist $S=\Spec(R)$ mit $R$ Dedekindring, so hat ein $S$-Schema die
-    \emph{generische Faser} über dem generische Punkt $\eta=(0)$ und die
-    \emph{speziellen Fasern} über den verbleibenden Maximalidealen
-    (geschlossenen Punkten).
-  \end{Bemerkung}
-\end{Definition}
 
 \section{Eigenschaften von Schemata}
 % % REDUZIERT
@@ -2831,19 +2944,19 @@ Für generaueres zu Tates Algorithmus siehe
 %   quasikompakt (Urbilder quasikompakter Mengen sind quasikompakt) ist.
 % \end{Definition}
 
-% REGULÄR
-\begin{Definition}[Regulär]
-  Ein Schema $X$ heißt regulär im Punk $x\in X$, wenn sein Halm
-  $\O_{X,x}$ ein regulärer (lokaler) Ring ist
-  (d.\,h. $\dim_{\O_{X,x}/\m_x}(\m_x/\m_x^2)=\dim(\O_{X,x})$).
+% % REGULÄR
+% \begin{Definition}[Regulär]
+%   Ein Schema $X$ heißt regulär im Punk $x\in X$, wenn sein Halm
+%   $\O_{X,x}$ ein regulärer (lokaler) Ring ist
+%   (d.\,h. $\dim_{\O_{X,x}/\m_x}(\m_x/\m_x^2)=\dim(\O_{X,x})$).
 
-  Regularität kann auf lokal noetherschen Schemata auf den geschlossenen
-  Punkten geprüft werden:
-  Ist $X$ lokal noethersch und regulär in allen geschlossenen Punkten,
-  so ist $X$ regulär nach \cite[Remark 6.25 (3)]{wedhorn}.
-\end{Definition}
+%   Regularität kann auf lokal noetherschen Schemata auf den geschlossenen
+%   Punkten geprüft werden:
+%   Ist $X$ lokal noethersch und regulär in allen geschlossenen Punkten,
+%   so ist $X$ regulär nach \cite[Remark 6.25 (3)]{wedhorn}.
+% \end{Definition}
 
-\section{Eigenschaften von Morphismen von Schemata}
+% \section{Eigenschaften von Morphismen von Schemata}
 % % FLACH
 % \begin{Definition}[flacher Morphismus]
 %   \optcite{bosch, goodreduction}
@@ -2913,19 +3026,19 @@ Für generaueres zu Tates Algorithmus siehe
 %   Ist $f$ glatt in jedem Punkt heißt $f$ glatt bzw. $X$ ist glattes
 %   $S$-Schema.  
 % \end{Definition}
-\begin{Bemerkung}\label{thm:eigglatt}
-  Für $X$ lokal endlich präsentiert ist $f$ glatt in $x$ äquivalent zu
-  $f$ flach in $x$ und $X_{f(x)}$ glatt über $\k(f(x))$ nach
-  \cite[8.5, Proposition 17]{bosch}.
+% \begin{Bemerkung}\label{thm:eigglatt}
+%   Für $X$ lokal endlich präsentiert ist $f$ glatt in $x$ äquivalent zu
+%   $f$ flach in $x$ und $X_{f(x)}$ glatt über $\k(f(x))$ nach
+%   \cite[8.5, Proposition 17]{bosch}.
   
-  Ist $X$ ein $\K$-Schema lokal endlichen Typs sind glatt und
-  geometrisch regulär äquivalent nach \cite[Corollary 6.32]{wedhorn}.
-  Ist $\K$ perfekter Körper (z.\,B. $\Char(\K)=0$), so ist dies sogar
-  äquivalent zu regulär nach \cite[Remark 6.33]{wedhorn}.
+%   Ist $X$ ein $\K$-Schema lokal endlichen Typs sind glatt und
+%   geometrisch regulär äquivalent nach \cite[Corollary 6.32]{wedhorn}.
+%   Ist $\K$ perfekter Körper (z.\,B. $\Char(\K)=0$), so ist dies sogar
+%   äquivalent zu regulär nach \cite[Remark 6.33]{wedhorn}.
     
-  Glatt impliziert reduziert, lokal von endlichem Typ und flach
-  \cite[für flach s.][Theorem 14.22]{wedhorn}.
-\end{Bemerkung}
+%   Glatt impliziert reduziert, lokal von endlichem Typ und flach
+%   \cite[für flach s.][Theorem 14.22]{wedhorn}.
+% \end{Bemerkung}
 
 
 % % ÉTALE
@@ -2949,10 +3062,10 @@ Für generaueres zu Tates Algorithmus siehe
 % \end{Definition}
 
 % SEPARIERT
-\begin{Definition}[separierter Morphismus]
-  \cite[Theorem 15.8]{wedhorn}
+% \begin{Definition}[separierter Morphismus]
+%   \cite[Theorem 15.8]{wedhorn}
   
-  Unterschemata separierter Schemata sind wieder separiert:
+%   Unterschemata separierter Schemata sind wieder separiert:
   % Sei $S$ Schema, $X$ separiertes $S$-Schema,
   % $W\overset{\iota}\hookrightarrow X$ Unterschema.
   % Dann ist
@@ -2976,40 +3089,40 @@ Für generaueres zu Tates Algorithmus siehe
   % $\phi_1$ lässt 
   
   % http://math.stackexchange.com/questions/1088879/closed-immersion-of-separated-scheme-is-separated
-\end{Definition}
+  % \end{Definition}
 
-% EIGENTLICH
-\begin{Definition}[eigentlicher Morphismus]
-  % Verallgemeinerung von projektiv; Äquivalent zu kompakt
-  Ein Morphismus $f\colon X\to Y$ heißt eigentlich, wenn er eine der
-  folgenden äquivalenten Bedingungen erfüllt
-  \begin{enumerate}[label=(\roman*)]
-  \item $f$ ist separiert, von endlichem Typ und universell
-    geschlossen (d.\,h. jeder Basiswechsel ist geschlossen)
-  \item $f$ ist quasi-separiert, von endlichem Typ und für jeden
-    Bewertungsring $R$ gilt
-    \begin{gather*}
-      X(R)=\Hom_Y(R, X) 
-      \overset{\sim}{\underset{\circ\Spec(\operatorname{incl})}
-        {\longrightarrow}}
-      \Hom_Y(\Quot(R), X)=X(\Quot(R))\;.
-    \end{gather*}
-    In anderen Worten, es findet sich für jedes kommutative Diagramm
-    wie folgt ein entsprechender, eindeutiger Lift
-    \begin{center}
-      \begin{tikzcd}
-        \Spec(\Quot(R)) \arrow[r]\arrow[d]
-        & X \arrow[d, "f"] \\
-        \Spec(R) \arrow[r]\arrow[to=ur, dashed, "\exists!"]
-        & Y
-      \end{tikzcd}
-    \end{center}
-  \end{enumerate}
-\end{Definition}
-\begin{Bemerkung}
-  Endliche sowie projektive Morphismen sind eigentlich
-  \cite[9.5, Remark 5 und Theorem 9]{bosch}.
-\end{Bemerkung}
+% % EIGENTLICH
+% \begin{Definition}[eigentlicher Morphismus]
+%   % Verallgemeinerung von projektiv; Äquivalent zu kompakt
+%   Ein Morphismus $f\colon X\to Y$ heißt eigentlich, wenn er eine der
+%   folgenden äquivalenten Bedingungen erfüllt
+%   \begin{enumerate}[label=(\roman*)]
+%   \item $f$ ist separiert, von endlichem Typ und universell
+%     geschlossen (d.\,h. jeder Basiswechsel ist geschlossen)
+%   \item $f$ ist quasi-separiert, von endlichem Typ und für jeden
+%     Bewertungsring $R$ gilt
+%     \begin{gather*}
+%       X(R)=\Hom_Y(R, X) 
+%       \overset{\sim}{\underset{\circ\Spec(\operatorname{incl})}
+%         {\longrightarrow}}
+%       \Hom_Y(\Quot(R), X)=X(\Quot(R))\;.
+%     \end{gather*}
+%     In anderen Worten, es findet sich für jedes kommutative Diagramm
+%     wie folgt ein entsprechender, eindeutiger Lift
+%     \begin{center}
+%       \begin{tikzcd}
+%         \Spec(\Quot(R)) \arrow[r]\arrow[d]
+%         & X \arrow[d, "f"] \\
+%         \Spec(R) \arrow[r]\arrow[to=ur, dashed, "\exists!"]
+%         & Y
+%       \end{tikzcd}
+%     \end{center}
+%   \end{enumerate}
+% \end{Definition}
+% \begin{Bemerkung}
+%   Endliche sowie projektive Morphismen sind eigentlich
+%   \cite[9.5, Remark 5 und Theorem 9]{bosch}.
+% \end{Bemerkung}
 % \begin{Bemerkung}[Stein Faktorisierung]
 %   \cite[9.5, Theorem 12]{bosch}
 %   Jeder eigentliche Morphismus $f\colon X\to Y$ faktorisiert über
