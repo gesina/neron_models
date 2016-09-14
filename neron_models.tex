@@ -1,4 +1,4 @@
-\documentclass[german]{scrreprt}
+\documentclass[german, bibliography=totoc]{scrreprt}
 \input{neron_models-def.tex}
 \hyphenation{Né-ron=Ab-bil-dungs-ei-gen-schaft Grup-pen-sche-ma-ta}
 
@@ -7,12 +7,15 @@
   pdfauthor={Gesina Schwalbe},
   pdftitle={Neron Modelle}
 }
-\titlehead{Betreuer: Prof.\,Dr.\,Kerz\\ Universität Regensburg}
+\titlehead{Betreuer: Prof.\,Dr.\,Moritz Kerz\\ Universität Regensburg}
 \subject{Bachelorarbeit}
 \title{
   Néron-Modelle elliptischer Kurven
 }
 \author{Gesina Schwalbe}
+
+% VORVERSION:
+\renewcommand*{\optcite}[2][]{}
 
 \begin{document}
 
@@ -87,11 +90,12 @@ In \autoref{chap:weierstraßmodelle} wird die Konstruktion von $W$ von
 oben genauer erläutert und die Eigenschaften einer solchen Kurve über
 $R$ untersucht. Insbesondere werden wir feststellen, dass der glatte
 Teil von $W$ tatsächlich die Gruppenverknüpfung erweitert und im
-regulären Fall sogar das Néron-Modell von $E_\K$ ist.
+glatten (bzw. später auch regulären) Fall sogar das Néron-Modell von
+$E_\K$ ist.
 
 Ist $W$ nicht regulär, müssen erst weitere Modifikationen an $W$
 vorgenommen werden, um eine hinreichend gutartige, insb. reguläre,
-Kurve über $R$ zu erhalten. Solche \enquote{gutartigen} Kurven über
+Kurve über $R$ zu erhalten. Solche gutartigen Kurven über
 einem Dedekindring werden arithmetische Fläche genannt und in
 \autoref{chap:arithmetischeflächen} näher auf ihre Eigenschaften und
 die Konstruktion für elliptische Kurven untersucht.
@@ -101,7 +105,11 @@ glatte Teil einer minimal gewählten arithmetischen Fläche zu $E_\K$
 bereits das Néron-Modell von $E_\K$ ist, womit die Konstruktion und
 insbesondere der Existenzbeweis abgeschlossen ist.
 
-\section{Notation}
+\autoref{chap:ausblick} enthält dann noch ein paar Beispiele
+bzw. Anwendungen und den Ausblick auf eine Klassifizierung
+elliptischer Kurven nach der Form ihres minimalen Modells.
+
+\section*{Notation}
 Es werden Kenntnisse zur Garben-~und Schematheorie benötigt,
 insbesondere zu den Begriffen glatt, flach, eigentlich, separiert.
 Die Notation richtet sich nach \cite{wedhorn}.
@@ -399,8 +407,8 @@ besonders interessant, wie sich $S$-Gruppenschemata
 bzgl. ($S$-)rationalen Abbildungen verhalten.
 Tatsächlich verhalten sich eigentliche Gruppenschemata in folgender
 Hinsicht gutartig:
-\begin{Lemma}\label{thm:rationalzumorphismus}
-  \cite[Proposition IV.6.2]{silverman2}
+\begin{Lemma}[{\cite[Proposition IV.6.2]{silverman2}}]
+  \label{thm:rationalzumorphismus}
   Sei $G$ ein $R$"=Gruppenschema, $Y$ ein glattes $R$-Schema und
   $\phi\colon Y\dra G$ eine $R$-rationale Abbildung.
   Dann gilt:
@@ -453,9 +461,9 @@ Das schöne an einer normalen Komposition ist, dass zumindest
 ein großer Teil, nämlich ein offenes dichtes Unterschema, offen und
 dicht in einem richtigen Gruppenschema mit derselben Gruppenstruktur
 liegt.
-\begin{Satz}[Weil]\label{thm:weil}
+\begin{Satz}[{Weil,
   \cite[Theorem VIII.1.12]{artin},
-  \cite[Theorem IV.6.9]{silverman2}
+  \cite[Theorem IV.6.9]{silverman2}}]\label{thm:weil}
   Sei $V$ glattes $R$-Schema mit nichtleeren Fasern
   und normaler Komposition $\mu\colon V\times_R V\dra V$.
   $V$ sei zusätzlich endlichen Typs und $V(R)$ sei dicht in jeder
@@ -509,7 +517,20 @@ liegt.
 
 \chapter{Néron-Modelle}\label{chap:neronmodelle}
 Sei $R$ im Folgenden Dedekindring mit Quotientenkörper $\K$.
+
 \section{Definition}
+Wie bereits beschrieben sind Néron-Modelle für $\K$-Gruppenschemata
+Erweiterungen der Gruppenstruktur auf ein $R$-Schema, und zwar sowohl
+im Hinblick auf die Gruppenverknüpfung als auch auf den Gruppen der
+Schnitte.
+
+In diesem Abschnitt werden wir vorerst die allgemeine Definition eines
+Néron-Modells nach \cite[1.2, Definition 1]{neron} anhand der
+Erweiterungsforderungen einführen. Danach können wir bereits einige
+Eigenschaften ableiten, die zu einer alternativen Definition für
+$\K$-Gruppenschemata führen, welche die Gruppenstruktur wieder mit
+einbezieht.
+
 \begin{Definition}[Néron-Modell]
   \optcite[1.2, Definition 1]{neron}
   Sei $X_\K$ ein glattes, separiertes $\K$-Schema endlichen Typs.
@@ -551,7 +572,7 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
     
     Ein Gruppenschema $X$ ist genau dann separiert, wenn der
     Einheitsschnitt $\epsilon\colon\Spec(R)\to X$ eine geschlossene
-    Immersion ist
+    Immersion ist nach
     \cite[Lemma 38.6.1]{stacksproject} oder \cite[7.1, Lemma 2]{neron}.
     $\K$-Gruppenschemata sind entsprechend immer separiert
     \cite[Lemma 38.7.3]{stacksproject}. 
@@ -634,7 +655,7 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
   \label{def:neronmodellellkurve}
   Sei $R$ ein Dedekindring (mit perfektem Restklassenkörper),
   $\K=\Quot(R)$, $E_\K$ eine elliptische Kurve, d.\,h. ein
-  glattes, projektives (also separiertes), integeres, reguläres
+  glattes, projektives (also separiertes), integeres
   $\K$-Schema endlichen Typs vom Geschlecht~1.
   
   Dann ist ein Néron-Modell von $E_\K$ nach
@@ -677,41 +698,48 @@ die Gruppenstruktur auf das Néron-Modell erweitert.
 Ein Grund, weshalb für ein Néron-Modell Separiertheit gefordert wird,
 ist die Eindeutigkeit von Morphismen in separierte Schemata im
 folgenden Sinne:
-\begin{Satz}\label{thm:erweindeutig}
-  \cite[Corollary 9.9]{wedhorn}
+\begin{Satz}[{\cite[Corollary 9.9]{wedhorn}}]\label{thm:erweindeutig}
   Sei $R$ Dedekindring, $Y$ und $X$ $R$-Schemata, $X$ separiert, $Y$
   reduziert.
   Dann ist ein Morphismus $\phi\colon Y\to X$ durch jede
   Einschränkung auf eine dichte Teilmenge von $Y$ eindeutig bestimmt.
   Insbesondere sind, falls $Y$ flach über $X$ ist, Erweiterungen von
   Morphismen der generischen Fasern eindeutig.
-  \begin{proof}
-    % TODO: Beweis zu Eindeutigkeit von Morphismen stehen lassen?
-    Sei $x\in\Dom(\phi)$.
-    Wir werden induktiv nach der Dimension von $x$ vorgehen. Für
-    $\dim_Y(x)=0$ ist $x$ generischer Punkt und $\phi$ ist hier nach
-    Voraussetzung festgelegt.
-    Sei $\phi$ eindeutig definiert in $y\in\Dom(\phi)$ für
-    $\dim_Y(y)=(n-1)$ und sei $\dim_Y(x)=n$.
-    Wir können nun eine Generalisierung $y\in\Spec(\O_{Y,x})\subset Y$
-    von $x$ mit $\dim_Y(y)=(n-1)$ betrachten.
-    Im geschlossenen, irreduziblen, reduzierten Unterschema $V_y$ mit
-    topologischem Raum $\overline{\{y\}}\subset Y$ ist
-    $\dim_{V_y}(x)=1$.
-    $V_y$ ist integer, $\Spec(\O_{V_y,x})=\{x,y\}$ und daher 
-    $\O_{V_y,x}$ ein Bewertungsring mit
-    $y=(0)\in\Spec(\O_{V_y,x})$ und $\Quot(\O_{V_y,x})=\k(y)$.
-    Nach dem Bewertungskriterium für Separiertheit von $W$ ist
-    $\phi|_{\Spec(\O_{V_y,x})}$ die eindeutige Erweiterung von
-    $\phi|_{\Spec(\k(y))}$. Da $\phi$ auf $y$ bereits eindeutig war
-    und $Y$ reduziert ist, ist $\phi$ auch eindeutig auf $x$.
+  % \begin{proof}
+  %   % TODO: Beweis zu Eindeutigkeit von Morphismen stehen lassen?
+  %   Sei $x\in\Dom(\phi)$.
+  %   Wir werden induktiv nach der Dimension von $x$ vorgehen. Für
+  %   $\dim_Y(x)=0$ ist $x$ generischer Punkt und $\phi$ ist hier nach
+  %   Voraussetzung festgelegt.
+  %   Sei $\phi$ eindeutig definiert in $y\in\Dom(\phi)$ für
+  %   $\dim_Y(y)=(n-1)$ und sei $\dim_Y(x)=n$.
+  %   Wir können nun eine Generalisierung $y\in\Spec(\O_{Y,x})\subset Y$
+  %   von $x$ mit $\dim_Y(y)=(n-1)$ betrachten.
+  %   Im geschlossenen, irreduziblen, reduzierten Unterschema $V_y$ mit
+  %   topologischem Raum $\overline{\{y\}}\subset Y$ ist
+  %   $\dim_{V_y}(x)=1$.
+  %   $V_y$ ist integer, $\Spec(\O_{V_y,x})=\{x,y\}$ und daher 
+  %   $\O_{V_y,x}$ ein Bewertungsring mit
+  %   $y=(0)\in\Spec(\O_{V_y,x})$ und $\Quot(\O_{V_y,x})=\k(y)$.
+  %   Nach dem Bewertungskriterium für Separiertheit von $W$ ist
+  %   $\phi|_{\Spec(\O_{V_y,x})}$ die eindeutige Erweiterung von
+  %   $\phi|_{\Spec(\k(y))}$. Da $\phi$ auf $y$ bereits eindeutig war
+  %   und $Y$ reduziert ist, ist $\phi$ auch eindeutig auf $x$.
 
-    Ist $Y$ flach, so liegen alle generischen Punkte von $Y$ in der
-    generischen Faser nach \cite[Proposition III.9.7]{hartshorne}.
-  \end{proof}
+  %   Ist $Y$ flach, so liegen alle generischen Punkte von $Y$ in der
+  %   generischen Faser nach \cite[Proposition III.9.7]{hartshorne}.
+  % \end{proof}
 \end{Satz}
+Somit ist die Eindeutigkeit der Erweiterung eines Schnitts bereits
+durch die Separiertheit des Néron-Modells gegeben.
 
 % EINDEUTIGKEIT, BASISWECHSEL
+Nun ein paar weitere grundlegende Eigenschaften von Néron-Modellen.
+Hierbei ist zu beachten, dass sich Néron-Modelle nicht so gutartig
+verhalten, wie es die universelle Eigenschaft vermuten lässt.
+U.\,a. sind Néron-Modelle zwar stabil unter Produktbildung (was wir
+hier nicht brauchen und nicht zeigen werden), allerdings nicht unter
+beliebigem Koprodukt, also Basiswechsel.
 \begin{Satz}
   \optcite[1.2, Proposition 2]{neron}
   \optcite[Proposition IV.5.2]{silverman2}
@@ -824,10 +852,9 @@ folgenden Sinne:
 \end{Satz}
 
 % LOKALITÄT
-Die Existenz von Néron-Modellen können auch lokal geprüft werden im
-folgenden Sinne:
-\begin{Satz}\label{thm:neronmodelllokal}
-  \cite[1.2, Proposition 4]{neron}
+Eine sehr wichtige und praktische Eigenschaft ist die Lokalität von
+Néron-Modellen im folgenden Sinne:
+\begin{Satz}[{\cite[1.2, Proposition 4]{neron}}]\label{thm:neronmodelllokal}
   Für ein $R$-Schema $X$ endlichen Typs ist äquivalent
   \begin{enumerate}[label=(\roman*)]
   \item $X$ ist Néron-Modell seiner generischen Faser
@@ -842,7 +869,8 @@ folgenden Sinne:
 Wir werden im Folgenden nur die Implikation
 \emph{(ii)}$\Rightarrow$\emph{(i)} benötigen, daher sei für die
 andere Richtung auf \cite[1.2, Proposition 4]{neron} verwiesen.
-Wir benötigen dazu folgendes Lemma und Korollar:
+Wir benötigen dazu folgendes Lemma und Korollar zur Erweiterung von
+Morphismen eines Unterschemas auf offene Umgebungen:
 
 % ERWEITERUNG V. MORPHISMEN AUF OFFENE TEILMENGEN
 \begin{Lemma}\label{thm:morphismuserweiterung}
@@ -1062,6 +1090,11 @@ Wir benötigen dazu folgendes Lemma und Korollar:
 
 
 \subsection{Néron-Modelle abelscher Varietäten}
+Nachdem wir uns explizit für Néron-Modelle von abelschen Varietäten
+interessieren, seien hier einige Eigenschaften aufgeführt.
+Wichtig ist u.\,a., dass die Existenz in diesem Fall allgemein
+gesichert ist, was wir im Fall von elliptischen Kurven explizit
+nachweisen werden.
 % ALLG. EXISTENZ
 % \begin{Satz}[Existenz von Néron-Modellen]\label{thm:existenz}
 %   \cite[1.3, Theorem 1]{neron}
@@ -1071,7 +1104,7 @@ Wir benötigen dazu folgendes Lemma und Korollar:
 %   beschränkt in $X_\K$ ist.
 %   %   eigentlich => beschränkt
 % \end{Satz}
-\begin{Korollar}\label{thm:exneronmodellabvarietaet}
+\begin{Satz}\label{thm:exneronmodellabvarietaet}
   Abelsche Varietäten über $\K$ haben ein Néron-Modell über $R$.
   % \begin{proof}
   %   Abelsche Varietäten über $\K$ sind insbesondere glatte und
@@ -1080,16 +1113,19 @@ Wir benötigen dazu folgendes Lemma und Korollar:
   %   Nachdem eigentlich beschränkt impliziert, ist die Bedingung aus
   %   \ref{thm:existenz} erfüllt.
   % \end{proof}
-\end{Korollar}
+\end{Satz}
 
 % Für die folgenden Aussagen ist beim Übergang zum allgemeinen Fall
 % eines allgemeinen Dedekindschemas die Eigenschaft zusammenhängend
 % nötig.
 
-Abelsche Varietäten stellen einen Spezialfall dar. Hier ist bei guter
-Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
-\begin{Satz}\label{thm:abelscheneronmodelle}
-  \cite[1.4, Proposition 2]{neron}
+Für abelsche Varietäten unterscheiden sich von generellen glatten,
+separierten $\K$"=Gruppenschemata dadurch, dass die Gruppen ihrer
+Schnitte abelsch sind. Da diese Eigenschaft für Gruppenschemata
+sehr wünschenswert ist, fragt sich, inwieweit das Néron-Modell einer
+abelschen Varietät wieder abelsch ist.
+\begin{Satz}[{\cite[1.4, Proposition 2]{neron}}]
+  \label{thm:abelscheneronmodelle}
   Sei $A_\K$ abelsche Varietät über $\K$ mit guter Reduktion
   d.\,h. es gibt ein glattes, eigentliches $R$-Modell $A$ von $A_\K$.
   Dann ist $A$ Néron-Modell von $A_\K$ und die induzierte
@@ -1137,9 +1173,8 @@ Reduktion die Existenz eines besonders schönen Néron-Modells gesichert.
 
 Mit diesem Ergebnis können wir für Néron-Modelle von
 abelschen Varietäten eine Aussage dazu machen, wo die induzierte
-Gruppenschemastruktur abelsch ist:
-\begin{Satz}\label{thm:teilwabelscheneronmodelle}
-  \cite[1.4, Theorem 3]{neron}
+Gruppenschemastruktur abelsch ist.
+\begin{Satz}[{\cite[1.4, Theorem 3]{neron}}]\label{thm:teilwabelscheneronmodelle}
   Sei $A_\K$ abelsche Varietät über $\K$,
   $X$ ihr Néron-Modell über $R$ und
   $S\subset\Spec(R)$ die Menge der geschlossenen Punkte
@@ -1200,6 +1235,25 @@ Gruppenschemastruktur abelsch ist:
 
 
 \chapter{Weierstraßmodelle}\label{chap:weierstraßmodelle}
+In diesem Kapitel werden wir näher auf die Konstruktion eines
+projektiven $R$-Schemas $W$ aus einer Weierstraßgleichung über dem
+Quotientenkörper eines Dedekindrings eingehen.
+Ein solches Schema ist zwar eigentlich, erfüllt also die \NAbbEig, ist
+aber nicht notwendigerweise glatt und die Gruppenverknüpfung
+erweitert sich nicht immer zu einem Morphismus auf ganz $W$.
+Letzteres kann man beheben, indem man sich auf das Unterschema der
+glatten Punkte $W^0$ von $W$ beschränkt. Denn hier erweitert sich die
+Gruppenverknüpfung und macht $W^0$ zum Gruppenschema, wie wir in
+\autoref{chap:weierstraßgruppe} sehen werden.
+
+Vorweg sei schon gesagt, dass $W^0$ nur groß genug für die
+\NAbbEig ist, wenn $W$ regulär ist. Allerdings wird sich aus
+der späteren Konstruktion ergeben, dass $W^0$ immer ein großer Teil
+des Néron-Modells ist.
+
+Für unsere Konstruktion eines Néron-Modells beginnen wir in jedem Fall
+mit einem Weierstraßmodell wie unten beschrieben.
+
 \section{Konstruktion}
 \subsection{Weierstraßgleichungen}
 Jede elliptische Kurve $E_\K$ über einem beliebigen Körper $\K$ kann
@@ -1230,11 +1284,13 @@ ausgegangen. Für $\Char(\K)=2,3$ sei verwiesen auf
 
 
 % DISKRIMINANTE
-Zu einer Weierstraßgleichung ist die sog. \emph{Diskriminante}
-assoziiert, welche für eine Gleichung in obiger Form definiert ist als
-\begin{gather*}
-  \Delta = -16\left(4\beta^3 + 27\gamma^2\right)
-\end{gather*}
+Zu einer Weierstraßgleichung ist die \emph{Diskriminante} und die
+\emph{$j$-Invariante} assoziiert, welche für eine Gleichung in obiger
+Form definiert sind als 
+\begin{align*}
+  \Delta &= -16\left(4\beta^3 + 27\gamma^2\right)
+  &j &= (-16)\cdot 2^8\cdot 3^3\cdot\beta^3
+\end{align*}
 Eine Weierstraßgleichung ist genau dann regulär (definiert also eine
 elliptische Kurve), wenn $\Delta\neq 0$ gilt,
 und im singulären Fall gibt es genau einen singulären Punkt
@@ -1246,10 +1302,9 @@ nach \cite[Proposition III.1.4]{silverman}.
 Sei im Folgenden Abschnitt $R$ Dedekindring,
 $\K=\Quot(R)$ und $E_\K$ elliptische Kurve über $\K$.
 
-Uns interessiert nun, ob sich ein $R$-Schema finden lässt, das die
-Struktur der elliptischen Kurve, in erster Betrachtung die
-Weierstraßgleichung, erhält.
-
+Uns interessiert nun, ob und wie sich eine Weierstraßgleichung mit
+Koeffizienten in $R$ finden lässt, also entsprechend ein $R$-Modell
+von $E_\K$.
 Bleiben wir bei unserer Annahme $\Char(\K)\neq2,3$, sind die
 Isomorphismen zwischen Weierstraßkurven zu $E_\K$ genau durch
 Koordinatenwechsel der Form
@@ -1281,15 +1336,15 @@ Weierstraßgleichung mit Koeffizienten in $R$.
 % \end{gather*}
 % dem Koeffizientenwechsel
 % \begin{align*}
-    %     \beta&\mapsto \pi^{4n}\beta
-                 %     &\gamma&\mapsto \pi^{6n}\gamma
-                                %     &\Delta&\mapsto \pi^{12n}\Delta
-                                               %   \end{align*}
-                                               %                                                also der Multiplikation der Koeffizienten mit positiven Potenzen von
-                                               %                                                $\pi$ gleich
-                                               %                                                (\cite[1.5, Lemma 2]{neron} oder \cite[Chapter VII.1]{silverman}).
-                                               %                                                Ein Anwenden dieses Koordinatenwechsels mit genügend hohem $n$ ergibt
-                                               %                                                also eine Gleichung mit Koeffizienten in $R$.
+%   \beta&\mapsto \pi^{4n}\beta
+%   &\gamma&\mapsto \pi^{6n}\gamma
+%   &\Delta&\mapsto \pi^{12n}\Delta
+% \end{align*}
+% also der Multiplikation der Koeffizienten mit positiven Potenzen von
+% $\pi$ gleich
+% (\cite[1.5, Lemma 2]{neron} oder \cite[Chapter VII.1]{silverman}).
+% Ein Anwenden dieses Koordinatenwechsels mit genügend hohem $n$ ergibt
+% also eine Gleichung mit Koeffizienten in $R$.
 
 \begin{Definition}[Weierstraßmodell]
   Wir nennen ein projektives $R$-Schema $W=V_+(F)\subset\P_R^2$, das
@@ -1318,17 +1373,16 @@ Form der Weierstraßgleichung in $R$ zu betrachten:
   wenn es von einer minimalen Weierstraßgleichung von $E_\K$ erzeugt
   ist.
 \end{Definition}
-Es stellt sich heraus, dass sich die Bewertung der Diskriminante in
-einer endliche Anzahl an Fällen klassifizieren lässt.
-Dies ist interessant für die Klassifizierung der speziellen Fasern von
-Néron-Modellen elliptischer Kurven, wie wir später sehen werden.
-% TODO: Sieht man die Klassifizierung später?
+Es stellt sich heraus, dass sich die spezielle Faser des
+Weierstraßmodells einer elliptische Kurve anhand der
+Bewertung der Diskriminante und der $j$-Invariante in eine von zehn
+Kategorien klassifizieren lässt. Siehe auch \autoref{chap:ausblick}. 
 
 % -----
 
-\section{Gruppenschemastruktur}
-\subsection{Allg. Eigenschaften}
-Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
+\section{Gruppenschemastruktur}\label{chap:weierstraßgruppe}
+\subsection{Allgemeine Eigenschaften}
+Im Folgenden ein paar nützliche Eigenschaften von Weierstraßmodellen.
 
 % INTEGER, PROJEKTIV, FLACH
 \begin{Lemma}\label{thm:eigweierstrassmodelle}
@@ -1522,7 +1576,7 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
   (bzw. äquivalent dazu regulär) ist.
   Dies lässt sich recht leicht an der Weierstraßgleichung ablesen.
   
-  Die spezielle Faser $W_{\m}=W\times_R R/\m$ ist definiert
+  Die spezielle Faser $W_{\m}=W\times_R (R/\m)$ ist definiert
   durch die Reduktion der Weierstraßgleichung von $W$ modulo dem
   Maximalideal $\m$ von $R$, also ebenfalls eine Weierstraßkurve.
   Entsprechend ist $W_{\m}$ (und damit $W$) genau dann glatt, wenn
@@ -1539,6 +1593,10 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 \end{Bemerkung}
 
 \subsection{Gruppenstruktur auf Weierstraßmodellen}
+Das Folgende Lemma weist die Gruppenstruktur auf dem glatten Teil
+eines Weierstraßmodells nach. Es wird nur eine kurze Beweisskizze
+geliefert, da die Aussage nur ein Spezialfall von
+\ref{thm:exneronmodelle} ist.
 \begin{Lemma}\label{thm:erweiterunggruppenstruktur}
   Sei $(R,\m)$ hier diskreter Bewertungsring,
   $\k(\m)=R/\m$ perfekt,
@@ -1588,8 +1646,7 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
     Berechnungen wie in \cite[Proposition 2.5]{silverman} zeigen, dass
     $\mu$ auf $W\times_R W$ höchstens im singulären Punkt nicht
     definiert ist, falls dieser existiert.
-    Dies kann auf der affinen Überdeckung von $W$ nachgerechnet werden.
-    
+    Dies kann auf der affinen Überdeckung von $W$ nachgerechnet werden.    
     % \begin{enumerate}
     % \item $W^0=W\setminus\{\gamma\}$: \ref{thm:weierstrassglatt}
     %     %   \cite[Remark IV.5.4.2]{silverman2}
@@ -1645,10 +1702,9 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 \end{Lemma}
 
 % IDENTITÄTSKOMPONENTE
-\begin{Bemerkung}
-  \cite[Chapter 1.5, S.\,23]{neron},
+\begin{Bemerkung}[{\cite[Chapter 1.5, S.\,23]{neron},
   \cite[Corollary IV.9.1]{silverman2},
-  \cite[S. 46]{tate}
+  \cite[S. 46]{tate}}]
   Für ein minimales Weierstraßmodell $W$ von $E_\K$ über $R$
   ist $W^0$ isomorph zur Identitätskomponente des Néron-Modells von
   $E_\K$ über $R$.
@@ -1657,8 +1713,8 @@ Jetzt noch ein paar Eigenschaften von Weierstraßmodellen.
 % Im Folgenden sei $E_\K$ immer eine elliptische Kurve über dem
 % Quotientenkörper $\K$ des Dedekindringes $R$.
 
-In bestimmten Fällen erhält man das Néron-Modell bereits aus einem
-Weierstraßmodell von $E_\K$ über $R$.
+Im glatten Fall ist das Néron-Modell bereits das Weierstraßmodell mit
+der induzierten Gruppenstruktur.
 \begin{Korollar}\label{thm:neronmausweierstrassgl}
   \optcite[Corollary IV.6.3]{silverman2}
   Sei $R$ Dedekindring mit perfekten Restklassenkörpern, $\K=\Quot(R)$,
@@ -1774,6 +1830,27 @@ Weierstraßmodell von $E_\K$ über $R$.
 % ------
 
 \chapter{Arithmetische Flächen}\label{chap:arithmetischeflächen}
+Arithmetische Flächen sind grob gesagt besonders gutartige Kurven über
+einem Dedekindring $R$, d.\,h. $R$-Schemata der Dimension~2.
+Wichtig istbesonders, dass ihre Fasern alle projektive Kurven sind,
+was sie leicht zu beschreiben macht.
+
+In diesem Kapitel werden wir erst arithmetische Flächen einführen und
+dann zeigen, dass es für elliptische Kurven immer eine solche Fläche
+als $R$-Modell gibt. Für die Konstruktion wird das Weierstraßmodell
+aus \autoref{chap:weierstraßmodelle} nötig sein.
+
+Weiterhin werden einige Eigenschaften arithmetischer Flächen
+untersucht. U.\,a. wird gezeigt, dass alle $R$-Schnitte einer
+arithmetischen Fläche bereits $R$-Schnitte des glatten Teils
+sind. Dies wird für die Konstruktion des Néron-Modells später von
+Nutzen sein, welches sich als der glatte Teil einer minimal gewählten
+arithmetischen Fläche entpuppen wird.
+
+Diese Form der Minimalität wird in \autoref{chap:minmodelle}
+eingeführt und die Existenz solcher minimalen Modelle für elliptische
+Kurven gezeigt.
+
 \section{Definition}
 \begin{Definition}[arithmetische Fläche]
   Sei $R$ Dedekindring mit Quotientenkörper $\K$.
@@ -1810,7 +1887,8 @@ Weierstraßmodell von $E_\K$ über $R$.
 
 \begin{Satz}\label{thm:exarithfl}
   Für eine elliptische Kurve $E_\K$ über $\K$ existiert eine
-  arithmetische Fläche über $R$, deren generische Faser $E_\K$ ist.
+  arithmetische Fläche über $R$, deren generische Faser $E_\K$ ist
+  (kurz: eigentliches Modell von $E_\K$ über $R$).
   \begin{proof}
     Aus \autoref{chap:weierstraßmodelle} wissen wir, dass wir zu $E_\K$
     ein Weierstraßmodell $W$ über $R$ finden, d.\,h. ein projektives,
@@ -1839,7 +1917,7 @@ Weierstraßmodell von $E_\K$ über $R$.
   \end{proof}
 \end{Satz}
 
-\begin{Bemerkung}
+\begin{Bemerkung}\label{bem:konstruktioneigmodell}
   Die Desingularisierung von $W$ kann man induktiv durch eine
   Abfolge von abwechselnden Normalisierungen und Blow-Ups konstruieren:
   \begin{gather*}
@@ -1865,7 +1943,100 @@ Weierstraßmodell von $E_\K$ über $R$.
 
 % -----
 \section{Eigenschaften}
-\begin{Satz}\label{thm:ratpkteregulaeremodelle}
+Eine recht praktische Eigenschaft von arithmetischen Flächen ist, dass
+sie in den Bildern all ihrer Schnitte regulär sind.
+Dieser Abschnitt befasst sich mit dieser Aussage sowie einem
+zugehörigen Korollar.
+
+\begin{Lemma}\label{thm:arithflschnittbilderglatt}
+  \optcite[Proposition IV.4.3]{silverman2}
+  Sei $R$ Dedekindring,
+  $\pi\colon X\to\Spec(R)$ eine arithmetische Fläche über $R$,
+  $\p\in\Spec(R)$ und $\phi\in X(R)$.
+  Dann ist $X_\p$ regulär in $\phi(\p)$.
+  \begin{proof}
+    Nachdem die generische Faser einer arithmetischen Fläche bereits
+    glatt, also regulär ist, sei $\p\subset\Spec(R)$ ein geschlossener
+    Punkt.
+    
+    Sei $x=\phi(\p)\in X_\p\subset X$ und $\m_{X_\p,x}\subset\O_{X_\p,x}$
+    das Maximalideal des Halmes von $x$ in $X_\p$,
+    analog $\m_{X,x}\subset\O_{X,x}$.
+    Der Punkt $x\in X_\p(\k(\p))\subset X_\p$ ist geschlossen in $X_\p$,
+    daher gilt nach \cite[Corollary 2.5.24]{liu}
+    $\dim\O_{X_\p,x}=\dim X_\p=1$ ($X_p$ ist equidimensional nach
+    \cite[Proposition 4.4.16]{liu} und projektive Kurve).
+    Wir müssen für die Regularität von $X_\p$ in $x$ also zeigen, dass
+    $\m_{X_\p,x}/\m_{X_\p,x}^2$ als $(\O_{X_p,x}/\m_{X_p,x})$-Vektorraum
+    von einem Element $f_1$ erzeugt wird.
+    
+    $\O_{X,x}$ ist $R$-Algebra über den induzierten lokalen
+    Ringhomomorphism $\pi^\#\colon R_\p\to\O_{X,x}$.
+    Sei $\phi^\#\colon\O_{X,x}\to R_\p$ der induzierte lokale
+    Ringhomomorphismus zu $\phi$ auf den Halmen, wobei
+    $\phi^\#(\m_{X,x})=\p$ gelten muss, da $\pi^\#\circ\phi^\#(\p)=\p$.
+    
+    Wir werden zeigen, dass es ein Element
+    $t\in\pi^\#(\p)\setminus\m_{X,x}^2$ gibt und
+    daraus die gewünschte Dimension von $\m_{X_\p,x}/\m_{X_\p,x}^2$
+    bzw. die Regularität von $X_\p$ in $x$ folgern.
+
+    Angenommen, es gelte $\pi^\#(\p)\subset\m_{X,x}^2$.
+    Mit $\pi\circ\phi=\Id_{\Spec(R)}$ erhalten wir die Abschätzung
+    \begin{gather*}
+      \p = (\pi\circ\phi)^\#(\p)
+      = \phi^\#\circ\pi^\#(\p)
+      \overset{\text{Ann.}}{\subset} \phi^\#(\m_{X,x}^2)
+      = \phi^\#(\m_{X,x})^2
+      = \p^2
+    \end{gather*}
+    Dies ist ein Widerspruch, da $\p\subset R_\p$ Maximalideal eines
+    diskreten Bewertungsringes ist und deshalb wegen Regularität von
+    $R_\p$ gelten muss $\p/\p^2\neq 0$.
+    Also gilt $\pi^\#(\p)\not\subset\m_{X,x}^2$.
+
+    Nach \ref{eq:stalkdimension} gilt
+    $\dim\O_{X,x}=\dim R_\p+\dim\O_{X_\p,x}=2$ und $X$ ist nach
+    Voraussetzung regulär, weshalb $\O_{X,x}$ regulär von Dimension~2
+    ist. Das bedeutet, dass es zwei Elemente $f_1, f_2\in\m_{X,x}$
+    gibt, so dass
+    \begin{gather}\label{eq:maximalideal}
+      \m_{X,x} = f_1\O_{X,x} + f_2\O_{X,x} + \m_{X,x}^2
+    \end{gather}
+    Wegen $\pi^\#(\p)\not\subset\m_{X,x}^2$ gibt es ein
+    $t\in\pi^\#(\p)\setminus\m_{X,x}^2\subset\m_{X,x}$.
+    \eqref{eq:maximalideal} bedeutet für $t$, dass es $\alpha_1,
+    \alpha_2\in\O_{X,x}$ gibt, so dass
+    \begin{gather*}
+      t = \alpha_1 f_1 + \alpha_2 f_2 \mod \m_{X,x}^2
+    \end{gather*}
+    Da $t\not\in\m_{X,x}^2$, muss mindestens einer der Koeffizienten
+    in $\O_{X,x}\setminus\m_{X,x}=\O_{X,x}^\times$ liegen, also einen
+    Einheit sein. \OE{} $\alpha_2\in\O_{X,x}^\times$, dann können wir
+    umschreiben
+    \begin{gather*}
+      f_2 = \frac{1}{\alpha_2}t + \frac{\alpha_1}{\alpha_2}f_1 
+    \end{gather*}
+    und aus \eqref{eq:maximalideal} wird
+    \begin{gather}\label{eq:maximalidealneu}
+      \m_{X,x} = t\O_{X,x} + f_1\O_{X,x} + \m_{X,x}^2
+    \end{gather}
+
+    Für den lokalen Ring $\O_{X_\p,x}$ von $x$ in der generischen
+    Faser $X_\p = X\times_R (R/\p)$ gilt
+    \begin{align*}
+      \O_{X_\p,x} &= \O_{X,x}/\pi^\#(\p)\\
+      \m_{X_\p,x} &= \m_{X,x}/\pi^\#(\p)
+                    \overset{\eqref{eq:maximalidealneu}}{=}
+                    \bar f_1\O_{X_\p,x} + \m_{X_\p,x}^2
+    \end{align*}
+    Wir sehen, $\m_{X_\p,x}$ ist von $\m_{X_\p,x}^2$ und einem Element
+    erzeugt, was $\O_{X_\p,x}$ zu einem regulären Ring der Dimension~1
+    macht.
+  \end{proof}
+\end{Lemma}
+
+\begin{Korollar}\label{thm:ratpkteregulaeremodelle}
   \optcite[Corollary IV.4.4]{silverman2}
   Sei $R$ Dedekindring
   mit perfekten Restklassenkörpern,
@@ -1953,134 +2124,73 @@ Weierstraßmodell von $E_\K$ über $R$.
     Damit ist die Behauptung gezeigt.
     % \end{enumerate}
   \end{proof}
-\end{Satz}
-
-\begin{Lemma}\label{thm:arithflschnittbilderglatt}
-  \cite[Proposition IV.4.3]{silverman2}
-  Sei $R$ Dedekindring,
-  $\pi\colon X\to\Spec(R)$ eine arithmetische Fläche über $R$,
-  $\p\in\Spec(R)$ und $\phi\in X(R)$.
-  Dann ist $X_\p$ regulär in $\phi(\p)$.
-  \begin{proof}
-    Nachdem die generische Faser einer arithmetischen Fläche bereits
-    glatt, also regulär ist, sei $\p\subset\Spec(R)$ ein geschlossener
-    Punkt.
-    
-    Sei $x=\phi(\p)\in X_\p\subset X$ und $\m_{X_\p,x}\subset\O_{X_\p,x}$
-    das Maximalideal des Halmes von $x$ in $X_\p$,
-    analog $\m_{X,x}\subset\O_{X,x}$.
-    Der Punkt $x\in X_\p(\k(\p))\subset X_\p$ ist geschlossen in $X_\p$,
-    daher gilt nach \cite[Corollary 2.5.24]{liu}
-    $\dim\O_{X_\p,x}=\dim X_\p=1$ ($X_p$ ist equidimensional nach
-    \cite[Proposition 4.4.16]{liu} und projektive Kurve).
-    Wir müssen für die Regularität von $X_\p$ in $x$ also zeigen, dass
-    $\m_{X_\p,x}/\m_{X_\p,x}^2$ als $(\O_{X_p,x}/\m_{X_p,x})$-Vektorraum
-    von einem Element $f_1$ erzeugt wird.
-    
-    $\O_{X,x}$ ist $R$-Algebra über den induzierten lokalen
-    Ringhomomorphism $\pi^\#\colon R_\p\to\O_{X,x}$.
-    Sei $\phi^\#\colon\O_{X,x}\to R_\p$ der induzierte lokale
-    Ringhomomorphismus zu $\phi$ auf den Halmen, wobei
-    $\phi^\#(\m_{X,x})=\p$ gelten muss, da $\pi^\#\circ\phi^\#(\p)=\p$.
-    
-    Wir werden zeigen, dass es ein Element
-    $t\in\pi^\#(\p)\setminus\m_{X,x}^2$ gibt und
-    daraus die gewünschte Dimension von $\m_{X_\p,x}/\m_{X_\p,x}^2$
-    bzw. die Regularität von $X_\p$ in $x$ folgern.
-
-    Angenommen, es gelte $\pi^\#(\p)\subset\m_{X,x}^2$.
-    Mit $\pi\circ\phi=\Id_{\Spec(R)}$ erhalten wir die Abschätzung
-    \begin{gather*}
-      \p = (\pi\circ\phi)^\#(\p)
-      = \phi^\#\circ\pi^\#(\p)
-      \overset{\text{Ann.}}{\subset} \phi^\#(\m_{X,x}^2)
-      = \phi^\#(\m_{X,x})^2
-      = \p^2
-    \end{gather*}
-    Dies ist ein Widerspruch, da $\p\subset R_\p$ Maximalideal eines
-    diskreten Bewertungsringes ist und deshalb wegen Regularität von
-    $R_\p$ gelten muss $\p/\p^2\neq 0$.
-    Also gilt $\pi^\#(\p)\not\subset\m_{X,x}^2$.
-
-    Nach \ref{eq:stalkdimension} gilt
-    $\dim\O_{X,x}=\dim R_\p+\dim\O_{X_\p,x}=2$ und $X$ ist nach
-    Voraussetzung regulär, weshalb $\O_{X,x}$ regulär von Dimension~2
-    ist. Das bedeutet, dass es zwei Elemente $f_1, f_2\in\m_{X,x}$
-    gibt, so dass
-    \begin{gather}\label{eq:maximalideal}
-      \m_{X,x} = f_1\O_{X,x} + f_2\O_{X,x} + \m_{X,x}^2
-    \end{gather}
-    Wegen $\pi^\#(\p)\not\subset\m_{X,x}^2$ gibt es ein
-    $t\in\pi^\#(\p)\setminus\m_{X,x}^2\subset\m_{X,x}$.
-    \eqref{eq:maximalideal} bedeutet für $t$, dass es $\alpha_1,
-    \alpha_2\in\O_{X,x}$ gibt, so dass
-    \begin{gather*}
-      t = \alpha_1 f_1 + \alpha_2 f_2 \mod \m_{X,x}^2
-    \end{gather*}
-    Da $t\not\in\m_{X,x}^2$, muss mindestens einer der Koeffizienten
-    in $\O_{X,x}\setminus\m_{X,x}=\O_{X,x}^\times$ liegen, also einen
-    Einheit sein. \OE{} $\alpha_2\in\O_{X,x}^\times$, dann können wir
-    umschreiben
-    \begin{gather*}
-      f_2 = \frac{1}{\alpha_2}t + \frac{\alpha_1}{\alpha_2}f_1 
-    \end{gather*}
-    und aus \eqref{eq:maximalideal} wird
-    \begin{gather}\label{eq:maximalidealneu}
-      \m_{X,x} = t\O_{X,x} + f_1\O_{X,x} + \m_{X,x}^2
-    \end{gather}
-
-    Für den lokalen Ring $\O_{X_\p,x}$ von $x$ in der generischen
-    Faser $X_\p = X\times_R (R/\p)$ gilt
-    \begin{align*}
-      \O_{X_\p,x} &= \O_{X,x}/\pi^\#(\p)\\
-      \m_{X_\p,x} &= \m_{X,x}/\pi^\#(\p)
-                    \overset{\eqref{eq:maximalidealneu}}{=}
-                    \bar f_1\O_{X_\p,x} + \m_{X_\p,x}^2
-    \end{align*}
-    Wir sehen, $\m_{X_\p,x}$ ist von $\m_{X_\p,x}^2$ und einem Element
-    erzeugt, was $\O_{X_\p,x}$ zu einem regulären Ring der Dimension~1
-    macht.
-  \end{proof}
-\end{Lemma}
+\end{Korollar}
 
 % -----
 
-\section{Minimale reguläre Modelle}
-% exzellent nötig!!! evtl. nur Konstruktion?
+\section{Minimale eigentliche Modelle}\label{chap:minmodelle}
+Eigentliche Modelle können für elliptische Kurven eindeutig minimal
+bzgl. birationaler Morphismen gewählt werden, wie wir in diesem
+Abschnitt zeigen werden. Aus der Konstruktion wird auch ersichtlich,
+dass der Algorithmus aus \ref{bem:konstruktioneigmodell} bereits ein
+minimales Modell liefert.
+
+Ein solches minimales Modell ist die Grundlage für unseren
+Existenzbeweis des Néron-Modells, welches genau der glatte Teil des
+minimalen Modells ist.
+
 \begin{Definition}
-  Sei $R$ Dedekindring (mit perfekten Restklassenkörpern),
+  Sei $R$ Dedekindring mit perfekten Restklassenkörpern,
   $\K=\Quot(R)$,
-  $C/\K$ reguläre, projektive Kurve vom Geschlecht $g$.
-  \begin{enumerate}[label=(\roman*)]
-  \item\cite[Proposition IV.4.5(a)]{silverman2}
-    Dann existiert ein eigentliches $R$-Modell $X$ von $C$,
-    das eine arithmetische Fläche darstellt
-    (kurz: eigentliches Modell von $C/\K$ über $R$).
-  \item\cite[Proposition IV.4.5(b)]{silverman2} Ist $g\geq1$ kann
-    ein minimales eigentliches Modell $X_{\text{min}}$ für $C$ über
-    $R$ gewählt werden (kurz: minimales Modell von $C$ über $R$).
-    D.\,h. für jedes andere eigentliche Modell $X$ von
-    $C/\K$ über $R$ und für jeden $\K$-Isomorphismus $\phi_\K$ der
+  $C_\K$ reguläre, projektive Kurve über $\K$.
+  Ein minimales eigentliches Modell $X_{\text{min}}$ für $C_\K$ über
+  $R$ (kurz: minimales Modell von $C_\K$ über $R$) ist ein
+  eigentliches $R$-Modell von $C_\K$, das folgende
+  Minimalitätseigenschaft erfüllt:
+  \begin{quote}
+    Für jedes andere eigentliche Modell $X$ von
+    $C_\K$ über $R$ und für jeden $\K$-Isomorphismus $\phi_\K$ der
     generischen Fasern ist die nach \ref{thm:erwrrational}
     induzierte $R$-birationale Abbildung $\phi\colon X\dra
     X_{\text{min}}$ ein $R$-Morphismus.
-  \end{enumerate}
+  \end{quote}
 \end{Definition}
+% % exzellent oder glatt nötig!!! evtl. nur Konstruktion?
+% \begin{Definition}
+%   Sei $R$ Dedekindring mit perfekten Restklassenkörpern,
+%   $\K=\Quot(R)$,
+%   $C/\K$ reguläre, projektive Kurve vom Geschlecht $g$.
+%   \begin{enumerate}[label=(\roman*)]
+%   \item\cite[Proposition IV.4.5(a)]{silverman2}
+%     Dann existiert ein eigentliches $R$-Modell $X$ von $C$,
+%     das eine arithmetische Fläche darstellt.
+%   \item\cite[Proposition IV.4.5(b)]{silverman2} Ist $g\geq1$ kann
+%     ein minimales eigentliches Modell $X_{\text{min}}$ für $C$ über
+%     $R$ gewählt werden (kurz: minimales Modell von $C$ über $R$).
+%     D.\,h. für jedes andere eigentliche Modell $X$ von
+%     $C/\K$ über $R$ und für jeden $\K$-Isomorphismus $\phi_\K$ der
+%     generischen Fasern ist die nach \ref{thm:erwrrational}
+%     induzierte $R$-birationale Abbildung $\phi\colon X\dra
+%     X_{\text{min}}$ ein $R$-Morphismus.
+%   \end{enumerate}
+% \end{Definition}
 
 \begin{Satz}\label{thm:eigminmodell}
-  Minimale Modelle haben folgende Eigenschaften
+  Seien $R$, $\K$, $C_\K$ wie oben.
+  Ein minimales Modell $X_{\text{min}}$ von $C_\K$ über $R$ hat
+  folgende Eigenschaften:
   \begin{enumerate}[label=(\roman*)]
-  \item Minimale Modelle sind eindeutig.
+  \item $X_{\text{min}}$ ist eindeutig bis auf eindeutige Isomorphie.
   \item\optcite[Proposition IV.4.6]{silverman2}
-    Für ein minimales Modell $X_{\text{min}}$ für $C/\K$ über $R$
-    gilt, dass jeder $\K$"=Automorphismus von $C$ sich zu
+    Für ein minimales Modell $X_{\text{min}}$ von $C_\K$ über $R$
+    gilt, dass jeder $\K$"=Automorphismus von $C_\K$ sich zu
     einem eindeutigen $R$-Automorphismus von $X_{\text{min}}$
     erweitert, der glatte Punkte auf glatte Punkte abbildet.
-  \item\cite[vgl.][Beweis von Proposition IV.6.10]{silverman2}
-    Minimale reguläre Modelle sind wie folgt stabil unter Basiswechsel:
+  \item\optcite[Beweis von Proposition IV.6.10]{silverman2}
+    Minimale Modelle sind wie folgt stabil unter Basiswechsel:
     Sei $Y$ glattes $R$-Schema, $x\in Y$ und der Halm $R'=\O_{Y,x}$ in
     $x$  ein diskreter Bewertungsring mit $\K'\coloneqq\Quot(R')$.
-    Dann ist das minimale reguläre Modell von $C\times_\K\K'$ genau
+    Dann ist das minimale Modell von $C_\K\times_\K\K'$ genau
     $X_{\text{min}}\times_R R'$.
     Ist $E\subset X_{\text{min}}$ das Unterschema der glatten Punkte
     von $X_{\text{min}}$, ist
@@ -2089,15 +2199,15 @@ Weierstraßmodell von $E_\K$ über $R$.
   \end{enumerate}
   \begin{proof}
     \begin{enumerate}[label=(\roman*)]
-    \item Für zwei minimale Modelle $X_1$, $X_2$ von $C/\K$ über $R$
+    \item Für zwei minimale Modelle $X_1$, $X_2$ von $C_\K$ über $R$
       liefert die Minimalitätseigenschaft zwei $R$-Morphismen
       $X_1\to X_2$, $X_2\to X_1$, deren Komposition jeweils die
-      Identität auf $C$ erweitert. Wegen der Eindeutigkeit aus
+      Identität auf $C_\K$ erweitert. Wegen der Eindeutigkeit aus
       \ref{thm:erweindeutig} müssen die Kompositionen jeweils die
       Identität sein und die Morphismen sind zueinander inverse
       $R$-Isomorphismen.
     \item Die Minimalitätseigenschaft liefert zu einem
-      $\K$-Automorphismus $\tau\colon C\to C$ die Erweiterung auf
+      $\K$-Automorphismus $\tau\colon C_\K\to C_\K$ die Erweiterung auf
       einen $R$-Automorphismus
       $\tau\colon X_{\text{min}}\to X_{\text{min}}$, der wegen
       Eigentlichkeit eindeutig ist.
@@ -2109,8 +2219,8 @@ Weierstraßmodell von $E_\K$ über $R$.
     \item Die Eigenschaften flach, projektiv und integer sind stabil
       unter Basiswechsel. Regulär ist stabil unter glattem
       Basiswechsel \cite[Chapter 2.3, Page 49]{neron}, weshalb
-      $C\times_R Y$ regulär ist.
-      Nachdem $C\times_R R'$ dieselben Halme hat, ist es ebenfalls
+      $C_\K\times_R Y$ regulär ist.
+      Nachdem $C_\K\times_R R'$ dieselben Halme hat, ist es ebenfalls
       regulär.
       Die Minimalitätseigenschaft von $X_{\text{min}}\times_R R'$
       folgt aus der von $X_{\text{min}}$ und der universellen
@@ -2129,7 +2239,7 @@ Weierstraßmodell von $E_\K$ über $R$.
   \end{proof}
 \end{Satz}
 
-\begin{Satz}\cite[Theorem 9.3.21]{liu}\label{thm:exminmodell}
+\begin{Satz}[{\cite[Theorem 9.3.21]{liu}}]\label{thm:exminmodell}
   Minimale $R$-Modelle elliptischer Kurven existieren und sind nach
   \ref{thm:eigminmodell} eindeutig bis auf eindeutige Isomorphie.
   \begin{proof}[Beweisskizze]
@@ -2200,17 +2310,41 @@ Weierstraßmodell von $E_\K$ über $R$.
   % (ähnlich, ohne Bed. an den Ring, dafür mehr an das Modell)
   Sei $R$ Dedekindring mit perfekten Quotientenkörpern,
   $\K=\Quot(R)$, $E_\K$ elliptische Kurve über $\K$ und $C$ minimales
-  eigentliches, reguläres $R$-Modell von $E_\K$
+  $R$-Modell von $E_\K$
   (d.\,h. reguläres, integeres, projektives,
   flaches $R$-Schema mit Minimalitätseigenschaft).
   Sei $E$ das größte glatte $R$-Unterschema von $C$.
   Dann ist $E$ Néron-Modell von $E_\K$.
 
-  Nachdem minimale eigentliche reguläre Modelle elliptischer
+  Nachdem minimale Modelle elliptischer
   Kurven nach \ref{thm:exminmodell} immer existieren, hat jede
   elliptische Kurve über einem Dedekindring (mit perfekten
   Restklassenkörpern) ein Néron-Modell.
-  % \begin{proof}
+\end{Satz}
+Dieses Kapitel ist dem Beweis des vorangegangenen Satzes gewidmet.
+
+Von der Idee her werden wir uns vorerst in
+\autoref{chap:gruppenstrukturhinreichend} klar machen, dass $E$ genau 
+dann ein Néron-Modell von $E_\K$ ist, wenn sich die Gruppenverknüpfung
+von $E_\K$ auf ganz $E$ erweitert (das \enquote{genau dann} ist
+bereits aus \ref{thm:gruppenschemaerweiterung} bekannt).
+
+Nun bleibt es in zu zeigen, dass sich die Gruppenverknüpfung tatsächlich
+auf $E$ erweitert.
+Hier gehen wir den Umweg und zeigen erst in
+\autoref{chap:gruppestrikthenselsch} für den Spezialfall eines
+strikt henselschen diskreten Bewertungsring $R$, dass wir eine normale
+Komposition auf $E$ erhalten. Nach \ref{thm:weil} wissen wir nun, dass
+$E$ birational zu einem $R$-Gruppenschema mit der gewünschten Struktur
+ist. Die $R$-birationale Abbildung ist, wie wir sehen werden, aber
+bereits ein Isomorphismus und $E$ ein $R$-Gruppenschema.
+
+In \autoref{chap:exneronmodellebeweis} zeigen wir zuletzt, dass wir
+uns auf strikt henselsche Bewertungsringe beschränken können, was dann
+mit den vorangegangenen Ergebnissen den Beweis vollendet.
+
+
+% \begin{proof}
   %   \begin{enumerate}
   %   \item \ref{thm:rationalzumorphismus}:
   %     Eine rationale Abbildung $X\dra G$ von einem glatten
@@ -2257,11 +2391,15 @@ Weierstraßmodell von $E_\K$ über $R$.
   %   \item Allg. Dedekindring: lokal (\ref{thm:neronmodelllokal})
   %   \end{enumerate}
   % \end{proof}
-\end{Satz}
 
-\section{Gruppenstruktur hinreichend}
+  
+\section{Gruppenstruktur hinreichend}\label{chap:gruppenstrukturhinreichend}
 % ÄQ GRUPPENSTRUKTURERW.
 % strikt henselsch nicht nötig!!
+Die Hauptaussage dieses Kapitels wird sein, dass $E$ genau dann
+Néron-Modell von $E_\K$ ist, wenn sich die Gruppenverknüpfung von
+$E_\K$ auf ganz $E$ erweitert und $E$ damit zum $R$-Gruppenschema
+macht.
 \begin{Lemma}\label{thm:schnittearithmflglatt}
   Sei $R$ diskreter Bewertungsring mit perfektem Restklassenkörper
   $k$, $\K$, $E_\K$, $C$, $E$ wie in \ref{thm:exneronmodelle},
@@ -2415,6 +2553,13 @@ Weierstraßmodell von $E_\K$ über $R$.
 
 \section[Gruppenstruktur für strikt henselsche Ringe]%
 {Nachweis der Gruppenstruktur für strikt henselsche Bewertungsringe}
+\label{chap:gruppestrikthenselsch}
+Für den Abschluss des Beweises zu \ref{thm:exneronmodelle} müssen wir
+nach \ref{thm:fallstriktehenselisierung} nur noch nachweisen, dass
+sich die Gruppenstruktur auf $E$ erweitert.
+Dies werden wir in diesem Abschnitt vorerst für strikt henselsche
+Bewertungsringe zeigen. Vorweg werden die Definition und Eigenschaften
+strikt henselscher Ringe aufgeführt.
 % Nur Erweiterung der Gruppenstruktur!
 \subsection{Strikt henselsche Ringe}
 % HENSELSCHE RINGE
@@ -2438,29 +2583,29 @@ Weierstraßmodell von $E_\K$ über $R$.
   algebraisch abgeschlossen).
 \end{Definition}
 
-\begin{Definition}[Henselisierung]\label{def:henselisierung}
-  \optcite[2.3, Definition 6]{neron}
-  Die Henselisierung eines lokalen Rings $R$ ist ein henselscher
-  lokaler Ring $\Rh$ mit einem lokalen Homomorphismus
-  $i^\text{h}\colon R\to\Rh$, s.\,d. folgende universelle Eigenschaft
-  erfüllt ist:
+% \begin{Definition}[Henselisierung]\label{def:henselisierung}
+%   \optcite[2.3, Definition 6]{neron}
+%   Die Henselisierung eines lokalen Rings $R$ ist ein henselscher
+%   lokaler Ring $\Rh$ mit einem lokalen Homomorphismus
+%   $i^\text{h}\colon R\to\Rh$, s.\,d. folgende universelle Eigenschaft
+%   erfüllt ist:
   
-  Für jeden weiteren lokalen Homomorphismus $u\colon R\to A$ in einen
-  henselschen lokalen Ring $A$ gibt es einen eindeutigen lokalen
-  Homomorphismus $u^\text{h}\colon\Rh\to A$, so dass das folgende Diagramm
-  kommutiert
-  \begin{center}
-    \begin{tikzcd}
-      R \arrow[r, "{u}"]\arrow[d, "{i^\text{h}}"]
-      & A \\
-      \Rh\arrow[ur, dashed, "{\exists!u^\text{h}}"{swap}]
-    \end{tikzcd}
-  \end{center}
+%   Für jeden weiteren lokalen Homomorphismus $u\colon R\to A$ in einen
+%   henselschen lokalen Ring $A$ gibt es einen eindeutigen lokalen
+%   Homomorphismus $u^\text{h}\colon\Rh\to A$, so dass das folgende Diagramm
+%   kommutiert
+%   \begin{center}
+%     \begin{tikzcd}
+%       R \arrow[r, "{u}"]\arrow[d, "{i^\text{h}}"]
+%       & A \\
+%       \Rh\arrow[ur, dashed, "{\exists!u^\text{h}}"{swap}]
+%     \end{tikzcd}
+%   \end{center}
 
-  Die Henselisierung ist nach Definition eindeutig bis auf
-  Isomorphismus und hat denselben Restklassenkörper wie $R$.
-  \optcite[Chapter 2.3, S. 47]{neron}
-\end{Definition}
+%   Die Henselisierung ist nach Definition eindeutig bis auf
+%   Isomorphismus und hat denselben Restklassenkörper wie $R$.
+%   \optcite[Chapter 2.3, S. 47]{neron}
+% \end{Definition}
 
 \begin{Definition}[strikte Henselisierung]\label{def:striktehenselisierung}
   Die strikte Henselisierung eines lokalen Rings $(R,\m)$ mit
@@ -2488,20 +2633,24 @@ Weierstraßmodell von $E_\K$ über $R$.
   Isomorphismus und hat $k_s$ als Restklassenkörper.
 \end{Definition}
 
-\begin{Satz}\label{thm:exhenselisierung}
-  \cite[Proposition IV.6.5]{silverman2}
-  Jeder diskrete Bewertungsring $(R,\m)$ hat eine Henselisierung $\Rh$
-  und eine strikte Henselisierung $\Rsh$.
+\begin{Satz}[{\cite[Proposition IV.6.5]{silverman2}}]
+  \label{thm:exhenselisierung}
+  Jeder diskrete Bewertungsring $(R,\m)$ hat eine
+  % Henselisierung $\Rh$ und eine
+  strikte Henselisierung $\Rsh$.
   \begin{proof}
+    Siehe
     \cite[Proposition IV.6.5]{silverman2},
     \cite[Remark IV.6.6.2]{silverman2}
-    \cite[Chapter 2.3, S. 48]{neron}
+    oder \cite[Chapter 2.3, S. 48]{neron}.
   \end{proof}
 \end{Satz}
 
-\begin{Satz}\label{thm:eigstrikthenselsch}
-  \cite[Proposition IV.6.4]{silverman2}
-  Sei $(R,\m)$ ein diskreter Bewertungsring mit (perfektem)
+Die für uns besonders wichtige Eigenschaft eines strikt henselschen
+Rings ist folgende Aussage über die Einschränkung von Schnitten:
+\begin{Satz}[{\cite[Proposition IV.6.4]{silverman2}}]
+  \label{thm:eigstrikthenselsch}
+  Sei $(R,\m)$ ein diskreter Bewertungsring mit perfektem
   Restklassenkörper $k=R/\m$ und $X$ glattes $R$-Schema mit spezieller
   Faser $X_k$.
   Die Einschränkung
@@ -2517,6 +2666,12 @@ Weierstraßmodell von $E_\K$ über $R$.
 \end{Satz}
 
 \subsection{Nachweis der Gruppenstruktur für strikt henselsche Ringe}
+Um die Erweiterung der Gruppenverknüpfung auf ganz $E$ für strikt
+henselsche Ringe nachzuweisen, werden wir erst zeigen, dass wir eine
+normale Komposition auf $E$ erhalten.
+Diese ist dann nach \ref{thm:weil} $R$-birational zu dem gesuchten
+Gruppenschema und wir werden zeigen, dass diese Birationalität ein
+Isomorphismus ist.
 % ERWEITERUNG DER GRUPPENSTRUKTUR
 \begin{Satz}\label{thm:egruppenschema}
   Sei $R$ strikt henselscher diskreter Bewertungsring mit perfektem
@@ -2524,178 +2679,181 @@ Weierstraßmodell von $E_\K$ über $R$.
   \ref{thm:exneronmodelle}.
   Dann erweitert sich die Gruppenstruktur von $E_\K$ auf $E$ und macht
   $E$ zum Gruppenschema.
-  \begin{proof}
-    \begin{Lemma}
-      Die Gruppenstruktur $\mu_\K$ auf $E_\K$ erweitert sich zu einer
-      normalen Komposition $\mu$ auf $E$.
-      (Hier muss $R$ nicht notwendigerweise strikt henselsch sein.)
-      \begin{proof}
-        $E\times_R E$ ist glattes $R$-Schema und $C$ eigentlich,
-        weshalb sich $\mu_\K\colon E_\K\times_\K E_\K\to E_\K$ nach
-        \ref{thm:erwrrational} eindeutig zu einer $R$-rationalen
-        Abbildung $\tilde\mu\colon E\times_R E\dra C$ erweitert.
-        Die generischen Punkte $\eta_k$ der speziellen Fasern von
-        $E\times_R E$ haben wegen \ref{eq:stalkdimension}
-        Dimension~1, sind also diskrete Bewertungsringe, da
-        $E\times_R E$ glatt und somit regulär ist. Nach
-        \ref{thm:schnittearithmflglatt} liegt dann
-        $\tilde\mu(\eta_k)$ und entsprechend das Bild einer offenen
-        Umgebung von $\eta_k$ unter $\tilde\mu$ in $E$. Daher erhalten
-        wir (u.\,U. durch Einschränkung von $\Dom(\tilde\mu)$) eine
-        $R$-rationale Abbildung $\mu\colon E\times_R E\dra E$.
-
-        Für eine normale Komposition bleiben Assoziativität und Inverse zu
-        zeigen.
-
-        \paragraph{Assoziativität}
-        Für Assoziativität müssen für alle $x, z\in E$, für die es
-        wohldefiniert ist, die folgenden $R$-rationalen 
-        Abbildungen gleich sein
-        \begin{gather*}
-          \mu(\mu(x,\bullet),z), \mu(x,\mu(\bullet,z))
-          \colon E \dra E
-        \end{gather*}
-        Da $E\times_R E$ reduziert ist, sind aber beide die nach
-        \ref{thm:erweindeutig} eindeutige Erweiterung von
-        \begin{gather*}
-          \mu_\K(\mu_\K(x,\bullet),z)=\mu_\K(x,\mu_\K(\bullet,z))
-          \colon E_\K \dra E_\K
-        \end{gather*}
-        Somit sind sie gleich als $R$-rationale Abbildungen.
-        
-        \paragraph{Inverses $R$-rational}
-        Für $R$-Rationalität von $\phi$ und $\psi$ muss noch gezeigt
-        werden, dass $\Dom(\phi)$ bzw. $\Dom(\psi)$ dicht in der
-        speziellen Faser von $E$ ist, also in jedem generischen Punkt
-        der speziellen Faser definiert ist.
-        Wir werden den Fall für $\phi$ behandeln, $\psi$ folgt analog.
-        
-        Sei also $\eta\in E\times_R R/\p=E_k$ ein generischer Punkt der
-        speziellen Faser von $E$ und $R'=\O_{E,\eta}$ der Halm in
-        $\eta$ mit $\K'\coloneqq\Quot(R)$ und $k'$
-        Restklassenkörper. Wegen \ref{eq:stalkdimension} hat $R'$
-        Dimension 1, ist demnach ein diskreter Bewertungsring und
-        $C_{R'}\coloneqq C\times_R R'$ nach \ref{thm:eigminmodell}
-        minimales $R'$-Modell von $E_\K\times_{\K'}\K'\eqqcolon E_{\K'}$
-        mit offenem Unterschema $E_{R'}=E\times_R R'$ der glatten Punkte.
-        Wir wissen, dass $\Spec(R')\subset E$, also dass es
-        einen $R'$-wertigen Punkt $s\colon\Spec(R')\to E_{R'}$ gibt.
-        Wir erhalten einen zugehörigen Translationsautomorphismus auf der
-        generischen Faser:
-        \begin{gather*}
-          \tau_{\K'}\colon
-          E_{\K'}\cong E_{\K'}\times_{\K'}\K'
-          \xrightarrow{\Id\times s}
-          E_{\K'}\times_{\K'}E_{\K'}
-          \overset{\mu}{\longto}
-          E_{\K'}
-        \end{gather*}
-        Nach \ref{thm:eigminmodell} erweitert sich $\tau_{\K'}$ zu
-        einem $R'$-Automorphismus $\tau_{R'}$ auf dem minimalen Modell
-        $C_{R'}$ und auf dem glatten Unterschema $E_{R'}$.
-        Für $e\in\Spec(R')$, $x=s(e)$ und $y\in(E_{R'})_e$ sieht $\tau_{R'}$
-        wie folgt aus:
-        \begin{center}
-          \begin{tikzcd}[row sep=0pt]
-            R'\times_R E \arrow[r, equal]
-            & R'\times_{R'}(R'\times_R E) \arrow[r, "{s\times\Id}"]
-            & (R'\times_R E)\times_{R'}(R'\times_R E)
-            \arrow[r, "{\mu_{R'}}"]
-            & R'\times_R E \\
-            (e,y)\arrow[r, mapsto]
-            & (e,(e,y))\arrow[r, mapsto]
-            & ((e,x),(e,y))\arrow[r, mapsto]
-            & (e,\mu(x,y))
-          \end{tikzcd}
-        \end{center}
-        bzw. $\tilde\tau_{R'}\colon(e,y)\mapsto(e,\mu(y,x)$, wenn man
-        $R'\times_{R'}(R'\times_R E)$ durch das isomorphe $(R'\times_R
-        E)\times_{R'}R'$ ersetzt.
-        Wir erhalten das kommutative Diagramm
-        \begin{center}
-          \begin{tikzcd}
-            (e,y) \arrow[d, mapsto]\arrow[rrr, bend left=20, mapsto]
-            & R'\times_R E \arrow[r, "\tau_{R'}", "\sim"{swap}]
-            \arrow[d, "s\times\Id", hook]
-            & R'\times_R E\arrow[d, "s\times\Id", hook]
-            & (e,\mu(x,y))\arrow[d, mapsto]\\
-            (x,y)\arrow[rrr, bend right=20, mapsto]
-            & E\times_R E\arrow[r, "\phi", dashed]
-            & E\times_R E
-            & (x,\mu(x,y))
-          \end{tikzcd}
-        \end{center}
-        und sehen, dass $\phi$ auf dem generischen Punkt
-        $(\eta,\eta)\in\Spec(R')\times_R\Spec(R')\subset E\times_R E$
-        von $(E\times_R E)_k=E_k\times_k E_k$ definiert ist.
-        Mit $\tilde\tau$ statt $\tau$ erhält man dasselbe für $\psi$.
-        \paragraph{Inverses $R$-birational}
-        Für die Birationalität von $\phi$ bzw. $\psi$ siehe
-        \cite[Propsition IV.6.10]{silverman2}.
-        % TODO!! Warum birational?
-      \end{proof}
-    \end{Lemma}
-
-    \begin{Lemma}\label{thm:äqgruppenschema}
-      Sei nach \ref{thm:weil} $G$ das zu $E$ $R$-birationale
-      Gruppenschema. Dann ist $G$ isomorph zu $E$.
-      \begin{proof}
-        Es seien $f\colon G\dra E$ und $g\colon G\dra E$ die
-        zueinander inversen $R$-birationalen Abbildungen.
-        Es ist zu zeigen, dass beide Morphismen sind.
-        \begin{description}
-        \item[$g$ Morphismus] Angenommen, $g$ ist kein
-          Morphismus. Dann besagt \ref{thm:weil}, dass es eine
-          irreduzible, geschlossene Teilmenge $Z\subset E$ gibt, so
-          dass $g$ nicht in deren generischen Punkt $\eta_Z$ definiert
-          ist. Nachdem $g$ aber als $R$-rationale Abbildung auf einer
-          in beiden (eindimensionalen) Fasern dichten Teilmenge
-          definiert ist, muss $g$ auch auf $\eta_Z$ definiert sein,
-          was ein Widerspruch ist.
-        \item[$f$ Morphismus] Eine Translation $\tau_P^G\colon G\to G$
-          auf $G$ um einen Schnitt $P$ liefert eine Translation
-          $\tau_P\coloneqq\tau_P^G|_{E_\K}$, also einen
-          $\K$-Automorphismus auf $E_\K$ mit Inversem
-          $\tau_{(-P)}=\tau_{(-P)}^G$. Diese 
-          erweitern sich nach \ref{thm:eigminmodell} zu zueinander
-          inversen $R$-Automorphismen
-          $\tau_P^E,\tau_{(-P)}^E\colon E\to E$ auf $E$.
-          Überall, wo es definiert ist, gilt
-          \begin{gather*}
-            f = \tau_{(-P)}^E\circ f\circ \tau_P^G
-          \end{gather*}
-          da beides die eindeutigen Erweiterungen von $f|_{E_\K}$
-          sind, wo $\tau_P=\tau_P^E|_{E_\K}=\tau_P^G|_{E_\K}$
-          Automorphismus ist.
-          
-          Für jedes $\beta\in G$, so dass es einen Schnitt $P$ gibt mit
-          $\tau_P^G(\beta)\in\Dom(f)$, ist $\tau_{(-P)}^E\circ f\circ
-          \tau_P^G$ also eine eindeutige Erweiterung von $f|_{E_\K}$
-          bzw. $f$ auf $\beta$.
-          Wir können also durch Translation den Definitionsbereich von
-          $f$ für passende $\beta$ erweitern.
-
-          Jetzt können wir nutzen, dass $R$ nach Voraussetzung strikt
-          henselsch ist. Das bedeutet nach
-          \ref{thm:eigstrikthenselsch}, dass die Menge der Bildpunkte
-          aller Schnitte $P\colon\Spec(R)\to G$ dicht in der
-          speziellen Faser liegt.
-          Insbesondere findet man in jeder offenen Umgebung eines
-          Punkts $\beta\in G$ einen Punkt, um den man mithilfe einer
-          Translation den Defintionsbereich von $f$ ausweiten kann, wie
-          oben beschrieben.
-          Damit ist $g$ in allen Punkten von $G$ definiert und somit
-          Morphismus.
-        \end{description}
-      \end{proof}
-    \end{Lemma}
-
-    Dies beendet den Beweis zu \ref{thm:egruppenschema}.
-  \end{proof}
 \end{Satz}
+\begin{Lemma}
+  Die Gruppenstruktur $\mu_\K$ auf $E_\K$ erweitert sich zu einer
+  normalen Komposition $\mu$ auf $E$.
+  (Hier muss $R$ nicht notwendigerweise strikt henselsch sein.)
+  \begin{proof}
+    $E\times_R E$ ist glattes $R$-Schema und $C$ eigentlich,
+    weshalb sich $\mu_\K\colon E_\K\times_\K E_\K\to E_\K$ nach
+    \ref{thm:erwrrational} eindeutig zu einer $R$-rationalen
+    Abbildung $\tilde\mu\colon E\times_R E\dra C$ erweitert.
+    Die generischen Punkte $\eta_k$ der speziellen Fasern von
+    $E\times_R E$ haben wegen \ref{eq:stalkdimension}
+    Dimension~1, sind also diskrete Bewertungsringe, da
+    $E\times_R E$ glatt und somit regulär ist. Nach
+    \ref{thm:schnittearithmflglatt} liegt dann
+    $\tilde\mu(\eta_k)$ und entsprechend das Bild einer offenen
+    Umgebung von $\eta_k$ unter $\tilde\mu$ in $E$. Daher erhalten
+    wir (u.\,U. durch Einschränkung von $\Dom(\tilde\mu)$) eine
+    $R$-rationale Abbildung $\mu\colon E\times_R E\dra E$.
+
+    Für eine normale Komposition bleiben Assoziativität und Inverse zu
+    zeigen.
+
+    \paragraph{Assoziativität}
+    Für Assoziativität müssen für alle $x, z\in E$, für die es
+    wohldefiniert ist, die folgenden $R$-rationalen 
+    Abbildungen gleich sein
+    \begin{gather*}
+      \mu(\mu(x,\bullet),z), \mu(x,\mu(\bullet,z))
+      \colon E \dra E
+    \end{gather*}
+    Da $E\times_R E$ reduziert ist, sind aber beide die nach
+    \ref{thm:erweindeutig} eindeutige Erweiterung von
+    \begin{gather*}
+      \mu_\K(\mu_\K(x,\bullet),z)=\mu_\K(x,\mu_\K(\bullet,z))
+      \colon E_\K \dra E_\K
+    \end{gather*}
+    Somit sind sie gleich als $R$-rationale Abbildungen.
+    
+    \paragraph{Inverses $R$-rational}
+    Für $R$-Rationalität von $\phi$ und $\psi$ muss noch gezeigt
+    werden, dass $\Dom(\phi)$ bzw. $\Dom(\psi)$ dicht in der
+    speziellen Faser von $E$ ist, also in jedem generischen Punkt
+    der speziellen Faser definiert ist.
+    Wir werden den Fall für $\phi$ behandeln, $\psi$ folgt analog.
+    
+    Sei also $\eta\in E\times_R R/\p=E_k$ ein generischer Punkt der
+    speziellen Faser von $E$ und $R'=\O_{E,\eta}$ der Halm in
+    $\eta$ mit $\K'\coloneqq\Quot(R)$ und $k'$
+    Restklassenkörper. Wegen \ref{eq:stalkdimension} hat $R'$
+    Dimension 1, ist demnach ein diskreter Bewertungsring und
+    $C_{R'}\coloneqq C\times_R R'$ nach \ref{thm:eigminmodell}
+    minimales $R'$-Modell von $E_\K\times_{\K'}\K'\eqqcolon E_{\K'}$
+    mit offenem Unterschema $E_{R'}=E\times_R R'$ der glatten Punkte.
+    Wir wissen, dass $\Spec(R')\subset E$, also dass es
+    einen $R'$-wertigen Punkt $s\colon\Spec(R')\to E_{R'}$ gibt.
+    Wir erhalten einen zugehörigen Translationsautomorphismus auf der
+    generischen Faser:
+    \begin{gather*}
+      \tau_{\K'}\colon
+      E_{\K'}\cong E_{\K'}\times_{\K'}\K'
+      \xrightarrow{\Id\times s}
+      E_{\K'}\times_{\K'}E_{\K'}
+      \overset{\mu}{\longto}
+      E_{\K'}
+    \end{gather*}
+    Nach \ref{thm:eigminmodell} erweitert sich $\tau_{\K'}$ zu
+    einem $R'$-Automorphismus $\tau_{R'}$ auf dem minimalen Modell
+    $C_{R'}$ und auf dem glatten Unterschema $E_{R'}$.
+    Für $e\in\Spec(R')$, $x=s(e)$ und $y\in(E_{R'})_e$ sieht $\tau_{R'}$
+    wie folgt aus:
+    \begin{center}
+      \begin{tikzcd}[row sep=0pt]
+        R'\times_R E \arrow[r, equal]
+        & R'\times_{R'}(R'\times_R E) \arrow[r, "{s\times\Id}"]
+        & (R'\times_R E)\times_{R'}(R'\times_R E)
+        \arrow[r, "{\mu_{R'}}"]
+        & R'\times_R E \\
+        (e,y)\arrow[r, mapsto]
+        & (e,(e,y))\arrow[r, mapsto]
+        & ((e,x),(e,y))\arrow[r, mapsto]
+        & (e,\mu(x,y))
+      \end{tikzcd}
+    \end{center}
+    bzw. $\tilde\tau_{R'}\colon(e,y)\mapsto(e,\mu(y,x)$, wenn man
+    $R'\times_{R'}(R'\times_R E)$ durch das isomorphe $(R'\times_R
+    E)\times_{R'}R'$ ersetzt.
+    Wir erhalten das kommutative Diagramm
+    \begin{center}
+      \begin{tikzcd}
+        (e,y) \arrow[d, mapsto]\arrow[rrr, bend left=20, mapsto]
+        & R'\times_R E \arrow[r, "\tau_{R'}", "\sim"{swap}]
+        \arrow[d, "s\times\Id", hook]
+        & R'\times_R E\arrow[d, "s\times\Id", hook]
+        & (e,\mu(x,y))\arrow[d, mapsto]\\
+        (x,y)\arrow[rrr, bend right=20, mapsto]
+        & E\times_R E\arrow[r, "\phi", dashed]
+        & E\times_R E
+        & (x,\mu(x,y))
+      \end{tikzcd}
+    \end{center}
+    und sehen, dass $\phi$ auf dem generischen Punkt
+    $(\eta,\eta)\in\Spec(R')\times_R\Spec(R')\subset E\times_R E$
+    von $(E\times_R E)_k=E_k\times_k E_k$ definiert ist.
+    Mit $\tilde\tau$ statt $\tau$ erhält man dasselbe für $\psi$.
+    \paragraph{Inverses $R$-birational}
+    Für die Birationalität von $\phi$ bzw. $\psi$ siehe
+    \cite[Propsition IV.6.10]{silverman2}.
+    % TODO!! Warum birational?
+  \end{proof}
+\end{Lemma}
+
+\begin{Lemma}\label{thm:äqgruppenschema}
+  Sei nach \ref{thm:weil} $G$ das zu $E$ $R$-birationale
+  Gruppenschema. Dann ist $G$ isomorph zu $E$.
+  \begin{proof}
+    Es seien $f\colon G\dra E$ und $g\colon G\dra E$ die
+    zueinander inversen $R$-birationalen Abbildungen.
+    Es ist zu zeigen, dass beide Morphismen sind.
+    \begin{description}
+    \item[$g$ Morphismus] Angenommen, $g$ ist kein
+      Morphismus. Dann besagt \ref{thm:weil}, dass es eine
+      irreduzible, geschlossene Teilmenge $Z\subset E$ gibt, so
+      dass $g$ nicht in deren generischen Punkt $\eta_Z$ definiert
+      ist. Nachdem $g$ aber als $R$-rationale Abbildung auf einer
+      in beiden (eindimensionalen) Fasern dichten Teilmenge
+      definiert ist, muss $g$ auch auf $\eta_Z$ definiert sein,
+      was ein Widerspruch ist.
+    \item[$f$ Morphismus] Eine Translation $\tau_P^G\colon G\to G$
+      auf $G$ um einen Schnitt $P$ liefert eine Translation
+      $\tau_P\coloneqq\tau_P^G|_{E_\K}$, also einen
+      $\K$-Automorphismus auf $E_\K$ mit Inversem
+      $\tau_{(-P)}=\tau_{(-P)}^G$. Diese 
+      erweitern sich nach \ref{thm:eigminmodell} zu zueinander
+      inversen $R$-Automorphismen
+      $\tau_P^E,\tau_{(-P)}^E\colon E\to E$ auf $E$.
+      Überall, wo es definiert ist, gilt
+      \begin{gather*}
+        f = \tau_{(-P)}^E\circ f\circ \tau_P^G
+      \end{gather*}
+      da beides die eindeutigen Erweiterungen von $f|_{E_\K}$
+      sind, wo $\tau_P=\tau_P^E|_{E_\K}=\tau_P^G|_{E_\K}$
+      Automorphismus ist.
+      
+      Für jedes $\beta\in G$, so dass es einen Schnitt $P$ gibt mit
+      $\tau_P^G(\beta)\in\Dom(f)$, ist $\tau_{(-P)}^E\circ f\circ
+      \tau_P^G$ also eine eindeutige Erweiterung von $f|_{E_\K}$
+      bzw. $f$ auf $\beta$.
+      Wir können also durch Translation den Definitionsbereich von
+      $f$ für passende $\beta$ erweitern.
+
+      Jetzt können wir nutzen, dass $R$ nach Voraussetzung strikt
+      henselsch ist. Das bedeutet nach
+      \ref{thm:eigstrikthenselsch}, dass die Menge der Bildpunkte
+      aller Schnitte $P\colon\Spec(R)\to G$ dicht in der
+      speziellen Faser liegt.
+      Insbesondere findet man in jeder offenen Umgebung eines
+      Punkts $\beta\in G$ einen Punkt, um den man mithilfe einer
+      Translation den Defintionsbereich von $f$ ausweiten kann, wie
+      oben beschrieben.
+      Damit ist $g$ in allen Punkten von $G$ definiert und somit
+      Morphismus.
+    \end{description}
+  \end{proof}
+\end{Lemma}
+
+\begin{proof}[Beweis zu \ref{thm:egruppenschema}]
+  Die Aussage folgt direkt aus den vorangegangenen Lemmata.
+\end{proof}
 
 
-\section{Allgemeine Existenz}
+\section{Allgemeine Existenz}\label{chap:exneronmodellebeweis}
+Zu allerletzt bleibt noch zu sehen, dass wir uns von Dedekindringen
+auf Bewertungsringe und von dort auf strikt henselsche Bewertungsringe
+beschränken können.
 \begin{proof}[Beweis von \ref{thm:exneronmodelle}]
   Wegen \ref{thm:neronmodelllokal} können wir uns auf
   diskrete Bewertungsringe $R$ beschränken.
@@ -2733,7 +2891,7 @@ Weierstraßmodell von $E_\K$ über $R$.
 
 % -------
 
-\chapter{Beispiele und Ausblick}
+\chapter{Beispiele und Ausblick}\label{chap:ausblick}
 Wir wissen inzwischen aus \ref{bsp:regweierstraßmodell} und
 \ref{bem:konstruktionminmodell}, dass ein reguläres Weierstraßmodell
 über einem Dedekindring bereits minimales Modell seiner
@@ -2853,7 +3011,7 @@ elliptischer Kurven anhand ihrer Weierstraßgleichung nach der Form
 ihrer speziellen Faser in zehn verschiedenen Kategorien zu
 klassifizieren \cite[vgl.][Theorem IV.8.2]{silverman2}.
 Zur Klassifizierung kann ein Algorithmus von Tate verwendet werden,
-nur die Weierstraßgleichung der elliptischen Kurve benötigt, diese
+der von einer Weierstraßgleichung der elliptischen Kurve ausgeht, diese
 minimalisiert und dann einer der Kategorien in
 \autoref{tab:faserklassifizierung} zuordnet.
 \begin{table}[tbhp]
@@ -2877,7 +3035,8 @@ minimalisiert und dann einer der Kategorien in
   \caption{\label{tab:faserklassifizierung} Kategorien für die
     Klassifizierung der speziellen Faser des minimalen Modells einer
     elliptischen Kurve über einem diskreten Bewertungsring,
-    nach Néron}
+    nach Néron
+  \cite[vgl.][Chapter 1.5]{neron}}
 \end{table}
 Für generaueres zu Tates Algorithmus siehe
 \cite[Chapter IV.9]{silverman2},
@@ -2885,8 +3044,8 @@ Für generaueres zu Tates Algorithmus siehe
 
 % ------
 
-\appendix
-\chapter{Verwendete Definitionen}
+%\appendix
+%\chapter{Verwendete Definitionen}
 %\section{Dedekindringe}
 % % DEDEKINDRINGE
 % \begin{Definition}[Dedekindring]\label{def:dedekindring}
@@ -2943,7 +3102,7 @@ Für generaueres zu Tates Algorithmus siehe
 % \end{Bemerkung}
 
 
-\section{Eigenschaften von Schemata}
+%\section{Eigenschaften von Schemata}
 % % REDUZIERT
 % \begin{Definition}[reduziert, geometrisch reduziert]
 %   Ein Schema heißt reduziert, falls alle Halme reduzierte Ringe sind
@@ -3154,7 +3313,7 @@ Für generaueres zu Tates Algorithmus siehe
 % \end{Bemerkung}
 
 
-\section{$\K$-Gruppenschemata}
+%\section{$\K$-Gruppenschemata}
 % % GUTE REDUKTION
 % \begin{Definition}[Gute Reduktion]\label{def:gutereduktion}
 %   % $X/S$ hat Gute Reduktion nach dem Primideal $P\in S$ heißt, dass die
@@ -3195,8 +3354,8 @@ Für generaueres zu Tates Algorithmus siehe
 % \end{Definition}
 
 % VARIETÄT, ELLIPTISCHE KURVE
-\begin{Definition}[Varietät]
-  \cite[Theorem 3.37]{wedhorn}
+%\begin{Definition}[Varietät]
+ % \cite[Theorem 3.37]{wedhorn}
   % Eine affine Varietät über einem Körper $\K$ ist eine Unterprägarbe der
   % Prägarbe $U\mapsto \Hom(U,\K)$ über den geschlossenen Punkten eines
   % geschlossenen, irreduziblen Unterschemas des $\A_\K^n$.
@@ -3232,25 +3391,25 @@ Für generaueres zu Tates Algorithmus siehe
   %   (V, \O_V) \mapsto (\Spec(\O_V(V)), \O_{\Spec(\O_V(V))})
   % \end{gather*}
 
-  Wir werden im folgenden mit Prävarietät ein integeres
-  $\K$-Schema endlichen Typs meinen und mit affiner Varietät ein
-  affines, integeres $\K$-Schema endlichen Typs.
+  % Wir werden im folgenden mit Prävarietät ein integeres
+%   $\K$-Schema endlichen Typs meinen und mit affiner Varietät ein
+%   affines, integeres $\K$-Schema endlichen Typs.
 
-  Eine algebraische Varietät sei im folgenden ein separiertes, integeres
-  Schema über einem algebraisch abgeschlossen Körper $\K$
-  (alternativ: über einem Körper $\K$, wobei die Basiserweiterung auf
-  den algebraischen Abschluss weiterhin integer ist).
-\end{Definition}
-\begin{Definition}[Kurve, elliptische Kurve]
-  Eine Kurve über einem Körper $\K$ ist eine projektive Varietät der
-  Dimension 1,
-  also ein projektives, integeres $\K$-Schema endlichen Typs.
+%   Eine algebraische Varietät sei im folgenden ein separiertes, integeres
+%   Schema über einem algebraisch abgeschlossen Körper $\K$
+%   (alternativ: über einem Körper $\K$, wobei die Basiserweiterung auf
+%   den algebraischen Abschluss weiterhin integer ist).
+% \end{Definition}
+% \begin{Definition}[Kurve, elliptische Kurve]
+%   Eine Kurve über einem Körper $\K$ ist eine projektive Varietät der
+%   Dimension 1,
+%   also ein projektives, integeres $\K$-Schema endlichen Typs.
 
-  Eine elliptische Kurve über $\K$ ist eine reguläre Kurve $E$ vom
-  Genus 1 zusammen mit einem $\K$-Schnitt $O\in E(\K)$.
-  Elliptische Kurven sind glatte \cite[Proposition III.3.1]{silverman}
-  $\K$"=Gruppenschemata mit Nullelement $O$ \cite{silverman}.
-\end{Definition}
+%   Eine elliptische Kurve über $\K$ ist eine reguläre Kurve $E$ vom
+%   Genus 1 zusammen mit einem $\K$-Schnitt $O\in E(\K)$.
+%   Elliptische Kurven sind glatte \cite[Proposition III.3.1]{silverman}
+%   $\K$"=Gruppenschemata mit Nullelement $O$ \cite{silverman}.
+% \end{Definition}
 
 %\nocite{*}
 \printbibliography
