@@ -107,14 +107,6 @@ insbesondere zu den Begriffen glatt, flach, eigentlich, separiert.
 Die Notation richtet sich nach \cite{wedhorn}.
 
 Im Folgenden noch einige weitere verwendete Begriffe:
-% % S-MODELL
-% \begin{Definition}[$S$-Modell]
-%   Sei $S$ ein zusammenhängendes Dedekindschema mit (eindeutigem)
-%   generischen Punkt $s$ und Funktionenkörper $\K=\k(s)$.
-%   Sei $X$ ein $\K$-Schema.
-%   Ein $S$-Schema $Y$ heißt $S$-Modell von $X$, falls
-%   $Y\times_S\Spec(\K)=Y_K\cong X$ für die generische Faser gilt.
-% \end{Definition}
 
 % DEDEKINDRINGE
 \begin{Definition}[Dedekindring]\label{def:dedekindring}
@@ -181,6 +173,14 @@ seien perfekt.
 \label{chap:gruppenstrukturenaufschemata}
 \section{Gruppenschemata}
 Im Folgenden sei $S$ ein Schema.
+Zuerst werden wir in diesem Kapitel Gruppenschemata einführen, also
+$S$-Schemata, deren Schnittfunktor Gruppen liefert. Als Spezialfälle
+werden abelsche Schemata und abelsche Varietäten aufgeführt. Ein
+wichtiges Beispiel für letzteres sind gerade elliptische Kurven.
+
+Danach werden wir sehen, dass sich eigentliche Gruppenschemata
+gutartig bzgl. rationalen Abbildungen, d.\,h. Morphismen, die nur auf
+offenen dichten Teilmengen definiert sind, verhalten.
 \begin{Definition}[$S$"=Gruppenschema]
   Ein \emph{Gruppenschema über $S$} ist ein
   $S$-Schema
@@ -236,91 +236,94 @@ Im Folgenden sei $S$ ein Schema.
       & G
     \end{tikzcd}
   \end{tabular}
-
-  \begin{Bemerkung}[Gruppe der $T$-wertigen Punkte]
-    Diese Definition ist äquivalent dazu, dass die $T$-wertigen Punkte
-    $G(T)=\Hom_S(T,G)$ eine Gruppenstruktur tragen, die funktoriell in
-    $T$ ist für $S$-Schemata $T$.\optcite[Chapter (4.15)]{wedhorn}
-    In anderen Worten wir erhalten den Funktor 
-    \begin{align*}
-      \Sch &\longto \Groups\\
-      T &\longmapsto G(T)
-    \end{align*}
-    Man erhält eine solche Gruppenstruktur aus den oben angegebenen
-    Morphismen durch
-    \begin{align*}
-      G(T)\times G(T) &\longto G(T)\\
-      (\phi, \psi) &\longmapsto 
-                     \left(
-                     T\overset{(\phi,\psi)}\longto G\times_S G
-                     \overset\mu\longto G
-                     \right)
-    \end{align*}
-    wobei die Identität $T\longto S\overset{\epsilon}\longto G$ ist und
-    man Inverse durch Verknüpfung mit $i$ erhält.
-    \optcite[Proposition IV.3.2]{silverman2}
-  \end{Bemerkung}
-
-  \begin{Definition}[Morphismen von Gruppenschemata]
-    \optcite[Definition 4.42]{wedhorn}
-    Seien $G$ und $H$ $S$"=Gruppenschemata.
-    Ein Morphismus $f\colon G\to H$ von $S$-Schemata ist ein Morphismus
-    von $S$"=Gruppenschemata, falls die induzierten Abbildungen
-    \begin{gather*}
-      (\bullet\circ f)\colon G(T)\to H(T)
-    \end{gather*}auf den $T$-wertigen Punkten
-    Gruppenhomomorphismen sind für alle $S$-Schemata $T$.
-    In anderen Worten
-    \begin{gather*}
-      f\circ\mu_G = \mu_H\circ(f\times f)
-    \end{gather*}
-  \end{Definition}
-
-  % IDENTITÄTSKOMPONENTE
-  \begin{Definition}[Untergruppenschema]
-    \optcite[Definition 4.45]{wedhorn}
-    Sei $G$ ein $S$"=Gruppenschema.
-    Ein $S$"=Untergruppenschema von $G$ ist ein geschlossenes
-    $S$-Unterschema von $G$, dessen geschlossene Immersion ein
-    Homomorphismus von Gruppenschemata ist.
-  \end{Definition}
-  \begin{Definition}[Identitätskomponente]
-    \optcite[Remark IV.6.1.2]{silverman2}
-    Sei $G$ ein $S$"=Gruppenschema.
-    Die Identitätskomponente einer Faser $G_s$ ($s\in S$) von $G$ ist
-    die Zusammenhangskomponente von $G_s$, die $\epsilon(s)$ enthält.
-    Die Identitäts-~oder Zusammenhangskomponente von $G$ ist
-    die Vereinigung aller Identitätskomponenten der Fasern von $G$.
-    Die Identitätskomponente ist ein Untergruppenschema.
-  \end{Definition}
-
-  % ABELSCHE SCHEMATA
-  \begin{Bemerkung}\label{gruppenschemaaequivalenzen}
-    Für ein $\K$"=Gruppenschema endlichen Typs über einem Körper $\K$
-    sind glatt und geometrisch reduziert äquivalent.
-    \optcite[8.5, Excercise 11]{bosch}
-    
-    Genauso sind auch (geometrisch) irreduzibel und (geometrisch)
-    zusammenhängend äquivalent, da aufgrund der Glattheit alle Halme
-    lokal und regulär, also insb. integer, sind und $G$ lokal noethersch
-    ist.
-    \optcite[Exercise 3.16]{wedhorn}\optcite[Corollary 16.51]{wedhorn}
-  \end{Bemerkung}
 \end{Definition}
+Die Folgende Äquivalenz lässt klar werden, warum wir von
+Gruppenschemata sprechen:
+\begin{Bemerkung}[Gruppe der $T$-wertigen Punkte]
+  Diese Definition ist äquivalent dazu, dass die $T$-wertigen Punkte
+  $G(T)=\Hom_S(T,G)$ eine Gruppenstruktur tragen, die funktoriell in
+  $T$ ist für $S$-Schemata $T$.\optcite[Chapter (4.15)]{wedhorn}
+  In anderen Worten wir erhalten den Funktor 
+  \begin{align*}
+    \Sch &\longto \Groups\\
+    T &\longmapsto G(T)
+  \end{align*}
+  Man erhält eine solche Gruppenstruktur aus den oben angegebenen
+  Morphismen durch
+  \begin{align*}
+    G(T)\times G(T) &\longto G(T)\\
+    (\phi, \psi) &\longmapsto 
+                   \left(
+                   T\overset{(\phi,\psi)}\longto G\times_S G
+                   \overset\mu\longto G
+                   \right)
+  \end{align*}
+  wobei die Identität $T\longto S\overset{\epsilon}\longto G$ ist und
+  man Inverse durch Verknüpfung mit $i$ erhält.
+  \optcite[Proposition IV.3.2]{silverman2}
+\end{Bemerkung}
+
+Anhand der Gruppenstruktur auf den Schnitten lassen sich
+Gruppenschemamorphismen und Untergruppenschemata definieren:
+\begin{Definition}[Morphismen von Gruppenschemata]
+  \optcite[Definition 4.42]{wedhorn}
+  Seien $G$ und $H$ $S$"=Gruppenschemata.
+  Ein Morphismus $f\colon G\to H$ von $S$-Schemata ist ein Morphismus
+  von $S$"=Gruppenschemata, falls die induzierten Abbildungen
+  \begin{gather*}
+    (\bullet\circ f)\colon G(T)\to H(T)
+  \end{gather*}auf den $T$-wertigen Punkten
+  Gruppenhomomorphismen sind für alle $S$-Schemata $T$.
+  In anderen Worten
+  \begin{gather*}
+    f\circ\mu_G = \mu_H\circ(f\times f)
+  \end{gather*}
+\end{Definition}
+
+% IDENTITÄTSKOMPONENTE
+\begin{Definition}[Untergruppenschema]
+  \optcite[Definition 4.45]{wedhorn}
+  Sei $G$ ein $S$"=Gruppenschema.
+  Ein $S$"=Untergruppenschema von $G$ ist ein geschlossenes
+  $S$-Unterschema von $G$, dessen geschlossene Immersion ein
+  Homomorphismus von Gruppenschemata ist.
+\end{Definition}
+
+Das folgende Untergruppenschema ist durch die Topologie des Schemas
+gegeben:
+\begin{Definition}[Identitätskomponente]
+  \optcite[Remark IV.6.1.2]{silverman2}
+  Sei $G$ ein $S$"=Gruppenschema.
+  Die Identitätskomponente einer Faser $G_s$ ($s\in S$) von $G$ ist
+  die Zusammenhangskomponente von $G_s$, die $\epsilon(s)$ enthält.
+  Die Identitäts-~oder Zusammenhangskomponente von $G$ ist
+  die Vereinigung aller Identitätskomponenten der Fasern von $G$.
+  Die Identitätskomponente ist ein Untergruppenschema.
+\end{Definition}
+
+% ABELSCHE SCHEMATA
+Wir werden nun einige wichtige Spezialfälle von Gruppenschemata
+betrachten.
+\begin{Bemerkung}\label{gruppenschemaaequivalenzen}
+  Für ein $\K$"=Gruppenschema endlichen Typs über einem Körper $\K$
+  sind glatt und geometrisch reduziert äquivalent.
+  \optcite[8.5, Excercise 11]{bosch}
+  
+  Genauso sind auch (geometrisch) irreduzibel und (geometrisch)
+  zusammenhängend äquivalent, da aufgrund der Glattheit alle Halme
+  lokal und regulär, also insb. integer, sind und $G$ lokal noethersch
+  ist.
+  \optcite[Exercise 3.16]{wedhorn}\optcite[Corollary 16.51]{wedhorn}
+\end{Bemerkung}
 \begin{Definition}[Abelsche Varietät]\label{def:abelschevarietaet}
   Eine abelsche Varietät $X/\K$ ist ein eigentliches, glattes,
   irreduzibles $\K$"=Gruppenschema.
   \optcite[9.6, Definition 1]{bosch}\optcite[Definition 16.52]{wedhorn}
-
-  % (Hier ist glatt äquivalent zu geometrisch reduziert und irreduzibel
-  % äquivalent zu zusammenhängend, 
-  % siehe \ref{gruppenschemaaequivalenzen}.)
-
-  \begin{Bemerkung}\label{thm:abvarietaetprojektiv}
-    Abelsche Varietäten sind projektiv nach
-    \cite[9.6, Proposition 4]{bosch}.
-  \end{Bemerkung}
 \end{Definition}
+\begin{Bemerkung}\label{thm:abvarietaetprojektiv}
+  Abelsche Varietäten sind projektiv nach
+  \cite[9.6, Proposition 4]{bosch}.
+\end{Bemerkung}
 
 \begin{Definition}[abelsches Schema]
   Ein abelsches $S$-Schema ist ein eigentliches, glattes $S$"=Gruppenschema,
@@ -331,7 +334,15 @@ Im Folgenden sei $S$ ein Schema.
 \end{Definition}
 
 % S-RATIONALE ABBILDUNG
-% TODO!! Was von rationaler Abbildung wird benötigt?
+In manchen Fällen ist für ($S$-)Schemata $X$, $Y$ kein
+($S$-)Morphismus $f\colon X\to Y$ gegeben, sondern nur ein Morphismus
+auf einer offenen dichten Teilmenge von $X$ (z.\,B. der generischen
+Faser). Solche Fälle sind besonders interessant, wenn man Aussagen
+darüber treffen möchte, ob und wie sich dieser Morphismus auf ganz $X$
+erweitert. Ein Beispiel sind rationale Abbildungen zwischen
+projektiven Varietäten über algebraisch abgeschlossenen Körpern.
+Eine Verallgemeinerung davon sind die ($S$-)rationalen Abbildungen
+zwischen ($S$-)Schemata.
 \begin{Definition}[rationale Abbildung]\label{def:ratabb}
   \optcite[Chapter 2.5]{neron}
   Sei $S$ Schema, und seien $X$ und $Y$ glatte $S$-Schemata.
@@ -383,8 +394,11 @@ Im Folgenden sei $S$ ein Schema.
   ist.
 \end{Definition}
 
-Eigentliche Gruppenschemata verhalten sich gutartig bzgl. rationalen
-Abbildungen: 
+Nachdem unser Hauptaugenmerk auf Gruppenschemata liegt, ist für uns
+besonders interessant, wie sich $S$-Gruppenschemata
+bzgl. ($S$-)rationalen Abbildungen verhalten.
+Tatsächlich verhalten sich eigentliche Gruppenschemata in folgender
+Hinsicht gutartig:
 \begin{Lemma}\label{thm:rationalzumorphismus}
   \cite[Proposition IV.6.2]{silverman2}
   Sei $G$ ein $R$"=Gruppenschema, $Y$ ein glattes $R$-Schema und
@@ -399,9 +413,13 @@ Abbildungen:
 % -----
 
 \section{Normale Komposition auf Schemata}
-Eine schwächere bzw. rationale Form einer Gruppenschemastruktur:
+Sei $R$ im folgenden ein Dedekindring.
+In manchen Fällen kann der Morphismus einer Gruppenstruktur nicht auf
+dem gesamten Schema sondern nur als $R$-rationale Abbildung angegeben
+werden. So kommt man zur Definition einer normalen Komposition, welche
+eine $R$-rationale Gruppenstruktur liefert.
 \begin{Definition}[normale Komposition]\label{def:normalekomposition}
-  Sei $R$ Dedekindring, $V$ glattes $R$-Schema mit nichtleeren Fasern.
+  Sei $V$ glattes $R$-Schema mit nichtleeren Fasern.
   Eine \emph{normale Komposition auf $V$} ist eine $R$-rationale
   Abbildung
   \begin{gather*}
@@ -431,10 +449,14 @@ Eine schwächere bzw. rationale Form einer Gruppenschemastruktur:
   \end{enumerate}
 \end{Definition}
 
-\begin{Satz}\label{thm:weil}
+Das schöne an einer normalen Komposition ist, dass zumindest
+ein großer Teil, nämlich ein offenes dichtes Unterschema, offen und
+dicht in einem richtigen Gruppenschema mit derselben Gruppenstruktur
+liegt.
+\begin{Satz}[Weil]\label{thm:weil}
   \cite[Theorem VIII.1.12]{artin},
   \cite[Theorem IV.6.9]{silverman2}
-  Sei $R$ Dedekindring, $V$ glattes $R$-Schema mit nichtleeren Fasern
+  Sei $V$ glattes $R$-Schema mit nichtleeren Fasern
   und normaler Komposition $\mu\colon V\times_R V\dra V$.
   $V$ sei zusätzlich endlichen Typs und $V(R)$ sei dicht in jeder
   Faser. 
