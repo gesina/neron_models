@@ -11,7 +11,7 @@ Danach werden wir sehen, dass sich eigentliche Gruppenschemata
 gutartig bzgl. rationalen Abbildungen verhalten,
 d.\,h. bzgl. Morphismen, die nur auf offenen dichten Teilmengen
 definiert sind.
-\begin{Definition}[$S$"=Gruppenschema]
+\begin{Definition}[$S$"=Gruppenschema]\label{def:gruppenschema}
   Ein \emph{Gruppenschema über $S$} oder \emph{$S$-Gruppenschema} ist ein
   $S$-Schema ${\pi\colon G\to S}$ zusammen mit $S$-Morphismen
   \begin{align*}
@@ -69,9 +69,10 @@ Gruppenschemas zum tragen kommt:
   Die obige Definition ist äquivalent dazu, dass die $T$-wertigen Punkte
   $G(T)=\Hom_S(T,G)$ eine Gruppenstruktur tragen, die funktoriell in
   $T$ ist für $S$-Schemata $T$.\optcite[Chapter (4.15)]{wedhorn}
-  In anderen Worten der Schnittfunktor hat die Form 
+  In anderen Worten der Schnittfunktor faktorisiert über den
+  Vergissfunktor
   \begin{align*}
-    \Sch &\longto \Groups\\
+    \Sch &\longto \Groups \longto \text{(Sets)}\\
     T &\longmapsto G(T)
   \end{align*}
   Die Gruppenstruktur auf $G(T)$ ist durch $\mu$ gegeben als
