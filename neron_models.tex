@@ -32,8 +32,8 @@ elliptische Kurve über $\K$. Eine Weierstraßgleichung zu $E_\K$
 \end{gather*}
 mit Koeffizienten in $R$ definiert ein projektives $R$-Schema
 $W=V_+(F)\subset\P_R^n$ der Dimension~2. Dessen generische Faser
-ist wieder $E_\K$ und die spezielle Faser ist die Kurve, die durch die
-Reduktion von $(F\mod\m)$ über $\k(\m)$ erzeugt wird.
+ist wieder $E_\K$ und die spezielle Faser ist die Kurve, die durch das
+reduzierte Polynom $(F\mod\m)$ über $\k(\m)$ erzeugt wird.
 $W$ enthält also Informationen zur Reduktion unserer elliptischen
 Kurve.
 
@@ -42,42 +42,33 @@ interessant sind, stellt sich die Frage, ob sich die
 Gruppenstruktur $E_\K\times_\K E_\K\to E_\K$ auf ein hinreichend
 gutartiges (hier: glattes, separiertes) $R$-Schema wie $W$ erweitern
 lässt.
-
-Eine Forderung an ein solches $R$-Schema ist:
+Eine Forderung an ein solches $R$-Schema ist dann:
 \begin{quote}
+  \itshape
   Die Gruppenverknüpfung auf der generischen Faser erweitert sich zu
   einer Gruppenverknüpfung $E\times_R E\to E$ auf ganz $E$.
 \end{quote}
-Insbesondere sind dann alle Schnitte $E(Y)$ von
-$R$-Schemata $Y$ Gruppen, für die wir ebenfalls eine entsprechende
-Erweiterungseigenschaft fordern:
-% Um von einer Erweiterung der Gruppenstruktur sprechen zu können,
-% sollte man auch fordern, dass $E(Y)$ eine Erweiterung von $E_\K(Y_\K)$
-% ist ($Y_\K$ generische Faser von $Y$), in anderen Worten:
-% Interessant wird das Verhältnis der Gruppen $E_\K(Y_\K)$ zu $E(Y)$
-% Da auch auf diesen Gruppen von einer schönen Erweiterung ausgehen zu
-% können, braucht es weiterhin die Forderung:
-% Nachdem ein wichtiger Bestandteil der Gruppenstruktur von $E_\K$ ist,
-% dass die Menge der Schnitte $E_\K(Y_\K)$ eines $\K$-Schemas $Y_\K$
-% eine Gruppe ist, ergibt sich eine weitere Forderung an $E$:
+Insbesondere sind dann für $R$-Schemata $Y$ alle Schnitte $E(Y)$
+Gruppen. Per Konstruktion ist die kanonische Abbildung
+$E(Y)\to E_\K(Y_\K)$, die durch den Basiswechsel induziert ist, ein
+Gruppenmorphismus, der allerdings im Allgemeinen weder surjektiv noch
+injektiv ist. Für eine \enquote{schöne} Erweiterung der
+Gruppenstruktur fordern also die stärkere Eigenschaft:
 \begin{quote}
+  \itshape
   Für alle \enquote{gutartigen} (hier: glatten) $R$-Schemata $Y$ mit
-  generischer Faser $Y_\K$, soll $E_\K(Y_\K)\hookrightarrow E(Y)$
-  Untergruppe sein.
+  generischer Faser $Y_\K$ soll die kanonische Abbildung
+  $E(Y)\to E_\K(Y_\K)$ ein (Gruppen-)Isomorphismus sein.
 \end{quote}
-% Als Diagramm für einen Schnitt in $E_\K(\K)$:
-% \begin{center}
-%   \begin{tikzcd}
-%     Y_\K\arrow[r]\arrow[d, hook]&E_\K\arrow[d, hook]\\
-%     Y\arrow[r, dashed, "\exists!"]&E
-%   \end{tikzcd}
-% \end{center}
 Dies motiviert die Definition des Néron-Modells, welches
 ein $R$-Modell von $E_\K$ ist, das ebendiese Erweiterungseigenschaften
 erfüllt.
 
 Das Hauptziel dieser Arbeit wird sein, die Existenz von Néron-Modellen
 für elliptische Kurven zu zeigen und die Konstruktion zu skizzieren.
+Wir beschränken uns auf Dedekindringe $R$ mit perfekten
+Restklassenkörpern, für allgemeine Dedekindringe siehe auch
+\cite{nonperfect}.
 
 In \autoref{chap:gruppenstrukturenaufschemata} werden die nötigen
 Grundlagen zu Gruppenschemata eingeführt, wonach dann in
@@ -114,6 +105,19 @@ Es werden Kenntnisse zur Garben-~und Schematheorie benötigt,
 insbesondere zu den Begriffen glatt, flach, eigentlich, separiert.
 Die Notation richtet sich nach \cite{wedhorn}.
 
+% Mit affiner Varietät ist stets ein affines, integeres $\K$-Schema
+% endlichen Typs gemeint.
+Eine Kurve über einem Körper $\K$ sei immer eine projektive Varietät
+der Dimension~1,
+und eine elliptische Kurve über $\K$ ist eine glatte Kurve $E_\K$
+vom Genus~1 zusammen mit einem $\K$-Schnitt $O\in E_\K(\K)$.
+Elliptische Kurven sind $\K$"=Gruppenschemata mit Nullelement $O$
+\cite{silverman}.
+
+Es werden nur elliptische Kurven über Körpern der Charakteristik
+ungleich~2, 3 betrachten und die Restklassenkörper der Dedekindringe
+seien perfekt.
+
 Im Folgenden noch einige weitere verwendete Begriffe:
 
 % DEDEKINDRINGE
@@ -122,12 +126,12 @@ Im Folgenden noch einige weitere verwendete Begriffe:
   Ein Integritätsring $R$ heißt Dedekindring, wenn er eine der
   äquivalenten Bedingungen erfüllt
   \begin{enumerate}[label=(\roman*)]
-  \item regulär und $\dim(A)\leq 1$
-  \item noethersch, normal und $\dim(A)\leq 1$    
-  \item $A$ Körper oder
+  \item $R$ ist regulär und $\dim(R)\leq 1$.
+  \item $R$ ist noethersch, normal und $\dim(R)\leq 1$.
+  \item $R$ ist Körper oder
     jede Lokalisierung nach einem Maximalideal ist ein diskreter
     Bewertungsring
-    (d.\,h. lokal, noethersch, normal von Dimension 1)
+    (d.\,h. lokal, noethersch, normal von Dimension~1).
   \end{enumerate}
 \end{Definition}
 Für Schemata über Dedekindringen werden die Fasern über dem
@@ -137,16 +141,16 @@ Punkten als spezielle Fasern bezeichnet.
   Ein Dedekindschema ist ein noethersches, integeres Schema $X$, das
   eine der äquivalenten Eigenschaften erfüllt
   \begin{enumerate}[label=(\roman*)]
-  \item die offenen affinen Unterschemata sind Spektren von Dedekindringen
-  \item $\dim(X)\leq 1$ und $X$ regulär
+  \item Die offenen affinen Unterschemata sind Spektren von Dedekindringen.
+  \item $\dim(X)\leq 1$ und $X$ ist regulär
     (in Dimension 1 äquivalent zu normal nach
-    \cite[Corollary 6.39, Proposition 6.40]{wedhorn})
+    \cite[Corollary 6.39, Proposition 6.40]{wedhorn}).
   \end{enumerate}
 \end{Definition}
-Sei $S$ allgemein irreduzibles Schema. Ein $S$-Schema wird auch als
+Sei $S$ allgemein ein irreduzibles Schema. Ein $S$-Schema wird auch als
 $S$-Modell seiner generischen Faser bezeichnet.
 
-Folgende Aussagen zu Glattheit werden häufig verwendet:
+Folgende Äquivalenz und Aussage zu Glattheit werden häufig verwendet:
 \begin{Bemerkung}\label{thm:eigglatt}
   Sei $f\colon X\to Y$ Morphismus von Schemata.
   Für $f$ endlich präsentiert ist $f\colon X\to Y $ glatt in $x$
@@ -162,18 +166,6 @@ Folgende Aussagen zu Glattheit werden häufig verwendet:
   \cite[für flach s.][Theorem 14.22]{wedhorn}.
 \end{Bemerkung}
 
-Wir werden im Folgenden mit affiner Varietät ein
-affines, integeres $\K$-Schema endlichen Typs meinen.
-Eine Kurve über einem Körper $\K$ sei immer eine projektive Varietät
-der Dimension~1,
-und eine elliptische Kurve über $\K$ ist eine reguläre Kurve $E_\K$
-vom Genus~1 zusammen mit einem $\K$-Schnitt $O\in E_\K(\K)$.
-Elliptische Kurven sind glatte \cite[Proposition III.3.1]{silverman}
-$\K$"=Gruppenschemata mit Nullelement $O$ \cite{silverman}.
-
-Es werden nur elliptische Kurven über Körpern der Charakteristik
-ungleich~2, 3 betrachten und die Restklassenkörper der Dedekindringe
-seien perfekt.
 
 % ----------
 
@@ -2128,8 +2120,8 @@ zugehörigen Korollar.
 
 % -----
 
-\section{Minimale eigentliche Modelle}\label{chap:minmodelle}
-Eigentliche Modelle können für elliptische Kurven eindeutig minimal
+\section{Minimale Modelle}\label{chap:minmodelle}
+Eigentliche Modelle können für elliptische Kurven minimal
 bzgl. birationaler Morphismen gewählt werden, wie wir in diesem
 Abschnitt zeigen werden. Aus der Konstruktion wird auch ersichtlich,
 dass der Algorithmus aus \ref{bem:konstruktioneigmodell} bereits ein
