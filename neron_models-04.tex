@@ -2,7 +2,7 @@
 In diesem Kapitel werden wir näher auf die Konstruktion eines
 projektiven $R$-Schemas $W$ aus einer Weierstraßgleichung über dem
 Quotientenkörper eines Dedekindrings eingehen.
-Ein solches Schema ist zwar eigentlich, erfüllt also die \NAbbEig, ist
+Ein solches Schema ist zwar eigentlich – erfüllt also die \NAbbEig – ist
 aber nicht notwendigerweise glatt und die Gruppenverknüpfung
 erweitert sich nicht immer zu einem Morphismus auf ganz $W$.
 Letzteres kann man beheben, indem man sich auf das Unterschema der
@@ -27,9 +27,9 @@ durch eine homogene Gleichung der Form
   \eqqcolon F\in\K[X,Y,Z]
 \end{gather*}
 mit Koeffizienten $\c_1,\dotsc,\c_6\in\K$ und Nullpunkt $O=[0,1,0]$
-dargestellt werden, d.\,h. sie ist isomorph zur projektiven Kurve
+dargestellt werden, das heißt sie ist isomorph zur projektiven Kurve
 $V_+(F)\subset\P_\K^2$.
-Umgekehrt ist jede reguläre Kurve, die durch eine
+Umgekehrt ist jede glatte Kurve, die durch eine
 solche Gleichung definiert wird, eine elliptische Kurve mit genanntem
 Nullpunkt nach \cite[Proposition III.3.1]{silverman}.
 Gleichungen dieser Form werden \emph{Weierstraßgleichungen} genannt.
@@ -63,7 +63,7 @@ nach \cite[Proposition III.1.4]{silverman}.
 
 \subsection{Weierstraßmodelle}
 % (MINIMALE) WEIERSTRASSGLEICHUNG ÜBER $R$
-Sei im Folgenden Abschnitt $R$ Dedekindring,
+Sei im folgenden Abschnitt $R$ Dedekindring,
 $\K=\Quot(R)$ und $E_\K$ elliptische Kurve über $\K$.
 
 Uns interessiert nun, ob und wie sich eine Weierstraßgleichung mit
@@ -81,8 +81,8 @@ mit dem Koeffizientenwechsel
   &\gamma&\mapsto a^{6n}\gamma
   &\Delta&\mapsto a^{12n}\Delta
 \end{align*}
-gegeben
-(\cite[1.5, Lemma 2]{neron} oder \cite[Chapter VII.1]{silverman}).
+gegeben, siehe \cite[1.5, Lemma 2]{neron}
+oder \cite[Chapter VII.1]{silverman}.
 Sind $\beta=\frac{\beta_1}{\beta_2}$,
 $\gamma=\frac{\gamma_1}{\gamma_2}$ mit $\beta_i,\gamma_i\in R$,
 erzeugt ein solcher Koordinatenwechsel mit $a=\gamma_2\beta_2$ eine
@@ -113,14 +113,14 @@ Weierstraßgleichung mit Koeffizienten in $R$.
 \begin{Definition}[Weierstraßmodell]
   Wir nennen ein projektives $R$-Schema $W=V_+(F)\subset\P_R^2$, das
   von einer homogenen Weierstraßgleichung $0=F\in R[X,Y,Z]$ von $E_\K$
-  mit Koeffizienten in $R\subset\K$ erzeugt wird, im Folgenden
-  ein \emph{Weierstraßmodell} von $E_\K$ über $R$.
+  mit Koeffizienten in $R\subset\K$ erzeugt wird,
+  ein Weierstraßmodell von $E_\K$ über $R$.
 \end{Definition}
 
 Ist $R$ ein diskreter Bewertungsring, können wir die Bewertung der
 Diskriminante durch einen Koordinatenwechsel manipulieren. Daher macht
 es Sinn, eine bzgl. der gegebenen diskreten Bewertung minimale
-Form der Weierstraßgleichung in $R$ zu betrachten:
+Form der Weierstraßgleichung in $R$ zu betrachten.
 \begin{Definition}[minimale Weierstraßgleichung]
   \optcite[Chapter 1.5, S.\,22]{neron}
   \optcite[Chapter VII.1]{silverman}
@@ -130,31 +130,32 @@ Form der Weierstraßgleichung in $R$ zu betrachten:
     Y^2Z = X^3 + \beta XZ^2 + \gamma Z^3
   \end{gather*}
   heißt minimal, wenn für die Koeffizienten $\beta, \gamma\in R$ gilt
-  und die Bewertung der Diskriminante $\ord_\K(\Delta)$ minimal
+  und die Bewertung $\ord_\K(\Delta)$ der Diskriminante minimal
   bzgl. homogenem Koordinatenwechsel ist.
-
   Wir bezeichnen ein Weierstraßmodell von $E_\K$ über $R$ als minimal,
   wenn es von einer minimalen Weierstraßgleichung von $E_\K$ erzeugt
   ist.
 \end{Definition}
 Es stellt sich heraus, dass sich die spezielle Faser des
-Weierstraßmodells einer elliptische Kurve anhand der
+Weierstraßmodells einer elliptische Kurve anhand der minimalen
 Bewertung der Diskriminante und der $j$-Invariante in eine von zehn
-Kategorien klassifizieren lässt. Siehe auch \autoref{chap:ausblick}. 
+Kategorien klassifizieren lässt. Siehe dazu auch \autoref{chap:ausblick}. 
 
 % -----
 
 \section{Gruppenschemastruktur}\label{chap:weierstraßgruppe}
 \subsection{Allgemeine Eigenschaften}
-Im Folgenden ein paar nützliche Eigenschaften von Weierstraßmodellen.
+Im Folgenden ein paar nützliche Eigenschaften von Weierstraßmodellen,
+die wir unter anderem für den Nachweis der Gruppenstruktur auf dem
+glatten Teil eines Weierstraßmodells brauchen werden.
 
 % INTEGER, PROJEKTIV, FLACH
 \begin{Lemma}\label{thm:eigweierstrassmodelle}
   Ein Weierstraßmodell $W=V_+(F)$ zu einer Weierstraßgleichung $0=F$
-  von $E_\K$ über einem Dedekindring $R$ ist
+  von $E_\K$ über einem Dedekindring $R$ mit $\K=\Quot(R)$ ist
   integer,
-  projektiv (insb. quasikompakt, noethersch),
-  endlich präsentiert (insb. von endlichem Typ),
+  projektiv, insbesondere quasikompakt und noethersch,
+  endlich präsentiert, insbesondere von endlichem Typ, und
   flach.
   \begin{proof}
     \begin{description}
@@ -165,8 +166,8 @@ Im Folgenden ein paar nützliche Eigenschaften von Weierstraßmodellen.
       $W=V_+(F)$ ist genau dann irreduzibel, wenn $F\in R[X,Y,Z]$
       irreduzibel ist.
       Da nach Voraussetzung $E_\K\cong V_+(F)\subset\P_\K^2$
-      elliptische Kurve, insb. irreduzibel ist, ist $F$ irreduzibel
-      als Polynom in $\K[X,Y,Z]$. Nach Algebra impliziert das schon
+      elliptische Kurve ist, vor allem irreduzibel, ist $F$ irreduzibel
+      als Polynom in $\K[X,Y,Z]$. Nach Algebra impliziert das bereits
       die Irreduzibilität von $F\in R[X,Y,Z]$.
       % Dass $W$ irreduzibel ist, kann auf der affinen, offenen
       % Standardüberdeckung des $\P_R^2$ durch drei Kopien des $\A_R^2$
@@ -182,8 +183,8 @@ Im Folgenden ein paar nützliche Eigenschaften von Weierstraßmodellen.
       % irreduzibel und reduziert und somit $W$ integer.
     \item[endlich präsentiert]
       $W$ ist offen überdeckt von seinen drei dehomogenisierten,
-      affinen Teilmengen $V(F_i)=\Spec(R[x,y]/(F_i))$ ($F_X,F_Y,F_Z$
-      Dehomogenisierungen von $F$ nach $X,Y,Z$). Diese sind jeweils
+      affinen Teilmengen $V(F_i)=\Spec(R[x,y]/(F_i))$, wobei $F_X,F_Y,F_Z$
+      Dehomogenisierungen von $F$ nach $X,Y,Z$ seien. Diese sind jeweils
       endlich präsentiert, also ist $W$ endlich präsentiert.
       Entsprechend folgt, dass $W$ von endlichem Typ ist.
     \item[flach]
@@ -191,9 +192,10 @@ Im Folgenden ein paar nützliche Eigenschaften von Weierstraßmodellen.
       Faser $E_\K$ folgt, dass der eindeutige generische Punkt $\eta$
       von $W$ auf den generischen Punkt von $R$ geschickt wird.
       Das zeigt, dass $W$ flach ist
-      nach \cite[Proposition III.9.7]{hartshorne}
-      (hierbei wird zusätzlich benutzt, dass $\Spec(R)$ integer,
-      regulär und von Dimension 1 ist).
+      nach \cite[Proposition III.9.7]{hartshorne}, denn
+      $\Spec(R)$ ist integer, regulär und von Dimension~1 und
+      $W$ ist reduziert, womit alle Voraussetzungen des Satzes erfüllt
+      sind.
       
       Nachdem $W$ integer ist, hat es einen eindeutigen generischen
       Punkt $\eta$.
@@ -268,10 +270,10 @@ Im Folgenden ein paar nützliche Eigenschaften von Weierstraßmodellen.
   % \optcite[Chapter VII.5]{silverman}.
   Sei $(R,\m)$ diskreter Bewertungsring,
   $\K=\Quot(R)$,
-  der Restklassenkörper $\k(\m)=R/\m$ perfekt,
-  $E_\K$ elliptische Kurve über $\K$,
+  der Restklassenkörper $k=R/\m$ perfekt,
+  $E_\K$ elliptische Kurve über $\K$ und
   $W$ ein Weierstraßmodell von $E_\K$ über $R$
-  mit spezieller Faser $W_\m$ über $\k(\m)$.
+  mit spezieller Faser $W_\m$ über $k$.
   Dann gilt
   \begin{enumerate}[label=(\alph*)]
   \item $W$ ist genau dann glatt, wenn die spezielle Faser von $W$ glatt
@@ -296,7 +298,7 @@ Im Folgenden ein paar nützliche Eigenschaften von Weierstraßmodellen.
     \item Für Schemata lokal endlichen Typs über einem Körper sind
       glatt und geometrisch regulär äquivalent
       \cite[Corollary 6.32]{wedhorn}.
-      Da $\k(\m)$ perfekt ist, ist dies für $\k(\m)$-Schemata sogar
+      Da $k$ perfekt ist, ist dies für $k$-Schemata sogar
       äquivalent zu regulär
       \cite[Remark 6.33]{wedhorn}.
       Schemata lokal endlichen Typs über einem Körper sind genau dann
@@ -304,7 +306,7 @@ Im Folgenden ein paar nützliche Eigenschaften von Weierstraßmodellen.
       \cite[Remark 6.25 (3)]{wedhorn}. Insbesondere sind alle
       singulären Punkte geschlossen.
 
-      $W_\m$ ist als Weierstraßkurve über $\k(\m)$ ein $\k(\m)$-Schema
+      $W_\m$ ist als Weierstraßkurve über $k$ ein $k$-Schema
       lokal endlichen Typs, also treffen obige Aussagen zu.
       Nach \cite[Proposition III.1.4]{silverman} ist unter den
       geschlossenen Punkten von $W_\m$ maximal ein singulärer Punkt
@@ -313,7 +315,7 @@ Im Folgenden ein paar nützliche Eigenschaften von Weierstraßmodellen.
 
       Angenommen, $W_\m$ habe den singulären Punkt $\gamma$.
       $W_\m=W\setminus E_\K$ ist als Urbild des geschlossenen Punktes
-      $\m$ von $\Spec(R)$ geschlossenes Unterschema von $W$.
+      $\m$ von $\Spec(R)$ ein geschlossenes Unterschema von $W$.
       Also ist der Punkt $\gamma$, der geschlossen in $W_\m$ ist, auch
       geschlossener Punkt von $W$.
       
@@ -324,7 +326,8 @@ Im Folgenden ein paar nützliche Eigenschaften von Weierstraßmodellen.
       präsentiert und flach (s. \ref{thm:eigweierstrassmodelle}).
       Es hat wie $W$ die (nichtleere) glatte, generische Faser $E_\K$ und
       per Konstruktion die spezielle Faser $W_{\m}\setminus\{\gamma\}$,
-      welche nach Voraussetzung beide regulär (also glatt) sind.
+      welche nach Voraussetzung beide regulär über perfekten Körpern,
+      also glatt, sind.
       Damit ist $W^0$ wieder nach \cite[8.5, Proposition 17]{bosch}
       glatt über $R$ bzw. glattes $R$-Modell von $E_\K$ und das offene
       Unterschema der glatten Punkte von $W$.
@@ -337,7 +340,7 @@ Im Folgenden ein paar nützliche Eigenschaften von Weierstraßmodellen.
   \ref{thm:weierstrassglatt} ein sehr einfaches Kriterium für die
   Glattheit eines Weierstraßmodell $W$ von $E_\K$.
   $W$ ist genau dann glatt, wenn seine spezielle Faser glatt
-  (bzw. äquivalent dazu regulär) ist.
+  (bzw. regulär) ist.
   Dies lässt sich recht leicht an der Weierstraßgleichung ablesen.
   
   Die spezielle Faser $W_{\m}=W\times_R (R/\m)$ ist definiert
@@ -345,15 +348,15 @@ Im Folgenden ein paar nützliche Eigenschaften von Weierstraßmodellen.
   Maximalideal $\m$ von $R$, also ebenfalls eine Weierstraßkurve.
   Entsprechend ist $W_{\m}$ (und damit $W$) genau dann glatt, wenn
   eine der äquivalenten Bedingungen erfüllt ist
-  ($\Delta_{\m}$ Diskriminante von $W_{\m}$,
-  $\Delta$ Diskriminante von $W$)
-  \cite[Proposition VII.5.1 (a)]{silverman}:
   \begin{enumerate}[label=(\roman*)]
-  \item $0\neq\Delta_{\m}=\bar\Delta\in R/\m$.
-  \item $\Delta\not\in\m$ bzw. $\pi\nmid\Delta$.
+  \item $0\neq\Delta_{\m}=\bar\Delta\in R/\m$
+  \item $\Delta\not\in\m$ bzw. $\pi\nmid\Delta$
   \item $\ord_R(\Delta)=0$ bzw. $\Delta\in R^\times$
   \end{enumerate}
-  Letzteres ist einfach nachzuprüfen.
+  wobei $\Delta_{\m}$ Diskriminante von $W_{\m}$ und $\Delta$
+  Diskriminante von $W$ ist,
+  \cite[vgl.][Proposition VII.5.1 (a)]{silverman}.
+  Die letzte Bedingung ist einfach nachzuprüfen.
 \end{Bemerkung}
 
 \subsection{Gruppenstruktur auf Weierstraßmodellen}
@@ -362,8 +365,8 @@ eines Weierstraßmodells nach. Es wird nur eine kurze Beweisskizze
 geliefert, da die Aussage nur ein Spezialfall von
 \ref{thm:exneronmodelle} ist.
 \begin{Lemma}\label{thm:erweiterunggruppenstruktur}
-  Sei $(R,\m)$ hier diskreter Bewertungsring,
-  $\k(\m)=R/\m$ perfekt,
+  Sei $(R,\m)$ wieder diskreter Bewertungsring,
+  $k=R/\m$ perfekt,
   $\K=\Quot(R)$.
   Sei $W$ ein Weierstraßmodell von $E_\K$ über $R$ und
   $W^0$ das offene $R$-Unterschema der glatten Punkte von $W$ 
@@ -417,7 +420,7 @@ geliefert, da die Aussage nur ein Spezialfall von
     %     %   Die nicht-glatten Punkte von $W$ sind die singulären Punkte
     %     %   der Fasern.
     %     %   Die generische Faser ist regulär (ell. Kurve), die spezielle
-    %     %   Faser ist durch eine Weierstraßgleichung über $\k(\m)$
+    %     %   Faser ist durch eine Weierstraßgleichung über $k$
     %     %   definiert. Sie hat also maximal einen singulären Punkt $\gamma$.
     %     %   \cite[Proposition III.1.4 (a)]{silverman}
     % \item $W^0$ ist $R$-Modell von $E_\K$: \ref{thm:weierstrassglatt}
@@ -477,26 +480,37 @@ geliefert, da die Aussage nur ein Spezialfall von
 % Im Folgenden sei $E_\K$ immer eine elliptische Kurve über dem
 % Quotientenkörper $\K$ des Dedekindringes $R$.
 
-Im glatten Fall ist das Néron-Modell bereits das Weierstraßmodell mit
-der induzierten Gruppenstruktur.
+Im glatten Fall ist das Néron-Modell wie versprochen bereits das
+Weierstraßmodell mit der induzierten Gruppenstruktur.
 \begin{Korollar}\label{thm:neronmausweierstrassgl}
   \optcite[Corollary IV.6.3]{silverman2}
-  Sei $R$ Dedekindring mit perfekten Restklassenkörpern, $\K=\Quot(R)$,
+  Sei $R$ hier Dedekindring mit perfekten Restklassenkörpern, $\K=\Quot(R)$,
   $E_\K$ elliptische Kurve über $\K$, $W$ Weierstraßmodell von $E_\K$
   über $R$.
   Ist $W$ glatt, so ist $W$ bereits das Néron-Modell von $E_\K$ über
   $R$.
   \begin{proof}
-    Für die Gruppenstruktur betrachte vorerst die Unterschemata
+    Nach \ref{thm:neronmodelllokal} können wir uns wieder auf den
+    lokalen Fall $W\times_R R_s$ beschränken für die geschlossenen
+    Punkte $s\in\Spec(R)$. $W\times_R R_s$ ist wieder eigentliches,
+    glattes Weierstraßmodell von $E_\K$ über $R_s$ und daher nach
+    \ref{thm:erweiterunggruppenstruktur} ein $R_s$-Gruppenschema, das
+    die Gruppenstruktur von $E_\K$ erweitert. 
+    % TODO!!! KAPUTT
+    
     $W\times_R R_s$ von $W$ über den Lokalisierungen
-    $R_s$ ($s\in\Spec(R)$, $\Spec(R_s)\hookrightarrow\Spec(R)$) von $R$.
+    $R_s$ von $R$ für die geschlossenen Punkte $s\in\Spec(R)$.
     Diese tragen nach \ref{thm:erweiterunggruppenstruktur} eine
     Gruppenschemastruktur, die $E_\K$ erweitert, da die $R_s$ diskrete
     Bewertungsringe sind.
-    Diese Strukturen  verkleben nach Definition zu einer
-    Gruppenschemastruktur auf ganz $W$, da sie durch die gleiche
-    Abbildung zwischen graduierten Ringen definiert werden, vergleiche
-    auch \ref{thm:allgmorphismuserweiterung}.
+    Gruppenverknüpfung und genauso Inverses und Einheitsschnitt lassen
+    sich jeweils wie 
+    Diese 
+    verkleben nach Definition bzw. wegen der Separiertheit von $W$ zu
+    einer Gruppenschemastruktur auf ganz $W$, da sie durch die gleiche
+    Abbildung zwischen graduierten Ringen definiert werden, sprich auf
+    dem generischen Punkt übereinstimmen. Vergleiche auch
+    \ref{thm:allgmorphismuserweiterung}.
 
     Für die \NAbbEig sei $Y$ ein weiteres glattes $R$-Schema mit
     generischer Faser $Y_\K$ und $\phi_\K\colon Y_\K\to E_\K$ ein
