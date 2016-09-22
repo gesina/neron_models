@@ -1,0 +1,371 @@
+\appendix
+\chapter{Verwendete Definitionen}
+\section{Dedekindringe}
+% DEDEKINDRINGE
+\begin{Definition}[Dedekindring]\label{def:dedekindring}
+  \optcite[S.\,40]{hartshorne}\optcite[Definition B.84]{wedhorn}
+  Ein Integritätsring $R$ heißt Dedekindring, wenn er eine der
+  äquivalenten Bedingungen erfüllt
+  \begin{enumerate}[label=(\roman*)]
+  \item regulär und $\dim(A)\leq 1$
+  \item noethersch, normal und $\dim(A)\leq 1$
+  \item $A$ Körper oder
+    jede Lokalisierung nach einem Maximalideal ist ein diskreter
+    Bewertungsring
+    (d.\,h. lokal, noethersch, normal von Dimension 1)
+  \item jedes echte Ideal ist endliches Produkt von Primidealen
+    (diese ist dann eindeutig bis auf Reihenfolge) 
+  \end{enumerate}
+\end{Definition}
+Dedekindringe sind genau die Hauptidealringe.
+  \optcite[Proposition B.85]{wedhorn}
+  
+  \begin{Definition}[Dedekindschema]
+    Ein Dedekindschema ist ein noethersches, integeres Schema $X$, das
+    eine der äquivalenten Eigenschaften erfüllt
+    \begin{enumerate}[label=(\roman*)]
+    \item die offenen affinen Unterschemata sind Spektren von Dedekindringen
+    \item $\dim(X)\leq 1$ und $X$ regulär
+      (in Dimension 1 äquivalent zu normal nach
+      \cite[Corollary 6.39, Proposition 6.40]{wedhorn})
+    \end{enumerate}
+    Ein integeres Schema mit endlicher Überdeckung durch Dedekindschemata
+    ist selbst Dedekindschema.
+    \optcite[Chapter (7.13)]{wedhorn}
+  \end{Definition}
+
+\begin{Bemerkung}
+  Die Bedingung, dass $S$ integer sein muss, liefert einen eindeutigen
+  generischen Punkt $\eta$ und einen Funktionenkörper
+  $\K=\k(\eta)=\O_{S,\eta}$, so dass jeder Schnitt und jeder Halm ein
+  Unterring von $\K$ ist, d.\,h. es gibt für jeden Punkt $x\in X$ einen
+  Morphismus $\Spec(\K)\to\Spec(\k(x))$ und für jede offene Teilmenge
+  $U\subset X$ einen Morphismus $\Spec(\K)\to\Spec(\Gamma(U,\O_X))$.
+  
+  Verzichtet man auf diese Bedingung, erhält man eine Familie
+  generischer Punkte $\eta_i$ der endlich vielen irreduziblen
+  Komponenten (beachte: $S$ noethersch). Dieser Fall kann analog
+  behandelt werden, indem man $\K=\bigoplus_i \k(\eta_i)$ setzt.
+\end{Bemerkung}
+
+\begin{Bemerkung}[generische und spezielle Fasern]
+  Ist $S=\Spec(R)$ mit $R$ Dedekindring, so hat ein $S$-Schema die
+  \emph{generische Faser} über dem generische Punkt $\eta=(0)$ und die
+  \emph{speziellen Fasern} über den verbleibenden Maximalidealen
+  (geschlossenen Punkten).
+\end{Bemerkung}
+
+
+\section{Eigenschaften von Schemata}
+% REDUZIERT
+\begin{Definition}[reduziert, geometrisch reduziert]
+  Ein Schema heißt reduziert, falls alle Halme reduzierte Ringe sind
+  (d.\,h. $\Nil(0)=(0)$).
+
+  Ein $\K$-Schema heißt geometrisch reduziert, wenn für jeden
+  Basiswechsel zu einer Körpererweiterung von $\K$ die generische
+  Faser reduziert ist. 
+\end{Definition}
+
+% LOKAL VON ENDLICHEM TYP
+\begin{Definition}[lokal von endlichem Typ]
+  Ein Morphismus $f\colon X\to Y$ von Schemata heißt lokal von endlichem
+  Typ, wenn lokal auf affinen offenen Teilmengen $V\subset Y$ die
+  induzierte Abbildung $f_U^\#: f_\ast\O_X(V)\to \O_Y(V)$
+  (wobei $U=f^{-1}(V)$) $f_\ast\O_X(V)=\O_X(U)$ zu einer
+  \emph{endlich erzeugten} $\O_Y(V)$-Algebra macht.
+
+  Er heißt von endlichem Typ, wenn er lokal von endlichem Typ und
+  quasikompakt (Urbilder quasikompakter Mengen sind quasikompakt) ist.
+\end{Definition}
+
+% REGULÄR
+\begin{Definition}[Regulär]
+  Ein Schema $X$ heißt regulär im Punk $x\in X$, wenn sein Halm
+  $\O_{X,x}$ ein regulärer (lokaler) Ring ist
+  (d.\,h. $\dim_{\O_{X,x}/\m_x}(\m_x/\m_x^2)=\dim(\O_{X,x})$).
+
+  Regularität kann auf lokal noetherschen Schemata auf den geschlossenen
+  Punkten geprüft werden:
+  Ist $X$ lokal noethersch und regulär in allen geschlossenen Punkten,
+  so ist $X$ regulär nach \cite[Remark 6.25 (3)]{wedhorn}.
+\end{Definition}
+
+\section{Eigenschaften von Morphismen von Schemata}
+% FLACH
+\begin{Definition}[flacher Morphismus]
+  \optcite{bosch, goodreduction}
+  Ein Morphismus $f\colon X\to Y$ von Schemata ist flach, wenn alle
+  induzierten Ringhomomorphismen $f_x^\#\colon \O_{Y,f(x)}\to\O_{X,x}$  auf
+  den Halmen flach sind.
+\end{Definition}
+\begin{Bemerkung}\label{thm:flachgenerischefaser}
+  Für einen Dedekindring $R$ und ein reduziertes $R$-Schema $f\colon
+  X\to R$ ist flach äquivalent dazu, dass alle generischen Punkte von 
+  $X$ auf den generischen Punkt von $R$ geschickt werden
+  nach \cite[Proposition III.9.7]{hartshorne}.
+  Insbesondere ist dann die generische Faser nichtleer und dicht in $X$.
+\end{Bemerkung}
+
+% UNVERZWEIGT
+% ??? Unverzweigt <=> Glatt für diskr. BWR?
+\begin{Definition}[unverzweigter Morphismus]
+  Ein Morphismus $f\colon X\to S$ von Schemata heißt unverzweigt im
+  Punkt $x\in X$, falls es eine offene Umgebung
+  $U\subset X$ von $x$ gibt und eine geschlossene $S$-Immersion
+  $j\colon U\cong\O_W/\I\to W\subset\A_S^n$ in ein offenes Unterschema
+  des affinen $n$-Raums mit zugehöriger Idealgarbe $\I\subset\O_W$,
+  für die gilt
+  \begin{enumerate}[label=(\alph*)]
+  \item $\I$ ist in einer Umgebung von $z\coloneqq j(x)$ endlich erzeugt.
+  \item $\Om{\A_S^n/S}$ ist erzeugt von den $\d g\in\Om{\A_S^n/S}$
+    mit $g\in\I$.
+  \end{enumerate}
+  $f$ heißt unverzweigt, falls es in jedem Punkt $x\in X$
+  unverzweigt ist.
+  \begin{Bemerkung}
+    \optcite[8.4, Theorem 3]{bosch}
+    Ist $X$ lokal endlich präsentiert, sind äquivalent
+    \begin{enumerate}[label=(\roman*)]
+    \item $X$ unverzweigt in $x$,
+    \item $\Om{X/S,x}=0$,
+    \item $X_{f(x)}\to \Spec(\k(f(x)))$ unverzweigt.
+    \end{enumerate}
+  \end{Bemerkung}
+\end{Definition}
+
+% GLATT
+\begin{Definition}[glatter Morphismus]
+  \optcite[8.5, Definition 1]{bosch}
+  Ein Morphismus $f\colon X\to S$ von Schemata heißt glatt im Punkt
+  $x\in X$ von relativer Dimension $r$, wenn es eine offene Umgebung
+  $U\subset X$ von $x$ gibt und eine geschlossene Immersion $j\colon
+  U\cong\O_W/\I\to W\subset\A_S^n$ in ein offenes Unterschema des affinen
+  $n$-Raums mit zugehöriger Idealgarbe $\I\subset\O_W$, für die
+  gilt
+  \begin{enumerate}[label=(\alph*)]
+  \item $\I$ wird in einer Umgebung von $z\coloneqq j(x)$ von $n-r$ Schnitten
+    $g_{r+1},\dotsc,g_{n}$ erzeugt.
+  \item Die $\d g_{r+1}(z),\dotsc,\d g_{n}(z)\in 
+    \Om{\A_S^n/S,z} \otimes_{\O_{\A_S^n,z}} \k(z)
+    \cong \Om{\A_S^n/S,z}/\m_z\Om{\A_S^n/S,z}$ 
+    sind linear unabhängig über $\k(z)$.
+    Dies ist äquivalent zu
+    \begin{gather*}\tag{Jacobi Bedingung}
+      \rk\left(
+        \frac{\partial g_j}{\partial t_i}\d t_i 
+      \right)_{\substack{j=r+1,\dotsc,n\\i=1,\dotsc,n\phantom{+1}}}
+      = n-r
+    \end{gather*}
+  \end{enumerate}
+  Ist $f$ glatt in jedem Punkt heißt $f$ glatt bzw. $X$ ist glattes
+  $S$-Schema.  
+\end{Definition}
+\begin{Bemerkung}\label{thm:eigglatt}
+  Für $X$ lokal endlich präsentiert ist $f$ glatt in $x$ äquivalent zu
+  $f$ flach in $x$ und $X_{f(x)}$ glatt über $\k(f(x))$ nach
+  \cite[8.5, Proposition 17]{bosch}.
+  
+  Ist $X$ ein $\K$-Schema lokal endlichen Typs sind glatt und
+  geometrisch regulär äquivalent nach \cite[Corollary 6.32]{wedhorn}.
+  Ist $\K$ perfekter Körper (z.\,B. $\Char(\K)=0$), so ist dies sogar
+  äquivalent zu regulär nach \cite[Remark 6.33]{wedhorn}.
+    
+  Glatt impliziert reduziert, lokal von endlichem Typ und flach
+  \cite[für flach s.][Theorem 14.22]{wedhorn}.
+\end{Bemerkung}
+
+
+% ÉTALE
+\begin{Definition}[étaler Morphismus]% Äquivalent zu lokal umkehrbar
+  \optcite[8.5, Definition 1 und Corollary 12]{bosch}  
+  Ein Morphismus $f\colon X\to Y$ von $S$-Schemata heißt étale in
+  einem Punkt $x\in X$, falls er eine der äquivalenten Bedingungen
+  erfüllt 
+  \begin{enumerate}[label=(\roman*)]
+  \item $f$ glatt von relativer Dimension 0 in $x$
+  \item $X$ glatt in $x$, $Y$ glatt in $f(x)$ und 
+    $(f^*\Om{Y/S})_x \overset{\sim}{\longto} \Om{X/S,x}$
+  \end{enumerate}
+  Er heißt étale, falls er étale in jedem Punkt von $X$ ist.
+  
+  $f$ ist genau dann étale, wenn $f$ glatt und unverzweigt ist.
+  \optcite[8.5, Proposition 6]{bosch}
+
+  Offene Immersionen sind genau die étalen Immersionen nach
+  \cite[8.5, Lemma 7]{bosch}.
+\end{Definition}
+
+SEPARIERT
+\begin{Definition}[separierter Morphismus]
+  \cite[Theorem 15.8]{wedhorn}
+  
+  Unterschemata separierter Schemata sind wieder separiert:
+  Sei $S$ Schema, $X$ separiertes $S$-Schema,
+  $W\overset{\iota}\hookrightarrow X$ Unterschema.
+  Dann ist
+  \begin{center}
+    \begin{tikzcd}
+      W\arrow[r, hook]\arrow[d, "{\Delta}"]
+      & X\arrow[d, "{\Delta}"]\\
+      W\times_R W \arrow[r, hook] X\times_R X
+    \end{tikzcd}
+  \end{center}
+  kartesisch, denn es kommutiert und für jedes weitere $V$, so dass
+  \begin{center}
+    \begin{tikzcd}
+      V\arrow[r, "\phi"]\arrow[d, "{(\phi_1,\phi_2)}"]
+      & X\arrow[d, "{\Delta}"]\\
+      W\times_R W \arrow[r, hook] X\times_R X
+    \end{tikzcd}
+  \end{center}
+  ebenfalls kommutiert bzw. $\iota\circ\phi_1=\phi=\iota\circ\phi_2$,
+  muss wegen der Injektivität von $\iota$ gelten $\phi_1=\phi_2$ und
+  $\phi_1$ lässt 
+  
+  http://math.stackexchange.com/questions/1088879/closed-immersion-of-separated-scheme-is-separated
+  \end{Definition}
+
+% EIGENTLICH
+\begin{Definition}[eigentlicher Morphismus]
+  % Verallgemeinerung von projektiv; Äquivalent zu kompakt
+  Ein Morphismus $f\colon X\to Y$ heißt eigentlich, wenn er eine der
+  folgenden äquivalenten Bedingungen erfüllt
+  \begin{enumerate}[label=(\roman*)]
+  \item $f$ ist separiert, von endlichem Typ und universell
+    geschlossen (d.\,h. jeder Basiswechsel ist geschlossen)
+  \item $f$ ist quasi-separiert, von endlichem Typ und für jeden
+    Bewertungsring $R$ gilt
+    \begin{gather*}
+      X(R)=\Hom_Y(R, X) 
+      \overset{\sim}{\underset{\circ\Spec(\operatorname{incl})}
+        {\longrightarrow}}
+      \Hom_Y(\Quot(R), X)=X(\Quot(R))\;.
+    \end{gather*}
+    In anderen Worten, es findet sich für jedes kommutative Diagramm
+    wie folgt ein entsprechender, eindeutiger Lift
+    \begin{center}
+      \begin{tikzcd}
+        \Spec(\Quot(R)) \arrow[r]\arrow[d]
+        & X \arrow[d, "f"] \\
+        \Spec(R) \arrow[r]\arrow[to=ur, dashed, "\exists!"]
+        & Y
+      \end{tikzcd}
+    \end{center}
+  \end{enumerate}
+\end{Definition}
+\begin{Bemerkung}
+  Endliche sowie projektive Morphismen sind eigentlich
+  \cite[9.5, Remark 5 und Theorem 9]{bosch}.
+\end{Bemerkung}
+\begin{Bemerkung}[Stein Faktorisierung]
+  \cite[9.5, Theorem 12]{bosch}
+  Jeder eigentliche Morphismus $f\colon X\to Y$ faktorisiert über
+  einen eigentlichen, surjektiven Morphismus $g\colon X\to
+  \Spec(f_*\O_X)$ mit zusammenhängenden Fasern und einen endlichen
+  Morphismus $h\colon \Spec(f_*\O_X)\to Y$.
+\end{Bemerkung}
+
+
+\section{$\K$-Gruppenschemata}
+% GUTE REDUKTION
+\begin{Definition}[Gute Reduktion]\label{def:gutereduktion}
+  % $X/S$ hat Gute Reduktion nach dem Primideal $P\in S$ heißt, dass die
+  % Faser $X_P$ Glattheit erhält.
+  Sei $S$ ein Dedekindring, $\K=\Quot(R)$ und $X/\K$
+  ein eigentliches glattes $\K$-Schema.
+  $X$ hat \emph{gute Reduktion im geschlossenen Punkt $s\in\Spec(R)$},
+  falls es ein eigentliches glattes $R_s$-Schema $Y_s$ gibt, so dass
+  $X=Y_s\times_{R_s}\Spec(\K)$ ist. D.\,h. folgendes Diagramm ist
+  kartesisch
+  \begin{center}
+    \begin{tikzcd}
+      X \arrow[r]\arrow[d]
+      \arrow[dr, phantom, "\ulcorner", very near start]
+      & Y_s \arrow[d] \\
+      \Spec(\K) \arrow[r]
+      & \Spec(R_s)
+    \end{tikzcd}
+  \end{center}
+  \cite[vgl.][Chapter 1.4]{neron}
+
+  Wir sagen $X$ hat \emph{gute Reduktion}, falls es ein eigentliches
+  glattes $R$-schema $Y$ gibt, so dass $X$ isomorph zur generischen
+  Faser $Y_{\K}$ von $Y$ ist. D.\,h. das folgende Diagramm ist
+  kartesisch
+  \begin{center}
+    \begin{tikzcd}
+      X \arrow[r]\arrow[d]
+      \arrow[dr, phantom, "\ulcorner", very near start]
+      & Y \arrow[d] \\
+      \Spec(\K) \arrow[r]
+      & \Spec(R)
+    \end{tikzcd}
+  \end{center}
+  \cite[Definition 3.1]{goodreduction}, \cite[vgl.][Chapter 1.4]{neron}
+
+  Alternative Definition für elliptische Kurven: \cite[Chapter VII.5]{silverman}
+\end{Definition}
+
+VARIETÄT, ELLIPTISCHE KURVE
+\begin{Definition}[Varietät]
+ \cite[Theorem 3.37]{wedhorn}
+  Eine affine Varietät über einem Körper $\K$ ist eine Unterprägarbe der
+  Prägarbe $U\mapsto \Hom(U,\K)$ über den geschlossenen Punkten eines
+  geschlossenen, irreduziblen Unterschemas des $\A_\K^n$.
+  Eine affine Prävarietät ist eine quasikompakte, zusammenhängende
+  Prägarbe, die lokal affine Varietät ist.
+
+  Für integere $\K$-Schemata endlichen Typs sind die geschlossenen
+  Punkte isomorph zu den $\K$-Schnitten 
+  $\Hom_{\Spec(\K)}(\Spec(\K),X)$.
+  Dadurch gibt es eine Kategorienäquivalenz
+  \begin{align*}
+    \left\{\text{Integere $\K$-Schemata endlichen Typs}\right\}
+    &\longto
+      \left\{\text{Prävarietäten über $\K$}\right\}\\
+    (X,\O_X) 
+    &\longmapsto
+      \left( X(\K), \O_{X(\K)}\subset \Hom(\bullet, \K) \right)
+  \end{align*}
+  wobei $f\in\O_{X(\K)}(U)$ der Abbildung 
+  \begin{align*}
+    U\cap X(\K) &\longto \K\\
+    x  &\longmapsto f(x)
+         \coloneqq \bar{f_x}\in\O_{X,x}/\m_x\cong \K
+  \end{align*}
+  entspricht (Analogon zum Einsetzhomomorphismus für Polynomringe).
+  Der inverse Funktor ist gegeben durch
+  \begin{align*}
+    (P,\O_P) \longmapsto (t(P), t_\ast\O_P) 
+  \end{align*}
+  wobei $t\colon P\to t(P)$, $x\mapsto \{x\}$. Auf affinen Varietäten
+  $V$ wird dies zu
+  \begin{gather*}
+    (V, \O_V) \mapsto (\Spec(\O_V(V)), \O_{\Spec(\O_V(V))})
+  \end{gather*}
+
+  Wir werden im folgenden mit Prävarietät ein integeres
+  $\K$-Schema endlichen Typs meinen und mit affiner Varietät ein
+  affines, integeres $\K$-Schema endlichen Typs.
+
+  Eine algebraische Varietät sei im folgenden ein separiertes, integeres
+  Schema über einem algebraisch abgeschlossen Körper $\K$
+  (alternativ: über einem Körper $\K$, wobei die Basiserweiterung auf
+  den algebraischen Abschluss weiterhin integer ist).
+\end{Definition}
+\begin{Definition}[Kurve, elliptische Kurve]
+  Eine Kurve über einem Körper $\K$ ist eine projektive Varietät der
+  Dimension 1,
+  also ein projektives, integeres $\K$-Schema endlichen Typs.
+
+  Eine elliptische Kurve über $\K$ ist eine reguläre Kurve $E$ vom
+  Genus 1 zusammen mit einem $\K$-Schnitt $O\in E(\K)$.
+  Elliptische Kurven sind glatte \cite[Proposition III.3.1]{silverman}
+  $\K$"=Gruppenschemata mit Nullelement $O$ \cite{silverman}.
+\end{Definition}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "neron_models"
+%%% End:

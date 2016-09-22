@@ -1,0 +1,148 @@
+\chapter{Motivation}
+
+Sei $(R,\m)$ diskreter Bewertungsring, $\K=\Quot(R)$ und $E_\K$
+elliptische Kurve über $\K$. Eine Weierstraßgleichung zu $E_\K$
+\begin{gather*}
+  0 = Y^2 Z + \c_1 XYZ + \c_3 YZ^2 - X^3 - \c_2X^2 Z - \c_4 XZ^2 - \c_6 Z^3
+  \eqqcolon F\in\K[X,Y,Z]  
+\end{gather*}
+mit Koeffizienten in $R$ definiert ein projektives $R$-Schema
+$W=V_+(F)\subset\P_R^n$ der Dimension~2. Dessen generische Faser
+ist wieder $E_\K$ und die spezielle Faser ist die Kurve, die durch das
+reduzierte Polynom $(F\mod\m)$ über $\k(\m)$ erzeugt wird.
+$W$ enthält also Informationen zur Reduktion unserer elliptischen
+Kurve.
+
+Da elliptische Kurven besonders durch ihre Gruppenstruktur
+interessant sind, stellt sich die Frage, ob sich die
+Gruppenstruktur $E_\K\times_\K E_\K\to E_\K$ auf ein hinreichend
+gutartiges (hier: glattes, separiertes) $R$-Schema wie $W$ erweitern
+lässt.
+Eine Forderung an ein solches $R$-Schema ist dann:
+\begin{quote}
+  \itshape
+  Die Gruppenverknüpfung auf der generischen Faser erweitert sich zu
+  einer Gruppenverknüpfung $E\times_R E\to E$ auf ganz $E$.
+\end{quote}
+Insbesondere sind dann für $R$-Schemata $Y$ alle Schnitte $E(Y)$
+Gruppen. Per Konstruktion ist die kanonische Abbildung
+$E(Y)\to E_\K(Y_\K)$, die durch den Basiswechsel induziert ist, ein
+Gruppenmorphismus, der allerdings im Allgemeinen weder surjektiv noch
+injektiv ist. Für eine \enquote{schöne} Erweiterung der
+Gruppenstruktur fordern also die stärkere Eigenschaft:
+\begin{quote}
+  \itshape
+  Für alle \enquote{gutartigen} (hier: glatten) $R$-Schemata $Y$ mit
+  generischer Faser $Y_\K$ soll die kanonische Abbildung
+  $E(Y)\to E_\K(Y_\K)$ ein (Gruppen-)Isomorphismus sein.
+\end{quote}
+Dies motiviert die Definition des Néron-Modells, welches
+ein $R$-Modell von $E_\K$ ist, das ebendiese Erweiterungseigenschaften
+erfüllt.
+
+Das Hauptziel dieser Arbeit wird sein, die Existenz von Néron-Modellen
+für elliptische Kurven zu zeigen und die Konstruktion zu skizzieren.
+Wir beschränken uns auf Dedekindringe $R$ mit perfekten
+Restklassenkörpern, für allgemeine Dedekindringe siehe auch
+\cite{nonperfect}.
+
+In \autoref{chap:gruppenstrukturenaufschemata} werden die nötigen
+Grundlagen zu Gruppenschemata eingeführt, wonach dann in
+\autoref{chap:neronmodelle} Néron-Modelle allgemein definiert und
+einige ihrer Eigenschaften behandelt werden.
+Hier wird auch ein Blick darauf geworfen, wann bzw. welcher Teil eines
+Néron-Modells einer abelschen Gruppenstruktur wieder abelsch ist.
+
+In \autoref{chap:weierstraßmodelle} wird die Konstruktion von $W$ von
+oben genauer erläutert und die Eigenschaften einer solchen Kurve über
+$R$ untersucht. Insbesondere werden wir feststellen, dass der glatte
+Teil von $W$ tatsächlich die Gruppenverknüpfung erweitert und im
+glatten (bzw. später auch regulären) Fall sogar das Néron-Modell von
+$E_\K$ ist.
+
+Ist $W$ nicht regulär, müssen erst weitere Modifikationen an $W$
+vorgenommen werden, um eine hinreichend gutartige, insb. reguläre,
+Kurve über $R$ zu erhalten. Solche gutartigen Kurven über
+einem Dedekindring werden arithmetische Fläche genannt und in
+\autoref{chap:arithmetischeflächen} näher auf ihre Eigenschaften und
+die Konstruktion für elliptische Kurven untersucht.
+
+Zuletzt wird sich in \autoref{chap:exneronmodelle} zeigen, dass der
+glatte Teil einer minimal gewählten arithmetischen Fläche zu $E_\K$
+bereits das Néron-Modell von $E_\K$ ist, womit die Konstruktion und
+insbesondere der Existenzbeweis abgeschlossen ist.
+
+\autoref{chap:ausblick} enthält dann noch ein paar Beispiele
+bzw. Anwendungen und den Ausblick auf eine Klassifizierung
+elliptischer Kurven nach der Form ihres minimalen Modells.
+
+\section*{Notation}
+Es werden Kenntnisse zur Garben-~und Schematheorie benötigt,
+insbesondere zu den Begriffen glatt, flach, eigentlich, separiert.
+Die Notation richtet sich nach \cite{wedhorn}.
+
+% Mit affiner Varietät ist stets ein affines, integeres $\K$-Schema
+% endlichen Typs gemeint.
+Eine Kurve über einem Körper $\K$ sei immer eine projektive Varietät
+der Dimension~1,
+und eine elliptische Kurve über $\K$ ist eine glatte Kurve $E_\K$
+vom Genus~1 zusammen mit einem $\K$-Schnitt $O\in E_\K(\K)$.
+Elliptische Kurven sind $\K$"=Gruppenschemata mit Nullelement $O$
+\cite{silverman}.
+
+Es werden nur elliptische Kurven über Körpern der Charakteristik
+ungleich~2, 3 betrachten und die Restklassenkörper der Dedekindringe
+seien perfekt.
+
+Im Folgenden noch einige weitere verwendete Begriffe:
+
+% DEDEKINDRINGE
+\begin{Definition}[Dedekindring]\label{def:dedekindring}
+  \optcite[S.\,40]{hartshorne}\optcite[Definition B.84]{wedhorn}
+  Ein Integritätsring $R$ heißt Dedekindring, wenn er eine der
+  äquivalenten Bedingungen erfüllt
+  \begin{enumerate}[label=(\roman*)]
+  \item $R$ ist regulär und $\dim(R)\leq 1$.
+  \item $R$ ist noethersch, normal und $\dim(R)\leq 1$.
+  \item $R$ ist Körper oder
+    jede Lokalisierung nach einem Maximalideal ist ein diskreter
+    Bewertungsring
+    (d.\,h. lokal, noethersch, normal von Dimension~1).
+  \end{enumerate}
+\end{Definition}
+Für Schemata über Dedekindringen werden die Fasern über dem
+generischen Punkt als generische Fasern, die über den geschlossenen
+Punkten als spezielle Fasern bezeichnet.
+\begin{Definition}[Dedekindschema]
+  Ein Dedekindschema ist ein noethersches, integeres Schema $X$, das
+  eine der äquivalenten Eigenschaften erfüllt
+  \begin{enumerate}[label=(\roman*)]
+  \item Die offenen affinen Unterschemata sind Spektren von Dedekindringen.
+  \item $\dim(X)\leq 1$ und $X$ ist regulär
+    (in Dimension 1 äquivalent zu normal nach
+    \cite[Corollary 6.39, Proposition 6.40]{wedhorn}).
+  \end{enumerate}
+\end{Definition}
+Sei $S$ allgemein ein irreduzibles Schema. Ein $S$-Schema wird auch als
+$S$-Modell seiner generischen Faser bezeichnet.
+
+Folgende Äquivalenz und Aussage zu Glattheit werden häufig verwendet:
+\begin{Bemerkung}\label{thm:eigglatt}
+  Sei $f\colon X\to Y$ Morphismus von Schemata.
+  Für $f$ endlich präsentiert ist $f\colon X\to Y $ glatt in $x$
+  äquivalent zu $f$ flach in $x$ und $X_{f(x)}$ glatt über $\k(f(x))$ nach
+  \cite[8.5, Proposition 17]{bosch}.
+  
+  Ist $X$ ein $\K$-Schema lokal endlichen Typs sind glatt und
+  geometrisch regulär äquivalent nach \cite[Corollary 6.32]{wedhorn}.
+  Ist $\K$ perfekter Körper (z.\,B. $\Char(\K)=0$), so ist dies sogar
+  äquivalent zu regulär nach \cite[Remark 6.33]{wedhorn}.
+    
+  Glatt impliziert reduziert, lokal von endlichem Typ und flach
+  \cite[für flach s.][Theorem 14.22]{wedhorn}.
+\end{Bemerkung}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "neron_models"
+%%% End:

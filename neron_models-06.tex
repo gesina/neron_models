@@ -1,0 +1,602 @@
+\chapter{Existenz von Néron-Modellen auf elliptischen Kurven}
+\label{chap:exneronmodelle}
+% EXISTENZSATZ ELL. KURVEN
+\begin{Satz}\label{thm:exneronmodelle}
+  % Der diskrete Bewertungsring $R$ sei strikt henselsch mit algebraisch
+  % abgeschlossenem Quotientenkörper $\K$ und
+  % $W$ ein minimales reguläres, eigentliches, flaches $R$-Modell der
+  % elliptischen Kurve $E_\K$.
+  % Dann ist das $R$-Unterschema der glatten Punkte von $W$ ein
+  % Néron-Modell von $E_\K$.
+  % \cite[1.5, Proposition 1, S.\,21]{neron}
+  % \begin{proof}
+  %   …
+  % \end{proof}
+
+  % Fehlt: \cite[Theorem IV.6.1]{silverman2}
+  % (ähnlich, ohne Bed. an den Ring, dafür mehr an das Modell)
+  Sei $R$ Dedekindring mit perfekten Quotientenkörpern,
+  $\K=\Quot(R)$, $E_\K$ elliptische Kurve über $\K$ und $C$ minimales
+  $R$-Modell von $E_\K$
+  (d.\,h. reguläres, integeres, projektives,
+  flaches $R$-Schema mit Minimalitätseigenschaft).
+  Sei $E$ das größte glatte $R$-Unterschema von $C$.
+  Dann ist $E$ Néron-Modell von $E_\K$.
+
+  Nachdem minimale Modelle elliptischer
+  Kurven nach \ref{thm:exminmodell} immer existieren, hat jede
+  elliptische Kurve über einem Dedekindring (mit perfekten
+  Restklassenkörpern) ein Néron-Modell.
+\end{Satz}
+Dieses Kapitel ist dem Beweis des vorangegangenen Satzes gewidmet.
+
+Von der Idee her werden wir uns vorerst in
+\autoref{chap:gruppenstrukturhinreichend} klar machen, dass $E$ genau 
+dann ein Néron-Modell von $E_\K$ ist, wenn sich die Gruppenverknüpfung
+von $E_\K$ auf ganz $E$ erweitert (das \enquote{genau dann} ist
+bereits aus \ref{thm:gruppenschemaerweiterung} bekannt).
+
+Nun bleibt es in zu zeigen, dass sich die Gruppenverknüpfung tatsächlich
+auf $E$ erweitert.
+Hier gehen wir den Umweg und zeigen erst in
+\autoref{chap:gruppestrikthenselsch} für den Spezialfall eines
+strikt henselschen diskreten Bewertungsring $R$, dass wir eine normale
+Komposition auf $E$ erhalten. Nach \ref{thm:weil} wissen wir nun, dass
+$E$ birational zu einem $R$-Gruppenschema mit der gewünschten Struktur
+ist. Die $R$-birationale Abbildung ist, wie wir sehen werden, aber
+bereits ein Isomorphismus und $E$ ein $R$-Gruppenschema.
+
+In \autoref{chap:exneronmodellebeweis} zeigen wir zuletzt, dass wir
+uns auf strikt henselsche Bewertungsringe beschränken können, was dann
+mit den vorangegangenen Ergebnissen den Beweis vollendet.
+
+
+% \begin{proof}
+  %   \begin{enumerate}
+  %   \item \ref{thm:rationalzumorphismus}:
+  %     Eine rationale Abbildung $X\dra G$ von einem glatten
+  %     $R$-Schema in ein eigentliches $R$-Gruppenschema ist Morphismus.
+  %   \item \ref{def:henselscheringe}: (strikt) Henselsche Ringe
+  %   \item Eigenschaften henselscher Ringe auf Schnitteinschränkung:
+  %     $(R,\m)$ diskreter Bewertungsring mit Restklassenkörper $k$, $X$
+  %     glattes $R$-Schema, $X_k$ spezielle Faser.
+  %     Dann
+  %     \begin{enumerate}[label=(\roman*)]
+  %     \item Falls $R$ henselsch, ist $X(R)\to X_k(k)$ surjektiv.
+  %     \item Falls $R$ strikt henselsch, ist $X(R)\to X_k(k)$ surjektiv
+  %       und hat dichtes Bild in $X_k$.
+  %       (Beachte, dass $X_k$ glatt, also von endlichem Typ ist und $k$
+  %       nach Voraussetzung algebraisch abgeschlossen ist. Daher
+  %       gilt $X_k(k)\cong\{x\in X_k\text{ geschl.}\}\subset X_k$
+  %       \cite[Example 4.1]{wedhorn}.)
+  %     \end{enumerate}
+  %     \cite[Proposition IV.6.4]{silverman2},
+  %     \cite[2.3, Proposition 5]{neron}
+  %   \item Henselisierung: \ref{thm:exhenselisierung}
+  %   \item Fall $R$ strikt henselscher, diskreter BWR:
+  %     \begin{enumerate}
+  %     \item Ist $E$ Gruppenschema, so ist es Néron-Modell
+  %       \ref{thm:fallstriktehenselisierung}
+  %     \item Def. Normale Komposition \ref{def:normalekomposition}
+  %     \item Für $R$ strikter henselscher, diskreter BWR
+  %       definiert $E_\K$ eine normale Komposition auf $E$.
+  %     \item (Theorem von Weil) Ein glattes $R$-Schema mit normaler
+  %       Komposition ist birational zu einem $R$-Gruppenschema endlichen
+  %       Typs: \ref{thm:weil}
+  %     \item Also ist $E$ birational zu einem Gruppenschema $G$.
+  %       Die rationalen Abbildungen sind Morphismen.
+  %       \ref{thm:egruppenschema}
+  %     \end{enumerate}
+  %   \item Fall diskreter BWR:
+  %     \begin{enumerate}
+  %     \item Minimale eigentliche, reguläre Modelle sind stabil unter
+  %       flachem, unverzweigtem Basiswechsel.
+  %     \item $E^\text{sh}=E\times_R\Rsh$ ist glatter Teil von
+  %       $C^\text{sh}$, also Néron-Modell von $E_\K^\text{sh}$.
+  %     \item $E$ ist Néron-Modell wegen „faithfully flat descent“
+  %     \end{enumerate}
+  %   \item Allg. Dedekindring: lokal (\ref{thm:neronmodelllokal})
+  %   \end{enumerate}
+  % \end{proof}
+
+  
+\section{Gruppenstruktur hinreichend}\label{chap:gruppenstrukturhinreichend}
+% ÄQ GRUPPENSTRUKTURERW.
+% strikt henselsch nicht nötig!!
+Die Hauptaussage dieses Kapitels wird sein, dass $E$ genau dann
+Néron-Modell von $E_\K$ ist, wenn sich die Gruppenverknüpfung von
+$E_\K$ auf ganz $E$ erweitert und $E$ damit zum $R$-Gruppenschema
+macht.
+\begin{Lemma}\label{thm:schnittearithmflglatt}
+  Sei $R$ diskreter Bewertungsring mit perfektem Restklassenkörper
+  $k$, $\K$, $E_\K$, $C$, $E$ wie in \ref{thm:exneronmodelle},
+  sei $(R',\m')$ Halm eines glatten $R$-Schemas und diskreter
+  Bewertungsring,
+  und sei $\phi\colon \Spec(R')\to C$ ein $R$-Morphismus.
+  Ist $\phi(\Spec(\K))\in E$, gilt $\im(\phi)\subset E$.
+  \begin{proof}
+    Für den generischen Punkt $\phi((0))$ ist dies klar, da die
+    generische Faser von $C$ glatt ist, und nach
+    \cite[8.5, Proposition 17]{bosch} wegen $C$ flach in $E$ liegt.
+    Betrachte also $\phi(\m')$.
+    $C_{R'}\coloneqq C\times_R R'$ ist nach
+    \ref{thm:eigminmodell} wieder eine arithmetische Fläche über
+    $R'$ mit Unterschema der glatten Punkte
+    $E_{R'}\coloneqq E\times_R R'$.
+    Nun ist $(\phi\times\Id)\colon\Spec(R')\to C_{R'}$ ein
+    $R'$-Schnitt, weshalb $(C_{R'})_{\m'}$ regulär in
+    $(\phi\times\Id)(\m')$ ist nach
+    \ref{thm:arithflschnittbilderglatt}.
+    $(C_{R'})_\p$ ist als Schema endlichen Typs über einem
+    perfekten Körper glatt in jedem regulären Punkt.
+    Nun ist $C_{R'}$ als ein flaches Schema genau dann glatt in
+    einem Punkt, wenn es die zugehörige Faser ist, wieder nach
+    \cite[8.5, Proposition 17]{bosch}.
+    Somit ist $C_{R'}$ glatt in $(\phi\times\Id)(\m')$ bzw.
+    $(\phi\times\Id)(\m')\in E\times_R R'$. Folglich muss bereits
+    $\phi(\m')$ in $E$ liegen und $\phi$ ist $R$-Morphismus
+    $\Spec(R')\to E\subset C$.
+  \end{proof}
+\end{Lemma}  
+
+\begin{Satz}\label{thm:fallstriktehenselisierung}
+  Sei $R$ hier %strikt henselscher,
+  diskreter Bewertungsring mit
+  perfektem Restklassenkörper $k$
+  und $\K$, $E_\K$, $C$, $E$ wie in \ref{thm:exneronmodelle}.
+  Erweitert sich die $\K$-Gruppenschemastruktur von $E_\K$ auf
+  $E=C^0$, dann ist $E$ Néron-Modell von $E_\K$.
+  \begin{proof}
+    Da $E$ bereits nach Voraussetzung glattes $R$-Gruppenschema ist,
+    ist noch die \NAbbEig zu prüfen.
+    Sei also $Y$ ein glattes $R$-Schema mit einem $\K$-Morphismus
+    $\phi_\K\colon Y_\K\to E_\K$ der generischen Fasern.
+    % , bzw. nach \ref{thm:dichtefaser}
+    % einer rationalen Abbildung $\phi\colon Y\dra E$, die von $\phi_\K$
+    % präsentiert wird.
+    Nach \ref{thm:erwrrational} erweitert sich $\phi_\K$ auf eine
+    $R$-rationale Abbildung $\phi\colon Y\dra C$, deren Bild nach dem
+    vorhergehenden Lemma~\ref{thm:schnittearithmflglatt} in $E$
+    liegt.
+    
+    Wir werden den Beweis durch Widerspruch führen.
+    Angenommen, $\phi\colon Y\dra E$ sei kein Morphismus.
+    Da $E$ $R$-Gruppenschema, $Y$ glatt und $\phi$ eine
+    $R$-rationale Abbildung ist, hat $Y\setminus\Dom(\phi)$
+    Kodimension 1 nach \ref{thm:rationalzumorphismus}.
+    D.\,h. es gibt ein irreduzibles, geschlossenes Unterschema
+    $Z\subset Y$ der Kodimension 1, auf dessen generischem Punkt
+    $\eta_Z$ die $R$-rationale Abbildung $\phi$ nicht definiert ist.
+    % Dies ist äquivalent dazu, dass $\phi$ nicht im generischen Punkt
+    % $\eta_Z$ von $Z$ definiert ist, da jede offene Teilmenge $U$ von
+    % $Z$ Umgebung von $\eta_Z$ ist.
+    $\O_{Y,\eta_Z}$ ist diskreter Bewertungsring, da er von
+    Dimension~1 ist, regulär ($Y$ glatt, also
+    regulär) und lokal ist.
+    Sein Quotientenkörper ist der Quotienten-~bzw. Restklassenkörper
+    eines generischen Punkts $\eta$ der irreduziblen Komponente von
+    $X$, in der $\eta_Z$ liegt. Wir erhalten somit ein kommutatives
+    Diagramm
+    \begin{center}
+      \begin{tikzcd}
+        \eta\arrow[r, equal]
+        &\Spec(\k(\eta))
+        \arrow[r, "{\phi_\K|_{\eta}}"] \arrow[d]
+        & E_\K \arrow[r, hook]
+        & C\arrow[d]\\
+        \eta\cup\eta_Z\arrow[r, equal]
+        &\Spec(\O_{Y,\eta_Z}) \arrow[rr]
+        \arrow[urr, dashed, "{\exists!}", out=20, in=215]
+        && \Spec(R)
+      \end{tikzcd}
+    \end{center}
+    $C$ ist nach Voraussetzung eigentlich, daher erweitert sich
+    $\phi_\K|_{\eta}$ nach dem Bewertungskriterium für
+    Eigentlichkeit auf einen Morphismus
+    $\phi|_{\O_{Y,\eta_Z}}\colon\Spec(\O_{Y,\eta_Z})\to C$.
+    \ref{thm:morphismuserweiterung} besagt, dass sich
+    dieser auf eine offene Umgebung $U_Z$ von $\eta_Z$ erweitert,
+    was bedeutet, dass $\phi|_{U_Z}\colon U_Z\dra E\hookrightarrow C$
+    Morphismus ist.
+    Nun ist aber $\eta\in E_\K$, also
+    $\phi|_{\O_{Y,\eta_Z}}(\eta)\in E$, weshalb nach
+    \ref{thm:schnittearithmflglatt}
+    $\im(\phi|_{\O_{Y,\eta_Z}})\subset E$.
+    Wir können demnach eine glatte, offene Umgebung von
+    $\im(\phi|_{\O_{Y,\eta_Z}})$ wählen, deren Urbild $U$ unter
+    $\phi|_{U_Z}$ entsprechend wieder offen in $U_Z$, also $Y$, ist.
+    Insgesamt ist $\phi|_U\colon U\to E$ ein Morphismus, was
+    bedeutet, dass $\phi$ entgegen der Annahme in $\eta_Z$ definiert
+    ist.
+    Damit muss $\phi\colon Y\to E$ Morphismus sein, sprich die
+    \NAbbEig für $E$ ist erfüllt.
+    
+    % \item Also kann $\phi(\eta_Z)$ nicht in $E$ liegen. Ansonsten
+    %   wäre $\phi\colon Y\dra E$ auf dem Urbild einer genügend kleinen
+    %   Umgebung von $\eta_Z$ in $E$ Morphismus und entgegen der Annahme in
+    %   $\eta_Z$ definiert.
+    %   %   C integer, urbilder dichter Mengen dicht
+    % \item[?] $\phi(\eta_Z)\not\in E$ ist äquivalent dazu, dass für
+    %   jeden geschlossenen (also $k$-wertigen) Punkt $x\in Z\setminus
+    %   X_\K$, in dem $\phi$ definiert ist, $\phi(x)\not\in E$ gilt.
+    % \item Da $R$ strikt henselsch ist, hat die Einschränkung $Y(R)\to
+    %   Y_k(k)$ der $R$-wertigen Punkte auf die spezielle Faser ein
+    %   dichtes Bild in $Y_k$ nach \ref{thm:eigstrikthenselsch}.
+    % \item[?] Es gibt daher einen $R$-wertigen Punkt $x\in Y(R)$,
+    %   dessen Einschränkung $x_0\in Y_k(k)$ einem geschlossen Punkt in
+    %   $Z$ entspricht und in dem $\phi\colon Y\to C$ definiert ist.
+    % \item Wir erhalten das kommutative Diagramm
+    %   \begin{center}
+    %     \begin{tikzcd}
+    %       \Spec(\K) \arrow[r, "{x|_{\Spec(\K)}}"] \arrow[d]
+    %       & Y_\K \arrow[r, "{\phi_\K}"]
+    %       & E_\K \arrow[r, hook]
+    %       & C \arrow[d]\\
+    %       \Spec(R) \arrow[rrr, "\Id"{swap}]
+    %       \arrow[urrr, dashed, "{\exists!}", in=210, out=15]
+    %       &&&\Spec(R)
+    %     \end{tikzcd}
+    %   \end{center}
+    %   und nach dem Bewertungskriterium für die Eigentlichkeit von $C$
+    %   erweitert sich $\phi\circ x|_{\Spec(\K)}$ zu einem Morphismus
+    %   $\Spec(R)\to C$, d.\,h.
+    %   \begin{gather*}
+    %     C(R)\ni\phi\circ x\colon
+    %     \Spec(R)
+    %     \overset{x}{\longto}
+    %     \left\{ x|_{\Spec(\K)}, x_0 \right\}
+    %     \overset{\phi}{\longto} C
+    %   \end{gather*}
+    %   ist Morphismus.
+    % \item Es muss aber gelten, dass $\phi\circ x\not\in E(R)$, da
+    %   ansonsten entgegen unserer Annahme $\phi$ in $x_0$ definiert
+    %   wäre.
+    % \item Dies ist ein Widerspruch, da nach
+    %   \ref{thm:ratpkteregulaeremodelle} die Gleichheit
+    %   $x\not\in E(R)=C(R)\ni x$ gilt.
+    % \end{enumerate}
+  \end{proof}
+\end{Satz}
+
+\section[Gruppenstruktur für strikt henselsche Ringe]%
+{Nachweis der Gruppenstruktur für strikt henselsche Bewertungsringe}
+\label{chap:gruppestrikthenselsch}
+Für den Abschluss des Beweises zu \ref{thm:exneronmodelle} müssen wir
+nach \ref{thm:fallstriktehenselisierung} nur noch nachweisen, dass
+sich die Gruppenstruktur auf $E$ erweitert.
+Dies werden wir in diesem Abschnitt vorerst für strikt henselsche
+Bewertungsringe zeigen. Vorweg werden die Definition und Eigenschaften
+strikt henselscher Ringe aufgeführt.
+% Nur Erweiterung der Gruppenstruktur!
+\subsection{Strikt henselsche Ringe}
+% HENSELSCHE RINGE
+\begin{Definition}[henselsche Ringe]\label{def:henselscheringe}
+  \optcite[2.3, Proposition 4]{neron}
+  \optcite[Chapter IV.6]{silverman2}
+  Ein lokaler Ring $(R,\m)$ heißt \emph{henselsch}, wenn
+  er eine der folgenden Bedingungen erfüllt
+  \begin{enumerate}[label=(\roman*)]
+  \item henselsches Lemma:
+    Für jedes normierte Polynom $f\in R[X]$ und jede einfache Nullstelle
+    $\bar a\in R/\m$ seiner Restklasse $\bar f\in (R/\m)[X]$
+    gibt es eine eindeutige Nullstelle $a\in R$ von $f$, die ein Lift
+    von $\bar a$ ist.
+  \item Jede endliche $R$-Algebra ist ein Produkt lokaler Ringe.
+  \end{enumerate}
+  
+  Ein henselscher Ring heißt \emph{strikt henselsch}, falls sein
+  Restklassenkörper $R/\m$ separabel abgeschlossen ist
+  (im Fall eines perfekten Restklassenkörpers ist dies äquivalent zu
+  algebraisch abgeschlossen).
+\end{Definition}
+
+% \begin{Definition}[Henselisierung]\label{def:henselisierung}
+%   \optcite[2.3, Definition 6]{neron}
+%   Die Henselisierung eines lokalen Rings $R$ ist ein henselscher
+%   lokaler Ring $\Rh$ mit einem lokalen Homomorphismus
+%   $i^\text{h}\colon R\to\Rh$, s.\,d. folgende universelle Eigenschaft
+%   erfüllt ist:
+  
+%   Für jeden weiteren lokalen Homomorphismus $u\colon R\to A$ in einen
+%   henselschen lokalen Ring $A$ gibt es einen eindeutigen lokalen
+%   Homomorphismus $u^\text{h}\colon\Rh\to A$, so dass das folgende Diagramm
+%   kommutiert
+%   \begin{center}
+%     \begin{tikzcd}
+%       R \arrow[r, "{u}"]\arrow[d, "{i^\text{h}}"]
+%       & A \\
+%       \Rh\arrow[ur, dashed, "{\exists!u^\text{h}}"{swap}]
+%     \end{tikzcd}
+%   \end{center}
+
+%   Die Henselisierung ist nach Definition eindeutig bis auf
+%   Isomorphismus und hat denselben Restklassenkörper wie $R$.
+%   \optcite[Chapter 2.3, S. 47]{neron}
+% \end{Definition}
+
+\begin{Definition}[strikte Henselisierung]\label{def:striktehenselisierung}
+  Die strikte Henselisierung eines lokalen Rings $(R,\m)$ mit
+  Restklassenkörper $k=R/\m$ ist ein strikt henselscher lokaler Ring
+  $\Rsh$, dessen Restklassenkörper der separable Abschluss $k_s$ von
+  $k$ ist, zusammen mit einem lokalen Homomorphismus
+  $i^\text{sh}\colon R\to\Rsh$, s.\,d. folgende universelle
+  Eigenschaft erfüllt ist:
+  
+  Für jeden weiteren lokalen Homomorphismus $u\colon R\to A$ in einen
+  strikt henselschen lokalen Ring $A$ mit Restklassenkörper $k_A$ und
+  für jeden $k$-Homomorphismus $\alpha\colon k_s\to k_A$ gibt es einen
+  eindeutigen lokalen Homomorphismus $u^\text{sh}\colon\Rsh\to A$, so
+  dass das folgende Diagramm kommutiert und so dass $\alpha$ die
+  Projektion von $u^\text{sh}$ auf die Restklassenkörper ist
+  \begin{center}
+    \begin{tikzcd}
+      R \arrow[r, "{u}"]\arrow[d, "{i^\text{sh}}"]
+      & A \\
+      \Rsh\arrow[ur, dashed, "{\exists!u^\text{sh}}"{swap}]
+    \end{tikzcd}
+  \end{center}
+
+  Die strikte Henselisierung ist nach Definition eindeutig bis auf
+  Isomorphismus und hat $k_s$ als Restklassenkörper.
+\end{Definition}
+
+\begin{Satz}[{\cite[Proposition IV.6.5]{silverman2}}]
+  \label{thm:exhenselisierung}
+  Jeder diskrete Bewertungsring $(R,\m)$ hat eine
+  % Henselisierung $\Rh$ und eine
+  strikte Henselisierung $\Rsh$.
+  \begin{proof}
+    Siehe
+    \cite[Proposition IV.6.5]{silverman2},
+    \cite[Remark IV.6.6.2]{silverman2}
+    oder \cite[Chapter 2.3, S. 48]{neron}.
+  \end{proof}
+\end{Satz}
+
+Die für uns besonders wichtige Eigenschaft eines strikt henselschen
+Rings ist folgende Aussage über die Einschränkung von Schnitten:
+\begin{Satz}[{\cite[Proposition IV.6.4]{silverman2}}]
+  \label{thm:eigstrikthenselsch}
+  Sei $(R,\m)$ ein diskreter Bewertungsring mit perfektem
+  Restklassenkörper $k=R/\m$ und $X$ glattes $R$-Schema mit spezieller
+  Faser $X_k$.
+  Die Einschränkung
+  \begin{gather*}
+    X(R)\longto X_k(k)\hookrightarrow X_k
+  \end{gather*}
+  ist
+  \begin{enumerate}[label=(\roman*)]
+  \item surjektiv, falls $R$ henselsch ist.
+  \item surjektiv mit dichtem Bild in der speziellen Faser $X_k$,
+    falls $R$ strikt henselsch ist.
+  \end{enumerate}
+\end{Satz}
+
+\subsection{Nachweis der Gruppenstruktur für strikt henselsche Ringe}
+Um die Erweiterung der Gruppenverknüpfung auf ganz $E$ für strikt
+henselsche Ringe nachzuweisen, werden wir erst zeigen, dass wir eine
+normale Komposition auf $E$ erhalten.
+Diese ist dann nach \ref{thm:weil} $R$-birational zu dem gesuchten
+Gruppenschema und wir werden zeigen, dass diese Birationalität ein
+Isomorphismus ist.
+% ERWEITERUNG DER GRUPPENSTRUKTUR
+\begin{Satz}\label{thm:egruppenschema}
+  Sei $R$ strikt henselscher diskreter Bewertungsring mit perfektem
+  Restklassenkörper $k$ und $\K$, $E_\K$, $C$, $E$ wieder wie in
+  \ref{thm:exneronmodelle}.
+  Dann erweitert sich die Gruppenstruktur von $E_\K$ auf $E$ und macht
+  $E$ zum Gruppenschema.
+\end{Satz}
+\begin{Lemma}
+  Die Gruppenstruktur $\mu_\K$ auf $E_\K$ erweitert sich zu einer
+  normalen Komposition $\mu$ auf $E$.
+  (Hier muss $R$ nicht notwendigerweise strikt henselsch sein.)
+  \begin{proof}
+    $E\times_R E$ ist glattes $R$-Schema und $C$ eigentlich,
+    weshalb sich $\mu_\K\colon E_\K\times_\K E_\K\to E_\K$ nach
+    \ref{thm:erwrrational} eindeutig zu einer $R$-rationalen
+    Abbildung $\tilde\mu\colon E\times_R E\dra C$ erweitert.
+    Die generischen Punkte $\eta_k$ der speziellen Fasern von
+    $E\times_R E$ haben wegen \ref{eq:stalkdimension}
+    Dimension~1, sind also diskrete Bewertungsringe, da
+    $E\times_R E$ glatt und somit regulär ist. Nach
+    \ref{thm:schnittearithmflglatt} liegt dann
+    $\tilde\mu(\eta_k)$ und entsprechend das Bild einer offenen
+    Umgebung von $\eta_k$ unter $\tilde\mu$ in $E$. Daher erhalten
+    wir (u.\,U. durch Einschränkung von $\Dom(\tilde\mu)$) eine
+    $R$-rationale Abbildung $\mu\colon E\times_R E\dra E$.
+
+    Für eine normale Komposition bleiben Assoziativität und Inverse zu
+    zeigen.
+
+    \paragraph{Assoziativität}
+    Für Assoziativität müssen für alle $x, z\in E$, für die es
+    wohldefiniert ist, die folgenden $R$-rationalen 
+    Abbildungen gleich sein
+    \begin{gather*}
+      \mu(\mu(x,\bullet),z), \mu(x,\mu(\bullet,z))
+      \colon E \dra E
+    \end{gather*}
+    Da $E\times_R E$ reduziert ist, sind aber beide die nach
+    \ref{thm:erweindeutig} eindeutige Erweiterung von
+    \begin{gather*}
+      \mu_\K(\mu_\K(x,\bullet),z)=\mu_\K(x,\mu_\K(\bullet,z))
+      \colon E_\K \dra E_\K
+    \end{gather*}
+    Somit sind sie gleich als $R$-rationale Abbildungen.
+    
+    \paragraph{Inverses $R$-rational}
+    Für $R$-Rationalität von $\phi$ und $\psi$ muss noch gezeigt
+    werden, dass $\Dom(\phi)$ bzw. $\Dom(\psi)$ dicht in der
+    speziellen Faser von $E$ ist, also in jedem generischen Punkt
+    der speziellen Faser definiert ist.
+    Wir werden den Fall für $\phi$ behandeln, $\psi$ folgt analog.
+    
+    Sei also $\eta\in E\times_R R/\p=E_k$ ein generischer Punkt der
+    speziellen Faser von $E$ und $R'=\O_{E,\eta}$ der Halm in
+    $\eta$ mit $\K'\coloneqq\Quot(R)$ und $k'$
+    Restklassenkörper. Wegen \ref{eq:stalkdimension} hat $R'$
+    Dimension 1, ist demnach ein diskreter Bewertungsring und
+    $C_{R'}\coloneqq C\times_R R'$ nach \ref{thm:eigminmodell}
+    minimales $R'$-Modell von $E_\K\times_{\K'}\K'\eqqcolon E_{\K'}$
+    mit offenem Unterschema $E_{R'}=E\times_R R'$ der glatten Punkte.
+    Wir wissen, dass $\Spec(R')\subset E$, also dass es
+    einen $R'$-wertigen Punkt $s\colon\Spec(R')\to E_{R'}$ gibt.
+    Wir erhalten einen zugehörigen Translationsautomorphismus auf der
+    generischen Faser:
+    \begin{gather*}
+      \tau_{\K'}\colon
+      E_{\K'}\cong E_{\K'}\times_{\K'}\K'
+      \xrightarrow{\Id\times s}
+      E_{\K'}\times_{\K'}E_{\K'}
+      \overset{\mu}{\longto}
+      E_{\K'}
+    \end{gather*}
+    Nach \ref{thm:eigminmodell} erweitert sich $\tau_{\K'}$ zu
+    einem $R'$-Automorphismus $\tau_{R'}$ auf dem minimalen Modell
+    $C_{R'}$ und auf dem glatten Unterschema $E_{R'}$.
+    Für $e\in\Spec(R')$, $x=s(e)$ und $y\in(E_{R'})_e$ sieht $\tau_{R'}$
+    wie folgt aus:
+    \begin{center}
+      \begin{tikzcd}[row sep=0pt]
+        R'\times_R E \arrow[r, equal]
+        & R'\times_{R'}(R'\times_R E) \arrow[r, "{s\times\Id}"]
+        & (R'\times_R E)\times_{R'}(R'\times_R E)
+        \arrow[r, "{\mu_{R'}}"]
+        & R'\times_R E \\
+        (e,y)\arrow[r, mapsto]
+        & (e,(e,y))\arrow[r, mapsto]
+        & ((e,x),(e,y))\arrow[r, mapsto]
+        & (e,\mu(x,y))
+      \end{tikzcd}
+    \end{center}
+    bzw. $\tilde\tau_{R'}\colon(e,y)\mapsto(e,\mu(y,x)$, wenn man
+    $R'\times_{R'}(R'\times_R E)$ durch das isomorphe $(R'\times_R
+    E)\times_{R'}R'$ ersetzt.
+    Wir erhalten das kommutative Diagramm
+    \begin{center}
+      \begin{tikzcd}
+        (e,y) \arrow[d, mapsto]\arrow[rrr, bend left=20, mapsto]
+        & R'\times_R E \arrow[r, "\tau_{R'}", "\sim"{swap}]
+        \arrow[d, "s\times\Id", hook]
+        & R'\times_R E\arrow[d, "s\times\Id", hook]
+        & (e,\mu(x,y))\arrow[d, mapsto]\\
+        (x,y)\arrow[rrr, bend right=20, mapsto]
+        & E\times_R E\arrow[r, "\phi", dashed]
+        & E\times_R E
+        & (x,\mu(x,y))
+      \end{tikzcd}
+    \end{center}
+    und sehen, dass $\phi$ auf dem generischen Punkt
+    $(\eta,\eta)\in\Spec(R')\times_R\Spec(R')\subset E\times_R E$
+    von $(E\times_R E)_k=E_k\times_k E_k$ definiert ist.
+    Mit $\tilde\tau$ statt $\tau$ erhält man dasselbe für $\psi$.
+    \paragraph{Inverses $R$-birational}
+    Für die Birationalität von $\phi$ bzw. $\psi$ siehe
+    \cite[Propsition IV.6.10]{silverman2}.
+    % TODO!! Warum birational?
+  \end{proof}
+\end{Lemma}
+
+\begin{Lemma}\label{thm:äqgruppenschema}
+  Sei nach \ref{thm:weil} $G$ das zu $E$ $R$-birationale
+  Gruppenschema. Dann ist $G$ isomorph zu $E$.
+  \begin{proof}
+    Es seien $f\colon G\dra E$ und $g\colon G\dra E$ die
+    zueinander inversen $R$-birationalen Abbildungen.
+    Es ist zu zeigen, dass beide Morphismen sind.
+    \begin{description}
+    \item[$g$ Morphismus] Angenommen, $g$ ist kein
+      Morphismus. Dann besagt \ref{thm:weil}, dass es eine
+      irreduzible, geschlossene Teilmenge $Z\subset E$ gibt, so
+      dass $g$ nicht in deren generischen Punkt $\eta_Z$ definiert
+      ist. Nachdem $g$ aber als $R$-rationale Abbildung auf einer
+      in beiden (eindimensionalen) Fasern dichten Teilmenge
+      definiert ist, muss $g$ auch auf $\eta_Z$ definiert sein,
+      was ein Widerspruch ist.
+    \item[$f$ Morphismus] Eine Translation $\tau_P^G\colon G\to G$
+      auf $G$ um einen Schnitt $P$ liefert eine Translation
+      $\tau_P\coloneqq\tau_P^G|_{E_\K}$, also einen
+      $\K$-Automorphismus auf $E_\K$ mit Inversem
+      $\tau_{(-P)}=\tau_{(-P)}^G$. Diese 
+      erweitern sich nach \ref{thm:eigminmodell} zu zueinander
+      inversen $R$-Automorphismen
+      $\tau_P^E,\tau_{(-P)}^E\colon E\to E$ auf $E$.
+      Überall, wo es definiert ist, gilt
+      \begin{gather*}
+        f = \tau_{(-P)}^E\circ f\circ \tau_P^G
+      \end{gather*}
+      da beides die eindeutigen Erweiterungen von $f|_{E_\K}$
+      sind, wo $\tau_P=\tau_P^E|_{E_\K}=\tau_P^G|_{E_\K}$
+      Automorphismus ist.
+      
+      Für jedes $\beta\in G$, so dass es einen Schnitt $P$ gibt mit
+      $\tau_P^G(\beta)\in\Dom(f)$, ist $\tau_{(-P)}^E\circ f\circ
+      \tau_P^G$ also eine eindeutige Erweiterung von $f|_{E_\K}$
+      bzw. $f$ auf $\beta$.
+      Wir können also durch Translation den Definitionsbereich von
+      $f$ für passende $\beta$ erweitern.
+
+      Jetzt können wir nutzen, dass $R$ nach Voraussetzung strikt
+      henselsch ist. Das bedeutet nach
+      \ref{thm:eigstrikthenselsch}, dass die Menge der Bildpunkte
+      aller Schnitte $P\colon\Spec(R)\to G$ dicht in der
+      speziellen Faser liegt.
+      Insbesondere findet man in jeder offenen Umgebung eines
+      Punkts $\beta\in G$ einen Punkt, um den man mithilfe einer
+      Translation den Defintionsbereich von $f$ ausweiten kann, wie
+      oben beschrieben.
+      Damit ist $g$ in allen Punkten von $G$ definiert und somit
+      Morphismus.
+    \end{description}
+  \end{proof}
+\end{Lemma}
+
+\begin{proof}[Beweis zu \ref{thm:egruppenschema}]
+  Die Aussage folgt direkt aus den vorangegangenen Lemmata.
+\end{proof}
+
+
+\section{Allgemeine Existenz}\label{chap:exneronmodellebeweis}
+Zu allerletzt bleibt noch zu sehen, dass wir uns von Dedekindringen
+auf Bewertungsringe und von dort auf strikt henselsche Bewertungsringe
+beschränken können.
+\begin{proof}[Beweis von \ref{thm:exneronmodelle}]
+  Wegen \ref{thm:neronmodelllokal} können wir uns auf
+  diskrete Bewertungsringe $R$ beschränken.
+  Betrachte also einen diskreten Bewertungsring $R$ mit perfektem
+  Restklassenkörper, eine elliptische Kurve $E_\K$ über $\K=\Quot(R)$,
+  ein minimales Modell $X$ von $E_\K$ über $R$ und dessen Unterschema
+  der glatten Punkte $E$.
+  Sei $\Rsh$ die strikte Henselisierung von $R$.
+
+  Nach \cite[Chapter 2.4, Corollary 9]{neron} ist $\Rsh$ treuflach
+  über $R$ und unverzweigt per Konstruktion,
+  \cite[vgl.][Chapter 2.3, Proposition 11]{neron}.
+  Daher ist $\Rsh$ insbesondere étale über $R$ und nach
+  \ref{thm:eigminmodell} ist $C\times_R\Rsh$ ein minimales Modell von
+  $E_\Ksh=E_\K\times_\K\Ksh$ über $\Rsh$ mit Unterschema
+  $E\times_R\Rsh$ der glatten Punkte.
+  Wir wissen also aus \ref{thm:egruppenschema}, dass $E\times_R\Rsh$
+  das Néron-Modell von $E_\Ksh$ über $\Rsh$ ist.
+
+  Für die \NAbbEig von $E$ sei $Y$ glattes $R$-Schema und
+  $\phi_\K\colon Y_\K\to E_\K$ Morphismus auf den generischen Fasern.
+  $Y\times_R\Rsh$ ist glattes $\Rsh$-Schema, da Glattheit stabil unter
+  Basiswechsel ist. Daher erweitert sich der Basiswechsel
+  $\phi_\Ksh\colon Y_\Ksh\to E_\Ksh$ von $\phi_\K$ wegen der \NAbbEig
+  von $E\times_R\Rsh$ auf einen Morphismus $\phi_\Rsh\colon
+  Y\times_R\Rsh\to E\times_R\Rsh$.
+  Nach \cite[Chapter 6.1, Theorem 6]{neron} ist wegen Treuflachheit
+  von $\pi\colon\Spec(\Rsh)\to\Spec(R)$ der Basiswechselfunktor
+  $X\mapsto \pi^*X=X\times_R\Rsh$ volltreu. Deshalb erhalten wir einen
+  treuflachen Abstieg $\phi\colon Y\to E$ von $\phi_\Rsh$, der
+  $\phi_\K$ erweitert.
+
+  Somit ist $E$ Néron-Modell von $E_\K$.
+\end{proof}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "neron_models"
+%%% End:

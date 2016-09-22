@@ -1,0 +1,150 @@
+\chapter{Beispiele und Ausblick}\label{chap:ausblick}
+Wir wissen inzwischen aus \ref{bsp:regweierstraßmodell} und
+\ref{bem:konstruktionminmodell}, dass ein reguläres Weierstraßmodell
+über einem Dedekindring bereits minimales Modell seiner
+generischen Faser ist.
+Man kann in einigen Fällen die Regularität bereits an den
+Koeffizienten der Weierstraßgleichung ablesen.
+Sei im Folgenden $(R,(\pi))$ diskreter Bewertungsring mit perfektem
+Restklassenkörper, $\K=\Quot(R)$, $E_\K$ elliptische Kurve über $\K$
+und $W$ ein minimales Weierstraßmodell von $E_\K$ zur Gleichung
+($\Char(\K)\neq2,3$):
+\begin{gather*}
+  f\colon y^2=x^3 + \beta x + \gamma
+\end{gather*}
+% \begin{Beispiel}[$b_n$-Reduktion: $\ord_\K(\Delta)=1$]
+%   \optcite[Lemma IV.9.5]{silverman2}
+%   Ist $\ord_\K(\Delta)=1$, sind nach
+%   \cite[Chapter 1.5, Lemma 3 and Lemma 4]{neron} die Koeffizienten
+%   $\beta$ und $\gamma$ der Gleichung Einheiten in $R$. Eine Rechnung
+%   wie in \cite[Lemma IV.9.5]{silverman2} zeigt, dass $W$ dann regulär
+%   im singulären Punkt $(x,y,\pi)\subset R[x,y]/(f)$ ist.
+% \end{Beispiel}
+
+\begin{Bemerkung}%[$c1$-Reduktion: $\ord_\K(\Delta)=2$,
+  % $\ord_\K(j)\geq0$]
+  \label{bem:bedregweierstraßmodell}
+  Eine hinreichende Bedingung dafür, dass $W$ regulär ist, ist
+  \begin{gather*}
+    \ord_\K(\beta)\geq 1
+    \qquad\text{und}\qquad
+    \ord_\K(\gamma)=1
+  \end{gather*}
+  d.\,h. $\gamma=u\pi$, $\beta=v\pi^n$ für Einheiten $u,v\in R^\times$
+  und $n\in\N_{\geq1}$, wie wir im Folgenden zeigen werden.
+  
+  Wie aus \ref{thm:weierstrassglatt} bekannt ist nur die
+  Regularität des singulären Punkts der speziellen Faser zu
+  überprüfen.
+  Sei $\m_\pi\coloneqq(\pi)$ und $k=(R_{\m_\pi}/\m_\pi)$ der
+  Restklassenkörper von $R$.
+  Die spezielle Faser $W_k$ ist (affin ausgedrückt) das Spektrum von
+  \begin{gather*}
+    \dfrac{k[\bar x,\bar y]}{(\bar y^2-\bar x^3+\beta \bar x+\gamma)}
+    =\dfrac{k[\bar x,\bar y]}{(\bar y^2-\bar x^3+v\pi^n \bar x+u\pi x)}
+    =\dfrac{k[\bar x,\bar y]}{(\bar y^2-\bar x^3)}
+  \end{gather*}
+  welches im geschlossenen Punkt $(0,0)\in\A_k^2$ bzw.
+  $(\bar x,\bar y)\in W_k$ singulär ist. Da der singuläre Punkt von
+  $W_k$ eindeutig ist, muss nur dieser überprüft werden.
+  Er entspricht in $W$ dem Maximalideal
+  $\p\coloneqq(\pi,x,y)\subset R[x,y]/(f)$.
+  Für Regularität gilt zu zeigen, dass $\p$ in seinem Halm
+  $(R[x,y]/(f))_\m=\O_{W,\m}$ nur von zwei Elementen erzeugt wird.
+  Wir wissen aber durch Umstellen von $f$, dass
+  \begin{gather*}
+    \pi = u^{-1}\left( y^2-x^3-\beta x \right)\in\p
+  \end{gather*}
+  weshalb $\p=(x,y)$ tatsächlich nur zwei Erzeuger hat.
+
+  Nach \cite[Chapter 1.5, Lemma 3 and Lemma 4]{neron} ist die
+  Bedingung $\ord_\K(\beta)\geq 1$ und $\ord_\K(\gamma)=1$ für
+  minimale Weierstraßgleichungen äquivalent dazu,
+  dass $\ord_\K(\Delta)=2$ und $\ord_\K(j)\geq 1$,
+  wobei $j=2^8\cdot 3^3\cdot\beta^3$ die $j$-Invariante der
+  Weierstraßgleichung ist.
+
+  Wie in \cite[Chapter 1.5]{neron} beschrieben, ist die
+  Gruppenstruktur der speziellen Faser in diesem Fall die des
+  additiven Gruppenschemas $G_{a,k}$ über $k$. Dieses ist definiert
+  als $\G_{a}\times_\Z k$, wobei $\G_{a}\coloneqq\Spec(\Z[T])$ mit
+  Gruppenstruktur
+  \begin{center}
+    \begin{tikzcd}[row sep=5pt]
+      \G_{a}\times_\Z \G_{a} \arrow[r,"\mu"] \arrow[d, equal]
+      & \G_{a}\arrow[ddd, equal]\\
+      \left(\Spec\Z[T_1]\right) \times_\Z
+      \left(\Spec\Z[T_2]\right) \arrow[d, equal] \\
+      \Spec\left(\Z[T_1]\otimes_\Z\Z[T_2]\right) \arrow[d,equal]\\
+      \Spec\Z[T_1,T_2] \arrow[r, "\mu"]
+      &\Spec(\Z[T])\\
+      T_1+T_2\arrow[from=r, mapsto]
+      & T
+    \end{tikzcd}
+  \end{center}
+\end{Bemerkung}
+
+\begin{Beispiel}
+  Sei $R=\Z_{(5)}$ und betrachte die Weierstraßgleichungen
+  \begin{align*}
+    y^2&=x^3+5x\pm 10
+    & \Delta&=-16\cdot3200=-16\cdot2^7\cdot5^2\\
+    y^2&=x^3\pm 5
+    & \Delta&=-16\cdot675=-16\cdot3^3\cdot5^2\\
+    y^2&=x^3\pm 10
+    & \Delta&=-16\cdot2700=-16\cdot2^2\cdot3^3\cdot5^2
+  \end{align*}
+  Für alle ist offensichtlich die Bedingung aus
+  \ref{bem:bedregweierstraßmodell} erfüllt.
+  Somit sind die projektiven Abschlüsse der elliptischen Kurven über
+  $\Z_{(5)}$ alle bereits minimale Modelle und ihr glatter Teil,
+  d.\,h. der Punkt $(x,y,5)$ ausgenommen, ist das jeweilige
+  Néron-Modell.
+\end{Beispiel}
+
+\begin{Beispiel}
+  Ein Anwendungsbeispiel für die Aussage aus
+  \ref{thm:teilwabelscheneronmodelle} ist jetzt besonders ersichtlich:
+  Bei einem regulären Weierstraßmodell $W$ ist die induzierte
+  Gruppenstruktur auf dem glatten Teil in einer Umgebung der glatten
+  Fasern von $W$ abelsch.
+  Dies liegt daran, dass die glatten Fasern von $W$ bereits
+  elliptische Kurven sind.
+\end{Beispiel}
+
+% TODO: Tate's alg
+Wie zuvor bereits angedeutet, ist es möglich, die minimalen Modelle
+elliptischer Kurven anhand ihrer Weierstraßgleichung nach der Form
+ihrer speziellen Faser in zehn verschiedenen Kategorien zu
+klassifizieren \cite[vgl.][Theorem IV.8.2]{silverman2}.
+Zur Klassifizierung kann ein Algorithmus von Tate verwendet werden,
+der von einer Weierstraßgleichung der elliptischen Kurve ausgeht, diese
+minimalisiert und dann einer der Kategorien in
+\autoref{tab:faserklassifizierung} zuordnet.
+\begin{table}[tbhp]
+  \begin{center}
+    \begin{tabular}{@{}ll@{}}
+      \toprule
+      Kategorie & Bedingung an die Koeffizienten\\
+      \midrule[\heavyrulewidth]
+      $a$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=0$\\\midrule
+      $b_n$& $\ord_\K(j)<0$, $\ord_\K(\beta)=\ord_\K(\gamma)=0$\\\midrule
+      $c1$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=2$\\\midrule
+      $c2$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=3$\\\midrule
+      $c3$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=4$\\\midrule
+      $c4$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=6$\\\midrule
+      $c5_n$& $\ord_\K(j)<0$, $\ord_\K(\beta)=2$, $\ord_\K(\gamma)=3$\\\midrule
+      $c6$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=8$\\\midrule
+      $c7$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=9$\\\midrule
+      $c8$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=10$\\\bottomrule
+    \end{tabular}
+  \end{center}
+  \caption{\label{tab:faserklassifizierung} Kategorien für die
+    Klassifizierung der speziellen Faser des minimalen Modells einer
+    elliptischen Kurve über einem diskreten Bewertungsring,
+    nach Néron
+  \cite[vgl.][Chapter 1.5]{neron}}
+\end{table}
+Für generaueres zu Tates Algorithmus siehe
+\cite[Chapter IV.9]{silverman2},
+\cite[Chapter 1.5]{neron} und \cite{tate}.
