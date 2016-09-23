@@ -490,31 +490,21 @@ Weierstraßmodell mit der induzierten Gruppenstruktur.
   Ist $W$ glatt, so ist $W$ bereits das Néron-Modell von $E_\K$ über
   $R$.
   \begin{proof}
-    Nach \ref{thm:neronmodelllokal} können wir uns wieder auf den
-    lokalen Fall $W\times_R R_s$ beschränken für die geschlossenen
-    Punkte $s\in\Spec(R)$. $W\times_R R_s$ ist wieder eigentliches,
-    glattes Weierstraßmodell von $E_\K$ über $R_s$ und daher nach
-    \ref{thm:erweiterunggruppenstruktur} ein $R_s$-Gruppenschema, das
-    die Gruppenstruktur von $E_\K$ erweitert. 
-    % TODO!!! KAPUTT
+    Nach \ref{thm:neronmodelllokal} müssen wir nur prüfen, ob die 
+    $W\times_R R_s$ Néron-Modelle von $E_\K$ über $R_s$ sind für
+    geschlossene Punkte $s\in\Spec(R)$.
+    Ist $W$ glatt, so ist auch $W\times_R R_s$ glattes
+    Weierstraßmodell von $E_\K$ über $R_s$, da alles stabil unter
+    Basiswechsel ist.
+    Sei daher $R$ ohne Einschränkung bereits lokal, also diskreter
+    Bewertungsring.
     
-    $W\times_R R_s$ von $W$ über den Lokalisierungen
-    $R_s$ von $R$ für die geschlossenen Punkte $s\in\Spec(R)$.
-    Diese tragen nach \ref{thm:erweiterunggruppenstruktur} eine
-    Gruppenschemastruktur, die $E_\K$ erweitert, da die $R_s$ diskrete
-    Bewertungsringe sind.
-    Gruppenverknüpfung und genauso Inverses und Einheitsschnitt lassen
-    sich jeweils wie 
-    Diese 
-    verkleben nach Definition bzw. wegen der Separiertheit von $W$ zu
-    einer Gruppenschemastruktur auf ganz $W$, da sie durch die gleiche
-    Abbildung zwischen graduierten Ringen definiert werden, sprich auf
-    dem generischen Punkt übereinstimmen. Vergleiche auch
-    \ref{thm:allgmorphismuserweiterung}.
+    % TODO!!! KAPUTT
 
-    Für die \NAbbEig sei $Y$ ein weiteres glattes $R$-Schema mit
-    generischer Faser $Y_\K$ und $\phi_\K\colon Y_\K\to E_\K$ ein
-    Morphismus.
+    Für die \NAbbEig machen wir uns zunutze, dass $W$ nach
+    \ref{thm:erweiterunggruppenstruktur} ein $R_s$-Gruppenschema ist.
+    Sei $Y$ ein weiteres glattes $R$-Schema mit generischer Faser
+    $Y_\K$ und $\phi_\K\colon Y_\K\to E_\K$ ein Morphismus.
     In \ref{thm:erwrrational} zeigen wir, dass $\phi_\K$ eine
     eindeutige $R$-rationale Abbildung $\phi\colon Y\dra W$ liefert.
     Nachdem $W$ eigentliches $R$-Gruppenschema und $Y$ glatt ist, ist
@@ -535,7 +525,7 @@ Weierstraßmodell mit der induzierten Gruppenstruktur.
   disjunkte Vereinigung seiner irreduziblen Komponenten ist.
   \begin{proof}
     $\Spec(R)$ und $Y$ sind nach Voraussetzung lokal noethersch,
-    außerdem ist $\pi\colon Y\to R$ flach über $R$. Daher 
+    und der Morphismus ${\pi\colon Y\to R}$ ist flach über $R$. Daher
     gilt für ein $x\in Y$ nach \cite[Theorem 4.3.12]{liu}
     \begin{gather}\label{eq:stalkdimension}
       \dim\O_{Y,x} = \dim R_{\pi(x)} + \dim\O_{Y_{\phi(x)}, x}
@@ -589,7 +579,7 @@ Weierstraßmodell mit der induzierten Gruppenstruktur.
   ist, wenn $\ord_R(\Delta)=0$ für die Diskriminante der
   Weierstraßgleichung gilt.
   Somit ist beispielsweise das Weierstraßmodell $W$ über $\Z_{(5)}$
-  zur (hier affinen) Weierstraßgleichung
+  zur (hier dehomogenisierten) Weierstraßgleichung
   \begin{gather*}
     y^2=x^3+x
   \end{gather*}
