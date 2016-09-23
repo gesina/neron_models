@@ -1,24 +1,22 @@
 \chapter{Arithmetische Flächen}\label{chap:arithmetischeflächen}
 Arithmetische Flächen sind grob gesagt besonders gutartige Kurven über
-einem Dedekindring $R$, d.\,h. $R$-Schemata der Dimension~2.
-Wichtig istbesonders, dass ihre Fasern alle projektive Kurven sind,
-was sie leicht zu beschreiben macht.
+einem Dedekindring $R$, das heißt $R$-Schemata der Dimension~2.
+Besonders wichtig ist, dass ihre Fasern alle projektive Kurven sind,
+weswegen sie leicht zu beschreiben sind.
 
 In diesem Kapitel werden wir erst arithmetische Flächen einführen und
-dann zeigen, dass es für elliptische Kurven immer eine solche Fläche
-als $R$-Modell gibt. Für die Konstruktion wird das Weierstraßmodell
+dann zeigen, dass es für elliptische Kurven immer eine $R$-Modell
+dieser Form gibt. Für die Konstruktion wird das Weierstraßmodell
 aus \autoref{chap:weierstraßmodelle} nötig sein.
-
 Weiterhin werden einige Eigenschaften arithmetischer Flächen
-untersucht. U.\,a. wird gezeigt, dass alle $R$-Schnitte einer
+untersucht. Unter anderem wird gezeigt, dass alle $R$-Schnitte einer
 arithmetischen Fläche bereits $R$-Schnitte des glatten Teils
 sind. Dies wird für die Konstruktion des Néron-Modells später von
 Nutzen sein, welches sich als der glatte Teil einer minimal gewählten
 arithmetischen Fläche entpuppen wird.
-
 Diese Form der Minimalität wird in \autoref{chap:minmodelle}
-eingeführt und die Existenz solcher minimalen Modelle für elliptische
-Kurven gezeigt.
+eingeführt, wo auch die Existenz solcher minimalen Modelle für
+elliptische Kurven gezeigt wird.
 
 \section{Definition}
 \begin{Definition}[arithmetische Fläche]
@@ -31,27 +29,25 @@ Kurven gezeigt.
   % projektive Kurve $X_\K/\K$ ist
   % und dessen spezielle Fasern Vereinigungen von Kurven über den
   % entsprechenden Restklassenkörpern sind.
-
   % % exzellent-Bediungung:
   % Hat $R$ Quotientenkörper der Charakteristik Null, so ist jedes
   % $R$-Schema lokal endlichen Typs bereits excellent.
   % \optcite[Theorem 12.51]{wedhorn}
-  
   \optcite[Definition 8.3.1, 8.3.14]{liu}
   Eine arithmetische Fläche ist ein projektives, integeres, flaches,
-  reguläres $R$-Schema von Dimension 2 (also Dimension 1 über $R$).
-  Die generische Faser $X_\K$ ist integere Kurve über $\K$ und jede
-  spezielle Faser $X_s$ ($s\in\Spec(R)$) ist projektive Kurve über
-  $\k(s)$ nach \cite[Lemma 8.3.3]{liu}.
-  
-  $X$ ist also ein $X_\K$-Modell.
+  reguläres $R$-Schema von Dimension~2, also relativer Dimension~1 über
+  $R$, falls $R$ kein Körper ist.
+  Die generische Faser $X_\K$ ist integere, projektive Kurve über $\K$
+  und jede spezielle Faser $X_s$ über einem geschlossenen Punkt
+  $s\in\Spec(R)$ ist projektive Kurve über $\k(s)$ nach \cite[Lemma
+  8.3.3]{liu}.
 \end{Definition}
 
 \begin{Beispiel}\label{bsp:regweierstraßmodell}
   Ein reguläres Weierstraßmodell einer elliptischen Kurve ist
   arithmetische Fläche.
   Beachte, dass $W$ regulär sein kann, aber dennoch nicht glatt, also
-  singulär in einer Faser.
+  singulär in endlich vielen Fasern.
 \end{Beispiel}
 
 \begin{Satz}\label{thm:exarithfl}
@@ -60,15 +56,15 @@ Kurven gezeigt.
   (kurz: eigentliches Modell von $E_\K$ über $R$).
   \begin{proof}
     Aus \autoref{chap:weierstraßmodelle} wissen wir, dass wir zu $E_\K$
-    ein Weierstraßmodell $W$ über $R$ finden, d.\,h. ein projektives,
-    integeres, flaches $R$-Schema, dessen generische Faser genau
-    $E_\K$ ist. Zur arithmetischen Fläche fehlt $W$ also nur
-    noch die Regularität.
+    ein Weierstraßmodell $W$ über $R$ finden, das heißt ein projektives,
+    integeres, flaches $R$-Schema, dessen generische Faser $E_\K$
+    ist. Zur arithmetischen Fläche fehlt $W$ nur noch die
+    Regularität.
     \cite[Corollary 8.3.51]{liu} besagt nun, dass $W$ eine starke,
-    projektive Desingularisierung besitzt. D.\,h. es gibt ein
-    projektives, reguläres $W$-Schema $\pi\colon Z\to W$, das
-    birational und ein Isomorphismus auf den regulären Punkten von $W$
-    ist.
+    projektive Desingularisierung besitzt. Damit ist gemeint, es gibt
+    einen projektives, reguläres $W$-Schema $\pi\colon Z\to W$, das
+    birational zu $W$ und ein Isomorphismus auf den regulären Punkten
+    von $W$ ist.
     Birationale Abbildungen erhalten per Definition
     Irreduzibilitätskomponenten, Reduziertheit und Dimension.
     Daher ist $Z$ insbesondere wie $W$ integer
@@ -87,15 +83,16 @@ Kurven gezeigt.
 \end{Satz}
 
 \begin{Bemerkung}\label{bem:konstruktioneigmodell}
-  Die Desingularisierung von $W$ kann man induktiv durch eine
-  Abfolge von abwechselnden Normalisierungen und Blow-Ups konstruieren:
+  Die Desingularisierung von $W$ kann man wie folgt induktiv durch
+  eine Abfolge von abwechselnden Normalisierungen und Blow-Ups
+  konstruieren:
   \begin{gather*}
     Z=Z_{n}\to Z_{n-1}'\to Z_{n-1}\to\dotsb
     \to Z_{2}\to Z_{1}'\to Z_{1}\to Z_{0}'=W
   \end{gather*}
   Die $Z_i\to Z_{i-1}'$ sind die Normalisierung der $Z_{i-1}'$,
-  d.\,h. birationale, integere Morphismen mit normalen $Z_{i}$ (welche
-  wegen Birationalität auch wieder integer sind). Sie existieren nach
+  das heißt birationale, integere Morphismen mit $Z_{i}$ normal
+  und wegen Birationalität auch wieder integer. Sie existieren nach
   \cite[Proposition 4.1.22]{liu}.
   
   Die $Z_{i}'\to Z_{i}$ sind Blow-ups entlang des singulären Teils von
@@ -112,32 +109,37 @@ Kurven gezeigt.
 
 % -----
 \section{Eigenschaften}
-Eine recht praktische Eigenschaft von arithmetischen Flächen ist, dass
-sie in den Bildern all ihrer Schnitte regulär sind.
-Dieser Abschnitt befasst sich mit dieser Aussage sowie einem
-zugehörigen Korollar.
+Eine recht praktische Eigenschaft von arithmetischen Flächen über
+Dedekindringen mit perfekten Restklassenkörpern ist, dass
+sie in den Bildern all ihrer Schnitte glatt sind.
+Dieser Abschnitt befasst sich mit dieser Aussage, die wir später für
+den Existenzbeweis von Néron-Modellen elliptischer Kurven brauchen
+werden.
 
 \begin{Lemma}\label{thm:arithflschnittbilderglatt}
   \optcite[Proposition IV.4.3]{silverman2}
-  Sei $R$ Dedekindring,
+  Sei $R$ ein Dedekindring,
   $\pi\colon X\to\Spec(R)$ eine arithmetische Fläche über $R$,
-  $\p\in\Spec(R)$ und $\phi\in X(R)$.
+  $\phi\in X(R)$ ein $R$-Schnitt und $\p\in\Spec(R)$.
   Dann ist $X_\p$ regulär in $\phi(\p)$.
   \begin{proof}
     Nachdem die generische Faser einer arithmetischen Fläche bereits
     glatt, also regulär ist, sei $\p\subset\Spec(R)$ ein geschlossener
     Punkt.
-    
     Sei $x=\phi(\p)\in X_\p\subset X$ und $\m_{X_\p,x}\subset\O_{X_\p,x}$
     das Maximalideal des Halmes von $x$ in $X_\p$,
     analog $\m_{X,x}\subset\O_{X,x}$.
-    Der Punkt $x\in X_\p(\k(\p))\subset X_\p$ ist geschlossen in $X_\p$,
-    daher gilt nach \cite[Corollary 2.5.24]{liu}
-    $\dim\O_{X_\p,x}=\dim X_\p=1$ ($X_p$ ist equidimensional nach
-    \cite[Proposition 4.4.16]{liu} und projektive Kurve).
-    Wir müssen für die Regularität von $X_\p$ in $x$ also zeigen, dass
-    $\m_{X_\p,x}/\m_{X_\p,x}^2$ als $(\O_{X_p,x}/\m_{X_p,x})$-Vektorraum
-    von einem Element $f_1$ erzeugt wird.
+    Der Punkt $x$ ist als Bildpunkt des Schnitts
+    $\phi|_{\Spec(\k(\p))}$ geschlossen in $X_\p$.
+    Daher gilt wegen \cite[Corollary 2.5.24]{liu}
+    \begin{gather*}
+      \dim\O_{X_\p,x}=\dim X_\p=1\;,
+    \end{gather*}
+    denn $X_p$ ist equidimensional nach
+    \cite[Proposition 4.4.16]{liu} und projektive Kurve.
+    Wir müssen für die Regularität von $X_\p$ in $x$ demnach zeigen,
+    dass $\m_{X_\p,x}/\m_{X_\p,x}^2$ als $(\O_{X_p,x}/\m_{X_p,x})$-Vektorraum
+    von nur einem Element $f_1$ erzeugt wird.
     
     $\O_{X,x}$ ist $R$-Algebra über den induzierten lokalen
     Ringhomomorphism $\pi^\#\colon R_\p\to\O_{X,x}$.
@@ -164,7 +166,7 @@ zugehörigen Korollar.
     $R_\p$ gelten muss $\p/\p^2\neq 0$.
     Also gilt $\pi^\#(\p)\not\subset\m_{X,x}^2$.
 
-    Nach \ref{eq:stalkdimension} gilt
+    Nach \autoref{eq:stalkdimension} gilt
     $\dim\O_{X,x}=\dim R_\p+\dim\O_{X_\p,x}=2$ und $X$ ist nach
     Voraussetzung regulär, weshalb $\O_{X,x}$ regulär von Dimension~2
     ist. Das bedeutet, dass es zwei Elemente $f_1, f_2\in\m_{X,x}$
