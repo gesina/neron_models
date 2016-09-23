@@ -17,16 +17,16 @@
   % (ähnlich, ohne Bed. an den Ring, dafür mehr an das Modell)
   Sei $R$ Dedekindring mit perfekten Quotientenkörpern,
   $\K=\Quot(R)$, $E_\K$ elliptische Kurve über $\K$ und $C$ minimales
-  $R$-Modell von $E_\K$
-  (d.\,h. reguläres, integeres, projektives,
-  flaches $R$-Schema mit Minimalitätseigenschaft).
-  Sei $E$ das größte glatte $R$-Unterschema von $C$.
+  $R$-Modell von $E_\K$,
+  das heißt reguläres, integeres, projektives,
+  flaches $R$-Schema mit Minimalitätseigenschaft.
+  Sei $E$ das offene Unterschema der glatten Punkte von $C$.
   Dann ist $E$ Néron-Modell von $E_\K$.
 
   Nachdem minimale Modelle elliptischer
-  Kurven nach \ref{thm:exminmodell} immer existieren, hat jede
-  elliptische Kurve über einem Dedekindring (mit perfekten
-  Restklassenkörpern) ein Néron-Modell.
+  Kurven nach \ref{thm:exminmodell} existieren, hat jede
+  elliptische Kurve über einem Dedekindring mit perfekten
+  Restklassenkörpern ein Néron-Modell.
 \end{Satz}
 Dieses Kapitel ist dem Beweis des vorangegangenen Satzes gewidmet.
 
@@ -36,19 +36,21 @@ dann ein Néron-Modell von $E_\K$ ist, wenn sich die Gruppenverknüpfung
 von $E_\K$ auf ganz $E$ erweitert (das \enquote{genau dann} ist
 bereits aus \ref{thm:gruppenschemaerweiterung} bekannt).
 
-Nun bleibt es in zu zeigen, dass sich die Gruppenverknüpfung tatsächlich
+Nun bleibt es zu zeigen, dass sich die Gruppenverknüpfung tatsächlich
 auf $E$ erweitert.
-Hier gehen wir den Umweg und zeigen erst in
-\autoref{chap:gruppestrikthenselsch} für den Spezialfall eines
-strikt henselschen diskreten Bewertungsring $R$, dass wir eine normale
-Komposition auf $E$ erhalten. Nach \ref{thm:weil} wissen wir nun, dass
-$E$ birational zu einem $R$-Gruppenschema mit der gewünschten Struktur
-ist. Die $R$-birationale Abbildung ist, wie wir sehen werden, aber
-bereits ein Isomorphismus und $E$ ein $R$-Gruppenschema.
+Wir betrachten dies in \autoref{chap:gruppestrikthenselsch} vorerst für
+den Spezialfall eines strikt henselschen diskreten Bewertungsrings
+$R$. Dabei sehen wir, dass man eine normale Komposition auf $E$
+erhält. Nach \ref{thm:weil} wissen wir nun, dass $E$ birational zu
+einem $R$-Gruppenschema mit der gewünschten Struktur ist. Für den
+Abschluss des Beweises stellen wir fest, dass
+diese $R$-birationale Abbildung bereits ein $R$-Isomorphismus und $E$
+daher ein $R$-Gruppenschema ist.
 
 In \autoref{chap:exneronmodellebeweis} zeigen wir zuletzt, dass wir
-uns auf strikt henselsche Bewertungsringe beschränken können, was dann
-mit den vorangegangenen Ergebnissen den Beweis vollendet.
+uns ohne Einschränkung auf strikt henselsche Bewertungsringe
+beschränken können, was dann mit den vorangegangenen Ergebnissen den
+Beweis vollendet.
 
 
 % \begin{proof}
@@ -109,33 +111,36 @@ $E_\K$ auf ganz $E$ erweitert und $E$ damit zum $R$-Gruppenschema
 macht.
 \begin{Lemma}\label{thm:schnittearithmflglatt}
   Sei $R$ diskreter Bewertungsring mit perfektem Restklassenkörper
-  $k$, $\K$, $E_\K$, $C$, $E$ wie in \ref{thm:exneronmodelle},
-  sei $(R',\m')$ Halm eines glatten $R$-Schemas und diskreter
-  Bewertungsring,
-  und sei $\phi\colon \Spec(R')\to C$ ein $R$-Morphismus.
+  $k$, $\K$, $E_\K$, $C$, $E$ wie in \ref{thm:exneronmodelle}.
+  Sei $(R',\m')$ der Halm eines glatten $R$-Schemas und diskreter
+  Bewertungsring
+  und sei ein $R$-Morphismus $\phi\colon \Spec(R')\to C$ gegeben.
   Ist $\phi(\Spec(\K))\in E$, gilt $\im(\phi)\subset E$.
   \begin{proof}
     Für den generischen Punkt $\phi((0))$ ist dies klar, da die
-    generische Faser von $C$ glatt ist, und nach
-    \cite[8.5, Proposition 17]{bosch} wegen $C$ flach in $E$ liegt.
-    Betrachte also $\phi(\m')$.
+    generische Faser von $C$ glatt ist und nach
+    \cite[8.5, Proposition 17]{bosch} wegen Flachheit von $C$ in $E$
+    liegt. 
+    Betrachte also $\phi(\m')$ für den geschlossenen Punkt
+    $\m'\in\Spec(R')$.
     $C_{R'}\coloneqq C\times_R R'$ ist nach
     \ref{thm:eigminmodell} wieder eine arithmetische Fläche über
     $R'$ mit Unterschema der glatten Punkte
     $E_{R'}\coloneqq E\times_R R'$.
-    Nun ist $(\phi\times\Id)\colon\Spec(R')\to C_{R'}$ ein
-    $R'$-Schnitt, weshalb $(C_{R'})_{\m'}$ regulär in
-    $(\phi\times\Id)(\m')$ ist nach
-    \ref{thm:arithflschnittbilderglatt}.
-    $(C_{R'})_\p$ ist als Schema endlichen Typs über einem
-    perfekten Körper glatt in jedem regulären Punkt.
-    Nun ist $C_{R'}$ als ein flaches Schema genau dann glatt in
-    einem Punkt, wenn es die zugehörige Faser ist, wieder nach
-    \cite[8.5, Proposition 17]{bosch}.
-    Somit ist $C_{R'}$ glatt in $(\phi\times\Id)(\m')$ bzw.
+    Nun ist der kanonische Morphismus
+    $(\phi\times_{R}\Id_{R'})\colon\Spec(R')\to C_{R'}$ ein 
+    $R'$-Schnitt, weshalb die spezielle Faser $(C_{R'})_{\m'}$ nach
+    \ref{thm:arithflschnittbilderglatt} regulär in
+    $(\phi\times\Id)(\m')$ ist.
+    Als Schema endlichen Typs über einem
+    perfekten Körper ist $(C_{R'})_{\m'}$ sogar glatt in diesem
+    regulären Punkt.
+    Da $C_{R'}$ als flaches, endlich präsentiertes $R'$-Schema wieder
+    genau dann glatt in einem Punkt ist, wenn es die zugehörige Faser
+    ist, ist $C_{R'}$ glatt in $(\phi\times\Id)(\m')$ bzw.
     $(\phi\times\Id)(\m')\in E\times_R R'$. Folglich muss bereits
-    $\phi(\m')$ in $E$ liegen und $\phi$ ist $R$-Morphismus
-    $\Spec(R')\to E\subset C$.
+    $\phi(\m')$ in $E$ liegen und $\phi\colon \Spec(R')\to E\subset C$
+    faktorisiert über $E$.
   \end{proof}
 \end{Lemma}  
 
@@ -161,17 +166,17 @@ macht.
     
     Wir werden den Beweis durch Widerspruch führen.
     Angenommen, $\phi\colon Y\dra E$ sei kein Morphismus.
-    Da $E$ $R$-Gruppenschema, $Y$ glatt und $\phi$ eine
+    Da $E$ ein $R$-Gruppenschema, $Y$ glatt und $\phi$ eine
     $R$-rationale Abbildung ist, hat $Y\setminus\Dom(\phi)$
-    Kodimension 1 nach \ref{thm:rationalzumorphismus}.
-    D.\,h. es gibt ein irreduzibles, geschlossenes Unterschema
-    $Z\subset Y$ der Kodimension 1, auf dessen generischem Punkt
+    Kodimension~1 nach \ref{thm:rationalzumorphismus}.
+    Das heißt es gibt ein irreduzibles, geschlossenes Unterschema
+    $Z\subset Y$ der Kodimension~1, auf dessen generischem Punkt
     $\eta_Z$ die $R$-rationale Abbildung $\phi$ nicht definiert ist.
     % Dies ist äquivalent dazu, dass $\phi$ nicht im generischen Punkt
     % $\eta_Z$ von $Z$ definiert ist, da jede offene Teilmenge $U$ von
     % $Z$ Umgebung von $\eta_Z$ ist.
     $\O_{Y,\eta_Z}$ ist diskreter Bewertungsring, da er von
-    Dimension~1 ist, regulär ($Y$ glatt, also
+    Dimension~1, regulär ($Y$ ist glatt, also
     regulär) und lokal ist.
     Sein Quotientenkörper ist der Quotienten-~bzw. Restklassenkörper
     eines generischen Punkts $\eta$ der irreduziblen Komponente von
@@ -270,10 +275,10 @@ strikt henselscher Ringe aufgeführt.
 % Nur Erweiterung der Gruppenstruktur!
 \subsection{Strikt henselsche Ringe}
 % HENSELSCHE RINGE
-\begin{Definition}[henselsche Ringe]\label{def:henselscheringe}
+\begin{Definition}[henselscher Ring]\label{def:henselscheringe}
   \optcite[2.3, Proposition 4]{neron}
   \optcite[Chapter IV.6]{silverman2}
-  Ein lokaler Ring $(R,\m)$ heißt \emph{henselsch}, wenn
+  Ein lokaler Ring $(R,\m)$ heißt henselsch, wenn
   er eine der folgenden Bedingungen erfüllt
   \begin{enumerate}[label=(\roman*)]
   \item henselsches Lemma:
@@ -283,11 +288,10 @@ strikt henselscher Ringe aufgeführt.
     von $\bar a$ ist.
   \item Jede endliche $R$-Algebra ist ein Produkt lokaler Ringe.
   \end{enumerate}
-  
-  Ein henselscher Ring heißt \emph{strikt henselsch}, falls sein
-  Restklassenkörper $R/\m$ separabel abgeschlossen ist
-  (im Fall eines perfekten Restklassenkörpers ist dies äquivalent zu
-  algebraisch abgeschlossen).
+  Ein henselscher Ring heißt strikt henselsch, falls sein
+  Restklassenkörper $R/\m$ separabel abgeschlossen ist.
+  Im Fall eines perfekten Restklassenkörpers ist dies äquivalent zu
+  algebraisch abgeschlossen.
 \end{Definition}
 
 % \begin{Definition}[Henselisierung]\label{def:henselisierung}
@@ -318,24 +322,25 @@ strikt henselscher Ringe aufgeführt.
   Die strikte Henselisierung eines lokalen Rings $(R,\m)$ mit
   Restklassenkörper $k=R/\m$ ist ein strikt henselscher lokaler Ring
   $\Rsh$, dessen Restklassenkörper der separable Abschluss $k_s$ von
-  $k$ ist, zusammen mit einem lokalen Homomorphismus
-  $i^\text{sh}\colon R\to\Rsh$, s.\,d. folgende universelle
-  Eigenschaft erfüllt ist:
-  
-  Für jeden weiteren lokalen Homomorphismus $u\colon R\to A$ in einen
-  strikt henselschen lokalen Ring $A$ mit Restklassenkörper $k_A$ und
-  für jeden $k$-Homomorphismus $\alpha\colon k_s\to k_A$ gibt es einen
-  eindeutigen lokalen Homomorphismus $u^\text{sh}\colon\Rsh\to A$, so
-  dass das folgende Diagramm kommutiert und so dass $\alpha$ die
-  Projektion von $u^\text{sh}$ auf die Restklassenkörper ist
-  \begin{center}
-    \begin{tikzcd}
-      R \arrow[r, "{u}"]\arrow[d, "{i^\text{sh}}"]
-      & A \\
-      \Rsh\arrow[ur, dashed, "{\exists!u^\text{sh}}"{swap}]
-    \end{tikzcd}
-  \end{center}
-
+  $k$ ist, zusammen mit einem lokalen Ringhomomorphismus
+  $i^\text{sh}\colon R\to\Rsh$, so dass folgende universelle
+  Eigenschaft erfüllt ist
+  \begin{quote}
+    Für jeden weiteren lokalen Ringhomomorphismus $u\colon R\to A$ in
+    einen strikt henselschen lokalen Ring $A$ mit Restklassenkörper
+    $k_A$ und für jeden $k$"=Körperhomomorphismus $\alpha\colon k_s\to k_A$
+    gibt es einen eindeutigen lokalen Ringhomomorphismus
+    $u^\text{sh}\colon\Rsh\to A$, so dass das folgende Diagramm
+    kommutiert und so dass $\alpha$ die Projektion von $u^\text{sh}$
+    auf die Restklassenkörper ist
+    \begin{center}
+      \begin{tikzcd}
+        R \arrow[r, "{u}"]\arrow[d, "{i^\text{sh}}"]
+        & A \\
+        \Rsh\arrow[ur, dashed, "{\exists!u^\text{sh}}"{swap}]
+      \end{tikzcd}
+    \end{center}
+  \end{quote}
   Die strikte Henselisierung ist nach Definition eindeutig bis auf
   Isomorphismus und hat $k_s$ als Restklassenkörper.
 \end{Definition}
@@ -366,7 +371,7 @@ Rings ist folgende Aussage über die Einschränkung von Schnitten:
   \end{gather*}
   ist
   \begin{enumerate}[label=(\roman*)]
-  \item surjektiv, falls $R$ henselsch ist.
+  \item surjektiv auf $X_k(k)$, falls $R$ henselsch ist.
   \item surjektiv mit dichtem Bild in der speziellen Faser $X_k$,
     falls $R$ strikt henselsch ist.
   \end{enumerate}
@@ -386,28 +391,33 @@ Isomorphismus ist.
   \ref{thm:exneronmodelle}.
   Dann erweitert sich die Gruppenstruktur von $E_\K$ auf $E$ und macht
   $E$ zum Gruppenschema.
+  \begin{proof}[Beweis zu \ref{thm:egruppenschema}]
+    Die Aussage folgt direkt aus den folgenden beiden Lemmata.
+  \end{proof}
 \end{Satz}
 \begin{Lemma}
   Die Gruppenstruktur $\mu_\K$ auf $E_\K$ erweitert sich zu einer
   normalen Komposition $\mu$ auf $E$.
-  (Hier muss $R$ nicht notwendigerweise strikt henselsch sein.)
+  % (Hier muss $R$ nicht notwendigerweise strikt henselsch sein.)
   \begin{proof}
-    $E\times_R E$ ist glattes $R$-Schema und $C$ eigentlich,
-    weshalb sich $\mu_\K\colon E_\K\times_\K E_\K\to E_\K$ nach
-    \ref{thm:erwrrational} eindeutig zu einer $R$-rationalen
-    Abbildung $\tilde\mu\colon E\times_R E\dra C$ erweitert.
+    $E\times_R E$ ist glattes $R$-Schema und $C$ ist eigentlich,
+    weshalb sich die Gruppenverknüpfung $\mu_\K\colon E_\K\times_\K
+    E_\K\to E_\K$ auf $E_\K$ nach \ref{thm:erwrrational} eindeutig zu
+    einer $R$-rationalen Abbildung $\tilde\mu\colon E\times_R E\dra C$
+    erweitert.
     Die generischen Punkte $\eta_k$ der speziellen Fasern von
-    $E\times_R E$ haben wegen \ref{eq:stalkdimension}
+    $E\times_R E$ haben wegen \autoref{eq:stalkdimension}
     Dimension~1, sind also diskrete Bewertungsringe, da
     $E\times_R E$ glatt und somit regulär ist. Nach
     \ref{thm:schnittearithmflglatt} liegt dann
     $\tilde\mu(\eta_k)$ und entsprechend das Bild einer offenen
     Umgebung von $\eta_k$ unter $\tilde\mu$ in $E$. Daher erhalten
-    wir (u.\,U. durch Einschränkung von $\Dom(\tilde\mu)$) eine
-    $R$-rationale Abbildung $\mu\colon E\times_R E\dra E$.
+    wir (unter Umständen durch Einschränkung von $\Dom(\tilde\mu)$)
+    eine $R$-rationale Abbildung $\mu\colon E\times_R E\dra E$.
 
     Für eine normale Komposition bleiben Assoziativität und Inverse zu
-    zeigen.
+    zeigen. Seien hierfür $\phi,\psi\colon E\times_R E\to E\times_R E$
+    wie in der Definition \ref{def:normalekomposition}.
 
     \paragraph{Assoziativität}
     Für Assoziativität müssen für alle $x, z\in E$, für die es
@@ -432,37 +442,39 @@ Isomorphismus ist.
     der speziellen Faser definiert ist.
     Wir werden den Fall für $\phi$ behandeln, $\psi$ folgt analog.
     
-    Sei also $\eta\in E\times_R R/\p=E_k$ ein generischer Punkt der
+    Sei also $\eta\in E\times_R (R/\p)=E_k$ ein generischer Punkt der
     speziellen Faser von $E$ und $R'=\O_{E,\eta}$ der Halm in
-    $\eta$ mit $\K'\coloneqq\Quot(R)$ und $k'$
-    Restklassenkörper. Wegen \ref{eq:stalkdimension} hat $R'$
+    $\eta$ mit $\K'\coloneqq\Quot(R)$. % und $k'$ Restklassenkörper.
+    Wegen \ref{eq:stalkdimension} hat $R'$
     Dimension 1, ist demnach ein diskreter Bewertungsring und
     $C_{R'}\coloneqq C\times_R R'$ nach \ref{thm:eigminmodell}
-    minimales $R'$-Modell von $E_\K\times_{\K'}\K'\eqqcolon E_{\K'}$
-    mit offenem Unterschema $E_{R'}=E\times_R R'$ der glatten Punkte.
-    Wir wissen, dass $\Spec(R')\subset E$, also dass es
-    einen $R'$-wertigen Punkt $s\colon\Spec(R')\to E_{R'}$ gibt.
-    Wir erhalten einen zugehörigen Translationsautomorphismus auf der
-    generischen Faser:
+    minimales $R'$-Modell der elliptischen Kurve
+    $E_\K\times_{\K'}\K'\eqqcolon E_{\K'}$ mit offenem Unterschema
+    $E_{R'}=E\times_R R'$ der glatten Punkte.
+    Wir wissen, dass per Konstruktion $\Spec(R')\subset E$, also dass
+    es einen $R'$-wertigen Punkt $s\colon\Spec(R')\to E_{R'}$ gibt.
+    Wir erhalten einen zugehörigen Translationsmorphismus auf der
+    generischen Faser, der aufgrund der Gruppenstruktur Automorphismus
+    ist:
     \begin{gather*}
       \tau_{\K'}\colon
       E_{\K'}\cong E_{\K'}\times_{\K'}\K'
       \xrightarrow{\Id\times s}
       E_{\K'}\times_{\K'}E_{\K'}
-      \overset{\mu}{\longto}
+      \xrightarrow{\mu_{\K'}}
       E_{\K'}
     \end{gather*}
     Nach \ref{thm:eigminmodell} erweitert sich $\tau_{\K'}$ zu
     einem $R'$-Automorphismus $\tau_{R'}$ auf dem minimalen Modell
     $C_{R'}$ und auf dem glatten Unterschema $E_{R'}$.
-    Für $e\in\Spec(R')$, $x=s(e)$ und $y\in(E_{R'})_e$ sieht $\tau_{R'}$
-    wie folgt aus:
+    Für ein $e\in\Spec(R')$, $x=s(e)$ und einen Punkt in der Faser
+    $y\in(E_{R'})_e$ sieht $\tau_{R'}$ wie folgt aus
     \begin{center}
       \begin{tikzcd}[row sep=0pt]
         R'\times_R E \arrow[r, equal]
         & R'\times_{R'}(R'\times_R E) \arrow[r, "{s\times\Id}"]
         & (R'\times_R E)\times_{R'}(R'\times_R E)
-        \arrow[r, "{\mu_{R'}}"]
+        \arrow[r, "{\mu_{R'}}", dashed]
         & R'\times_R E \\
         (e,y)\arrow[r, mapsto]
         & (e,(e,y))\arrow[r, mapsto]
@@ -470,9 +482,8 @@ Isomorphismus ist.
         & (e,\mu(x,y))
       \end{tikzcd}
     \end{center}
-    bzw. $\tilde\tau_{R'}\colon(e,y)\mapsto(e,\mu(y,x)$, wenn man
-    $R'\times_{R'}(R'\times_R E)$ durch das isomorphe $(R'\times_R
-    E)\times_{R'}R'$ ersetzt.
+    bzw. $\tilde\tau_{R'}\colon(e,y)\mapsto(e,\mu(y,x))$, wenn man
+    $R'\times_{R'}(R'\times_R E)$ durch $(R'\times_R E)\times_{R'}R'$ ersetzt.
     Wir erhalten das kommutative Diagramm
     \begin{center}
       \begin{tikzcd}
@@ -510,10 +521,15 @@ Isomorphismus ist.
       Morphismus. Dann besagt \ref{thm:weil}, dass es eine
       irreduzible, geschlossene Teilmenge $Z\subset E$ gibt, so
       dass $g$ nicht in deren generischen Punkt $\eta_Z$ definiert
-      ist. Nachdem $g$ aber als $R$-rationale Abbildung auf einer
-      in beiden (eindimensionalen) Fasern dichten Teilmenge
-      definiert ist, muss $g$ auch auf $\eta_Z$ definiert sein,
-      was ein Widerspruch ist.
+      ist. Die spezielle Faser $E_k$ von $E$ ist eindimensional und
+      geschlossen, weshalb $\eta_Z\in E_k$ bedeuten würde, dass
+      $\eta_Z$ ein generischer Punkt von $E_k$ ist.
+      Nachdem $g$ als $R$-rationale Abbildung auf auf einer
+      dichten Teilmenge von $E_k$, insbesondere auf dessen
+      generischen Punkten, definiert ist, kann $\eta_Z$ also nicht in
+      $E_k$ liegen.
+      Allerdings ist $g$ auf der gesamten generischen Faser und daher
+      dann auch in $\eta_Z$ definiert, was ein Widerspruch ist.
     \item[$f$ Morphismus] Eine Translation $\tau_P^G\colon G\to G$
       auf $G$ um einen Schnitt $P$ liefert eine Translation
       $\tau_P\coloneqq\tau_P^G|_{E_\K}$, also einen
@@ -526,14 +542,15 @@ Isomorphismus ist.
       \begin{gather*}
         f = \tau_{(-P)}^E\circ f\circ \tau_P^G
       \end{gather*}
-      da beides die eindeutigen Erweiterungen von $f|_{E_\K}$
-      sind, wo $\tau_P=\tau_P^E|_{E_\K}=\tau_P^G|_{E_\K}$
-      Automorphismus ist.
+      da beides die eindeutigen Erweiterungen von
+      $\Id_{E_\K}=f|_{E_\K}$ sind, wo
+      $\tau_P=\tau_P^E|_{E_\K}=\tau_P^G|_{E_\K}$ $\K$-Automorphismus
+      ist und $\Id_{E_\K}=\tau_{(-P)}\circ\tau_P$ gilt.
       
       Für jedes $\beta\in G$, so dass es einen Schnitt $P$ gibt mit
       $\tau_P^G(\beta)\in\Dom(f)$, ist $\tau_{(-P)}^E\circ f\circ
       \tau_P^G$ also eine eindeutige Erweiterung von $f|_{E_\K}$
-      bzw. $f$ auf $\beta$.
+      bzw. von $f$ auf eine Umgebung von $\beta$.
       Wir können also durch Translation den Definitionsbereich von
       $f$ für passende $\beta$ erweitern.
 
@@ -544,17 +561,13 @@ Isomorphismus ist.
       speziellen Faser liegt.
       Insbesondere findet man in jeder offenen Umgebung eines
       Punkts $\beta\in G$ einen Punkt, um den man mithilfe einer
-      Translation den Defintionsbereich von $f$ ausweiten kann, wie
-      oben beschrieben.
+      Translation den Defintionsbereich von $f$ auf eine Umgebung von
+      $\beta$ ausweiten kann, wie oben beschrieben.
       Damit ist $g$ in allen Punkten von $G$ definiert und somit
       Morphismus.
     \end{description}
   \end{proof}
 \end{Lemma}
-
-\begin{proof}[Beweis zu \ref{thm:egruppenschema}]
-  Die Aussage folgt direkt aus den vorangegangenen Lemmata.
-\end{proof}
 
 
 \section{Allgemeine Existenz}\label{chap:exneronmodellebeweis}
@@ -569,10 +582,9 @@ beschränken können.
   ein minimales Modell $X$ von $E_\K$ über $R$ und dessen Unterschema
   der glatten Punkte $E$.
   Sei $\Rsh$ die strikte Henselisierung von $R$.
-
   Nach \cite[Chapter 2.4, Corollary 9]{neron} ist $\Rsh$ treuflach
-  über $R$ und unverzweigt per Konstruktion,
-  \cite[vgl.][Chapter 2.3, Proposition 11]{neron}.
+  über $R$ und unverzweigt per Konstruktion, vergleiche auch
+  \cite[Chapter 2.3, Proposition 11]{neron}.
   Daher ist $\Rsh$ insbesondere étale über $R$ und nach
   \ref{thm:eigminmodell} ist $C\times_R\Rsh$ ein minimales Modell von
   $E_\Ksh=E_\K\times_\K\Ksh$ über $\Rsh$ mit Unterschema
@@ -589,7 +601,12 @@ beschränken können.
   Y\times_R\Rsh\to E\times_R\Rsh$.
   Nach \cite[Chapter 6.1, Theorem 6]{neron} ist wegen Treuflachheit
   von $\pi\colon\Spec(\Rsh)\to\Spec(R)$ der Basiswechselfunktor
-  $X\mapsto \pi^*X=X\times_R\Rsh$ volltreu. Deshalb erhalten wir einen
+  \begin{gather*}
+    \text{(Sch/$R$)}\longto\text{(Sch/$\Rsh$)}\;,
+    \qquad
+    X\longmapsto \pi^*X=X\times_R\Rsh
+  \end{gather*}
+  volltreu. Deshalb erhalten wir einen
   treuflachen Abstieg $\phi\colon Y\to E$ von $\phi_\Rsh$, der
   $\phi_\K$ erweitert.
 
