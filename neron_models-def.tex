@@ -1,10 +1,20 @@
 \KOMAoptions{parskip=half}
 
 % PACKAGES
+% \usepackage{mathastext} % uses text font; bad arrows -> NO
+% \usepackage{euler} % for egyptienne
+% \usepackage{sfmath}\usepackage{sansmathaccent} % sans serif
+% \usepackage[math]{anttor} % letters look slightly crippled in comparison
+% \usepackage[math]{kurier}
 % \usepackage{mathpazo}
+\usepackage[charter]{mathdesign} % not working :-(
+
 \usepackage{fontspec}
 %\setmainfont{Latin Modern Roman}
 \setmainfont{Charis SIL}
+\setsansfont{Source Sans Pro}
+% \setsansfont{Fira Sans}
+
 \usepackage{babel}
 \usepackage[autostyle=try]{csquotes}
 
@@ -12,7 +22,7 @@
 \bibliography{neron_models.bib}
 
 \usepackage{mathtools}
-\usepackage{amssymb}
+%\usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{amsthm}
 \usepackage{dsfont}
