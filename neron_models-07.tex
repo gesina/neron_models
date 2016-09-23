@@ -9,9 +9,9 @@ Sei im Folgenden $(R,(\pi))$ diskreter Bewertungsring mit perfektem
 Restklassenkörper, $\K=\Quot(R)$, $E_\K$ elliptische Kurve über $\K$
 und $W$ ein minimales Weierstraßmodell von $E_\K$ zur Gleichung
 ($\Char(\K)\neq2,3$):
-\begin{gather*}
+\begin{gather}\label{eq:allgweierstraßgleichung}
   f\colon y^2=x^3 + \beta x + \gamma
-\end{gather*}
+\end{gather}
 % \begin{Beispiel}[$b_n$-Reduktion: $\ord_\K(\Delta)=1$]
 %   \optcite[Lemma IV.9.5]{silverman2}
 %   Ist $\ord_\K(\Delta)=1$, sind nach
@@ -21,7 +21,7 @@ und $W$ ein minimales Weierstraßmodell von $E_\K$ zur Gleichung
 %   im singulären Punkt $(x,y,\pi)\subset R[x,y]/(f)$ ist.
 % \end{Beispiel}
 
-\begin{Bemerkung}%[$c1$-Reduktion: $\ord_\K(\Delta)=2$,
+\begin{Korollar}\label{thm:c1red}
   % $\ord_\K(j)\geq0$]
   \label{bem:bedregweierstraßmodell}
   Eine hinreichende Bedingung dafür, dass $W$ regulär ist, ist
@@ -30,60 +30,66 @@ und $W$ ein minimales Weierstraßmodell von $E_\K$ zur Gleichung
     \qquad\text{und}\qquad
     \ord_\K(\gamma)=1
   \end{gather*}
-  d.\,h. $\gamma=u\pi$, $\beta=v\pi^n$ für Einheiten $u,v\in R^\times$
-  und $n\in\N_{\geq1}$, wie wir im Folgenden zeigen werden.
-  
-  Wie aus \ref{thm:weierstrassglatt} bekannt ist nur die
-  Regularität des singulären Punkts der speziellen Faser zu
-  überprüfen.
-  Sei $\m_\pi\coloneqq(\pi)$ und $k=(R_{\m_\pi}/\m_\pi)$ der
-  Restklassenkörper von $R$.
-  Die spezielle Faser $W_k$ ist (affin ausgedrückt) das Spektrum von
-  \begin{gather*}
-    \dfrac{k[\bar x,\bar y]}{(\bar y^2-\bar x^3+\beta \bar x+\gamma)}
-    =\dfrac{k[\bar x,\bar y]}{(\bar y^2-\bar x^3+v\pi^n \bar x+u\pi x)}
-    =\dfrac{k[\bar x,\bar y]}{(\bar y^2-\bar x^3)}
-  \end{gather*}
-  welches im geschlossenen Punkt $(0,0)\in\A_k^2$ bzw.
-  $(\bar x,\bar y)\in W_k$ singulär ist. Da der singuläre Punkt von
-  $W_k$ eindeutig ist, muss nur dieser überprüft werden.
-  Er entspricht in $W$ dem Maximalideal
-  $\p\coloneqq(\pi,x,y)\subset R[x,y]/(f)$.
-  Für Regularität gilt zu zeigen, dass $\p$ in seinem Halm
-  $(R[x,y]/(f))_\m=\O_{W,\m}$ nur von zwei Elementen erzeugt wird.
-  Wir wissen aber durch Umstellen von $f$, dass
-  \begin{gather*}
-    \pi = u^{-1}\left( y^2-x^3-\beta x \right)\in\p
-  \end{gather*}
-  weshalb $\p=(x,y)$ tatsächlich nur zwei Erzeuger hat.
+  das heißt $\gamma=u\pi$, $\beta=v\pi^n$ für Einheiten $u,v\in R^\times$
+  und $n\in\N_{\geq1}$.
 
-  Nach \cite[Chapter 1.5, Lemma 3 and Lemma 4]{neron} ist die
-  Bedingung $\ord_\K(\beta)\geq 1$ und $\ord_\K(\gamma)=1$ für
-  minimale Weierstraßgleichungen äquivalent dazu,
-  dass $\ord_\K(\Delta)=2$ und $\ord_\K(j)\geq 1$,
-  wobei $j=2^8\cdot 3^3\cdot\beta^3$ die $j$-Invariante der
-  Weierstraßgleichung ist.
+  \begin{proof}
+    Wie aus \ref{thm:weierstrassglatt} bekannt, ist nur die
+    Regularität des singulären Punkts der speziellen Faser zu
+    überprüfen.
+    Sei $\m_\pi\coloneqq(\pi)$ und $k=(R_{\m_\pi}/\m_\pi)$ der
+    Restklassenkörper von $R$.
+    Die spezielle Faser $W_k$ ist auf dem betrachteten Teil seiner
+    affinen Überdeckung das Spektrum von 
+    \begin{gather*}
+      \dfrac{k[\bar x,\bar y]}{(\bar y^2-\bar x^3+\beta \bar x+\gamma)}
+      =\dfrac{k[\bar x,\bar y]}{(\bar y^2-\bar x^3+v\pi^n \bar x+u\pi x)}
+      =\dfrac{k[\bar x,\bar y]}{(\bar y^2-\bar x^3)}
+    \end{gather*}
+    welches im geschlossenen Punkt $(0,0)\in\A_k^2$ bzw.
+    $(\bar x,\bar y)\in W_k$ singulär ist. Da der singuläre Punkt von
+    $W_k$ eindeutig ist, muss nur dieser überprüft werden.
+    Er entspricht in $W$ dem Maximalideal
+    $\p\coloneqq(\pi,x,y)\subset R[x,y]/(f)$.
+    Für Regularität gilt zu zeigen, dass $\p$ in seinem Halm
+    $(R[x,y]/(f))_\p=\O_{W,\p}$ nur von zwei Elementen erzeugt wird.
+    Wir wissen aber durch Umstellen von
+    \eqref{eq:allgweierstraßgleichung}, dass
+    \begin{gather*}
+      \pi = u^{-1}\left( y^2-x^3-\beta x \right)\in\p
+    \end{gather*}
+    weshalb $\p=(x,y)$ tatsächlich nur zwei Erzeuger hat.
+  \end{proof}
+\end{Korollar}
 
-  Wie in \cite[Chapter 1.5]{neron} beschrieben, ist die
-  Gruppenstruktur der speziellen Faser in diesem Fall die des
-  additiven Gruppenschemas $G_{a,k}$ über $k$. Dieses ist definiert
-  als $\G_{a}\times_\Z k$, wobei $\G_{a}\coloneqq\Spec(\Z[T])$ mit
-  Gruppenstruktur
-  \begin{center}
-    \begin{tikzcd}[row sep=5pt]
-      \G_{a}\times_\Z \G_{a} \arrow[r,"\mu"] \arrow[d, equal]
-      & \G_{a}\arrow[ddd, equal]\\
-      \left(\Spec\Z[T_1]\right) \times_\Z
-      \left(\Spec\Z[T_2]\right) \arrow[d, equal] \\
-      \Spec\left(\Z[T_1]\otimes_\Z\Z[T_2]\right) \arrow[d,equal]\\
-      \Spec\Z[T_1,T_2] \arrow[r, "\mu"]
-      &\Spec(\Z[T])\\
-      T_1+T_2\arrow[from=r, mapsto]
-      & T
-    \end{tikzcd}
-  \end{center}
+\begin{Bemerkung}
+Nach \cite[Chapter 1.5, Lemma 3 and Lemma 4]{neron} ist die
+Bedingung $\ord_\K(\beta)\geq 1$ und $\ord_\K(\gamma)=1$ für
+minimale Weierstraßgleichungen äquivalent dazu,
+dass $\ord_\K(\Delta)=2$ und $\ord_\K(j)\geq 1$,
+wobei $j=2^8\cdot 3^3\cdot\beta^3$ die $j$-Invariante der
+Weierstraßgleichung ist.
 \end{Bemerkung}
 
+Wie in \cite[Chapter 1.5]{neron} beschrieben, ist die
+Gruppenstruktur der speziellen Faser im Fall von \ref{thm:c1red} die
+des additiven Gruppenschemas $\G_{a,k}$ über $k$. Dieses ist definiert
+als $\G_{a}\times_\Z k$, wobei $\G_{a}\coloneqq\Spec(\Z[T])$ ist mit
+Gruppenstruktur
+\begin{center}
+  \begin{tikzcd}[row sep=5pt]
+    \G_{a}\times_\Z \G_{a} \arrow[r,"\mu"] \arrow[d, equal]
+    & \G_{a}\arrow[ddd, equal]\\
+    \left(\Spec\Z[T_1]\right) \times_\Z
+    \left(\Spec\Z[T_2]\right) \arrow[d, equal] \\
+    \Spec\left(\Z[T_1]\otimes_\Z\Z[T_2]\right) \arrow[d,equal]\\
+    \Spec\Z[T_1,T_2] \arrow[r, "\mu"]
+    &\Spec(\Z[T])\\
+    T_1+T_2\arrow[from=r, mapsto]
+    & T
+  \end{tikzcd}
+\end{center}
+    
 \begin{Beispiel}
   Sei $R=\Z_{(5)}$ und betrachte die Weierstraßgleichungen
   \begin{align*}
@@ -98,7 +104,7 @@ und $W$ ein minimales Weierstraßmodell von $E_\K$ zur Gleichung
   \ref{bem:bedregweierstraßmodell} erfüllt.
   Somit sind die projektiven Abschlüsse der elliptischen Kurven über
   $\Z_{(5)}$ alle bereits minimale Modelle und ihr glatter Teil,
-  d.\,h. der Punkt $(x,y,5)$ ausgenommen, ist das jeweilige
+  das heißt der Punkt $(x,y,5)$ ausgenommen, ist das jeweilige
   Néron-Modell.
 \end{Beispiel}
 
@@ -123,28 +129,55 @@ minimalisiert und dann einer der Kategorien in
 \autoref{tab:faserklassifizierung} zuordnet.
 \begin{table}[tbhp]
   \begin{center}
-    \begin{tabular}{@{}ll@{}}
+    \begin{tabularx}{\linewidth}{@{}l>{\hsize=.7\hsize}X>{\hsize=1.3\hsize}X@{}}
       \toprule
-      Kategorie & Bedingung an die Koeffizienten\\
+       & Bedingungen an \newline die Koeffizienten
+      & ~\newline Beschreibung der speziellen Faser\\
       \midrule[\heavyrulewidth]
-      $a$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=0$\\\midrule
-      $b_n$& $\ord_\K(j)<0$, $\ord_\K(\beta)=\ord_\K(\gamma)=0$\\\midrule
-      $c1$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=2$\\\midrule
-      $c2$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=3$\\\midrule
-      $c3$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=4$\\\midrule
-      $c4$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=6$\\\midrule
-      $c5_n$& $\ord_\K(j)<0$, $\ord_\K(\beta)=2$, $\ord_\K(\gamma)=3$\\\midrule
-      $c6$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=8$\\\midrule
-      $c7$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=9$\\\midrule
-      $c8$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=10$\\\bottomrule
-    \end{tabular}
+      $a$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=0$
+      & elliptische Kurve\\\midrule
+      $b_n$& ${\ord_\K(j)<0}$, \newline
+      ${\ord_\K(\beta)=0}$, ${\ord_\K(\gamma)=0}$
+      & $n=1$: Kurve mit Knoten\newline
+        $n>1$: $n$ reguläre Kurven, die sich schneiden \\\midrule
+      $c1$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=2$
+      & singuläre Kurve mit Scheitelpunkt\\\midrule
+      $c2$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=3$
+      & 2 reguläre Kurven mit 1 tangentialem Schnittpunkt \\\midrule
+      $c3$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=4$
+      & 3 reguläre Kurven mit 1 gem. Schnittpunkt \\\midrule
+      $c4$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=6$
+      & 1 reguläre Kurve mit Multiplizität 2, die 4 weitere reguläre
+      Kurven schneidet\\\midrule
+      $c5_n$& ${\ord_\K(j)<0}$, \newline
+      ${\ord_\K(\beta)=2}$, ${\ord_\K(\gamma)=3}$
+      & $n$ reguläre Kurven mit Multiplizität 2 bilden eine Kette, die
+        an den 2 Enden jeweils eine Kurve der Multiplizität 1 schneidet\\\midrule
+      $c6$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=8$
+      & 1 reguläre Kurve der Multiplizität 3 schneidet 3 Kurven mit
+        Multiplizität 2, die jeweils 1 mit Multiplizität 1 schneiden\\\midrule
+      $c7$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=9$
+      & ähnlich $c6$ mit 8 Kurven und bis Multiplizität 4 \\\midrule
+      $c8$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=10$
+      & ähnlich $c6$ mit 9 Kurven und bis Multiplizität 6\\\bottomrule
+    \end{tabularx}
   \end{center}
   \caption{\label{tab:faserklassifizierung} Kategorien für die
     Klassifizierung der speziellen Faser des minimalen Modells einer
-    elliptischen Kurve über einem diskreten Bewertungsring,
-    nach Néron
-  \cite[vgl.][Chapter 1.5]{neron}}
+    elliptischen Kurve über einem diskreten Bewertungsring mit
+    perfektem Restklassenkörper,
+    nach Néron,
+    vergleiche \cite[Chapter 1.5]{neron} und \cite[Figure IV.4.4]{silverman2}} 
 \end{table}
-Für generaueres zu Tates Algorithmus siehe
+Für genaueres zu Tates Algorithmus siehe
 \cite[Chapter IV.9]{silverman2},
 \cite[Chapter 1.5]{neron} und \cite{tate}.
+Ein analoger Algorithmus, der auch den Fall von Dedekindringen mit
+nicht perfekten Restklassenkörpern abdeckt, ist in \cite{nonperfect}
+zu finden.
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "neron_models"
+%%% End:
