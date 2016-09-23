@@ -142,16 +142,18 @@ werden.
     von nur einem Element $f_1$ erzeugt wird.
     
     $\O_{X,x}$ ist $R$-Algebra über den induzierten lokalen
-    Ringhomomorphism $\pi^\#\colon R_\p\to\O_{X,x}$.
+    Homomorphismus $\pi^\#\colon R_\p\to\O_{X,x}$.
     Sei $\phi^\#\colon\O_{X,x}\to R_\p$ der induzierte lokale
-    Ringhomomorphismus zu $\phi$ auf den Halmen, wobei
-    $\phi^\#(\m_{X,x})=\p$ gelten muss, da $\pi^\#\circ\phi^\#(\p)=\p$.
+    Ringhomomorphismus zu $\phi$ auf den Halmen. Für diesen muss
+    $\phi^\#(\m_{X,x})=\p$ gelten, denn aus
+    $\p=(\pi\circ\phi)^\#(p)=\phi^\#\circ\pi^\#(\p)$ folgt
+    $\p\subset\phi^\#(\m_{X,x})$ und aus der Lokalität folgt
+    $\p\supset\phi^\#(\m_{X,x})$.
     
     Wir werden zeigen, dass es ein Element
     $t\in\pi^\#(\p)\setminus\m_{X,x}^2$ gibt und
     daraus die gewünschte Dimension von $\m_{X_\p,x}/\m_{X_\p,x}^2$
     bzw. die Regularität von $X_\p$ in $x$ folgern.
-
     Angenommen, es gelte $\pi^\#(\p)\subset\m_{X,x}^2$.
     Mit $\pi\circ\phi=\Id_{\Spec(R)}$ erhalten wir die Abschätzung
     \begin{gather*}
@@ -164,7 +166,7 @@ werden.
     Dies ist ein Widerspruch, da $\p\subset R_\p$ Maximalideal eines
     diskreten Bewertungsringes ist und deshalb wegen Regularität von
     $R_\p$ gelten muss $\p/\p^2\neq 0$.
-    Also gilt $\pi^\#(\p)\not\subset\m_{X,x}^2$.
+    Also haben wir $\pi^\#(\p)\not\subset\m_{X,x}^2$ gezeigt.
 
     Nach \autoref{eq:stalkdimension} gilt
     $\dim\O_{X,x}=\dim R_\p+\dim\O_{X_\p,x}=2$ und $X$ ist nach
@@ -179,27 +181,30 @@ werden.
     \eqref{eq:maximalideal} bedeutet für $t$, dass es $\alpha_1,
     \alpha_2\in\O_{X,x}$ gibt, so dass
     \begin{gather*}
-      t = \alpha_1 f_1 + \alpha_2 f_2 \mod \m_{X,x}^2
+      0 \neq t = \alpha_1 f_1 + \alpha_2 f_2 \mod \m_{X,x}^2
     \end{gather*}
     Da $t\not\in\m_{X,x}^2$, muss mindestens einer der Koeffizienten
-    in $\O_{X,x}\setminus\m_{X,x}=\O_{X,x}^\times$ liegen, also einen
-    Einheit sein. \OE{} $\alpha_2\in\O_{X,x}^\times$, dann können wir
-    umschreiben
+    $\alpha_1,\alpha_2$ in $\O_{X,x}\setminus\m_{X,x}=\O_{X,x}^\times$
+    liegen, also ein Einheit sein. Ohne Einschränkung sei
+    $\alpha_2\in\O_{X,x}^\times$. Dann können wir nach $f_2$ wie folgt
+    auflösen
     \begin{gather*}
-      f_2 = \frac{1}{\alpha_2}t + \frac{\alpha_1}{\alpha_2}f_1 
+      f_2 = {\alpha_2}^{-1}t + {\alpha_1}{\alpha_2}^{-1}f_1 
     \end{gather*}
-    und aus \eqref{eq:maximalideal} wird
+    und aus \eqref{eq:maximalideal} wird die neue Gleichung
     \begin{gather}\label{eq:maximalidealneu}
       \m_{X,x} = t\O_{X,x} + f_1\O_{X,x} + \m_{X,x}^2
     \end{gather}
-
     Für den lokalen Ring $\O_{X_\p,x}$ von $x$ in der generischen
     Faser $X_\p = X\times_R (R/\p)$ gilt
     \begin{align*}
       \O_{X_\p,x} &= \O_{X,x}/\pi^\#(\p)\\
       \m_{X_\p,x} &= \m_{X,x}/\pi^\#(\p)
                     \overset{\eqref{eq:maximalidealneu}}{=}
-                    \bar f_1\O_{X_\p,x} + \m_{X_\p,x}^2
+                    \bar t\O_{X_\p,x} + \bar f_1\O_{X_\p,x} +
+                    \m_{X_\p,x}^2
+                    \overset{t\in\pi^\#(\p)}{=}
+                    \bar f_1\O_{X_\p,x} + \m_{X_\p,x}^2 
     \end{align*}
     Wir sehen, $\m_{X_\p,x}$ ist von $\m_{X_\p,x}^2$ und einem Element
     erzeugt, was $\O_{X_\p,x}$ zu einem regulären Ring der Dimension~1
@@ -213,8 +218,8 @@ werden.
   mit perfekten Restklassenkörpern,
   $\K=\Quot(R)$,
   $X$ eine arithmetische Fläche,
-  $X^0$ offenes Unterschema der glatten Punkte,
-  $X_\K/\K$ generische Faser.
+  $X^0$ offenes Unterschema der glatten Punkte und
+  $X_\K$ generische Faser von $X$.
   Dann gilt
   \begin{gather*}
     X_\K(\K)=X(R)=X^0(R)
@@ -239,8 +244,8 @@ werden.
   % \end{gather*}
   \begin{proof}
     Die erste Gleichheit ist allein eine Anwendung des
-    Bewertungskriteriums für Eigentlichkeit auf das projektive (also
-    eigentliche) Schema $X$.
+    Bewertungskriteriums für Eigentlichkeit auf das projektive, also
+    eigentliche Schema $X$.
     % \begin{enumerate}[label=(\roman*)]
     % \item
     %   Die Einschränkung von $\Hom_R(\Spec(R),X)=X(R)$ auf 
@@ -277,11 +282,11 @@ werden.
     %   Einschränkungsabbildung gegeben und es gilt
     %   $X(R)=\Hom_R(R,X)\cong\Hom_\K(\K,X_\K)=X_\K(\K)$.
     % \item
-    Da $X^0\subset X$, gibt es eine natürliche Inklusion
+    Wegen $X^0\subset X$ gibt es eine natürliche Inklusion
     $\circ \text{incl}\colon X^0(R)\hookrightarrow X(R)$.
     Jetzt gilt es zu zeigen, dass im regulären Fall das Bild jedes
-    Schnitts $\phi\in X(R)$ in $X^0$ liegt (also nur glatte Punkte
-    enthält). Dann ist die Inklusion ein Isomorphismus.
+    Schnitts $\phi\in X(R)$ in $X^0$ liegt bzw. nur glatte Punkte
+    enthält. Dann ist die Inklusion ein Isomorphismus.
     
     Nach \ref{thm:arithflschnittbilderglatt} enthält das Bild
     $\phi(\Spec(R))$ eines Schnitts $\phi\in X(R)$ nur reguläre
@@ -300,26 +305,26 @@ werden.
 % -----
 
 \section{Minimale Modelle}\label{chap:minmodelle}
+In diesem Abschnitt sei $R$ immer ein Dedekindring mit perfekten
+Restklassenkörpern, $\K$ sein Quotientenkörper und $C_\K$ eine
+reguläre, projektive Kurve über $\K$.
+
 Eigentliche Modelle können für elliptische Kurven minimal
-bzgl. birationaler Morphismen gewählt werden, wie wir in diesem
+bezüglich birationaler Morphismen gewählt werden, wie wir in diesem
 Abschnitt zeigen werden. Aus der Konstruktion wird auch ersichtlich,
 dass der Algorithmus aus \ref{bem:konstruktioneigmodell} bereits ein
 minimales Modell liefert.
-
 Ein solches minimales Modell ist die Grundlage für unseren
-Existenzbeweis des Néron-Modells, welches genau der glatte Teil des
-minimalen Modells ist.
+Existenzbeweis des Néron-Modells, welches genau dessen glatter Teil
+ist.
 
 \begin{Definition}
-  Sei $R$ Dedekindring mit perfekten Restklassenkörpern,
-  $\K=\Quot(R)$,
-  $C_\K$ reguläre, projektive Kurve über $\K$.
   Ein minimales eigentliches Modell $X_{\text{min}}$ für $C_\K$ über
   $R$ (kurz: minimales Modell von $C_\K$ über $R$) ist ein
-  eigentliches $R$-Modell von $C_\K$, das folgende
-  Minimalitätseigenschaft erfüllt:
+  eigentliches $R$-Modell von $C_\K$, das folgende universelle
+  Minimalitätseigenschaft erfüllt
   \begin{quote}
-    Für jedes andere eigentliche Modell $X$ von
+    Für jedes weitere eigentliche Modell $X$ von
     $C_\K$ über $R$ und für jeden $\K$-Isomorphismus $\phi_\K$ der
     generischen Fasern ist die nach \ref{thm:erwrrational}
     induzierte $R$-birationale Abbildung $\phi\colon X\dra
@@ -347,16 +352,14 @@ minimalen Modells ist.
 % \end{Definition}
 
 \begin{Satz}\label{thm:eigminmodell}
-  Seien $R$, $\K$, $C_\K$ wie oben.
   Ein minimales Modell $X_{\text{min}}$ von $C_\K$ über $R$ hat
-  folgende Eigenschaften:
+  folgende Eigenschaften
   \begin{enumerate}[label=(\roman*)]
   \item $X_{\text{min}}$ ist eindeutig bis auf eindeutige Isomorphie.
   \item\optcite[Proposition IV.4.6]{silverman2}
-    Für ein minimales Modell $X_{\text{min}}$ von $C_\K$ über $R$
-    gilt, dass jeder $\K$"=Automorphismus von $C_\K$ sich zu
-    einem eindeutigen $R$-Automorphismus von $X_{\text{min}}$
-    erweitert, der glatte Punkte auf glatte Punkte abbildet.
+    Jeder $\K$"=Automorphismus von $C_\K$ erweitert sich eindeutig zu
+    einem $R$-Automorphismus von $X_{\text{min}}$, der glatte Punkte
+    auf glatte Punkte abbildet.
   \item\optcite[Beweis von Proposition IV.6.10]{silverman2}
     Minimale Modelle sind wie folgt stabil unter Basiswechsel:
     Sei $Y$ glattes $R$-Schema, $x\in Y$ und der Halm $R'=\O_{Y,x}$ in
@@ -399,13 +402,13 @@ minimalen Modells ist.
       
       $E\times_R R'$ ist glattes Unterschema von
       $X_{\text{min}}\times_R R'$, da glatt stabil unter Basiswechsel
-      ist. Nachdem $Y$ glatt ist, ist ein Punkt in
-      $X_{\text{min}}\times_R Y$ und insbesondere in
-      $X_{\text{min}}\times_R R'\subset
-      X_{\text{min}}\times_R Y$ genau dann glatt, wenn seine
-      Projektion auf $X_{\text{min}}$ glatt ist, also wenn sie in $E$
-      liegt. Damit ist $E\times_R R'$ das Unterschema aller glatten
-      Punkte in $X_{\text{min}}\times_R R'$.
+      ist. Nachdem $Y$ glatt ist, ist ein Punkt 
+      $X_{\text{min}}\times_R Y$ und insbesondere im Unterschema
+      ${X_{\text{min}}\times_R R'}\subset {X_{\text{min}}\times_R Y}$
+      genau dann glatt, wenn seine Projektion auf $X_{\text{min}}$
+      glatt ist, also wenn sie in $E$ liegt. Damit ist $E\times_R R'$
+      das Unterschema aller glatten Punkte in
+      ${X_{\text{min}}\times_R R'}$.
     \end{enumerate}
   \end{proof}
 \end{Satz}
@@ -422,30 +425,31 @@ minimalen Modells ist.
     Genutzt wird hierbei, dass die Existenz eines minimalen Modells
     äquivalent dazu ist, dass folgende Bedingungen erfüllt sind:
     \begin{enumerate}[label=(\alph*)]
-    \item Es existiert ein \emph{relativ minimales Modell}, d.\,h. ein
-      $R$-Modell mit der abgeschwächten Minimalitätseigenschaft:
+    \item Es existiert ein \emph{relativ minimales Modell}, das heißt
+      ein $R$-Modell mit der abgeschwächten Minimalitätseigenschaft:
       Jeder birationale Morphismus in ein anderes $R$-Modell ist
       Isomorphismus.
     \item Alle relativ minimalen Modelle sind isomorph, es gibt also
-      ein eindeutiges relativ minimales Modell.
+      ein \emph{eindeutiges} relativ minimales Modell.
     \end{enumerate}
     Relative Minimalität ist nach \cite[Theorem 9.2.2]{liu} äquivalent
     dazu, dass das Modell keine außerordentlichen Divisoren besitzt,
-    also keine integralen, zusammenziehbaren Kurven als Teilmengen
+    also keine integeren, zusammenziehbaren Kurven als Teilmengen
     hat.
-    Außerordentliche Divisoren kann man u.\,a. mit Castelnuovos
+    Außerordentliche Divisoren kann man unter anderem mit Castelnuovos
     Kriterium \cite[Theorem 9.3.8]{liu} identifizieren und es gibt nur
     eine endliche Anzahl an Fasern, die welche enthalten nach
     \cite[Lemma 9.3.17]{liu}.
 
-    Nach \cite[Proposition 9.3.19]{liu} ist es nun möglich, die
-    zusammenziehbaren Divisoren in endlich vielen Schritten
-    nacheinander zusammenzuziehen zu einem dann relativ minimalen
-    Modell.
+    Wie in \cite[Proposition 9.3.19]{liu} gezeigt wird, ist es in
+    endlich vielen Schritten möglich, die zusammenziehbaren Divisoren
+    nacheinander zu einem relativ minimalen Modell zusammenzuziehen,
+    womit Bedingung (a) erfüllt ist.
 
-    Die zweite Bedingung kann wie in \cite[Theorem 9.3.21]{liu}
-    beschrieben durch Widerspruchsbeweis mithilfe der Annahme zum
-    Genus der generischen Faser gezeigt werden.
+    Bedingung (b) mit der Eindeutigkeit dieses Modells kann wie in
+    \cite[Theorem 9.3.21]{liu} beschrieben durch Widerspruchsbeweis
+    mithilfe der Bedingung an den Genus der generischen Faser gezeigt
+    werden.
     Wir haben also durch das Zusammenziehen bereits ein minimales
     Modell konstruiert.
   \end{proof}
