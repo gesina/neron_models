@@ -38,7 +38,7 @@ elliptische Kurven gezeigt wird.
   reguläres $R$-Schema von Dimension~2, also relativer Dimension~1 über
   $R$, falls $R$ kein Körper ist.
   Die generische Faser $X_\K$ ist integere, projektive Kurve über $\K$
-  und jede spezielle Faser $X_s$ über einem geschlossenen Punkt
+  und jede spezielle Faser $X_s$ über einem abgeschlossenen Punkt
   $s\in\Spec(R)$ ist projektive Kurve über $\k(s)$ nach \cite[Lemma
   8.3.3]{liu}.
 \end{Definition}
@@ -96,7 +96,7 @@ elliptische Kurven gezeigt wird.
   \cite[Proposition 4.1.22]{liu}.
   
   Die $Z_{i}'\to Z_{i}$ sind Blow-ups entlang des singulären Teils von
-  $Z_{i}$, der in unserem Fall jeweils geschlossen ist.
+  $Z_{i}$, der in unserem Fall jeweils abgeschlossen ist.
   Zu Blow-Ups siehe auch
   \cite[Chapter 8.1]{liu} oder \cite[Chapter 13.19]{wedhorn}.
   Wichtig hier ist, dass Blow-Ups außerhalb des aufgeblähten Bereichs
@@ -124,13 +124,13 @@ werden.
   Dann ist $X_\p$ regulär in $\phi(\p)$.
   \begin{proof}
     Nachdem die generische Faser einer arithmetischen Fläche bereits
-    glatt, also regulär ist, sei $\p\subset\Spec(R)$ ein geschlossener
+    glatt, also regulär ist, sei $\p\subset\Spec(R)$ ein abgeschlossener
     Punkt.
     Sei $x=\phi(\p)\in X_\p\subset X$ und $\m_{X_\p,x}\subset\O_{X_\p,x}$
     das Maximalideal des Halmes von $x$ in $X_\p$,
     analog $\m_{X,x}\subset\O_{X,x}$.
     Der Punkt $x$ ist als Bildpunkt des Schnitts
-    $\phi|_{\Spec(\k(\p))}$ geschlossen in $X_\p$.
+    $\phi|_{\Spec(\k(\p))}$ abgeschlossen in $X_\p$.
     Daher gilt wegen \cite[Corollary 2.5.24]{liu}
     \begin{gather*}
       \dim\O_{X_\p,x}=\dim X_\p=1\;,
@@ -363,7 +363,7 @@ ist.
     auf glatte Punkte abbildet.
   \item\optcite[Beweis von Proposition IV.6.10]{silverman2}
     Minimale Modelle sind wie folgt stabil unter Basiswechsel:
-    Sei $Y$ glattes $R$-Schema, $x\in Y$ und der Halm $R'=\O_{Y,x}$ in
+    Sei $Y$ glattes $R$-Schema, ${x\in Y}$ und der Halm $R'=\O_{Y,x}$ in
     $x$  ein diskreter Bewertungsring mit $\K'\coloneqq\Quot(R')$.
     Dann ist das minimale Modell von $C_\K\times_\K\K'$ genau
     $X_{\text{min}}\times_R R'$.
@@ -421,7 +421,7 @@ ist.
     Aus \ref{thm:exarithfl} wissen wir, dass wir zu einer elliptischen
     Kurve $E_\K$ über $\K$ zumindest eine arithmetische Fläche finden.
     \cite[Theorem 9.3.21]{liu} besagt, dass allgemein für
-    arithmetische Flächen mit generischer Faser vom Genus größer~0 ein
+    arithmetische Flächen mit generischer Faser vom Geschlecht größer~0 ein
     minimales Modell existiert.
     Genutzt wird hierbei, dass die Existenz eines minimalen Modells
     äquivalent dazu ist, dass folgende Bedingungen erfüllt sind:
@@ -449,8 +449,8 @@ ist.
 
     Bedingung (b) mit der Eindeutigkeit dieses Modells kann wie in
     \cite[Theorem 9.3.21]{liu} beschrieben durch Widerspruchsbeweis
-    mithilfe der Bedingung an den Genus der generischen Faser gezeigt
-    werden.
+    mithilfe der Bedingung an das Geschlecht der generischen Faser
+    gezeigt werden.
     Wir haben also durch das Zusammenziehen bereits ein minimales
     Modell konstruiert.
   \end{proof}

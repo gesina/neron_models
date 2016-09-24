@@ -5,12 +5,11 @@ Im Folgenden sei $S$ ein Schema.
 Zuerst werden wir in diesem Kapitel Gruppenschemata einführen, also
 $S$-Schemata, deren Schnittfunktor Gruppen liefert. Als Spezialfälle
 werden abelsche Schemata und abelsche Varietäten aufgeführt. Ein
-wichtiges Beispiel für letzteres sind gerade elliptische Kurven.
+wichtiges Beispiel für letzteres sind elliptische Kurven.
 
 Danach werden wir sehen, dass sich eigentliche Gruppenschemata
-gutartig bzgl. rationalen Abbildungen verhalten,
-das heißt bezüglich Morphismen, die nur auf offenen dichten Teilmengen
-definiert sind.
+gutartig bezüglich Morphismen verhalten, die nur auf offenen dichten
+Teilmengen definiert sind (sogenannte rationale Funktionen).
 
 \begin{Definition}[$S$"=Gruppenschema]\label{def:gruppenschema}
   Ein \emph{Gruppenschema über $S$} oder \emph{$S$-Gruppenschema} ist ein
@@ -23,9 +22,30 @@ definiert sind.
     i\colon G &\longto G    
     &&\text{(Inverses)}
   \end{align*}
-  für die folgende Diagramme kommutieren
-
-  \begin{tabular}{>{\itshape(}l<{)}l}
+  für die folgende Diagramme kommutieren\\[1em]
+  % \begin{tabular*}{\linewidth}{c@{\extracolsep{\fill}}c@{\extracolsep{\fill}}c}
+  %   \itshape~(Assoziativität) & \itshape(Neutrales Element)~~ & \itshape(Inverses)~~~\\[1em]
+  %   \begin{tikzcd}
+  %     G\times_S G\times_S G 
+  %     \arrow[r, "{(\mu,\Id)}"] \arrow[d, "{(\Id,\mu)}"]
+  %     & G\times_S G \arrow[d, "{\mu}"] \\
+  %     G\times_S G \arrow[r, "\mu"]
+  %     & G
+  %   \end{tikzcd}
+  %   &\begin{tikzcd}
+  %     G \arrow[r, "{(\pi,\Id)}"] \arrow[d, "{\Id}"]
+  %     & S\times_S G \arrow[d, "{\epsilon\times\Id}"] \\
+  %     G \arrow[from=r, "\mu"]
+  %     & G\times_S G
+  %   \end{tikzcd}
+  %   &\begin{tikzcd}
+  %     G \arrow[r, "{(i,\Id)}"] \arrow[d, "{\pi}"]
+  %     & G\times_S G \arrow[d, "{\mu}"] \\
+  %     S \arrow[r, "\epsilon"]
+  %     & G
+  %   \end{tikzcd}
+  % \end{tabular*}
+  \begin{tabular}{>{\itshape(}l<{)}r}
     Assoziativität
     &\begin{tikzcd}
       G\times_S G\times_S G 
@@ -33,7 +53,8 @@ definiert sind.
       & G\times_S G \arrow[d, "{\mu}"] \\
       G\times_S G \arrow[r, "\mu"]
       & G
-    \end{tikzcd}\\
+    \end{tikzcd}
+    \\[3.5em]
     Neutrales Element
     &\begin{tikzcd}
       G \arrow[r, "{(\pi,\Id)}"] \arrow[d, "{\Id}"]
@@ -41,13 +62,14 @@ definiert sind.
       G \arrow[from=r, "\mu"]
       & G\times_S G
     \end{tikzcd}
-    und
-    \begin{tikzcd}
-      G \arrow[r, "{(\Id,\pi)}"] \arrow[d, "\Id"]
-      & G\times_S S \arrow[d, "{\epsilon\times\Id}"] \\
-      G \arrow[from=r, "\mu"]
-      & G\times_S G
-    \end{tikzcd}\\
+    % und
+    % \begin{tikzcd}
+    %   G \arrow[r, "{(\Id,\pi)}"] \arrow[d, "\Id"]
+    %   & G\times_S S \arrow[d, "{\epsilon\times\Id}"] \\
+    %   G \arrow[from=r, "\mu"]
+    %   & G\times_S G
+    % \end{tikzcd}
+    \\[3.5em]
     Inverses
     &\begin{tikzcd}
       G \arrow[r, "{(i,\Id)}"] \arrow[d, "{\pi}"]
@@ -55,23 +77,23 @@ definiert sind.
       S \arrow[r, "\epsilon"]
       & G
     \end{tikzcd}
-    und
-    \begin{tikzcd}
-      G \arrow[r, "{(\Id,i)}"] \arrow[d, "{\pi}"]
-      & G\times_S G \arrow[d, "{\mu}"] \\
-      S \arrow[r, "\epsilon"]
-      & G
-    \end{tikzcd}
+    % und
+    % \begin{tikzcd}
+    %   G \arrow[r, "{(\Id,i)}"] \arrow[d, "{\pi}"]
+    %   & G\times_S G \arrow[d, "{\mu}"] \\
+    %   S \arrow[r, "\epsilon"]
+    %   & G
+    % \end{tikzcd}
   \end{tabular}
 \end{Definition}
-Die Folgende Äquivalenz zeigt, wo der Gruppenbegriff eines
+Die folgende Äquivalenz zeigt, wo der Gruppenbegriff eines
 Gruppenschemas zum tragen kommt:
 \begin{Bemerkung}
-  Die obige Definition ist äquivalent dazu, dass die $T$-wertigen Punkte
-  $G(T)=\Hom_S(T,G)$ eine Gruppenstruktur tragen, die funktoriell in
-  $T$ ist für $S$-Schemata $T$.\optcite[Chapter (4.15)]{wedhorn}
+  Die obige Definition ist äquivalent dazu, dass für $S$-Schemata $T$
+  die $T$-wertigen Punkte $G(T)=\Hom_S(T,G)$ eine Gruppenstruktur
+  tragen, die funktoriell in $T$ ist.\optcite[Chapter (4.15)]{wedhorn}
   In anderen Worten der Schnittfunktor faktorisiert über den
-  Vergissfunktor
+  Vergissfunktor:
   \begin{align*}
     \Sch &\longto \Groups \longto \text{(Sets)}\\
     T &\longmapsto G(T)
@@ -114,6 +136,7 @@ definieren.
   Gruppenhomomorphismen sind für alle $S$-Schemata $T$.
   In anderen Worten
   \begin{gather*}
+    \SwapAboveDisplaySkip
     f\circ\mu_G = \mu_H\circ(f\times_S f)
   \end{gather*}
 \end{Definition}
@@ -122,8 +145,8 @@ definieren.
 \begin{Definition}[Untergruppenschema]
   \optcite[Definition 4.45]{wedhorn}
   Sei $G$ ein $S$"=Gruppenschema.
-  Ein $S$"=Untergruppenschema von $G$ ist ein geschlossenes
-  $S$-Unterschema von $G$, dessen geschlossene Immersion ein
+  Ein $S$"=Untergruppenschema von $G$ ist ein abgeschlossenes
+  $S$-Unterschema von $G$, dessen abgeschlossene Immersion ein
   Homomorphismus von Gruppenschemata ist.
 \end{Definition}
 

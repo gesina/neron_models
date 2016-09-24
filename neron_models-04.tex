@@ -160,7 +160,7 @@ glatten Teil eines Weierstraßmodells brauchen werden.
   \begin{proof}
     \begin{description}
     \item[projektiv] $W$ ist per Konstruktion projektiv. Als
-      geschlossenes Unterschema des quasikompakten, noetherschen Raums
+      abgeschlossenes Unterschema des quasikompakten, noetherschen Raums
       $\P_R^n$ ist es quasikompakt und noethersch.
     \item[integer]
       $W=V_+(F)$ ist genau dann irreduzibel, wenn $F\in R[X,Y,Z]$
@@ -200,9 +200,9 @@ glatten Teil eines Weierstraßmodells brauchen werden.
       Nachdem $W$ integer ist, hat es einen eindeutigen generischen
       Punkt $\eta$.
       Angenommen, dieser wird durch die Abbildung, die $W$ zum
-      $R$-Schema macht, auf einen geschlossenen Punkt $\m$ von $\Spec(R)$
+      $R$-Schema macht, auf einen abgeschlossenen Punkt $\m$ von $\Spec(R)$
       geschickt.
-      Dann liegt $\eta$ im geschlossenen Urbild von $\m$ –
+      Dann liegt $\eta$ im abgeschlossenen Urbild von $\m$ –
       aber der Abschluss $\overline{\{\eta\}}=X$ von $\eta$ ist darin
       enthalten. Entsprechend wäre die generische Faser $E_\K$
       leer, was ein Widerspruch ist.
@@ -278,7 +278,7 @@ glatten Teil eines Weierstraßmodells brauchen werden.
   \begin{enumerate}[label=(\alph*)]
   \item $W$ ist genau dann glatt, wenn die spezielle Faser von $W$ glatt
     ist.
-  \item Ist $W$ nicht glatt, so ist der eindeutige, geschlossene,
+  \item Ist $W$ nicht glatt, so ist der eindeutige, abgeschlossene,
     singuläre Punkt $\gamma$ der speziellen Faser der eindeutige
     Punkt, in dem $W$ nicht glatt ist, d.\,h.
     \begin{gather*}
@@ -302,22 +302,22 @@ glatten Teil eines Weierstraßmodells brauchen werden.
       äquivalent zu regulär
       \cite[Remark 6.33]{wedhorn}.
       Schemata lokal endlichen Typs über einem Körper sind genau dann
-      regulär, wenn sie in allen geschlossenen Punkten regulär sind
+      regulär, wenn sie in allen abgeschlossenen Punkten regulär sind
       \cite[Remark 6.25 (3)]{wedhorn}. Insbesondere sind alle
-      singulären Punkte geschlossen.
+      singulären Punkte abgeschlossen.
 
       $W_\m$ ist als Weierstraßkurve über $k$ ein $k$-Schema
       lokal endlichen Typs, also treffen obige Aussagen zu.
       Nach \cite[Proposition III.1.4]{silverman} ist unter den
-      geschlossenen Punkten von $W_\m$ maximal ein singulärer Punkt
-      $\gamma$. Demnach kann $W_\m$ maximal in einem geschlossenen
+      abgeschlossenen Punkten von $W_\m$ maximal ein singulärer Punkt
+      $\gamma$. Demnach kann $W_\m$ maximal in einem abgeschlossenen
       Punkt $\gamma\in W_\m$ singulär (bzw. nicht glatt) sein.
 
       Angenommen, $W_\m$ habe den singulären Punkt $\gamma$.
-      $W_\m=W\setminus E_\K$ ist als Urbild des geschlossenen Punktes
-      $\m$ von $\Spec(R)$ ein geschlossenes Unterschema von $W$.
-      Also ist der Punkt $\gamma$, der geschlossen in $W_\m$ ist, auch
-      geschlossener Punkt von $W$.
+      $W_\m=W\setminus E_\K$ ist als Urbild des abgeschlossenen Punktes
+      $\m$ von $\Spec(R)$ ein abgeschlossenes Unterschema von $W$.
+      Also ist der Punkt $\gamma$, der abgeschlossen in $W_\m$ ist, auch
+      abgeschlossener Punkt von $W$.
       
       Das Unterschema $W^0=W\setminus\gamma$ ist dementsprechend offen.
       $W^0$ ist irreduzibel, da der Abschluss $\overline{W^0}=W$ in
@@ -373,13 +373,11 @@ geliefert, da die Aussage nur ein Spezialfall von
   (ebenfalls $R$-Modell von $E_\K$ nach \ref{thm:weierstrassglatt}).
   $W^0$ ist ein glattes $R$"=Gruppenschema
   mit Addition, Inversenbildung und neutralem Schnitt
-  \begin{gather*}
-    \mu_0\colon W^0\times_R W^0 \longto W^0
-    \qquad
-    i_0\colon W^0\longto W^0
-    \qquad
-    \epsilon_0\colon R\longto W^0
-  \end{gather*}
+  \begin{align*}
+    \mu_0\colon W^0\times_R W^0 &\longto W^0
+    &i_0\colon W^0&\longto W^0
+    &\epsilon_0\colon R&\longto W^0
+  \end{align*}
   welche die Gruppenstruktur (Addition $\mu$, Inversenbildung $i$ und
   neutraler Schnitt $\epsilon$)
   der abelschen Varietät $E_\K$ erweitern.
@@ -491,8 +489,8 @@ Weierstraßmodell mit der induzierten Gruppenstruktur.
   $R$.
   \begin{proof}
     Nach \ref{thm:neronmodelllokal} müssen wir nur prüfen, ob die 
-    $W\times_R R_s$ Néron-Modelle von $E_\K$ über $R_s$ sind für
-    geschlossene Punkte $s\in\Spec(R)$.
+    $W\times_R R_s$ für abgeschlossene Punkte $s\in\Spec(R)$
+    Néron-Modelle von $E_\K$ über $R_s$ sind.
     Ist $W$ glatt, so ist auch $W\times_R R_s$ glattes
     Weierstraßmodell von $E_\K$ über $R_s$, da alles stabil unter
     Basiswechsel ist.

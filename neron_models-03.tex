@@ -13,9 +13,8 @@ Zuletzt werfen wir noch einen kurzen Blick auf Néron-Modelle
 allgemeiner abelscher Varietäten.
 
 \section{Definition}
-Wie bereits beschrieben ist das Néron-Modell eines
-$\K$-Gruppenschemas – falls es existiert – eine besonders
-gutartige (genauer: glatte, separierte) Erweiterung der
+Das Néron-Modell eines $\K$-Gruppenschemas ist – falls es existiert –
+eine besonders gutartige (genauer: glatte, separierte) Erweiterung der
 Gruppenstruktur auf ein $R$-Gruppenschema, das
 minimal mit dieser Eigenschaft gewählt ist.
 
@@ -33,7 +32,6 @@ einbezieht.
   Ein Néron-Modell von $X_\K$ über $R$ ist ein glattes, separiertes
   $R$-Modell $X$ von $X_\K$ mit der \NAbbEig
   \begin{quote}
-    \itshape
     Für jedes weitere glatte $R$-Schema $Y$ wird jeder
     $\K$-Morphismus $Y_\K\to X_\K$ auf den generischen Fasern durch
     einen eindeutigen $R$-Morphismus $Y\to X$ erweitert.
@@ -43,26 +41,26 @@ einbezieht.
 \end{Definition}
 
 % ERWEITERUNG DER GRUPPENSCHEMASTRUKTUR
-\begin{Bemerkung}\label{thm:gruppenschemaerweiterung}
+Die Motivation als minimale Erweiterung von Gruppenschemata ist wie
+folgt gerechtfertigt:
+\begin{Lemma}\label{thm:gruppenschemaerweiterung}
   \optcite[1.2, Proposition 6]{neron}
-  Die Motivation als minimale Erweiterung von Gruppenschemata ist wie
-  folgt gerechtfertigt:
   Sei $X$ Néron-Modell seiner generischen Faser $X_\K$ über $R$. Ist
   $X_\K$ ein $\K$"=Gruppenschema, so wird dessen $\K$"=Gruppenstruktur
   durch die \NAbbEig eindeutig auf eine $S$"=Gruppenschemastruktur auf
   $X$ erweitert.
   \begin{proof}[Beweisskizze]
     Die Gruppenverknüpfung $\mu_\K\colon X_\K\times_\K X_\K\to X_\K$
-    liftet wegen der \NAbbEig zu einem Morphismus
+    erweitert sich wegen der \NAbbEig zu einem Morphismus
     $\mu\colon X\times_R X\to X$, da $X\times_R X$ wieder glatt ist.
-    Genauso liften das Inverse, der Einheitsschnitt und wegen der
-    Eindeutigkeit die Diagramme aus \ref{def:gruppenschema}, was $\mu$
-    zur Gruppenverknüpfung auf $X$ macht.
+    Genauso liften das Inverse, der Einheitsschnitt und, wegen der
+    Eindeutigkeit, die Diagramme aus \ref{def:gruppenschema}, was
+    $\mu$ zur Gruppenverknüpfung auf $X$ macht.
   \end{proof}
-\end{Bemerkung}
+\end{Lemma}
 
 % NÉRON-MODELL K-GRUPPENSCHEMA
-\begin{Bemerkung}\label{nerongruppenschemaglatt}
+\begin{Lemma}\label{nerongruppenschemaglatt}
   \optcite[1.2, Remark 7]{neron} 
   Ist $X_\K$ ein $\K$"=Gruppenschema und $X$ ein
   glattes $R$-Modell und Gruppenschema von $X_\K$, das die
@@ -72,27 +70,27 @@ einbezieht.
     zeigen, dass $X_\K$ und $X$ separiert sind.
     
     Ein Gruppenschema $X$ ist genau dann separiert, wenn der
-    Einheitsschnitt $\epsilon\colon\Spec(R)\to X$ eine geschlossene
+    Einheitsschnitt ${\epsilon\colon\Spec(R)\to X}$ eine abgeschlossene
     Immersion ist nach
     \cite[Lemma 38.6.1]{stacksproject} oder \cite[7.1, Lemma 2]{neron}.
-    $\K$-Gruppenschemata sind entsprechend immer separiert
+    $\K$"=Gruppenschemata sind entsprechend immer separiert
     \cite[Lemma 38.7.3]{stacksproject}. 
 
     Sei wegen \ref{thm:neronmodelllokal} ohne Einschränkung $R$ diskreter
     Bewertungsring mit Restklassenkörper $k$.    
-    Wir werden zeigen, dass (topologisch)
+    Wir werden zeigen, dass topologisch
     $\im(\epsilon)=\overline{\im(\epsilon_\K)}$,
     also dass $\overline{\im(\epsilon_\K)}$ aus genau dem Punkt
     $\epsilon(\Spec\K)$ in der generischen Faser und dem Punkt
     $\epsilon(\Spec k)$ in der speziellen Faser besteht.
-    Dann ist $\im(\epsilon)$ (topologisch) geschlossen in $X$ und der
-    Schnitt $\epsilon$ demnach geschlossene Immersion, da er
+    Dann ist $\im(\epsilon)$ topologisch abgeschlossen in $X$ und der
+    Schnitt $\epsilon$ demnach abgeschlossene Immersion, da er
     wegen der Glattheit von $X$ bereits Homeomorphismus und als
     Schnitt surjektiv auf den Halmen ist.
     
     Auf der generischen Faser gilt
     $\overline{\im(\epsilon_\K)}\cap X_\K=\im(\epsilon_\K)$,
-    da $\epsilon_\K$ geschlossene Immersion ist.
+    da $\epsilon_\K$ abgeschlossene Immersion ist.
     Außerdem stimmen hier $\im(\epsilon_\K)=\{\epsilon_\K(\Spec\K)\}$
     und $\im(\epsilon)\cap X_\K$ wegen der \NAbbEig punktweise
     überein.
@@ -154,10 +152,10 @@ einbezieht.
     weshalb $\pi^\#\colon R\hookrightarrow A$ gelten muss.
     
     Die Mengen $\overline{\im(\epsilon_\K)}=\im(\epsilon_\K)$ stimmen
-    also überein, insbesondere ist $\im(\epsilon_\K)$ geschlossene
+    also überein, insbesondere ist $\im(\epsilon_\K)$ abgeschlossene
     Immersion.
   \end{proof}
-\end{Bemerkung}
+\end{Lemma}
 
 % Elliptische Kurven sind abelsche Varietäten und nach
 % \ref{thm:exneronmodellabvarietaet} hat somit jede elliptische
@@ -167,16 +165,14 @@ einbezieht.
 
 \begin{Bemerkung}[Spezialfall elliptische Kurven]
   \label{def:neronmodellellkurve}
-  Sei $E_\K$ eine elliptische Kurve (d.\,h. ein
-  glattes, projektives, insb. separiertes, integeres
-  $\K$-Schema endlichen Typs vom Geschlecht~1).
-  
+  Sei $E_\K$ eine elliptische Kurve, das heißt ein
+  glattes, projektives, insbesondere separiertes, integeres
+  $\K$-Schema endlichen Typs vom Geschlecht~1.
   Dann ist ein Néron-Modell von $E_\K$ nach
   \ref{thm:gruppenschemaerweiterung} und \ref{nerongruppenschemaglatt}
   ein glattes $R$-Modell und Gruppenschema $E/R$ mit der
   \NAbbEig:
   \begin{quote}
-    \itshape
     Für jedes weitere glatte $R$-Schema $Y$ wird jeder
     $\K$-Morphismus $\phi_\K\colon Y_\K\to E_\K$ auf den generischen
     Fasern durch einen eindeutigen $R$-Morphismus $Y\to E$ erweitert.
@@ -191,7 +187,7 @@ einbezieht.
 
   Im Fall eines diskreten Bewertungsrings $R$ ist der generische Punkt
   $(0)$ von $\Spec(R)$ offen, da das Komplement
-  $\Spec(R)\setminus\{(0)\}$ aus nur endlich viele geschlossenen
+  $\Spec(R)\setminus\{(0)\}$ aus nur endlich vielen abgeschlossenen
   Punkten besteht. Entsprechend ist die generische Faser $Y_\K$ jedes
   $R$-Schemas $Y$ offen.
   Ist $Y$ glatt (also insb. flach und reduziert) über $R$, ist $Y_\K$
@@ -258,7 +254,7 @@ Hierbei ist zu beachten, dass sich Néron-Modelle nicht so gutartig
 verhalten, wie es die universelle Eigenschaft vermuten lässt.
 Unter anderem sind sie zwar stabil unter Produktbildung (was wir
 hier nicht brauchen und nicht zeigen werden), allerdings nicht unter
-beliebigem Koprodukt, also Basiswechsel.
+beliebigem Basiswechsel.
 \begin{Satz}
   \optcite[1.2, Proposition 2]{neron}
   \optcite[Proposition IV.5.2]{silverman2}
@@ -377,7 +373,7 @@ Néron-Modellen wie folgt:
   \item $X$ ist Néron-Modell seiner generischen Faser
   \item $X\times_R\Spec(\O_{\Spec(R),s})$ ist Néron-Modell
     seiner generischen Faser über $\O_{R,s}=R_s$ für alle
-    geschlossenen Punkte $s\in\Spec(R)$.
+    abgeschlossenen Punkte $s\in\Spec(R)$.
   \end{enumerate}
   Das heißt man kann ohne Einschränkung davon ausgehen, dass $R$ lokal ist,
   also diskreter Bewertungsring.
@@ -393,7 +389,7 @@ Morphismen auf offene Umgebungen.
 \begin{Lemma}\label{thm:morphismuserweiterung}
   % http://math.stackexchange.com/questions/1259876/extending-a-morphism-of-schemes
   \optcite[Exercise 3.2.4]{liu}
-  Sei $S$ lokal noethersches Schema,
+  Sei $S$ ein lokal noethersches Schema,
   $X$ und $Y$ $S$-Schemata,
   $X$ endlichen Typs.
   Seien weiterhin $y\in Y$ und 
@@ -403,7 +399,7 @@ Morphismen auf offene Umgebungen.
   \begin{proof}
     Wir können uns auf den affinen Fall $X=\Spec(B)$ beschränken.
     Denn $\O_{Y,y}$ ist lokal mit Maximalideal $y$, also ist $y$ in
-    jeder Zariski-geschlossenen, nichtleeren Menge von $\Spec\O_{Y,y}$
+    jeder Zariski-abgeschlossenen, nichtleeren Menge von $\Spec\O_{Y,y}$
     enthalten bzw. die einzige offene Umgebung von $y$ in
     $\Spec\O_{Y,y}$ ist $\Spec\O_{Y,y}$ selbst.
     Somit ist das offene Urbild jeder offenen, affinen Umgebung
@@ -465,7 +461,7 @@ Morphismen auf offene Umgebungen.
         R\left[X_0,\dotsc, X_n\right] \arrow[r,"\phi_\gamma"]
         \arrow[d, two heads]
         & A_\gamma\arrow[d]\\
-        B \arrow[r, "\Gamma(f_y)"{swap}]\arrow[ur,"\bar\phi_\gamma"]
+        B \arrow[r, "\Gamma(f_y)"{swap}]\arrow[ur,"\overline\phi_\gamma"]
         & A_y
       \end{tikzcd}
     \end{center}
@@ -579,7 +575,7 @@ Morphismen auf offene Umgebungen.
   disjunkt sind. Wir können also ohne Einschränkung annehmen, dass
   $Y$ integer ist.
   % Sei $f_\K\colon Y_\K\to X_\K$ ein Morphismus der generischen Fasern.
-  Nach Voraussetzung erweitert sich $f_\K$ für einen geschlossenen
+  Nach Voraussetzung erweitert sich $f_\K$ für einen abgeschlossenen
   Punkt $s\in\Spec(R)$ eindeutig zu einem Morphismus
   \begin{gather*}
     f_s\colon Y\times_R\O_{R,s}\to X\times_R\O_{R,s}\;,
@@ -603,7 +599,7 @@ Morphismen auf offene Umgebungen.
   nach \ref{thm:erweindeutig} auf dem Schnitt ihrer
   Definitionsbereiche überein, die zudem ganz $Y$ überdecken
   ($\Spec(R)$ besteht genau aus seinen
-  geschlossen Punkten und dem generischen Punkt, und letzterer ist
+  abgeschlossen Punkten und dem generischen Punkt, und letzterer ist
   in jeder offenen Teilmenge enthalten).
   Daher liefert Verkleben der eindeutigen $u_s$ einen
   eindeutig bestimmten Morphismus $f\colon Y\to X$, der
@@ -667,7 +663,7 @@ abelschen Varietät wieder abelsch ist.
     \item[$A$ isomorph zu $X$:]
       Die \NAbbEig von $X$ liefert zur Identität $\Id_{A_\K}$ einen
       $R$-Morphismus $f\colon A\to X$, der bereits offene Immersion ist
-      \cite[s.][4.3/1 (ii) oder 4.4/1]{neron}.
+      \cite[s.][4.3/1~(ii) oder 4.4/1]{neron}.
       % TODO!! Wieso ist die Erweiterung von id hier offene Immersion?
       Wir werden zeigen, dass das Bild von $f$ ganz $X$ ist, woraus
       wegen Reduziertheit von $X$ bereits folgt, dass $f$ ein
@@ -680,23 +676,23 @@ abelschen Varietät wieder abelsch ist.
       \cite[Proposition 3.24]{wedhorn},
       da die generische Faser $A_\K$ zusammenhängend und $\Spec(R)$
       ein integeres Schema ist.
-      Wir müssen also nur zeigen, dass das Bild von $f$ geschlossen
-      ist, da es dann als offene und geschlossene Teilmenge des
+      Wir müssen also nur zeigen, dass das Bild von $f$ abgeschlossen
+      ist, da es dann als offene und abgeschlossene Teilmenge des
       zusammenhängenden $X$ schon ganz $X$ sein muss.
       $A$ ist nach Voraussetzung eigentlich, weswegen $A\to R$
-      universell geschlossen und insbesondere der Basiswechsel
-      $A\times_R X\to X$ geschlossen ist.
+      universell abgeschlossen und insbesondere der Basiswechsel
+      $A\times_R X\to X$ abgeschlossen ist.
       Nachdem $X$ separiert ist, ist der Graph
-      $\Gamma_f\colon A\to A\times_R X$  und daher das Bild von
+      $\Gamma_f\colon A\to A\times_R X$ und daher das Bild von
       \begin{gather*}
         f\colon A\xrightarrow{\Gamma_f} A\times_R X
         \xrightarrow{f\times_R\Id} X
       \end{gather*}
-      geschlossen in $X$.
+      abgeschlossen in $X$.
     \item[$A$ hat zusammenhängende Fasern:]
       Ohne Einschränkung sei $R$ diskreter Bewertungsring nach
       \ref{thm:neronmodelllokal}.
-      Dann ist nur noch die spezielle Faser über dem geschlossenen
+      Dann ist nur noch die spezielle Faser über dem abgeschlossenen
       Punkt zu überprüfen, die nach \cite[{}5.5.1]{EGAIII-1} zusammenhängend
       ist.
       % ??? –> Zariski's Connectedness Thm/Stein-Faktoriesierung?
@@ -713,7 +709,7 @@ Gruppenschemastruktur abelsch ist.
   Sei $A_\K$ abelsche Varietät über $\K$,
   $X$ ihr Néron-Modell über $R$ und
   $S\subset\Spec(R)$ die Menge des generischen Punkts zusammen mit
-  allen geschlossenen Punkte $s\in\Spec(R)$, über denen $A_\K$ gute
+  allen abgeschlossenen Punkte $s\in\Spec(R)$, über denen $A_\K$ gute
   Reduktion hat (d.\,h. $A_\K$ hat glattes, eigentliches $R_s$-Modell).
   $S$ ist entsprechend offen und dicht in $\Spec(R)$.
   Dann ist $X\times_R S$ abelsches Schema über $S$.
@@ -727,7 +723,7 @@ Gruppenschemastruktur abelsch ist.
     Néron-Modellen über den offenen Teilmengen von $\Spec(R)$
     lassen sie sich zu einem abelschen $S$-Schema verkleben.
 
-    In den geschlossenen Punkten von $S$ hat $A_\K$ nach Definition
+    In den abgeschlossenen Punkten von $S$ hat $A_\K$ nach Definition
     gute Reduktion, welche sich auf eine offene Umgebung erweitern
     lässt.
     % Gute Reduktion in s\in S <=> X\times_S\O_{S,s} eigentlich
@@ -737,13 +733,14 @@ Gruppenschemastruktur abelsch ist.
     % TODO!! Wieso erhält Morphismuserweiterung Eigentlichkeit?
     
     Für den generischen Punkt können wir den schematischen
-    Abschluss $A$ von $A_\K\to\P_\K^n\to\P_R^n$ in $\P_R^n$
-    betrachten
+    Abschluss $A$ des projektiven (s.~\ref{thm:abvarietaetprojektiv})
+    $A_\K$ in $\P_R^n$ betrachten, das heißt das schematische Bild von
+    \begin{gather*}
+      A_\K\hookrightarrow\P_\K^n\to\P_R^n
+    \end{gather*}
     (hier: der Abschluss des Bildes mit reduzierter
     Unterschemastruktur nach \cite[Remark 10.32]{wedhorn}, da $A_\K$
-    reduziert ist),
-    denn $A_\K$ ist als abelsche Varietät projektiv,
-    vgl. \ref{thm:abvarietaetprojektiv}.
+    reduziert ist).
     Dieser ist glatt über dem generischen Punkt von $\Spec(R)$
     und somit auch über einer offenen Umgebung $S'$ dessen.
     Wir erhalten ein glattes, projektives (also eigentliches)
