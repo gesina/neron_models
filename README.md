@@ -6,13 +6,15 @@
 - Chapters: `neron_models-0[1-7].tex` 
   (and notices in abandoned `neron_models-appendix.tex`)
 
-
 ## Timeline
 * to be hand in **before 29/09/2016**
 * shall be printed on **26/09/2016**
 
 ## Compilation
-(tested) Preliminaries: TeX Live 2016
+(tested) Preliminaries: 
+- `TeX Live 2016`
+- font `Charis SIL` installed
+- font `Source Sans Pro` installed
 
 Comment out `\includeonly{…}` in `neron_models.tex` before compiling
 the first time, else you will have undefined references.
@@ -24,4 +26,3 @@ lualatex neron_models.tex
 biber neron_models
 lualatex neron_models.tex
 ```
- 
