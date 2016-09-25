@@ -19,7 +19,7 @@ eingeführt, wo auch die Existenz solcher minimalen Modelle für
 elliptische Kurven gezeigt wird.
 
 \section{Definition}
-\begin{Definition}[arithmetische Fläche]
+\begin{Definition}[Arithmetische Fläche]
   Sei $R$ Dedekindring mit Quotientenkörper $\K$.
   % \optcite[IV.4]{silverman2}
   % Eine arithmetische Fläche $X$ über $R$ ist ein
@@ -34,13 +34,13 @@ elliptische Kurven gezeigt wird.
   % $R$-Schema lokal endlichen Typs bereits excellent.
   % \optcite[Theorem 12.51]{wedhorn}
   \optcite[Definition 8.3.1, 8.3.14]{liu}
-  Eine arithmetische Fläche ist ein projektives, integeres, flaches,
+  Eine arithmetische Fläche ist ein projektives, integres, flaches,
   reguläres $R$-Schema von Dimension~2, also relativer Dimension~1 über
   $R$, falls $R$ kein Körper ist.
-  Die generische Faser $X_\K$ ist integere, projektive Kurve über $\K$
+  Die generische Faser $X_\K$ ist integre, projektive Kurve über $\K$
   und jede spezielle Faser $X_s$ über einem abgeschlossenen Punkt
-  $s\in\Spec(R)$ ist projektive Kurve über $\k(s)$ nach \cite[Lemma
-  8.3.3]{liu}.
+  $s\in\Spec(R)$ ist projektive Kurve über $\k(s)$ nach
+  \cite[Lemma~8.3.3]{liu}.
 \end{Definition}
 
 \begin{Beispiel}\label{bsp:regweierstraßmodell}
@@ -57,12 +57,12 @@ elliptische Kurven gezeigt wird.
   \begin{proof}
     Aus \autoref{chap:weierstraßmodelle} ist bekannt, dass zu $E_\K$
     ein Weierstraßmodell $W$ über $R$ gefunden werden kann, das heißt
-    ein projektives, integeres, flaches $R$-Schema, dessen generische
+    ein projektives, integres, flaches $R$-Schema, dessen generische
     Faser $E_\K$ ist. Zur arithmetischen Fläche fehlt $W$ nur noch die
     Regularität.
-    \cite[Corollary 8.3.51]{liu} besagt nun, dass $W$ eine starke,
+    \cite[Corollary~8.3.51]{liu} besagt nun, dass $W$ eine starke,
     projektive Desingularisierung besitzt. Damit ist gemeint, es gibt
-    einen projektives, reguläres $W$-Schema $\pi\colon Z\to W$, das
+    einen projektives, reguläres $W$-Schema ${\pi\colon Z\to W}$, das
     birational zu $W$ und ein Isomorphismus auf den regulären Punkten
     von $W$ ist.
     Birationale Abbildungen erhalten per Definition
@@ -72,7 +72,7 @@ elliptische Kurven gezeigt wird.
 
     Weiterhin schicken birationale Morphismen generische Punkte auf
     generische Punkte, weshalb das reduzierte Schema $Z$ flach über
-    $R$ ist nach \cite[Proposition III.9.7]{hartshorne}, weil
+    $R$ ist nach \cite[Proposition~III.9.7]{hartshorne}, weil
     $W$ flach über $R$ ist.
 
     Außerdem hat $Z$ dieselbe generische Faser $E_\K$, da
@@ -91,19 +91,19 @@ elliptische Kurven gezeigt wird.
     \to Z_{2}\to Z_{1}'\to Z_{1}\to Z_{0}'=W
   \end{gather*}
   Die $Z_i\to Z_{i-1}'$ sind die Normalisierung der $Z_{i-1}'$,
-  das heißt birationale, integere Morphismen mit $Z_{i}$ normal
+  das heißt birationale, integre Morphismen mit $Z_{i}$ normal
   und wegen Birationalität auch wieder integer. Sie existieren nach
-  \cite[Proposition 4.1.22]{liu}.
+  \cite[Proposition~4.1.22]{liu}.
   
   Die $Z_{i}'\to Z_{i}$ sind Blow-ups entlang des singulären Teils von
   $Z_{i}$, der in diesem Fall jeweils abgeschlossen ist.
   Zu Blow-Ups siehe auch
-  \cite[Chapter 8.1]{liu} oder \cite[Chapter 13.19]{wedhorn}.
+  \cite[Chapter~8.1]{liu} oder \cite[Chapter~13.19]{wedhorn}.
   Wichtig hier ist, dass Blow-Ups außerhalb des aufgeblähten Bereichs
   Isomorphismen sind. Es bleibt also insbesondere die generische Faser
-  und die Eigenschaft integral erhalten.
+  und die Eigenschaft integer erhalten.
 
-  \cite[Corollary 8.3.51]{liu} besagt, dass diese Folge in endlich
+  \cite[Corollary~8.3.51]{liu} besagt, dass diese Folge in endlich
   vielen Schritten ein reguläres $Z_{n}$ liefert.
 \end{Bemerkung}
 
@@ -120,7 +120,7 @@ ist.
   \optcite[Proposition IV.4.3]{silverman2}
   Sei $R$ ein Dedekindring,
   $\pi\colon X\to\Spec(R)$ eine arithmetische Fläche über $R$,
-  $\phi\in X(R)$ ein $R$-Schnitt und $\p\in\Spec(R)$.
+  ${\phi\in X(R)}$ ein $R$-Schnitt und $\p\in\Spec(R)$.
   Dann ist $X_\p$ regulär in $\phi(\p)$.
   \begin{proof}
     Nachdem die generische Faser einer arithmetischen Fläche bereits
@@ -131,31 +131,34 @@ ist.
     analog $\m_{X,x}\subset\O_{X,x}$.
     Der Punkt $x$ ist als Bildpunkt des Schnitts
     $\phi|_{\Spec(\k(\p))}$ abgeschlossen in $X_\p$.
-    Daher gilt wegen \cite[Corollary 2.5.24]{liu}
+    Daher gilt wegen \cite[Corollary~2.5.24]{liu}
     \begin{gather*}
       \dim\O_{X_\p,x}=\dim X_\p=1\;,
     \end{gather*}
     denn $X_p$ ist equidimensional nach
-    \cite[Proposition 4.4.16]{liu} und projektive Kurve.
+    \cite[Proposition~4.4.16]{liu} und projektive Kurve.
     Für die Regularität von $X_\p$ in $x$ ist demnach zu zeigen,
     dass $\m_{X_\p,x}/\m_{X_\p,x}^2$ als $(\O_{X_p,x}/\m_{X_p,x})$-Vektorraum
     von nur einem Element $f_1$ erzeugt wird.
     
     $\O_{X,x}$ ist $R$-Algebra über den induzierten lokalen
-    Homomorphismus $\pi^\#\colon R_\p\to\O_{X,x}$.
-    Sei $\phi^\#\colon\O_{X,x}\to R_\p$ der induzierte lokale
+    Homomorphismus ${\pi^\#\colon R_\p\to\O_{X,x}}$.
+    Sei ${\phi^\#\colon\O_{X,x}\to R_\p}$ der induzierte lokale
     Ringhomomorphismus zu $\phi$ auf den Halmen. Für diesen muss
-    $\phi^\#(\m_{X,x})=\p$ gelten, denn aus
-    $\p=(\pi\circ\phi)^\#(p)=\phi^\#\circ\pi^\#(\p)$ folgt
-    $\p\subset\phi^\#(\m_{X,x})$ und aus der Lokalität folgt
-    $\p\supset\phi^\#(\m_{X,x})$.
+    ${\phi^\#(\m_{X,x})=\p}$ gelten, denn aus
+    \begin{gather*}
+      {\p=(\pi\circ\phi)^\#(p)=\phi^\#\circ\pi^\#(\p)}
+    \end{gather*}
+    folgt ${\p\subset\phi^\#(\m_{X,x})}$ und aus der Lokalität folgt
+    ${\p\supset\phi^\#(\m_{X,x})}$.
     
     Es ist zu zeigen, dass es ein Element
-    $t\in\pi^\#(\p)\setminus\m_{X,x}^2$ gibt, woraus die
-    die gewünschte Dimension von $\m_{X_\p,x}/\m_{X_\p,x}^2$
-    bzw. die Regularität von $X_\p$ in $x$ geschlossen werden kann.
-    Angenommen, es gelte $\pi^\#(\p)\subset\m_{X,x}^2$.
-    Mit $\pi\circ\phi=\Id_{\Spec(R)}$ folgt die Abschätzung
+    ${t\in\pi^\#(\p)\setminus\m_{X,x}^2}$ gibt, woraus die
+    die gewünschte Dimension von ${\m_{X_\p,x}/\m_{X_\p,x}^2}$
+    beziehungsweise die Regularität von $X_\p$ in $x$ geschlossen
+    werden kann.
+    Angenommen, es gelte ${\pi^\#(\p)\subset\m_{X,x}^2}$.
+    Mit ${\pi\circ\phi=\Id_{\Spec(R)}}$ folgt die Abschätzung
     \begin{gather*}
       \p = (\pi\circ\phi)^\#(\p)
       = \phi^\#\circ\pi^\#(\p)
@@ -163,23 +166,23 @@ ist.
       = \phi^\#(\m_{X,x})^2
       = \p^2
     \end{gather*}
-    Dies ist ein Widerspruch, da $\p\subset R_\p$ Maximalideal eines
+    Dies ist ein Widerspruch, da ${\p\subset R_\p}$ Maximalideal eines
     diskreten Bewertungsringes ist und deshalb wegen Regularität von
-    $R_\p$ gelten muss $\p/\p^2\neq 0$.
-    Also ist $\pi^\#(\p)\not\subset\m_{X,x}^2$ gezeigt.
+    $R_\p$ gelten muss ${\p/\p^2\neq 0}$.
+    Also ist ${\pi^\#(\p)\not\subset\m_{X,x}^2}$ gezeigt.
 
     Nach \autoref{eq:stalkdimension} gilt
-    $\dim\O_{X,x}=\dim R_\p+\dim\O_{X_\p,x}=2$ und $X$ ist nach
+    ${\dim\O_{X,x}=\dim R_\p+\dim\O_{X_\p,x}=2}$ und $X$ ist nach
     Voraussetzung regulär, weshalb $\O_{X,x}$ regulär von Dimension~2
-    ist. Das bedeutet, dass es zwei Elemente $f_1, f_2\in\m_{X,x}$
+    ist. Das bedeutet, dass es zwei Elemente $f_1, {f_2\in\m_{X,x}}$
     gibt, so dass
     \begin{gather}\label{eq:maximalideal}
       \m_{X,x} = f_1\O_{X,x} + f_2\O_{X,x} + \m_{X,x}^2
     \end{gather}
-    Wegen $\pi^\#(\p)\not\subset\m_{X,x}^2$ gibt es ein
-    $t\in\pi^\#(\p)\setminus\m_{X,x}^2\subset\m_{X,x}$.
+    Wegen ${\pi^\#(\p)\not\subset\m_{X,x}^2}$ gibt es ein
+    ${t\in\pi^\#(\p)\setminus\m_{X,x}^2\subset\m_{X,x}}$.
     \eqref{eq:maximalideal} bedeutet für $t$, dass es $\alpha_1,
-    \alpha_2\in\O_{X,x}$ gibt, so dass
+    {\alpha_2\in\O_{X,x}}$ gibt, so dass
     \begin{gather*}
       0 \neq t = \alpha_1 f_1 + \alpha_2 f_2 \mod \m_{X,x}^2
     \end{gather*}
@@ -196,7 +199,7 @@ ist.
       \m_{X,x} = t\O_{X,x} + f_1\O_{X,x} + \m_{X,x}^2
     \end{gather}
     Für den lokalen Ring $\O_{X_\p,x}$ von $x$ in der generischen
-    Faser $X_\p = X\times_R (R/\p)$ gilt
+    Faser ${X_\p = X\times_R (R/\p)}$ gilt
     \begin{align*}
       \O_{X_\p,x} &= \O_{X,x}/\pi^\#(\p)\\
       \m_{X_\p,x} &= \m_{X,x}/\pi^\#(\p)
@@ -212,7 +215,7 @@ ist.
   \end{proof}
 \end{Lemma}
 
-\begin{Korollar}\label{thm:ratpkteregulaeremodelle}
+\begin{Satz}\label{thm:ratpkteregulaeremodelle}
   \optcite[Corollary IV.4.4]{silverman2}
   Sei $R$ Dedekindring
   mit perfekten Restklassenkörpern,
@@ -224,68 +227,14 @@ ist.
   \begin{gather*}
     X_\K(\K)=X(R)=X^0(R)
   \end{gather*}
-  % $X$ ein $R$-Schema,
-  % $X^0$ offenes Unterschema der glatten Punkte,
-  % $X_\K/\K$ generische Faser.
-  % Dann gilt
-  % \begin{enumerate}[label=(\roman*)]
-  % \item Ist $X$ eigentlich über $R$, so gilt $X(R)=X_\K(\K)$.
-  % \item Ist $X$ regulär über $R$ mit Dimension 2 und mit
-  %   Fasern der Dimension 1, und ist $X$ genau dann glatt in einem
-  %   Punkt $x\in X$, wenn die ihn enthaltene Faser regulär in $x$ ist,
-  %   so gilt $X(R)=X^0(R)$.
-  % \end{enumerate}
-
-  % Es gilt also für ein reguläres, eigentliches $R$-Modell von $X_K$,
-  % das genau dann glatt in $x\in X$ ist, wenn die ihn enthaltene
-  % Faser in $x$ regulär ist,
-  % \begin{gather*}
-  %   X_\K(\K)=X^0(R)=X(R)
-  % \end{gather*}
   \begin{proof}
     Die erste Gleichheit ist allein eine Anwendung des
     Bewertungskriteriums für Eigentlichkeit auf das projektive, also
     eigentliche Schema $X$.
-    % \begin{enumerate}[label=(\roman*)]
-    % \item
-    %   Die Einschränkung von $\Hom_R(\Spec(R),X)=X(R)$ auf 
-    %   $\Spec(\K)\subset\Spec(R)$ liefert eine kanonische Abbildung
-    %   \begin{center}
-    %     \begin{tikzcd}
-    %       \Hom_R(\Spec(R),X) \arrow[d, equal]
-    %       \arrow[r, "{\text{Res.}}"]
-    %       &\Hom_R(\Spec(K),X)
-    %       \arrow[r, equal, "{\text{$R$-lin.}}"]
-    %       &\Hom_\K(\Spec(\K),X_\K) \arrow[d, equal]\\
-    %       X(R)&& X_\K(\K)
-    %     \end{tikzcd}
-    %   \end{center}
-    %   Nach Voraussetzung ist $X$ eigentlich über $R$, d.\,h. nach
-    %   dem Bewertungskriterium für $X$ gibt es für ein $\phi_\K\in
-    %   X_\K(\K)$ genau einen Lift in $\Hom_R(R,X)$,
-    %   bzw. ein $\phi\colon\Spec(R)\to X$, so dass das folgende
-    %   Diagramm kommutiert
-    %   \cite[Theorem II.4.7]{hartshorne}:
-    %   \begin{center}
-    %     \begin{tikzcd}
-    %       \Spec(\K)\arrow[d, hook, "{\text{incl}}"]
-    %       \arrow[r,"\phi_\K"]
-    %       &X_\K\arrow[r, hook, "{\text{incl}}"]
-    %       &X\arrow[d,"{\text{eig.}}"]
-    %       \\
-    %       \Spec(R)\arrow[rr,"{\Id}"]
-    %       \arrow[to=urr, dashed, "{\exists!\phi}"{near start}]
-    %       &&\Spec(R)
-    %     \end{tikzcd}
-    %   \end{center}
-    %   Dadurch sind Injektivität und Surjektivität der
-    %   Einschränkungsabbildung gegeben und es gilt
-    %   $X(R)=\Hom_R(R,X)\cong\Hom_\K(\K,X_\K)=X_\K(\K)$.
-    % \item
     Wegen $X^0\subset X$ gibt es eine natürliche Inklusion
     $\circ \text{incl}\colon X^0(R)\hookrightarrow X(R)$.
     Jetzt gilt es zu zeigen, dass im regulären Fall das Bild jedes
-    Schnitts $\phi\in X(R)$ in $X^0$ liegt bzw. nur glatte Punkte
+    Schnitts $\phi\in X(R)$ in $X^0$ liegt, also nur glatte Punkte
     enthält. Dann ist die Inklusion ein Isomorphismus.
     
     Nach \ref{thm:arithflschnittbilderglatt} enthält das Bild
@@ -293,14 +242,13 @@ ist.
     Punkte der Fasern. Diese sind glatte Punkte von $X$, denn:
     $X$ ist flach und lokal endlich präsentiert, daher genau dann
     glatt, wenn die Fasern glatt sind nach
-    \cite[8.5, Proposition 17]{bosch}.
+    \cite[Proposition~8.5/17]{bosch}.
     Die generische Faser ist bereits glatt und die speziellen Fasern
     sind als Schemata endlichen Typs über einem perfektem Körper
     genau dann glatt, wenn sie regulär sind.
     Damit ist die Behauptung gezeigt.
-    % \end{enumerate}
   \end{proof}
-\end{Korollar}
+\end{Satz}
 
 % -----
 
@@ -319,7 +267,7 @@ Ein solches minimales Modell ist die Grundlage für den späteren
 Existenzbeweis des Néron-Modells, welches genau dessen glatter Teil
 ist.
 
-\begin{Definition}
+\begin{Definition}[Minimales Modell]
   Ein minimales eigentliches Modell $X_{\text{min}}$ für $C_\K$ über
   $R$ (kurz: minimales Modell von $C_\K$ über $R$) ist ein
   eigentliches $R$-Modell von $C_\K$, das folgende universelle
@@ -355,11 +303,11 @@ ist.
 \begin{Satz}\label{thm:eigminmodell}
   Ein minimales Modell $X_{\text{min}}$ von $C_\K$ über $R$ hat
   folgende Eigenschaften
-  \begin{enumerate}[label=(\roman*)]
+  \begin{enumerate}[label=(\alph*)]
   \item $X_{\text{min}}$ ist eindeutig bis auf eindeutige Isomorphie.
   \item\optcite[Proposition IV.4.6]{silverman2}
     Jeder $\K$"=Automorphismus von $C_\K$ erweitert sich eindeutig zu
-    einem $R$-Automorphismus von $X_{\text{min}}$, der glatte Punkte
+    einem $R$"=Automorphismus von $X_{\text{min}}$, der glatte Punkte
     auf glatte Punkte abbildet.
   \item\optcite[Beweis von Proposition IV.6.10]{silverman2}
     Minimale Modelle sind wie folgt stabil unter Basiswechsel:
@@ -373,7 +321,10 @@ ist.
     der glatten Punkte von $X_{\text{min}}\times_R R'$.
   \end{enumerate}
   \begin{proof}
-    \begin{enumerate}[label=(\roman*)]
+    Es werden wie in \ref{thm:eigneronmodell} die universelle
+    Eigenschaft sowie Stabilität unter Basiswechsel für mehrere
+    Eigenschaften benötigt.
+    \begin{enumerate}[resume*,start=1]
     \item Für zwei minimale Modelle $X_1$, $X_2$ von $C_\K$ über $R$
       liefert die Minimalitätseigenschaft zwei $R$-Morphismen
       $X_1\to X_2$, $X_2\to X_1$, deren Komposition jeweils die
@@ -393,35 +344,37 @@ ist.
       dem Unterschema der glatten Punkte.
     \item Die Eigenschaften flach, projektiv und integer sind stabil
       unter Basiswechsel. Regulär ist stabil unter glattem
-      Basiswechsel \cite[Chapter 2.3, Page 49]{neron}, weshalb
+      Basiswechsel \cite[Chapter~2.3, S.\,49]{neron}, weshalb
       $C_\K\times_R Y$ regulär ist.
       Nachdem $C_\K\times_R R'$ dieselben Halme hat, ist es ebenfalls
       regulär.
-      Die Minimalitätseigenschaft von $X_{\text{min}}\times_R R'$
+      Die Minimalitätseigenschaft von ${X_{\text{min}}\times_R R'}$
       folgt aus der von $X_{\text{min}}$ und der universellen
       Eigenschaft des Faserprodukts.
       
       $E\times_R R'$ ist glattes Unterschema von
-      $X_{\text{min}}\times_R R'$, da glatt stabil unter Basiswechsel
+      ${X_{\text{min}}\times_R R'}$, da glatt stabil unter Basiswechsel
       ist. Nachdem $Y$ glatt ist, ist ein Punkt 
-      $X_{\text{min}}\times_R Y$ und insbesondere im Unterschema
-      ${X_{\text{min}}\times_R R'}\subset {X_{\text{min}}\times_R Y}$
+      ${X_{\text{min}}\times_R Y}$ und insbesondere im Unterschema
+      ${X_{\text{min}}\times_R R'\subset X_{\text{min}}\times_R Y}$
       genau dann glatt, wenn seine Projektion auf $X_{\text{min}}$
-      glatt ist, also wenn sie in $E$ liegt. Damit ist $E\times_R R'$
+      glatt ist, also wenn sie in $E$ liegt. Damit ist ${E\times_R R'}$
       das Unterschema aller glatten Punkte in
       ${X_{\text{min}}\times_R R'}$.
+      \qedhere
     \end{enumerate}
   \end{proof}
 \end{Satz}
 
-\begin{Satz}[{\cite[Theorem 9.3.21]{liu}}]\label{thm:exminmodell}
+\begin{Satz}\label{thm:exminmodell}
   Minimale $R$-Modelle elliptischer Kurven existieren und sind nach
   \ref{thm:eigminmodell} eindeutig bis auf eindeutige Isomorphie.
   \begin{proof}[Beweisskizze]
+    Für den vollständigen Beweis siehe \cite[Theorem~9.3.21]{liu}.
     Aus \ref{thm:exarithfl} ist bekannt, dass zu einer elliptischen
     Kurve $E_\K$ über $\K$ zumindest eine arithmetische Fläche
     gefunden werden kann.
-    \cite[Theorem 9.3.21]{liu} besagt, dass allgemein für
+    \cite[Theorem~9.3.21]{liu} besagt, dass allgemein für
     arithmetische Flächen mit generischer Faser vom Geschlecht
     größer~0 eine minimale existiert.
     Genutzt wird hierbei, dass die Existenz eines minimalen Modells
@@ -434,22 +387,22 @@ ist.
     \item Alle relativ minimalen Modelle sind isomorph, es gibt also
       ein \emph{eindeutiges} relativ minimales Modell.
     \end{enumerate}
-    Relative Minimalität ist nach \cite[Theorem 9.2.2]{liu} äquivalent
+    Relative Minimalität ist nach \cite[Theorem~9.2.2]{liu} äquivalent
     dazu, dass das Modell keine außerordentlichen Divisoren besitzt,
-    also keine integeren, zusammenziehbaren Kurven als Teilmengen
+    also keine integren, zusammenziehbaren Kurven als Teilmengen
     hat.
     Außerordentliche Divisoren können unter anderem mit Castelnuovos
-    Kriterium \cite[Theorem 9.3.8]{liu} identifiziert werden und es
+    Kriterium \cite[Theorem~9.3.8]{liu} identifiziert werden und es
     gibt nur eine endliche Anzahl an Fasern, die solche enthalten nach
-    \cite[Lemma 9.3.17]{liu}.
+    \cite[Lemma~9.3.17]{liu}.
 
-    Wie in \cite[Proposition 9.3.19]{liu} gezeigt wird, ist es in
+    Wie in \cite[Proposition~9.3.19]{liu} gezeigt wird, ist es in
     endlich vielen Schritten möglich, die zusammenziehbaren Divisoren
     nacheinander zu einem relativ minimalen Modell zusammenzuziehen,
     womit Bedingung (a) erfüllt ist.
 
     Bedingung (b) mit der Eindeutigkeit dieses Modells kann wie in
-    \cite[Theorem 9.3.21]{liu} beschrieben durch Widerspruchsbeweis
+    \cite[Theorem~9.3.21]{liu} beschrieben durch Widerspruchsbeweis
     mithilfe der Bedingung an das Geschlecht der generischen Faser
     gezeigt werden.
     Das Zusammenziehen hat also bereits ein minimales Modell geliefert.

@@ -10,8 +10,8 @@ Zuletzt wird die Hauptaussage sein, dass sich eigentliche Gruppenschemata
 gutartig bezüglich Morphismen verhalten, die nur auf offenen dichten
 Teilmengen definiert sind, sogenannte rationale Funktionen.
 
-\begin{Definition}[$S$"=Gruppenschema]\label{def:gruppenschema}
-  Ein \emph{Gruppenschema über $S$} oder \emph{$S$-Gruppenschema} ist ein
+\begin{Definition}[Gruppenschema]\label{def:gruppenschema}
+  Ein Gruppenschema über $S$ oder $S$-Gruppenschema ist ein
   $S$-Schema ${\pi\colon G\to S}$ zusammen mit $S$-Morphismen
   \begin{align*}
     \mu\colon G\times_S G &\longto G
@@ -171,7 +171,7 @@ was aber nicht weiter benötigt wird.
   sind glatt und geometrisch reduziert äquivalent.
   \optcite[8.5, Excercise 11]{bosch}
   Im glatten Fall sind auch irreduzibel und zusammenhängend äquivalent
-  nach \cite[Exercise 3.16]{wedhorn}, \cite[Corollary 16.51]{wedhorn}.
+  nach \cite[Exercise~3.16]{wedhorn}, \cite[Corollary~16.51]{wedhorn}.
   % , da
   % aufgrund der Glattheit alle Halme lokal und regulär, also
   % insb. integer, sind und $G$ lokal noethersch ist.
@@ -183,13 +183,13 @@ was aber nicht weiter benötigt wird.
 \end{Definition}
 \begin{Bemerkung}\label{thm:abvarietaetprojektiv}
   Abelsche Varietäten sind projektiv nach
-  \cite[9.6, Proposition 4]{bosch}.
+  \cite[Proposition~9.6/4]{bosch}.
 \end{Bemerkung}
 
 \begin{Definition}[Abelsches Schema]
   Ein abelsches $S$-Schema ist ein eigentliches, glattes $S$"=Gruppenschema,
   dessen Fasern abelsche Varietäten sind 
-  (also zusätzlich irreduzibel bzw. zusammenhängend,
+  (also zusätzlich irreduzibel beziehungsweise zusammenhängend,
   s. \ref{def:abelschevarietaet} und \ref{gruppenschemaaequivalenzen},
   nachdem eigentlich und glatt stabil unter Basiswechsel sind).
 \end{Definition}
@@ -227,7 +227,7 @@ zwischen ($S$-)Schemata.
   Eine $S$-rationale Abbildung $\phi\colon X\dra Y$ ist eine
   rationale Abbildung, wobei alle dichten offenen Mengen aus obiger
   Definition $S$-dicht sind.
-  % Eine \emph{$S$-rationale Abbildung} $\phi\colon X\dra Y$ ist eine
+  % Eine $S$-rationale Abbildung $\phi\colon X\dra Y$ ist eine
   % Äquivalenzklasse der Menge
   % \begin{gather*}
   %   \left\{
@@ -254,21 +254,22 @@ zwischen ($S$-)Schemata.
   ist.
 \end{Definition}
 
-Nachdem das Hauptaugenmerk auf Gruppenschemata liegt, ist 
+Nachdem das Hauptaugenmerk auf Gruppenschemata liegt, ist
 besonders interessant, wie sich $S$-Gruppenschemata
-bzgl. ($S$-)rationalen Abbildungen verhalten.
+bezüglich ($S$-)rationalen Abbildungen verhalten.
 Tatsächlich verhalten sich eigentliche Gruppenschemata in folgender
 Hinsicht gutartig:
-\begin{Lemma}[{\cite[Proposition IV.6.2]{silverman2}}]
+\begin{Theorem}
   \label{thm:rationalzumorphismus}
   Sei $G$ ein $R$"=Gruppenschema, $Y$ ein glattes $R$-Schema und
   $\phi\colon Y\dra G$ eine $R$-rationale Abbildung.
   Dann gilt
-  \begin{enumerate}[label=(\roman*)]
+  \begin{enumerate}[label=(\alph*)]
   \item $Y\setminus \Dom(\phi)$ hat (reine) Kodimension 1.
   \item Ist $G$ eigentlich, so ist $\phi$ Morphismus.
   \end{enumerate}
-\end{Lemma}
+\end{Theorem}
+Für den Beweis siehe zum Beispiel \cite[Proposition~IV.6.2]{silverman2}.
 
 % -----
 
@@ -286,7 +287,7 @@ eine $R$-rationale Gruppenstruktur liefert.
     \mu\colon V\times_R V\dra V
   \end{gather*}
   die folgende Bedingungen erfüllt
-  \begin{description}[font=\normalfont\itshape]
+  \begin{description}
   \item[(Assoziativität)] Es gilt, wo es definiert ist,
     \begin{gather*}
       \mu(\mu(x,y),z)=\mu(x,\mu(y,z))
@@ -311,15 +312,15 @@ eine $R$-rationale Gruppenstruktur liefert.
 Ein großer Vorteil einer normalen Komposition ist, dass zumindest
 ein großer Teil, nämlich ein offenes dichtes Unterschema, offen und
 dicht in einem richtigen Gruppenschema mit derselben Gruppenstruktur
-liegt.
-\begin{Satz}[{Weil,
-  \cite[Theorem VIII.1.12]{artin},
-  \cite[Theorem IV.6.9]{silverman2}}]\label{thm:weil}
+liegt, wie folgender Satz von Weil besagt. Für den Beweis siehe
+\cite[Theorem~VIII.1.12]{artin} oder \cite[Theorem~IV.6.9]{silverman2}
+für eine Skizze.
+\begin{Theorem}[Weil]\label{thm:weil}
   Sei $V$ glattes $R$-Schema mit nichtleeren Fasern
   und normaler Komposition $\mu\colon V\times_R V\dra V$.
-  $V$ sei zusätzlich endlichen Typs und $V(R)$ sei dicht in jeder
-  Faser. 
-  % TODO!! Was heißt V(R) dicht in jeder Faser?
+  $V$ sei zusätzlich endlichen Typs und die Vereinigung der Bilder der
+  Schnitte $V(R)$ sei dicht in jeder Faser. 
+  % ?? Was heißt V(R) dicht in jeder Faser?
   Dann gibt es ein $R$-Gruppenschema $(G,\mu_G)$ endlichen Typs und
   ein gemeinsames, offenes, $R$-dichtes Unterschemata $V\hookleftarrow
   U\hookrightarrow G$ von $V$ und $G$, so dass $\mu|_U=\mu_G|_U$.
@@ -361,7 +362,7 @@ liegt.
   %     Erhalte offenes Unterschema 
   %   \end{enumerate}
   % \end{proof}
-\end{Satz}
+\end{Theorem}
 
 %%% Local Variables:
 %%% mode: latex
