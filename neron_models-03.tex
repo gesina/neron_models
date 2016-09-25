@@ -2,15 +2,14 @@
 Sei $R$ im gesamten Kapitel ein Dedekindring mit Quotientenkörper
 $\K$.
 
-Nachdem die nötigen Grundlagen für Gruppenschemata vorhanden sind,
-können wir nun Néron-Modelle wie zuvor motiviert einführen.
-Dazu werden wir erst die formale Definition angeben und für
-Gruppenschemata spezialisieren. Danach werden wichtige
-allgemeine Eigenschaften untersucht, die direkt aus der universellen
-Eigenschaft folgen, unter anderem die Eindeutigkeit und
-Lokalität.
-Zuletzt werfen wir noch einen kurzen Blick auf Néron-Modelle
-allgemeiner abelscher Varietäten.
+Nachdem jetzt die nötigen Grundlagen für Gruppenschemata vorhanden
+sind, lassen sich Néron-Modelle wie zuvor motiviert definieren.
+Dazu wird erst die formale Definition angegeben und für
+Gruppenschemata spezialisiert. Danach werden wichtige allgemeine
+Eigenschaften untersucht, die direkt aus der universellen Eigenschaft
+folgen, unter anderem die Eindeutigkeit und Lokalität.
+Zuletzt wird noch einen kurzen Blick auf Néron-Modelle
+allgemeiner abelscher Varietäten geworfen.
 
 \section{Definition}
 Das Néron-Modell eines $\K$-Gruppenschemas ist – falls es existiert –
@@ -18,10 +17,10 @@ eine besonders gutartige (genauer: glatte, separierte) Erweiterung der
 Gruppenstruktur auf ein $R$-Gruppenschema, das
 minimal mit dieser Eigenschaft gewählt ist.
 
-In diesem Abschnitt werden wir vorerst die allgemeine Definition eines
+In diesem Abschnitt wird vorerst die allgemeine Definition eines
 Néron-Modells nach \cite[1.2, Definition 1]{neron} anhand der
-Erweiterungsforderung einführen. Danach können wir bereits einige
-Eigenschaften ableiten, die zu einer alternativen Definition für
+Erweiterungsforderung eingeführt. Daraus leiten sich bereits einige
+Eigenschaften ab, die zu einer alternativen Definition für
 $\K$-Gruppenschemata führen, welche die Gruppenstruktur wieder mit
 einbezieht.
 
@@ -78,7 +77,7 @@ folgt gerechtfertigt:
 
     Sei wegen \ref{thm:neronmodelllokal} ohne Einschränkung $R$ diskreter
     Bewertungsring mit Restklassenkörper $k$.    
-    Wir werden zeigen, dass topologisch
+    Es wird im Folgenden gezeigt, dass topologisch
     $\im(\epsilon)=\overline{\im(\epsilon_\K)}$,
     also dass $\overline{\im(\epsilon_\K)}$ aus genau dem Punkt
     $\epsilon(\Spec\K)$ in der generischen Faser und dem Punkt
@@ -95,7 +94,7 @@ folgt gerechtfertigt:
     und $\im(\epsilon)\cap X_\K$ wegen der \NAbbEig punktweise
     überein.
 
-    Auf der speziellen Faser $X_k$ wollen wir zeigen, dass für jeden
+    Auf der speziellen Faser $X_k$ ist zu zeigen, dass für jeden
     Punkt $x\in\overline{\im(\epsilon_\K)}\cap X_k$ bereits
     $x\in\im(\epsilon)$ gilt. Sei also $x$ ein solcher Punkt.
     Das schematische Bild $\text{Im}(\epsilon_\K)$ von $\epsilon_\K$ ist
@@ -107,10 +106,10 @@ folgt gerechtfertigt:
     Sei $U$ eine offene, affine Umgebung von $x$ in $X$ und
     $\Spec(A)=U\cap\overline{\im(\epsilon_\K)}$ offenes, affines
     Unterschema von $\overline{\im(\epsilon_\K)}$.
-    Wir werden später die Inklusionen $R\subset A\subset\K$ zeigen.
+    Später werden die Inklusionen $R\subset A\subset\K$ gezeigt.
     Nachdem $R$ als diskreter Bewertungsring der größte Unterring
-    von $\K$ ist, folgt daraus dann $R=A$ und wir erhalten zusammen
-    mit der Immersion zu $\Spec(A)$ einen Schnitt
+    von $\K$ ist, folgt daraus dann $R=A$ und es ergibt sich zusammen
+    mit der Immersion zu $\Spec(A)$ ein Schnitt
     \begin{gather*}
       X(R)\ni e\colon
       \Spec(R)\xrightarrow{\sim}\Spec(A)\hookrightarrow X\;,
@@ -127,10 +126,9 @@ folgt gerechtfertigt:
     zeigen. Es ist $e_\K\coloneqq\epsilon_\K(\Spec(\K))$ der
     generische Punkt von $\overline{\im(\epsilon_\K)}$ und
     entsprechend auch vom offenen Unterschema $\Spec(A)$. Da
-    $\overline{\im(\epsilon_\K)}$ und $\Spec(A)$ integer sind, wissen
-    wir, dass $\O_{\overline{\Im(\epsilon_\K)}, e_\K}=\O_{A,e_\K}$
-    Körper ist.
-    Wir erhalten eine Sequenz von Körperhomomorphismen auf den Halmen
+    $\overline{\im(\epsilon_\K)}$ und $\Spec(A)$ integer sind, ist
+    $\O_{\overline{\Im(\epsilon_\K)}, e_\K}=\O_{A,e_\K}$ Körper.
+    Es folgt eine Sequenz von Körperhomomorphismen auf den Halmen
     \begin{gather*}
       \Id_\K\colon
       \K \xrightarrow{\pi_\K^\#}
@@ -180,9 +178,9 @@ folgt gerechtfertigt:
   \optcite[Chapter IV.5]{silverman2}
 \end{Bemerkung}
 \begin{Bemerkung}\label{thm:dichtefaser}
-  Wir können $\phi_\K$ aus \ref{def:neronmodellellkurve} auch als
-  $\K$-rationale Abbildung wählen. Da $E_\K$ projektiv, also eigentlich,
-  ist, erweitert sich $\phi_\K$ nach
+  Das $\phi_\K$ aus \ref{def:neronmodellellkurve} kann auch als
+  $\K$-rationale Abbildung gewählt werden. Da $E_\K$ projektiv, also
+  eigentlich, ist, erweitert sich $\phi_\K$ nach
   \ref{thm:rationalzumorphismus} zu einem Morphismus.
 
   Im Fall eines diskreten Bewertungsrings $R$ ist der generische Punkt
@@ -243,8 +241,8 @@ folgenden Sinne:
   % \end{proof}
 \end{Satz}
 Somit ist die Eindeutigkeit der Erweiterung eines Schnitts bereits
-durch die Separiertheit des Néron-Modells gegeben. Außerdem wissen wir
-nun, dass die kanonische Einschränkung $X(Y)\to X_\K(Y_\K)$ der
+durch die Separiertheit des Néron-Modells gegeben. Außerdem ist nun
+bekannt, dass die kanonische Einschränkung $X(Y)\to X_\K(Y_\K)$ der
 $R$-Schnitte eines Néron-Modells $X$ nicht nur für glatte, sondern
 auch für reduzierte Schemata $Y$ injektiv ist.
 
@@ -252,8 +250,8 @@ auch für reduzierte Schemata $Y$ injektiv ist.
 Nun ein paar weitere grundlegende Eigenschaften von Néron-Modellen.
 Hierbei ist zu beachten, dass sich Néron-Modelle nicht so gutartig
 verhalten, wie es die universelle Eigenschaft vermuten lässt.
-Unter anderem sind sie zwar stabil unter Produktbildung (was wir
-hier nicht brauchen und nicht zeigen werden), allerdings nicht unter
+Unter anderem sind sie zwar stabil unter Produktbildung (was hier
+nicht gebrauchen und nicht gezeigen wird), allerdings nicht unter
 beliebigem Basiswechsel.
 \begin{Satz}
   \optcite[1.2, Proposition 2]{neron}
@@ -309,7 +307,7 @@ beliebigem Basiswechsel.
           \phi_R\colon Y'\longto X
         \end{gather*}
         erweitern.
-        So erhalten wir kanonisch einen eindeutigen $R$-Morphismus
+        So ergibt sich ein kanonischer eindeutiger $R$-Morphismus
         (bzw. einen $R'$-Morphismus)
         $\phi_{R'} = (\phi_R\;,\;\pi_{R'})$ auf dem Faserprodukt 
         \begin{center}
@@ -375,15 +373,15 @@ Néron-Modellen wie folgt:
     seiner generischen Faser über $\O_{R,s}=R_s$ für alle
     abgeschlossenen Punkte $s\in\Spec(R)$.
   \end{enumerate}
-  Das heißt man kann ohne Einschränkung davon ausgehen, dass $R$ lokal ist,
-  also diskreter Bewertungsring.
+  Das heißt, es kann ohne Einschränkung immer davon ausgegangen
+  werden, dass $R$ lokal ist, also diskreter Bewertungsring.
 \end{Satz}
 
-Wir werden im Folgenden nur die Implikation
-\emph{(ii)}$\Rightarrow$\emph{(i)} benötigen, daher sei für die
+Im Folgenden wird nur die Implikation
+\emph{(ii)}$\Rightarrow$\emph{(i)} benötigt, daher sei für die
 andere Richtung auf \cite[1.2, Proposition 4]{neron} verwiesen.
-Wir benötigen dazu erst ein Lemma und ein Korollar zur Erweiterung von
-Morphismen auf offene Umgebungen.
+Erst ist dazu ein Lemma und ein Korollar zur Erweiterung von
+Morphismen auf offene Umgebungen nötig.
 
 % ERWEITERUNG V. MORPHISMEN AUF OFFENE TEILMENGEN
 \begin{Lemma}\label{thm:morphismuserweiterung}
@@ -397,7 +395,7 @@ Morphismen auf offene Umgebungen.
   Dann gibt es eine offene Umgebung $U\subset Y$ von $y$, auf der
   $f_y$ von einem Morphismus $f\colon U\to X$ erweitert wird.
   \begin{proof}
-    Wir können uns auf den affinen Fall $X=\Spec(B)$ beschränken.
+    Es reicht, sich auf den affinen Fall $X=\Spec(B)$ zu beschränken.
     Denn $\O_{Y,y}$ ist lokal mit Maximalideal $y$, also ist $y$ in
     jeder Zariski-abgeschlossenen, nichtleeren Menge von $\Spec\O_{Y,y}$
     enthalten bzw. die einzige offene Umgebung von $y$ in
@@ -407,12 +405,12 @@ Morphismen auf offene Umgebungen.
 
     $X$ ist nach Voraussetzung von endlichem Typ und $S$ lokal
     noethersch.
-    Wir können also eine genügend kleine, offene, affine Umgebung
+    Es kann also eine genügend kleine, offene, affine Umgebung
     $\Spec(B)\subset X$ von $f_y(y)$ und eine offene Teilmenge
-    $\Spec(R)\subset S$ auswählen,
+    $\Spec(R)\subset S$ ausgewählt werden,
     so dass $R$ noethersch und $B$ eine $R$-Algebra endlichen Typs
-    (wegen noethersch auch endlich präsentiert) ist. Das heißt $B$ hat
-    die Form
+    – wegen noethersch auch endlich präsentiert – ist. Das heißt $B$
+    hat die Form
     \begin{gather*}
       B=R[X_0,\dotsc, X_n]/(g_0,\dotsc, g_r)\qquad n,r\in\N
     \end{gather*}
@@ -423,7 +421,7 @@ Morphismen auf offene Umgebungen.
     $f_y\colon\Spec(A_y)\to\Spec(B)\subset X$
     korrespondiert also zu einem Ringhomomorphismus
     $\Gamma(f_y)\colon B\to A_y$.
-    Insgesamt erhalten wir
+    Insgesamt ergibt sich
     \begin{center}
       \begin{tikzcd}[row sep=0pt]
         \phi\colon R\left[X_0,\dotsc, X_n\right] \arrow[r,two heads]
@@ -501,10 +499,11 @@ Morphismen auf offene Umgebungen.
     $\Spec\O_{Y,y}\subset Y$, insbesondere  liegt ganz $\Spec\O_{Y,y}$
     im Urbild von $\Spec\O_{S,s}$.
     Das zeigt, dass $\Spec\O_{Y,y}\subset Y\times_S\O_{S,s}$ für jedes
-    $y\in Y\times_S\O_{S,s}$, und man erhält $R$-Morphismen
+    $y\in Y\times_S\O_{S,s}$, und die Einschränkung von $f_s$ liefert
+    $R$-Morphismen
     \begin{gather*}
       f_{s,y}\colon \Spec\O_{Y,y}\longto X\times_S\O_{S,s}\subset X
-      \qquad \forall y \in Y\times_S\O_{S,s}
+      \qquad \text{für alle } y \in Y\times_S\O_{S,s}
     \end{gather*}
     Jeder davon erweitert sich nach \ref{thm:morphismuserweiterung}
     zu einem Morphismus auf einer offenen Umgebung $U_y\subset Y$ von
@@ -559,7 +558,7 @@ Morphismen auf offene Umgebungen.
   Hier ist sie eindeutig wegen
   Separiertheit von $X\times_R\O_{R,s}$.
 
-  Für Glattheit auf $X$ benötigen wir nur noch, dass $X$ flaches
+  Für Glattheit auf $X$ ist nur noch nötig, dass $X$ flaches
   $R$-Schema ist, da $R$ noethersch und $X$ nach Voraussetzung von
   endlichem Typ ist, also endlich präsentiert.
   Für ein $x\in X_s\subset X$, $s\in\Spec(R)$, ist der Halm
@@ -572,7 +571,7 @@ Morphismen auf offene Umgebungen.
   generischen Fasern.
   Als glattes $R$-Schema ist $Y$ flach, reduziert und insbesondere
   regulär, weshalb die irreduziblen Komponenten alle offen und
-  disjunkt sind. Wir können also ohne Einschränkung annehmen, dass
+  disjunkt sind. Es ist also ohne Einschränkung anzunehmen, dass
   $Y$ integer ist.
   % Sei $f_\K\colon Y_\K\to X_\K$ ein Morphismus der generischen Fasern.
   Nach Voraussetzung erweitert sich $f_\K$ für einen abgeschlossenen
@@ -609,11 +608,11 @@ Morphismen auf offene Umgebungen.
 
 
 \subsection{Néron-Modelle abelscher Varietäten}
-Nachdem wir uns explizit für Néron-Modelle von abelschen Varietäten
-interessieren, seien hier einige Eigenschaften aufgeführt.
+Nachdem das Hauptaugenmerk der Arbeit explizit auf Néron-Modellen
+abelscher Varietäten liegt, seien hier einige Eigenschaften aufgeführt.
 Wichtig ist unter anderem, dass die Existenz in diesem Fall allgemein
-gesichert ist, was wir für elliptische Kurven explizit
-nachweisen werden.
+gesichert ist, was für elliptische Kurven später explizit nachgewiesen
+wird.
 $R$ sei in diesem Abschnitt wieder ein Dedekindring und
 $\K\coloneqq\Quot(R)$.
 % ALLG. EXISTENZ
@@ -665,7 +664,7 @@ abelschen Varietät wieder abelsch ist.
       $R$-Morphismus $f\colon A\to X$, der bereits offene Immersion ist
       \cite[s.][4.3/1~(ii) oder 4.4/1]{neron}.
       % TODO!! Wieso ist die Erweiterung von id hier offene Immersion?
-      Wir werden zeigen, dass das Bild von $f$ ganz $X$ ist, woraus
+      Es ist zu zeigen, dass das Bild von $f$ ganz $X$ ist, woraus
       wegen Reduziertheit von $X$ bereits folgt, dass $f$ ein
       Isomorphismus ist.
       $X$ ist glatt, also nach
@@ -676,7 +675,7 @@ abelschen Varietät wieder abelsch ist.
       \cite[Proposition 3.24]{wedhorn},
       da die generische Faser $A_\K$ zusammenhängend und $\Spec(R)$
       ein integeres Schema ist.
-      Wir müssen also nur zeigen, dass das Bild von $f$ abgeschlossen
+      Es ist also nur zu zeigen, dass das Bild von $f$ abgeschlossen
       ist, da es dann als offene und abgeschlossene Teilmenge des
       zusammenhängenden $X$ schon ganz $X$ sein muss.
       $A$ ist nach Voraussetzung eigentlich, weswegen $A\to R$
@@ -702,8 +701,8 @@ abelschen Varietät wieder abelsch ist.
   \end{proof}
 \end{Satz}
 
-Mit diesem Ergebnis können wir für Néron-Modelle von
-abelschen Varietäten eine Aussage dazu machen, wo die induzierte
+Mit diesem Ergebnis kann für Néron-Modelle abelscher Varietäten
+eine Aussage dazu getroffen werden, wo die induzierte
 Gruppenschemastruktur abelsch ist.
 \begin{Satz}[{\cite[1.4, Theorem 3]{neron}}]\label{thm:teilwabelscheneronmodelle}
   Sei $A_\K$ abelsche Varietät über $\K$,
@@ -732,18 +731,19 @@ Gruppenschemastruktur abelsch ist.
     % \ref{thm:allgmorphismuserweiterung}
     % TODO!! Wieso erhält Morphismuserweiterung Eigentlichkeit?
     
-    Für den generischen Punkt können wir den schematischen
+    Für den generischen Punkt kann der schematische
     Abschluss $A$ des projektiven (s.~\ref{thm:abvarietaetprojektiv})
-    $A_\K$ in $\P_R^n$ betrachten, das heißt das schematische Bild von
+    $A_\K$ in $\P_R^n$ betrachtet werden, das heißt das schematische
+    Bild von
     \begin{gather*}
       A_\K\hookrightarrow\P_\K^n\to\P_R^n
     \end{gather*}
-    (hier: der Abschluss des Bildes mit reduzierter
+    Hier ist es explizit der Abschluss des Bildes mit reduzierter
     Unterschemastruktur nach \cite[Remark 10.32]{wedhorn}, da $A_\K$
-    reduziert ist).
+    reduziert ist.
     Dieser ist glatt über dem generischen Punkt von $\Spec(R)$
     und somit auch über einer offenen Umgebung $S'$ dessen.
-    Wir erhalten ein glattes, projektives (also eigentliches)
+    Insgesamt ist es ein glattes, projektives, also eigentliches,
     $S'$-Modell von $A_\K$ um den generischen Punkt, was gesucht war.
   \end{proof}
 \end{Satz}

@@ -1,22 +1,22 @@
 \chapter{Weierstraßmodelle}\label{chap:weierstraßmodelle}
-In diesem Kapitel werden wir näher auf die Konstruktion eines
+In diesem Kapitel wird näher auf die Konstruktion eines
 projektiven $R$-Schemas $W$ aus einer Weierstraßgleichung über dem
-Quotientenkörper eines Dedekindrings eingehen.
+Quotientenkörper eines Dedekindrings eingegangen.
 Ein solches Schema ist zwar eigentlich – erfüllt also die \NAbbEig – ist
 aber nicht notwendigerweise glatt und die Gruppenverknüpfung
 erweitert sich nicht immer zu einem Morphismus auf ganz $W$.
-Letzteres kann man beheben, indem man sich auf das Unterschema der
-glatten Punkte $W^0$ von $W$ beschränkt. Denn hier erweitert sich die
-Gruppenverknüpfung und macht $W^0$ zum Gruppenschema, wie wir in
-\autoref{chap:weierstraßgruppe} sehen werden.
+Immerhin letzteres ist auf dem Unterschema $W^0$ der glatten Punkte
+von $W$ behoben. Denn hier erweitert sich die Gruppenverknüpfung und
+macht $W^0$ zum Gruppenschema, wie in \autoref{chap:weierstraßgruppe}
+zu sehen sein wird.
 
 Vorweg sei schon gesagt, dass $W^0$ nur groß genug für die
 \NAbbEig ist, wenn $W$ regulär ist. Allerdings wird sich aus
 der späteren Konstruktion ergeben, dass $W^0$ immer ein großer Teil
 des Néron-Modells ist.
 
-Für unsere Konstruktion eines Néron-Modells beginnen wir in jedem Fall
-mit einem Weierstraßmodell wie unten beschrieben.
+Die behandelte Konstruktion des Néron-Modells einer elliptischen Kurve
+beginnt in jedem Fall mit einem Weierstraßmodell wie unten beschrieben.
 
 \section{Konstruktion}
 \subsection{Weierstraßgleichungen}
@@ -66,10 +66,10 @@ nach \cite[Proposition III.1.4]{silverman}.
 Sei im folgenden Abschnitt $R$ Dedekindring,
 $\K=\Quot(R)$ und $E_\K$ elliptische Kurve über $\K$.
 
-Uns interessiert nun, ob und wie sich eine Weierstraßgleichung mit
-Koeffizienten in $R$ finden lässt, also entsprechend ein $R$-Modell
-von $E_\K$.
-Bleiben wir bei unserer Annahme $\Char(\K)\neq2,3$, sind die
+Es ist nun interessant, ob und wie sich eine Weierstraßgleichung mit
+Koeffizienten in $R$, also ein projektives $R$-Modell von
+$E_\K$, finden lässt.
+Weiterhin unter der Annahme $\Char(\K)\neq2,3$ sind die
 Isomorphismen zwischen Weierstraßkurven zu $E_\K$ genau durch
 Koordinatenwechsel der Form
 \begin{gather*}
@@ -111,15 +111,15 @@ Weierstraßgleichung mit Koeffizienten in $R$.
 % also eine Gleichung mit Koeffizienten in $R$.
 
 \begin{Definition}[Weierstraßmodell]
-  Wir nennen ein projektives $R$-Schema $W=V_+(F)\subset\P_R^2$, das
-  von einer homogenen Weierstraßgleichung $0=F\in R[X,Y,Z]$ von $E_\K$
-  mit Koeffizienten in $R\subset\K$ erzeugt wird,
-  ein Weierstraßmodell von $E_\K$ über $R$.
+  Im Folgenden wird ein projektives $R$-Schema
+  $W=V_+(F)\subset\P_R^2$, das von einer homogenen Weierstraßgleichung
+  $0=F\in R[X,Y,Z]$ von $E_\K$ mit Koeffizienten in $R\subset\K$
+  erzeugt wird, ein Weierstraßmodell von $E_\K$ über $R$ genannt.
 \end{Definition}
 
-Ist $R$ ein diskreter Bewertungsring, können wir die Bewertung der
-Diskriminante durch einen Koordinatenwechsel manipulieren. Daher macht
-es Sinn, eine bzgl. der gegebenen diskreten Bewertung minimale
+Ist $R$ ein diskreter Bewertungsring, kann die Bewertung der
+Diskriminante durch einen Koordinatenwechsel manipuliert werden. Daher
+macht es Sinn, eine bezüglich der gegebenen diskreten Bewertung minimale
 Form der Weierstraßgleichung in $R$ zu betrachten.
 \begin{Definition}[minimale Weierstraßgleichung]
   \optcite[Chapter 1.5, S.\,22]{neron}
@@ -132,9 +132,9 @@ Form der Weierstraßgleichung in $R$ zu betrachten.
   heißt minimal, wenn für die Koeffizienten $\beta, \gamma\in R$ gilt
   und die Bewertung $\ord_\K(\Delta)$ der Diskriminante minimal
   bzgl. homogenem Koordinatenwechsel ist.
-  Wir bezeichnen ein Weierstraßmodell von $E_\K$ über $R$ als minimal,
+  Ein Weierstraßmodell von $E_\K$ über $R$ heißt minimal,
   wenn es von einer minimalen Weierstraßgleichung von $E_\K$ erzeugt
-  ist.
+  wird.
 \end{Definition}
 Es stellt sich heraus, dass sich die spezielle Faser des
 Weierstraßmodells einer elliptische Kurve anhand der minimalen
@@ -145,9 +145,10 @@ Kategorien klassifizieren lässt. Siehe dazu auch \autoref{chap:ausblick}.
 
 \section{Gruppenschemastruktur}\label{chap:weierstraßgruppe}
 \subsection{Allgemeine Eigenschaften}
-Im Folgenden ein paar nützliche Eigenschaften von Weierstraßmodellen,
-die wir unter anderem für den Nachweis der Gruppenstruktur auf dem
-glatten Teil eines Weierstraßmodells brauchen werden.
+Im Folgenden werden ein paar nützliche Eigenschaften von
+Weierstraßmodellen aufgeführt, die unter anderem für den Nachweis der
+Gruppenstruktur auf dem glatten Teil eines Weierstraßmodells nötig
+sind.
 
 % INTEGER, PROJEKTIV, FLACH
 \begin{Lemma}\label{thm:eigweierstrassmodelle}
@@ -188,7 +189,7 @@ glatten Teil eines Weierstraßmodells brauchen werden.
       endlich präsentiert, also ist $W$ endlich präsentiert.
       Entsprechend folgt, dass $W$ von endlichem Typ ist.
     \item[flach]
-      Wir werden zeigen, dass aus integer und nichtleerer generischer
+      Es ist zu zeigen, dass aus integer und nichtleerer generischer
       Faser $E_\K$ folgt, dass der eindeutige generische Punkt $\eta$
       von $W$ auf den generischen Punkt von $R$ geschickt wird.
       Das zeigt, dass $W$ flach ist
@@ -488,7 +489,7 @@ Weierstraßmodell mit der induzierten Gruppenstruktur.
   Ist $W$ glatt, so ist $W$ bereits das Néron-Modell von $E_\K$ über
   $R$.
   \begin{proof}
-    Nach \ref{thm:neronmodelllokal} müssen wir nur prüfen, ob die 
+    Nach \ref{thm:neronmodelllokal} ist nur zu prüfen, ob die 
     $W\times_R R_s$ für abgeschlossene Punkte $s\in\Spec(R)$
     Néron-Modelle von $E_\K$ über $R_s$ sind.
     Ist $W$ glatt, so ist auch $W\times_R R_s$ glattes
@@ -499,11 +500,11 @@ Weierstraßmodell mit der induzierten Gruppenstruktur.
     
     % TODO!!! KAPUTT
 
-    Für die \NAbbEig machen wir uns zunutze, dass $W$ nach
+    Für die \NAbbEig ist nun von Nutzen, dass $W$ nach
     \ref{thm:erweiterunggruppenstruktur} ein $R_s$-Gruppenschema ist.
     Sei $Y$ ein weiteres glattes $R$-Schema mit generischer Faser
     $Y_\K$ und $\phi_\K\colon Y_\K\to E_\K$ ein Morphismus.
-    In \ref{thm:erwrrational} zeigen wir, dass $\phi_\K$ eine
+    In \ref{thm:erwrrational} unten wird gezeigt, dass $\phi_\K$ eine
     eindeutige $R$-rationale Abbildung $\phi\colon Y\dra W$ liefert.
     Nachdem $W$ eigentliches $R$-Gruppenschema und $Y$ glatt ist, ist
     $\phi$ nach \ref{thm:rationalzumorphismus} ein Morphismus, der
@@ -537,8 +538,8 @@ Weierstraßmodell mit der induzierten Gruppenstruktur.
     eines generischen Punkts $\eta$ von $Y$. Da $Y$ flach
     ist, liegt $\eta$ nach \cite[Proposition III.9.7]{hartshorne} in
     der generischen Faser.
-    Wir können also das Bewertungskriterium für Eigentlichkeit für $W$
-    anwenden:
+    Es kann also das Bewertungskriterium für Eigentlichkeit für $W$
+    angewendet werden:
     \begin{center}
       \begin{tikzcd}
         \eta\arrow[r, equal]
@@ -560,9 +561,9 @@ Weierstraßmodell mit der induzierten Gruppenstruktur.
     
     Die so gewonnenen Morphismen in Umgebungen der generischen Punkte
     der Fasern können wiederum wegen der Eindeutigkeit aus
-    \ref{thm:erweindeutig} verklebt werden
-    und wir erhalten eine eindeutige $R$-rationale Abbildung
-    $\phi\colon U\dra W$ auf einem offenen Unterschema $U\subset Y$.
+    \ref{thm:erweindeutig} verklebt. Das Ergebnis ist eine eindeutige
+    $R$-rationale Abbildung $\phi\colon U\dra W$ auf einem offenen
+    Unterschema $U\subset Y$.
     $U$ enthält alle generischen Punkte der Fasern von $Y\to R$ und
     ist somit $R$-dicht.
     $\phi$ ist demnach eindeutige $R$-rationale Erweiterung von
@@ -572,7 +573,7 @@ Weierstraßmodell mit der induzierten Gruppenstruktur.
 \begin{Bemerkung}
   Im Fall diskreter Bewertungsringe kann die Glattheit anhand der Fasern
   überprüft werden:
-  Wir wissen aus \ref{thm:weierstraßmodellglatt},
+  Aus \ref{thm:weierstraßmodellglatt} ist bekannt,
   dass ein Weierstraßmodell $W$ von $E_\K$ über $R$ genau dann glatt
   ist, wenn $\ord_R(\Delta)=0$ für die Diskriminante der
   Weierstraßgleichung gilt.

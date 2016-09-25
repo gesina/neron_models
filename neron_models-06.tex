@@ -30,27 +30,27 @@
 \end{Satz}
 Dieses Kapitel ist dem Beweis des vorangegangenen Satzes gewidmet.
 
-Von der Idee her werden wir uns vorerst in
-\autoref{chap:gruppenstrukturhinreichend} klar machen, dass $E$ genau 
+Von der Idee her wird vorerst in
+\autoref{chap:gruppenstrukturhinreichend} festgestellt, dass $E$ genau 
 dann ein Néron-Modell von $E_\K$ ist, wenn sich die Gruppenverknüpfung
 von $E_\K$ auf ganz $E$ erweitert (das \enquote{genau dann} ist
 bereits aus \ref{thm:gruppenschemaerweiterung} bekannt).
 
 Nun bleibt es zu zeigen, dass sich die Gruppenverknüpfung tatsächlich
 auf $E$ erweitert.
-Wir betrachten dies in \autoref{chap:gruppestrikthenselsch} vorerst für
+Dies wird in \autoref{chap:gruppestrikthenselsch} vorerst für
 den Spezialfall eines strikt henselschen diskreten Bewertungsrings
-$R$. Dabei sehen wir, dass man eine normale Komposition auf $E$
-erhält. Nach \ref{thm:weil} wissen wir nun, dass $E$ birational zu
-einem $R$-Gruppenschema mit der gewünschten Struktur ist. Für den
-Abschluss des Beweises stellen wir fest, dass
-diese $R$-birationale Abbildung bereits ein $R$-Isomorphismus und $E$
-daher ein $R$-Gruppenschema ist.
+$R$ betrachtet. Im ersten Schritt ist hier zu sehen, dass die
+Gruppenverknüpfung von $E_\K$ eine normale Komposition auf $E$
+definiert. Wie aus \ref{thm:weil} bekannt, ist $E$ dann birational zu
+einem $R$-Gruppenschema mit der gewünschten Struktur. Es wird sich
+zuletzt herausstellen, dass diese $R$-birationale Abbildung bereits
+ein $R$-Isomorphismus und $E$ daher ein $R$-Gruppenschema ist.
 
-In \autoref{chap:exneronmodellebeweis} zeigen wir zuletzt, dass wir
-uns ohne Einschränkung auf strikt henselsche Bewertungsringe
-beschränken können, was dann mit den vorangegangenen Ergebnissen den
-Beweis vollendet.
+Zum Abschluss ist in \autoref{chap:exneronmodellebeweis} gezeigt,
+wie von allgemeinen Dedekindringen ohne Einschränkung zu strikt
+henselsche Bewertungsringen übergegangen werden kann, was dann mit den
+vorangegangenen Ergebnissen den Beweis vollendet.
 
 
 % \begin{proof}
@@ -164,7 +164,7 @@ macht.
     vorhergehenden Lemma~\ref{thm:schnittearithmflglatt} in $E$
     liegt.
     
-    Wir werden den Beweis durch Widerspruch führen.
+    Der Beweis kann wie folgt durch Widerspruch geführt werden.
     Angenommen, $\phi\colon Y\dra E$ sei kein Morphismus.
     Da $E$ ein $R$-Gruppenschema, $Y$ glatt und $\phi$ eine
     $R$-rationale Abbildung ist, hat $Y\setminus\Dom(\phi)$
@@ -180,8 +180,7 @@ macht.
     regulär) und lokal ist.
     Sein Quotientenkörper ist der Quotienten-~bzw. Restklassenkörper
     eines generischen Punkts $\eta$ der irreduziblen Komponente von
-    $X$, in der $\eta_Z$ liegt. Wir erhalten somit ein kommutatives
-    Diagramm
+    $X$, in der $\eta_Z$ liegt. Somit ist das Diagramm
     \begin{center}
       \begin{tikzcd}
         \eta\arrow[r, equal]
@@ -195,6 +194,7 @@ macht.
         && \Spec(R)
       \end{tikzcd}
     \end{center}
+    kommutativ.
     $C$ ist nach Voraussetzung eigentlich, daher erweitert sich
     $\phi_\K|_{\eta}$ nach dem Bewertungskriterium für
     Eigentlichkeit auf einen Morphismus
@@ -207,8 +207,8 @@ macht.
     $\phi|_{\O_{Y,\eta_Z}}(\eta)\in E$, weshalb nach
     \ref{thm:schnittearithmflglatt}
     $\im(\phi|_{\O_{Y,\eta_Z}})\subset E$.
-    Wir können demnach eine glatte, offene Umgebung von
-    $\im(\phi|_{\O_{Y,\eta_Z}})$ wählen, deren Urbild $U$ unter
+    Es kann demnach eine glatte, offene Umgebung von
+    $\im(\phi|_{\O_{Y,\eta_Z}})$ gewählt werden, deren Urbild $U$ unter
     $\phi|_{U_Z}$ entsprechend wieder offen in $U_Z$, also $Y$, ist.
     Insgesamt ist $\phi|_U\colon U\to E$ ein Morphismus, was
     bedeutet, dass $\phi$ entgegen der Annahme in $\eta_Z$ definiert
@@ -266,12 +266,12 @@ macht.
 \section[Gruppenstruktur für strikt henselsche Ringe]%
 {Nachweis der Gruppenstruktur für strikt henselsche Bewertungsringe}
 \label{chap:gruppestrikthenselsch}
-Für den Abschluss des Beweises zu \ref{thm:exneronmodelle} müssen wir
-nach \ref{thm:fallstriktehenselisierung} nur noch nachweisen, dass
-sich die Gruppenstruktur auf $E$ erweitert.
-Dies werden wir in diesem Abschnitt vorerst für strikt henselsche
-Bewertungsringe zeigen. Vorweg werden die Definition und Eigenschaften
-strikt henselscher Ringe aufgeführt.
+Für den Abschluss des Beweises zu \ref{thm:exneronmodelle} muss
+nach \ref{thm:fallstriktehenselisierung} nur noch nachgewiesen werden,
+dass sich die Gruppenstruktur auf $E$ erweitert.
+Dies ist in diesem Abschnitt vorerst für strikt henselsche
+Bewertungsringe gezeigt. Vorweg werden die Definition und die nötigen
+Eigenschaften strikt henselscher Ringe aufgeführt.
 % Nur Erweiterung der Gruppenstruktur!
 \subsection{Strikt henselsche Ringe}
 % HENSELSCHE RINGE
@@ -358,8 +358,9 @@ strikt henselscher Ringe aufgeführt.
   \end{proof}
 \end{Satz}
 
-Die für uns besonders wichtige Eigenschaft eines strikt henselschen
-Rings ist folgende Aussage über die Einschränkung von Schnitten:
+Die im Folgenden besonders wichtige Eigenschaft eines strikt
+henselschen Rings ist folgende Aussage über die Einschränkung von
+Schnitten:
 \begin{Satz}[{\cite[Proposition IV.6.4]{silverman2}}]
   \label{thm:eigstrikthenselsch}
   Sei $(R,\m)$ ein diskreter Bewertungsring mit perfektem
@@ -379,10 +380,11 @@ Rings ist folgende Aussage über die Einschränkung von Schnitten:
 
 \subsection{Nachweis der Gruppenstruktur für strikt henselsche Ringe}
 Um die Erweiterung der Gruppenverknüpfung auf ganz $E$ für strikt
-henselsche Ringe nachzuweisen, werden wir erst zeigen, dass wir eine
-normale Komposition auf $E$ erhalten.
-Diese ist dann nach \ref{thm:weil} $R$-birational zu dem gesuchten
-Gruppenschema und wir werden zeigen, dass diese Birationalität ein
+henselsche Ringe nachzuweisen, ist erst zu zeigen, dass die
+Gruppenverknüpfung von $E_\K$ eine normale Komposition auf $E$
+definiert.
+Nach \ref{thm:weil} ist $E$ dann $R$-birational zu dem gesuchten
+Gruppenschema und es wird gezeigt, dass diese Birationalität ein
 Isomorphismus ist.
 % ERWEITERUNG DER GRUPPENSTRUKTUR
 \begin{Satz}\label{thm:egruppenschema}
@@ -411,8 +413,8 @@ Isomorphismus ist.
     $E\times_R E$ glatt und somit regulär ist. Nach
     \ref{thm:schnittearithmflglatt} liegt dann
     $\tilde\mu(\eta_k)$ und entsprechend das Bild einer offenen
-    Umgebung von $\eta_k$ unter $\tilde\mu$ in $E$. Daher erhalten
-    wir (unter Umständen durch Einschränkung von $\Dom(\tilde\mu)$)
+    Umgebung von $\eta_k$ unter $\tilde\mu$ in $E$. Das ergibt
+    – unter Umständen durch Einschränkung von $\Dom(\tilde\mu)$ –
     eine $R$-rationale Abbildung $\mu\colon E\times_R E\dra E$.
 
     Für eine normale Komposition bleiben Assoziativität und Inverse zu
@@ -440,7 +442,7 @@ Isomorphismus ist.
     werden, dass $\Dom(\phi)$ bzw. $\Dom(\psi)$ dicht in der
     speziellen Faser von $E$ ist, also in jedem generischen Punkt
     der speziellen Faser definiert ist.
-    Wir werden den Fall für $\phi$ behandeln, $\psi$ folgt analog.
+    Es wird der Fall für $\phi$ behandelt, $\psi$ folgt analog.
     
     Sei also $\eta\in E\times_R (R/\p)=E_k$ ein generischer Punkt der
     speziellen Faser von $E$ und $R'=\O_{E,\eta}$ der Halm in
@@ -451,11 +453,11 @@ Isomorphismus ist.
     minimales $R'$-Modell der elliptischen Kurve
     $E_\K\times_{\K'}\K'\eqqcolon E_{\K'}$ mit offenem Unterschema
     $E_{R'}=E\times_R R'$ der glatten Punkte.
-    Wir wissen, dass per Konstruktion $\Spec(R')\subset E$, also dass
+    Es ist bekannt, dass per Konstruktion $\Spec(R')\subset E$, also dass
     es einen $R'$-wertigen Punkt $s\colon\Spec(R')\to E_{R'}$ gibt.
-    Wir erhalten einen zugehörigen Translationsmorphismus auf der
-    generischen Faser, der aufgrund der Gruppenstruktur Automorphismus
-    ist:
+    Es lässt sich ein zugehöriger Translationsmorphismus auf der
+    generischen Faser definieren, der aufgrund der Gruppenstruktur
+    Automorphismus ist:
     \begin{gather*}
       \tau_{\K'}\colon
       E_{\K'}\cong E_{\K'}\times_{\K'}\K'
@@ -482,9 +484,10 @@ Isomorphismus ist.
         & (e,\mu(x,y))
       \end{tikzcd}
     \end{center}
-    bzw. $\tilde\tau_{R'}\colon(e,y)\mapsto(e,\mu(y,x))$, wenn man
-    $R'\times_{R'}(R'\times_R E)$ durch $(R'\times_R E)\times_{R'}R'$ ersetzt.
-    Wir erhalten das kommutative Diagramm
+    bzw. $\tilde\tau_{R'}\colon(e,y)\mapsto(e,\mu(y,x))$, wenn
+    $R'\times_{R'}(R'\times_R E)$ durch $(R'\times_R E)\times_{R'}R'$
+    ersetzt wird.
+    Daher ist das Diagramm
     \begin{center}
       \begin{tikzcd}
         (e,y) \arrow[d, mapsto]\arrow[rrr, bend left=20, mapsto]
@@ -498,10 +501,11 @@ Isomorphismus ist.
         & (x,\mu(x,y))
       \end{tikzcd}
     \end{center}
-    und sehen, dass $\phi$ auf dem generischen Punkt
+    kommutativ und $\phi$ muss auf dem generischen Punkt
     $(\eta,\eta)\in\Spec(R')\times_R\Spec(R')\subset E\times_R E$
-    von $(E\times_R E)_k=E_k\times_k E_k$ definiert ist.
-    Mit $\tilde\tau$ statt $\tau$ erhält man dasselbe für $\psi$.
+    von $(E\times_R E)_k=E_k\times_k E_k$ definiert sein.
+    Mit $\tilde\tau$ statt $\tau$ ergibt sich dasselbe für $\psi$.
+    
     \paragraph{Inverses $R$-birational}
     Für die Birationalität von $\phi$ bzw. $\psi$ siehe
     \cite[Propsition IV.6.10]{silverman2}.
@@ -548,35 +552,37 @@ Isomorphismus ist.
       ist und $\Id_{E_\K}=\tau_{(-P)}\circ\tau_P$ gilt.
       
       Für jedes $\beta\in G$, so dass es einen Schnitt $P$ gibt mit
-      $\tau_P^G(\beta)\in\Dom(f)$, ist $\tau_{(-P)}^E\circ f\circ
-      \tau_P^G$ also eine eindeutige Erweiterung von $f|_{E_\K}$
+      ${\tau_P^G(\beta)\in\Dom(f)}$, ist ${\tau_{(-P)}^E\circ f\circ
+      \tau_P^G}$ daher eine eindeutige Erweiterung von $f|_{E_\K}$
       bzw. von $f$ auf eine Umgebung von $\beta$.
-      Wir können also durch Translation den Definitionsbereich von
-      $f$ für passende $\beta$ erweitern.
+      Durch Translation kann also der Definitionsbereich von $f$ für
+      passende $\beta$ erweitert werden. 
 
-      Jetzt können wir nutzen, dass $R$ nach Voraussetzung strikt
+      Jetzt kommt zum tragen, dass $R$ nach Voraussetzung strikt
       henselsch ist. Das bedeutet nach
       \ref{thm:eigstrikthenselsch}, dass die Menge der Bildpunkte
       aller Schnitte $P\colon\Spec(R)\to G$ dicht in der
       speziellen Faser liegt.
-      Insbesondere findet man in jeder offenen Umgebung eines
-      Punkts $\beta\in G$ einen Punkt, um den man mithilfe einer
-      Translation den Defintionsbereich von $f$ auf eine Umgebung von
-      $\beta$ ausweiten kann, wie oben beschrieben.
-      Damit ist $g$ in allen Punkten von $G$ definiert und somit
-      Morphismus.
+      Insbesondere liegt für jedes $\beta\in G_k$ im offenen Urbild
+      ${\mu(\bullet,\beta)}^{-1}(\Dom(f))$ der Bildpunkt $P(\Spec(k))$
+      eines Schnitts $P$. Damit erfüllt $\beta$ die Bedingung von oben
+      wegen
+      \begin{gather*}
+        \tau_P^G(\beta)=\mu(P(\Spec(k)),\beta)\in\Dom(f)
+      \end{gather*}
+      Damit ist $f$ auf ganz $G$ definiert und somit Morphismus.
     \end{description}
   \end{proof}
 \end{Lemma}
 
 
 \section{Allgemeine Existenz}\label{chap:exneronmodellebeweis}
-Zu allerletzt bleibt noch zu sehen, dass wir uns von Dedekindringen
+Zu allerletzt bleibt noch zu sehen, dass von Dedekindringen
 auf Bewertungsringe und von dort auf strikt henselsche Bewertungsringe
-beschränken können.
+übergegangen werden kann.
 \begin{proof}[Beweis von \ref{thm:exneronmodelle}]
-  Wegen \ref{thm:neronmodelllokal} können wir uns auf
-  diskrete Bewertungsringe $R$ beschränken.
+  Wegen \ref{thm:neronmodelllokal} ist $R$ ohne Einschränkung
+  diskreter Bewertungsring.
   Betrachte also einen diskreten Bewertungsring $R$ mit perfektem
   Restklassenkörper, eine elliptische Kurve $E_\K$ über $\K=\Quot(R)$,
   ein minimales Modell $X$ von $E_\K$ über $R$ und dessen Unterschema
@@ -589,8 +595,8 @@ beschränken können.
   \ref{thm:eigminmodell} ist $C\times_R\Rsh$ ein minimales Modell von
   $E_\Ksh=E_\K\times_\K\Ksh$ über $\Rsh$ mit Unterschema
   $E\times_R\Rsh$ der glatten Punkte.
-  Wir wissen also aus \ref{thm:egruppenschema}, dass $E\times_R\Rsh$
-  das Néron-Modell von $E_\Ksh$ über $\Rsh$ ist.
+  Wie aus \ref{thm:egruppenschema} bekannt, ist $E\times_R\Rsh$ also
+  das Néron-Modell von $E_\Ksh$ über $\Rsh$.
 
   Für die \NAbbEig von $E$ sei $Y$ glattes $R$-Schema und
   $\phi_\K\colon Y_\K\to E_\K$ Morphismus auf den generischen Fasern.
@@ -606,9 +612,8 @@ beschränken können.
     \qquad
     X\longmapsto \pi^*X=X\times_R\Rsh
   \end{gather*}
-  volltreu. Deshalb erhalten wir einen
-  treuflachen Abstieg $\phi\colon Y\to E$ von $\phi_\Rsh$, der
-  $\phi_\K$ erweitert.
+  volltreu. Deshalb gibt es einen treuflachen Abstieg
+  $\phi\colon Y\to E$ von $\phi_\Rsh$, der $\phi_\K$ erweitert.
 
   Somit ist $E$ Néron-Modell von $E_\K$.
 \end{proof}
