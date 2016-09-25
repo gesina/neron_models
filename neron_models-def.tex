@@ -9,6 +9,7 @@
 % \usepackage{mathpazo}
 %\usepackage[charter]{mathdesign} % not working :-(
 
+% LUALATEX
 \usepackage{fontspec}
 \setmainfont{Latin Modern Roman}
 \setsansfont{Latin Modern Sans}
@@ -30,7 +31,7 @@
 \usepackage{dsfont}
 \usepackage{tikz-cd}
 \usetikzlibrary{babel}
-\hyphenation{Né-ron=Ab-bil-dungs-ei-gen-schaft Grup-pen-sche-ma-ta
+\hyphenation{Né-ron Ab-bil-dungs-ei-gen-schaft Grup-pen-sche-ma-ta
   Treu-flach-heit wo-raus}
 
 \usepackage{enumitem}
@@ -40,10 +41,11 @@
 \usepackage{tabularx}
 
 % SCHREIBHILFEN
-\newcommand*{\optcite}[2][]{\cite[#1]{#2}}
+%\newcommand*{\optcite}[2][]{\cite[#1]{#2}}
+\newcommand*{\optcite}[2][]{}
 
 % SONSTIGE DEFINITIONEN
-\newcommand*{\NAbbEig}{Néron-Abbildungseigenschaft }
+\newcommand*{\NAbbEig}{Néron"=Abbildungseigenschaft }
 
 % MATHE DEFINITIONEN
 \newtheorem{Satz}{Satz}[chapter]
