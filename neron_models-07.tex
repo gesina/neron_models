@@ -1,18 +1,18 @@
 \chapter{Beispiele und Ausblick}\label{chap:ausblick}
 Inzwischen ist aus \ref{bsp:regweierstraßmodell} und
 \ref{bem:konstruktionminmodell} bekannt, dass ein reguläres
-Weierstraßmodell über einem Dedekindring bereits minimales Modell
+Weierstraßmodell über einem Dedekindring bereits ein minimales Modell
 seiner generischen Faser ist.
 In einigen Fällen kann die Regularität an den
 Koeffizienten der Weierstraßgleichung abgelesen werden.
-Sei im Folgenden $(R,(\pi))$ diskreter Bewertungsring mit perfektem
-Restklassenkörper, ${\K=\Quot(R)}$, $E_\K$ elliptische Kurve über $\K$
-und $W$ ein minimales Weierstraßmodell von $E_\K$ zur Gleichung
-($\Char(\K)\neq2,3$):
+Sei im Folgenden $(R,(\pi))$ ein diskreter Bewertungsring mit
+perfektem Restklassenkörper, ${\K=\Quot(R)}$, $E_\K$ ein elliptische
+Kurve über $\K$ und $W$ ein minimales Weierstraßmodell von $E_\K$ zur
+Gleichung ($\Char(\K)\neq2,3$):
 \begin{gather}\label{eq:allgweierstraßgleichung}
-  f\colon y^2=x^3 + \beta x + \gamma
+  f\colon y^2=x^3 + \beta x + \gamma\;.
 \end{gather}
-% \begin{Beispiel}[$b_n$-Reduktion: $\ord_\K(\Delta)=1$]
+% \begin{Beispiel}[$b_n$"~Reduktion: $\ord_\K(\Delta)=1$]
 %   \optcite[Lemma IV.9.5]{silverman2}
 %   Ist $\ord_\K(\Delta)=1$, sind nach
 %   \cite[Chapter 1.5, Lemma 3 and Lemma 4]{neron} die Koeffizienten
@@ -28,10 +28,10 @@ und $W$ ein minimales Weierstraßmodell von $E_\K$ zur Gleichung
   \begin{gather*}
     \ord_\K(\beta)\geq 1
     \qquad\text{und}\qquad
-    \ord_\K(\gamma)=1
+    \ord_\K(\gamma)=1\;.
   \end{gather*}
-  das heißt $\gamma=u\pi$, $\beta=v\pi^n$ für Einheiten $u,v\in R^\times$
-  und $n\in\N_{\geq1}$.
+  Das heißt $\gamma=u\pi$ und $\beta=v\pi^n$ für Einheiten
+  $u,{v\in R^\times}$ und $n\in\N_{\geq1}$.
 
   \begin{proof}
     Wie aus \ref{thm:weierstrassglatt} bekannt, ist nur die
@@ -44,7 +44,7 @@ und $W$ ein minimales Weierstraßmodell von $E_\K$ zur Gleichung
     \begin{gather*}
       \dfrac{k[\bar x,\bar y]}{(\bar y^2-\bar x^3+\beta \bar x+\gamma)}
       =\dfrac{k[\bar x,\bar y]}{(\bar y^2-\bar x^3+v\pi^n \bar x+u\pi x)}
-      =\dfrac{k[\bar x,\bar y]}{(\bar y^2-\bar x^3)}
+      =\dfrac{k[\bar x,\bar y]}{(\bar y^2-\bar x^3)}\;,
     \end{gather*}
     welches im abgeschlossenen Punkt $(0,0)\in\A_k^2$ beziehungsweise
     $(\bar x,\bar y)\in W_k$ singulär ist. Da der singuläre Punkt von
@@ -56,7 +56,7 @@ und $W$ ein minimales Weierstraßmodell von $E_\K$ zur Gleichung
     Durch Umstellen von \eqref{eq:allgweierstraßgleichung} ist aber
     ersichtlich, dass
     \begin{gather*}
-      \pi = u^{-1}\left( y^2-x^3-\beta x \right)\in\p
+      \pi = u^{-1}\left( y^2-x^3-\beta x \right)\in\p\;,
     \end{gather*}
     weshalb $\p=(x,y)$ tatsächlich nur zwei Erzeuger hat.
   \end{proof}
@@ -67,7 +67,7 @@ Nach \cite[Lemma~1.5/3 und~1.5/4]{neron} ist die
 Bedingung $\ord_\K(\beta)\geq 1$ und $\ord_\K(\gamma)=1$ für
 minimale Weierstraßgleichungen äquivalent dazu,
 dass $\ord_\K(\Delta)=2$ und $\ord_\K(j)\geq 1$,
-wobei $j=2^8\cdot 3^3\cdot\beta^3$ die $j$-Invariante der
+wobei $j=2^8\cdot 3^3\cdot\beta^3$ die $j$"~Invariante der
 Weierstraßgleichung ist.
 \end{Bemerkung}
 
@@ -75,7 +75,7 @@ Wie in \cite[Chapter~1.5]{neron} beschrieben, ist die
 Gruppenstruktur der speziellen Faser im Fall von \ref{thm:c1red} die
 des additiven Gruppenschemas $\G_{a,k}$ über $k$. Dieses ist definiert
 als $\G_{a}\times_\Z k$, wobei $\G_{a}\coloneqq\Spec(\Z[T])$ ist mit
-Gruppenstruktur
+der Gruppenstruktur
 \begin{center}
   \begin{tikzcd}[row sep=5pt]
     \G_{a}\times_\Z \G_{a} \arrow[r,"\mu"] \arrow[d, equal]
@@ -100,7 +100,7 @@ Gruppenstruktur
     y^2&=x^3\pm 10
     & \Delta&=-16\cdot2700=-16\cdot2^2\cdot3^3\cdot5^2
   \end{align*}
-  Für alle ist offensichtlich die Bedingung aus
+  Für alle Gleichungen ist offensichtlich die Bedingung aus
   \ref{bem:bedregweierstraßmodell} erfüllt.
   Somit sind die projektiven Abschlüsse der elliptischen Kurven über
   $\Z_{(5)}$ alle bereits minimale Modelle und ihr glatter Teil,
@@ -132,7 +132,7 @@ minimalisiert und dann einer der Kategorien in
     \begin{tabularx}{\linewidth}{@{}l>{\hsize=.7\hsize}X>{\hsize=1.3\hsize}X@{}}
       \toprule
        & Bedingungen an \newline die Koeffizienten
-      & ~\newline Beschreibung der speziellen Faser\\
+      & Beschreibung der speziellen Faser\\
       \midrule[\heavyrulewidth]
       $a$& $\ord_\K(j)\geq0$, $\ord_\K(\Delta)=0$
       & elliptische Kurve\\\midrule
@@ -162,17 +162,19 @@ minimalisiert und dann einer der Kategorien in
       & ähnlich $c6$ mit 9 Kurven und bis Multiplizität 6\\\bottomrule
     \end{tabularx}
   \end{center}
-  \caption{\label{tab:faserklassifizierung} Kategorien für die
+  \caption{Kategorien für die
     Klassifizierung der speziellen Faser des minimalen Modells einer
     elliptischen Kurve über einem diskreten Bewertungsring mit
     perfektem Restklassenkörper,
     nach Néron,
-    vergleiche \cite[Chapter~1.5]{neron} und \cite[Figure~IV.4.4]{silverman2}} 
+    vergleiche \cite[Chapter~1.5]{neron} und
+    \cite[Figure~IV.4.4]{silverman2}
+    \label{tab:faserklassifizierung}} 
 \end{table}
 Für genaueres zu Tates Algorithmus siehe
 \cite[Chapter~IV.9]{silverman2},
 \cite[Chapter~1.5]{neron} und \cite{tate}.
-Ein analoger Algorithmus, der auch den Fall von Dedekindringen mit
+Ein analoger Algorithmus, welcher auch den Fall von Dedekindringen mit
 nicht perfekten Restklassenkörpern abdeckt, ist in \cite{nonperfect}
 zu finden.
 

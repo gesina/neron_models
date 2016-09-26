@@ -1,16 +1,16 @@
 \chapter{Arithmetische Flächen}\label{chap:arithmetischeflächen}
-Arithmetische Flächen sind grob gesagt besonders gutartige Kurven über
-einem Dedekindring $R$, das heißt $R$-Schemata der Dimension~2.
+Arithmetische Flächen sind besonders gutartige Kurven über
+einem Dedekindring $R$, das heißt $R$"~Schemata der Dimension~2.
 Besonders wichtig ist, dass ihre Fasern alle projektive Kurven sind,
 weswegen sie leicht zu beschreiben sind.
 
 In diesem Kapitel beginnt mit der Definition arithmetischer Flächen,
 woraufhin sich zeigt, dass es für elliptische Kurven immer eine
-$R$-Modell dieser Form gibt. Für die Konstruktion wird das Weierstraßmodell
+$R$"~Modell dieser Form gibt. Für die Konstruktion wird das Weierstraßmodell
 aus \autoref{chap:weierstraßmodelle} nötig sein.
 Weiterhin werden einige Eigenschaften arithmetischer Flächen
-untersucht. Unter anderem wird gezeigt, dass alle $R$-Schnitte einer
-arithmetischen Fläche bereits $R$-Schnitte des glatten Teils
+untersucht. Unter anderem wird gezeigt, dass alle $R$"~Schnitte einer
+arithmetischen Fläche bereits $R$"~Schnitte des glatten Teils
 sind. Dies ist für die Konstruktion des Néron-Modells später von
 Nutzen, welches sich als der glatte Teil einer minimal gewählten
 arithmetischen Fläche entpuppen wird.
@@ -20,7 +20,7 @@ elliptische Kurven gezeigt wird.
 
 \section{Definition}
 \begin{Definition}[Arithmetische Fläche]
-  Sei $R$ Dedekindring mit Quotientenkörper $\K$.
+  Sei $R$ ein Dedekindring mit Quotientenkörper $\K$.
   % \optcite[IV.4]{silverman2}
   % Eine arithmetische Fläche $X$ über $R$ ist ein
   % integeres, normales, exzellentes Schema, flach und von endlichem
@@ -31,20 +31,20 @@ elliptische Kurven gezeigt wird.
   % entsprechenden Restklassenkörpern sind.
   % % exzellent-Bediungung:
   % Hat $R$ Quotientenkörper der Charakteristik Null, so ist jedes
-  % $R$-Schema lokal endlichen Typs bereits excellent.
+  % $R$"~Schema lokal endlichen Typs bereits excellent.
   % \optcite[Theorem 12.51]{wedhorn}
   \optcite[Definition 8.3.1, 8.3.14]{liu}
   Eine arithmetische Fläche ist ein projektives, integres, flaches,
-  reguläres $R$-Schema von Dimension~2, also relativer Dimension~1 über
+  reguläres $R$"~Schema von Dimension~2, also relativer Dimension~1 über
   $R$, falls $R$ kein Körper ist.
-  Die generische Faser $X_\K$ ist integre, projektive Kurve über $\K$
-  und jede spezielle Faser $X_s$ über einem abgeschlossenen Punkt
-  $s\in\Spec(R)$ ist projektive Kurve über $\k(s)$ nach
+  Die generische Faser $X_\K$ ist eine integre, projektive Kurve über
+  $\K$ und jede spezielle Faser $X_s$ über einem abgeschlossenen Punkt
+  $s\in\Spec(R)$ ist eine projektive Kurve über $\k(s)$ nach
   \cite[Lemma~8.3.3]{liu}.
 \end{Definition}
 
 \begin{Beispiel}\label{bsp:regweierstraßmodell}
-  Ein reguläres Weierstraßmodell einer elliptischen Kurve ist
+  Ein reguläres Weierstraßmodell einer elliptischen Kurve ist eine
   arithmetische Fläche.
   Beachte, dass $W$ regulär sein kann, aber dennoch nicht glatt, also
   singulär in endlich vielen Fasern.
@@ -56,27 +56,27 @@ elliptische Kurven gezeigt wird.
   (kurz: eigentliches Modell von $E_\K$ über $R$).
   \begin{proof}
     Aus \autoref{chap:weierstraßmodelle} ist bekannt, dass zu $E_\K$
-    ein Weierstraßmodell $W$ über $R$ gefunden werden kann, das heißt
-    ein projektives, integres, flaches $R$-Schema, dessen generische
+    ein Weierstraßmodell $W$ über $R$ existiert, das heißt
+    ein projektives, integres, flaches $R$"~Schema, dessen generische
     Faser $E_\K$ ist. Zur arithmetischen Fläche fehlt $W$ nur noch die
     Regularität.
     \cite[Corollary~8.3.51]{liu} besagt nun, dass $W$ eine starke,
-    projektive Desingularisierung besitzt. Damit ist gemeint, es gibt
-    einen projektives, reguläres $W$-Schema ${\pi\colon Z\to W}$, das
-    birational zu $W$ und ein Isomorphismus auf den regulären Punkten
-    von $W$ ist.
+    projektive Desingularisierung besitzt. Das bedeutet, es gibt
+    einen projektives, reguläres $W$"~Schema ${\pi\colon Z\to W}$,
+    welches birational zu $W$ und ein Isomorphismus auf den regulären
+    Punkten von $W$ ist.
     Birationale Abbildungen erhalten per Definition
     Irreduzibilitätskomponenten, Reduziertheit und Dimension.
     Daher ist $Z$ insbesondere wie $W$ integer
     und von Dimension~2.
 
     Weiterhin schicken birationale Morphismen generische Punkte auf
-    generische Punkte, weshalb das reduzierte Schema $Z$ flach über
-    $R$ ist nach \cite[Proposition~III.9.7]{hartshorne}, weil
-    $W$ flach über $R$ ist.
+    generische Punkte, weshalb nach
+    \cite[Proposition~III.9.7]{hartshorne} das reduzierte Schema $Z$
+    flach über $R$ ist , weil $W$ flach über $R$ ist.
 
     Außerdem hat $Z$ dieselbe generische Faser $E_\K$, da
-    $W$ in $E_\K$ glatt, insbesondere regulär ist.
+    $W$ in $E_\K$ glatt und insbesondere regulär ist.
     Insgesamt ist $Z$ arithmetischen Fläche über $R$ mit
     generischer Faser $E_\K$.
   \end{proof}
@@ -91,7 +91,7 @@ elliptische Kurven gezeigt wird.
     \to Z_{2}\to Z_{1}'\to Z_{1}\to Z_{0}'=W
   \end{gather*}
   Die $Z_i\to Z_{i-1}'$ sind die Normalisierung der $Z_{i-1}'$,
-  das heißt birationale, integre Morphismen mit $Z_{i}$ normal
+  das heißt birationale, integre Morphismen mit normalem $Z_{i}$ 
   und wegen Birationalität auch wieder integer. Sie existieren nach
   \cite[Proposition~4.1.22]{liu}.
   
@@ -120,15 +120,15 @@ ist.
   \optcite[Proposition IV.4.3]{silverman2}
   Sei $R$ ein Dedekindring,
   $\pi\colon X\to\Spec(R)$ eine arithmetische Fläche über $R$,
-  ${\phi\in X(R)}$ ein $R$-Schnitt und $\p\in\Spec(R)$.
+  ${\phi\in X(R)}$ ein $R$"~Schnitt und $\p\in\Spec(R)$.
   Dann ist $X_\p$ regulär in $\phi(\p)$.
   \begin{proof}
     Nachdem die generische Faser einer arithmetischen Fläche bereits
     glatt, also regulär ist, sei $\p\subset\Spec(R)$ ein abgeschlossener
     Punkt.
-    Sei $x=\phi(\p)\in X_\p\subset X$ und $\m_{X_\p,x}\subset\O_{X_\p,x}$
-    das Maximalideal des Halmes von $x$ in $X_\p$,
-    analog $\m_{X,x}\subset\O_{X,x}$.
+    Sei $x=\phi(\p)\in X_\p\subset X$ und
+    ${\m_{X_\p,x}\subset\O_{X_\p,x}}$ das Maximalideal des Halmes von
+    $x$ in $X_\p$, analog ${\m_{X,x}\subset\O_{X,x}}$.
     Der Punkt $x$ ist als Bildpunkt des Schnitts
     $\phi|_{\Spec(\k(\p))}$ abgeschlossen in $X_\p$.
     Daher gilt wegen \cite[Corollary~2.5.24]{liu}
@@ -138,10 +138,10 @@ ist.
     denn $X_p$ ist equidimensional nach
     \cite[Proposition~4.4.16]{liu} und projektive Kurve.
     Für die Regularität von $X_\p$ in $x$ ist demnach zu zeigen,
-    dass $\m_{X_\p,x}/\m_{X_\p,x}^2$ als $(\O_{X_p,x}/\m_{X_p,x})$-Vektorraum
+    dass $\m_{X_\p,x}/\m_{X_\p,x}^2$ als $(\O_{X_p,x}/\m_{X_p,x})$"~Vektorraum
     von nur einem Element $f_1$ erzeugt wird.
     
-    $\O_{X,x}$ ist $R$-Algebra über den induzierten lokalen
+    $\O_{X,x}$ ist eine $R$"~Algebra über den induzierten lokalen
     Homomorphismus ${\pi^\#\colon R_\p\to\O_{X,x}}$.
     Sei ${\phi^\#\colon\O_{X,x}\to R_\p}$ der induzierte lokale
     Ringhomomorphismus zu $\phi$ auf den Halmen. Für diesen muss
@@ -166,9 +166,9 @@ ist.
       = \phi^\#(\m_{X,x})^2
       = \p^2
     \end{gather*}
-    Dies ist ein Widerspruch, da ${\p\subset R_\p}$ Maximalideal eines
-    diskreten Bewertungsringes ist und deshalb wegen Regularität von
-    $R_\p$ gelten muss ${\p/\p^2\neq 0}$.
+    Dies ist ein Widerspruch, da ${\p\subset R_\p}$ das Maximalideal
+    eines diskreten Bewertungsringes ist und deshalb wegen Regularität
+    von $R_\p$ gelten muss, dass ${\p/\p^2\neq 0}$.
     Also ist ${\pi^\#(\p)\not\subset\m_{X,x}^2}$ gezeigt.
 
     Nach \autoref{eq:stalkdimension} gilt
@@ -181,14 +181,14 @@ ist.
     \end{gather}
     Wegen ${\pi^\#(\p)\not\subset\m_{X,x}^2}$ gibt es ein
     ${t\in\pi^\#(\p)\setminus\m_{X,x}^2\subset\m_{X,x}}$.
-    \eqref{eq:maximalideal} bedeutet für $t$, dass es $\alpha_1,
+    \autoref{eq:maximalideal} bedeutet für $t$, dass es $\alpha_1,
     {\alpha_2\in\O_{X,x}}$ gibt, so dass
     \begin{gather*}
       0 \neq t = \alpha_1 f_1 + \alpha_2 f_2 \mod \m_{X,x}^2
     \end{gather*}
     Da $t\not\in\m_{X,x}^2$, muss mindestens einer der Koeffizienten
     $\alpha_1,\alpha_2$ in $\O_{X,x}\setminus\m_{X,x}=\O_{X,x}^\times$
-    liegen, also ein Einheit sein. Ohne Einschränkung sei
+    liegen, also eine Einheit sein. Ohne Einschränkung sei
     $\alpha_2\in\O_{X,x}^\times$. Dann nach $f_2$ wie folgt
     aufgelöst werden
     \begin{gather*}
@@ -196,18 +196,18 @@ ist.
     \end{gather*}
     und aus \eqref{eq:maximalideal} wird die neue Gleichung
     \begin{gather}\label{eq:maximalidealneu}
-      \m_{X,x} = t\O_{X,x} + f_1\O_{X,x} + \m_{X,x}^2
+      \m_{X,x} = t\O_{X,x} + f_1\O_{X,x} + \m_{X,x}^2\;.
     \end{gather}
     Für den lokalen Ring $\O_{X_\p,x}$ von $x$ in der generischen
     Faser ${X_\p = X\times_R (R/\p)}$ gilt
     \begin{align*}
-      \O_{X_\p,x} &= \O_{X,x}/\pi^\#(\p)\\
+      \O_{X_\p,x} &= \O_{X,x}/\pi^\#(\p)\;,\\
       \m_{X_\p,x} &= \m_{X,x}/\pi^\#(\p)
                     \overset{\eqref{eq:maximalidealneu}}{=}
                     \bar t\O_{X_\p,x} + \bar f_1\O_{X_\p,x} +
                     \m_{X_\p,x}^2
                     \overset{t\in\pi^\#(\p)}{=}
-                    \bar f_1\O_{X_\p,x} + \m_{X_\p,x}^2 
+                    \bar f_1\O_{X_\p,x} + \m_{X_\p,x}^2 \;.
     \end{align*}
     Es ist zu sehen, dass $\m_{X_\p,x}$ von $\m_{X_\p,x}^2$ und einem Element
     erzeugt ist, was $\O_{X_\p,x}$ zu einem regulären Ring der Dimension~1
@@ -217,15 +217,15 @@ ist.
 
 \begin{Satz}\label{thm:ratpkteregulaeremodelle}
   \optcite[Corollary IV.4.4]{silverman2}
-  Sei $R$ Dedekindring
+  Sei $R$ ein Dedekindring
   mit perfekten Restklassenkörpern,
   $\K=\Quot(R)$,
-  $X$ eine arithmetische Fläche,
-  $X^0$ offenes Unterschema der glatten Punkte und
-  $X_\K$ generische Faser von $X$.
+  sei $X$ eine arithmetische Fläche,
+  $X^0$ das offenes Unterschema der glatten Punkte und
+  $X_\K$ die generische Faser von $X$.
   Dann gilt
   \begin{gather*}
-    X_\K(\K)=X(R)=X^0(R)
+    X_\K(\K)=X(R)=X^0(R)\;.
   \end{gather*}
   \begin{proof}
     Die erste Gleichheit ist allein eine Anwendung des
@@ -239,13 +239,13 @@ ist.
     
     Nach \ref{thm:arithflschnittbilderglatt} enthält das Bild
     $\phi(\Spec(R))$ eines Schnitts $\phi\in X(R)$ nur reguläre
-    Punkte der Fasern. Diese sind glatte Punkte von $X$, denn:
+    Punkte der Fasern. Diese sind glatte Punkte von $X$. Denn
     $X$ ist flach und lokal endlich präsentiert, daher genau dann
     glatt, wenn die Fasern glatt sind nach
     \cite[Proposition~8.5/17]{bosch}.
-    Die generische Faser ist bereits glatt und die speziellen Fasern
-    sind als Schemata endlichen Typs über einem perfektem Körper
-    genau dann glatt, wenn sie regulär sind.
+    Die generische Faser ist aber bereits glatt und die speziellen
+    Fasern sind als Schemata endlichen Typs über einem perfektem
+    Körper genau dann glatt, wenn sie regulär sind.
     Damit ist die Behauptung gezeigt.
   \end{proof}
 \end{Satz}
@@ -270,14 +270,14 @@ ist.
 \begin{Definition}[Minimales Modell]
   Ein minimales eigentliches Modell $X_{\text{min}}$ für $C_\K$ über
   $R$ (kurz: minimales Modell von $C_\K$ über $R$) ist ein
-  eigentliches $R$-Modell von $C_\K$, das folgende universelle
+  eigentliches $R$"~Modell von $C_\K$, das folgende universelle
   Minimalitätseigenschaft erfüllt
   \begin{quote}
     Für jedes weitere eigentliche Modell $X$ von
-    $C_\K$ über $R$ und für jeden $\K$-Isomorphismus $\phi_\K$ der
+    $C_\K$ über $R$ und für jeden $\K$"~Isomorphismus $\phi_\K$ der
     generischen Fasern ist die nach \ref{thm:erwrrational}
-    induzierte $R$-birationale Abbildung $\phi\colon X\dra
-    X_{\text{min}}$ ein $R$-Morphismus.
+    induzierte $R$"~birationale Abbildung $\phi\colon X\dra
+    X_{\text{min}}$ ein $R$"~Morphismus.
   \end{quote}
 \end{Definition}
 % % exzellent oder glatt nötig!!! evtl. nur Konstruktion?
@@ -287,16 +287,16 @@ ist.
 %   $C/\K$ reguläre, projektive Kurve vom Geschlecht $g$.
 %   \begin{enumerate}[label=(\roman*)]
 %   \item\cite[Proposition IV.4.5(a)]{silverman2}
-%     Dann existiert ein eigentliches $R$-Modell $X$ von $C$,
+%     Dann existiert ein eigentliches $R$"~Modell $X$ von $C$,
 %     das eine arithmetische Fläche darstellt.
 %   \item\cite[Proposition IV.4.5(b)]{silverman2} Ist $g\geq1$ kann
 %     ein minimales eigentliches Modell $X_{\text{min}}$ für $C$ über
 %     $R$ gewählt werden (kurz: minimales Modell von $C$ über $R$).
 %     D.\,h. für jedes andere eigentliche Modell $X$ von
-%     $C/\K$ über $R$ und für jeden $\K$-Isomorphismus $\phi_\K$ der
+%     $C/\K$ über $R$ und für jeden $\K$"~Isomorphismus $\phi_\K$ der
 %     generischen Fasern ist die nach \ref{thm:erwrrational}
-%     induzierte $R$-birationale Abbildung $\phi\colon X\dra
-%     X_{\text{min}}$ ein $R$-Morphismus.
+%     induzierte $R$"~birationale Abbildung $\phi\colon X\dra
+%     X_{\text{min}}$ ein $R$"~Morphismus.
 %   \end{enumerate}
 % \end{Definition}
 
@@ -306,13 +306,14 @@ ist.
   \begin{enumerate}[label=(\alph*)]
   \item $X_{\text{min}}$ ist eindeutig bis auf eindeutige Isomorphie.
   \item\optcite[Proposition IV.4.6]{silverman2}
-    Jeder $\K$"=Automorphismus von $C_\K$ erweitert sich eindeutig zu
-    einem $R$"=Automorphismus von $X_{\text{min}}$, der glatte Punkte
+    Jeder $\K$"~Automorphismus von $C_\K$ erweitert sich eindeutig zu
+    einem $R$"~Automorphismus von $X_{\text{min}}$, der glatte Punkte
     auf glatte Punkte abbildet.
   \item\optcite[Beweis von Proposition IV.6.10]{silverman2}
     Minimale Modelle sind wie folgt stabil unter Basiswechsel:
-    Sei $Y$ glattes $R$-Schema, ${x\in Y}$ und der Halm $R'=\O_{Y,x}$ in
-    $x$  ein diskreter Bewertungsring mit $\K'\coloneqq\Quot(R')$.
+    Sei $Y$ ein glattes $R$"~Schema, ${x\in Y}$ und der Halm
+    ${R'=\O_{Y,x}}$ in $x$  ein diskreter Bewertungsring mit
+    ${\K'\coloneqq\Quot(R')}$.
     Dann ist das minimale Modell von $C_\K\times_\K\K'$ genau
     $X_{\text{min}}\times_R R'$.
     Ist $E\subset X_{\text{min}}$ das Unterschema der glatten Punkte
@@ -326,21 +327,21 @@ ist.
     Eigenschaften benötigt.
     \begin{enumerate}[resume*,start=1]
     \item Für zwei minimale Modelle $X_1$, $X_2$ von $C_\K$ über $R$
-      liefert die Minimalitätseigenschaft zwei $R$-Morphismen
+      liefert die Minimalitätseigenschaft zwei $R$"~Morphismen
       $X_1\to X_2$, $X_2\to X_1$, deren Komposition jeweils die
       Identität auf $C_\K$ erweitert. Wegen der Eindeutigkeit aus
       \ref{thm:erweindeutig} müssen die Kompositionen jeweils die
       Identität sein und die Morphismen sind zueinander inverse
-      $R$-Isomorphismen.
+      $R$"~Isomorphismen.
     \item Die Minimalitätseigenschaft liefert zu einem
-      $\K$-Automorphismus $\tau\colon C_\K\to C_\K$ die Erweiterung auf
-      einen $R$-Automorphismus
+      $\K$"~Automorphismus $\tau\colon C_\K\to C_\K$ die Erweiterung auf
+      einen $R$"~Automorphismus
       $\tau\colon X_{\text{min}}\to X_{\text{min}}$, der wegen
       Eigentlichkeit eindeutig ist.
       Als bijektive, also offene Abbildungen, schicken $\tau$ und
       sein Inverses offene glatte Umgebungen auf offene glatte
       Umgebungen, und somit glatte Punkte auf glatte
-      Punkte. Einschränkung liefert also einen $R$-Automorphismus auf
+      Punkte. Einschränkung liefert also einen $R$"~Automorphismus auf
       dem Unterschema der glatten Punkte.
     \item Die Eigenschaften flach, projektiv und integer sind stabil
       unter Basiswechsel. Regulär ist stabil unter glattem
@@ -367,7 +368,7 @@ ist.
 \end{Satz}
 
 \begin{Satz}\label{thm:exminmodell}
-  Minimale $R$-Modelle elliptischer Kurven existieren und sind nach
+  Minimale $R$"~Modelle elliptischer Kurven existieren und sind nach
   \ref{thm:eigminmodell} eindeutig bis auf eindeutige Isomorphie.
   \begin{proof}[Beweisskizze]
     Für den vollständigen Beweis siehe \cite[Theorem~9.3.21]{liu}.
@@ -381,8 +382,8 @@ ist.
     äquivalent dazu ist, dass folgende Bedingungen erfüllt sind:
     \begin{enumerate}[label=(\alph*)]
     \item Es existiert ein \emph{relativ minimales Modell}, das heißt
-      ein $R$-Modell mit der abgeschwächten Minimalitätseigenschaft:
-      Jeder birationale Morphismus in ein anderes $R$-Modell ist
+      ein $R$"~Modell mit der abgeschwächten Minimalitätseigenschaft:
+      Jeder birationale Morphismus in ein anderes $R$"~Modell ist
       Isomorphismus.
     \item Alle relativ minimalen Modelle sind isomorph, es gibt also
       ein \emph{eindeutiges} relativ minimales Modell.

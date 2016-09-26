@@ -3,7 +3,7 @@
 \section{Gruppenschemata}
 Im Folgenden sei $S$ ein Schema.
 Zuerst werden in diesem Abschnitt Gruppenschemata definiert, also
-$S$-Schemata, deren Schnittfunktor Gruppen liefert. Als Spezialfälle
+$S$"=Schemata, deren Schnittfunktor Gruppen liefert. Als Spezialfälle
 werden abelsche Schemata und abelsche Varietäten aufgeführt. Ein
 wichtiges Beispiel für letzteres sind elliptische Kurven.
 Zuletzt wird die Hauptaussage sein, dass sich eigentliche Gruppenschemata
@@ -11,8 +11,8 @@ gutartig bezüglich Morphismen verhalten, die nur auf offenen dichten
 Teilmengen definiert sind, sogenannte rationale Funktionen.
 
 \begin{Definition}[Gruppenschema]\label{def:gruppenschema}
-  Ein Gruppenschema über $S$ oder $S$-Gruppenschema ist ein
-  $S$-Schema ${\pi\colon G\to S}$ zusammen mit $S$-Morphismen
+  Ein Gruppenschema über $S$ oder $S$"=Gruppenschema ist ein
+  $S$"=Schema ${\pi\colon G\to S}$ zusammen mit $S$"=Morphismen
   \begin{align*}
     \mu\colon G\times_S G &\longto G
     &&\text{(Gruppenverknüpfung)}\\
@@ -88,10 +88,10 @@ Teilmengen definiert sind, sogenannte rationale Funktionen.
 Die folgende Äquivalenz zeigt, wo der Gruppenbegriff eines
 Gruppenschemas zum tragen kommt:
 \begin{Bemerkung}
-  Die obige Definition ist äquivalent dazu, dass für $S$-Schemata $T$
-  die $T$-wertigen Punkte $G(T)=\Hom_S(T,G)$ eine Gruppenstruktur
-  tragen, die funktoriell in $T$ ist.\optcite[Chapter (4.15)]{wedhorn}
-  In anderen Worten der Schnittfunktor faktorisiert über den
+  Die obige Definition ist äquivalent dazu, dass für $S$"=Schemata $T$
+  die $T$"=wertigen Punkte $G(T)=\Hom_S(T,G)$ eine in $T$ funktorielle
+  Gruppenstruktur tragen.\optcite[Chapter (4.15)]{wedhorn}
+  In anderen Worten der Schnittfunktor faktorisiert über dem
   Vergissfunktor:
   \begin{align*}
     \Sch &\longto \Groups \longto \text{(Sets)}\\
@@ -110,14 +110,14 @@ Gruppenschemas zum tragen kommt:
   Identität ist und sich Inverse durch Verknüpfung mit $i$ ergeben.
   \optcite[Proposition IV.3.2]{silverman2}
   Die Gruppenstruktur liefert außerdem, dass für einen Schnitt
-  $\sigma\in G(S)$ der $S$-Morphismus
+  $\sigma\in G(S)$ der $S$"=Morphismus
   \begin{gather*}
     \tau_\sigma\colon G\cong G\times_S S
     \xrightarrow{\Id\times_S\sigma}
     G\times_S G
     \overset{\mu}\longto G
   \end{gather*}
-  ein $S$-Automorphismus von $G$ ist mit Inversem
+  ein $S$"=Automorphismus von $G$ ist mit Inversem
   $\tau_{(\sigma^{-1})}$, genannt Translation um $\sigma$.
 \end{Bemerkung}
 
@@ -128,11 +128,12 @@ definieren.
   \optcite[Definition 4.42]{wedhorn}
   Seien $G$ und $H$ $S$"=Gruppenschemata.
   Ein Morphismus von $S$"=Gruppenschemata ist ein Morphismus $f\colon
-  G\to H$ von $S$-Schemata, für den die induzierten Abbildungen
+  G\to H$ von $S$"=Schemata, für den für alle $S$"=Schemata $T$ die
+  induzierten Abbildungen
   \begin{gather*}
     (\bullet\circ f)\colon G(T)\to H(T)
-  \end{gather*}auf den $T$-wertigen Punkten
-  Gruppenhomomorphismen sind für alle $S$-Schemata $T$.
+  \end{gather*}
+  auf den $T$"=wertigen Punkten Gruppenhomomorphismen sind.
   In anderen Worten
   \begin{gather*}
     \SwapAboveDisplaySkip
@@ -145,12 +146,12 @@ definieren.
   \optcite[Definition 4.45]{wedhorn}
   Sei $G$ ein $S$"=Gruppenschema.
   Ein $S$"=Untergruppenschema von $G$ ist ein abgeschlossenes
-  $S$-Unterschema von $G$, dessen abgeschlossene Immersion ein
+  $S$"=Unterschema von $G$, dessen abgeschlossene Immersion ein
   Homomorphismus von Gruppenschemata ist.
 \end{Definition}
 
-Hier gleich ein wichtiges Beispiel eines Untergruppenschemas, das
-durch die Topologie gegeben ist.
+Ein wichtiges Beispiel eines Untergruppenschemas, das durch die
+Topologie gegeben ist, ist die sogenannte Identitätskomponente.
 \begin{Definition}[Identitätskomponente]
   \optcite[Remark IV.6.1.2]{silverman2}
   Sei $G$ ein $S$"=Gruppenschema.
@@ -158,8 +159,10 @@ durch die Topologie gegeben ist.
   die Zusammenhangskomponente von $G_s$, die $\epsilon(s)$ enthält.
   Die Identitäts-~oder Zusammenhangskomponente von $G$ ist
   die Vereinigung aller Identitätskomponenten der Fasern von $G$.
-  Die Identitätskomponente ist ein Untergruppenschema.
 \end{Definition}
+Die Identitätskomponente ist tatsächlich ein Untergruppenschema, und
+als solches sogar normal. Siehe dazu auch
+\cite[Proposition~IV.1.5]{silverman2}.
 
 % ABELSCHE SCHEMATA
 Einige wichtige Spezialfälle von Gruppenschemata sind abelsche
@@ -187,11 +190,11 @@ was aber nicht weiter benötigt wird.
 \end{Bemerkung}
 
 \begin{Definition}[Abelsches Schema]
-  Ein abelsches $S$-Schema ist ein eigentliches, glattes $S$"=Gruppenschema,
-  dessen Fasern abelsche Varietäten sind 
-  (also zusätzlich irreduzibel beziehungsweise zusammenhängend,
-  s. \ref{def:abelschevarietaet} und \ref{gruppenschemaaequivalenzen},
-  nachdem eigentlich und glatt stabil unter Basiswechsel sind).
+  Ein abelsches $S$"=Schema ist ein eigentliches, glattes $S$"=Gruppenschema,
+  dessen Fasern abelsche Varietäten sind,
+  also zusätzlich irreduzibel beziehungsweise zusammenhängend,
+  siehe \ref{def:abelschevarietaet} und \ref{gruppenschemaaequivalenzen},
+  nachdem eigentlich und glatt stabil unter Basiswechsel sind.
 \end{Definition}
 
 % S-RATIONALE ABBILDUNG
@@ -206,12 +209,12 @@ Eine Verallgemeinerung davon sind die ($S$-)rationalen Abbildungen
 zwischen ($S$-)Schemata.
 \begin{Definition}[rationale Abbildung]\label{def:ratabb}
   \optcite[Chapter 2.5]{neron}
-  Sei $S$ Schema, und seien $X$ und $Y$ glatte $S$-Schemata.
+  Sei $S$ Schema, und seien $X$ und $Y$ glatte $S$"=Schemata.
   Eine rationale Abbildung $\phi\colon X\dra Y$ von
-  $S$-Schemata ist eine Äquivalenzklasse der Menge
+  $S$"=Schemata ist eine Äquivalenzklasse der Menge
   \begin{gather*}
     \left\{
-      \psi\colon U\to Y \text{ $S$-Morphismus}
+      \psi\colon U\to Y \text{ $S$"=Morphismus}
       \;\middle|\;
       U\subset X \text{ dicht, offen in $X$}
     \right\}
@@ -220,49 +223,50 @@ zwischen ($S$-)Schemata.
   falls sie auf einer in $X$ dichten, offenen Teilmenge von $U\cap U'$
   übereinstimmen.
   
-  Ein offenes Unterschema $U\subset X$ heißt $S$-dicht in $X$,
+  Ein offenes Unterschema $U\subset X$ heißt $S$"=dicht in $X$,
   falls für alle $s\in S$ die Faser $U_s$ %=U\times_S\k(s)$
   topologisch dicht in der Faser $X_s$ %=X\times_S\k(s)$
   liegt.
-  Eine $S$-rationale Abbildung $\phi\colon X\dra Y$ ist eine
+  Eine $S$"=rationale Abbildung $\phi\colon X\dra Y$ ist eine
   rationale Abbildung, wobei alle dichten offenen Mengen aus obiger
-  Definition $S$-dicht sind.
-  % Eine $S$-rationale Abbildung $\phi\colon X\dra Y$ ist eine
+  Definition $S$"=dicht sind.
+  % Eine $S$"=rationale Abbildung $\phi\colon X\dra Y$ ist eine
   % Äquivalenzklasse der Menge
   % \begin{gather*}
   %   \left\{
-  %     \psi\colon U\to Y \text{ $S$-Morphismus}
+  %     \psi\colon U\to Y \text{ $S$"=Morphismus}
   %     \;\middle|\;
-  %     U\subset X \text{ $S$-dicht, offen in $X$}
+  %     U\subset X \text{ $S$"=dicht, offen in $X$}
   %   \right\}
   % \end{gather*}
   % wobei $\psi\colon U\to Y$ äquivalent zu $\psi'\colon U'\to Y$ ist,
-  % falls sie auf einer $S$-dichten, offenen Teilmenge von $U\cap U'$
+  % falls sie auf einer $S$"=dichten, offenen Teilmenge von $U\cap U'$
   % übereinstimmen.
 
   Eine ($S$-)rationale Abbildung $\phi\colon X\dra Y$ heißt definiert
-  in $x\in X$, falls $\phi$ von einem Morphismus $\psi\colon U\to Y$
-  präsentiert werden kann mit $x\in U$.
+  in $x\in X$, falls es eine offene Umgebung $U$ von $x$ gibt und
+  $\phi$ von einem Morphismus $\psi\colon U\to Y$ präsentiert werden
+  kann.
   Der Definitionsbereich $\Dom(\phi)$ von $\phi$ sind die
-  Punkte, in denen $\phi$ definiert ist. Er ist offene, ($S$-)dichte
-  Teilmenge von $X$. Ist $X/R$ separiert gibt es einen Morphismus
-  $\Dom(\phi)\to Y$, der $\phi$ präsentiert.
+  Punkte, in denen $\phi$ definiert ist. Er ist eine offene,
+  ($S$-)dichte Teilmenge von $X$. Ist $X$ separiert über $R$, so gibt
+  es einen Morphismus $\Dom(\phi)\to Y$, der $\phi$ präsentiert.
   
-  $\phi\colon X\dra Y$ heißt ($S$-)birational, falls es von einem
-  $S$-Morphismus $\psi\colon U\to Y$ präsentiert werden kann, der
-  die offene Immersion einer ($S$-)dichten, offenen Teilmenge von $Y$
-  ist.
+  Eine ($S$-)rationale Abbildung $\phi\colon X\dra Y$ heißt
+  ($S$-)birational, falls sie von einem $S$"=Morphismus
+  ${\psi\colon U\to Y}$ präsentiert werden kann, welcher die offene
+  Immersion einer ($S$-)dichten, offenen Teilmenge von $Y$ ist.
 \end{Definition}
 
 Nachdem das Hauptaugenmerk auf Gruppenschemata liegt, ist
-besonders interessant, wie sich $S$-Gruppenschemata
+besonders interessant, wie sich $S$"=Gruppenschemata
 bezüglich ($S$-)rationalen Abbildungen verhalten.
 Tatsächlich verhalten sich eigentliche Gruppenschemata in folgender
 Hinsicht gutartig:
 \begin{Theorem}
   \label{thm:rationalzumorphismus}
-  Sei $G$ ein $R$"=Gruppenschema, $Y$ ein glattes $R$-Schema und
-  $\phi\colon Y\dra G$ eine $R$-rationale Abbildung.
+  Sei $G$ ein $R$"=Gruppenschema, $Y$ ein glattes $R$"=Schema und
+  $\phi\colon Y\dra G$ eine $R$"=rationale Abbildung.
   Dann gilt
   \begin{enumerate}[label=(\alph*)]
   \item $Y\setminus \Dom(\phi)$ hat (reine) Kodimension 1.
@@ -276,24 +280,25 @@ Für den Beweis siehe zum Beispiel \cite[Proposition~IV.6.2]{silverman2}.
 \section{Normale Komposition auf Schemata}
 Sei $R$ im folgenden ein Dedekindring.
 In manchen Fällen kann der Morphismus einer Gruppenstruktur nicht auf
-dem gesamten Schema sondern nur als $R$-rationale Abbildung angegeben
-werden. Das führt zur Definition einer normalen Komposition, welche
-eine $R$-rationale Gruppenstruktur liefert.
+dem gesamten Schema sondern nur als $R$"=rationale Abbildung angegeben
+werden. Das führt zur Definition der normalen Komposition, welche
+eine $R$"=rationale Gruppenstruktur liefert.
 \begin{Definition}[normale Komposition]\label{def:normalekomposition}
-  Sei $V$ glattes $R$-Schema mit nichtleeren Fasern.
-  Eine normale Komposition auf $V$ ist eine $R$-rationale
+  Sei $V$ ein glattes $R$"=Schema mit nichtleeren Fasern.
+  Eine normale Komposition auf $V$ ist eine $R$"=rationale
   Abbildung
   \begin{gather*}
-    \mu\colon V\times_R V\dra V
+    \mu\colon V\times_R V\dra V\;,
   \end{gather*}
-  die folgende Bedingungen erfüllt
+  die folgende Bedingungen erfüllt:
   \begin{description}
-  \item[(Assoziativität)] Es gilt, wo es definiert ist,
+  \item[(Assoziativität)] Es gilt auf dem entsprechenden
+    Definitionsbereich
     \begin{gather*}
-      \mu(\mu(x,y),z)=\mu(x,\mu(y,z))
+      \mu(\mu(x,y),z)=\mu(x,\mu(y,z))\;.
     \end{gather*}
   \item[(Inverses)]
-    Die $R$-rationalen Abbildungen
+    Die $R$"=rationalen Abbildungen
     \begin{align*}
       \phi\colon V\times_R V
       &\dra V\times_R V
@@ -310,19 +315,19 @@ eine $R$-rationale Gruppenstruktur liefert.
 \end{Definition}
 
 Ein großer Vorteil einer normalen Komposition ist, dass zumindest
-ein großer Teil, nämlich ein offenes dichtes Unterschema, offen und
-dicht in einem richtigen Gruppenschema mit derselben Gruppenstruktur
+ein erheblicher Teil (ein offenes dichtes Unterschema) offen
+und dicht in einem richtigen Gruppenschema mit derselben Gruppenstruktur
 liegt, wie folgender Satz von Weil besagt. Für den Beweis siehe
 \cite[Theorem~VIII.1.12]{artin} oder \cite[Theorem~IV.6.9]{silverman2}
 für eine Skizze.
 \begin{Theorem}[Weil]\label{thm:weil}
-  Sei $V$ glattes $R$-Schema mit nichtleeren Fasern
+  Sei $V$ ein glattes $R$"=Schema mit nichtleeren Fasern
   und normaler Komposition $\mu\colon V\times_R V\dra V$.
-  $V$ sei zusätzlich endlichen Typs und die Vereinigung der Bilder der
+  Sei $V$ zusätzlich endlichen Typs und die Vereinigung der Bilder der
   Schnitte $V(R)$ sei dicht in jeder Faser. 
   % ?? Was heißt V(R) dicht in jeder Faser?
-  Dann gibt es ein $R$-Gruppenschema $(G,\mu_G)$ endlichen Typs und
-  ein gemeinsames, offenes, $R$-dichtes Unterschemata $V\hookleftarrow
+  Dann gibt es ein $R$"~Gruppenschema $(G,\mu_G)$ endlichen Typs und
+  ein gemeinsames, offenes, $R$"~dichtes Unterschemata $V\hookleftarrow
   U\hookrightarrow G$ von $V$ und $G$, so dass $\mu|_U=\mu_G|_U$.
   % \begin{proof}
   %   \begin{enumerate}
@@ -331,15 +336,15 @@ für eine Skizze.
   %     \item $X=X_\phi\cap X_\psi\cap Y_\phi\cap Y_\psi$:
   %       $V$ hat normale Komposition $\mu$ mit zugehörigen rationalen
   %       Abbildungen $\phi$ und $\psi$.
-  %       Wähle $R$-dichte, offene Teilmengen
+  %       Wähle $R$"~dichte, offene Teilmengen
   %       $X_\phi,X_\psi,Y_\phi,Y_\psi\subset V\times_R V$,
   %       so dass $\phi\colon X_\phi\overset\sim\to Y_\phi$,
   %       $\psi\colon X_\psi\overset\sim\to Y_\psi$ Isomorphismen sind.
   %       Definiere $X=X_\phi\cap X_\psi\cap Y_\phi\cap Y_\psi\subset
   %       V^2$.
-  %       $X$ ist wieder $R$-dicht und $\phi|_X,\psi|_X\colon X\cong X$
+  %       $X$ ist wieder $R$"~dicht und $\phi|_X,\psi|_X\colon X\cong X$
   %       sind per Definition Isomorphismen auf $X$.
-  %     \item Es gibt eine offene, $R$-dichte Teilmenge $U\subset V$, so
+  %     \item Es gibt eine offene, $R$"~dichte Teilmenge $U\subset V$, so
   %       dass die Einschränkung der Projektionen
   %       $\proj_i\colon V\times_R V\to V$ auf $X$ surjektiv sind.
   %     \item Für $V=U$ gilt:
@@ -348,7 +353,7 @@ für eine Skizze.
   %       Dann sind $\phi^{\pm1}, \psi^{\pm1}$ in $(x,a)\in V\times_R V$
   %       definiert.
   %     \item Sei $\Gamma_\mu\subset V^3$ der Graf von $\mu$
-  %       ($R$-Schema), $\Gamma\coloneqq \overline{\Gamma_\mu}\subset
+  %       ($R$"~Schema), $\Gamma\coloneqq \overline{\Gamma_\mu}\subset
   %       V^3$.
   %       Dann sind die Einschränkungen der Projektionen
   %       $\proj_{1,2},\proj_{2,3},\proj_{1,3}\colon \Gamma\to V^2$

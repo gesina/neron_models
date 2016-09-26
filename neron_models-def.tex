@@ -7,14 +7,15 @@
 % \usepackage[math]{anttor} % letters look slightly crippled in comparison
 % \usepackage[math]{kurier}
 % \usepackage{mathpazo}
-%\usepackage[charter]{mathdesign} % not working :-(
+\usepackage[charter]{mathdesign} % ugly longmapsto
 
 % LUALATEX
 \usepackage{fontspec}
+
 \setmainfont{Latin Modern Roman}
 \setsansfont{Latin Modern Sans}
-%\setmainfont{Charis SIL}
-%\setsansfont{Source Sans Pro}
+\setmainfont{Charis SIL}
+\setsansfont{Source Sans Pro}
 %\setsansfont{Fira Sans}
 %\setsansfont{Bitstream Vera Sans} % too wide
 
@@ -25,14 +26,16 @@
 \bibliography{neron_models.bib}
 
 \usepackage{mathtools}
-\usepackage{amssymb}
-\usepackage{amsfonts}
+\renewcommand*{\longmapsto}{%
+  \kern-.35pt\mapstochar\kern0.35pt\longrightarrow}
+% \usepackage{amssymb}
+% \usepackage{amsfonts}
 \usepackage{amsthm}
 \usepackage{dsfont}
 \usepackage{tikz-cd}
 \usetikzlibrary{babel}
-\hyphenation{Né-ron Ab-bil-dungs-ei-gen-schaft Grup-pen-sche-ma-ta
-  Treu-flach-heit wo-raus}
+\hyphenation{Né-ron=Ab-bil-dungs-ei-gen-schaft Grup-pen-sche-ma-ta
+  Treu-flach-heit wo-raus Kör-per-ho-mo-mor-phis-mus}
 
 \usepackage{enumitem}
 \setlist[description]{font=\normalfont\itshape, leftmargin=1.3em}
