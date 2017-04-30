@@ -1,17 +1,18 @@
-# German Bachelor Thesis with Topic „Neron-Models of Elliptic Curves“
+# Bachelor Thesis *Neron-Models of Elliptic Curves*
+These are the sources of my (German) Bachelor thesis.
+The Topic is *Neron-Models of Elliptic Curves*, it was supervised by
+[Prof. Dr. Moritz Kerz](http://www.mathematik.uni-regensburg.de/kerz/),
+University of Regensburg, and handed in on 28/09/2016.
+
 ## Organisation/Files
 - Main file: `neron_models.tex`
-- LaTeX definitions: `neron_models.tex`
+- LaTeX definitions: `neron_models-def.tex`
 - Bibliography: `neron_models.bib`
 - Chapters: `neron_models-0[1-7].tex` 
   (and notices in abandoned `neron_models-appendix.tex`)
 
-## Timeline
-* to be hand in **before 29/09/2016**
-* shall be printed on **26/09/2016**
-
 ## Compilation
-(tested) Preliminaries: 
+(Tested) Preliminaries:
 - `TeX Live 2016`
 - font `Charis SIL` installed
 - font `Source Sans Pro` installed
