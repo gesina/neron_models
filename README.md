@@ -13,7 +13,7 @@ und am 28.09.2016 eingereicht.
 - Kapitelinhalte: `neron_models-0[1-7].tex` 
   (und Notizen im aufgegebenen `neron_models-appendix.tex`)
 
-## Compilation
+## Kompilieren
 (Getestete) Systemvoraussetzungen:
 - `TeXLive 2016`-Distribution
 - Schrift [`Charis SIL`](http://software.sil.org/charis/) installiert
